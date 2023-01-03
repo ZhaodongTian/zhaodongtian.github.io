@@ -1,4 +1,4 @@
-# This is the **HOMEPAGE** for CoreWCF.
+# This is the testing **HOMEPAGE** for CoreWCF.
 ### What is CoreWCF? 
 
 CoreWCF is a port of the service side of Windows Communication Foundation (WCF) to .NET Core. The goal of this project is to enable existing WCF services to move to .NET Core.
