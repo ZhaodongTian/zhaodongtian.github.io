@@ -1,0 +1,1336 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageProperties
+  commentId: T:CoreWCF.Channels.MessageProperties
+  id: MessageProperties
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageProperties.#ctor
+  - CoreWCF.Channels.MessageProperties.#ctor(CoreWCF.Channels.MessageProperties)
+  - CoreWCF.Channels.MessageProperties.Add(System.String,System.Object)
+  - CoreWCF.Channels.MessageProperties.AllowOutputBatching
+  - CoreWCF.Channels.MessageProperties.Clear
+  - CoreWCF.Channels.MessageProperties.ContainsKey(System.String)
+  - CoreWCF.Channels.MessageProperties.CopyProperties(CoreWCF.Channels.MessageProperties)
+  - CoreWCF.Channels.MessageProperties.Count
+  - CoreWCF.Channels.MessageProperties.Dispose
+  - CoreWCF.Channels.MessageProperties.Encoder
+  - CoreWCF.Channels.MessageProperties.IsFixedSize
+  - CoreWCF.Channels.MessageProperties.IsReadOnly
+  - CoreWCF.Channels.MessageProperties.Item(System.String)
+  - CoreWCF.Channels.MessageProperties.Keys
+  - CoreWCF.Channels.MessageProperties.Remove(System.String)
+  - CoreWCF.Channels.MessageProperties.Security
+  - CoreWCF.Channels.MessageProperties.TryGetValue(System.String,System.Object@)
+  - CoreWCF.Channels.MessageProperties.TryGetValue``1(System.String,``0@)
+  - CoreWCF.Channels.MessageProperties.Values
+  - CoreWCF.Channels.MessageProperties.Via
+  langs:
+  - csharp
+  - vb
+  name: MessageProperties
+  nameWithType: MessageProperties
+  fullName: CoreWCF.Channels.MessageProperties
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents a set of properties for a message. This class cannot be inherited.
+  remarks: "As a message passes through the channel infrastructure, it passes through a number of logically separate processing entities. For instance, a message that is part of a reliable messaging stream can potentially pass through a <xref:CoreWCF.Channels.MessageEncoder>, a transport-level channel provider, the reliable-messaging channel provider, the streaming channel provider or any channel extensions. Sometimes these intermediaries annotate the message with the results of that processing by using the <xref:CoreWCF.Channels.MessageProperties> class. A <xref:CoreWCF.Channels.MessageProperties> instance is an annotation on a message and is stored as a set of name-to-object mappings in the <xref:CoreWCF.Channels.Message.Properties%2A> property of a<xref:CoreWCF.Channels.Message> instance.  \n\n> [!NOTE]\n>  The message properties should be cleared out when the user gets the following error:  \n>   \n>  **The server committed a protocol violation. Section=ResponseBody Detail=Response chunk format is invalid**  \n\n"
+  syntax:
+    content: 'public sealed class MessageProperties : Object'
+    content.vb: >-
+      Public NotInheritable Class MessageProperties
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IDictionary{System.String,System.Object}
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+  - System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+  - System.Collections.IEnumerable
+  - System.IDisposable
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Channels.MessageProperties.#ctor
+  commentId: M:CoreWCF.Channels.MessageProperties.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: MessageProperties()
+  nameWithType: MessageProperties.MessageProperties()
+  fullName: CoreWCF.Channels.MessageProperties.MessageProperties()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.MessageProperties> class."
+  syntax:
+    content: public MessageProperties()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.MessageProperties.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.#ctor(CoreWCF.Channels.MessageProperties)
+  commentId: M:CoreWCF.Channels.MessageProperties.#ctor(CoreWCF.Channels.MessageProperties)
+  id: '#ctor(CoreWCF.Channels.MessageProperties)'
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: MessageProperties(MessageProperties)
+  nameWithType: MessageProperties.MessageProperties(MessageProperties)
+  fullName: CoreWCF.Channels.MessageProperties.MessageProperties(CoreWCF.Channels.MessageProperties)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.MessageProperties> class with preset properties."
+  syntax:
+    content: public MessageProperties(MessageProperties properties)
+    parameters:
+    - id: properties
+      type: CoreWCF.Channels.MessageProperties
+      description: "A <xref:CoreWCF.Channels.MessageProperties>."
+    content.vb: Public Sub New(properties As MessageProperties)
+  overload: CoreWCF.Channels.MessageProperties.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.Add(System.String,System.Object)
+  commentId: M:CoreWCF.Channels.MessageProperties.Add(System.String,System.Object)
+  id: Add(System.String,System.Object)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Add(String, Object)
+  nameWithType: MessageProperties.Add(String, Object)
+  fullName: CoreWCF.Channels.MessageProperties.Add(System.String, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Adds an element with the specified name and property into the <xref:CoreWCF.Channels.MessageProperties> collection."
+  syntax:
+    content: public void Add(string name, object property)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the element to add.
+    - id: property
+      type: System.Object
+      description: The value of the element to add.
+    content.vb: Public Sub Add(name As String, property As Object)
+  overload: CoreWCF.Channels.MessageProperties.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.Clear
+  commentId: M:CoreWCF.Channels.MessageProperties.Clear
+  id: Clear
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: MessageProperties.Clear()
+  fullName: CoreWCF.Channels.MessageProperties.Clear()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Removes all elements from the <xref:CoreWCF.Channels.MessageProperties> collection."
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear
+  overload: CoreWCF.Channels.MessageProperties.Clear*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.CopyProperties(CoreWCF.Channels.MessageProperties)
+  commentId: M:CoreWCF.Channels.MessageProperties.CopyProperties(CoreWCF.Channels.MessageProperties)
+  id: CopyProperties(CoreWCF.Channels.MessageProperties)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: CopyProperties(MessageProperties)
+  nameWithType: MessageProperties.CopyProperties(MessageProperties)
+  fullName: CoreWCF.Channels.MessageProperties.CopyProperties(CoreWCF.Channels.MessageProperties)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Copies the content of the specified <xref:CoreWCF.Channels.MessageProperties> to this instance."
+  syntax:
+    content: public void CopyProperties(MessageProperties properties)
+    parameters:
+    - id: properties
+      type: CoreWCF.Channels.MessageProperties
+      description: "A <xref:CoreWCF.Channels.MessageProperties> object in which to copy from."
+    content.vb: Public Sub CopyProperties(properties As MessageProperties)
+  overload: CoreWCF.Channels.MessageProperties.CopyProperties*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.ContainsKey(System.String)
+  commentId: M:CoreWCF.Channels.MessageProperties.ContainsKey(System.String)
+  id: ContainsKey(System.String)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: ContainsKey(String)
+  nameWithType: MessageProperties.ContainsKey(String)
+  fullName: CoreWCF.Channels.MessageProperties.ContainsKey(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Determines whether the <xref:CoreWCF.Channels.MessageProperties> contains a specific name, key, or identifier."
+  syntax:
+    content: public bool ContainsKey(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: "The name, key, or identifier to locate in the <xref:CoreWCF.Channels.MessageProperties>."
+    return:
+      type: System.Boolean
+      description: "true if the <xref:CoreWCF.Channels.MessageProperties> contains an element with the specified name; otherwise, false."
+    content.vb: Public Function ContainsKey(name As String) As Boolean
+  overload: CoreWCF.Channels.MessageProperties.ContainsKey*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.Dispose
+  commentId: M:CoreWCF.Channels.MessageProperties.Dispose
+  id: Dispose
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: MessageProperties.Dispose()
+  fullName: CoreWCF.Channels.MessageProperties.Dispose()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Releases all resources used by the <xref:CoreWCF.Channels.MessageProperties> class."
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: CoreWCF.Channels.MessageProperties.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "\nCall <xref:CoreWCF.Channels.MessageProperties.Dispose> when you are finished using the <xref:CoreWCF.Channels.MessageProperties>. The <xref:CoreWCF.Channels.MessageProperties.Dispose> method leaves the <xref:CoreWCF.Channels.MessageProperties> in an unusable state. After calling <xref:CoreWCF.Channels.MessageProperties.Dispose>, you must release all references to the <xref:CoreWCF.Channels.MessageProperties> so the garbage collector can reclaim the memory that the <xref:CoreWCF.Channels.MessageProperties> occupied.\n \n> [!NOTE]\n> Always call <xref:CoreWCF.Channels.MessageProperties.Dispose> before you release your last reference to the <xref:CoreWCF.Channels.MessageProperties>. Otherwise, the resources it is using are not freed until the garbage collector calls the <xref:CoreWCF.Channels.MessageProperties> object's Finalize method."
+- uid: CoreWCF.Channels.MessageProperties.Remove(System.String)
+  commentId: M:CoreWCF.Channels.MessageProperties.Remove(System.String)
+  id: Remove(System.String)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Remove(String)
+  nameWithType: MessageProperties.Remove(String)
+  fullName: CoreWCF.Channels.MessageProperties.Remove(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Removes the element with the specified name from the <xref:CoreWCF.Channels.MessageProperties>."
+  syntax:
+    content: public bool Remove(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the element to remove.
+    return:
+      type: System.Boolean
+      description: "true if the <xref:CoreWCF.Channels.MessageProperties> contains an element with the specified name and can be removed; otherwise, false."
+    content.vb: Public Function Remove(name As String) As Boolean
+  overload: CoreWCF.Channels.MessageProperties.Remove*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.TryGetValue(System.String,System.Object@)
+  commentId: M:CoreWCF.Channels.MessageProperties.TryGetValue(System.String,System.Object@)
+  id: TryGetValue(System.String,System.Object@)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: TryGetValue(String, out Object)
+  nameWithType: MessageProperties.TryGetValue(String, out Object)
+  fullName: CoreWCF.Channels.MessageProperties.TryGetValue(System.String, out System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Determines whether the <xref:CoreWCF.Channels.MessageProperties> contains a specific name, and retrieves its value."
+  syntax:
+    content: public bool TryGetValue(string name, out object value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the element to locate.
+    - id: value
+      type: System.Object
+      description: The value of the found element.
+    return:
+      type: System.Boolean
+      description: "true if the <xref:CoreWCF.Channels.MessageProperties> contains an element with the specified name; otherwise, false."
+    content.vb: Public Function TryGetValue(name As String, ByRef value As Object) As Boolean
+  overload: CoreWCF.Channels.MessageProperties.TryGetValue*
+  nameWithType.vb: MessageProperties.TryGetValue(String, ByRef Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.MessageProperties.TryGetValue(System.String, ByRef System.Object)
+  name.vb: TryGetValue(String, ByRef Object)
+- uid: CoreWCF.Channels.MessageProperties.TryGetValue``1(System.String,``0@)
+  commentId: M:CoreWCF.Channels.MessageProperties.TryGetValue``1(System.String,``0@)
+  id: TryGetValue``1(System.String,``0@)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: TryGetValue<TProperty>(String, out TProperty)
+  nameWithType: MessageProperties.TryGetValue<TProperty>(String, out TProperty)
+  fullName: CoreWCF.Channels.MessageProperties.TryGetValue<TProperty>(System.String, out TProperty)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool TryGetValue<TProperty>(string name, out TProperty property)
+    parameters:
+    - id: name
+      type: System.String
+    - id: property
+      type: '{TProperty}'
+    typeParameters:
+    - id: TProperty
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryGetValue(Of TProperty)(name As String, ByRef property As TProperty) As Boolean
+  overload: CoreWCF.Channels.MessageProperties.TryGetValue*
+  nameWithType.vb: MessageProperties.TryGetValue(Of TProperty)(String, ByRef TProperty)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.MessageProperties.TryGetValue(Of TProperty)(System.String, ByRef TProperty)
+  name.vb: TryGetValue(Of TProperty)(String, ByRef TProperty)
+- uid: CoreWCF.Channels.MessageProperties.Item(System.String)
+  commentId: P:CoreWCF.Channels.MessageProperties.Item(System.String)
+  id: Item(System.String)
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Item[String]
+  nameWithType: MessageProperties.Item[String]
+  fullName: CoreWCF.Channels.MessageProperties.Item[System.String]
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Retrieves a property with the specified name, identifier, or key value.
+  syntax:
+    content: public object this[string name] { get; set; }
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the property to get from the collection.
+    return:
+      type: System.Object
+      description: "The property with the specified name, or null if the property does not exist."
+    content.vb: Public Property Item(name As String) As Object
+  overload: CoreWCF.Channels.MessageProperties.Item*
+  nameWithType.vb: MessageProperties.Item(String)
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.MessageProperties.Item(System.String)
+  name.vb: Item(String)
+- uid: CoreWCF.Channels.MessageProperties.Count
+  commentId: P:CoreWCF.Channels.MessageProperties.Count
+  id: Count
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: MessageProperties.Count
+  fullName: CoreWCF.Channels.MessageProperties.Count
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets the total number of properties in the <xref:CoreWCF.Channels.MessageProperties>."
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: "The total number of properties in the <xref:CoreWCF.Channels.MessageProperties>."
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: CoreWCF.Channels.MessageProperties.Count*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageProperties.Encoder
+  commentId: P:CoreWCF.Channels.MessageProperties.Encoder
+  id: Encoder
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Encoder
+  nameWithType: MessageProperties.Encoder
+  fullName: CoreWCF.Channels.MessageProperties.Encoder
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the encoder that is used to write messages to a stream and to read messages from a stream.
+  syntax:
+    content: public MessageEncoder Encoder { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageEncoder
+      description: "A <xref:CoreWCF.Channels.MessageEncoder> that is used to write messages to a stream and to read messages from a stream."
+    content.vb: Public Property Encoder As MessageEncoder
+  overload: CoreWCF.Channels.MessageProperties.Encoder*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "This property specifies a message encoder that can be used to serialize or deserialize the message instance this <xref:CoreWCF.Channels.MessageProperties> instance is attached to."
+- uid: CoreWCF.Channels.MessageProperties.AllowOutputBatching
+  commentId: P:CoreWCF.Channels.MessageProperties.AllowOutputBatching
+  id: AllowOutputBatching
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: AllowOutputBatching
+  nameWithType: MessageProperties.AllowOutputBatching
+  fullName: CoreWCF.Channels.MessageProperties.AllowOutputBatching
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets a value that specifies whether to store this message before giving it to the transport.
+  syntax:
+    content: public bool AllowOutputBatching { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the batching of outgoing messages is allowed; otherwise, false.
+    content.vb: Public Property AllowOutputBatching As Boolean
+  overload: CoreWCF.Channels.MessageProperties.AllowOutputBatching*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.IsFixedSize
+  commentId: P:CoreWCF.Channels.MessageProperties.IsFixedSize
+  id: IsFixedSize
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: IsFixedSize
+  nameWithType: MessageProperties.IsFixedSize
+  fullName: CoreWCF.Channels.MessageProperties.IsFixedSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets a value that indicates whether the <xref:CoreWCF.Channels.MessageProperties> has a fixed size."
+  syntax:
+    content: public bool IsFixedSize { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "true if the <xref:CoreWCF.Channels.MessageProperties> has a fixed size; otherwise, false."
+    content.vb: Public ReadOnly Property IsFixedSize As Boolean
+  overload: CoreWCF.Channels.MessageProperties.IsFixedSize*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageProperties.IsReadOnly
+  commentId: P:CoreWCF.Channels.MessageProperties.IsReadOnly
+  id: IsReadOnly
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: MessageProperties.IsReadOnly
+  fullName: CoreWCF.Channels.MessageProperties.IsReadOnly
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: CoreWCF.Channels.MessageProperties.IsReadOnly*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageProperties.Keys
+  commentId: P:CoreWCF.Channels.MessageProperties.Keys
+  id: Keys
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Keys
+  nameWithType: MessageProperties.Keys
+  fullName: CoreWCF.Channels.MessageProperties.Keys
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets an [ICollection](https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that contains the keys in the <xref:CoreWCF.Channels.MessageProperties>."
+  syntax:
+    content: public ICollection<string> Keys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.String}
+      description: "An [ICollection](https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that contains the keys in the <xref:CoreWCF.Channels.MessageProperties>."
+    content.vb: Public ReadOnly Property Keys As ICollection(Of String)
+  overload: CoreWCF.Channels.MessageProperties.Keys*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageProperties.Security
+  commentId: P:CoreWCF.Channels.MessageProperties.Security
+  id: Security
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Security
+  nameWithType: MessageProperties.Security
+  fullName: CoreWCF.Channels.MessageProperties.Security
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public SecurityMessageProperty Security { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityMessageProperty
+    content.vb: Public Property Security As SecurityMessageProperty
+  overload: CoreWCF.Channels.MessageProperties.Security*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageProperties.Values
+  commentId: P:CoreWCF.Channels.MessageProperties.Values
+  id: Values
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Values
+  nameWithType: MessageProperties.Values
+  fullName: CoreWCF.Channels.MessageProperties.Values
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets an [ICollection](https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that contains the values in the <xref:CoreWCF.Channels.MessageProperties>."
+  syntax:
+    content: public ICollection<object> Values { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{System.Object}
+      description: "An [ICollection](https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that contains the values in the <xref:CoreWCF.Channels.MessageProperties>."
+    content.vb: Public ReadOnly Property Values As ICollection(Of Object)
+  overload: CoreWCF.Channels.MessageProperties.Values*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageProperties.Via
+  commentId: P:CoreWCF.Channels.MessageProperties.Via
+  id: Via
+  parent: CoreWCF.Channels.MessageProperties
+  langs:
+  - csharp
+  - vb
+  name: Via
+  nameWithType: MessageProperties.Via
+  fullName: CoreWCF.Channels.MessageProperties.Via
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the transport address that is used to send messages.
+  syntax:
+    content: public Uri Via { get; set; }
+    parameters: []
+    return:
+      type: System.Uri
+      description: A URI that contains the transport address that is used to send messages.
+    content.vb: Public Property Via As Uri
+  overload: CoreWCF.Channels.MessageProperties.Via*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "The transport channel owns the <xref:CoreWCF.Channels.MessageProperties.Via> property and it overwrites whatever value you set for the message headers. You do have one opportunity to set the channel's Via, which is during the creation of the channel from the channel factory, for example, with [CreateChannel(EndpointAddress, Uri)](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channelfactory-1.createchannel?view=dotnet-plat-ext-7.0#system-servicemodel-channelfactory-1-createchannel(system-servicemodel-endpointaddress-system-uri))."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: '!:System.Collections.Generic.IDictionary{System.String,System.Object}'
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<String, Object>
+  nameWithType: IDictionary<String, Object>
+  fullName: System.Collections.Generic.IDictionary<System.String, System.Object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.String, System.Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+  commentId: '!:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{System.String,System.Object}}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<KeyValuePair<String, Object>>
+  nameWithType: ICollection<KeyValuePair<String, Object>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.Object>>
+  nameWithType.vb: ICollection(Of KeyValuePair(Of String, Object))
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Object))
+  name.vb: ICollection(Of KeyValuePair(Of String, Object))
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}
+  commentId: '!:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.String,System.Object}}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<String, Object>>
+  nameWithType: IEnumerable<KeyValuePair<String, Object>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String, System.Object>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of String, Object))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of System.String, System.Object))
+  name.vb: IEnumerable(Of KeyValuePair(Of String, Object))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<, >
+  nameWithType: IDictionary<, >
+  fullName: System.Collections.Generic.IDictionary<, >
+  nameWithType.vb: IDictionary(Of , )
+  fullName.vb: System.Collections.Generic.IDictionary(Of , )
+  name.vb: IDictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<>
+  nameWithType: ICollection<>
+  fullName: System.Collections.Generic.ICollection<>
+  nameWithType.vb: ICollection(Of )
+  fullName.vb: System.Collections.Generic.ICollection(Of )
+  name.vb: ICollection(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MessageProperties.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.#ctor
+  isExternal: true
+  name: MessageProperties
+  nameWithType: MessageProperties.MessageProperties
+  fullName: CoreWCF.Channels.MessageProperties.MessageProperties
+- uid: CoreWCF.Channels.MessageProperties
+  commentId: T:CoreWCF.Channels.MessageProperties
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageProperties
+  nameWithType: MessageProperties
+  fullName: CoreWCF.Channels.MessageProperties
+- uid: CoreWCF.Channels.MessageProperties.Add*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Add
+  isExternal: true
+  name: Add
+  nameWithType: MessageProperties.Add
+  fullName: CoreWCF.Channels.MessageProperties.Add
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.MessageProperties.Clear*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Clear
+  isExternal: true
+  name: Clear
+  nameWithType: MessageProperties.Clear
+  fullName: CoreWCF.Channels.MessageProperties.Clear
+- uid: CoreWCF.Channels.MessageProperties.CopyProperties*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.CopyProperties
+  isExternal: true
+  name: CopyProperties
+  nameWithType: MessageProperties.CopyProperties
+  fullName: CoreWCF.Channels.MessageProperties.CopyProperties
+- uid: CoreWCF.Channels.MessageProperties.ContainsKey*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.ContainsKey
+  isExternal: true
+  name: ContainsKey
+  nameWithType: MessageProperties.ContainsKey
+  fullName: CoreWCF.Channels.MessageProperties.ContainsKey
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.MessageProperties.Dispose*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Dispose
+  isExternal: true
+  name: Dispose
+  nameWithType: MessageProperties.Dispose
+  fullName: CoreWCF.Channels.MessageProperties.Dispose
+- uid: CoreWCF.Channels.MessageProperties.Remove*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Remove
+  isExternal: true
+  name: Remove
+  nameWithType: MessageProperties.Remove
+  fullName: CoreWCF.Channels.MessageProperties.Remove
+- uid: CoreWCF.Channels.MessageProperties.TryGetValue*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.TryGetValue
+  isExternal: true
+  name: TryGetValue
+  nameWithType: MessageProperties.TryGetValue
+  fullName: CoreWCF.Channels.MessageProperties.TryGetValue
+- uid: '{TProperty}'
+  commentId: '!:TProperty'
+  definition: TProperty
+  name: TProperty
+  nameWithType: TProperty
+  fullName: TProperty
+- uid: TProperty
+  commentId: '!:TProperty'
+  name: TProperty
+  nameWithType: TProperty
+  fullName: TProperty
+- uid: CoreWCF.Channels.MessageProperties.Item*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Item
+  isExternal: true
+  name: Item
+  nameWithType: MessageProperties.Item
+  fullName: CoreWCF.Channels.MessageProperties.Item
+- uid: CoreWCF.Channels.MessageProperties.Count*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Count
+  isExternal: true
+  name: Count
+  nameWithType: MessageProperties.Count
+  fullName: CoreWCF.Channels.MessageProperties.Count
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.MessageProperties.Encoder*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Encoder
+  isExternal: true
+  name: Encoder
+  nameWithType: MessageProperties.Encoder
+  fullName: CoreWCF.Channels.MessageProperties.Encoder
+- uid: CoreWCF.Channels.MessageEncoder
+  commentId: T:CoreWCF.Channels.MessageEncoder
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncoder
+  nameWithType: MessageEncoder
+  fullName: CoreWCF.Channels.MessageEncoder
+- uid: CoreWCF.Channels.MessageProperties.AllowOutputBatching*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.AllowOutputBatching
+  isExternal: true
+  name: AllowOutputBatching
+  nameWithType: MessageProperties.AllowOutputBatching
+  fullName: CoreWCF.Channels.MessageProperties.AllowOutputBatching
+- uid: CoreWCF.Channels.MessageProperties.IsFixedSize*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.IsFixedSize
+  isExternal: true
+  name: IsFixedSize
+  nameWithType: MessageProperties.IsFixedSize
+  fullName: CoreWCF.Channels.MessageProperties.IsFixedSize
+- uid: CoreWCF.Channels.MessageProperties.IsReadOnly*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.IsReadOnly
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: MessageProperties.IsReadOnly
+  fullName: CoreWCF.Channels.MessageProperties.IsReadOnly
+- uid: CoreWCF.Channels.MessageProperties.Keys*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Keys
+  isExternal: true
+  name: Keys
+  nameWithType: MessageProperties.Keys
+  fullName: CoreWCF.Channels.MessageProperties.Keys
+- uid: System.Collections.Generic.ICollection{System.String}
+  commentId: '!:System.Collections.Generic.ICollection{System.String}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<String>
+  nameWithType: ICollection<String>
+  fullName: System.Collections.Generic.ICollection<System.String>
+  nameWithType.vb: ICollection(Of String)
+  fullName.vb: System.Collections.Generic.ICollection(Of System.String)
+  name.vb: ICollection(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MessageProperties.Security*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Security
+  isExternal: true
+  name: Security
+  nameWithType: MessageProperties.Security
+  fullName: CoreWCF.Channels.MessageProperties.Security
+- uid: CoreWCF.Security.SecurityMessageProperty
+  commentId: T:CoreWCF.Security.SecurityMessageProperty
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityMessageProperty
+  nameWithType: SecurityMessageProperty
+  fullName: CoreWCF.Security.SecurityMessageProperty
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: CoreWCF.Channels.MessageProperties.Values*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Values
+  isExternal: true
+  name: Values
+  nameWithType: MessageProperties.Values
+  fullName: CoreWCF.Channels.MessageProperties.Values
+- uid: System.Collections.Generic.ICollection{System.Object}
+  commentId: '!:System.Collections.Generic.ICollection{System.Object}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<Object>
+  nameWithType: ICollection<Object>
+  fullName: System.Collections.Generic.ICollection<System.Object>
+  nameWithType.vb: ICollection(Of Object)
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Object)
+  name.vb: ICollection(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MessageProperties.Via*
+  commentId: Overload:CoreWCF.Channels.MessageProperties.Via
+  isExternal: true
+  name: Via
+  nameWithType: MessageProperties.Via
+  fullName: CoreWCF.Channels.MessageProperties.Via
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri

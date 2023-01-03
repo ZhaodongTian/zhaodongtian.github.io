@@ -1,0 +1,225 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.MetadataReference
+  commentId: T:CoreWCF.Description.MetadataReference
+  id: MetadataReference
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.MetadataReference.#ctor
+  - CoreWCF.Description.MetadataReference.#ctor(CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  - CoreWCF.Description.MetadataReference.Address
+  - CoreWCF.Description.MetadataReference.AddressVersion
+  langs:
+  - csharp
+  - vb
+  name: MetadataReference
+  nameWithType: MetadataReference
+  fullName: CoreWCF.Description.MetadataReference
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Represents a reference to a metadata document returned from a metadata exchange endpoint.
+  remarks: "When using Windows Communication Foundation (WCF), a metadata endpoint can be created for any service. The endpoint can be queried for metadata that allows a client to communicate with the endpoint. For example, a metadata endpoint can return a Web Services Description Language (WSDL) document that describes the methods and data types of a service.  \n\nThe &lt;xref:CoreWCF.Description.MetadataReference> class is used with WS-MetadataExchange responses where references are directly encoded as `&lt;mex:MetadataReference>` or `&lt;mex:MetadataLocation>`.  \n\nMetadata documents can reference many other documents that describe types and those documents can contain even more references. The &lt;xref:CoreWCF.Description.MetadataReference> class represents a single endpoint that returns a document that can itself contain multiple WSDL or XSD items as well as other metadata references to other WS-MetadataExchange endpoints.  \n\nInstances of the &lt;xref:CoreWCF.Description.MetadataReference> class are commonly used when processing a &lt;xref:CoreWCF.Description.MetadataSet>, which represents the total metadata exchange point. The &lt;xref:CoreWCF.Description.MetadataResolver> class is designed to resolve all references used to return the metadata. If, however, you need to examine each reference, use the &lt;xref:CoreWCF.Description.MetadataReference> class to represent each endpoint.  \n\n## Specifications  \nWCF implements the Web Services Metadata Exchange (WS-MetadataExchange) specification for returning metadata. That specification further uses the Web Services Transfer (WS-Transfer) specification to define the mechanism for retrieving XML-based data.  \n\n"
+  syntax:
+    content: 'public class MetadataReference : Object'
+    content.vb: >-
+      Public Class MetadataReference
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.Xml.Serialization.IXmlSerializable
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.MetadataReference.#ctor
+  commentId: M:CoreWCF.Description.MetadataReference.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Description.MetadataReference
+  langs:
+  - csharp
+  - vb
+  name: MetadataReference()
+  nameWithType: MetadataReference.MetadataReference()
+  fullName: CoreWCF.Description.MetadataReference.MetadataReference()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MetadataReference()
+    content.vb: Public Sub New
+  overload: CoreWCF.Description.MetadataReference.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataReference.#ctor(CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  commentId: M:CoreWCF.Description.MetadataReference.#ctor(CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  id: '#ctor(CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)'
+  parent: CoreWCF.Description.MetadataReference
+  langs:
+  - csharp
+  - vb
+  name: MetadataReference(EndpointAddress, AddressingVersion)
+  nameWithType: MetadataReference.MetadataReference(EndpointAddress, AddressingVersion)
+  fullName: CoreWCF.Description.MetadataReference.MetadataReference(CoreWCF.EndpointAddress, CoreWCF.Channels.AddressingVersion)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MetadataReference(EndpointAddress address, AddressingVersion addressVersion)
+    parameters:
+    - id: address
+      type: CoreWCF.EndpointAddress
+    - id: addressVersion
+      type: CoreWCF.Channels.AddressingVersion
+    content.vb: Public Sub New(address As EndpointAddress, addressVersion As AddressingVersion)
+  overload: CoreWCF.Description.MetadataReference.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataReference.Address
+  commentId: P:CoreWCF.Description.MetadataReference.Address
+  id: Address
+  parent: CoreWCF.Description.MetadataReference
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: MetadataReference.Address
+  fullName: CoreWCF.Description.MetadataReference.Address
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public EndpointAddress Address { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.EndpointAddress
+    content.vb: Public Property Address As EndpointAddress
+  overload: CoreWCF.Description.MetadataReference.Address*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataReference.AddressVersion
+  commentId: P:CoreWCF.Description.MetadataReference.AddressVersion
+  id: AddressVersion
+  parent: CoreWCF.Description.MetadataReference
+  langs:
+  - csharp
+  - vb
+  name: AddressVersion
+  nameWithType: MetadataReference.AddressVersion
+  fullName: CoreWCF.Description.MetadataReference.AddressVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public AddressingVersion AddressVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.AddressingVersion
+    content.vb: Public Property AddressVersion As AddressingVersion
+  overload: CoreWCF.Description.MetadataReference.AddressVersion*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Xml.Serialization.IXmlSerializable
+  isExternal: true
+  name: IXmlSerializable
+  nameWithType: IXmlSerializable
+  fullName: System.Xml.Serialization.IXmlSerializable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.MetadataReference.#ctor*
+  commentId: Overload:CoreWCF.Description.MetadataReference.#ctor
+  isExternal: true
+  name: MetadataReference
+  nameWithType: MetadataReference.MetadataReference
+  fullName: CoreWCF.Description.MetadataReference.MetadataReference
+- uid: CoreWCF.EndpointAddress
+  commentId: T:CoreWCF.EndpointAddress
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointAddress
+  fullName: CoreWCF.EndpointAddress
+- uid: CoreWCF.Channels.AddressingVersion
+  commentId: T:CoreWCF.Channels.AddressingVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: AddressingVersion
+  nameWithType: AddressingVersion
+  fullName: CoreWCF.Channels.AddressingVersion
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.MetadataReference.Address*
+  commentId: Overload:CoreWCF.Description.MetadataReference.Address
+  isExternal: true
+  name: Address
+  nameWithType: MetadataReference.Address
+  fullName: CoreWCF.Description.MetadataReference.Address
+- uid: CoreWCF.Description.MetadataReference.AddressVersion*
+  commentId: Overload:CoreWCF.Description.MetadataReference.AddressVersion
+  isExternal: true
+  name: AddressVersion
+  nameWithType: MetadataReference.AddressVersion
+  fullName: CoreWCF.Description.MetadataReference.AddressVersion

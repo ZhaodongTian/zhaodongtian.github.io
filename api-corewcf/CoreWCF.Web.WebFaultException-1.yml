@@ -1,0 +1,929 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Web.WebFaultException`1
+  commentId: T:CoreWCF.Web.WebFaultException`1
+  id: WebFaultException`1
+  parent: CoreWCF.Web
+  children:
+  - CoreWCF.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode)
+  - CoreWCF.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode,System.Collections.Generic.IEnumerable{System.Type})
+  - CoreWCF.Web.WebFaultException`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - CoreWCF.Web.WebFaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - CoreWCF.Web.WebFaultException`1.StatusCode
+  langs:
+  - csharp
+  - vb
+  name: WebFaultException<T>
+  nameWithType: WebFaultException<T>
+  fullName: CoreWCF.Web.WebFaultException<T>
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  summary: Represents a fault that can have an associated HTTP status code.
+  remarks: "When using a WCF REST endpoint (<xref:CoreWCF.WebHttpBinding> and <xref:CoreWCF.Description.WebHttpBehavior> or <xref:CoreWCF.Description.WebScriptEnablingBehavior>) the HTTP status code on the response is set accordingly. However, <xref:CoreWCF.Web.WebFaultException> can be used with non-REST endpoints and behaves like a regular &lt;xref:CoreWCF.FaultException>.  \n\nUse this class to return error details using the same format as the operation.  \n\n"
+  syntax:
+    content: 'public class WebFaultException<T> : FaultException<T>'
+    typeParameters:
+    - id: T
+      description: The serializable error detail type.
+    content.vb: >-
+      Public Class WebFaultException(Of T)
+          Inherits FaultException(Of T)
+  inheritance:
+  - System.Object
+  - CoreWCF.CommunicationException
+  - CoreWCF.FaultException
+  - CoreWCF.FaultException{{T}}
+  inheritedMembers:
+  - CoreWCF.FaultException{{T}}.CreateMessageFault
+  - CoreWCF.FaultException{{T}}.ToString
+  - CoreWCF.FaultException{{T}}.Detail
+  - CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  - CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  - CoreWCF.FaultException.Action
+  - CoreWCF.FaultException.Code
+  - CoreWCF.FaultException.Message
+  - CoreWCF.FaultException.Reason
+  nameWithType.vb: WebFaultException(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T)
+  name.vb: WebFaultException(Of T)
+- uid: CoreWCF.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode)
+  commentId: M:CoreWCF.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode)
+  summary: Initializes a new instance of the [WebFaultException<T>](xref:CoreWCF.Web.WebFaultException`1.#ctor*) class with the specified exception detail and the [WebFaultException(HttpStatusCode)](xref:CoreWCF.Web.WebFaultException`1.StatusCode*) to return to the caller.
+  id: '#ctor(`0,System.Net.HttpStatusCode)'
+  parent: CoreWCF.Web.WebFaultException`1
+  langs:
+  - csharp
+  - vb
+  name: WebFaultException(T, HttpStatusCode)
+  nameWithType: WebFaultException<T>.WebFaultException(T, HttpStatusCode)
+  fullName: CoreWCF.Web.WebFaultException<T>.WebFaultException(T, System.Net.HttpStatusCode)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebFaultException(T detail, HttpStatusCode statusCode)
+    parameters:
+    - id: detail
+      type: '{T}'
+      description: The fault.
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+      description: The HTTP status code to set on the response message
+    content.vb: Public Sub New(detail As T, statusCode As HttpStatusCode)
+  overload: CoreWCF.Web.WebFaultException`1.#ctor*
+  nameWithType.vb: WebFaultException(Of T).WebFaultException(T, HttpStatusCode)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).WebFaultException(T, System.Net.HttpStatusCode)
+- uid: CoreWCF.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode,System.Collections.Generic.IEnumerable{System.Type})
+  commentId: M:CoreWCF.Web.WebFaultException`1.#ctor(`0,System.Net.HttpStatusCode,System.Collections.Generic.IEnumerable{System.Type})
+  summary: Initializes a new instance of the [WebFaultException<T>](xref:CoreWCF.Web.WebFaultException`1) class with the specified exception detail and the <xref:CoreWCF.Web.WebFaultException`1.StatusCode*> to return to the caller.
+  id: '#ctor(`0,System.Net.HttpStatusCode,System.Collections.Generic.IEnumerable{System.Type})'
+  parent: CoreWCF.Web.WebFaultException`1
+  langs:
+  - csharp
+  - vb
+  name: WebFaultException(T, HttpStatusCode, IEnumerable<Type>)
+  nameWithType: WebFaultException<T>.WebFaultException(T, HttpStatusCode, IEnumerable<Type>)
+  fullName: CoreWCF.Web.WebFaultException<T>.WebFaultException(T, System.Net.HttpStatusCode, System.Collections.Generic.IEnumerable<System.Type>)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebFaultException(T detail, HttpStatusCode statusCode, IEnumerable<Type> knownTypes)
+    parameters:
+    - id: detail
+      type: '{T}'
+      description: The fault.
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+      description: The HTTP status code to set on the response message.
+    - id: knownTypes
+      type: System.Collections.Generic.IEnumerable{System.Type}
+      description: The set of known types that are used for serialization and deserialization.
+    content.vb: Public Sub New(detail As T, statusCode As HttpStatusCode, knownTypes As IEnumerable(Of Type))
+  overload: CoreWCF.Web.WebFaultException`1.#ctor*
+  nameWithType.vb: WebFaultException(Of T).WebFaultException(T, HttpStatusCode, IEnumerable(Of Type))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).WebFaultException(T, System.Net.HttpStatusCode, System.Collections.Generic.IEnumerable(Of System.Type))
+  name.vb: WebFaultException(T, HttpStatusCode, IEnumerable(Of Type))
+- uid: CoreWCF.Web.WebFaultException`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:CoreWCF.Web.WebFaultException`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  summary: Initializes a new instance of the [WebFaultException<T>](xref:CoreWCF.Web.WebFaultException-1) class with the specified <xref:System.Runtime.Serialization.SerializationInfo> and <xref:System.Runtime.Serialization.StreamingContext>.
+  id: '#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)'
+  parent: CoreWCF.Web.WebFaultException`1
+  langs:
+  - csharp
+  - vb
+  name: WebFaultException(SerializationInfo, StreamingContext)
+  nameWithType: WebFaultException<T>.WebFaultException(SerializationInfo, StreamingContext)
+  fullName: CoreWCF.Web.WebFaultException<T>.WebFaultException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: protected WebFaultException(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: System.Runtime.Serialization.SerializationInfo
+      description: The serialization info.
+    - id: context
+      type: System.Runtime.Serialization.StreamingContext
+      description: The streaming context.
+    content.vb: Protected Sub New(info As SerializationInfo, context As StreamingContext)
+  overload: CoreWCF.Web.WebFaultException`1.#ctor*
+  nameWithType.vb: WebFaultException(Of T).WebFaultException(SerializationInfo, StreamingContext)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).WebFaultException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+- uid: CoreWCF.Web.WebFaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:CoreWCF.Web.WebFaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  summary: An implementation of the <xref:CoreWCF.FaultException{{T}}.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)> method that is called when an object is serialized to a stream.
+  id: GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: CoreWCF.Web.WebFaultException`1
+  langs:
+  - csharp
+  - vb
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: WebFaultException<T>.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: CoreWCF.Web.WebFaultException<T>.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public override void GetObjectData(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: System.Runtime.Serialization.SerializationInfo
+      description: The serialization information to which the object data is added when serialized.
+    - id: context
+      type: System.Runtime.Serialization.StreamingContext
+      description: The destination for the serialized object.
+    content.vb: Public Overrides Sub GetObjectData(info As SerializationInfo, context As StreamingContext)
+  overridden: CoreWCF.FaultException{{T}}.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  overload: CoreWCF.Web.WebFaultException`1.GetObjectData*
+  nameWithType.vb: WebFaultException(Of T).GetObjectData(SerializationInfo, StreamingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+- uid: CoreWCF.Web.WebFaultException`1.StatusCode
+  commentId: P:CoreWCF.Web.WebFaultException`1.StatusCode
+  summary: Gets the <xref:System.Net.HttpStatusCode> associated with the fault.
+  id: StatusCode
+  parent: CoreWCF.Web.WebFaultException`1
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: WebFaultException<T>.StatusCode
+  fullName: CoreWCF.Web.WebFaultException<T>.StatusCode
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public HttpStatusCode StatusCode { get; }
+    parameters: []
+    return:
+      type: System.Net.HttpStatusCode
+      description: The HTTP status code associated with the fault.
+    content.vb: Public ReadOnly Property StatusCode As HttpStatusCode
+  overload: CoreWCF.Web.WebFaultException`1.StatusCode*
+  nameWithType.vb: WebFaultException(Of T).StatusCode
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).StatusCode
+references:
+- uid: CoreWCF.Web
+  commentId: N:CoreWCF.Web
+  isExternal: true
+  name: CoreWCF.Web
+  nameWithType: CoreWCF.Web
+  fullName: CoreWCF.Web
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.CommunicationException
+  commentId: T:CoreWCF.CommunicationException
+  parent: CoreWCF
+  isExternal: true
+  name: CommunicationException
+  nameWithType: CommunicationException
+  fullName: CoreWCF.CommunicationException
+- uid: CoreWCF.FaultException
+  commentId: T:CoreWCF.FaultException
+  parent: CoreWCF
+  isExternal: true
+  name: FaultException
+  nameWithType: FaultException
+  fullName: CoreWCF.FaultException
+- uid: CoreWCF.FaultException{{T}}
+  commentId: T:CoreWCF.FaultException{`0}
+  parent: CoreWCF
+  definition: CoreWCF.FaultException`1
+  name: FaultException<T>
+  nameWithType: FaultException<T>
+  fullName: CoreWCF.FaultException<T>
+  nameWithType.vb: FaultException(Of T)
+  fullName.vb: CoreWCF.FaultException(Of T)
+  name.vb: FaultException(Of T)
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1
+    name: FaultException
+    nameWithType: FaultException
+    fullName: CoreWCF.FaultException
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.FaultException`1
+    name: FaultException
+    nameWithType: FaultException
+    fullName: CoreWCF.FaultException
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException{{T}}.CreateMessageFault
+  commentId: M:CoreWCF.FaultException{`0}.CreateMessageFault
+  parent: CoreWCF.FaultException{{T}}
+  definition: CoreWCF.FaultException`1.CreateMessageFault
+  name: CreateMessageFault()
+  nameWithType: FaultException<T>.CreateMessageFault()
+  fullName: CoreWCF.FaultException<T>.CreateMessageFault()
+  nameWithType.vb: FaultException(Of T).CreateMessageFault()
+  fullName.vb: CoreWCF.FaultException(Of T).CreateMessageFault()
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1.CreateMessageFault
+    name: CreateMessageFault
+    nameWithType: FaultException<T>.CreateMessageFault
+    fullName: CoreWCF.FaultException<T>.CreateMessageFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException`1.CreateMessageFault
+    name: CreateMessageFault
+    nameWithType: FaultException(Of T).CreateMessageFault
+    fullName: CoreWCF.FaultException(Of T).CreateMessageFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException{{T}}.ToString
+  commentId: M:CoreWCF.FaultException{`0}.ToString
+  parent: CoreWCF.FaultException{{T}}
+  definition: CoreWCF.FaultException`1.ToString
+  name: ToString()
+  nameWithType: FaultException<T>.ToString()
+  fullName: CoreWCF.FaultException<T>.ToString()
+  nameWithType.vb: FaultException(Of T).ToString()
+  fullName.vb: CoreWCF.FaultException(Of T).ToString()
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1.ToString
+    name: ToString
+    nameWithType: FaultException<T>.ToString
+    fullName: CoreWCF.FaultException<T>.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException`1.ToString
+    name: ToString
+    nameWithType: FaultException(Of T).ToString
+    fullName: CoreWCF.FaultException(Of T).ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException{{T}}.Detail
+  commentId: P:CoreWCF.FaultException{`0}.Detail
+  parent: CoreWCF.FaultException{{T}}
+  definition: CoreWCF.FaultException`1.Detail
+  name: Detail
+  nameWithType: FaultException<T>.Detail
+  fullName: CoreWCF.FaultException<T>.Detail
+  nameWithType.vb: FaultException(Of T).Detail
+  fullName.vb: CoreWCF.FaultException(Of T).Detail
+- uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  commentId: M:CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  parent: CoreWCF.FaultException
+  isExternal: true
+  name: CreateFault(MessageFault, Type[])
+  nameWithType: FaultException.CreateFault(MessageFault, Type[])
+  fullName: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.Type[])
+  nameWithType.vb: FaultException.CreateFault(MessageFault, Type())
+  fullName.vb: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.Type())
+  name.vb: CreateFault(MessageFault, Type())
+  spec.csharp:
+  - uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+    name: CreateFault
+    nameWithType: FaultException.CreateFault
+    fullName: CoreWCF.FaultException.CreateFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.MessageFault
+    name: MessageFault
+    nameWithType: MessageFault
+    fullName: CoreWCF.Channels.MessageFault
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+    name: CreateFault
+    nameWithType: FaultException.CreateFault
+    fullName: CoreWCF.FaultException.CreateFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.MessageFault
+    name: MessageFault
+    nameWithType: MessageFault
+    fullName: CoreWCF.Channels.MessageFault
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  commentId: M:CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  parent: CoreWCF.FaultException
+  isExternal: true
+  name: CreateFault(MessageFault, String, Type[])
+  nameWithType: FaultException.CreateFault(MessageFault, String, Type[])
+  fullName: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.String, System.Type[])
+  nameWithType.vb: FaultException.CreateFault(MessageFault, String, Type())
+  fullName.vb: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.String, System.Type())
+  name.vb: CreateFault(MessageFault, String, Type())
+  spec.csharp:
+  - uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+    name: CreateFault
+    nameWithType: FaultException.CreateFault
+    fullName: CoreWCF.FaultException.CreateFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.MessageFault
+    name: MessageFault
+    nameWithType: MessageFault
+    fullName: CoreWCF.Channels.MessageFault
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+    name: CreateFault
+    nameWithType: FaultException.CreateFault
+    fullName: CoreWCF.FaultException.CreateFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.MessageFault
+    name: MessageFault
+    nameWithType: MessageFault
+    fullName: CoreWCF.Channels.MessageFault
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException.Action
+  commentId: P:CoreWCF.FaultException.Action
+  parent: CoreWCF.FaultException
+  isExternal: true
+  name: Action
+  nameWithType: FaultException.Action
+  fullName: CoreWCF.FaultException.Action
+- uid: CoreWCF.FaultException.Code
+  commentId: P:CoreWCF.FaultException.Code
+  parent: CoreWCF.FaultException
+  isExternal: true
+  name: Code
+  nameWithType: FaultException.Code
+  fullName: CoreWCF.FaultException.Code
+- uid: CoreWCF.FaultException.Message
+  commentId: P:CoreWCF.FaultException.Message
+  parent: CoreWCF.FaultException
+  isExternal: true
+  name: Message
+  nameWithType: FaultException.Message
+  fullName: CoreWCF.FaultException.Message
+- uid: CoreWCF.FaultException.Reason
+  commentId: P:CoreWCF.FaultException.Reason
+  parent: CoreWCF.FaultException
+  isExternal: true
+  name: Reason
+  nameWithType: FaultException.Reason
+  fullName: CoreWCF.FaultException.Reason
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.FaultException`1
+  commentId: T:CoreWCF.FaultException`1
+  isExternal: true
+  name: FaultException<TDetail>
+  nameWithType: FaultException<TDetail>
+  fullName: CoreWCF.FaultException<TDetail>
+  nameWithType.vb: FaultException(Of TDetail)
+  fullName.vb: CoreWCF.FaultException(Of TDetail)
+  name.vb: FaultException(Of TDetail)
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1
+    name: FaultException
+    nameWithType: FaultException
+    fullName: CoreWCF.FaultException
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TDetail
+    nameWithType: TDetail
+    fullName: TDetail
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.FaultException`1
+    name: FaultException
+    nameWithType: FaultException
+    fullName: CoreWCF.FaultException
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TDetail
+    nameWithType: TDetail
+    fullName: TDetail
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException`1.CreateMessageFault
+  commentId: M:CoreWCF.FaultException`1.CreateMessageFault
+  isExternal: true
+  name: CreateMessageFault()
+  nameWithType: FaultException<TDetail>.CreateMessageFault()
+  fullName: CoreWCF.FaultException<TDetail>.CreateMessageFault()
+  nameWithType.vb: FaultException(Of TDetail).CreateMessageFault()
+  fullName.vb: CoreWCF.FaultException(Of TDetail).CreateMessageFault()
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1.CreateMessageFault
+    name: CreateMessageFault
+    nameWithType: FaultException<TDetail>.CreateMessageFault
+    fullName: CoreWCF.FaultException<TDetail>.CreateMessageFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException`1.CreateMessageFault
+    name: CreateMessageFault
+    nameWithType: FaultException(Of TDetail).CreateMessageFault
+    fullName: CoreWCF.FaultException(Of TDetail).CreateMessageFault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException`1.ToString
+  commentId: M:CoreWCF.FaultException`1.ToString
+  isExternal: true
+  name: ToString()
+  nameWithType: FaultException<TDetail>.ToString()
+  fullName: CoreWCF.FaultException<TDetail>.ToString()
+  nameWithType.vb: FaultException(Of TDetail).ToString()
+  fullName.vb: CoreWCF.FaultException(Of TDetail).ToString()
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1.ToString
+    name: ToString
+    nameWithType: FaultException<TDetail>.ToString
+    fullName: CoreWCF.FaultException<TDetail>.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException`1.ToString
+    name: ToString
+    nameWithType: FaultException(Of TDetail).ToString
+    fullName: CoreWCF.FaultException(Of TDetail).ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.FaultException`1.Detail
+  commentId: P:CoreWCF.FaultException`1.Detail
+  isExternal: true
+  name: Detail
+  nameWithType: FaultException<TDetail>.Detail
+  fullName: CoreWCF.FaultException<TDetail>.Detail
+  nameWithType.vb: FaultException(Of TDetail).Detail
+  fullName.vb: CoreWCF.FaultException(Of TDetail).Detail
+- uid: CoreWCF.Web.WebFaultException`1.#ctor*
+  commentId: Overload:CoreWCF.Web.WebFaultException`1.#ctor
+  isExternal: true
+  name: WebFaultException
+  nameWithType: WebFaultException<T>.WebFaultException
+  fullName: CoreWCF.Web.WebFaultException<T>.WebFaultException
+  nameWithType.vb: WebFaultException(Of T).WebFaultException
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).WebFaultException
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Net.HttpStatusCode
+  isExternal: true
+  name: HttpStatusCode
+  nameWithType: HttpStatusCode
+  fullName: System.Net.HttpStatusCode
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: '!:System.Collections.Generic.IEnumerable{System.Type}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Runtime.Serialization.SerializationInfo
+  isExternal: true
+  name: SerializationInfo
+  nameWithType: SerializationInfo
+  fullName: System.Runtime.Serialization.SerializationInfo
+- uid: System.Runtime.Serialization.StreamingContext
+  isExternal: true
+  name: StreamingContext
+  nameWithType: StreamingContext
+  fullName: System.Runtime.Serialization.StreamingContext
+- uid: CoreWCF.FaultException{{T}}.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:CoreWCF.FaultException{`0}.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: CoreWCF.FaultException{{T}}
+  definition: CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: FaultException<T>.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: CoreWCF.FaultException<T>.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType.vb: FaultException(Of T).GetObjectData(SerializationInfo, StreamingContext)
+  fullName.vb: CoreWCF.FaultException(Of T).GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: FaultException<T>.GetObjectData
+    fullName: CoreWCF.FaultException<T>.GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: FaultException(Of T).GetObjectData
+    fullName: CoreWCF.FaultException(Of T).GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebFaultException`1.GetObjectData*
+  commentId: Overload:CoreWCF.Web.WebFaultException`1.GetObjectData
+  isExternal: true
+  name: GetObjectData
+  nameWithType: WebFaultException<T>.GetObjectData
+  fullName: CoreWCF.Web.WebFaultException<T>.GetObjectData
+  nameWithType.vb: WebFaultException(Of T).GetObjectData
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).GetObjectData
+- uid: CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  isExternal: true
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: FaultException<TDetail>.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: CoreWCF.FaultException<TDetail>.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType.vb: FaultException(Of TDetail).GetObjectData(SerializationInfo, StreamingContext)
+  fullName.vb: CoreWCF.FaultException(Of TDetail).GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  spec.csharp:
+  - uid: CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: FaultException<TDetail>.GetObjectData
+    fullName: CoreWCF.FaultException<TDetail>.GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.FaultException`1.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    name: GetObjectData
+    nameWithType: FaultException(Of TDetail).GetObjectData
+    fullName: CoreWCF.FaultException(Of TDetail).GetObjectData
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Runtime.Serialization.SerializationInfo
+    name: SerializationInfo
+    nameWithType: SerializationInfo
+    fullName: System.Runtime.Serialization.SerializationInfo
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Runtime.Serialization.StreamingContext
+    name: StreamingContext
+    nameWithType: StreamingContext
+    fullName: System.Runtime.Serialization.StreamingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebFaultException`1.StatusCode*
+  commentId: Overload:CoreWCF.Web.WebFaultException`1.StatusCode
+  isExternal: true
+  name: StatusCode
+  nameWithType: WebFaultException<T>.StatusCode
+  fullName: CoreWCF.Web.WebFaultException<T>.StatusCode
+  nameWithType.vb: WebFaultException(Of T).StatusCode
+  fullName.vb: CoreWCF.Web.WebFaultException(Of T).StatusCode

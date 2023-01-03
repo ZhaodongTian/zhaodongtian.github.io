@@ -1,0 +1,491 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.TypedMessageConverter
+  commentId: T:CoreWCF.Description.TypedMessageConverter
+  id: TypedMessageConverter
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.TypedMessageConverter.#ctor
+  - CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String)
+  - CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,CoreWCF.DataContractFormatAttribute)
+  - CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  - CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String)
+  - CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,CoreWCF.DataContractFormatAttribute)
+  - CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  - CoreWCF.Description.TypedMessageConverter.FromMessage(CoreWCF.Channels.Message)
+  - CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object)
+  - CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object,CoreWCF.Channels.MessageVersion)
+  langs:
+  - csharp
+  - vb
+  name: TypedMessageConverter
+  nameWithType: TypedMessageConverter
+  fullName: CoreWCF.Description.TypedMessageConverter
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Converts a typed message to an untyped message, or an untyped message to a typed message.
+  remarks: "This class provides functionalities to convert a typed message to an untyped message, or an untyped message to a typed message. A typed message is an instance of a type that has the &lt;xref:CoreWCF.MessageContractAttribute> attribute annotated. An untyped message is one that is an instance of the &lt;xref:CoreWCF.Channels.Message> class.  You can annotate a type with the &lt;xref:CoreWCF.MessageContractAttribute> to create a custom message type, and then use the methods provided by this class to convert it to an untyped &lt;xref:CoreWCF.Channels.Message> instance.  \n\n"
+  syntax:
+    content: 'public abstract class TypedMessageConverter : Object'
+    content.vb: >-
+      Public MustInherit Class TypedMessageConverter
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String)
+  id: Create(System.Type,System.String)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: Create(Type, String)
+  nameWithType: TypedMessageConverter.Create(Type, String)
+  fullName: CoreWCF.Description.TypedMessageConverter.Create(System.Type, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static TypedMessageConverter Create(Type messageContract, string action)
+    parameters:
+    - id: messageContract
+      type: System.Type
+    - id: action
+      type: System.String
+    return:
+      type: CoreWCF.Description.TypedMessageConverter
+    content.vb: Public Shared Function Create(messageContract As Type, action As String) As TypedMessageConverter
+  overload: CoreWCF.Description.TypedMessageConverter.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String)
+  id: Create(System.Type,System.String,System.String)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: Create(Type, String, String)
+  nameWithType: TypedMessageConverter.Create(Type, String, String)
+  fullName: CoreWCF.Description.TypedMessageConverter.Create(System.Type, System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static TypedMessageConverter Create(Type messageContract, string action, string defaultNamespace)
+    parameters:
+    - id: messageContract
+      type: System.Type
+    - id: action
+      type: System.String
+    - id: defaultNamespace
+      type: System.String
+    return:
+      type: CoreWCF.Description.TypedMessageConverter
+    content.vb: Public Shared Function Create(messageContract As Type, action As String, defaultNamespace As String) As TypedMessageConverter
+  overload: CoreWCF.Description.TypedMessageConverter.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  id: Create(System.Type,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: Create(Type, String, XmlSerializerFormatAttribute)
+  nameWithType: TypedMessageConverter.Create(Type, String, XmlSerializerFormatAttribute)
+  fullName: CoreWCF.Description.TypedMessageConverter.Create(System.Type, System.String, CoreWCF.XmlSerializerFormatAttribute)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static TypedMessageConverter Create(Type messageContract, string action, XmlSerializerFormatAttribute formatterAttribute)
+    parameters:
+    - id: messageContract
+      type: System.Type
+    - id: action
+      type: System.String
+    - id: formatterAttribute
+      type: CoreWCF.XmlSerializerFormatAttribute
+    return:
+      type: CoreWCF.Description.TypedMessageConverter
+    content.vb: Public Shared Function Create(messageContract As Type, action As String, formatterAttribute As XmlSerializerFormatAttribute) As TypedMessageConverter
+  overload: CoreWCF.Description.TypedMessageConverter.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,CoreWCF.DataContractFormatAttribute)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,CoreWCF.DataContractFormatAttribute)
+  id: Create(System.Type,System.String,CoreWCF.DataContractFormatAttribute)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: Create(Type, String, DataContractFormatAttribute)
+  nameWithType: TypedMessageConverter.Create(Type, String, DataContractFormatAttribute)
+  fullName: CoreWCF.Description.TypedMessageConverter.Create(System.Type, System.String, CoreWCF.DataContractFormatAttribute)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static TypedMessageConverter Create(Type messageContract, string action, DataContractFormatAttribute formatterAttribute)
+    parameters:
+    - id: messageContract
+      type: System.Type
+    - id: action
+      type: System.String
+    - id: formatterAttribute
+      type: CoreWCF.DataContractFormatAttribute
+    return:
+      type: CoreWCF.Description.TypedMessageConverter
+    content.vb: Public Shared Function Create(messageContract As Type, action As String, formatterAttribute As DataContractFormatAttribute) As TypedMessageConverter
+  overload: CoreWCF.Description.TypedMessageConverter.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  id: Create(System.Type,System.String,System.String,CoreWCF.XmlSerializerFormatAttribute)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: Create(Type, String, String, XmlSerializerFormatAttribute)
+  nameWithType: TypedMessageConverter.Create(Type, String, String, XmlSerializerFormatAttribute)
+  fullName: CoreWCF.Description.TypedMessageConverter.Create(System.Type, System.String, System.String, CoreWCF.XmlSerializerFormatAttribute)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static TypedMessageConverter Create(Type messageContract, string action, string defaultNamespace, XmlSerializerFormatAttribute formatterAttribute)
+    parameters:
+    - id: messageContract
+      type: System.Type
+    - id: action
+      type: System.String
+    - id: defaultNamespace
+      type: System.String
+    - id: formatterAttribute
+      type: CoreWCF.XmlSerializerFormatAttribute
+    return:
+      type: CoreWCF.Description.TypedMessageConverter
+    content.vb: Public Shared Function Create(messageContract As Type, action As String, defaultNamespace As String, formatterAttribute As XmlSerializerFormatAttribute) As TypedMessageConverter
+  overload: CoreWCF.Description.TypedMessageConverter.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,CoreWCF.DataContractFormatAttribute)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.Create(System.Type,System.String,System.String,CoreWCF.DataContractFormatAttribute)
+  id: Create(System.Type,System.String,System.String,CoreWCF.DataContractFormatAttribute)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: Create(Type, String, String, DataContractFormatAttribute)
+  nameWithType: TypedMessageConverter.Create(Type, String, String, DataContractFormatAttribute)
+  fullName: CoreWCF.Description.TypedMessageConverter.Create(System.Type, System.String, System.String, CoreWCF.DataContractFormatAttribute)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static TypedMessageConverter Create(Type messageContract, string action, string defaultNamespace, DataContractFormatAttribute formatterAttribute)
+    parameters:
+    - id: messageContract
+      type: System.Type
+    - id: action
+      type: System.String
+    - id: defaultNamespace
+      type: System.String
+    - id: formatterAttribute
+      type: CoreWCF.DataContractFormatAttribute
+    return:
+      type: CoreWCF.Description.TypedMessageConverter
+    content.vb: Public Shared Function Create(messageContract As Type, action As String, defaultNamespace As String, formatterAttribute As DataContractFormatAttribute) As TypedMessageConverter
+  overload: CoreWCF.Description.TypedMessageConverter.Create*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object)
+  id: ToMessage(System.Object)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: ToMessage(Object)
+  nameWithType: TypedMessageConverter.ToMessage(Object)
+  fullName: CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract Message ToMessage(object typedMessage)
+    parameters:
+    - id: typedMessage
+      type: System.Object
+    return:
+      type: CoreWCF.Channels.Message
+    content.vb: Public MustOverride Function ToMessage(typedMessage As Object) As Message
+  overload: CoreWCF.Description.TypedMessageConverter.ToMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object,CoreWCF.Channels.MessageVersion)
+  id: ToMessage(System.Object,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: ToMessage(Object, MessageVersion)
+  nameWithType: TypedMessageConverter.ToMessage(Object, MessageVersion)
+  fullName: CoreWCF.Description.TypedMessageConverter.ToMessage(System.Object, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract Message ToMessage(object typedMessage, MessageVersion version)
+    parameters:
+    - id: typedMessage
+      type: System.Object
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+    return:
+      type: CoreWCF.Channels.Message
+    content.vb: Public MustOverride Function ToMessage(typedMessage As Object, version As MessageVersion) As Message
+  overload: CoreWCF.Description.TypedMessageConverter.ToMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.TypedMessageConverter.FromMessage(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Description.TypedMessageConverter.FromMessage(CoreWCF.Channels.Message)
+  id: FromMessage(CoreWCF.Channels.Message)
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: FromMessage(Message)
+  nameWithType: TypedMessageConverter.FromMessage(Message)
+  fullName: CoreWCF.Description.TypedMessageConverter.FromMessage(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract object FromMessage(Message message)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Object
+    content.vb: Public MustOverride Function FromMessage(message As Message) As Object
+  overload: CoreWCF.Description.TypedMessageConverter.FromMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.TypedMessageConverter.#ctor
+  commentId: M:CoreWCF.Description.TypedMessageConverter.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Description.TypedMessageConverter
+  langs:
+  - csharp
+  - vb
+  name: TypedMessageConverter()
+  nameWithType: TypedMessageConverter.TypedMessageConverter()
+  fullName: CoreWCF.Description.TypedMessageConverter.TypedMessageConverter()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected TypedMessageConverter()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Description.TypedMessageConverter.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.TypedMessageConverter.Create*
+  commentId: Overload:CoreWCF.Description.TypedMessageConverter.Create
+  isExternal: true
+  name: Create
+  nameWithType: TypedMessageConverter.Create
+  fullName: CoreWCF.Description.TypedMessageConverter.Create
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Description.TypedMessageConverter
+  commentId: T:CoreWCF.Description.TypedMessageConverter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: TypedMessageConverter
+  nameWithType: TypedMessageConverter
+  fullName: CoreWCF.Description.TypedMessageConverter
+- uid: CoreWCF.XmlSerializerFormatAttribute
+  commentId: T:CoreWCF.XmlSerializerFormatAttribute
+  parent: CoreWCF
+  isExternal: true
+  name: XmlSerializerFormatAttribute
+  nameWithType: XmlSerializerFormatAttribute
+  fullName: CoreWCF.XmlSerializerFormatAttribute
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.DataContractFormatAttribute
+  commentId: T:CoreWCF.DataContractFormatAttribute
+  parent: CoreWCF
+  isExternal: true
+  name: DataContractFormatAttribute
+  nameWithType: DataContractFormatAttribute
+  fullName: CoreWCF.DataContractFormatAttribute
+- uid: CoreWCF.Description.TypedMessageConverter.ToMessage*
+  commentId: Overload:CoreWCF.Description.TypedMessageConverter.ToMessage
+  isExternal: true
+  name: ToMessage
+  nameWithType: TypedMessageConverter.ToMessage
+  fullName: CoreWCF.Description.TypedMessageConverter.ToMessage
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.Description.TypedMessageConverter.FromMessage*
+  commentId: Overload:CoreWCF.Description.TypedMessageConverter.FromMessage
+  isExternal: true
+  name: FromMessage
+  nameWithType: TypedMessageConverter.FromMessage
+  fullName: CoreWCF.Description.TypedMessageConverter.FromMessage
+- uid: CoreWCF.Description.TypedMessageConverter.#ctor*
+  commentId: Overload:CoreWCF.Description.TypedMessageConverter.#ctor
+  isExternal: true
+  name: TypedMessageConverter
+  nameWithType: TypedMessageConverter.TypedMessageConverter
+  fullName: CoreWCF.Description.TypedMessageConverter.TypedMessageConverter

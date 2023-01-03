@@ -1,0 +1,253 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  id: SecurityTokenManager
+  parent: CoreWCF.IdentityModel.Selectors
+  children:
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenManager.#ctor
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver@)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer(CoreWCF.IdentityModel.Selectors.SecurityTokenVersion)
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenManager
+  nameWithType: SecurityTokenManager
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  summary: Represents a security token manager that specifies how security tokens are provided, authenticated, and serialized.
+  remarks: "Use the &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager> class when you need a custom security token, security token authenticator, or security token provider. Use a custom security token to handle credentials that WCF does not support. Use a custom security token authenticator when the authentication methods WCF provides are not sufficient. A &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager> class returns a security token authenticator in the &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator%28System.IdentityModel.Selectors.SecurityTokenRequirement%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%40%29> method. A security token provider provides security tokens for outgoing SOAP messages. A &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager> class returns a security token provider in the &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%28System.IdentityModel.Selectors.SecurityTokenRequirement%29> method.  \n\nFor more information about using custom security token authenticators and security token providers, see [Custom Credential and Credential Validation](/dotnet/framework/wcf/extending/custom-credential-and-credential-validation). For more information about creating a custom security token, see [How to: Create a Custom Token](/dotnet/framework/wcf/extending/how-to-create-a-custom-token).  \n\n"
+  syntax:
+    content: 'public abstract class SecurityTokenManager : Object'
+    content.vb: >-
+      Public MustInherit Class SecurityTokenManager
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement)
+  id: CreateSecurityTokenProvider(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  langs:
+  - csharp
+  - vb
+  name: CreateSecurityTokenProvider(SecurityTokenRequirement)
+  nameWithType: SecurityTokenManager.CreateSecurityTokenProvider(SecurityTokenRequirement)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public abstract SecurityTokenProvider CreateSecurityTokenProvider(SecurityTokenRequirement tokenRequirement)
+    parameters:
+    - id: tokenRequirement
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement
+    return:
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+    content.vb: Public MustOverride Function CreateSecurityTokenProvider(tokenRequirement As SecurityTokenRequirement) As SecurityTokenProvider
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer(CoreWCF.IdentityModel.Selectors.SecurityTokenVersion)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer(CoreWCF.IdentityModel.Selectors.SecurityTokenVersion)
+  id: CreateSecurityTokenSerializer(CoreWCF.IdentityModel.Selectors.SecurityTokenVersion)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  langs:
+  - csharp
+  - vb
+  name: CreateSecurityTokenSerializer(SecurityTokenVersion)
+  nameWithType: SecurityTokenManager.CreateSecurityTokenSerializer(SecurityTokenVersion)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer(CoreWCF.IdentityModel.Selectors.SecurityTokenVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public abstract SecurityTokenSerializer CreateSecurityTokenSerializer(SecurityTokenVersion version)
+    parameters:
+    - id: version
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenVersion
+    return:
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+    content.vb: Public MustOverride Function CreateSecurityTokenSerializer(version As SecurityTokenVersion) As SecurityTokenSerializer
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver@)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver@)
+  id: CreateSecurityTokenAuthenticator(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver@)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  langs:
+  - csharp
+  - vb
+  name: CreateSecurityTokenAuthenticator(SecurityTokenRequirement, out SecurityTokenResolver)
+  nameWithType: SecurityTokenManager.CreateSecurityTokenAuthenticator(SecurityTokenRequirement, out SecurityTokenResolver)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement, out CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public abstract SecurityTokenAuthenticator CreateSecurityTokenAuthenticator(SecurityTokenRequirement tokenRequirement, out SecurityTokenResolver outOfBandTokenResolver)
+    parameters:
+    - id: tokenRequirement
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement
+    - id: outOfBandTokenResolver
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    return:
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenAuthenticator
+    content.vb: Public MustOverride Function CreateSecurityTokenAuthenticator(tokenRequirement As SecurityTokenRequirement, ByRef outOfBandTokenResolver As SecurityTokenResolver) As SecurityTokenAuthenticator
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator*
+  nameWithType.vb: SecurityTokenManager.CreateSecurityTokenAuthenticator(SecurityTokenRequirement, ByRef SecurityTokenResolver)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement, ByRef CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  name.vb: CreateSecurityTokenAuthenticator(SecurityTokenRequirement, ByRef SecurityTokenResolver)
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.#ctor
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenManager
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenManager()
+  nameWithType: SecurityTokenManager.SecurityTokenManager()
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.SecurityTokenManager()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected SecurityTokenManager()
+    content.vb: Protected Sub New
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: CoreWCF.IdentityModel.Selectors
+  commentId: N:CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: CoreWCF.IdentityModel.Selectors
+  nameWithType: CoreWCF.IdentityModel.Selectors
+  fullName: CoreWCF.IdentityModel.Selectors
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider
+  isExternal: true
+  name: CreateSecurityTokenProvider
+  nameWithType: SecurityTokenManager.CreateSecurityTokenProvider
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenRequirement
+  nameWithType: SecurityTokenRequirement
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenProvider
+  nameWithType: SecurityTokenProvider
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer
+  isExternal: true
+  name: CreateSecurityTokenSerializer
+  nameWithType: SecurityTokenManager.CreateSecurityTokenSerializer
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenSerializer
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenVersion
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenVersion
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenVersion
+  nameWithType: SecurityTokenVersion
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenVersion
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenSerializer
+  nameWithType: SecurityTokenSerializer
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator
+  isExternal: true
+  name: CreateSecurityTokenAuthenticator
+  nameWithType: SecurityTokenManager.CreateSecurityTokenAuthenticator
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenAuthenticator
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenResolver
+  nameWithType: SecurityTokenResolver
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenAuthenticator
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenAuthenticator
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenAuthenticator
+  nameWithType: SecurityTokenAuthenticator
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenAuthenticator
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenManager.#ctor
+  isExternal: true
+  name: SecurityTokenManager
+  nameWithType: SecurityTokenManager.SecurityTokenManager
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenManager.SecurityTokenManager

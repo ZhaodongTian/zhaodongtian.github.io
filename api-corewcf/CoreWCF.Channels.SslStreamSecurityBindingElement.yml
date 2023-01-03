@@ -1,0 +1,913 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement
+  commentId: T:CoreWCF.Channels.SslStreamSecurityBindingElement
+  id: SslStreamSecurityBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor(CoreWCF.Channels.SslStreamSecurityBindingElement)
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.Clone
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate
+  - CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols
+  langs:
+  - csharp
+  - vb
+  name: SslStreamSecurityBindingElement
+  nameWithType: SslStreamSecurityBindingElement
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents a custom binding element that supports channel security using an SSL stream.
+  remarks: "Transports that use a stream-oriented protocol such as TCP and named pipes support stream-based transport upgrades. Specifically, Windows Communication Foundation (WCF) provides security upgrades. The configuration of this transport security is encapsulated by this class as well as by <xref:CoreWCF.Channels.SslStreamSecurityBindingElement>, which can be configured and added to a custom binding. In addition, a third party can write their own custom `StreamSecurityBindingElement`. These binding elements extend the <xref:CoreWCF.Channels.StreamUpgradeBindingElement> class that is called to build the client and server stream upgrade providers.  \n\nA custom binding contains a collection of binding elements arranged in a specific order: the element that represents the top of the binding stack is added first, the next element down in the binding stack is added second, and so on.  \n\n### To add this class to a binding  \n\n1.  Create a <xref:CoreWCF.Channels.BindingElementCollection>.  \n\n2.  Create custom binding elements that are above this binding element in the binding stack, such as the optional <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> and <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>.  \n\n3.  Add the created elements in the order described previously to the <xref:CoreWCF.Channels.BindingElementCollection> using the [InsertItem](xref:CoreWCF.Channels.BindingElementCollection.InsertItem(System.Int32,CoreWCF.Channels.BindingElement)) method.  \n\n4.  Create an instance of <xref:CoreWCF.Channels.SslStreamSecurityBindingElement> and add it to the collection.  \n\n5.  Add any additional custom binding elements to the collection, such as <xref:CoreWCF.Channels.TcpTransportBindingElement>.  \n\nThere are three scenarios in which you must either manually specify the correct UPN/SPN on the client endpoint after importing the WSDL, or specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client&apos;s <xref:CoreWCF.Channels.SslStreamSecurityBindingElement>.  \n\n1.  No service identity is published in WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> and HTTPS are used (for example, a <xref:CoreWCF.WSHttpBinding> with SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>). If the service is not running with the machine identity, you must manually specify the correct UPN/SPN on the client endpoint after importing the WSDL.  \n\n2.  DNS service identity is published in WSDL. <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> and <xref:CoreWCF.Channels.SslStreamSecurityBindingElement> are used (for example, <xref:CoreWCF.NetTcpBinding> with SecurityMode = <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>) instead of a UPN/SPN. If the service is not running with the machine identity, or the DNS identity is not the machine&apos;s identity, you must manually specify the correct UPN/SPN on the client endpoint after importing the WSDL.  \n\n3.  DNS identity is published in WSDL. If <xref:CoreWCF.Channels.SslStreamSecurityBindingElement> is overridden on the client, you must specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client&apos;s <xref:CoreWCF.Channels.SslStreamSecurityBindingElement>.  \n\nThe following code shows how to manually specify the correct UPN/SPN on the client endpoint, as well as how to specify a custom <xref:System.ServiceModel.Security.IdentityVerifier> on the client&apos;s <xref:CoreWCF.Channels.SslStreamSecurityBindingElement>.  \n\n```  \n\nusing System;  \nusing System.Collections.Generic;  \nusing System.Linq;  \nusing System.Net;  \nusing System.IdentityModel.Claims;  \nusing System.IdentityModel.Policy;  \nusing System.Security.Cryptography.X509Certificates;  \nusing CoreWCF;  \nusing CoreWCF.Channels;  \nusing CoreWCF.Description;  \nusing CoreWCF.Security;  \nusing System.Xml;  \n\nnamespace ServiceNamespace  \n{  \n[ServiceContract]  \ninterface IService  \n{  \n  [OperationContract]  \n  void DoSomething();  \n}  \n\nclass DnsIdentityVerifier : IdentityVerifier  \n{  \n  DnsEndpointIdentity _expectedIdentity;  \n\n  public DnsIdentityVerifier(EndpointAddress serviceEndpoint)  \n  {  \n      _expectedIdentity = new DnsEndpointIdentity(serviceEndpoint.Uri.DnsSafeHost);  \n  }  \n\n  public override bool CheckAccess(EndpointIdentity identity, AuthorizationContext authContext)  \n  {  \n      Claim dnsClaim = authContext.Claims().Single(claim => claim.ClaimType == ClaimTypes.Dns);  \n      return String.Equals(_expectedIdentity.IdentityClaim.Resource, dnsClaim.Resource);  \n  }  \n\n  public override bool TryGetIdentity(EndpointAddress reference, out EndpointIdentity identity)  \n  {  \n      identity = _expectedIdentity;  \n      return true;  \n  }  \n}  \n\nstatic class LinqExtensionForClaims  \n{  \n  public static IEnumerable&lt;Claim> Claims(this AuthorizationContext authContext)  \n  {  \n      if (null != authContext.ClaimSets)  \n      {  \n          foreach (ClaimSet claimSet in authContext.ClaimSets)  \n          {  \n              if (null != claimSet)  \n              {  \n                  foreach (Claim claim in claimSet)  \n                  {  \n                      yield return claim;  \n                  }  \n              }  \n          }  \n      }  \n  }  \n}  \n\nclass Service : IService  \n{  \n  public void DoSomething()  \n  {  \n      Console.WriteLine(&quot;Service called.&quot;);  \n  }  \n}  \n\nclass Program  \n{  \n  static void Main(string[] args)  \n  {  \n      string hostname = Dns.GetHostEntry(String.Empty).HostName;  \n      NetTcpBinding serviceBinding = new NetTcpBinding(SecurityMode.TransportWithMessageCredential);  \n\n      ServiceHost serviceHost = new ServiceHost(typeof(Service), new Uri(String.Format(&quot;net.tcp://{0}:8080/Service&quot;, hostname)));  \n      serviceHost.Credentials.ServiceCertificate.SetCertificate(StoreLocation.LocalMachine, StoreName.My, X509FindType.FindByThumbprint, &quot;8a 42 1b eb cf 8a 14 b1 de 83 d9 a5 70 88 0a 62 f9 bf 69 06&quot;);  \n      ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IService), serviceBinding, &quot;Endpoint&quot;);  \n      serviceHost.Open();  \n\n      CustomBinding clientBinding = new CustomBinding(serviceBinding.CreateBindingElements());  \n      SslStreamSecurityBindingElement sslStream = clientBinding.Elements.Find&lt;SslStreamSecurityBindingElement>();  \n      sslStream.IdentityVerifier = new DnsIdentityVerifier(serviceEndpoint.Address);  \n\n      ChannelFactory&lt;IService> channelFactory = new ChannelFactory&lt;IService>(clientBinding, new EndpointAddress(serviceEndpoint.Address.Uri, UpnEndpointIdentity.CreateUpnIdentity(&quot;username@domain&quot;)));  \n      channelFactory.Credentials.Windows.AllowNtlm = false;  \n      IService channel = channelFactory.CreateChannel();  \n      channel.DoSomething();  \n  }  \n}  \n\n```  \n\n"
+  syntax:
+    content: 'public class SslStreamSecurityBindingElement : StreamUpgradeBindingElement, ITransportTokenAssertionProvider, IPolicyExportExtension'
+    content.vb: >-
+      Public Class SslStreamSecurityBindingElement
+          Inherits StreamUpgradeBindingElement
+          Implements ITransportTokenAssertionProvider, IPolicyExportExtension
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  - CoreWCF.Channels.StreamUpgradeBindingElement
+  implements:
+  - CoreWCF.Channels.ITransportTokenAssertionProvider
+  - CoreWCF.Description.IPolicyExportExtension
+  inheritedMembers:
+  - CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SslStreamSecurityBindingElement()
+  summary: Initializes a new instance of the [SslStreamSecurityBindingElement](xref:CoreWCF.Channels.SslStreamSecurityBindingElement) class.
+  nameWithType: SslStreamSecurityBindingElement.SslStreamSecurityBindingElement()
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.SslStreamSecurityBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public SslStreamSecurityBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor(CoreWCF.Channels.SslStreamSecurityBindingElement)
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor(CoreWCF.Channels.SslStreamSecurityBindingElement)
+  id: '#ctor(CoreWCF.Channels.SslStreamSecurityBindingElement)'
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SslStreamSecurityBindingElement(SslStreamSecurityBindingElement)
+  summary: Initializes a new instance of the [SslStreamSecurityBindingElement](xref:CoreWCF.Channels.SslStreamSecurityBindingElement) class using the values from another [SslStreamSecurityBindingElement](xref:CoreWCF.Channels.SslStreamSecurityBindingElement).
+  nameWithType: SslStreamSecurityBindingElement.SslStreamSecurityBindingElement(SslStreamSecurityBindingElement)
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.SslStreamSecurityBindingElement(CoreWCF.Channels.SslStreamSecurityBindingElement)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected SslStreamSecurityBindingElement(SslStreamSecurityBindingElement elementToBeCloned)
+    parameters:
+    - id: elementToBeCloned
+      type: CoreWCF.Channels.SslStreamSecurityBindingElement
+      description: The [SslStreamSecurityBindingElement](xref:CoreWCF.Channels.SslStreamSecurityBindingElement) to clone.
+    content.vb: Protected Sub New(elementToBeCloned As SslStreamSecurityBindingElement)
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.Clone
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  summary: Creates a new instance that is a copy of the current instance.
+  nameWithType: SslStreamSecurityBindingElement.Clone()
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: A [SslStreamSecurityBindingElement](xref:CoreWCF.Channels.SslStreamSecurityBindingElement) instance that is a copy of the current instance.
+    content.vb: Public Overrides Function Clone As BindingElement
+  overridden: CoreWCF.Channels.BindingElement.Clone
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  summary: Gets a specified object from the [BindingContext](xref:CoreWCF.Channels.BindingContext).
+  nameWithType: SslStreamSecurityBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    typeParameters:
+    - id: T
+      description: The type of the object to get.
+    return:
+      type: '{T}'
+      description: The object of type `T` from the BindingContext, or `null` if the object is not found.
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty*
+  nameWithType.vb: SslStreamSecurityBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: This method gets the specified object from the base class or from one of that class's ancestors. The object returned is usually a collection of properties, for example, an object that implements [ISecurityCapabilities](xref:CoreWCF.Channels.ISecurityCapabilities).
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  id: BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServerStreamUpgradeProvider(BindingContext)
+  summary: Creates an instance on the server of the [StreamUpgradeProvider](xref:CoreWCF.Channels.StreamUpgradeProvider) based on the channel context provided.
+  nameWithType: SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(BindingContext)
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override StreamUpgradeProvider BuildServerStreamUpgradeProvider(BindingContext context)
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: The [BindingContext](xref:CoreWCF.Channels.BindingContext) for the entire channel stack.
+    return:
+      type: CoreWCF.Channels.StreamUpgradeProvider
+      description: An instance of the [StreamUpgradeProvider](xref:CoreWCF.Channels.StreamUpgradeProvider).
+    content.vb: Public Overrides Function BuildServerStreamUpgradeProvider(context As BindingContext) As StreamUpgradeProvider
+  overridden: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: "This method is called when opening the service and provides a custom implementation of the [StreamUpgradeProvider](xref:CoreWCF.Channels.StreamUpgradeProvider) abstract class.<br/><br/>
+           The [BindingContext](xref:CoreWCF.Channels.BindingContext) parameter enables reacting to other elements in the channel stack."
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion
+  id: GetTransportTokenAssertion
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetTransportTokenAssertion()
+  summary: Gets the [XmlElement](xref:System.Xml.XmlElement) that represents the transport token used in the security binding.
+  nameWithType: SslStreamSecurityBindingElement.GetTransportTokenAssertion()
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public XmlElement GetTransportTokenAssertion()
+    return:
+      type: System.Xml.XmlElement
+      description: An [XmlElement](xref:System.Xml.XmlElement) that represents the transport token used in the security binding.
+    content.vb: Public Function GetTransportTokenAssertion As XmlElement
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion*
+  implements:
+  - CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: This method is used to generate WSDL for the associated service.
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  id: CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  summary: Exports a custom policy assertion about bindings.
+  nameWithType: SslStreamSecurityBindingElement.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IPolicyExportExtension.ExportPolicy(MetadataExporter exporter, PolicyConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+      description: The [MetadataExporter](xref:CoreWCF.Description.MetadataExporter) that you can use to modify the exporting process.
+    - id: context
+      type: CoreWCF.Description.PolicyConversionContext
+      description: The [PolicyConversionContext](xref:CoreWCF.Description.PolicyConversionContext) that you can use to insert your custom policy assertion.
+    content.vb: Sub CoreWCF.Description.IPolicyExportExtension.ExportPolicy(exporter As MetadataExporter, context As PolicyConversionContext) Implements IPolicyExportExtension.ExportPolicy
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*
+  implements:
+  - CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  nameWithType.vb: SslStreamSecurityBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  remarks: "This method writes binding-related statements into the WSDL information exposed by a particular contract and is used by WCF to communicate to clients the existence of this custom binding element in the binding stack.<br/><br/>
+            This method takes two parameters: the [MetadataExporter](xref:CoreWCF.Description.MetadataExporter) and [PolicyConversionContext](xref:CoreWCF.Description.PolicyConversionContext) objects. Use the [GetBindingAssertions](xref:CoreWCF.Description.PolicyConversionContext.GetBindingAssertions), [GetMessageBindingAssertions](xref:CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions(CoreWCF.Description.MessageDescription)), and [GetOperationBindingAssertions](xref:CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions(CoreWCF.Description.OperationDescription)) methods to obtain collections of policy assertions that have already been exported at various scopes. Then use this method to add your own policy assertions to the appropriate collection.<br/><br/>
+            The [Contract](xref:CoreWCF.Description.PolicyConversionContext.Contract) property exposes the [ContractDescription](xref:CoreWCF.Description.ContractDescription) for the endpoint that is being exported. This enables this method to correctly scope their exported policy assertions. For example, security attributes in code can add behaviors to the [ContractDescription](xref:CoreWCF.Description.ContractDescription) that indicate where security policy assertions should be added.<br/><br/>
+            Once custom policy assertions are attached to the WSDL information, clients can detect and import the custom binding assertions by implementing an [IPolicyImportExtension](xref:System.ServiceModel.Description.IPolicyImportExtension) interface."
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  id: IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IsMatch(BindingElement)
+  nameWithType: SslStreamSecurityBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool IsMatch(BindingElement b)
+    parameters:
+    - id: b
+      type: CoreWCF.Channels.BindingElement
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function IsMatch(b As BindingElement) As Boolean
+  overridden: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate
+  commentId: P:CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate
+  id: RequireClientCertificate
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: RequireClientCertificate
+  summary: Gets or sets a value that specifies whether a client certificate is required for this binding.
+  nameWithType: SslStreamSecurityBindingElement.RequireClientCertificate
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool RequireClientCertificate { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "`true` if a client certificate is required for this binding; otherwise, `false`. The default is `false`."
+    content.vb: Public Property RequireClientCertificate As Boolean
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols
+  commentId: P:CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols
+  id: SslProtocols
+  parent: CoreWCF.Channels.SslStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SslProtocols
+  summary: "Specifies the list of SSL/TLS protocols to negotiate when using a client credential type of TcpClientCredentialType.Certificate. The value can be a combination of one of more of the following enumeration members: Ssl3, Tls, Tls11, Tls12."
+  nameWithType: SslStreamSecurityBindingElement.SslProtocols
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public SslProtocols SslProtocols { get; set; }
+    parameters: []
+    return:
+      type: System.Security.Authentication.SslProtocols
+      description: Returns [SslProtocols](xref:System.Security.Authentication.SslProtocols).
+    content.vb: Public Property SslProtocols As SslProtocols
+  overload: CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: The default value is Ssl3 | Tls | Tls11 | Tls12. Versions of the framework prior to 4.6 only support Ssl3 and Tls. If these are not included, communication with earlier versions of the framework will not be possible. Specifying Tls11 and/or Tls12 will disable the usage of Ssl3, even if it has been included.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.StreamUpgradeBindingElement
+  commentId: T:CoreWCF.Channels.StreamUpgradeBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: StreamUpgradeBindingElement
+  nameWithType: StreamUpgradeBindingElement
+  fullName: CoreWCF.Channels.StreamUpgradeBindingElement
+- uid: CoreWCF.Channels.ITransportTokenAssertionProvider
+  commentId: T:CoreWCF.Channels.ITransportTokenAssertionProvider
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: ITransportTokenAssertionProvider
+  nameWithType: ITransportTokenAssertionProvider
+  fullName: CoreWCF.Channels.ITransportTokenAssertionProvider
+- uid: CoreWCF.Description.IPolicyExportExtension
+  commentId: T:CoreWCF.Description.IPolicyExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IPolicyExportExtension
+  nameWithType: IPolicyExportExtension
+  fullName: CoreWCF.Description.IPolicyExportExtension
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.#ctor
+  isExternal: true
+  name: SslStreamSecurityBindingElement
+  nameWithType: SslStreamSecurityBindingElement.SslStreamSecurityBindingElement
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.SslStreamSecurityBindingElement
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement
+  commentId: T:CoreWCF.Channels.SslStreamSecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: SslStreamSecurityBindingElement
+  nameWithType: SslStreamSecurityBindingElement
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: SslStreamSecurityBindingElement.Clone
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.Clone
+- uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: BindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: BindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.BindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: BindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.BindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: SslStreamSecurityBindingElement.GetProperty
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.GetProperty
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.StreamUpgradeBindingElement
+  isExternal: true
+  name: BuildServerStreamUpgradeProvider(BindingContext)
+  nameWithType: StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(BindingContext)
+  fullName: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+    name: BuildServerStreamUpgradeProvider
+    nameWithType: StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    fullName: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+    name: BuildServerStreamUpgradeProvider
+    nameWithType: StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    fullName: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider
+  isExternal: true
+  name: BuildServerStreamUpgradeProvider
+  nameWithType: SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider
+- uid: CoreWCF.Channels.StreamUpgradeProvider
+  commentId: T:CoreWCF.Channels.StreamUpgradeProvider
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: StreamUpgradeProvider
+  nameWithType: StreamUpgradeProvider
+  fullName: CoreWCF.Channels.StreamUpgradeProvider
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion
+  isExternal: true
+  name: GetTransportTokenAssertion
+  nameWithType: SslStreamSecurityBindingElement.GetTransportTokenAssertion
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion
+- uid: CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+  commentId: M:CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+  parent: CoreWCF.Channels.ITransportTokenAssertionProvider
+  isExternal: true
+  name: GetTransportTokenAssertion()
+  nameWithType: ITransportTokenAssertionProvider.GetTransportTokenAssertion()
+  fullName: CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion()
+  spec.csharp:
+  - uid: CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+    name: GetTransportTokenAssertion
+    nameWithType: ITransportTokenAssertionProvider.GetTransportTokenAssertion
+    fullName: CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+    name: GetTransportTokenAssertion
+    nameWithType: ITransportTokenAssertionProvider.GetTransportTokenAssertion
+    fullName: CoreWCF.Channels.ITransportTokenAssertionProvider.GetTransportTokenAssertion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Xml.XmlElement
+  isExternal: true
+  name: XmlElement
+  nameWithType: XmlElement
+  fullName: System.Xml.XmlElement
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy
+  isExternal: true
+  name: IPolicyExportExtension.ExportPolicy
+  nameWithType: SslStreamSecurityBindingElement.IPolicyExportExtension.ExportPolicy
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  nameWithType.vb: SslStreamSecurityBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+- uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Description.IPolicyExportExtension
+  isExternal: true
+  name: ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: ExportPolicy
+    nameWithType: IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: ExportPolicy
+    nameWithType: IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+- uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: BindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch
+  isExternal: true
+  name: IsMatch
+  nameWithType: SslStreamSecurityBindingElement.IsMatch
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.IsMatch
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate
+  isExternal: true
+  name: RequireClientCertificate
+  nameWithType: SslStreamSecurityBindingElement.RequireClientCertificate
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.RequireClientCertificate
+- uid: CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols*
+  commentId: Overload:CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols
+  isExternal: true
+  name: SslProtocols
+  nameWithType: SslStreamSecurityBindingElement.SslProtocols
+  fullName: CoreWCF.Channels.SslStreamSecurityBindingElement.SslProtocols
+- uid: System.Security.Authentication.SslProtocols
+  isExternal: true
+  name: SslProtocols
+  nameWithType: SslProtocols
+  fullName: System.Security.Authentication.SslProtocols

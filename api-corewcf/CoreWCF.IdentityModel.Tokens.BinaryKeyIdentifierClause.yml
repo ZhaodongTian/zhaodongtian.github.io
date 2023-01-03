@@ -1,0 +1,522 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  id: BinaryKeyIdentifierClause
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean)
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean,System.Byte[],System.Int32)
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[])
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[],System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: BinaryKeyIdentifierClause
+  nameWithType: BinaryKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: Represents a base class for key identifier clauses that are based upon binary data.
+  remarks: "Typically, the &lt;xref:System.IdentityModel.Tokens.BinaryKeyIdentifierClause> does not need to be used, other than when a custom security token service is created. When a security token service returns a security token, the issued security token contains references to attached and unattached security tokens. Attached references refer to security tokens that are contained within the security header of a SOAP message and unattached references are security tokens that are not included within the security header of the SOAP message. These references typically affirm the authenticity of the issued security token.  \n\n"
+  syntax:
+    content: 'public abstract class BinaryKeyIdentifierClause : SecurityKeyIdentifierClause'
+    content.vb: >-
+      Public MustInherit Class BinaryKeyIdentifierClause
+          Inherits SecurityKeyIdentifierClause
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  derivedClasses:
+  - CoreWCF.IdentityModel.Tokens.EncryptedKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.X509RawDataKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.X509SubjectKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause
+  - CoreWCF.Security.BinarySecretKeyIdentifierClause
+  inheritedMembers:
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean)
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean)
+  id: '#ctor(System.String,System.Byte[],System.Boolean)'
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: BinaryKeyIdentifierClause(String, Byte[], Boolean)
+  nameWithType: BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(String, Byte[], Boolean)
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(System.String, System.Byte[], System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: protected BinaryKeyIdentifierClause(string clauseType, byte[] identificationData, bool cloneBuffer)
+    parameters:
+    - id: clauseType
+      type: System.String
+    - id: identificationData
+      type: System.Byte[]
+    - id: cloneBuffer
+      type: System.Boolean
+    content.vb: Protected Sub New(clauseType As String, identificationData As Byte(), cloneBuffer As Boolean)
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor*
+  nameWithType.vb: BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(String, Byte(), Boolean)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(System.String, System.Byte(), System.Boolean)
+  name.vb: BinaryKeyIdentifierClause(String, Byte(), Boolean)
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean,System.Byte[],System.Int32)
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Boolean,System.Byte[],System.Int32)
+  id: '#ctor(System.String,System.Byte[],System.Boolean,System.Byte[],System.Int32)'
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: BinaryKeyIdentifierClause(String, Byte[], Boolean, Byte[], Int32)
+  nameWithType: BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(String, Byte[], Boolean, Byte[], Int32)
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(System.String, System.Byte[], System.Boolean, System.Byte[], System.Int32)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: protected BinaryKeyIdentifierClause(string clauseType, byte[] identificationData, bool cloneBuffer, byte[] derivationNonce, int derivationLength)
+    parameters:
+    - id: clauseType
+      type: System.String
+    - id: identificationData
+      type: System.Byte[]
+    - id: cloneBuffer
+      type: System.Boolean
+    - id: derivationNonce
+      type: System.Byte[]
+    - id: derivationLength
+      type: System.Int32
+    content.vb: Protected Sub New(clauseType As String, identificationData As Byte(), cloneBuffer As Boolean, derivationNonce As Byte(), derivationLength As Integer)
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor*
+  nameWithType.vb: BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(String, Byte(), Boolean, Byte(), Int32)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.BinaryKeyIdentifierClause(System.String, System.Byte(), System.Boolean, System.Byte(), System.Int32)
+  name.vb: BinaryKeyIdentifierClause(String, Byte(), Boolean, Byte(), Int32)
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer
+  id: GetBuffer
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: GetBuffer()
+  nameWithType: BinaryKeyIdentifierClause.GetBuffer()
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public byte[] GetBuffer()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetBuffer As Byte()
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer
+  id: GetRawBuffer
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: GetRawBuffer()
+  nameWithType: BinaryKeyIdentifierClause.GetRawBuffer()
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: protected byte[] GetRawBuffer()
+    return:
+      type: System.Byte[]
+    content.vb: Protected Function GetRawBuffer As Byte()
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  id: Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Matches(SecurityKeyIdentifierClause)
+  nameWithType: BinaryKeyIdentifierClause.Matches(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override bool Matches(SecurityKeyIdentifierClause keyIdentifierClause)
+    parameters:
+    - id: keyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Matches(keyIdentifierClause As SecurityKeyIdentifierClause) As Boolean
+  overridden: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[])
+  id: Matches(System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Matches(Byte[])
+  nameWithType: BinaryKeyIdentifierClause.Matches(Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public bool Matches(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public Function Matches(data As Byte()) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches*
+  nameWithType.vb: BinaryKeyIdentifierClause.Matches(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte())
+  name.vb: Matches(Byte())
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[],System.Int32)
+  commentId: M:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[],System.Int32)
+  id: Matches(System.Byte[],System.Int32)
+  parent: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Matches(Byte[], Int32)
+  nameWithType: BinaryKeyIdentifierClause.Matches(Byte[], Int32)
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte[], System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public bool Matches(byte[] data, int offset)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: offset
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Function Matches(data As Byte(), offset As Integer) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches*
+  nameWithType.vb: BinaryKeyIdentifierClause.Matches(Byte(), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches(System.Byte(), System.Int32)
+  name.vb: Matches(Byte(), Int32)
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: CreateKey()
+  nameWithType: SecurityKeyIdentifierClause.CreateKey()
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    name: CreateKey
+    nameWithType: SecurityKeyIdentifierClause.CreateKey
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    name: CreateKey
+    nameWithType: SecurityKeyIdentifierClause.CreateKey
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: GetDerivationNonce()
+  nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce()
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    name: GetDerivationNonce
+    nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    name: GetDerivationNonce
+    nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: CanCreateKey
+  nameWithType: SecurityKeyIdentifierClause.CanCreateKey
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: ClauseType
+  nameWithType: SecurityKeyIdentifierClause.ClauseType
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: Id
+  nameWithType: SecurityKeyIdentifierClause.Id
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: DerivationLength
+  nameWithType: SecurityKeyIdentifierClause.DerivationLength
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.#ctor
+  isExternal: true
+  name: BinaryKeyIdentifierClause
+  nameWithType: BinaryKeyIdentifierClause.BinaryKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.BinaryKeyIdentifierClause
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer
+  isExternal: true
+  name: GetBuffer
+  nameWithType: BinaryKeyIdentifierClause.GetBuffer
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetBuffer
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer
+  isExternal: true
+  name: GetRawBuffer
+  nameWithType: BinaryKeyIdentifierClause.GetRawBuffer
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.GetRawBuffer
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: Matches(SecurityKeyIdentifierClause)
+  nameWithType: SecurityKeyIdentifierClause.Matches(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: Matches
+    nameWithType: SecurityKeyIdentifierClause.Matches
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: Matches
+    nameWithType: SecurityKeyIdentifierClause.Matches
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches
+  isExternal: true
+  name: Matches
+  nameWithType: BinaryKeyIdentifierClause.Matches
+  fullName: CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause.Matches

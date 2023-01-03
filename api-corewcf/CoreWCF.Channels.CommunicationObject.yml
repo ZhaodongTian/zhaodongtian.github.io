@@ -1,0 +1,1495 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.CommunicationObject
+  commentId: T:CoreWCF.Channels.CommunicationObject
+  id: CommunicationObject
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.CommunicationObject.#ctor
+  - CoreWCF.Channels.CommunicationObject.#ctor(System.Object)
+  - CoreWCF.Channels.CommunicationObject.Abort
+  - CoreWCF.Channels.CommunicationObject.CloseAsync
+  - CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.CommunicationObject.Closed
+  - CoreWCF.Channels.CommunicationObject.Closing
+  - CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  - CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  - CoreWCF.Channels.CommunicationObject.Fault
+  - CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  - CoreWCF.Channels.CommunicationObject.Faulted
+  - CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  - CoreWCF.Channels.CommunicationObject.IsDisposed
+  - CoreWCF.Channels.CommunicationObject.OnAbort
+  - CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.CommunicationObject.OnClosed
+  - CoreWCF.Channels.CommunicationObject.OnClosing
+  - CoreWCF.Channels.CommunicationObject.OnFaulted
+  - CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.CommunicationObject.OnOpened
+  - CoreWCF.Channels.CommunicationObject.OnOpening
+  - CoreWCF.Channels.CommunicationObject.OpenAsync
+  - CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.CommunicationObject.Opened
+  - CoreWCF.Channels.CommunicationObject.Opening
+  - CoreWCF.Channels.CommunicationObject.State
+  - CoreWCF.Channels.CommunicationObject.ThisLock
+  - CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  - CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  - CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  - CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  - CoreWCF.Channels.CommunicationObject.ThrowPending
+  langs:
+  - csharp
+  - vb
+  name: CommunicationObject
+  nameWithType: CommunicationObject
+  fullName: CoreWCF.Channels.CommunicationObject
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Provides a common base implementation for the basic state machine common to all communication-oriented objects in the system, including channels, listeners, and the channel and listener factories.
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject> class implements the <xref:CoreWCF.ICommunicationObject> interface for all communication objects in Windows Communication Foundation (WCF). The method implementations handle parameter validation, raise events that notify the occurrence of state transitions, provide the means to associated additional processing with these state transitions, and ensure that such state changes are coordinated.  \n\n"
+  syntax:
+    content: 'public abstract class CommunicationObject : Object, ICommunicationObject'
+    content.vb: >-
+      Public MustInherit Class CommunicationObject
+          Inherits Object
+          Implements ICommunicationObject
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.ChannelManagerBase
+  - CoreWCF.Channels.StreamUpgradeProvider
+  - CoreWCF.Dispatcher.ChannelDispatcherBase
+  - CoreWCF.InstanceContext
+  - CoreWCF.ServiceHostBase
+  implements:
+  - CoreWCF.ICommunicationObject
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.CommunicationObject.#ctor
+  commentId: M:CoreWCF.Channels.CommunicationObject.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: CommunicationObject()
+  nameWithType: CommunicationObject.CommunicationObject()
+  fullName: CoreWCF.Channels.CommunicationObject.CommunicationObject()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.CommunicationObject> class."
+  syntax:
+    content: protected CommunicationObject()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.CommunicationObject.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.CommunicationObject.#ctor(System.Object)
+  commentId: M:CoreWCF.Channels.CommunicationObject.#ctor(System.Object)
+  id: '#ctor(System.Object)'
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: CommunicationObject(Object)
+  nameWithType: CommunicationObject.CommunicationObject(Object)
+  fullName: CoreWCF.Channels.CommunicationObject.CommunicationObject(System.Object)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.CommunicationObject> class with the mutually exclusive lock to protect the state transitions specified."
+  syntax:
+    content: protected CommunicationObject(object mutex)
+    parameters:
+    - id: mutex
+      type: System.Object
+      description: The mutually exclusive lock that protects the class instance during a state transition.
+    content.vb: Protected Sub New(mutex As Object)
+  overload: CoreWCF.Channels.CommunicationObject.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.CommunicationObject.Abort
+  commentId: M:CoreWCF.Channels.CommunicationObject.Abort
+  id: Abort
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Abort()
+  nameWithType: CommunicationObject.Abort()
+  fullName: CoreWCF.Channels.CommunicationObject.Abort()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Causes a communication object to transition immediately from its current state into the closing state.
+  syntax:
+    content: public void Abort()
+    content.vb: Public Sub Abort
+  overload: CoreWCF.Channels.CommunicationObject.Abort*
+  implements:
+  - CoreWCF.ICommunicationObject.Abort
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "This method indicates that any unfinished work should be ignored or ungracefully terminated before returning. The <xref:CoreWCF.Channels.CommunicationObject.Abort> method can be used to cancel any outstanding operations, including outstanding calls to [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8).<br /><br />To gracefully transition a <xref:CoreWCF.Channels.CommunicationObject> from any state other than <xref:CoreWCF.CommunicationState.Closed> into the <xref:CoreWCF.CommunicationState.Closed> state, call [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8) or one of its asynchronous versions, [BeginClose](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.beginclose?view=netframework-4.8)."
+- uid: CoreWCF.Channels.CommunicationObject.CloseAsync
+  commentId: M:CoreWCF.Channels.CommunicationObject.CloseAsync
+  id: CloseAsync
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: CloseAsync()
+  nameWithType: CommunicationObject.CloseAsync()
+  fullName: CoreWCF.Channels.CommunicationObject.CloseAsync()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task CloseAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function CloseAsync As Task
+  overload: CoreWCF.Channels.CommunicationObject.CloseAsync*
+  implements:
+  - CoreWCF.ICommunicationObject.CloseAsync
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  id: CloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: CloseAsync(CancellationToken)
+  nameWithType: CommunicationObject.CloseAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task CloseAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function CloseAsync(token As CancellationToken) As Task
+  overload: CoreWCF.Channels.CommunicationObject.CloseAsync*
+  implements:
+  - CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.OpenAsync
+  commentId: M:CoreWCF.Channels.CommunicationObject.OpenAsync
+  id: OpenAsync
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OpenAsync()
+  nameWithType: CommunicationObject.OpenAsync()
+  fullName: CoreWCF.Channels.CommunicationObject.OpenAsync()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task OpenAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function OpenAsync As Task
+  overload: CoreWCF.Channels.CommunicationObject.OpenAsync*
+  implements:
+  - CoreWCF.ICommunicationObject.OpenAsync
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  id: OpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OpenAsync(CancellationToken)
+  nameWithType: CommunicationObject.OpenAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task OpenAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function OpenAsync(token As CancellationToken) As Task
+  overload: CoreWCF.Channels.CommunicationObject.OpenAsync*
+  implements:
+  - CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  commentId: M:CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  id: Fault(System.Exception)
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Fault(Exception)
+  nameWithType: CommunicationObject.Fault(Exception)
+  fullName: CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void Fault(Exception exception)
+    parameters:
+    - id: exception
+      type: System.Exception
+    content.vb: Public Sub Fault(exception As Exception)
+  overload: CoreWCF.Channels.CommunicationObject.Fault*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.Fault
+  commentId: M:CoreWCF.Channels.CommunicationObject.Fault
+  id: Fault
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Fault()
+  nameWithType: CommunicationObject.Fault()
+  fullName: CoreWCF.Channels.CommunicationObject.Fault()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Causes a communication object to transition from its current state into the faulted state.
+  syntax:
+    content: protected void Fault()
+    content.vb: Protected Sub Fault
+  overload: CoreWCF.Channels.CommunicationObject.Fault*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Faulted> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnFaulted> method which is called by the <xref:CoreWCF.Channels.CommunicationObject.Fault> method."
+- uid: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  commentId: M:CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  id: GetCommunicationObjectType
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: GetCommunicationObjectType()
+  nameWithType: CommunicationObject.GetCommunicationObjectType()
+  fullName: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the type of communication object.
+  syntax:
+    content: protected virtual Type GetCommunicationObjectType()
+    return:
+      type: System.Type
+      description: The type of communication object.
+    content.vb: Protected Overridable Function GetCommunicationObjectType As Type
+  overload: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.CommunicationObject.OnAbort
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnAbort
+  id: OnAbort
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnAbort()
+  nameWithType: CommunicationObject.OnAbort()
+  fullName: CoreWCF.Channels.CommunicationObject.OnAbort()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Inserts processing on a communication object after it transitions to the closing state due to the invocation of a synchronous abort operation.
+  syntax:
+    content: protected abstract void OnAbort()
+    content.vb: Protected MustOverride Sub OnAbort
+  overload: CoreWCF.Channels.CommunicationObject.OnAbort*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Abort> method calls <xref:CoreWCF.Channels.CommunicationObject.OnAbort> if the communication object is not already in a <xref:CoreWCF.CommunicationState.Closed> state."
+- uid: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  id: OnCloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnCloseAsync(CancellationToken)
+  nameWithType: CommunicationObject.OnCloseAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected abstract Task OnCloseAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected MustOverride Function OnCloseAsync(token As CancellationToken) As Task
+  overload: CoreWCF.Channels.CommunicationObject.OnCloseAsync*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  id: OnOpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnOpenAsync(CancellationToken)
+  nameWithType: CommunicationObject.OnOpenAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected abstract Task OnOpenAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected MustOverride Function OnOpenAsync(token As CancellationToken) As Task
+  overload: CoreWCF.Channels.CommunicationObject.OnOpenAsync*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.Channels.CommunicationObject.OnClosed
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnClosed
+  id: OnClosed
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnClosed()
+  nameWithType: CommunicationObject.OnClosed()
+  fullName: CoreWCF.Channels.CommunicationObject.OnClosed()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Invoked during the transition of a communication object into the closing state.
+  syntax:
+    content: protected virtual void OnClosed()
+    content.vb: Protected Overridable Sub OnClosed
+  overload: CoreWCF.Channels.CommunicationObject.OnClosed*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: "The [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8) method calls <xref:CoreWCF.Channels.CommunicationObject.OnClosed> if the communication object is initially in the <xref:CoreWCF.CommunicationState.Opened> state.<br /><br />The [EndClose](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endclose?view=netframework-4.8) method calls <xref:CoreWCF.Channels.CommunicationObject.OnClosed> and [OnEndClose(IAsyncResult)](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.onendclose?view=netframework-4.8#system-servicemodel-channels-communicationobject-onendclose(system-iasyncresult)) if the communication object is not already in a <xref:CoreWCF.CommunicationState.Closed> state."
+- uid: CoreWCF.Channels.CommunicationObject.OnClosing
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnClosing
+  id: OnClosing
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnClosing()
+  nameWithType: CommunicationObject.OnClosing()
+  fullName: CoreWCF.Channels.CommunicationObject.OnClosing()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Invoked during the transition of a communication object into the closing state
+  syntax:
+    content: protected virtual void OnClosing()
+    content.vb: Protected Overridable Sub OnClosing
+  overload: CoreWCF.Channels.CommunicationObject.OnClosing*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: "The [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8) method calls <xref:CoreWCF.Channels.CommunicationObject.OnClosing> if the communication object is initially in the <xref:CoreWCF.CommunicationState.Opened> state."
+- uid: CoreWCF.Channels.CommunicationObject.OnFaulted
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnFaulted
+  id: OnFaulted
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnFaulted()
+  nameWithType: CommunicationObject.OnFaulted()
+  fullName: CoreWCF.Channels.CommunicationObject.OnFaulted()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Inserts processing on a communication object after it transitions to the faulted state due to the invocation of a synchronous fault operation.
+  syntax:
+    content: protected virtual void OnFaulted()
+    content.vb: Protected Overridable Sub OnFaulted
+  overload: CoreWCF.Channels.CommunicationObject.OnFaulted*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Faulted> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnFaulted> method which is called by the <xref:CoreWCF.Channels.CommunicationObject.Fault> method."
+- uid: CoreWCF.Channels.CommunicationObject.OnOpened
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnOpened
+  id: OnOpened
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnOpened()
+  nameWithType: CommunicationObject.OnOpened()
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpened()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Invoked during the transition of a communication object into the opened state.
+  syntax:
+    content: protected virtual void OnOpened()
+    content.vb: Protected Overridable Sub OnOpened
+  overload: CoreWCF.Channels.CommunicationObject.OnOpened*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: "This provides a way to add processing when it is called by the [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8) and [EndOpen](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endopen?view=netframework-4.8) methods."
+- uid: CoreWCF.Channels.CommunicationObject.OnOpening
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnOpening
+  id: OnOpening
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OnOpening()
+  nameWithType: CommunicationObject.OnOpening()
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpening()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Invoked during the transition of a communication object into the opening state.
+  syntax:
+    content: protected virtual void OnOpening()
+    content.vb: Protected Overridable Sub OnOpening
+  overload: CoreWCF.Channels.CommunicationObject.OnOpening*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: "This provides a way to add processing when it is called by the [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8) and [BeginOpen](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.beginopen?view=netframework-4.8) methods."
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  id: ThrowIfDisposed
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: ThrowIfDisposed()
+  nameWithType: CommunicationObject.ThrowIfDisposed()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Throws an exception if the communication object is disposed.
+  syntax:
+    content: protected void ThrowIfDisposed()
+    content.vb: Protected Sub ThrowIfDisposed
+  overload: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: "No exception is thrown if the communication object is in a <xref:CoreWCF.CommunicationState.Created>, <xref:CoreWCF.CommunicationState.Opening> or <xref:CoreWCF.CommunicationState.Opened> state. A communication object is disposed once [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8) is called on it."
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  id: ThrowIfDisposedOrImmutable
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: ThrowIfDisposedOrImmutable()
+  nameWithType: CommunicationObject.ThrowIfDisposedOrImmutable()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Throws an exception if the communication object the <xref:CoreWCF.Channels.CommunicationObject.State> property is not set to the <xref:CoreWCF.CommunicationState.Created> state."
+  syntax:
+    content: protected void ThrowIfDisposedOrImmutable()
+    content.vb: Protected Sub ThrowIfDisposedOrImmutable
+  overload: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: "Since an object is immutable after [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8) is called on it, the only state that is both mutable and not disposed is the <xref:CoreWCF.CommunicationState.Created> state."
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  id: ThrowIfDisposedOrNotOpen
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: ThrowIfDisposedOrNotOpen()
+  nameWithType: CommunicationObject.ThrowIfDisposedOrNotOpen()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Throws an exception if the communication object is not in the <xref:CoreWCF.CommunicationState.Opened> state."
+  syntax:
+    content: protected void ThrowIfDisposedOrNotOpen()
+    content.vb: Protected Sub ThrowIfDisposedOrNotOpen
+  overload: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  id: ThrowIfNotOpened
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: ThrowIfNotOpened()
+  nameWithType: CommunicationObject.ThrowIfNotOpened()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void ThrowIfNotOpened()
+    content.vb: Public Sub ThrowIfNotOpened
+  overload: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.ThrowPending
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowPending
+  id: ThrowPending
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: ThrowPending()
+  nameWithType: CommunicationObject.ThrowPending()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowPending()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void ThrowPending()
+    content.vb: Public Sub ThrowPending
+  overload: CoreWCF.Channels.CommunicationObject.ThrowPending*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.CommunicationObject.IsDisposed
+  commentId: P:CoreWCF.Channels.CommunicationObject.IsDisposed
+  id: IsDisposed
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: IsDisposed
+  nameWithType: CommunicationObject.IsDisposed
+  fullName: CoreWCF.Channels.CommunicationObject.IsDisposed
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets a value that indicates whether the communication object has been disposed.
+  syntax:
+    content: protected bool IsDisposed { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the communication object is in a closed state; otherwise, false.
+    content.vb: Protected ReadOnly Property IsDisposed As Boolean
+  overload: CoreWCF.Channels.CommunicationObject.IsDisposed*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+  remarks: "An object is considered disposed when the <xref:CoreWCF.Channels.CommunicationObject.Closed> event occurs."
+- uid: CoreWCF.Channels.CommunicationObject.State
+  commentId: P:CoreWCF.Channels.CommunicationObject.State
+  id: State
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: CommunicationObject.State
+  fullName: CoreWCF.Channels.CommunicationObject.State
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets a value that indicates the current state of the communication object.
+  syntax:
+    content: public CommunicationState State { get; }
+    parameters: []
+    return:
+      type: CoreWCF.CommunicationState
+      description: "A value from the <xref:CoreWCF.CommunicationState> enumeration that indicates the current state of the object."
+    content.vb: Public ReadOnly Property State As CommunicationState
+  overload: CoreWCF.Channels.CommunicationObject.State*
+  implements:
+  - CoreWCF.ICommunicationObject.State
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.CommunicationObject.ThisLock
+  commentId: P:CoreWCF.Channels.CommunicationObject.ThisLock
+  id: ThisLock
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: ThisLock
+  nameWithType: CommunicationObject.ThisLock
+  fullName: CoreWCF.Channels.CommunicationObject.ThisLock
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the mutually exclusive lock that protects the class instance during a state transition.
+  syntax:
+    content: protected object ThisLock { get; }
+    parameters: []
+    return:
+      type: System.Object
+      description: The mutually exclusive lock that protects the class instance during a state transition.
+    content.vb: Protected ReadOnly Property ThisLock As Object
+  overload: CoreWCF.Channels.CommunicationObject.ThisLock*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  commentId: P:CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  id: DefaultCloseTimeout
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: DefaultCloseTimeout
+  nameWithType: CommunicationObject.DefaultCloseTimeout
+  fullName: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, gets the default interval of time provided for a close operation to complete.
+  syntax:
+    content: protected abstract TimeSpan DefaultCloseTimeout { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+      description: "The default [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8) that specifies how long the close operation has to complete before timing out."
+    content.vb: Protected MustOverride ReadOnly Property DefaultCloseTimeout As TimeSpan
+  overload: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout*
+  modifiers.csharp:
+  - protected
+  - abstract
+  - get
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  commentId: P:CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  id: DefaultOpenTimeout
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: DefaultOpenTimeout
+  nameWithType: CommunicationObject.DefaultOpenTimeout
+  fullName: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, gets the default interval of time provided for an open operation to complete.
+  syntax:
+    content: protected abstract TimeSpan DefaultOpenTimeout { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+      description: "The default [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8) that specifies how long the open operation has to complete before timing out."
+    content.vb: Protected MustOverride ReadOnly Property DefaultOpenTimeout As TimeSpan
+  overload: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout*
+  modifiers.csharp:
+  - protected
+  - abstract
+  - get
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.CommunicationObject.Closed
+  commentId: E:CoreWCF.Channels.CommunicationObject.Closed
+  id: Closed
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Closed
+  nameWithType: CommunicationObject.Closed
+  fullName: CoreWCF.Channels.CommunicationObject.Closed
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Occurs when a communication object transitions into the closed state."
+  syntax:
+    content: public event EventHandler Closed
+    return:
+      type: System.EventHandler
+    content.vb: Public Event Closed As EventHandler
+  implements:
+  - CoreWCF.ICommunicationObject.Closed
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Closed> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnClosing> method which is called by the [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8) and [EndClose](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endclose?view=netframework-4.8) methods."
+- uid: CoreWCF.Channels.CommunicationObject.Closing
+  commentId: E:CoreWCF.Channels.CommunicationObject.Closing
+  id: Closing
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Closing
+  nameWithType: CommunicationObject.Closing
+  fullName: CoreWCF.Channels.CommunicationObject.Closing
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Occurs when a communication object transitions into the closing state.
+  syntax:
+    content: public event EventHandler Closing
+    return:
+      type: System.EventHandler
+    content.vb: Public Event Closing As EventHandler
+  implements:
+  - CoreWCF.ICommunicationObject.Closing
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Closing> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnClosing> method which is called by the [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8) and [BeginClose](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.beginclose?view=netframework-4.8) methods."
+- uid: CoreWCF.Channels.CommunicationObject.Faulted
+  commentId: E:CoreWCF.Channels.CommunicationObject.Faulted
+  id: Faulted
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Faulted
+  nameWithType: CommunicationObject.Faulted
+  fullName: CoreWCF.Channels.CommunicationObject.Faulted
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Occurs when a communication object transitions into the faulted state.
+  syntax:
+    content: public event EventHandler Faulted
+    return:
+      type: System.EventHandler
+    content.vb: Public Event Faulted As EventHandler
+  implements:
+  - CoreWCF.ICommunicationObject.Faulted
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Faulted> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnFaulted> method which is called by the <xref:CoreWCF.Channels.CommunicationObject.Fault> method."
+- uid: CoreWCF.Channels.CommunicationObject.Opened
+  commentId: E:CoreWCF.Channels.CommunicationObject.Opened
+  id: Opened
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Opened
+  nameWithType: CommunicationObject.Opened
+  fullName: CoreWCF.Channels.CommunicationObject.Opened
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Occurs when a communication object transitions into the opened state.
+  syntax:
+    content: public event EventHandler Opened
+    return:
+      type: System.EventHandler
+    content.vb: Public Event Opened As EventHandler
+  implements:
+  - CoreWCF.ICommunicationObject.Opened
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Opened> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnOpening> method which is called by the [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8) and [EndOpen](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endopen?view=netframework-4.8) methods."
+- uid: CoreWCF.Channels.CommunicationObject.Opening
+  commentId: E:CoreWCF.Channels.CommunicationObject.Opening
+  id: Opening
+  parent: CoreWCF.Channels.CommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Opening
+  nameWithType: CommunicationObject.Opening
+  fullName: CoreWCF.Channels.CommunicationObject.Opening
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Occurs when a communication object transitions into the opening state.
+  syntax:
+    content: public event EventHandler Opening
+    return:
+      type: System.EventHandler
+    content.vb: Public Event Opening As EventHandler
+  implements:
+  - CoreWCF.ICommunicationObject.Opening
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The <xref:CoreWCF.Channels.CommunicationObject.Opening> event is raised by the <xref:CoreWCF.Channels.CommunicationObject.OnOpening> method which is called by the [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8) and [OnBeginOpen(TimeSpan, AsyncCallback, Object)](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.onbeginopen?view=netframework-4.8#system-servicemodel-channels-communicationobject-onbeginopen(system-timespan-system-asynccallback-system-object)) methods."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.ICommunicationObject
+  commentId: T:CoreWCF.ICommunicationObject
+  parent: CoreWCF
+  isExternal: true
+  name: ICommunicationObject
+  nameWithType: ICommunicationObject
+  fullName: CoreWCF.ICommunicationObject
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.CommunicationObject.#ctor*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.#ctor
+  isExternal: true
+  name: CommunicationObject
+  nameWithType: CommunicationObject.CommunicationObject
+  fullName: CoreWCF.Channels.CommunicationObject.CommunicationObject
+- uid: CoreWCF.Channels.CommunicationObject.Abort*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.Abort
+  isExternal: true
+  name: Abort
+  nameWithType: CommunicationObject.Abort
+  fullName: CoreWCF.Channels.CommunicationObject.Abort
+- uid: CoreWCF.ICommunicationObject.Abort
+  commentId: M:CoreWCF.ICommunicationObject.Abort
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Abort()
+  nameWithType: ICommunicationObject.Abort()
+  fullName: CoreWCF.ICommunicationObject.Abort()
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.Abort
+    name: Abort
+    nameWithType: ICommunicationObject.Abort
+    fullName: CoreWCF.ICommunicationObject.Abort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.Abort
+    name: Abort
+    nameWithType: ICommunicationObject.Abort
+    fullName: CoreWCF.ICommunicationObject.Abort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.CloseAsync*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.CloseAsync
+  isExternal: true
+  name: CloseAsync
+  nameWithType: CommunicationObject.CloseAsync
+  fullName: CoreWCF.Channels.CommunicationObject.CloseAsync
+- uid: CoreWCF.ICommunicationObject.CloseAsync
+  commentId: M:CoreWCF.ICommunicationObject.CloseAsync
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: CloseAsync()
+  nameWithType: ICommunicationObject.CloseAsync()
+  fullName: CoreWCF.ICommunicationObject.CloseAsync()
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: CloseAsync(CancellationToken)
+  nameWithType: ICommunicationObject.CloseAsync(CancellationToken)
+  fullName: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: CoreWCF.Channels.CommunicationObject.OpenAsync*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OpenAsync
+  isExternal: true
+  name: OpenAsync
+  nameWithType: CommunicationObject.OpenAsync
+  fullName: CoreWCF.Channels.CommunicationObject.OpenAsync
+- uid: CoreWCF.ICommunicationObject.OpenAsync
+  commentId: M:CoreWCF.ICommunicationObject.OpenAsync
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: OpenAsync()
+  nameWithType: ICommunicationObject.OpenAsync()
+  fullName: CoreWCF.ICommunicationObject.OpenAsync()
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: OpenAsync(CancellationToken)
+  nameWithType: ICommunicationObject.OpenAsync(CancellationToken)
+  fullName: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.Fault*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.Fault
+  isExternal: true
+  name: Fault
+  nameWithType: CommunicationObject.Fault
+  fullName: CoreWCF.Channels.CommunicationObject.Fault
+- uid: System.Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  isExternal: true
+  name: GetCommunicationObjectType
+  nameWithType: CommunicationObject.GetCommunicationObjectType
+  fullName: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: CoreWCF.Channels.CommunicationObject.OnAbort*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnAbort
+  isExternal: true
+  name: OnAbort
+  nameWithType: CommunicationObject.OnAbort
+  fullName: CoreWCF.Channels.CommunicationObject.OnAbort
+- uid: CoreWCF.Channels.CommunicationObject.OnCloseAsync*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnCloseAsync
+  isExternal: true
+  name: OnCloseAsync
+  nameWithType: CommunicationObject.OnCloseAsync
+  fullName: CoreWCF.Channels.CommunicationObject.OnCloseAsync
+- uid: CoreWCF.Channels.CommunicationObject.OnOpenAsync*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnOpenAsync
+  isExternal: true
+  name: OnOpenAsync
+  nameWithType: CommunicationObject.OnOpenAsync
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpenAsync
+- uid: CoreWCF.Channels.CommunicationObject.OnClosed*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnClosed
+  isExternal: true
+  name: OnClosed
+  nameWithType: CommunicationObject.OnClosed
+  fullName: CoreWCF.Channels.CommunicationObject.OnClosed
+- uid: CoreWCF.Channels.CommunicationObject.OnClosing*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnClosing
+  isExternal: true
+  name: OnClosing
+  nameWithType: CommunicationObject.OnClosing
+  fullName: CoreWCF.Channels.CommunicationObject.OnClosing
+- uid: CoreWCF.Channels.CommunicationObject.OnFaulted*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnFaulted
+  isExternal: true
+  name: OnFaulted
+  nameWithType: CommunicationObject.OnFaulted
+  fullName: CoreWCF.Channels.CommunicationObject.OnFaulted
+- uid: CoreWCF.Channels.CommunicationObject.OnOpened*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnOpened
+  isExternal: true
+  name: OnOpened
+  nameWithType: CommunicationObject.OnOpened
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpened
+- uid: CoreWCF.Channels.CommunicationObject.OnOpening*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.OnOpening
+  isExternal: true
+  name: OnOpening
+  nameWithType: CommunicationObject.OnOpening
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpening
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  isExternal: true
+  name: ThrowIfDisposed
+  nameWithType: CommunicationObject.ThrowIfDisposed
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  isExternal: true
+  name: ThrowIfDisposedOrImmutable
+  nameWithType: CommunicationObject.ThrowIfDisposedOrImmutable
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  isExternal: true
+  name: ThrowIfDisposedOrNotOpen
+  nameWithType: CommunicationObject.ThrowIfDisposedOrNotOpen
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  isExternal: true
+  name: ThrowIfNotOpened
+  nameWithType: CommunicationObject.ThrowIfNotOpened
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+- uid: CoreWCF.Channels.CommunicationObject.ThrowPending*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.ThrowPending
+  isExternal: true
+  name: ThrowPending
+  nameWithType: CommunicationObject.ThrowPending
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowPending
+- uid: CoreWCF.Channels.CommunicationObject.IsDisposed*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.IsDisposed
+  isExternal: true
+  name: IsDisposed
+  nameWithType: CommunicationObject.IsDisposed
+  fullName: CoreWCF.Channels.CommunicationObject.IsDisposed
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.CommunicationObject.State*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.State
+  isExternal: true
+  name: State
+  nameWithType: CommunicationObject.State
+  fullName: CoreWCF.Channels.CommunicationObject.State
+- uid: CoreWCF.ICommunicationObject.State
+  commentId: P:CoreWCF.ICommunicationObject.State
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: State
+  nameWithType: ICommunicationObject.State
+  fullName: CoreWCF.ICommunicationObject.State
+- uid: CoreWCF.CommunicationState
+  commentId: T:CoreWCF.CommunicationState
+  parent: CoreWCF
+  isExternal: true
+  name: CommunicationState
+  nameWithType: CommunicationState
+  fullName: CoreWCF.CommunicationState
+- uid: CoreWCF.Channels.CommunicationObject.ThisLock*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.ThisLock
+  isExternal: true
+  name: ThisLock
+  nameWithType: CommunicationObject.ThisLock
+  fullName: CoreWCF.Channels.CommunicationObject.ThisLock
+- uid: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  isExternal: true
+  name: DefaultCloseTimeout
+  nameWithType: CommunicationObject.DefaultCloseTimeout
+  fullName: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout*
+  commentId: Overload:CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  isExternal: true
+  name: DefaultOpenTimeout
+  nameWithType: CommunicationObject.DefaultOpenTimeout
+  fullName: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+- uid: CoreWCF.ICommunicationObject.Closed
+  commentId: E:CoreWCF.ICommunicationObject.Closed
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Closed
+  nameWithType: ICommunicationObject.Closed
+  fullName: CoreWCF.ICommunicationObject.Closed
+- uid: System.EventHandler
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: CoreWCF.ICommunicationObject.Closing
+  commentId: E:CoreWCF.ICommunicationObject.Closing
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Closing
+  nameWithType: ICommunicationObject.Closing
+  fullName: CoreWCF.ICommunicationObject.Closing
+- uid: CoreWCF.ICommunicationObject.Faulted
+  commentId: E:CoreWCF.ICommunicationObject.Faulted
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Faulted
+  nameWithType: ICommunicationObject.Faulted
+  fullName: CoreWCF.ICommunicationObject.Faulted
+- uid: CoreWCF.ICommunicationObject.Opened
+  commentId: E:CoreWCF.ICommunicationObject.Opened
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Opened
+  nameWithType: ICommunicationObject.Opened
+  fullName: CoreWCF.ICommunicationObject.Opened
+- uid: CoreWCF.ICommunicationObject.Opening
+  commentId: E:CoreWCF.ICommunicationObject.Opening
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Opening
+  nameWithType: ICommunicationObject.Opening
+  fullName: CoreWCF.ICommunicationObject.Opening

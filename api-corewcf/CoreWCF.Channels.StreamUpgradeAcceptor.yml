@@ -1,0 +1,278 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor
+  commentId: T:CoreWCF.Channels.StreamUpgradeAcceptor
+  id: StreamUpgradeAcceptor
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.StreamUpgradeAcceptor.#ctor
+  - CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync(System.IO.Stream)
+  - CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade(System.String)
+  langs:
+  - csharp
+  - vb
+  name: StreamUpgradeAcceptor
+  nameWithType: StreamUpgradeAcceptor
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: To implement a custom upgrade acceptor, inherited from this `abstract`  base class.
+  remarks: "An example of a stream upgrade is to build a compression stream directly on top of the transport stream.  \n\nThis class is used with <xref:System.ServiceModel.Channels.StreamUpgradeInitiator> and <xref:CoreWCF.Channels.StreamUpgradeProvider> to implement a custom stream upgrade.  \n\nFor a detailed description of the upgrade process, see <xref:CoreWCF.Channels.StreamUpgradeProvider>.  \n\n"
+  syntax:
+    content: 'public abstract class StreamUpgradeAcceptor : Object'
+    content.vb: >-
+      Public MustInherit Class StreamUpgradeAcceptor
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.StreamSecurityUpgradeAcceptor
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor.#ctor
+  commentId: M:CoreWCF.Channels.StreamUpgradeAcceptor.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.StreamUpgradeAcceptor
+  langs:
+  - csharp
+  - vb
+  name: StreamUpgradeAcceptor()
+  summary: Initializes a new instance of the [StreamUpgradeAcceptor](xref:CoreWCF.Channels.StreamUpgradeAcceptor) class.
+  nameWithType: StreamUpgradeAcceptor.StreamUpgradeAcceptor()
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor.StreamUpgradeAcceptor()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected StreamUpgradeAcceptor()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.StreamUpgradeAcceptor.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade(System.String)
+  commentId: M:CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade(System.String)
+  id: CanUpgrade(System.String)
+  parent: CoreWCF.Channels.StreamUpgradeAcceptor
+  langs:
+  - csharp
+  - vb
+  name: CanUpgrade(String)
+  summary: Determines whether the upgrade requested is supported by this upgrade acceptor.
+  nameWithType: StreamUpgradeAcceptor.CanUpgrade(String)
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract bool CanUpgrade(string contentType)
+    parameters:
+    - id: contentType
+      type: System.String
+      description: The type of content to be checked.
+    return:
+      type: System.Boolean
+      description: "`true` if this kind of upgrade is supported; otherwise, `false`."
+    content.vb: Public MustOverride Function CanUpgrade(contentType As String) As Boolean
+  overload: CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: The developer can inspect the requested content type and determine whether the resulting upgrade can be performed by this upgrade acceptor. This content type comes from the `GetNextUpgrade` method on the matching upgrade initiator.
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync(System.IO.Stream)
+  commentId: M:CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync(System.IO.Stream)
+  id: AcceptUpgradeAsync(System.IO.Stream)
+  parent: CoreWCF.Channels.StreamUpgradeAcceptor
+  langs:
+  - csharp
+  - vb
+  name: AcceptUpgradeAsync(Stream)
+  summary: Upgrades the transport stream and returns the upgraded stream.
+  nameWithType: StreamUpgradeAcceptor.AcceptUpgradeAsync(Stream)
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync(System.IO.Stream)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task<Stream> AcceptUpgradeAsync(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to be upgraded.
+    return:
+      type: System.Threading.Tasks.Task{System.IO.Stream}
+      description: Returns the upgraded stream.
+    content.vb: Public MustOverride Function AcceptUpgradeAsync(stream As Stream) As Task(Of Stream)
+  overload: CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: This method can be used to wrap the existing transport stream by providing additional capabilities; for example, a compressing stream.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor.#ctor*
+  commentId: Overload:CoreWCF.Channels.StreamUpgradeAcceptor.#ctor
+  isExternal: true
+  name: StreamUpgradeAcceptor
+  nameWithType: StreamUpgradeAcceptor.StreamUpgradeAcceptor
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor.StreamUpgradeAcceptor
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade*
+  commentId: Overload:CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade
+  isExternal: true
+  name: CanUpgrade
+  nameWithType: StreamUpgradeAcceptor.CanUpgrade
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor.CanUpgrade
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync*
+  commentId: Overload:CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync
+  isExternal: true
+  name: AcceptUpgradeAsync
+  nameWithType: StreamUpgradeAcceptor.AcceptUpgradeAsync
+  fullName: CoreWCF.Channels.StreamUpgradeAcceptor.AcceptUpgradeAsync
+- uid: System.IO.Stream
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.Threading.Tasks.Task{System.IO.Stream}
+  commentId: '!:System.Threading.Tasks.Task{System.IO.Stream}'
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Stream>
+  nameWithType: Task<Stream>
+  fullName: System.Threading.Tasks.Task<System.IO.Stream>
+  nameWithType.vb: Task(Of Stream)
+  fullName.vb: System.Threading.Tasks.Task(Of System.IO.Stream)
+  name.vb: Task(Of Stream)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: System.Threading.Tasks.Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: System.Threading.Tasks.Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,576 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.FaultCode
+  commentId: T:CoreWCF.FaultCode
+  id: FaultCode
+  parent: CoreWCF
+  children:
+  - CoreWCF.FaultCode.#ctor(System.String)
+  - CoreWCF.FaultCode.#ctor(System.String,CoreWCF.FaultCode)
+  - CoreWCF.FaultCode.#ctor(System.String,System.String)
+  - CoreWCF.FaultCode.#ctor(System.String,System.String,CoreWCF.FaultCode)
+  - CoreWCF.FaultCode.CreateReceiverFaultCode(CoreWCF.FaultCode)
+  - CoreWCF.FaultCode.CreateReceiverFaultCode(System.String,System.String)
+  - CoreWCF.FaultCode.CreateSenderFaultCode(CoreWCF.FaultCode)
+  - CoreWCF.FaultCode.CreateSenderFaultCode(System.String,System.String)
+  - CoreWCF.FaultCode.IsPredefinedFault
+  - CoreWCF.FaultCode.IsReceiverFault
+  - CoreWCF.FaultCode.IsSenderFault
+  - CoreWCF.FaultCode.Name
+  - CoreWCF.FaultCode.Namespace
+  - CoreWCF.FaultCode.SubCode
+  langs:
+  - csharp
+  - vb
+  name: FaultCode
+  nameWithType: FaultCode
+  fullName: CoreWCF.FaultCode
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Represents a SOAP fault code.
+  remarks: "Fault code provides a machine-readable identifier that can be used to programmatically identify the error condition and respond as appropriate. The SOAP specifications define the following fault codes specific to SOAP 1.1 and 1.2.  \n\n-   SOAP 1.1. `VersionMismatch`, `MustUnderstand`, `Client`, and `Server`.  \n\n-   SOAP 1.2. `VersionMismatch`, `MustUnderstand`, `DataEncodingUnknown`, `Sender`, and `Receiver`.  \n\nIn addition to those fault codes defined by the SOAP specifications, Windows Communication Foundation (WCF) uses fault codes defined by each Web services specification that it implements.  \n\n"
+  syntax:
+    content: 'public class FaultCode : Object'
+    content.vb: >-
+      Public Class FaultCode
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.FaultCode.#ctor(System.String)
+  commentId: M:CoreWCF.FaultCode.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: FaultCode(String)
+  nameWithType: FaultCode.FaultCode(String)
+  fullName: CoreWCF.FaultCode.FaultCode(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultCode(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub New(name As String)
+  overload: CoreWCF.FaultCode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultCode.#ctor(System.String,CoreWCF.FaultCode)
+  commentId: M:CoreWCF.FaultCode.#ctor(System.String,CoreWCF.FaultCode)
+  id: '#ctor(System.String,CoreWCF.FaultCode)'
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: FaultCode(String, FaultCode)
+  nameWithType: FaultCode.FaultCode(String, FaultCode)
+  fullName: CoreWCF.FaultCode.FaultCode(System.String, CoreWCF.FaultCode)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultCode(string name, FaultCode subCode)
+    parameters:
+    - id: name
+      type: System.String
+    - id: subCode
+      type: CoreWCF.FaultCode
+    content.vb: Public Sub New(name As String, subCode As FaultCode)
+  overload: CoreWCF.FaultCode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultCode.#ctor(System.String,System.String)
+  commentId: M:CoreWCF.FaultCode.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: FaultCode(String, String)
+  nameWithType: FaultCode.FaultCode(String, String)
+  fullName: CoreWCF.FaultCode.FaultCode(System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultCode(string name, string ns)
+    parameters:
+    - id: name
+      type: System.String
+    - id: ns
+      type: System.String
+    content.vb: Public Sub New(name As String, ns As String)
+  overload: CoreWCF.FaultCode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultCode.#ctor(System.String,System.String,CoreWCF.FaultCode)
+  commentId: M:CoreWCF.FaultCode.#ctor(System.String,System.String,CoreWCF.FaultCode)
+  id: '#ctor(System.String,System.String,CoreWCF.FaultCode)'
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: FaultCode(String, String, FaultCode)
+  nameWithType: FaultCode.FaultCode(String, String, FaultCode)
+  fullName: CoreWCF.FaultCode.FaultCode(System.String, System.String, CoreWCF.FaultCode)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultCode(string name, string ns, FaultCode subCode)
+    parameters:
+    - id: name
+      type: System.String
+    - id: ns
+      type: System.String
+    - id: subCode
+      type: CoreWCF.FaultCode
+    content.vb: Public Sub New(name As String, ns As String, subCode As FaultCode)
+  overload: CoreWCF.FaultCode.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultCode.CreateSenderFaultCode(CoreWCF.FaultCode)
+  commentId: M:CoreWCF.FaultCode.CreateSenderFaultCode(CoreWCF.FaultCode)
+  id: CreateSenderFaultCode(CoreWCF.FaultCode)
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: CreateSenderFaultCode(FaultCode)
+  nameWithType: FaultCode.CreateSenderFaultCode(FaultCode)
+  fullName: CoreWCF.FaultCode.CreateSenderFaultCode(CoreWCF.FaultCode)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static FaultCode CreateSenderFaultCode(FaultCode subCode)
+    parameters:
+    - id: subCode
+      type: CoreWCF.FaultCode
+    return:
+      type: CoreWCF.FaultCode
+    content.vb: Public Shared Function CreateSenderFaultCode(subCode As FaultCode) As FaultCode
+  overload: CoreWCF.FaultCode.CreateSenderFaultCode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.FaultCode.CreateSenderFaultCode(System.String,System.String)
+  commentId: M:CoreWCF.FaultCode.CreateSenderFaultCode(System.String,System.String)
+  id: CreateSenderFaultCode(System.String,System.String)
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: CreateSenderFaultCode(String, String)
+  nameWithType: FaultCode.CreateSenderFaultCode(String, String)
+  fullName: CoreWCF.FaultCode.CreateSenderFaultCode(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static FaultCode CreateSenderFaultCode(string name, string ns)
+    parameters:
+    - id: name
+      type: System.String
+    - id: ns
+      type: System.String
+    return:
+      type: CoreWCF.FaultCode
+    content.vb: Public Shared Function CreateSenderFaultCode(name As String, ns As String) As FaultCode
+  overload: CoreWCF.FaultCode.CreateSenderFaultCode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.FaultCode.CreateReceiverFaultCode(CoreWCF.FaultCode)
+  commentId: M:CoreWCF.FaultCode.CreateReceiverFaultCode(CoreWCF.FaultCode)
+  id: CreateReceiverFaultCode(CoreWCF.FaultCode)
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: CreateReceiverFaultCode(FaultCode)
+  nameWithType: FaultCode.CreateReceiverFaultCode(FaultCode)
+  fullName: CoreWCF.FaultCode.CreateReceiverFaultCode(CoreWCF.FaultCode)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static FaultCode CreateReceiverFaultCode(FaultCode subCode)
+    parameters:
+    - id: subCode
+      type: CoreWCF.FaultCode
+    return:
+      type: CoreWCF.FaultCode
+    content.vb: Public Shared Function CreateReceiverFaultCode(subCode As FaultCode) As FaultCode
+  overload: CoreWCF.FaultCode.CreateReceiverFaultCode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.FaultCode.CreateReceiverFaultCode(System.String,System.String)
+  commentId: M:CoreWCF.FaultCode.CreateReceiverFaultCode(System.String,System.String)
+  id: CreateReceiverFaultCode(System.String,System.String)
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: CreateReceiverFaultCode(String, String)
+  nameWithType: FaultCode.CreateReceiverFaultCode(String, String)
+  fullName: CoreWCF.FaultCode.CreateReceiverFaultCode(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static FaultCode CreateReceiverFaultCode(string name, string ns)
+    parameters:
+    - id: name
+      type: System.String
+    - id: ns
+      type: System.String
+    return:
+      type: CoreWCF.FaultCode
+    content.vb: Public Shared Function CreateReceiverFaultCode(name As String, ns As String) As FaultCode
+  overload: CoreWCF.FaultCode.CreateReceiverFaultCode*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.FaultCode.IsPredefinedFault
+  commentId: P:CoreWCF.FaultCode.IsPredefinedFault
+  id: IsPredefinedFault
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: IsPredefinedFault
+  nameWithType: FaultCode.IsPredefinedFault
+  fullName: CoreWCF.FaultCode.IsPredefinedFault
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsPredefinedFault { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsPredefinedFault As Boolean
+  overload: CoreWCF.FaultCode.IsPredefinedFault*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultCode.IsSenderFault
+  commentId: P:CoreWCF.FaultCode.IsSenderFault
+  id: IsSenderFault
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: IsSenderFault
+  nameWithType: FaultCode.IsSenderFault
+  fullName: CoreWCF.FaultCode.IsSenderFault
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsSenderFault { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSenderFault As Boolean
+  overload: CoreWCF.FaultCode.IsSenderFault*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultCode.IsReceiverFault
+  commentId: P:CoreWCF.FaultCode.IsReceiverFault
+  id: IsReceiverFault
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: IsReceiverFault
+  nameWithType: FaultCode.IsReceiverFault
+  fullName: CoreWCF.FaultCode.IsReceiverFault
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsReceiverFault { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReceiverFault As Boolean
+  overload: CoreWCF.FaultCode.IsReceiverFault*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultCode.Namespace
+  commentId: P:CoreWCF.FaultCode.Namespace
+  id: Namespace
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  nameWithType: FaultCode.Namespace
+  fullName: CoreWCF.FaultCode.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Namespace { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Namespace As String
+  overload: CoreWCF.FaultCode.Namespace*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultCode.Name
+  commentId: P:CoreWCF.FaultCode.Name
+  id: Name
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: FaultCode.Name
+  fullName: CoreWCF.FaultCode.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: CoreWCF.FaultCode.Name*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultCode.SubCode
+  commentId: P:CoreWCF.FaultCode.SubCode
+  id: SubCode
+  parent: CoreWCF.FaultCode
+  langs:
+  - csharp
+  - vb
+  name: SubCode
+  nameWithType: FaultCode.SubCode
+  fullName: CoreWCF.FaultCode.SubCode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultCode SubCode { get; }
+    parameters: []
+    return:
+      type: CoreWCF.FaultCode
+    content.vb: Public ReadOnly Property SubCode As FaultCode
+  overload: CoreWCF.FaultCode.SubCode*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.FaultCode.#ctor*
+  commentId: Overload:CoreWCF.FaultCode.#ctor
+  isExternal: true
+  name: FaultCode
+  nameWithType: FaultCode.FaultCode
+  fullName: CoreWCF.FaultCode.FaultCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.FaultCode
+  commentId: T:CoreWCF.FaultCode
+  parent: CoreWCF
+  isExternal: true
+  name: FaultCode
+  nameWithType: FaultCode
+  fullName: CoreWCF.FaultCode
+- uid: CoreWCF.FaultCode.CreateSenderFaultCode*
+  commentId: Overload:CoreWCF.FaultCode.CreateSenderFaultCode
+  isExternal: true
+  name: CreateSenderFaultCode
+  nameWithType: FaultCode.CreateSenderFaultCode
+  fullName: CoreWCF.FaultCode.CreateSenderFaultCode
+- uid: CoreWCF.FaultCode.CreateReceiverFaultCode*
+  commentId: Overload:CoreWCF.FaultCode.CreateReceiverFaultCode
+  isExternal: true
+  name: CreateReceiverFaultCode
+  nameWithType: FaultCode.CreateReceiverFaultCode
+  fullName: CoreWCF.FaultCode.CreateReceiverFaultCode
+- uid: CoreWCF.FaultCode.IsPredefinedFault*
+  commentId: Overload:CoreWCF.FaultCode.IsPredefinedFault
+  isExternal: true
+  name: IsPredefinedFault
+  nameWithType: FaultCode.IsPredefinedFault
+  fullName: CoreWCF.FaultCode.IsPredefinedFault
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.FaultCode.IsSenderFault*
+  commentId: Overload:CoreWCF.FaultCode.IsSenderFault
+  isExternal: true
+  name: IsSenderFault
+  nameWithType: FaultCode.IsSenderFault
+  fullName: CoreWCF.FaultCode.IsSenderFault
+- uid: CoreWCF.FaultCode.IsReceiverFault*
+  commentId: Overload:CoreWCF.FaultCode.IsReceiverFault
+  isExternal: true
+  name: IsReceiverFault
+  nameWithType: FaultCode.IsReceiverFault
+  fullName: CoreWCF.FaultCode.IsReceiverFault
+- uid: CoreWCF.FaultCode.Namespace*
+  commentId: Overload:CoreWCF.FaultCode.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: FaultCode.Namespace
+  fullName: CoreWCF.FaultCode.Namespace
+- uid: CoreWCF.FaultCode.Name*
+  commentId: Overload:CoreWCF.FaultCode.Name
+  isExternal: true
+  name: Name
+  nameWithType: FaultCode.Name
+  fullName: CoreWCF.FaultCode.Name
+- uid: CoreWCF.FaultCode.SubCode*
+  commentId: Overload:CoreWCF.FaultCode.SubCode
+  isExternal: true
+  name: SubCode
+  nameWithType: FaultCode.SubCode
+  fullName: CoreWCF.FaultCode.SubCode

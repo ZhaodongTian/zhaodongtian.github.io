@@ -1,0 +1,554 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  commentId: T:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  id: PrefixEndpointAddressMessageFilter
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor(CoreWCF.EndpointAddress)
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor(CoreWCF.EndpointAddress,System.Boolean)
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable``1
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.Message)
+  - CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  langs:
+  - csharp
+  - vb
+  name: PrefixEndpointAddressMessageFilter
+  nameWithType: PrefixEndpointAddressMessageFilter
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Represents a query that tests whether a message matches an EndpointAddress using a *Longest-Prefix Match* for the URI component.
+  remarks: "An &lt;xref:CoreWCF.EndpointAddress> object includes a URI and an optional collection of addressing headers. The addressing and message headers are canonicalized to be compared for equality. If a parameter appears more than once in an &lt;xref:CoreWCF.EndpointAddress>, the corresponding header must appear in the message at least that many times.  \n\nThis filter performs the same query as &lt;xref:CoreWCF.Dispatcher.EndpointAddressMessageFilter>, except that the test for whether a message matches an endpoint address is done by a *Longest-Prefix Match*. This means that the URI specified in the filter does not have to match the message&apos;s URI exactly, but must be contained in that URI as a prefix. For example, if a filter specifies the address &quot;www.foo.com&quot;, and a message is addressed to &quot;www.foo.com/customerA&quot;, then the URI part of the filter query condition will be met. However, the header portion of the filter query still has to be done.  \n\nInternet Information Services (IIS) and the underlying file system (NTFS or FAT) are case-insensitive. URI comparisons done by this class are also case-insensitive. So, for example, `http://www.microsoft.com` is evaluated as equal to `http://WWW.microsoft.com`.  \n\n"
+  syntax:
+    content: 'public class PrefixEndpointAddressMessageFilter : MessageFilter'
+    content.vb: >-
+      Public Class PrefixEndpointAddressMessageFilter
+          Inherits MessageFilter
+  inheritance:
+  - System.Object
+  - CoreWCF.Dispatcher.MessageFilter
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor(CoreWCF.EndpointAddress)
+  commentId: M:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor(CoreWCF.EndpointAddress)
+  id: '#ctor(CoreWCF.EndpointAddress)'
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: PrefixEndpointAddressMessageFilter(EndpointAddress)
+  nameWithType: PrefixEndpointAddressMessageFilter.PrefixEndpointAddressMessageFilter(EndpointAddress)
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.PrefixEndpointAddressMessageFilter(CoreWCF.EndpointAddress)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public PrefixEndpointAddressMessageFilter(EndpointAddress address)
+    parameters:
+    - id: address
+      type: CoreWCF.EndpointAddress
+    content.vb: Public Sub New(address As EndpointAddress)
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor(CoreWCF.EndpointAddress,System.Boolean)
+  commentId: M:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor(CoreWCF.EndpointAddress,System.Boolean)
+  id: '#ctor(CoreWCF.EndpointAddress,System.Boolean)'
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: PrefixEndpointAddressMessageFilter(EndpointAddress, Boolean)
+  nameWithType: PrefixEndpointAddressMessageFilter.PrefixEndpointAddressMessageFilter(EndpointAddress, Boolean)
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.PrefixEndpointAddressMessageFilter(CoreWCF.EndpointAddress, System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public PrefixEndpointAddressMessageFilter(EndpointAddress address, bool includeHostNameInComparison)
+    parameters:
+    - id: address
+      type: CoreWCF.EndpointAddress
+    - id: includeHostNameInComparison
+      type: System.Boolean
+    content.vb: Public Sub New(address As EndpointAddress, includeHostNameInComparison As Boolean)
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable``1
+  commentId: M:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable``1
+  id: CreateFilterTable``1
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: CreateFilterTable<TFilterData>()
+  nameWithType: PrefixEndpointAddressMessageFilter.CreateFilterTable<TFilterData>()
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable<TFilterData>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override IMessageFilterTable<TFilterData> CreateFilterTable<TFilterData>()
+    typeParameters:
+    - id: TFilterData
+    return:
+      type: CoreWCF.Dispatcher.IMessageFilterTable{{TFilterData}}
+    content.vb: Protected Overrides Function CreateFilterTable(Of TFilterData) As IMessageFilterTable(Of TFilterData)
+  overridden: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable``1
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable*
+  nameWithType.vb: PrefixEndpointAddressMessageFilter.CreateFilterTable(Of TFilterData)()
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable(Of TFilterData)()
+  name.vb: CreateFilterTable(Of TFilterData)()
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  commentId: M:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  id: Match(CoreWCF.Channels.MessageBuffer)
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: Match(MessageBuffer)
+  nameWithType: PrefixEndpointAddressMessageFilter.Match(MessageBuffer)
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public override bool Match(MessageBuffer messageBuffer)
+    parameters:
+    - id: messageBuffer
+      type: CoreWCF.Channels.MessageBuffer
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Match(messageBuffer As MessageBuffer) As Boolean
+  overridden: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.Message)
+  id: Match(CoreWCF.Channels.Message)
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: Match(Message)
+  nameWithType: PrefixEndpointAddressMessageFilter.Match(Message)
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public override bool Match(Message message)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Match(message As Message) As Boolean
+  overridden: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address
+  commentId: P:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address
+  id: Address
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: PrefixEndpointAddressMessageFilter.Address
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public EndpointAddress Address { get; }
+    parameters: []
+    return:
+      type: CoreWCF.EndpointAddress
+    content.vb: Public ReadOnly Property Address As EndpointAddress
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  commentId: P:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  id: IncludeHostNameInComparison
+  parent: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter
+  langs:
+  - csharp
+  - vb
+  name: IncludeHostNameInComparison
+  nameWithType: PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool IncludeHostNameInComparison { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IncludeHostNameInComparison As Boolean
+  overload: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Dispatcher.MessageFilter
+  commentId: T:CoreWCF.Dispatcher.MessageFilter
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: MessageFilter
+  nameWithType: MessageFilter
+  fullName: CoreWCF.Dispatcher.MessageFilter
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor*
+  commentId: Overload:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.#ctor
+  isExternal: true
+  name: PrefixEndpointAddressMessageFilter
+  nameWithType: PrefixEndpointAddressMessageFilter.PrefixEndpointAddressMessageFilter
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.PrefixEndpointAddressMessageFilter
+- uid: CoreWCF.EndpointAddress
+  commentId: T:CoreWCF.EndpointAddress
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointAddress
+  fullName: CoreWCF.EndpointAddress
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable``1
+  commentId: M:CoreWCF.Dispatcher.MessageFilter.CreateFilterTable``1
+  parent: CoreWCF.Dispatcher.MessageFilter
+  isExternal: true
+  name: CreateFilterTable<FilterData>()
+  nameWithType: MessageFilter.CreateFilterTable<FilterData>()
+  fullName: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable<FilterData>()
+  nameWithType.vb: MessageFilter.CreateFilterTable(Of FilterData)()
+  fullName.vb: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable(Of FilterData)()
+  name.vb: CreateFilterTable(Of FilterData)()
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable``1
+    name: CreateFilterTable<FilterData>
+    nameWithType: MessageFilter.CreateFilterTable<FilterData>
+    fullName: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable<FilterData>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable``1
+    name: CreateFilterTable(Of FilterData)
+    nameWithType: MessageFilter.CreateFilterTable(Of FilterData)
+    fullName: CoreWCF.Dispatcher.MessageFilter.CreateFilterTable(Of FilterData)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable*
+  commentId: Overload:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable
+  isExternal: true
+  name: CreateFilterTable
+  nameWithType: PrefixEndpointAddressMessageFilter.CreateFilterTable
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.CreateFilterTable
+- uid: CoreWCF.Dispatcher.IMessageFilterTable{{TFilterData}}
+  commentId: T:CoreWCF.Dispatcher.IMessageFilterTable{``0}
+  parent: CoreWCF.Dispatcher
+  definition: CoreWCF.Dispatcher.IMessageFilterTable`1
+  name: IMessageFilterTable<TFilterData>
+  nameWithType: IMessageFilterTable<TFilterData>
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>
+  nameWithType.vb: IMessageFilterTable(Of TFilterData)
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData)
+  name.vb: IMessageFilterTable(Of TFilterData)
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.IMessageFilterTable`1
+    name: IMessageFilterTable
+    nameWithType: IMessageFilterTable
+    fullName: CoreWCF.Dispatcher.IMessageFilterTable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TFilterData
+    nameWithType: TFilterData
+    fullName: TFilterData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.IMessageFilterTable`1
+    name: IMessageFilterTable
+    nameWithType: IMessageFilterTable
+    fullName: CoreWCF.Dispatcher.IMessageFilterTable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TFilterData
+    nameWithType: TFilterData
+    fullName: TFilterData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1
+  commentId: T:CoreWCF.Dispatcher.IMessageFilterTable`1
+  isExternal: true
+  name: IMessageFilterTable<TFilterData>
+  nameWithType: IMessageFilterTable<TFilterData>
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>
+  nameWithType.vb: IMessageFilterTable(Of TFilterData)
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData)
+  name.vb: IMessageFilterTable(Of TFilterData)
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.IMessageFilterTable`1
+    name: IMessageFilterTable
+    nameWithType: IMessageFilterTable
+    fullName: CoreWCF.Dispatcher.IMessageFilterTable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TFilterData
+    nameWithType: TFilterData
+    fullName: TFilterData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.IMessageFilterTable`1
+    name: IMessageFilterTable
+    nameWithType: IMessageFilterTable
+    fullName: CoreWCF.Dispatcher.IMessageFilterTable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TFilterData
+    nameWithType: TFilterData
+    fullName: TFilterData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  commentId: M:CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  parent: CoreWCF.Dispatcher.MessageFilter
+  isExternal: true
+  name: Match(MessageBuffer)
+  nameWithType: MessageFilter.Match(MessageBuffer)
+  fullName: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+    name: Match
+    nameWithType: MessageFilter.Match
+    fullName: CoreWCF.Dispatcher.MessageFilter.Match
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.MessageBuffer
+    name: MessageBuffer
+    nameWithType: MessageBuffer
+    fullName: CoreWCF.Channels.MessageBuffer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)
+    name: Match
+    nameWithType: MessageFilter.Match
+    fullName: CoreWCF.Dispatcher.MessageFilter.Match
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.MessageBuffer
+    name: MessageBuffer
+    nameWithType: MessageBuffer
+    fullName: CoreWCF.Channels.MessageBuffer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match*
+  commentId: Overload:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match
+  isExternal: true
+  name: Match
+  nameWithType: PrefixEndpointAddressMessageFilter.Match
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Match
+- uid: CoreWCF.Channels.MessageBuffer
+  commentId: T:CoreWCF.Channels.MessageBuffer
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageBuffer
+  nameWithType: MessageBuffer
+  fullName: CoreWCF.Channels.MessageBuffer
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)
+  parent: CoreWCF.Dispatcher.MessageFilter
+  isExternal: true
+  name: Match(Message)
+  nameWithType: MessageFilter.Match(Message)
+  fullName: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)
+    name: Match
+    nameWithType: MessageFilter.Match
+    fullName: CoreWCF.Dispatcher.MessageFilter.Match
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)
+    name: Match
+    nameWithType: MessageFilter.Match
+    fullName: CoreWCF.Dispatcher.MessageFilter.Match
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address*
+  commentId: Overload:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address
+  isExternal: true
+  name: Address
+  nameWithType: PrefixEndpointAddressMessageFilter.Address
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.Address
+- uid: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison*
+  commentId: Overload:CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  isExternal: true
+  name: IncludeHostNameInComparison
+  nameWithType: PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison
+  fullName: CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison

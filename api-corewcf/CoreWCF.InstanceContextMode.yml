@@ -1,0 +1,187 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.InstanceContextMode
+  commentId: T:CoreWCF.InstanceContextMode
+  id: InstanceContextMode
+  parent: CoreWCF
+  children:
+  - CoreWCF.InstanceContextMode.PerCall
+  - CoreWCF.InstanceContextMode.PerSession
+  - CoreWCF.InstanceContextMode.Single
+  - CoreWCF.InstanceContextMode.value__
+  langs:
+  - csharp
+  - vb
+  name: InstanceContextMode
+  nameWithType: InstanceContextMode
+  fullName: CoreWCF.InstanceContextMode
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Specifies the number of service instances available for handling calls that are contained in incoming messages.
+  remarks: "\nThe &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> class manages the association between the channel and the user-defined service objects. Use the `InstanceContextMode` enumeration with the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> property to specify the lifetime of the &lt;xref:CoreWCF.InstanceContext> object. Windows Communication Foundation (WCF) can create a new &lt;xref:CoreWCF.InstanceContext> object for every call, every session, or specify that the &lt;xref:CoreWCF.InstanceContext> object is bound to a single service object. For a working example, see [Instancing](/dotnet/framework/wcf/samples/instancing).  \n\nThe `Single` value specifies that a single &lt;xref:CoreWCF.InstanceContext> object should be used for the lifetime of the service. Several caveats are associated with the `Single` value:\n\n- If the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> value is set to `Single`, your service can only process one message at a time unless you also set the &lt;xref:CoreWCF.ServiceBehaviorAttribute.ConcurrencyMode%2A?displayProperty=nameWithtype> value to &lt;xref:CoreWCF.ConcurrencyMode.Multiple?displayProperty=nameWithType>.  \n\n- For singleton lifetime behavior (for example, if the host application calls the &lt;xref:CoreWCF.ServiceHost.%23ctor%2A?displayProperty=nameWithType> constructor and passes an object to use as the service), the service class must set &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> to `Single`, or an exception is thrown when the service host is opened.  \n\n"
+  syntax:
+    content: 'public sealed class InstanceContextMode : Enum'
+    content.vb: >-
+      Public NotInheritable Class InstanceContextMode
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.InstanceContextMode.value__
+  commentId: F:CoreWCF.InstanceContextMode.value__
+  id: value__
+  parent: CoreWCF.InstanceContextMode
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: InstanceContextMode.value__
+  fullName: CoreWCF.InstanceContextMode.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.InstanceContextMode.PerSession
+  commentId: F:CoreWCF.InstanceContextMode.PerSession
+  id: PerSession
+  parent: CoreWCF.InstanceContextMode
+  langs:
+  - csharp
+  - vb
+  name: PerSession
+  nameWithType: InstanceContextMode.PerSession
+  fullName: CoreWCF.InstanceContextMode.PerSession
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const InstanceContextMode PerSession
+    return:
+      type: CoreWCF.InstanceContextMode
+    content.vb: Public Const PerSession As InstanceContextMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.InstanceContextMode.PerCall
+  commentId: F:CoreWCF.InstanceContextMode.PerCall
+  id: PerCall
+  parent: CoreWCF.InstanceContextMode
+  langs:
+  - csharp
+  - vb
+  name: PerCall
+  nameWithType: InstanceContextMode.PerCall
+  fullName: CoreWCF.InstanceContextMode.PerCall
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const InstanceContextMode PerCall
+    return:
+      type: CoreWCF.InstanceContextMode
+    content.vb: Public Const PerCall As InstanceContextMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.InstanceContextMode.Single
+  commentId: F:CoreWCF.InstanceContextMode.Single
+  id: Single
+  parent: CoreWCF.InstanceContextMode
+  langs:
+  - csharp
+  - vb
+  name: Single
+  nameWithType: InstanceContextMode.Single
+  fullName: CoreWCF.InstanceContextMode.Single
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const InstanceContextMode Single
+    return:
+      type: CoreWCF.InstanceContextMode
+    content.vb: Public Const Single As InstanceContextMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.InstanceContextMode
+  commentId: T:CoreWCF.InstanceContextMode
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContextMode
+  nameWithType: InstanceContextMode
+  fullName: CoreWCF.InstanceContextMode

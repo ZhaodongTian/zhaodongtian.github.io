@@ -1,0 +1,158 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.ListenUriMode
+  commentId: T:CoreWCF.Description.ListenUriMode
+  id: ListenUriMode
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.ListenUriMode.Explicit
+  - CoreWCF.Description.ListenUriMode.Unique
+  - CoreWCF.Description.ListenUriMode.value__
+  langs:
+  - csharp
+  - vb
+  name: ListenUriMode
+  nameWithType: ListenUriMode
+  fullName: CoreWCF.Description.ListenUriMode
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Indicates whether the transport must ensure that the URI provided for the service to listen on is unique or can be used exactly as provided.
+  remarks: "The URI for the endpoint on which a service listens can be set programmatically using the &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUri%2A> property and the value of the &lt;xref:CoreWCF.Description.ListenUriMode> for that endpoint is set using the &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUriMode%2A> property. The default value for &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUri%2A> is &lt;xref:CoreWCF.Description.ServiceEndpoint.Address%2A>. The default value for &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUriMode%2A> is Explicit.  \n\nThe value of these properties may also be set using the &lt;xref:CoreWCF.Configuration.ServiceEndpointElement.ListenUri%2A> property and the &lt;xref:CoreWCF.Configuration.ServiceEndpointElement.ListenUriMode%2A> property.  \n\nWhen the value of the &lt;xref:CoreWCF.Description.ListenUriMode> is set to Unique the transport is responsible for creating a unique URI. Different transports used by Windows Communication Foundation (WCF) generate this unique URI differently  \n\n-   For TCP in exclusive mode (&lt;xref:CoreWCF.Channels.TcpTransportBindingElement.PortSharingEnabled%2A> is `false`) this means binding to a uniquely available port number.  \n\n-   For TCP in port sharing mode (&lt;xref:CoreWCF.Channels.TcpTransportBindingElement.PortSharingEnabled%2A> is `true`) and for all of the other existing WCF transports, this means appending a unique path (a GUID) to the end of the &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUri%2A>.  \n\nWhen the value of the &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUriMode%2A> is set to Explicit mode, the transport uses the &lt;xref:CoreWCF.Description.ServiceEndpoint.ListenUri%2A> exactly as it is provided, without modifying it to make it unique.  \n\n"
+  syntax:
+    content: 'public sealed class ListenUriMode : Enum'
+    content.vb: >-
+      Public NotInheritable Class ListenUriMode
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Description.ListenUriMode.value__
+  commentId: F:CoreWCF.Description.ListenUriMode.value__
+  id: value__
+  parent: CoreWCF.Description.ListenUriMode
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: ListenUriMode.value__
+  fullName: CoreWCF.Description.ListenUriMode.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ListenUriMode.Explicit
+  commentId: F:CoreWCF.Description.ListenUriMode.Explicit
+  id: Explicit
+  parent: CoreWCF.Description.ListenUriMode
+  langs:
+  - csharp
+  - vb
+  name: Explicit
+  nameWithType: ListenUriMode.Explicit
+  fullName: CoreWCF.Description.ListenUriMode.Explicit
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public const ListenUriMode Explicit
+    return:
+      type: CoreWCF.Description.ListenUriMode
+    content.vb: Public Const Explicit As ListenUriMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.Description.ListenUriMode.Unique
+  commentId: F:CoreWCF.Description.ListenUriMode.Unique
+  id: Unique
+  parent: CoreWCF.Description.ListenUriMode
+  langs:
+  - csharp
+  - vb
+  name: Unique
+  nameWithType: ListenUriMode.Unique
+  fullName: CoreWCF.Description.ListenUriMode.Unique
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public const ListenUriMode Unique
+    return:
+      type: CoreWCF.Description.ListenUriMode
+    content.vb: Public Const Unique As ListenUriMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Description.ListenUriMode
+  commentId: T:CoreWCF.Description.ListenUriMode
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ListenUriMode
+  nameWithType: ListenUriMode
+  fullName: CoreWCF.Description.ListenUriMode

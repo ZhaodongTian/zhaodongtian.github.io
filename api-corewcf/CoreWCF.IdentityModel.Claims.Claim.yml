@@ -1,0 +1,992 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Claims.Claim
+  commentId: T:CoreWCF.IdentityModel.Claims.Claim
+  id: Claim
+  parent: CoreWCF.IdentityModel.Claims
+  children:
+  - CoreWCF.IdentityModel.Claims.Claim.#ctor(System.String,System.Object,System.String)
+  - CoreWCF.IdentityModel.Claims.Claim.ClaimType
+  - CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim(System.String)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim(System.Byte[])
+  - CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim(System.Net.Mail.MailAddress)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim(System.String)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim(System.Security.Cryptography.RSA)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim(System.String)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim(System.Byte[])
+  - CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim(System.String)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim(System.Uri)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim(System.Security.Principal.SecurityIdentifier)
+  - CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim(System.Security.Cryptography.X509Certificates.X500DistinguishedName)
+  - CoreWCF.IdentityModel.Claims.Claim.DefaultComparer
+  - CoreWCF.IdentityModel.Claims.Claim.Equals(System.Object)
+  - CoreWCF.IdentityModel.Claims.Claim.GetHashCode
+  - CoreWCF.IdentityModel.Claims.Claim.Resource
+  - CoreWCF.IdentityModel.Claims.Claim.Right
+  - CoreWCF.IdentityModel.Claims.Claim.System
+  - CoreWCF.IdentityModel.Claims.Claim.ToString
+  langs:
+  - csharp
+  - vb
+  name: Claim
+  nameWithType: Claim
+  fullName: CoreWCF.IdentityModel.Claims.Claim
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  summary: Represents a claim that is associated with an entity.
+  remarks: "The Identity Model is a claims-based authorization system. Claims describe the capabilities associated with some entity in the system, often a user of that system. The set of claims associated with a given entity can be thought of as a key. The particular claims define the shape of that key; much like a physical key is used to open a lock in a door. In this way, claims are used to gain access to resources. Access to a given protected resource is determined by comparing the claims required to access that resource with the claims associated with the entity that attempts access.  \n\nA claim is the expression of a right with respect to a particular value. A right could be read, write, or possess. A value could be a database, a file, a mailbox, or a property. Claims also have a claim type. The combination of claim type and right provides the mechanism for capabilities being specified with respect to the value. For example, a claim of type `file` with the right `read` over the value `biography.doc` indicates that the entity with such a claim has read access to the file biography.doc. A claim of type name with the right &lt;xref:System.IdentityModel.Claims.Rights.PossessProperty%2A> over the value `Martin` indicates that the entity with the claim possesses a `Name` property with the value `Martin`.  \n\nAlthough various claim types and rights are defined as part of Identity Model, the system is extensible. The various systems building on top of the Identity Model infrastructure can define claim types and rights as required.  \n\n\n\n"
+  syntax:
+    content: 'public class Claim : Object'
+    content.vb: >-
+      Public Class Claim
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.IdentityModel.Claims.Claim.#ctor(System.String,System.Object,System.String)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.#ctor(System.String,System.Object,System.String)
+  id: '#ctor(System.String,System.Object,System.String)'
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: Claim(String, Object, String)
+  nameWithType: Claim.Claim(String, Object, String)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Claim(System.String, System.Object, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public Claim(string claimType, object resource, string right)
+    parameters:
+    - id: claimType
+      type: System.String
+    - id: resource
+      type: System.Object
+    - id: right
+      type: System.String
+    content.vb: Public Sub New(claimType As String, resource As Object, right As String)
+  overload: CoreWCF.IdentityModel.Claims.Claim.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim(System.String)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim(System.String)
+  id: CreateDnsClaim(System.String)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateDnsClaim(String)
+  nameWithType: Claim.CreateDnsClaim(String)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateDnsClaim(string dns)
+    parameters:
+    - id: dns
+      type: System.String
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateDnsClaim(dns As String) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim(System.Byte[])
+  id: CreateHashClaim(System.Byte[])
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateHashClaim(Byte[])
+  nameWithType: Claim.CreateHashClaim(Byte[])
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateHashClaim(byte[] hash)
+    parameters:
+    - id: hash
+      type: System.Byte[]
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateHashClaim(hash As Byte()) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim*
+  nameWithType.vb: Claim.CreateHashClaim(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim(System.Byte())
+  name.vb: CreateHashClaim(Byte())
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim(System.Net.Mail.MailAddress)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim(System.Net.Mail.MailAddress)
+  id: CreateMailAddressClaim(System.Net.Mail.MailAddress)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateMailAddressClaim(MailAddress)
+  nameWithType: Claim.CreateMailAddressClaim(MailAddress)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim(System.Net.Mail.MailAddress)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateMailAddressClaim(MailAddress mailAddress)
+    parameters:
+    - id: mailAddress
+      type: System.Net.Mail.MailAddress
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateMailAddressClaim(mailAddress As MailAddress) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim(System.String)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim(System.String)
+  id: CreateNameClaim(System.String)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateNameClaim(String)
+  nameWithType: Claim.CreateNameClaim(String)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateNameClaim(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateNameClaim(name As String) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim(System.Security.Cryptography.RSA)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim(System.Security.Cryptography.RSA)
+  id: CreateRsaClaim(System.Security.Cryptography.RSA)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateRsaClaim(RSA)
+  nameWithType: Claim.CreateRsaClaim(RSA)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim(System.Security.Cryptography.RSA)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateRsaClaim(RSA rsa)
+    parameters:
+    - id: rsa
+      type: System.Security.Cryptography.RSA
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateRsaClaim(rsa As RSA) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim(System.String)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim(System.String)
+  id: CreateSpnClaim(System.String)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateSpnClaim(String)
+  nameWithType: Claim.CreateSpnClaim(String)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateSpnClaim(string spn)
+    parameters:
+    - id: spn
+      type: System.String
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateSpnClaim(spn As String) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim(System.Byte[])
+  id: CreateThumbprintClaim(System.Byte[])
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateThumbprintClaim(Byte[])
+  nameWithType: Claim.CreateThumbprintClaim(Byte[])
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateThumbprintClaim(byte[] thumbprint)
+    parameters:
+    - id: thumbprint
+      type: System.Byte[]
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateThumbprintClaim(thumbprint As Byte()) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim*
+  nameWithType.vb: Claim.CreateThumbprintClaim(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim(System.Byte())
+  name.vb: CreateThumbprintClaim(Byte())
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim(System.String)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim(System.String)
+  id: CreateUpnClaim(System.String)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateUpnClaim(String)
+  nameWithType: Claim.CreateUpnClaim(String)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateUpnClaim(string upn)
+    parameters:
+    - id: upn
+      type: System.String
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateUpnClaim(upn As String) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim(System.Uri)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim(System.Uri)
+  id: CreateUriClaim(System.Uri)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateUriClaim(Uri)
+  nameWithType: Claim.CreateUriClaim(Uri)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim(System.Uri)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateUriClaim(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateUriClaim(uri As Uri) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim(System.Security.Principal.SecurityIdentifier)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim(System.Security.Principal.SecurityIdentifier)
+  id: CreateWindowsSidClaim(System.Security.Principal.SecurityIdentifier)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateWindowsSidClaim(SecurityIdentifier)
+  nameWithType: Claim.CreateWindowsSidClaim(SecurityIdentifier)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim(System.Security.Principal.SecurityIdentifier)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateWindowsSidClaim(SecurityIdentifier sid)
+    parameters:
+    - id: sid
+      type: System.Security.Principal.SecurityIdentifier
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateWindowsSidClaim(sid As SecurityIdentifier) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim(System.Security.Cryptography.X509Certificates.X500DistinguishedName)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim(System.Security.Cryptography.X509Certificates.X500DistinguishedName)
+  id: CreateX500DistinguishedNameClaim(System.Security.Cryptography.X509Certificates.X500DistinguishedName)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: CreateX500DistinguishedNameClaim(X500DistinguishedName)
+  nameWithType: Claim.CreateX500DistinguishedNameClaim(X500DistinguishedName)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim(System.Security.Cryptography.X509Certificates.X500DistinguishedName)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim CreateX500DistinguishedNameClaim(X500DistinguishedName x500DistinguishedName)
+    parameters:
+    - id: x500DistinguishedName
+      type: System.Security.Cryptography.X509Certificates.X500DistinguishedName
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared Function CreateX500DistinguishedNameClaim(x500DistinguishedName As X500DistinguishedName) As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Claims.Claim.Equals(System.Object)
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Claim.Equals(Object)
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Equals(System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overload: CoreWCF.IdentityModel.Claims.Claim.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Claims.Claim.GetHashCode
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.GetHashCode
+  id: GetHashCode
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Claim.GetHashCode()
+  fullName: CoreWCF.IdentityModel.Claims.Claim.GetHashCode()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overload: CoreWCF.IdentityModel.Claims.Claim.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Claims.Claim.ToString
+  commentId: M:CoreWCF.IdentityModel.Claims.Claim.ToString
+  id: ToString
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Claim.ToString()
+  fullName: CoreWCF.IdentityModel.Claims.Claim.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.IdentityModel.Claims.Claim.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Claims.Claim.DefaultComparer
+  commentId: P:CoreWCF.IdentityModel.Claims.Claim.DefaultComparer
+  id: DefaultComparer
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: DefaultComparer
+  nameWithType: Claim.DefaultComparer
+  fullName: CoreWCF.IdentityModel.Claims.Claim.DefaultComparer
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static IEqualityComparer<Claim> DefaultComparer { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim}
+    content.vb: Public Shared ReadOnly Property DefaultComparer As IEqualityComparer(Of Claim)
+  overload: CoreWCF.IdentityModel.Claims.Claim.DefaultComparer*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.Claim.System
+  commentId: P:CoreWCF.IdentityModel.Claims.Claim.System
+  id: System
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: System
+  nameWithType: Claim.System
+  fullName: CoreWCF.IdentityModel.Claims.Claim.System
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static Claim System { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public Shared ReadOnly Property System As Claim
+  overload: CoreWCF.IdentityModel.Claims.Claim.System*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.Claim.Resource
+  commentId: P:CoreWCF.IdentityModel.Claims.Claim.Resource
+  id: Resource
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: Resource
+  nameWithType: Claim.Resource
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Resource
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public object Resource { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public ReadOnly Property Resource As Object
+  overload: CoreWCF.IdentityModel.Claims.Claim.Resource*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.Claim.ClaimType
+  commentId: P:CoreWCF.IdentityModel.Claims.Claim.ClaimType
+  id: ClaimType
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: ClaimType
+  nameWithType: Claim.ClaimType
+  fullName: CoreWCF.IdentityModel.Claims.Claim.ClaimType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public string ClaimType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ClaimType As String
+  overload: CoreWCF.IdentityModel.Claims.Claim.ClaimType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.Claim.Right
+  commentId: P:CoreWCF.IdentityModel.Claims.Claim.Right
+  id: Right
+  parent: CoreWCF.IdentityModel.Claims.Claim
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: Claim.Right
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Right
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public string Right { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Right As String
+  overload: CoreWCF.IdentityModel.Claims.Claim.Right*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Claims
+  commentId: N:CoreWCF.IdentityModel.Claims
+  isExternal: true
+  name: CoreWCF.IdentityModel.Claims
+  nameWithType: CoreWCF.IdentityModel.Claims
+  fullName: CoreWCF.IdentityModel.Claims
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Claims.Claim.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.#ctor
+  isExternal: true
+  name: Claim
+  nameWithType: Claim.Claim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Claim
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim
+  isExternal: true
+  name: CreateDnsClaim
+  nameWithType: Claim.CreateDnsClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateDnsClaim
+- uid: CoreWCF.IdentityModel.Claims.Claim
+  commentId: T:CoreWCF.IdentityModel.Claims.Claim
+  parent: CoreWCF.IdentityModel.Claims
+  isExternal: true
+  name: Claim
+  nameWithType: Claim
+  fullName: CoreWCF.IdentityModel.Claims.Claim
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim
+  isExternal: true
+  name: CreateHashClaim
+  nameWithType: Claim.CreateHashClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateHashClaim
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim
+  isExternal: true
+  name: CreateMailAddressClaim
+  nameWithType: Claim.CreateMailAddressClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateMailAddressClaim
+- uid: System.Net.Mail.MailAddress
+  commentId: '!:System.Net.Mail.MailAddress'
+  isExternal: true
+  name: MailAddress
+  nameWithType: MailAddress
+  fullName: System.Net.Mail.MailAddress
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim
+  isExternal: true
+  name: CreateNameClaim
+  nameWithType: Claim.CreateNameClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateNameClaim
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim
+  isExternal: true
+  name: CreateRsaClaim
+  nameWithType: Claim.CreateRsaClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateRsaClaim
+- uid: System.Security.Cryptography.RSA
+  isExternal: true
+  name: RSA
+  nameWithType: RSA
+  fullName: System.Security.Cryptography.RSA
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim
+  isExternal: true
+  name: CreateSpnClaim
+  nameWithType: Claim.CreateSpnClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateSpnClaim
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim
+  isExternal: true
+  name: CreateThumbprintClaim
+  nameWithType: Claim.CreateThumbprintClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateThumbprintClaim
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim
+  isExternal: true
+  name: CreateUpnClaim
+  nameWithType: Claim.CreateUpnClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateUpnClaim
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim
+  isExternal: true
+  name: CreateUriClaim
+  nameWithType: Claim.CreateUriClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateUriClaim
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim
+  isExternal: true
+  name: CreateWindowsSidClaim
+  nameWithType: Claim.CreateWindowsSidClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateWindowsSidClaim
+- uid: System.Security.Principal.SecurityIdentifier
+  commentId: '!:System.Security.Principal.SecurityIdentifier'
+  isExternal: true
+  name: SecurityIdentifier
+  nameWithType: SecurityIdentifier
+  fullName: System.Security.Principal.SecurityIdentifier
+- uid: CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim
+  isExternal: true
+  name: CreateX500DistinguishedNameClaim
+  nameWithType: Claim.CreateX500DistinguishedNameClaim
+  fullName: CoreWCF.IdentityModel.Claims.Claim.CreateX500DistinguishedNameClaim
+- uid: System.Security.Cryptography.X509Certificates.X500DistinguishedName
+  commentId: '!:System.Security.Cryptography.X509Certificates.X500DistinguishedName'
+  isExternal: true
+  name: X500DistinguishedName
+  nameWithType: X500DistinguishedName
+  fullName: System.Security.Cryptography.X509Certificates.X500DistinguishedName
+- uid: CoreWCF.IdentityModel.Claims.Claim.Equals*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.Equals
+  isExternal: true
+  name: Equals
+  nameWithType: Claim.Equals
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.Claims.Claim.GetHashCode*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.GetHashCode
+  isExternal: true
+  name: GetHashCode
+  nameWithType: Claim.GetHashCode
+  fullName: CoreWCF.IdentityModel.Claims.Claim.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.Claims.Claim.ToString*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: Claim.ToString
+  fullName: CoreWCF.IdentityModel.Claims.Claim.ToString
+- uid: CoreWCF.IdentityModel.Claims.Claim.DefaultComparer*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.DefaultComparer
+  isExternal: true
+  name: DefaultComparer
+  nameWithType: Claim.DefaultComparer
+  fullName: CoreWCF.IdentityModel.Claims.Claim.DefaultComparer
+- uid: System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim}
+  commentId: '!:System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim}'
+  definition: System.Collections.Generic.IEqualityComparer`1
+  name: IEqualityComparer<Claim>
+  nameWithType: IEqualityComparer<Claim>
+  fullName: System.Collections.Generic.IEqualityComparer<CoreWCF.IdentityModel.Claims.Claim>
+  nameWithType.vb: IEqualityComparer(Of Claim)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of CoreWCF.IdentityModel.Claims.Claim)
+  name.vb: IEqualityComparer(Of Claim)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEqualityComparer`1
+  isExternal: true
+  name: IEqualityComparer<>
+  nameWithType: IEqualityComparer<>
+  fullName: System.Collections.Generic.IEqualityComparer<>
+  nameWithType.vb: IEqualityComparer(Of )
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of )
+  name.vb: IEqualityComparer(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Claims.Claim.System*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.System
+  isExternal: true
+  name: System
+  nameWithType: Claim.System
+  fullName: CoreWCF.IdentityModel.Claims.Claim.System
+- uid: CoreWCF.IdentityModel.Claims.Claim.Resource*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.Resource
+  isExternal: true
+  name: Resource
+  nameWithType: Claim.Resource
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Resource
+- uid: CoreWCF.IdentityModel.Claims.Claim.ClaimType*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.ClaimType
+  isExternal: true
+  name: ClaimType
+  nameWithType: Claim.ClaimType
+  fullName: CoreWCF.IdentityModel.Claims.Claim.ClaimType
+- uid: CoreWCF.IdentityModel.Claims.Claim.Right*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.Claim.Right
+  isExternal: true
+  name: Right
+  nameWithType: Claim.Right
+  fullName: CoreWCF.IdentityModel.Claims.Claim.Right

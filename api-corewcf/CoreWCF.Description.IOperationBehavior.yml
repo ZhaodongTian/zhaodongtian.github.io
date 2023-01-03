@@ -1,0 +1,208 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IOperationBehavior
+  commentId: T:CoreWCF.Description.IOperationBehavior
+  id: IOperationBehavior
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  - CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  - CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior
+  nameWithType: IOperationBehavior
+  fullName: CoreWCF.Description.IOperationBehavior
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Implements methods that can be used to extend run-time behavior for an operation in either a service or client application.
+  remarks: "Implement the &lt;xref:CoreWCF.Description.IOperationBehavior> interface to modify, examine, or extend some aspect of operation-wide execution at the application level for either client or service applications.  \n\n-   Use the &lt;xref:CoreWCF.Description.IOperationBehavior.AddBindingParameters%2A> method to pass custom data at runtime to enable bindings to support custom behavior.  \n\n-   Use the &lt;xref:CoreWCF.Description.IOperationBehavior.ApplyClientBehavior%2A> method to modify, examine, or insert extensions to a client dispatcher in a client application.  \n\n-   Use the &lt;xref:CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior%2A> method to modify, examine, or insert extensions to operation-wide execution in a service application.  \n\n-   Use the &lt;xref:CoreWCF.Description.IOperationBehavior.Validate%2A> method to confirm that a &lt;xref:CoreWCF.Description.OperationDescription> meets specific requirements. This can be used to ensure that an operation has a certain configuration setting enabled, supports a particular feature and other requirements.  \n\n&lt;xref:CoreWCF.Description.IOperationBehavior> objects can make use of any of these methods, but often only one is important; in such cases, the unused methods can return, performing no action.  \n\n> [!NOTE]\n>  All of the &lt;xref:CoreWCF.Description.IOperationBehavior> methods pass an &lt;xref:CoreWCF.Description.OperationDescription> object as a parameter. This parameter is for examination only; if you modify the &lt;xref:CoreWCF.Description.OperationDescription> object the execution behavior is undefined.  \n\n&lt;xref:CoreWCF.Description.IOperationBehavior> objects are typically used to access the various properties of the &lt;xref:CoreWCF.Dispatcher.DispatchOperation?displayProperty=nameWithType> object in a service application and the &lt;xref:CoreWCF.Dispatcher.ClientOperation?displayProperty=nameWithType> object in a client application.  \n\nTypically, the developer first reviews the extensibility points to determine which customization option suits the application scenario and then implements the customization at the appropriate scope. For example, &lt;xref:CoreWCF.Description.IServiceBehavior?displayProperty=nameWithType> objects can insert customizations for all messages in an entire service and &lt;xref:CoreWCF.Description.IContractBehavior?displayProperty=nameWithType> objects can insert customizations for all messages across a specific contract, and so on. For a description of the various properties and customizations available, see [Extending ServiceHost and the Service Model Layer](/dotnet/framework/wcf/extending/extending-servicehost-and-the-service-model-layer).  \n\nOnce a customization has been decided upon (and the customization interface implemented if necessary) and the &lt;xref:CoreWCF.Description.IOperationBehavior> is the appropriate scope of customization, the customization must be inserted into the Windows Communication Foundation (WCF) runtime by implementing &lt;xref:CoreWCF.Description.IOperationBehavior> and adding the operation behavior to the runtime.  \n\nThere are two ways to add the &lt;xref:CoreWCF.Description.IOperationBehavior> to the runtime:  \n\n-   Programmatically add the custom operation behavior to the &lt;xref:CoreWCF.Description.OperationDescription.Behaviors%2A?displayProperty=nameWithType> property prior to the opening of the service host (in a service application) or the channel factory (in a client application).  \n\n-   Add the behavior using a custom attribute.  \n\nTo perform the service customization task for which it is intended, the &lt;xref:CoreWCF.Description.IOperationBehavior> object must be added to the &lt;xref:CoreWCF.Description.OperationDescription.Behaviors%2A?displayProperty=nameWithType> property prior to the construction of the service runtime, which occurs when &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method is called on &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType>. To perform a client customization task, the &lt;xref:CoreWCF.Description.IOperationBehavior> object must be added to the &lt;xref:CoreWCF.Description.OperationDescription.Behaviors%2A?displayProperty=nameWithType> property before calling the &lt;xref:CoreWCF.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> method or the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method on &lt;xref:CoreWCF.ChannelFactory%601>.  \n\nAlthough the operation behavior is designed for easy access to the runtime at the scope of an individual operation, you can access the runtime at a larger scope by accessing the parent runtime object.  \n\n\n\n"
+  syntax:
+    content: public interface IOperationBehavior
+    content.vb: Public Interface IOperationBehavior
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  id: AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IOperationBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddBindingParameters(OperationDescription, BindingParameterCollection)
+  nameWithType: IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void AddBindingParameters(OperationDescription operationDescription, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Sub AddBindingParameters(operationDescription As OperationDescription, bindingParameters As BindingParameterCollection)
+  overload: CoreWCF.Description.IOperationBehavior.AddBindingParameters*
+- uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  commentId: M:CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  id: ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  parent: CoreWCF.Description.IOperationBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyClientBehavior(OperationDescription, ClientOperation)
+  nameWithType: IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.ClientOperation)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyClientBehavior(OperationDescription operationDescription, ClientOperation clientOperation)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    - id: clientOperation
+      type: CoreWCF.Dispatcher.ClientOperation
+    content.vb: Sub ApplyClientBehavior(operationDescription As OperationDescription, clientOperation As ClientOperation)
+  overload: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior*
+- uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  commentId: M:CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  id: ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  parent: CoreWCF.Description.IOperationBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  nameWithType: IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.DispatchOperation)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyDispatchBehavior(OperationDescription operationDescription, DispatchOperation dispatchOperation)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    - id: dispatchOperation
+      type: CoreWCF.Dispatcher.DispatchOperation
+    content.vb: Sub ApplyDispatchBehavior(operationDescription As OperationDescription, dispatchOperation As DispatchOperation)
+  overload: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior*
+- uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  id: Validate(CoreWCF.Description.OperationDescription)
+  parent: CoreWCF.Description.IOperationBehavior
+  langs:
+  - csharp
+  - vb
+  name: Validate(OperationDescription)
+  nameWithType: IOperationBehavior.Validate(OperationDescription)
+  fullName: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void Validate(OperationDescription operationDescription)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    content.vb: Sub Validate(operationDescription As OperationDescription)
+  overload: CoreWCF.Description.IOperationBehavior.Validate*
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters*
+  commentId: Overload:CoreWCF.Description.IOperationBehavior.AddBindingParameters
+  isExternal: true
+  name: AddBindingParameters
+  nameWithType: IOperationBehavior.AddBindingParameters
+  fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+- uid: CoreWCF.Description.OperationDescription
+  commentId: T:CoreWCF.Description.OperationDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescription
+  nameWithType: OperationDescription
+  fullName: CoreWCF.Description.OperationDescription
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior*
+  commentId: Overload:CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+  isExternal: true
+  name: ApplyClientBehavior
+  nameWithType: IOperationBehavior.ApplyClientBehavior
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+- uid: CoreWCF.Dispatcher.ClientOperation
+  commentId: T:CoreWCF.Dispatcher.ClientOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientOperation
+  nameWithType: ClientOperation
+  fullName: CoreWCF.Dispatcher.ClientOperation
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior
+  nameWithType: IOperationBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+- uid: CoreWCF.Dispatcher.DispatchOperation
+  commentId: T:CoreWCF.Dispatcher.DispatchOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchOperation
+  nameWithType: DispatchOperation
+  fullName: CoreWCF.Dispatcher.DispatchOperation
+- uid: CoreWCF.Description.IOperationBehavior.Validate*
+  commentId: Overload:CoreWCF.Description.IOperationBehavior.Validate
+  isExternal: true
+  name: Validate
+  nameWithType: IOperationBehavior.Validate
+  fullName: CoreWCF.Description.IOperationBehavior.Validate

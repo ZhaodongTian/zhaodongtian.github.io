@@ -1,0 +1,625 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ServiceAuthorizationManager
+  commentId: T:CoreWCF.ServiceAuthorizationManager
+  id: ServiceAuthorizationManager
+  parent: CoreWCF
+  children:
+  - CoreWCF.ServiceAuthorizationManager.#ctor
+  - CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext)
+  - CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext,CoreWCF.Channels.Message@)
+  - CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext)
+  - CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext,CoreWCF.Channels.Message)
+  - CoreWCF.ServiceAuthorizationManager.CheckAccessCore(CoreWCF.OperationContext)
+  - CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync(CoreWCF.OperationContext)
+  - CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies(CoreWCF.OperationContext)
+  langs:
+  - csharp
+  - vb
+  name: ServiceAuthorizationManager
+  nameWithType: ServiceAuthorizationManager
+  fullName: CoreWCF.ServiceAuthorizationManager
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Provides authorization access checking for service operations.
+  remarks: "This class is responsible for evaluating all policies (rules that define what a user is allowed to do), comparing the policies to claims made by a client, setting the resulting &lt;xref:System.IdentityModel.Policy.AuthorizationContext> to the &lt;xref:CoreWCF.ServiceSecurityContext>, and providing the authorization decision whether to allow or deny access for a given service operation for a caller.  \n\nThe &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A> method is called by the Windows Communication Foundation (WCF) infrastructure each time an attempt to access a resource is made. The method returns `true` or `false` to allow or deny access, respectively.  \n\nThe &lt;xref:CoreWCF.ServiceAuthorizationManager> is part of the WCF*Identity Model* infrastructure. The Identity Model enables you to create custom authorization policies and custom authorization schemes. For more information about how the Identity Model works, see [Managing Claims and Authorization with the Identity Model](/dotnet/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model).  \n\n## Custom Authorization  \nThis class does not perform any authorization and allows users to access all service operations. To provide more restrictive authorization, you must create a custom authorization manager that checks custom policies. To do this, inherit from this class and override the &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A> method. Specify the instance of the derived class through the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager%2A> property.  \n\nIn &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A>, the application can use the &lt;xref:CoreWCF.OperationContext> object to access the caller identity (&lt;xref:CoreWCF.OperationContext.ServiceSecurityContext%2A>).  \n\nBy getting the &lt;xref:CoreWCF.OperationContext.IncomingMessageHeaders%2A> property, which returns a &lt;xref:CoreWCF.Channels.MessageHeaders> object, the application can access the service (&lt;xref:CoreWCF.Channels.MessageHeaders.To%2A>), and the operation (&lt;xref:CoreWCF.Channels.MessageHeaders.Action%2A>).  \n\nBy getting the &lt;xref:CoreWCF.OperationContext.RequestContext%2A> property, which returns a &lt;xref:CoreWCF.Channels.RequestContext> object, the application can access the entire request message (&lt;xref:CoreWCF.Channels.RequestContext.RequestMessage%2A>) and perform the authorization decision accordingly.  \n\nFor an example, see [How to: Create a Custom Authorization Manager for a Service](/dotnet/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service).  \n\nTo create custom authorization policies, implement the &lt;xref:System.IdentityModel.Policy.IAuthorizationPolicy> class.  For an example, see [How to: Create a Custom Authorization Policy](/dotnet/framework/wcf/extending/how-to-create-a-custom-authorization-policy).  \n\nTo create a custom claim, use the &lt;xref:System.IdentityModel.Claims.Claim> class.  For an example, see [How to: Create a Custom Claim](/dotnet/framework/wcf/extending/how-to-create-a-custom-claim). To compare custom claims, you must compare claims, as shown in [How to: Compare Claims](/dotnet/framework/wcf/extending/how-to-compare-claims).  \n\nFor more information, see [Custom Authorization](/dotnet/framework/wcf/extending/custom-authorization).  \n\nYou can set the type of a custom authorization manager using the [&amp;lt;serviceAuthorization&amp;gt;](/dotnet/framework/configure-apps/file-schema/wcf/serviceauthorization-element) in a client application configuration file.  \n\n\n\n"
+  syntax:
+    content: 'public class ServiceAuthorizationManager : Object'
+    content.vb: >-
+      Public Class ServiceAuthorizationManager
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.ServiceAuthorizationManager.#ctor
+  commentId: M:CoreWCF.ServiceAuthorizationManager.#ctor
+  id: '#ctor'
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: ServiceAuthorizationManager()
+  nameWithType: ServiceAuthorizationManager.ServiceAuthorizationManager()
+  fullName: CoreWCF.ServiceAuthorizationManager.ServiceAuthorizationManager()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceAuthorizationManager()
+    content.vb: Public Sub New
+  overload: CoreWCF.ServiceAuthorizationManager.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext,CoreWCF.Channels.Message@)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext,CoreWCF.Channels.Message@)
+  id: CheckAccess(CoreWCF.OperationContext,CoreWCF.Channels.Message@)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: CheckAccess(OperationContext, ref Message)
+  nameWithType: ServiceAuthorizationManager.CheckAccess(OperationContext, ref Message)
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext, ref CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public virtual bool CheckAccess(OperationContext operationContext, ref Message message)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function CheckAccess(operationContext As OperationContext, ByRef message As Message) As Boolean
+  overload: CoreWCF.ServiceAuthorizationManager.CheckAccess*
+  nameWithType.vb: ServiceAuthorizationManager.CheckAccess(OperationContext, ByRef Message)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext, ByRef CoreWCF.Channels.Message)
+  name.vb: CheckAccess(OperationContext, ByRef Message)
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext,CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext,CoreWCF.Channels.Message)
+  id: CheckAccessAsync(CoreWCF.OperationContext,CoreWCF.Channels.Message)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: CheckAccessAsync(OperationContext, Message)
+  nameWithType: ServiceAuthorizationManager.CheckAccessAsync(OperationContext, Message)
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext, CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public virtual ValueTask<(bool, Message)> CheckAccessAsync(OperationContext operationContext, Message message)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Threading.Tasks.ValueTask{System.ValueTuple{System.Boolean,CoreWCF.Channels.Message}}
+    content.vb: Public Overridable Function CheckAccessAsync(operationContext As OperationContext, message As Message) As ValueTask(Of(Boolean, Message)(Of Boolean , Message))
+  overload: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext)
+  id: CheckAccess(CoreWCF.OperationContext)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: CheckAccess(OperationContext)
+  nameWithType: ServiceAuthorizationManager.CheckAccess(OperationContext)
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public virtual bool CheckAccess(OperationContext operationContext)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function CheckAccess(operationContext As OperationContext) As Boolean
+  overload: CoreWCF.ServiceAuthorizationManager.CheckAccess*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext)
+  id: CheckAccessAsync(CoreWCF.OperationContext)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: CheckAccessAsync(OperationContext)
+  nameWithType: ServiceAuthorizationManager.CheckAccessAsync(OperationContext)
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public virtual ValueTask<bool> CheckAccessAsync(OperationContext operationContext)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    return:
+      type: System.Threading.Tasks.ValueTask{System.Boolean}
+    content.vb: Public Overridable Function CheckAccessAsync(operationContext As OperationContext) As ValueTask(Of Boolean)
+  overload: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies(CoreWCF.OperationContext)
+  id: GetAuthorizationPolicies(CoreWCF.OperationContext)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: GetAuthorizationPolicies(OperationContext)
+  nameWithType: ServiceAuthorizationManager.GetAuthorizationPolicies(OperationContext)
+  fullName: CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected virtual ReadOnlyCollection<IAuthorizationPolicy> GetAuthorizationPolicies(OperationContext operationContext)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}
+    content.vb: Protected Overridable Function GetAuthorizationPolicies(operationContext As OperationContext) As ReadOnlyCollection(Of IAuthorizationPolicy)
+  overload: CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessCore(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.CheckAccessCore(CoreWCF.OperationContext)
+  id: CheckAccessCore(CoreWCF.OperationContext)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: CheckAccessCore(OperationContext)
+  nameWithType: ServiceAuthorizationManager.CheckAccessCore(OperationContext)
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessCore(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected virtual bool CheckAccessCore(OperationContext operationContext)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable Function CheckAccessCore(operationContext As OperationContext) As Boolean
+  overload: CoreWCF.ServiceAuthorizationManager.CheckAccessCore*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync(CoreWCF.OperationContext)
+  id: CheckAccessCoreAsync(CoreWCF.OperationContext)
+  parent: CoreWCF.ServiceAuthorizationManager
+  langs:
+  - csharp
+  - vb
+  name: CheckAccessCoreAsync(OperationContext)
+  nameWithType: ServiceAuthorizationManager.CheckAccessCoreAsync(OperationContext)
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected virtual ValueTask<bool> CheckAccessCoreAsync(OperationContext operationContext)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+    return:
+      type: System.Threading.Tasks.ValueTask{System.Boolean}
+    content.vb: Protected Overridable Function CheckAccessCoreAsync(operationContext As OperationContext) As ValueTask(Of Boolean)
+  overload: CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.ServiceAuthorizationManager.#ctor*
+  commentId: Overload:CoreWCF.ServiceAuthorizationManager.#ctor
+  isExternal: true
+  name: ServiceAuthorizationManager
+  nameWithType: ServiceAuthorizationManager.ServiceAuthorizationManager
+  fullName: CoreWCF.ServiceAuthorizationManager.ServiceAuthorizationManager
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccess*
+  commentId: Overload:CoreWCF.ServiceAuthorizationManager.CheckAccess
+  isExternal: true
+  name: CheckAccess
+  nameWithType: ServiceAuthorizationManager.CheckAccess
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccess
+- uid: CoreWCF.OperationContext
+  commentId: T:CoreWCF.OperationContext
+  parent: CoreWCF
+  isExternal: true
+  name: OperationContext
+  nameWithType: OperationContext
+  fullName: CoreWCF.OperationContext
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync*
+  commentId: Overload:CoreWCF.ServiceAuthorizationManager.CheckAccessAsync
+  isExternal: true
+  name: CheckAccessAsync
+  nameWithType: ServiceAuthorizationManager.CheckAccessAsync
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessAsync
+- uid: System.Threading.Tasks.ValueTask{System.ValueTuple{System.Boolean,CoreWCF.Channels.Message}}
+  commentId: '!:System.Threading.Tasks.ValueTask{System.ValueTuple{System.Boolean,CoreWCF.Channels.Message}}'
+  definition: System.Threading.Tasks.ValueTask`1
+  name: ValueTask<(, )<Boolean, Message>>
+  nameWithType: ValueTask<(, )<Boolean, Message>>
+  fullName: System.Threading.Tasks.ValueTask<System.ValueTuple<System.Boolean, CoreWCF.Channels.Message>>
+  nameWithType.vb: ValueTask(Of (, )(Of Boolean, Message))
+  fullName.vb: System.Threading.Tasks.ValueTask(Of System.ValueTuple(Of System.Boolean, CoreWCF.Channels.Message))
+  name.vb: ValueTask(Of (, )(Of Boolean, Message))
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    nameWithType: ValueTask
+    fullName: System.Threading.Tasks.ValueTask
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.ValueTuple`2
+    name: (, )
+    nameWithType: (, )
+    fullName: System.ValueTuple
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    nameWithType: ValueTask
+    fullName: System.Threading.Tasks.ValueTask
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.ValueTuple`2
+    name: (, )
+    nameWithType: (, )
+    fullName: System.ValueTuple
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.ValueTask`1
+  isExternal: true
+  name: ValueTask<>
+  nameWithType: ValueTask<>
+  fullName: System.Threading.Tasks.ValueTask<>
+  nameWithType.vb: ValueTask(Of )
+  fullName.vb: System.Threading.Tasks.ValueTask(Of )
+  name.vb: ValueTask(Of )
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    nameWithType: ValueTask
+    fullName: System.Threading.Tasks.ValueTask
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    nameWithType: ValueTask
+    fullName: System.Threading.Tasks.ValueTask
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.ValueTask{System.Boolean}
+  commentId: '!:System.Threading.Tasks.ValueTask{System.Boolean}'
+  definition: System.Threading.Tasks.ValueTask`1
+  name: ValueTask<Boolean>
+  nameWithType: ValueTask<Boolean>
+  fullName: System.Threading.Tasks.ValueTask<System.Boolean>
+  nameWithType.vb: ValueTask(Of Boolean)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of System.Boolean)
+  name.vb: ValueTask(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    nameWithType: ValueTask
+    fullName: System.Threading.Tasks.ValueTask
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    nameWithType: ValueTask
+    fullName: System.Threading.Tasks.ValueTask
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies*
+  commentId: Overload:CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies
+  isExternal: true
+  name: GetAuthorizationPolicies
+  nameWithType: ServiceAuthorizationManager.GetAuthorizationPolicies
+  fullName: CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}
+  commentId: '!:System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}'
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<IAuthorizationPolicy>
+  nameWithType: ReadOnlyCollection<IAuthorizationPolicy>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<CoreWCF.IdentityModel.Policy.IAuthorizationPolicy>
+  nameWithType.vb: ReadOnlyCollection(Of IAuthorizationPolicy)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of CoreWCF.IdentityModel.Policy.IAuthorizationPolicy)
+  name.vb: ReadOnlyCollection(Of IAuthorizationPolicy)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    name: IAuthorizationPolicy
+    nameWithType: IAuthorizationPolicy
+    fullName: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    name: IAuthorizationPolicy
+    nameWithType: IAuthorizationPolicy
+    fullName: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<>
+  nameWithType: ReadOnlyCollection<>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<>
+  nameWithType.vb: ReadOnlyCollection(Of )
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of )
+  name.vb: ReadOnlyCollection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessCore*
+  commentId: Overload:CoreWCF.ServiceAuthorizationManager.CheckAccessCore
+  isExternal: true
+  name: CheckAccessCore
+  nameWithType: ServiceAuthorizationManager.CheckAccessCore
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessCore
+- uid: CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync*
+  commentId: Overload:CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync
+  isExternal: true
+  name: CheckAccessCoreAsync
+  nameWithType: ServiceAuthorizationManager.CheckAccessCoreAsync
+  fullName: CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync

@@ -1,0 +1,940 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  id: RsaSecurityKey
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.#ctor(System.Security.Cryptography.RSA)
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey(System.String,System.Byte[])
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey(System.String,System.Byte[])
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature(System.String)
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter(System.String)
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter(System.String)
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm(System.String)
+  - CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize
+  langs:
+  - csharp
+  - vb
+  name: RsaSecurityKey
+  nameWithType: RsaSecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: Represents a security key that is generated using the RSA algorithm. This class cannot be inherited.
+  remarks: To be added.
+  syntax:
+    content: 'public sealed class RsaSecurityKey : AsymmetricSecurityKey'
+    content.vb: >-
+      Public NotInheritable Class RsaSecurityKey
+          Inherits AsymmetricSecurityKey
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.Tokens.SecurityKey
+  - CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.#ctor(System.Security.Cryptography.RSA)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.#ctor(System.Security.Cryptography.RSA)
+  id: '#ctor(System.Security.Cryptography.RSA)'
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: RsaSecurityKey(RSA)
+  nameWithType: RsaSecurityKey.RsaSecurityKey(RSA)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.RsaSecurityKey(System.Security.Cryptography.RSA)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public RsaSecurityKey(RSA rsa)
+    parameters:
+    - id: rsa
+      type: System.Security.Cryptography.RSA
+    content.vb: Public Sub New(rsa As RSA)
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey(System.String,System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey(System.String,System.Byte[])
+  id: DecryptKey(System.String,System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: DecryptKey(String, Byte[])
+  nameWithType: RsaSecurityKey.DecryptKey(String, Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey(System.String, System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override byte[] DecryptKey(string algorithm, byte[] keyData)
+    parameters:
+    - id: algorithm
+      type: System.String
+    - id: keyData
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Overrides Function DecryptKey(algorithm As String, keyData As Byte()) As Byte()
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey*
+  nameWithType.vb: RsaSecurityKey.DecryptKey(String, Byte())
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey(System.String, System.Byte())
+  name.vb: DecryptKey(String, Byte())
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey(System.String,System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey(System.String,System.Byte[])
+  id: EncryptKey(System.String,System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: EncryptKey(String, Byte[])
+  nameWithType: RsaSecurityKey.EncryptKey(String, Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey(System.String, System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override byte[] EncryptKey(string algorithm, byte[] keyData)
+    parameters:
+    - id: algorithm
+      type: System.String
+    - id: keyData
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Overrides Function EncryptKey(algorithm As String, keyData As Byte()) As Byte()
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey*
+  nameWithType.vb: RsaSecurityKey.EncryptKey(String, Byte())
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey(System.String, System.Byte())
+  name.vb: EncryptKey(String, Byte())
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+  id: GetAsymmetricAlgorithm(System.String,System.Boolean)
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: GetAsymmetricAlgorithm(String, Boolean)
+  nameWithType: RsaSecurityKey.GetAsymmetricAlgorithm(String, Boolean)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm(System.String, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override AsymmetricAlgorithm GetAsymmetricAlgorithm(string algorithm, bool requiresPrivateKey)
+    parameters:
+    - id: algorithm
+      type: System.String
+    - id: requiresPrivateKey
+      type: System.Boolean
+    return:
+      type: System.Security.Cryptography.AsymmetricAlgorithm
+    content.vb: Public Overrides Function GetAsymmetricAlgorithm(algorithm As String, requiresPrivateKey As Boolean) As AsymmetricAlgorithm
+  overridden: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature(System.String)
+  id: GetHashAlgorithmForSignature(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: GetHashAlgorithmForSignature(String)
+  nameWithType: RsaSecurityKey.GetHashAlgorithmForSignature(String)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override HashAlgorithm GetHashAlgorithmForSignature(string algorithm)
+    parameters:
+    - id: algorithm
+      type: System.String
+    return:
+      type: System.Security.Cryptography.HashAlgorithm
+    content.vb: Public Overrides Function GetHashAlgorithmForSignature(algorithm As String) As HashAlgorithm
+  overridden: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter(System.String)
+  id: GetSignatureDeformatter(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: GetSignatureDeformatter(String)
+  nameWithType: RsaSecurityKey.GetSignatureDeformatter(String)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override AsymmetricSignatureDeformatter GetSignatureDeformatter(string algorithm)
+    parameters:
+    - id: algorithm
+      type: System.String
+    return:
+      type: System.Security.Cryptography.AsymmetricSignatureDeformatter
+    content.vb: Public Overrides Function GetSignatureDeformatter(algorithm As String) As AsymmetricSignatureDeformatter
+  overridden: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter(System.String)
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter(System.String)
+  id: GetSignatureFormatter(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: GetSignatureFormatter(String)
+  nameWithType: RsaSecurityKey.GetSignatureFormatter(String)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override AsymmetricSignatureFormatter GetSignatureFormatter(string algorithm)
+    parameters:
+    - id: algorithm
+      type: System.String
+    return:
+      type: System.Security.Cryptography.AsymmetricSignatureFormatter
+    content.vb: Public Overrides Function GetSignatureFormatter(algorithm As String) As AsymmetricSignatureFormatter
+  overridden: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter(System.String)
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey
+  id: HasPrivateKey
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: HasPrivateKey()
+  nameWithType: RsaSecurityKey.HasPrivateKey()
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override bool HasPrivateKey()
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function HasPrivateKey As Boolean
+  overridden: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm(System.String)
+  id: IsSupportedAlgorithm(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: IsSupportedAlgorithm(String)
+  nameWithType: RsaSecurityKey.IsSupportedAlgorithm(String)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override bool IsSupportedAlgorithm(string algorithm)
+    parameters:
+    - id: algorithm
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function IsSupportedAlgorithm(algorithm As String) As Boolean
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize
+  commentId: P:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize
+  id: KeySize
+  parent: CoreWCF.IdentityModel.Tokens.RsaSecurityKey
+  langs:
+  - csharp
+  - vb
+  name: KeySize
+  nameWithType: RsaSecurityKey.KeySize
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override int KeySize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Overrides ReadOnly Property KeySize As Integer
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  overload: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKey
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityKey
+  nameWithType: SecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey
+- uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: AsymmetricSecurityKey
+  nameWithType: AsymmetricSecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.#ctor
+  isExternal: true
+  name: RsaSecurityKey
+  nameWithType: RsaSecurityKey.RsaSecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.RsaSecurityKey
+- uid: System.Security.Cryptography.RSA
+  isExternal: true
+  name: RSA
+  nameWithType: RSA
+  fullName: System.Security.Cryptography.RSA
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  isExternal: true
+  name: DecryptKey(String, Byte[])
+  nameWithType: SecurityKey.DecryptKey(String, Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String, System.Byte[])
+  nameWithType.vb: SecurityKey.DecryptKey(String, Byte())
+  fullName.vb: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String, System.Byte())
+  name.vb: DecryptKey(String, Byte())
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+    name: DecryptKey
+    nameWithType: SecurityKey.DecryptKey
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+    name: DecryptKey
+    nameWithType: SecurityKey.DecryptKey
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey
+  isExternal: true
+  name: DecryptKey
+  nameWithType: RsaSecurityKey.DecryptKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.DecryptKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  isExternal: true
+  name: EncryptKey(String, Byte[])
+  nameWithType: SecurityKey.EncryptKey(String, Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String, System.Byte[])
+  nameWithType.vb: SecurityKey.EncryptKey(String, Byte())
+  fullName.vb: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String, System.Byte())
+  name.vb: EncryptKey(String, Byte())
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+    name: EncryptKey
+    nameWithType: SecurityKey.EncryptKey
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+    name: EncryptKey
+    nameWithType: SecurityKey.EncryptKey
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey
+  isExternal: true
+  name: EncryptKey
+  nameWithType: RsaSecurityKey.EncryptKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.EncryptKey
+- uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+  commentId: M:CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+  parent: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  isExternal: true
+  name: GetAsymmetricAlgorithm(String, Boolean)
+  nameWithType: AsymmetricSecurityKey.GetAsymmetricAlgorithm(String, Boolean)
+  fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String, System.Boolean)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+    name: GetAsymmetricAlgorithm
+    nameWithType: AsymmetricSecurityKey.GetAsymmetricAlgorithm
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm(System.String,System.Boolean)
+    name: GetAsymmetricAlgorithm
+    nameWithType: AsymmetricSecurityKey.GetAsymmetricAlgorithm
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetAsymmetricAlgorithm
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm
+  isExternal: true
+  name: GetAsymmetricAlgorithm
+  nameWithType: RsaSecurityKey.GetAsymmetricAlgorithm
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetAsymmetricAlgorithm
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Security.Cryptography.AsymmetricAlgorithm
+  isExternal: true
+  name: AsymmetricAlgorithm
+  nameWithType: AsymmetricAlgorithm
+  fullName: System.Security.Cryptography.AsymmetricAlgorithm
+- uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  isExternal: true
+  name: GetHashAlgorithmForSignature(String)
+  nameWithType: AsymmetricSecurityKey.GetHashAlgorithmForSignature(String)
+  fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)
+    name: GetHashAlgorithmForSignature
+    nameWithType: AsymmetricSecurityKey.GetHashAlgorithmForSignature
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature(System.String)
+    name: GetHashAlgorithmForSignature
+    nameWithType: AsymmetricSecurityKey.GetHashAlgorithmForSignature
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetHashAlgorithmForSignature
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature
+  isExternal: true
+  name: GetHashAlgorithmForSignature
+  nameWithType: RsaSecurityKey.GetHashAlgorithmForSignature
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetHashAlgorithmForSignature
+- uid: System.Security.Cryptography.HashAlgorithm
+  isExternal: true
+  name: HashAlgorithm
+  nameWithType: HashAlgorithm
+  fullName: System.Security.Cryptography.HashAlgorithm
+- uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  isExternal: true
+  name: GetSignatureDeformatter(String)
+  nameWithType: AsymmetricSecurityKey.GetSignatureDeformatter(String)
+  fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter(System.String)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter(System.String)
+    name: GetSignatureDeformatter
+    nameWithType: AsymmetricSecurityKey.GetSignatureDeformatter
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter(System.String)
+    name: GetSignatureDeformatter
+    nameWithType: AsymmetricSecurityKey.GetSignatureDeformatter
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureDeformatter
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter
+  isExternal: true
+  name: GetSignatureDeformatter
+  nameWithType: RsaSecurityKey.GetSignatureDeformatter
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureDeformatter
+- uid: System.Security.Cryptography.AsymmetricSignatureDeformatter
+  isExternal: true
+  name: AsymmetricSignatureDeformatter
+  nameWithType: AsymmetricSignatureDeformatter
+  fullName: System.Security.Cryptography.AsymmetricSignatureDeformatter
+- uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  isExternal: true
+  name: GetSignatureFormatter(String)
+  nameWithType: AsymmetricSecurityKey.GetSignatureFormatter(String)
+  fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter(System.String)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter(System.String)
+    name: GetSignatureFormatter
+    nameWithType: AsymmetricSecurityKey.GetSignatureFormatter
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter(System.String)
+    name: GetSignatureFormatter
+    nameWithType: AsymmetricSecurityKey.GetSignatureFormatter
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.GetSignatureFormatter
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter
+  isExternal: true
+  name: GetSignatureFormatter
+  nameWithType: RsaSecurityKey.GetSignatureFormatter
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.GetSignatureFormatter
+- uid: System.Security.Cryptography.AsymmetricSignatureFormatter
+  isExternal: true
+  name: AsymmetricSignatureFormatter
+  nameWithType: AsymmetricSignatureFormatter
+  fullName: System.Security.Cryptography.AsymmetricSignatureFormatter
+- uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+  commentId: M:CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+  parent: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  isExternal: true
+  name: HasPrivateKey()
+  nameWithType: AsymmetricSecurityKey.HasPrivateKey()
+  fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+    name: HasPrivateKey
+    nameWithType: AsymmetricSecurityKey.HasPrivateKey
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+    name: HasPrivateKey
+    nameWithType: AsymmetricSecurityKey.HasPrivateKey
+    fullName: CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey.HasPrivateKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey
+  isExternal: true
+  name: HasPrivateKey
+  nameWithType: RsaSecurityKey.HasPrivateKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.HasPrivateKey
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  isExternal: true
+  name: IsSupportedAlgorithm(String)
+  nameWithType: SecurityKey.IsSupportedAlgorithm(String)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+    name: IsSupportedAlgorithm
+    nameWithType: SecurityKey.IsSupportedAlgorithm
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+    name: IsSupportedAlgorithm
+    nameWithType: SecurityKey.IsSupportedAlgorithm
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm
+  isExternal: true
+  name: IsSupportedAlgorithm
+  nameWithType: RsaSecurityKey.IsSupportedAlgorithm
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.IsSupportedAlgorithm
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  isExternal: true
+  name: KeySize
+  nameWithType: SecurityKey.KeySize
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+- uid: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize
+  isExternal: true
+  name: KeySize
+  nameWithType: RsaSecurityKey.KeySize
+  fullName: CoreWCF.IdentityModel.Tokens.RsaSecurityKey.KeySize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

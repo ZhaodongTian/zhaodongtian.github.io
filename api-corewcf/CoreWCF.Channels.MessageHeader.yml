@@ -1,0 +1,1108 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageHeader
+  commentId: T:CoreWCF.Channels.MessageHeader
+  id: MessageHeader
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageHeader.#ctor
+  - CoreWCF.Channels.MessageHeader.Actor
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String,System.Boolean)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String)
+  - CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String,System.Boolean)
+  - CoreWCF.Channels.MessageHeader.IsMessageVersionSupported(CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.IsReferenceParameter
+  - CoreWCF.Channels.MessageHeader.MustUnderstand
+  - CoreWCF.Channels.MessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.OnWriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.Relay
+  - CoreWCF.Channels.MessageHeader.ToString
+  - CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlWriter,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.WriteHeaderAttributes(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.WriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.MessageHeader.WriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  langs:
+  - csharp
+  - vb
+  name: MessageHeader
+  nameWithType: MessageHeader
+  fullName: CoreWCF.Channels.MessageHeader
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents the content of a SOAP header.
+  remarks: "A message header contains optional metadata that describe a message encapsulated by the <xref:CoreWCF.Channels.Message> class.  \n\nA <xref:CoreWCF.Channels.Message> can have zero or more headers that are used as an extension mechanism to pass information in messages that are application-specific. You can use <xref:CoreWCF.Channels.Message.Headers%2A> to add message headers to a message by calling the <xref:CoreWCF.Channels.MessageHeaders.Add%2A> method.  \n\nWindows Communication Foundation (WCF) provides a number of predefined message headers, as shown in the following table.  \n\n|Header Name|Description|  \n|-----------------|-----------------|  \n|To|Contains the role that the message is targeting.|  \n|Action|Provides a description of how the message should be processed.|  \n|FaultTo|Contains the address of the node to which faults should be sent.|  \n|From|Contains the address of the node that sent the message.|  \n|Request|Indicates whether the message is a request.|  \n|MessageID|Contains the unique ID of the message.|  \n|RelatesTo|Contains the IDs of messages that are related to this message.|  \n|ReplyTo|Contains the address of the node to which a reply should be sent for a request.|  \n\n"
+  syntax:
+    content: 'public abstract class MessageHeader : MessageHeaderInfo'
+    content.vb: >-
+      Public MustInherit Class MessageHeader
+          Inherits MessageHeaderInfo
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.MessageHeaderInfo
+  derivedClasses:
+  - CoreWCF.Channels.DictionaryHeader
+  inheritedMembers:
+  - CoreWCF.Channels.MessageHeaderInfo.Name
+  - CoreWCF.Channels.MessageHeaderInfo.Namespace
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.MessageHeader.IsMessageVersionSupported(CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.IsMessageVersionSupported(CoreWCF.Channels.MessageVersion)
+  id: IsMessageVersionSupported(CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: IsMessageVersionSupported(MessageVersion)
+  nameWithType: MessageHeader.IsMessageVersionSupported(MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.IsMessageVersionSupported(CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Verifies whether the specified message version is supported.
+  syntax:
+    content: public virtual bool IsMessageVersionSupported(MessageVersion messageVersion)
+    parameters:
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    return:
+      type: System.Boolean
+      description: "true if the specified message version is supported; otherwise, false."
+    content.vb: Public Overridable Function IsMessageVersionSupported(messageVersion As MessageVersion) As Boolean
+  overload: CoreWCF.Channels.MessageHeader.IsMessageVersionSupported*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.MessageHeader.ToString
+  commentId: M:CoreWCF.Channels.MessageHeader.ToString
+  id: ToString
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: MessageHeader.ToString()
+  fullName: CoreWCF.Channels.MessageHeader.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Returns the string representation of this message header.
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The string representation of this message header.
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.Channels.MessageHeader.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlWriter,CoreWCF.Channels.MessageVersion)
+  id: WriteHeader(System.Xml.XmlWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteHeader(XmlWriter, MessageVersion)
+  nameWithType: MessageHeader.WriteHeader(XmlWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Serializes the header using the specified XML writer.
+  syntax:
+    content: public void WriteHeader(XmlWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "An [XmlWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Public Sub WriteHeader(writer As XmlWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.WriteHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  id: WriteHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteHeader(XmlDictionaryWriter, MessageVersion)
+  nameWithType: MessageHeader.WriteHeader(XmlDictionaryWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlDictionaryWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Serializes the header using the specified XML writer.
+  syntax:
+    content: public void WriteHeader(XmlDictionaryWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Public Sub WriteHeader(writer As XmlDictionaryWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.WriteHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageHeader.WriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.WriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  id: WriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteStartHeader(XmlDictionaryWriter, MessageVersion)
+  nameWithType: MessageHeader.WriteStartHeader(XmlDictionaryWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.WriteStartHeader(System.Xml.XmlDictionaryWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Serializes the start header using the specified XML writer.
+  syntax:
+    content: public void WriteStartHeader(XmlDictionaryWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the start header."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: That object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Public Sub WriteStartHeader(writer As XmlDictionaryWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.WriteStartHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageHeader.OnWriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.OnWriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  id: OnWriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: OnWriteStartHeader(XmlDictionaryWriter, MessageVersion)
+  nameWithType: MessageHeader.OnWriteStartHeader(XmlDictionaryWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.OnWriteStartHeader(System.Xml.XmlDictionaryWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the start header is serialized using the specified XML writer.
+  syntax:
+    content: protected virtual void OnWriteStartHeader(XmlDictionaryWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the start header."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Protected Overridable Sub OnWriteStartHeader(writer As XmlDictionaryWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.OnWriteStartHeader*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.MessageHeader.WriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.WriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  id: WriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteHeaderContents(XmlDictionaryWriter, MessageVersion)
+  nameWithType: MessageHeader.WriteHeaderContents(XmlDictionaryWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeaderContents(System.Xml.XmlDictionaryWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Serializes the header contents using the specified XML writer.
+  syntax:
+    content: public void WriteHeaderContents(XmlDictionaryWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header contents."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Public Sub WriteHeaderContents(writer As XmlDictionaryWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.WriteHeaderContents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  id: OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: OnWriteHeaderContents(XmlDictionaryWriter, MessageVersion)
+  nameWithType: MessageHeader.OnWriteHeaderContents(XmlDictionaryWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the header content is serialized using the specified XML writer.
+  syntax:
+    content: protected abstract void OnWriteHeaderContents(XmlDictionaryWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header contents."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Protected MustOverride Sub OnWriteHeaderContents(writer As XmlDictionaryWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.OnWriteHeaderContents*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.Channels.MessageHeader.WriteHeaderAttributes(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.MessageHeader.WriteHeaderAttributes(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  id: WriteHeaderAttributes(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteHeaderAttributes(XmlDictionaryWriter, MessageVersion)
+  nameWithType: MessageHeader.WriteHeaderAttributes(XmlDictionaryWriter, MessageVersion)
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeaderAttributes(System.Xml.XmlDictionaryWriter, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Serializes the header attributes using the specified XML writer.
+  syntax:
+    content: protected void WriteHeaderAttributes(XmlDictionaryWriter writer, MessageVersion messageVersion)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header attributes."
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: The object that contains information related to the version of SOAP associated with a message and its exchange.
+    content.vb: Protected Sub WriteHeaderAttributes(writer As XmlDictionaryWriter, messageVersion As MessageVersion)
+  overload: CoreWCF.Channels.MessageHeader.WriteHeaderAttributes*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object)
+  id: CreateHeader(System.String,System.String,System.Object)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean)
+  id: CreateHeader(System.String,System.String,System.Object,System.Boolean)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, Boolean)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, Boolean)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: mustUnderstand
+      type: System.Boolean
+      description: A value that indicates whether the header must be understood.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, mustUnderstand As Boolean) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String)
+  id: CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, Boolean, String)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, Boolean, String)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Boolean, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand, string actor)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: mustUnderstand
+      type: System.Boolean
+      description: A value that indicates whether the header must be understood.
+    - id: actor
+      type: System.String
+      description: The targeted recipient of the message header.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, mustUnderstand As Boolean, actor As String) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String,System.Boolean)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String,System.Boolean)
+  id: CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String,System.Boolean)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, Boolean, String, Boolean)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, Boolean, String, Boolean)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Boolean, System.String, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand, string actor, bool relay)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: mustUnderstand
+      type: System.Boolean
+      description: A value that indicates whether the header must be understood.
+    - id: actor
+      type: System.String
+      description: The targeted recipient of the message header.
+    - id: relay
+      type: System.Boolean
+      description: A value that indicates whether the header should be relayed.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, mustUnderstand As Boolean, actor As String, relay As Boolean) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  id: CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, XmlObjectSerializer)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, XmlObjectSerializer)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a header from an object to be serialized using the XmlFormatter.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: "An [XmlObjectSerializer](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header."
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, serializer As XmlObjectSerializer) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean)
+  id: CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, XmlObjectSerializer, Boolean)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, XmlObjectSerializer, Boolean)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Runtime.Serialization.XmlObjectSerializer, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer, bool mustUnderstand)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: "An [XmlObjectSerializer](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header."
+    - id: mustUnderstand
+      type: System.Boolean
+      description: A value that indicates whether the header must be understood.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, serializer As XmlObjectSerializer, mustUnderstand As Boolean) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String)
+  id: CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, XmlObjectSerializer, Boolean, String)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, XmlObjectSerializer, Boolean, String)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Runtime.Serialization.XmlObjectSerializer, System.Boolean, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer, bool mustUnderstand, string actor)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: "An [XmlObjectSerializer](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header."
+    - id: mustUnderstand
+      type: System.Boolean
+      description: A value that indicates whether the header must be understood.
+    - id: actor
+      type: System.String
+      description: The targeted recipient of the message header.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, serializer As XmlObjectSerializer, mustUnderstand As Boolean, actor As String) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String,System.Boolean)
+  commentId: M:CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String,System.Boolean)
+  id: CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String,System.Boolean)
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateHeader(String, String, Object, XmlObjectSerializer, Boolean, String, Boolean)
+  nameWithType: MessageHeader.CreateHeader(String, String, Object, XmlObjectSerializer, Boolean, String, Boolean)
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader(System.String, System.String, System.Object, System.Runtime.Serialization.XmlObjectSerializer, System.Boolean, System.String, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new message header with the specified data.
+  syntax:
+    content: public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer, bool mustUnderstand, string actor, bool relay)
+    parameters:
+    - id: name
+      type: System.String
+      description: The local name of the header XML element.
+    - id: ns
+      type: System.String
+      description: The namespace URI of the header XML element.
+    - id: value
+      type: System.Object
+      description: The content of the header to be created.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: "An [XmlObjectSerializer](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to serialize the header."
+    - id: mustUnderstand
+      type: System.Boolean
+      description: A value that indicates whether the header must be understood.
+    - id: actor
+      type: System.String
+      description: The targeted recipient of the message header.
+    - id: relay
+      type: System.Boolean
+      description: A value that indicates whether the header should be relayed.
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: "A new <xref:CoreWCF.Channels.MessageHeader> object with the specified data."
+    content.vb: Public Shared Function CreateHeader(name As String, ns As String, value As Object, serializer As XmlObjectSerializer, mustUnderstand As Boolean, actor As String, relay As Boolean) As MessageHeader
+  overload: CoreWCF.Channels.MessageHeader.CreateHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageHeader.#ctor
+  commentId: M:CoreWCF.Channels.MessageHeader.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: MessageHeader()
+  nameWithType: MessageHeader.MessageHeader()
+  fullName: CoreWCF.Channels.MessageHeader.MessageHeader()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.MessageHeader> class."
+  syntax:
+    content: protected MessageHeader()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.MessageHeader.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageHeader.Actor
+  commentId: P:CoreWCF.Channels.MessageHeader.Actor
+  id: Actor
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: Actor
+  nameWithType: MessageHeader.Actor
+  fullName: CoreWCF.Channels.MessageHeader.Actor
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the targeted recipient of the message header.
+  syntax:
+    content: public override string Actor { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The targeted recipient of the message header. The default is an empty string ("").
+    content.vb: Public Overrides ReadOnly Property Actor As String
+  overridden: CoreWCF.Channels.MessageHeaderInfo.Actor
+  overload: CoreWCF.Channels.MessageHeader.Actor*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+  remarks: If this property is empty, the header is interpreted as targeted for the ultimate recipient of the message.
+- uid: CoreWCF.Channels.MessageHeader.IsReferenceParameter
+  commentId: P:CoreWCF.Channels.MessageHeader.IsReferenceParameter
+  id: IsReferenceParameter
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: IsReferenceParameter
+  nameWithType: MessageHeader.IsReferenceParameter
+  fullName: CoreWCF.Channels.MessageHeader.IsReferenceParameter
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets a value that specifies whether this message header contains reference parameters of an endpoint reference.
+  syntax:
+    content: public override bool IsReferenceParameter { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if this message header contains reference parameters of an endpoint reference; otherwise, false.
+    content.vb: Public Overrides ReadOnly Property IsReferenceParameter As Boolean
+  overridden: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  overload: CoreWCF.Channels.MessageHeader.IsReferenceParameter*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+  remarks: "A reference parameter corresponds to the <ReferenceParameters> element described in the [WS-Addressing specification](https://www.w3.org/Submission/ws-addressing/)."
+- uid: CoreWCF.Channels.MessageHeader.MustUnderstand
+  commentId: P:CoreWCF.Channels.MessageHeader.MustUnderstand
+  id: MustUnderstand
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: MustUnderstand
+  nameWithType: MessageHeader.MustUnderstand
+  fullName: CoreWCF.Channels.MessageHeader.MustUnderstand
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets a value that indicates whether the header must be understood, according to SOAP 1.1/1.2 specification.
+  syntax:
+    content: public override bool MustUnderstand { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the header must be understood; otherwise, false.
+    content.vb: Public Overrides ReadOnly Property MustUnderstand As Boolean
+  overridden: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  overload: CoreWCF.Channels.MessageHeader.MustUnderstand*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+  remarks: If this property is true and the message receiver cannot interpret the message header, the message is not processed and an exception is thrown. If this property is false, the receiver can ignore the message header and continue processing.
+- uid: CoreWCF.Channels.MessageHeader.Relay
+  commentId: P:CoreWCF.Channels.MessageHeader.Relay
+  id: Relay
+  parent: CoreWCF.Channels.MessageHeader
+  langs:
+  - csharp
+  - vb
+  name: Relay
+  nameWithType: MessageHeader.Relay
+  fullName: CoreWCF.Channels.MessageHeader.Relay
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets a value that indicates whether the header should be relayed.
+  syntax:
+    content: public override bool Relay { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the header should be relayed; otherwise, false.
+    content.vb: Public Overrides ReadOnly Property Relay As Boolean
+  overridden: CoreWCF.Channels.MessageHeaderInfo.Relay
+  overload: CoreWCF.Channels.MessageHeader.Relay*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+  remarks: According to SOAP 1.1 spec, this value is always false.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.MessageHeaderInfo
+  commentId: T:CoreWCF.Channels.MessageHeaderInfo
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageHeaderInfo
+  nameWithType: MessageHeaderInfo
+  fullName: CoreWCF.Channels.MessageHeaderInfo
+- uid: CoreWCF.Channels.MessageHeaderInfo.Name
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Name
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  isExternal: true
+  name: Name
+  nameWithType: MessageHeaderInfo.Name
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Name
+- uid: CoreWCF.Channels.MessageHeaderInfo.Namespace
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Namespace
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  isExternal: true
+  name: Namespace
+  nameWithType: MessageHeaderInfo.Namespace
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Namespace
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageHeader.IsMessageVersionSupported*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.IsMessageVersionSupported
+  isExternal: true
+  name: IsMessageVersionSupported
+  nameWithType: MessageHeader.IsMessageVersionSupported
+  fullName: CoreWCF.Channels.MessageHeader.IsMessageVersionSupported
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.MessageHeader.ToString*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: MessageHeader.ToString
+  fullName: CoreWCF.Channels.MessageHeader.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.MessageHeader.WriteHeader*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.WriteHeader
+  isExternal: true
+  name: WriteHeader
+  nameWithType: MessageHeader.WriteHeader
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeader
+- uid: System.Xml.XmlWriter
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: System.Xml.XmlDictionaryWriter
+  isExternal: true
+  name: XmlDictionaryWriter
+  nameWithType: XmlDictionaryWriter
+  fullName: System.Xml.XmlDictionaryWriter
+- uid: CoreWCF.Channels.MessageHeader.WriteStartHeader*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.WriteStartHeader
+  isExternal: true
+  name: WriteStartHeader
+  nameWithType: MessageHeader.WriteStartHeader
+  fullName: CoreWCF.Channels.MessageHeader.WriteStartHeader
+- uid: CoreWCF.Channels.MessageHeader.OnWriteStartHeader*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.OnWriteStartHeader
+  isExternal: true
+  name: OnWriteStartHeader
+  nameWithType: MessageHeader.OnWriteStartHeader
+  fullName: CoreWCF.Channels.MessageHeader.OnWriteStartHeader
+- uid: CoreWCF.Channels.MessageHeader.WriteHeaderContents*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.WriteHeaderContents
+  isExternal: true
+  name: WriteHeaderContents
+  nameWithType: MessageHeader.WriteHeaderContents
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeaderContents
+- uid: CoreWCF.Channels.MessageHeader.OnWriteHeaderContents*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.OnWriteHeaderContents
+  isExternal: true
+  name: OnWriteHeaderContents
+  nameWithType: MessageHeader.OnWriteHeaderContents
+  fullName: CoreWCF.Channels.MessageHeader.OnWriteHeaderContents
+- uid: CoreWCF.Channels.MessageHeader.WriteHeaderAttributes*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.WriteHeaderAttributes
+  isExternal: true
+  name: WriteHeaderAttributes
+  nameWithType: MessageHeader.WriteHeaderAttributes
+  fullName: CoreWCF.Channels.MessageHeader.WriteHeaderAttributes
+- uid: CoreWCF.Channels.MessageHeader.CreateHeader*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.CreateHeader
+  isExternal: true
+  name: CreateHeader
+  nameWithType: MessageHeader.CreateHeader
+  fullName: CoreWCF.Channels.MessageHeader.CreateHeader
+- uid: CoreWCF.Channels.MessageHeader
+  commentId: T:CoreWCF.Channels.MessageHeader
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageHeader
+  nameWithType: MessageHeader
+  fullName: CoreWCF.Channels.MessageHeader
+- uid: System.Runtime.Serialization.XmlObjectSerializer
+  isExternal: true
+  name: XmlObjectSerializer
+  nameWithType: XmlObjectSerializer
+  fullName: System.Runtime.Serialization.XmlObjectSerializer
+- uid: CoreWCF.Channels.MessageHeader.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.#ctor
+  isExternal: true
+  name: MessageHeader
+  nameWithType: MessageHeader.MessageHeader
+  fullName: CoreWCF.Channels.MessageHeader.MessageHeader
+- uid: CoreWCF.Channels.MessageHeaderInfo.Actor
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Actor
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  isExternal: true
+  name: Actor
+  nameWithType: MessageHeaderInfo.Actor
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Actor
+- uid: CoreWCF.Channels.MessageHeader.Actor*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.Actor
+  isExternal: true
+  name: Actor
+  nameWithType: MessageHeader.Actor
+  fullName: CoreWCF.Channels.MessageHeader.Actor
+- uid: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  isExternal: true
+  name: IsReferenceParameter
+  nameWithType: MessageHeaderInfo.IsReferenceParameter
+  fullName: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+- uid: CoreWCF.Channels.MessageHeader.IsReferenceParameter*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.IsReferenceParameter
+  isExternal: true
+  name: IsReferenceParameter
+  nameWithType: MessageHeader.IsReferenceParameter
+  fullName: CoreWCF.Channels.MessageHeader.IsReferenceParameter
+- uid: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  isExternal: true
+  name: MustUnderstand
+  nameWithType: MessageHeaderInfo.MustUnderstand
+  fullName: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+- uid: CoreWCF.Channels.MessageHeader.MustUnderstand*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.MustUnderstand
+  isExternal: true
+  name: MustUnderstand
+  nameWithType: MessageHeader.MustUnderstand
+  fullName: CoreWCF.Channels.MessageHeader.MustUnderstand
+- uid: CoreWCF.Channels.MessageHeaderInfo.Relay
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Relay
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  isExternal: true
+  name: Relay
+  nameWithType: MessageHeaderInfo.Relay
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Relay
+- uid: CoreWCF.Channels.MessageHeader.Relay*
+  commentId: Overload:CoreWCF.Channels.MessageHeader.Relay
+  isExternal: true
+  name: Relay
+  nameWithType: MessageHeader.Relay
+  fullName: CoreWCF.Channels.MessageHeader.Relay

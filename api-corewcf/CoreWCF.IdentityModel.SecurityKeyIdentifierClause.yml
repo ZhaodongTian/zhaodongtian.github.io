@@ -1,0 +1,462 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  id: SecurityKeyIdentifierClause
+  parent: CoreWCF.IdentityModel
+  children:
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor(System.String)
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Int32)
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  langs:
+  - csharp
+  - vb
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  summary: Represents an abstract base class for a key identifier clause.
+  remarks: "Typically, the &lt;xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> does not need to be used, other than when a custom security token service is created. When a security token service returns a security token, the issued security token contains references to attached and unattached security tokens. Attached references refer to security tokens that are contained within the security header of a SOAP message and unattached references reference security tokens that are not included within the security header of a SOAP message. These references typically affirm the authenticity of the issued security token.  \n\n"
+  syntax:
+    content: 'public abstract class SecurityKeyIdentifierClause : Object'
+    content.vb: >-
+      Public MustInherit Class SecurityKeyIdentifierClause
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.IdentityModel.Tokens.BinaryKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.EmptySecurityKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.GenericXmlSecurityKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.LocalIdKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  - CoreWCF.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause
+  - CoreWCF.Security.SecurityContextKeyIdentifierClause
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor(System.String)
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: SecurityKeyIdentifierClause(String)
+  nameWithType: SecurityKeyIdentifierClause.SecurityKeyIdentifierClause(String)
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.SecurityKeyIdentifierClause(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: protected SecurityKeyIdentifierClause(string clauseType)
+    parameters:
+    - id: clauseType
+      type: System.String
+    content.vb: Protected Sub New(clauseType As String)
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Int32)
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Int32)
+  id: '#ctor(System.String,System.Byte[],System.Int32)'
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: SecurityKeyIdentifierClause(String, Byte[], Int32)
+  nameWithType: SecurityKeyIdentifierClause.SecurityKeyIdentifierClause(String, Byte[], Int32)
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.SecurityKeyIdentifierClause(System.String, System.Byte[], System.Int32)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: protected SecurityKeyIdentifierClause(string clauseType, byte[] nonce, int length)
+    parameters:
+    - id: clauseType
+      type: System.String
+    - id: nonce
+      type: System.Byte[]
+    - id: length
+      type: System.Int32
+    content.vb: Protected Sub New(clauseType As String, nonce As Byte(), length As Integer)
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor*
+  nameWithType.vb: SecurityKeyIdentifierClause.SecurityKeyIdentifierClause(String, Byte(), Int32)
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.SecurityKeyIdentifierClause(System.String, System.Byte(), System.Int32)
+  name.vb: SecurityKeyIdentifierClause(String, Byte(), Int32)
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  id: CreateKey
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: CreateKey()
+  nameWithType: SecurityKeyIdentifierClause.CreateKey()
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public virtual SecurityKey CreateKey()
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKey
+    content.vb: Public Overridable Function CreateKey As SecurityKey
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  id: Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Matches(SecurityKeyIdentifierClause)
+  nameWithType: SecurityKeyIdentifierClause.Matches(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public virtual bool Matches(SecurityKeyIdentifierClause keyIdentifierClause)
+    parameters:
+    - id: keyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function Matches(keyIdentifierClause As SecurityKeyIdentifierClause) As Boolean
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  id: GetDerivationNonce
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: GetDerivationNonce()
+  nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce()
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public byte[] GetDerivationNonce()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetDerivationNonce As Byte()
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  id: CanCreateKey
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: CanCreateKey
+  nameWithType: SecurityKeyIdentifierClause.CanCreateKey
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public virtual bool CanCreateKey { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable ReadOnly Property CanCreateKey As Boolean
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  id: ClauseType
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: ClauseType
+  nameWithType: SecurityKeyIdentifierClause.ClauseType
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public string ClauseType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ClauseType As String
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  id: Id
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: SecurityKeyIdentifierClause.Id
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public string Id { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  id: DerivationLength
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: DerivationLength
+  nameWithType: SecurityKeyIdentifierClause.DerivationLength
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public int DerivationLength { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property DerivationLength As Integer
+  overload: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.#ctor
+  isExternal: true
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause.SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.SecurityKeyIdentifierClause
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  isExternal: true
+  name: CreateKey
+  nameWithType: SecurityKeyIdentifierClause.CreateKey
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKey
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityKey
+  nameWithType: SecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches
+  isExternal: true
+  name: Matches
+  nameWithType: SecurityKeyIdentifierClause.Matches
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  isExternal: true
+  name: GetDerivationNonce
+  nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  isExternal: true
+  name: CanCreateKey
+  nameWithType: SecurityKeyIdentifierClause.CanCreateKey
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  isExternal: true
+  name: ClauseType
+  nameWithType: SecurityKeyIdentifierClause.ClauseType
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  isExternal: true
+  name: Id
+  nameWithType: SecurityKeyIdentifierClause.Id
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength*
+  commentId: Overload:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  isExternal: true
+  name: DerivationLength
+  nameWithType: SecurityKeyIdentifierClause.DerivationLength
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength

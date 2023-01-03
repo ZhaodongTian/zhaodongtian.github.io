@@ -1,0 +1,252 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IMetadataExchange
+  commentId: T:CoreWCF.Description.IMetadataExchange
+  id: IMetadataExchange
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IMetadataExchange.Get(CoreWCF.Channels.Message)
+  - CoreWCF.Description.IMetadataExchange.GetAsync(CoreWCF.Channels.Message)
+  langs:
+  - csharp
+  - vb
+  name: IMetadataExchange
+  nameWithType: IMetadataExchange
+  fullName: CoreWCF.Description.IMetadataExchange
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Exposes methods used to return metadata about a service.
+  remarks: "When programming Windows Communication Foundation (WCF) services, it is useful to publish metadata about the service. For example, metadata can be a Web Services Description Language (WSDL) document that describes all of the methods and data types employed by a service. Returning metadata about an WCF service allows consumers of a service to easily create clients for the service. For more information about WCF metadata endpoints, see [Metadata](/dotnet/framework/wcf/feature-details/metadata).  \n\nServices implemented using WCF publish metadata by exposing one or more metadata endpoints. Metadata endpoints in WCF have an address, a binding and a contract like any other endpoint.  The &lt;xref:CoreWCF.Description.MetadataReference> interface specifies the service contract implemented by all metadata endpoints in WCF.  \n\nThere is no need to implement the &lt;xref:CoreWCF.Description.MetadataReference> contract in your service implementation.  Instead, add the &lt;xref:CoreWCF.Description.ServiceMetadataBehavior> to the service description.  \n\nOr, when using configuration, set the `contract` attribute of the endpoint element to `IMetadataExchange`. For an example, see [How to: Publish Metadata for a Service Using a Configuration File](/dotnet/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file).  \n\nFor details on publishing metadata in WCF see [Publishing Metadata](/dotnet/framework/wcf/feature-details/publishing-metadata).  \n\n"
+  syntax:
+    content: >-
+      [ServiceContract(ConfigurationName = "IMetadataExchange", Name = "IMetadataExchange", Namespace = "http://schemas.microsoft.com/2006/04/mex")]
+
+      public interface IMetadataExchange
+    content.vb: >-
+      <ServiceContract(ConfigurationName:="IMetadataExchange", Name:="IMetadataExchange", Namespace:="http://schemas.microsoft.com/2006/04/mex")>
+
+      Public Interface IMetadataExchange
+  attributes:
+  - type: CoreWCF.ServiceContractAttribute
+    ctor: CoreWCF.ServiceContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: ConfigurationName
+      type: System.String
+      value: IMetadataExchange
+    - name: Name
+      type: System.String
+      value: IMetadataExchange
+    - name: Namespace
+      type: System.String
+      value: http://schemas.microsoft.com/2006/04/mex
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IMetadataExchange.Get(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Description.IMetadataExchange.Get(CoreWCF.Channels.Message)
+  id: Get(CoreWCF.Channels.Message)
+  parent: CoreWCF.Description.IMetadataExchange
+  langs:
+  - csharp
+  - vb
+  name: Get(Message)
+  nameWithType: IMetadataExchange.Get(Message)
+  fullName: CoreWCF.Description.IMetadataExchange.Get(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: >-
+      [OperationContract(Action = "http://schemas.xmlsoap.org/ws/2004/09/transfer/Get", ReplyAction = "http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse")]
+
+      Message Get(Message request)
+    parameters:
+    - id: request
+      type: CoreWCF.Channels.Message
+    return:
+      type: CoreWCF.Channels.Message
+    content.vb: >-
+      <OperationContract(Action:="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get", ReplyAction:="http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse")>
+
+      Function Get(request As Message) As Message
+  overload: CoreWCF.Description.IMetadataExchange.Get*
+  attributes:
+  - type: CoreWCF.OperationContractAttribute
+    ctor: CoreWCF.OperationContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Action
+      type: System.String
+      value: http://schemas.xmlsoap.org/ws/2004/09/transfer/Get
+    - name: ReplyAction
+      type: System.String
+      value: http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse
+- uid: CoreWCF.Description.IMetadataExchange.GetAsync(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Description.IMetadataExchange.GetAsync(CoreWCF.Channels.Message)
+  id: GetAsync(CoreWCF.Channels.Message)
+  parent: CoreWCF.Description.IMetadataExchange
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(Message)
+  nameWithType: IMetadataExchange.GetAsync(Message)
+  fullName: CoreWCF.Description.IMetadataExchange.GetAsync(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: >-
+      [OperationContract(Action = "http://schemas.xmlsoap.org/ws/2004/09/transfer/Get", ReplyAction = "http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse")]
+
+      Task<Message> GetAsync(Message request)
+    parameters:
+    - id: request
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.Channels.Message}
+    content.vb: >-
+      <OperationContract(Action:="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get", ReplyAction:="http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse")>
+
+      Function GetAsync(request As Message) As Task(Of Message)
+  overload: CoreWCF.Description.IMetadataExchange.GetAsync*
+  attributes:
+  - type: CoreWCF.OperationContractAttribute
+    ctor: CoreWCF.OperationContractAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Action
+      type: System.String
+      value: http://schemas.xmlsoap.org/ws/2004/09/transfer/Get
+    - name: ReplyAction
+      type: System.String
+      value: http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IMetadataExchange.Get*
+  commentId: Overload:CoreWCF.Description.IMetadataExchange.Get
+  isExternal: true
+  name: Get
+  nameWithType: IMetadataExchange.Get
+  fullName: CoreWCF.Description.IMetadataExchange.Get
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.IMetadataExchange.GetAsync*
+  commentId: Overload:CoreWCF.Description.IMetadataExchange.GetAsync
+  isExternal: true
+  name: GetAsync
+  nameWithType: IMetadataExchange.GetAsync
+  fullName: CoreWCF.Description.IMetadataExchange.GetAsync
+- uid: System.Threading.Tasks.Task{CoreWCF.Channels.Message}
+  commentId: '!:System.Threading.Tasks.Task{CoreWCF.Channels.Message}'
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Message>
+  nameWithType: Task<Message>
+  fullName: System.Threading.Tasks.Task<CoreWCF.Channels.Message>
+  nameWithType.vb: Task(Of Message)
+  fullName.vb: System.Threading.Tasks.Task(Of CoreWCF.Channels.Message)
+  name.vb: Task(Of Message)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: System.Threading.Tasks.Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: System.Threading.Tasks.Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,160 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IDispatchMessageInspector
+  commentId: T:CoreWCF.Dispatcher.IDispatchMessageInspector
+  id: IDispatchMessageInspector
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest(CoreWCF.Channels.Message@,CoreWCF.IClientChannel,CoreWCF.InstanceContext)
+  - CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply(CoreWCF.Channels.Message@,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: IDispatchMessageInspector
+  nameWithType: IDispatchMessageInspector
+  fullName: CoreWCF.Dispatcher.IDispatchMessageInspector
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Defines the methods that enable custom inspection or modification of inbound and outbound application messages in service applications.
+  remarks: "Implement &lt;xref:CoreWCF.Dispatcher.IDispatchMessageInspector> to inspect or modify inbound or outbound application messages either prior to dispatching a request message to an operation or before returning a reply message to a caller. There are a large number of scenarios that require intercepting messages prior to invoking the operation for which it is destined. For example, you can log incoming application messages or perform some feature based on a message header.  \n\nTypically, message inspectors are inserted by a service behavior (&lt;xref:CoreWCF.Description.IServiceBehavior?displayProperty=nameWithType>), an endpoint behavior (&lt;xref:CoreWCF.Description.IEndpointBehavior?displayProperty=nameWithType>), or a contract behavior (&lt;xref:CoreWCF.Description.IContractBehavior?displayProperty=nameWithType>). The behavior then adds the message inspector to the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors%2A?displayProperty=nameWithType> collection. For more information about extending the runtime using behaviors, see [Extending ServiceHost and the Service Model Layer](/dotnet/framework/wcf/extending/extending-servicehost-and-the-service-model-layer).  \n\n-   The &lt;xref:CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest%2A> method enables custom behavior after receiving the message but before dispatching it to the intended operation.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply%2A> method enables custom behavior after the operation returns but before the reply is sent.  \n\n> [!NOTE]\n>  &lt;xref:CoreWCF.Dispatcher.IDispatchMessageInspector> objects are always called at the same point during message dispatch regardless of whether an operation is one-way or request-reply.  \n\n\n\n"
+  syntax:
+    content: public interface IDispatchMessageInspector
+    content.vb: Public Interface IDispatchMessageInspector
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest(CoreWCF.Channels.Message@,CoreWCF.IClientChannel,CoreWCF.InstanceContext)
+  commentId: M:CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest(CoreWCF.Channels.Message@,CoreWCF.IClientChannel,CoreWCF.InstanceContext)
+  id: AfterReceiveRequest(CoreWCF.Channels.Message@,CoreWCF.IClientChannel,CoreWCF.InstanceContext)
+  parent: CoreWCF.Dispatcher.IDispatchMessageInspector
+  langs:
+  - csharp
+  - vb
+  name: AfterReceiveRequest(ref Message, IClientChannel, InstanceContext)
+  nameWithType: IDispatchMessageInspector.AfterReceiveRequest(ref Message, IClientChannel, InstanceContext)
+  fullName: CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest(ref CoreWCF.Channels.Message, CoreWCF.IClientChannel, CoreWCF.InstanceContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: object AfterReceiveRequest(ref Message request, IClientChannel channel, InstanceContext instanceContext)
+    parameters:
+    - id: request
+      type: CoreWCF.Channels.Message
+    - id: channel
+      type: CoreWCF.IClientChannel
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    return:
+      type: System.Object
+    content.vb: Function AfterReceiveRequest(ByRef request As Message, channel As IClientChannel, instanceContext As InstanceContext) As Object
+  overload: CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest*
+  nameWithType.vb: IDispatchMessageInspector.AfterReceiveRequest(ByRef Message, IClientChannel, InstanceContext)
+  fullName.vb: CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest(ByRef CoreWCF.Channels.Message, CoreWCF.IClientChannel, CoreWCF.InstanceContext)
+  name.vb: AfterReceiveRequest(ByRef Message, IClientChannel, InstanceContext)
+- uid: CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply(CoreWCF.Channels.Message@,System.Object)
+  commentId: M:CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply(CoreWCF.Channels.Message@,System.Object)
+  id: BeforeSendReply(CoreWCF.Channels.Message@,System.Object)
+  parent: CoreWCF.Dispatcher.IDispatchMessageInspector
+  langs:
+  - csharp
+  - vb
+  name: BeforeSendReply(ref Message, Object)
+  nameWithType: IDispatchMessageInspector.BeforeSendReply(ref Message, Object)
+  fullName: CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply(ref CoreWCF.Channels.Message, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: void BeforeSendReply(ref Message reply, object correlationState)
+    parameters:
+    - id: reply
+      type: CoreWCF.Channels.Message
+    - id: correlationState
+      type: System.Object
+    content.vb: Sub BeforeSendReply(ByRef reply As Message, correlationState As Object)
+  overload: CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply*
+  nameWithType.vb: IDispatchMessageInspector.BeforeSendReply(ByRef Message, Object)
+  fullName.vb: CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply(ByRef CoreWCF.Channels.Message, System.Object)
+  name.vb: BeforeSendReply(ByRef Message, Object)
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest*
+  commentId: Overload:CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest
+  isExternal: true
+  name: AfterReceiveRequest
+  nameWithType: IDispatchMessageInspector.AfterReceiveRequest
+  fullName: CoreWCF.Dispatcher.IDispatchMessageInspector.AfterReceiveRequest
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.IClientChannel
+  commentId: T:CoreWCF.IClientChannel
+  parent: CoreWCF
+  isExternal: true
+  name: IClientChannel
+  nameWithType: IClientChannel
+  fullName: CoreWCF.IClientChannel
+- uid: CoreWCF.InstanceContext
+  commentId: T:CoreWCF.InstanceContext
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContext
+  nameWithType: InstanceContext
+  fullName: CoreWCF.InstanceContext
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply*
+  commentId: Overload:CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply
+  isExternal: true
+  name: BeforeSendReply
+  nameWithType: IDispatchMessageInspector.BeforeSendReply
+  fullName: CoreWCF.Dispatcher.IDispatchMessageInspector.BeforeSendReply

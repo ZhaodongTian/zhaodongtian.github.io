@@ -1,0 +1,173 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IClientMessageFormatter
+  commentId: T:CoreWCF.Dispatcher.IClientMessageFormatter
+  id: IClientMessageFormatter
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply(CoreWCF.Channels.Message,System.Object[])
+  - CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest(CoreWCF.Channels.MessageVersion,System.Object[])
+  langs:
+  - csharp
+  - vb
+  name: IClientMessageFormatter
+  nameWithType: IClientMessageFormatter
+  fullName: CoreWCF.Dispatcher.IClientMessageFormatter
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Defines methods that are used to control the conversion of messages into objects and objects into messages for client applications.
+  remarks: "Implement the &lt;xref:CoreWCF.Dispatcher.IClientMessageFormatter> interface to create a custom client formatter that serializes objects into messages and deserializes messages into objects for a particular operation.  \n\nAttach custom Windows Communication Foundation (WCF) client formatters to the &lt;xref:CoreWCF.Dispatcher.ClientOperation.Formatter%2A> property to handle this conversion explicitly.  \n\n"
+  syntax:
+    content: public interface IClientMessageFormatter
+    content.vb: Public Interface IClientMessageFormatter
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest(CoreWCF.Channels.MessageVersion,System.Object[])
+  commentId: M:CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest(CoreWCF.Channels.MessageVersion,System.Object[])
+  id: SerializeRequest(CoreWCF.Channels.MessageVersion,System.Object[])
+  parent: CoreWCF.Dispatcher.IClientMessageFormatter
+  langs:
+  - csharp
+  - vb
+  name: SerializeRequest(MessageVersion, Object[])
+  nameWithType: IClientMessageFormatter.SerializeRequest(MessageVersion, Object[])
+  fullName: CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest(CoreWCF.Channels.MessageVersion, System.Object[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: Message SerializeRequest(MessageVersion messageVersion, object[] parameters)
+    parameters:
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+    - id: parameters
+      type: System.Object[]
+    return:
+      type: CoreWCF.Channels.Message
+    content.vb: Function SerializeRequest(messageVersion As MessageVersion, parameters As Object()) As Message
+  overload: CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest*
+  nameWithType.vb: IClientMessageFormatter.SerializeRequest(MessageVersion, Object())
+  fullName.vb: CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest(CoreWCF.Channels.MessageVersion, System.Object())
+  name.vb: SerializeRequest(MessageVersion, Object())
+- uid: CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply(CoreWCF.Channels.Message,System.Object[])
+  commentId: M:CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply(CoreWCF.Channels.Message,System.Object[])
+  id: DeserializeReply(CoreWCF.Channels.Message,System.Object[])
+  parent: CoreWCF.Dispatcher.IClientMessageFormatter
+  langs:
+  - csharp
+  - vb
+  name: DeserializeReply(Message, Object[])
+  nameWithType: IClientMessageFormatter.DeserializeReply(Message, Object[])
+  fullName: CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply(CoreWCF.Channels.Message, System.Object[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: object DeserializeReply(Message message, object[] parameters)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: parameters
+      type: System.Object[]
+    return:
+      type: System.Object
+    content.vb: Function DeserializeReply(message As Message, parameters As Object()) As Object
+  overload: CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply*
+  nameWithType.vb: IClientMessageFormatter.DeserializeReply(Message, Object())
+  fullName.vb: CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply(CoreWCF.Channels.Message, System.Object())
+  name.vb: DeserializeReply(Message, Object())
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest*
+  commentId: Overload:CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest
+  isExternal: true
+  name: SerializeRequest
+  nameWithType: IClientMessageFormatter.SerializeRequest
+  fullName: CoreWCF.Dispatcher.IClientMessageFormatter.SerializeRequest
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: System.Object[]
+  isExternal: true
+  name: Object[]
+  nameWithType: Object[]
+  fullName: System.Object[]
+  nameWithType.vb: Object()
+  fullName.vb: System.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply*
+  commentId: Overload:CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply
+  isExternal: true
+  name: DeserializeReply
+  nameWithType: IClientMessageFormatter.DeserializeReply
+  fullName: CoreWCF.Dispatcher.IClientMessageFormatter.DeserializeReply
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

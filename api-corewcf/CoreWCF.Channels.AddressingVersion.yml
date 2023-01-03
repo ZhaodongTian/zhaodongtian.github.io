@@ -1,0 +1,389 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.AddressingVersion
+  commentId: T:CoreWCF.Channels.AddressingVersion
+  id: AddressingVersion
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.AddressingVersion.AnonymousUri
+  - CoreWCF.Channels.AddressingVersion.FaultAction
+  - CoreWCF.Channels.AddressingVersion.Namespace
+  - CoreWCF.Channels.AddressingVersion.None
+  - CoreWCF.Channels.AddressingVersion.NoneUri
+  - CoreWCF.Channels.AddressingVersion.ToString
+  - CoreWCF.Channels.AddressingVersion.WSAddressing10
+  - CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004
+  langs:
+  - csharp
+  - vb
+  name: AddressingVersion
+  nameWithType: AddressingVersion
+  fullName: CoreWCF.Channels.AddressingVersion
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: The WS-Addressing version associated with a SOAP message or understood by an endpoint.
+  syntax:
+    content: 'public sealed class AddressingVersion : Object'
+    content.vb: >-
+      Public NotInheritable Class AddressingVersion
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  remarks: "There are currently two version of WS-Addressing: WS-Addressing August 2004 and WS-Addressing 1.0. These versions can be retrieved using the <xref:CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004> and <xref:CoreWCF.Channels.AddressingVersion.WSAddressing10> properties, respectively. There is also an addressing version available that is not associated with WS-Addressing, which is retrieved using the <xref:CoreWCF.Channels.AddressingVersion.None> property. This value indicates that no version of WS-Addressing is used. This is primarily for transports that do not pass SOAP envelopes on the wire and therefore have no use for WS-Addressing.<br /> <br />The addressing version is part of the message version: specifically <xref:CoreWCF.Channels.AddressingVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Addressing> property. The <xref:CoreWCF.Channels.MessageVersion> also contains the SOAP envelope version in addition to the addressing version information. The <xref:CoreWCF.EnvelopeVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Envelope> property."
+- uid: CoreWCF.Channels.AddressingVersion.ToString
+  commentId: M:CoreWCF.Channels.AddressingVersion.ToString
+  id: ToString
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: AddressingVersion.ToString()
+  fullName: CoreWCF.Channels.AddressingVersion.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Returns a string representation of the current addressing version.
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: A string that represents the current addressing version.
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.Channels.AddressingVersion.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.AddressingVersion.WSAddressing10
+  commentId: P:CoreWCF.Channels.AddressingVersion.WSAddressing10
+  id: WSAddressing10
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: WSAddressing10
+  nameWithType: AddressingVersion.WSAddressing10
+  fullName: CoreWCF.Channels.AddressingVersion.WSAddressing10
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets an identifier for the address version associated with WS-Addressing 1.0.
+  syntax:
+    content: public static AddressingVersion WSAddressing10 { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.AddressingVersion
+      description: "A singleton instance that identifies the <xref:CoreWCF.Channels.AddressingVersion> that is associated with WS-Addressing 1.0."
+    content.vb: Public Shared ReadOnly Property WSAddressing10 As AddressingVersion
+  overload: CoreWCF.Channels.AddressingVersion.WSAddressing10*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+  remarks: "The addressing version is part of the message version: specifically <xref:CoreWCF.Channels.AddressingVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Addressing> property. The <xref:CoreWCF.Channels.MessageVersion> also contains the SOAP envelope version in addition to the addressing version information. The <xref:CoreWCF.EnvelopeVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Envelope> property."
+- uid: CoreWCF.Channels.AddressingVersion.None
+  commentId: P:CoreWCF.Channels.AddressingVersion.None
+  id: None
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: AddressingVersion.None
+  fullName: CoreWCF.Channels.AddressingVersion.None
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the addressing version that is not associated with WS-Addressing version.
+  syntax:
+    content: public static AddressingVersion None { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.AddressingVersion
+      description: "The <xref:CoreWCF.Channels.AddressingVersion> that is not associated WS-Addressing version."
+    content.vb: Public Shared ReadOnly Property None As AddressingVersion
+  overload: CoreWCF.Channels.AddressingVersion.None*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+  remarks: "The addressing version is part of the message version: specifically <xref:CoreWCF.Channels.AddressingVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Addressing> property. The <xref:CoreWCF.Channels.MessageVersion> also contains the SOAP envelope version in addition to the addressing version information. The <xref:CoreWCF.EnvelopeVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Envelope> property."
+- uid: CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004
+  commentId: P:CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004
+  id: WSAddressingAugust2004
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: WSAddressingAugust2004
+  nameWithType: AddressingVersion.WSAddressingAugust2004
+  fullName: CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the version of WS-Addressing that is associated with WS-Addressing August 2004.
+  syntax:
+    content: public static AddressingVersion WSAddressingAugust2004 { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.AddressingVersion
+      description: "A singleton instance that identifies the <xref:CoreWCF.Channels.AddressingVersion> that is associated with WS-Addressing August 2004."
+    content.vb: Public Shared ReadOnly Property WSAddressingAugust2004 As AddressingVersion
+  overload: CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+  remarks: "The addressing version is part of the message version: specifically <xref:CoreWCF.Channels.AddressingVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Addressing> property. The <xref:CoreWCF.Channels.MessageVersion> also contains the SOAP envelope version in addition to the addressing version information. The <xref:CoreWCF.EnvelopeVersion> provides the return type for the <xref:CoreWCF.Channels.MessageVersion.Envelope> property."
+- uid: CoreWCF.Channels.AddressingVersion.Namespace
+  commentId: P:CoreWCF.Channels.AddressingVersion.Namespace
+  id: Namespace
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  nameWithType: AddressingVersion.Namespace
+  fullName: CoreWCF.Channels.AddressingVersion.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public string Namespace { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Namespace As String
+  overload: CoreWCF.Channels.AddressingVersion.Namespace*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.AddressingVersion.AnonymousUri
+  commentId: P:CoreWCF.Channels.AddressingVersion.AnonymousUri
+  id: AnonymousUri
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: AnonymousUri
+  nameWithType: AddressingVersion.AnonymousUri
+  fullName: CoreWCF.Channels.AddressingVersion.AnonymousUri
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Uri AnonymousUri { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public ReadOnly Property AnonymousUri As Uri
+  overload: CoreWCF.Channels.AddressingVersion.AnonymousUri*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.AddressingVersion.NoneUri
+  commentId: P:CoreWCF.Channels.AddressingVersion.NoneUri
+  id: NoneUri
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: NoneUri
+  nameWithType: AddressingVersion.NoneUri
+  fullName: CoreWCF.Channels.AddressingVersion.NoneUri
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Uri NoneUri { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public ReadOnly Property NoneUri As Uri
+  overload: CoreWCF.Channels.AddressingVersion.NoneUri*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.AddressingVersion.FaultAction
+  commentId: P:CoreWCF.Channels.AddressingVersion.FaultAction
+  id: FaultAction
+  parent: CoreWCF.Channels.AddressingVersion
+  langs:
+  - csharp
+  - vb
+  name: FaultAction
+  nameWithType: AddressingVersion.FaultAction
+  fullName: CoreWCF.Channels.AddressingVersion.FaultAction
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public string FaultAction { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property FaultAction As String
+  overload: CoreWCF.Channels.AddressingVersion.FaultAction*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.AddressingVersion.ToString*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: AddressingVersion.ToString
+  fullName: CoreWCF.Channels.AddressingVersion.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.AddressingVersion.WSAddressing10*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.WSAddressing10
+  isExternal: true
+  name: WSAddressing10
+  nameWithType: AddressingVersion.WSAddressing10
+  fullName: CoreWCF.Channels.AddressingVersion.WSAddressing10
+- uid: CoreWCF.Channels.AddressingVersion
+  commentId: T:CoreWCF.Channels.AddressingVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: AddressingVersion
+  nameWithType: AddressingVersion
+  fullName: CoreWCF.Channels.AddressingVersion
+- uid: CoreWCF.Channels.AddressingVersion.None*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.None
+  isExternal: true
+  name: None
+  nameWithType: AddressingVersion.None
+  fullName: CoreWCF.Channels.AddressingVersion.None
+- uid: CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004
+  isExternal: true
+  name: WSAddressingAugust2004
+  nameWithType: AddressingVersion.WSAddressingAugust2004
+  fullName: CoreWCF.Channels.AddressingVersion.WSAddressingAugust2004
+- uid: CoreWCF.Channels.AddressingVersion.Namespace*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: AddressingVersion.Namespace
+  fullName: CoreWCF.Channels.AddressingVersion.Namespace
+- uid: CoreWCF.Channels.AddressingVersion.AnonymousUri*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.AnonymousUri
+  isExternal: true
+  name: AnonymousUri
+  nameWithType: AddressingVersion.AnonymousUri
+  fullName: CoreWCF.Channels.AddressingVersion.AnonymousUri
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.Channels.AddressingVersion.NoneUri*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.NoneUri
+  isExternal: true
+  name: NoneUri
+  nameWithType: AddressingVersion.NoneUri
+  fullName: CoreWCF.Channels.AddressingVersion.NoneUri
+- uid: CoreWCF.Channels.AddressingVersion.FaultAction*
+  commentId: Overload:CoreWCF.Channels.AddressingVersion.FaultAction
+  isExternal: true
+  name: FaultAction
+  nameWithType: AddressingVersion.FaultAction
+  fullName: CoreWCF.Channels.AddressingVersion.FaultAction

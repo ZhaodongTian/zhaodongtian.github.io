@@ -1,0 +1,258 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IServiceBehavior
+  commentId: T:CoreWCF.Description.IServiceBehavior
+  id: IServiceBehavior
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IServiceBehavior.AddBindingParameters(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase,System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint},CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  - CoreWCF.Description.IServiceBehavior.Validate(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  langs:
+  - csharp
+  - vb
+  name: IServiceBehavior
+  nameWithType: IServiceBehavior
+  fullName: CoreWCF.Description.IServiceBehavior
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Provides a mechanism to modify or insert custom extensions across an entire service, including the .
+  remarks: "Implement &lt;xref:CoreWCF.Description.IServiceBehavior> to modify, examine, or extend some aspect of service-wide execution at the application level:  \n\n-   Use the &lt;xref:CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior%2A> method to change run-time property values or insert custom extension objects such as error handlers, message or parameter interceptors, security extensions, and other custom extension objects.  \n\n-   Use the &lt;xref:CoreWCF.Description.IServiceBehavior.Validate%2A> method to examine the description before Windows Communication Foundation (WCF) constructs the executing service to confirm that it can execute properly.  \n\n-   Use the &lt;xref:CoreWCF.Description.IServiceBehavior.AddBindingParameters%2A> method to pass to a binding element the custom information for the service so that it can support the service correctly.  \n\n&lt;xref:CoreWCF.Description.IServiceBehavior> objects can make use of any of these methods, but often only one is important; in such cases the unused methods can return without a value.  \n\n> [!NOTE]\n>  All of the &lt;xref:CoreWCF.Description.IServiceBehavior> methods pass &lt;xref:CoreWCF.Description.ServiceDescription?displayProperty=nameWithType> and &lt;xref:CoreWCF.ServiceHostBase?displayProperty=nameWithType> objects as a parameters. The &lt;xref:CoreWCF.Description.ServiceDescription> parameter is for examination only; if you modify these objects the execution behavior is undefined.  \n\nTo perform the customization task for which it is intended, the &lt;xref:CoreWCF.Description.IServiceBehavior> object must be added to the &lt;xref:CoreWCF.Description.ServiceDescription.Behaviors%2A> property prior to the construction of the service runtime. There are three ways to do this:  \n\n-   Programmatically add the custom service behavior to the &lt;xref:CoreWCF.Description.ServiceDescription.Behaviors%2A> property prior to the point where the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method is called on the &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType> object.  \n\n-   Create a custom attribute that implements &lt;xref:CoreWCF.Description.IServiceBehavior> and use it to mark service classes that are to be modified. When a &lt;xref:CoreWCF.ServiceHost> object is constructed, WCF uses reflection to discover the attributes on the service type. If any attributes implement &lt;xref:CoreWCF.Description.IServiceBehavior>, they are added to the behaviors collection on &lt;xref:CoreWCF.Description.ServiceDescription>.  \n\n-   Extend the &lt;xref:CoreWCF.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> class to support the specification of the behavior in an application or machine configuration file. See the Example section for more information.  \n\nExamples of service behaviors in WCF include the &lt;xref:CoreWCF.ServiceBehaviorAttribute> attribute, the &lt;xref:CoreWCF.Description.ServiceThrottlingBehavior?displayProperty=nameWithType>, the &lt;xref:CoreWCF.Description.ServiceDebugBehavior?displayProperty=nameWithType> and the &lt;xref:CoreWCF.Description.ServiceMetadataBehavior?displayProperty=nameWithType> behavior.  \n\n\n\n"
+  syntax:
+    content: public interface IServiceBehavior
+    content.vb: Public Interface IServiceBehavior
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IServiceBehavior.Validate(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Description.IServiceBehavior.Validate(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  id: Validate(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  parent: CoreWCF.Description.IServiceBehavior
+  langs:
+  - csharp
+  - vb
+  name: Validate(ServiceDescription, ServiceHostBase)
+  nameWithType: IServiceBehavior.Validate(ServiceDescription, ServiceHostBase)
+  fullName: CoreWCF.Description.IServiceBehavior.Validate(CoreWCF.Description.ServiceDescription, CoreWCF.ServiceHostBase)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void Validate(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
+    parameters:
+    - id: serviceDescription
+      type: CoreWCF.Description.ServiceDescription
+    - id: serviceHostBase
+      type: CoreWCF.ServiceHostBase
+    content.vb: Sub Validate(serviceDescription As ServiceDescription, serviceHostBase As ServiceHostBase)
+  overload: CoreWCF.Description.IServiceBehavior.Validate*
+- uid: CoreWCF.Description.IServiceBehavior.AddBindingParameters(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase,System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint},CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IServiceBehavior.AddBindingParameters(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase,System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint},CoreWCF.Channels.BindingParameterCollection)
+  id: AddBindingParameters(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase,System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint},CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IServiceBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddBindingParameters(ServiceDescription, ServiceHostBase, Collection<ServiceEndpoint>, BindingParameterCollection)
+  nameWithType: IServiceBehavior.AddBindingParameters(ServiceDescription, ServiceHostBase, Collection<ServiceEndpoint>, BindingParameterCollection)
+  fullName: CoreWCF.Description.IServiceBehavior.AddBindingParameters(CoreWCF.Description.ServiceDescription, CoreWCF.ServiceHostBase, System.Collections.ObjectModel.Collection<CoreWCF.Description.ServiceEndpoint>, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void AddBindingParameters(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase, Collection<ServiceEndpoint> endpoints, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: serviceDescription
+      type: CoreWCF.Description.ServiceDescription
+    - id: serviceHostBase
+      type: CoreWCF.ServiceHostBase
+    - id: endpoints
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Sub AddBindingParameters(serviceDescription As ServiceDescription, serviceHostBase As ServiceHostBase, endpoints As Collection(Of ServiceEndpoint), bindingParameters As BindingParameterCollection)
+  overload: CoreWCF.Description.IServiceBehavior.AddBindingParameters*
+  nameWithType.vb: IServiceBehavior.AddBindingParameters(ServiceDescription, ServiceHostBase, Collection(Of ServiceEndpoint), BindingParameterCollection)
+  fullName.vb: CoreWCF.Description.IServiceBehavior.AddBindingParameters(CoreWCF.Description.ServiceDescription, CoreWCF.ServiceHostBase, System.Collections.ObjectModel.Collection(Of CoreWCF.Description.ServiceEndpoint), CoreWCF.Channels.BindingParameterCollection)
+  name.vb: AddBindingParameters(ServiceDescription, ServiceHostBase, Collection(Of ServiceEndpoint), BindingParameterCollection)
+- uid: CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  id: ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)
+  parent: CoreWCF.Description.IServiceBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyDispatchBehavior(ServiceDescription, ServiceHostBase)
+  nameWithType: IServiceBehavior.ApplyDispatchBehavior(ServiceDescription, ServiceHostBase)
+  fullName: CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription, CoreWCF.ServiceHostBase)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyDispatchBehavior(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
+    parameters:
+    - id: serviceDescription
+      type: CoreWCF.Description.ServiceDescription
+    - id: serviceHostBase
+      type: CoreWCF.ServiceHostBase
+    content.vb: Sub ApplyDispatchBehavior(serviceDescription As ServiceDescription, serviceHostBase As ServiceHostBase)
+  overload: CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior*
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IServiceBehavior.Validate*
+  commentId: Overload:CoreWCF.Description.IServiceBehavior.Validate
+  isExternal: true
+  name: Validate
+  nameWithType: IServiceBehavior.Validate
+  fullName: CoreWCF.Description.IServiceBehavior.Validate
+- uid: CoreWCF.Description.ServiceDescription
+  commentId: T:CoreWCF.Description.ServiceDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceDescription
+  nameWithType: ServiceDescription
+  fullName: CoreWCF.Description.ServiceDescription
+- uid: CoreWCF.ServiceHostBase
+  commentId: T:CoreWCF.ServiceHostBase
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceHostBase
+  nameWithType: ServiceHostBase
+  fullName: CoreWCF.ServiceHostBase
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Description.IServiceBehavior.AddBindingParameters*
+  commentId: Overload:CoreWCF.Description.IServiceBehavior.AddBindingParameters
+  isExternal: true
+  name: AddBindingParameters
+  nameWithType: IServiceBehavior.AddBindingParameters
+  fullName: CoreWCF.Description.IServiceBehavior.AddBindingParameters
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<ServiceEndpoint>
+  nameWithType: Collection<ServiceEndpoint>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.Description.ServiceEndpoint>
+  nameWithType.vb: Collection(Of ServiceEndpoint)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.Description.ServiceEndpoint)
+  name.vb: Collection(Of ServiceEndpoint)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior
+  nameWithType: IServiceBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.Description.IServiceBehavior.ApplyDispatchBehavior

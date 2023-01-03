@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IPolicyExportExtension
+  commentId: T:CoreWCF.Description.IPolicyExportExtension
+  id: IPolicyExportExtension
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  langs:
+  - csharp
+  - vb
+  name: IPolicyExportExtension
+  nameWithType: IPolicyExportExtension
+  fullName: CoreWCF.Description.IPolicyExportExtension
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Implement  to insert custom binding policy assertions in the Web Services Description Language (WSDL) information.
+  remarks: "Implement the &lt;xref:CoreWCF.Description.IPolicyExportExtension> interface on a &lt;xref:CoreWCF.Channels.BindingElement?displayProperty=nameWithType> object to write statements about endpoint capabilities or requirements into the WSDL information exposed by a particular endpoint. Typically the binding element is one that implements some feature, but this is not required. To load your policy exporter from a configuration file, implement a &lt;xref:CoreWCF.Configuration.BindingElementExtensionElement?displayProperty=nameWithType> that returns the policy exporter &lt;xref:CoreWCF.Channels.BindingElement> object.  \n\nThe policy exporter is used by Windows Communication Foundation (WCF) to use policy assertions to communicate to clients the existence of that custom binding requirement or endpoint capability.  \n\nThe &lt;xref:CoreWCF.Description.IPolicyExportExtension.ExportPolicy%2A> method takes the &lt;xref:CoreWCF.Description.MetadataExporter> and &lt;xref:CoreWCF.Description.PolicyConversionContext> objects. Use the &lt;xref:CoreWCF.Description.PolicyConversionContext.GetBindingAssertions%2A>, &lt;xref:CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions%2A>, and &lt;xref:CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions%2A> methods to obtain collections of policy assertions that have already been exported at various scopes. Then add your custom policy assertion object to the appropriate collection.  \n\nThe &lt;xref:CoreWCF.Description.PolicyConversionContext.Contract%2A> property exposes the &lt;xref:CoreWCF.Description.ContractDescription> for the endpoint that is being exported. This allows the &lt;xref:CoreWCF.Description.IPolicyExportExtension> extension to correctly scope their exported policy assertions. For example, security attributes in code may add behaviors to the &lt;xref:CoreWCF.Description.ContractDescription> that indicate where security policy assertions should be added.  \n\nThe &lt;xref:CoreWCF.Description.IPolicyExportExtension> mechanism only supports exporting policy assertions in WSDL. To export custom WSDL elements you must use the &lt;xref:CoreWCF.Description.IWsdlExportExtension> mechanism to modify the WSDL directly.  \n\nOnce custom policy assertions have been attached to the WSDL information, clients can detect and import the custom binding assertions by using an &lt;xref:CoreWCF.Description.IPolicyImportExtension> object.  \n\n\n\n"
+  syntax:
+    content: public interface IPolicyExportExtension
+    content.vb: Public Interface IPolicyExportExtension
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  id: ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Description.IPolicyExportExtension
+  langs:
+  - csharp
+  - vb
+  name: ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ExportPolicy(MetadataExporter exporter, PolicyConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+    - id: context
+      type: CoreWCF.Description.PolicyConversionContext
+    content.vb: Sub ExportPolicy(exporter As MetadataExporter, context As PolicyConversionContext)
+  overload: CoreWCF.Description.IPolicyExportExtension.ExportPolicy*
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy*
+  commentId: Overload:CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  isExternal: true
+  name: ExportPolicy
+  nameWithType: IPolicyExportExtension.ExportPolicy
+  fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext

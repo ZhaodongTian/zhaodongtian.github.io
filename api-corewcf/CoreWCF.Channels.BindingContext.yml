@@ -1,0 +1,563 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  id: BindingContext
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.BindingContext.#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Channels.BindingContext.#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection,System.Uri,System.String)
+  - CoreWCF.Channels.BindingContext.Binding
+  - CoreWCF.Channels.BindingContext.BindingParameters
+  - CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher``1(CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher``1
+  - CoreWCF.Channels.BindingContext.Clone
+  - CoreWCF.Channels.BindingContext.GetInnerProperty``1
+  - CoreWCF.Channels.BindingContext.ListenUriBaseAddress
+  - CoreWCF.Channels.BindingContext.ListenUriRelativeAddress
+  - CoreWCF.Channels.BindingContext.RemainingBindingElements
+  langs:
+  - csharp
+  - vb
+  name: BindingContext
+  summary: Provides information about the addresses, bindings, binding elements and binding parameters required to build the channel listeners and channel factories.
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "\nCreates object instances based on command line parser results, injected services, and other value sources.\n"
+  remarks: To be added.
+  syntax:
+    content: 'public class BindingContext : Object'
+    content.vb: >-
+      Public Class BindingContext
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  remarks: The channel listeners and channel factories, in turn, construct the channel stacks used to process incoming and outgoing messages. The binding context also provides the linkage to the inner channel factories and channel listeners that are used to construct the channel and listener stacks. The binding context basically stores all of the dynamic information needed during the construction of the channel stack.
+- uid: CoreWCF.Channels.BindingContext.#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Channels.BindingContext.#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection)
+  id: '#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection)'
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: BindingContext(CustomBinding, BindingParameterCollection)
+  summary: Initializes a new instance of the [BindingContext](xref:CoreWCF.Channels.BindingContext) class for a specified binding and collection of binding parameters.
+  nameWithType: BindingContext.BindingContext(CustomBinding, BindingParameterCollection)
+  fullName: CoreWCF.Channels.BindingContext.BindingContext(CoreWCF.Channels.CustomBinding, CoreWCF.Channels.BindingParameterCollection)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public BindingContext(CustomBinding binding, BindingParameterCollection parameters)
+    parameters:
+    - id: binding
+      type: CoreWCF.Channels.CustomBinding
+      description: The [CustomBinding](xref:CoreWCF.Channels.CustomBinding) for the channel.
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+      description: The [BindingParameterCollection](xref:CoreWCF.Channels.BindingParameterCollection) for the channel.
+    content.vb: Public Sub New(binding As CustomBinding, parameters As BindingParameterCollection)
+  overload: CoreWCF.Channels.BindingContext.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: The value of [ListenUriMode](xref:System.ServiceModel.Description.ListenUriMode) is set to [Explicit](xref:System.ServiceModel.Description.ListenUriMode) by this constructor, the relative address is set to [Empty](xref:System.String.Empty), and the base address is set to null.
+- uid: CoreWCF.Channels.BindingContext.#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection,System.Uri,System.String)
+  commentId: M:CoreWCF.Channels.BindingContext.#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection,System.Uri,System.String)
+  id: '#ctor(CoreWCF.Channels.CustomBinding,CoreWCF.Channels.BindingParameterCollection,System.Uri,System.String)'
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: BindingContext(CustomBinding, BindingParameterCollection, Uri, String)
+  nameWithType: BindingContext.BindingContext(CustomBinding, BindingParameterCollection, Uri, String)
+  fullName: CoreWCF.Channels.BindingContext.BindingContext(CoreWCF.Channels.CustomBinding, CoreWCF.Channels.BindingParameterCollection, System.Uri, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public BindingContext(CustomBinding binding, BindingParameterCollection parameters, Uri listenUriBaseAddress, string listenUriRelativeAddress)
+    parameters:
+    - id: binding
+      type: CoreWCF.Channels.CustomBinding
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    - id: listenUriBaseAddress
+      type: System.Uri
+    - id: listenUriRelativeAddress
+      type: System.String
+    content.vb: Public Sub New(binding As CustomBinding, parameters As BindingParameterCollection, listenUriBaseAddress As Uri, listenUriRelativeAddress As String)
+  overload: CoreWCF.Channels.BindingContext.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher``1(CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher``1(CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildNextServiceDispatcher``1(CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: BuildNextServiceDispatcher<TChannel>(IServiceDispatcher)
+  nameWithType: BindingContext.BuildNextServiceDispatcher<TChannel>(IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher<TChannel>(CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public IServiceDispatcher BuildNextServiceDispatcher<TChannel>(IServiceDispatcher innerDispatcher)
+          where TChannel : class, IChannel
+    parameters:
+    - id: innerDispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Function BuildNextServiceDispatcher(Of TChannel As {Class, IChannel})(innerDispatcher As IServiceDispatcher) As IServiceDispatcher
+  overload: CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher*
+  nameWithType.vb: BindingContext.BuildNextServiceDispatcher(Of TChannel)(IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher(Of TChannel)(CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildNextServiceDispatcher(Of TChannel)(IServiceDispatcher)
+- uid: CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher``1
+  commentId: M:CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher``1
+  id: CanBuildNextServiceDispatcher``1
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: CanBuildNextServiceDispatcher<TChannel>()
+  nameWithType: BindingContext.CanBuildNextServiceDispatcher<TChannel>()
+  fullName: CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher<TChannel>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public bool CanBuildNextServiceDispatcher<TChannel>()
+          where TChannel : class, IChannel
+    typeParameters:
+    - id: TChannel
+    return:
+      type: System.Boolean
+    content.vb: Public Function CanBuildNextServiceDispatcher(Of TChannel As {Class, IChannel}) As Boolean
+  overload: CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher*
+  nameWithType.vb: BindingContext.CanBuildNextServiceDispatcher(Of TChannel)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher(Of TChannel)()
+  name.vb: CanBuildNextServiceDispatcher(Of TChannel)()
+- uid: CoreWCF.Channels.BindingContext.GetInnerProperty``1
+  commentId: M:CoreWCF.Channels.BindingContext.GetInnerProperty``1
+  id: GetInnerProperty``1
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: GetInnerProperty<T>()
+  summary: Returns a typed object requested, if present, from the appropriate layer in the binding stack.
+  nameWithType: BindingContext.GetInnerProperty<T>()
+  fullName: CoreWCF.Channels.BindingContext.GetInnerProperty<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public T GetInnerProperty<T>()
+          where T : class
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not.
+    content.vb: Public Function GetInnerProperty(Of T As Class) As T
+  overload: CoreWCF.Channels.BindingContext.GetInnerProperty*
+  nameWithType.vb: BindingContext.GetInnerProperty(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.BindingContext.GetInnerProperty(Of T)()
+  name.vb: GetInnerProperty(Of T)()
+  remarks: Clones the binding context and calls [GetProperty<T>(BindingContext)](xref:CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)) on the next binding element stored in the binding context.
+- uid: CoreWCF.Channels.BindingContext.Clone
+  commentId: M:CoreWCF.Channels.BindingContext.Clone
+  id: Clone
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  summary: Returns a copy of the current channel build context.
+  nameWithType: BindingContext.Clone()
+  fullName: CoreWCF.Channels.BindingContext.Clone()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public BindingContext Clone()
+    return:
+      type: CoreWCF.Channels.BindingContext
+      description: A [BindingContext](xref:CoreWCF.Channels.BindingContext) object that is a copy of the current channel build context.
+    content.vb: Public Function Clone As BindingContext
+  overload: CoreWCF.Channels.BindingContext.Clone*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: This method returns a copy that is a deep clone of your binding context. A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. (This is also called copying the entire object graph.) A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects.
+- uid: CoreWCF.Channels.BindingContext.Binding
+  commentId: P:CoreWCF.Channels.BindingContext.Binding
+  id: Binding
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: Binding
+  summary: Gets the binding for the channel built in the current context.
+  nameWithType: BindingContext.Binding
+  fullName: CoreWCF.Channels.BindingContext.Binding
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public CustomBinding Binding { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.CustomBinding
+      description: The [CustomBinding](xref:CoreWCF.Channels.CustomBinding) for the channel built in the current context.
+    content.vb: Public ReadOnly Property Binding As CustomBinding
+  overload: CoreWCF.Channels.BindingContext.Binding*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.BindingContext.BindingParameters
+  commentId: P:CoreWCF.Channels.BindingContext.BindingParameters
+  id: BindingParameters
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: BindingParameters
+  summary: Gets the collection of binding parameters for the channel built in the current context.
+  nameWithType: BindingContext.BindingParameters
+  fullName: CoreWCF.Channels.BindingContext.BindingParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public BindingParameterCollection BindingParameters { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.BindingParameterCollection
+      description: The [BindingParameterCollection](xref:CoreWCF.Channels.BindingParameterCollection) for the channel built in the current context.
+    content.vb: Public ReadOnly Property BindingParameters As BindingParameterCollection
+  overload: CoreWCF.Channels.BindingContext.BindingParameters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: This collection holds the settings encountered when building the channel stack from the bindings. Settings that need to be pushed down the channel stack during creation are put into the collection until a channel lower in the stack needs them.
+- uid: CoreWCF.Channels.BindingContext.ListenUriBaseAddress
+  commentId: P:CoreWCF.Channels.BindingContext.ListenUriBaseAddress
+  id: ListenUriBaseAddress
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: ListenUriBaseAddress
+  nameWithType: BindingContext.ListenUriBaseAddress
+  fullName: CoreWCF.Channels.BindingContext.ListenUriBaseAddress
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Uri ListenUriBaseAddress { get; set; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public Property ListenUriBaseAddress As Uri
+  overload: CoreWCF.Channels.BindingContext.ListenUriBaseAddress*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BindingContext.ListenUriRelativeAddress
+  commentId: P:CoreWCF.Channels.BindingContext.ListenUriRelativeAddress
+  id: ListenUriRelativeAddress
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: ListenUriRelativeAddress
+  nameWithType: BindingContext.ListenUriRelativeAddress
+  fullName: CoreWCF.Channels.BindingContext.ListenUriRelativeAddress
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public string ListenUriRelativeAddress { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ListenUriRelativeAddress As String
+  overload: CoreWCF.Channels.BindingContext.ListenUriRelativeAddress*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BindingContext.RemainingBindingElements
+  commentId: P:CoreWCF.Channels.BindingContext.RemainingBindingElements
+  id: RemainingBindingElements
+  parent: CoreWCF.Channels.BindingContext
+  langs:
+  - csharp
+  - vb
+  name: RemainingBindingElements
+  summary: Gets the binding elements that are used by other binding elements to construct the channel stack.
+  nameWithType: BindingContext.RemainingBindingElements
+  fullName: CoreWCF.Channels.BindingContext.RemainingBindingElements
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public BindingElementCollection RemainingBindingElements { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.BindingElementCollection
+      description: The [BindingElementCollection](xref:CoreWCF.Channels.BindingElementCollection) that contains the binding elements that are used by other binding elements to construct the channel stack.
+    content.vb: Public ReadOnly Property RemainingBindingElements As BindingElementCollection
+  overload: CoreWCF.Channels.BindingContext.RemainingBindingElements*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: The binding elements that are put into this collection are those elements that do not correspond directly to a listener or factory in one of the channel stacks. The encoder binding element, for example, ends up in this collection and is then used by the transport channel to construct a message encoder.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.BindingContext.#ctor*
+  commentId: Overload:CoreWCF.Channels.BindingContext.#ctor
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext.BindingContext
+  fullName: CoreWCF.Channels.BindingContext.BindingContext
+- uid: CoreWCF.Channels.CustomBinding
+  commentId: T:CoreWCF.Channels.CustomBinding
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: CustomBinding
+  nameWithType: CustomBinding
+  fullName: CoreWCF.Channels.CustomBinding
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher
+  isExternal: true
+  name: BuildNextServiceDispatcher
+  nameWithType: BindingContext.BuildNextServiceDispatcher
+  fullName: CoreWCF.Channels.BindingContext.BuildNextServiceDispatcher
+- uid: CoreWCF.Configuration.IServiceDispatcher
+  commentId: T:CoreWCF.Configuration.IServiceDispatcher
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IServiceDispatcher
+  nameWithType: IServiceDispatcher
+  fullName: CoreWCF.Configuration.IServiceDispatcher
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher
+  isExternal: true
+  name: CanBuildNextServiceDispatcher
+  nameWithType: BindingContext.CanBuildNextServiceDispatcher
+  fullName: CoreWCF.Channels.BindingContext.CanBuildNextServiceDispatcher
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.BindingContext.GetInnerProperty*
+  commentId: Overload:CoreWCF.Channels.BindingContext.GetInnerProperty
+  isExternal: true
+  name: GetInnerProperty
+  nameWithType: BindingContext.GetInnerProperty
+  fullName: CoreWCF.Channels.BindingContext.GetInnerProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.BindingContext.Clone*
+  commentId: Overload:CoreWCF.Channels.BindingContext.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: BindingContext.Clone
+  fullName: CoreWCF.Channels.BindingContext.Clone
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: CoreWCF.Channels.BindingContext.Binding*
+  commentId: Overload:CoreWCF.Channels.BindingContext.Binding
+  isExternal: true
+  name: Binding
+  nameWithType: BindingContext.Binding
+  fullName: CoreWCF.Channels.BindingContext.Binding
+- uid: CoreWCF.Channels.BindingContext.BindingParameters*
+  commentId: Overload:CoreWCF.Channels.BindingContext.BindingParameters
+  isExternal: true
+  name: BindingParameters
+  nameWithType: BindingContext.BindingParameters
+  fullName: CoreWCF.Channels.BindingContext.BindingParameters
+- uid: CoreWCF.Channels.BindingContext.ListenUriBaseAddress*
+  commentId: Overload:CoreWCF.Channels.BindingContext.ListenUriBaseAddress
+  isExternal: true
+  name: ListenUriBaseAddress
+  nameWithType: BindingContext.ListenUriBaseAddress
+  fullName: CoreWCF.Channels.BindingContext.ListenUriBaseAddress
+- uid: CoreWCF.Channels.BindingContext.ListenUriRelativeAddress*
+  commentId: Overload:CoreWCF.Channels.BindingContext.ListenUriRelativeAddress
+  isExternal: true
+  name: ListenUriRelativeAddress
+  nameWithType: BindingContext.ListenUriRelativeAddress
+  fullName: CoreWCF.Channels.BindingContext.ListenUriRelativeAddress
+- uid: CoreWCF.Channels.BindingContext.RemainingBindingElements*
+  commentId: Overload:CoreWCF.Channels.BindingContext.RemainingBindingElements
+  isExternal: true
+  name: RemainingBindingElements
+  nameWithType: BindingContext.RemainingBindingElements
+  fullName: CoreWCF.Channels.BindingContext.RemainingBindingElements
+- uid: CoreWCF.Channels.BindingElementCollection
+  commentId: T:CoreWCF.Channels.BindingElementCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElementCollection
+  nameWithType: BindingElementCollection
+  fullName: CoreWCF.Channels.BindingElementCollection

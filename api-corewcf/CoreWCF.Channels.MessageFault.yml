@@ -1,0 +1,759 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageFault
+  commentId: T:CoreWCF.Channels.MessageFault
+  id: MessageFault
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageFault.#ctor
+  - CoreWCF.Channels.MessageFault.Actor
+  - CoreWCF.Channels.MessageFault.Code
+  - CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.Channels.Message,System.Int32)
+  - CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.FaultCode,CoreWCF.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String,System.String)
+  - CoreWCF.Channels.MessageFault.GetDetail``1
+  - CoreWCF.Channels.MessageFault.GetDetail``1(System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Channels.MessageFault.GetReaderAtDetailContents
+  - CoreWCF.Channels.MessageFault.HasDetail
+  - CoreWCF.Channels.MessageFault.Node
+  - CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents
+  - CoreWCF.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  - CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  - CoreWCF.Channels.MessageFault.Reason
+  langs:
+  - csharp
+  - vb
+  name: MessageFault
+  nameWithType: MessageFault
+  fullName: CoreWCF.Channels.MessageFault
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents an in-memory representation of a SOAP fault that can be passed to [CreateMessage](xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)) to create a message that contains a fault.
+  remarks: "Use the <xref:CoreWCF.Channels.MessageFault> class any time you need an in-memory SOAP fault that can be modified and used to create a SOAP message that contains the fault information.  \n\nTypically, the <xref:CoreWCF.Channels.MessageFault> class is used when implementing the <xref:CoreWCF.Dispatcher.IErrorHandler> interface. In this case, Windows Communication Foundation (WCF) passes the <xref:CoreWCF.Channels.MessageFault> object and you use it for your specific needs (for example, you can customize the <xref:CoreWCF.Channels.MessageFault> or to log fault information). However, <xref:CoreWCF.Channels.MessageFault> can be used anywhere custom SOAP fault message handling is required.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class MessageFault : Object'
+    content.vb: >-
+      Public MustInherit Class MessageFault
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.FaultCode,CoreWCF.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String,System.String)
+  commentId: M:CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.FaultCode,CoreWCF.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String,System.String)
+  id: CreateFault(CoreWCF.FaultCode,CoreWCF.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String,System.String)
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: CreateFault(FaultCode, FaultReason, Object, XmlObjectSerializer, String, String)
+  summary: Returns a new [MessageFault](xref:CoreWCF.Channels.MessageFault) object that uses the specified [FaultCode](xref:CoreWCF.FaultCode), [FaultReason](xref:CoreWCF.FaultReason), detail object, [XmlObjectSerializer](xref:System.Runtime.Serialization.XmlObjectSerializer), and actor.
+  nameWithType: MessageFault.CreateFault(FaultCode, FaultReason, Object, XmlObjectSerializer, String, String)
+  fullName: CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.FaultCode, CoreWCF.FaultReason, System.Object, System.Runtime.Serialization.XmlObjectSerializer, System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static MessageFault CreateFault(FaultCode code, FaultReason reason, object detail, XmlObjectSerializer serializer, string actor, string node)
+    parameters:
+    - id: code
+      type: CoreWCF.FaultCode
+      description: The fault code for the fault message.
+    - id: reason
+      type: CoreWCF.FaultReason
+      description: The reason for the fault.
+    - id: detail
+      type: System.Object
+      description: The fault detail object.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: The serializer to use when serializing the detail object.
+    - id: actor
+      type: System.String
+      description: The value of the actor.
+    - id: node
+      type: System.String
+      description: The value of the node.
+    return:
+      type: CoreWCF.Channels.MessageFault
+      description: A [MessageFault](xref:CoreWCF.Channels.MessageFault) object with initial values from the passed in parameters.
+    content.vb: Public Shared Function CreateFault(code As FaultCode, reason As FaultReason, detail As Object, serializer As XmlObjectSerializer, actor As String, node As String) As MessageFault
+  overload: CoreWCF.Channels.MessageFault.CreateFault*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.Channels.Message,System.Int32)
+  commentId: M:CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.Channels.Message,System.Int32)
+  id: CreateFault(CoreWCF.Channels.Message,System.Int32)
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: CreateFault(Message, Int32)
+  summary: Returns a new [MessageFault](xref:CoreWCF.Channels.MessageFault) object that uses the specified [Message](xref:CoreWCF.Channels.Message) and the specified maximum buffer size for the message buffer.
+  nameWithType: MessageFault.CreateFault(Message, Int32)
+  fullName: CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.Channels.Message, System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static MessageFault CreateFault(Message message, int maxBufferSize)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The specified [Message](xref:CoreWCF.Channels.Message) to be used to create the[ MessageFault](xref:CoreWCF.Channels.MessageFault) object.
+    - id: maxBufferSize
+      type: System.Int32
+      description: The specified maximum buffer size for the message buffer.
+    return:
+      type: CoreWCF.Channels.MessageFault
+      description: A [MessageFault](xref:CoreWCF.Channels.MessageFault) object with initial values from the passed in parameters.
+    content.vb: Public Shared Function CreateFault(message As Message, maxBufferSize As Integer) As MessageFault
+  overload: CoreWCF.Channels.MessageFault.CreateFault*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.MessageFault.GetDetail``1
+  commentId: M:CoreWCF.Channels.MessageFault.GetDetail``1
+  id: GetDetail``1
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: GetDetail<T>()
+  summary: Returns the detail object of the message fault.
+  nameWithType: MessageFault.GetDetail<T>()
+  fullName: CoreWCF.Channels.MessageFault.GetDetail<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public T GetDetail<T>()
+    typeParameters:
+    - id: T
+      description: The type of the detail object.
+    return:
+      type: '{T}'
+      description: The detail object of the message fault.
+    content.vb: Public Function GetDetail(Of T) As T
+  overload: CoreWCF.Channels.MessageFault.GetDetail*
+  nameWithType.vb: MessageFault.GetDetail(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.MessageFault.GetDetail(Of T)()
+  name.vb: GetDetail(Of T)()
+- uid: CoreWCF.Channels.MessageFault.GetDetail``1(System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Channels.MessageFault.GetDetail``1(System.Runtime.Serialization.XmlObjectSerializer)
+  id: GetDetail``1(System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: GetDetail<T>(XmlObjectSerializer)
+  summary: Returns the detail object that uses the specified [XmlObjectSerializer](xref:System.Runtime.Serialization.XmlObjectSerializer).
+  nameWithType: MessageFault.GetDetail<T>(XmlObjectSerializer)
+  fullName: CoreWCF.Channels.MessageFault.GetDetail<T>(System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public T GetDetail<T>(XmlObjectSerializer serializer)
+    parameters:
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: The [XmlObjectSerializer](xref:System.Runtime.Serialization.XmlObjectSerializer) to use when deserializing the detail object.
+    typeParameters:
+    - id: T
+      description: The type of the detail object.
+    return:
+      type: '{T}'
+      description: The detail object contained in the [MessageFault](xref:CoreWCF.Channels.MessageFault).
+    content.vb: Public Function GetDetail(Of T)(serializer As XmlObjectSerializer) As T
+  overload: CoreWCF.Channels.MessageFault.GetDetail*
+  nameWithType.vb: MessageFault.GetDetail(Of T)(XmlObjectSerializer)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.MessageFault.GetDetail(Of T)(System.Runtime.Serialization.XmlObjectSerializer)
+  name.vb: GetDetail(Of T)(XmlObjectSerializer)
+- uid: CoreWCF.Channels.MessageFault.GetReaderAtDetailContents
+  commentId: M:CoreWCF.Channels.MessageFault.GetReaderAtDetailContents
+  id: GetReaderAtDetailContents
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: GetReaderAtDetailContents()
+  summary: Returns an [XmlDictionaryReader](xref:System.Xml.XmlDictionaryReader) object that is positioned on the detail object of the MessageFault.
+  nameWithType: MessageFault.GetReaderAtDetailContents()
+  fullName: CoreWCF.Channels.MessageFault.GetReaderAtDetailContents()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public XmlDictionaryReader GetReaderAtDetailContents()
+    return:
+      type: System.Xml.XmlDictionaryReader
+      description: An [XmlDictionaryReader](xref:System.Xml.XmlDictionaryReader) object that is positioned on the detail object of the[ MessageFault](xref:CoreWCF.Channels.MessageFault).
+    content.vb: Public Function GetReaderAtDetailContents As XmlDictionaryReader
+  overload: CoreWCF.Channels.MessageFault.GetReaderAtDetailContents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  id: OnWriteDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: OnWriteDetail(XmlDictionaryWriter, EnvelopeVersion)
+  summary: Invoked prior to writing the detail contents.
+  nameWithType: MessageFault.OnWriteDetail(XmlDictionaryWriter, EnvelopeVersion)
+  fullName: CoreWCF.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter, CoreWCF.EnvelopeVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual void OnWriteDetail(XmlDictionaryWriter writer, EnvelopeVersion version)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the detail element.
+    - id: version
+      type: CoreWCF.EnvelopeVersion
+      description: The version of the SOAP envelope to write.
+    content.vb: Protected Overridable Sub OnWriteDetail(writer As XmlDictionaryWriter, version As EnvelopeVersion)
+  overload: CoreWCF.Channels.MessageFault.OnWriteDetail*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: Override the [OnWriteDetail](xref:CoreWCF.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)) method to participate in the detail writing process. The default behavior is to call [OnWriteStartDetail](xref:CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)) followed by [OnWriteDetailContents](xref:CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)).
+- uid: CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  id: OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: OnWriteStartDetail(XmlDictionaryWriter, EnvelopeVersion)
+  summary: Writes the start element using the specified [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) and SOAP envelope version.
+  nameWithType: MessageFault.OnWriteStartDetail(XmlDictionaryWriter, EnvelopeVersion)
+  fullName: CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter, CoreWCF.EnvelopeVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual void OnWriteStartDetail(XmlDictionaryWriter writer, EnvelopeVersion version)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the detail element.
+    - id: version
+      type: CoreWCF.EnvelopeVersion
+      description: The version of the SOAP envelope to write.
+    content.vb: Protected Overridable Sub OnWriteStartDetail(writer As XmlDictionaryWriter, version As EnvelopeVersion)
+  overload: CoreWCF.Channels.MessageFault.OnWriteStartDetail*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)
+  id: OnWriteDetailContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: OnWriteDetailContents(XmlDictionaryWriter)
+  summary: When overridden in a non-abstract derived class, writes the contents of the detail element.
+  nameWithType: MessageFault.OnWriteDetailContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected abstract void OnWriteDetailContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the detail element.
+    content.vb: Protected MustOverride Sub OnWriteDetailContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.MessageFault.OnWriteDetailContents*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  remarks: The [OnWriteDetailContents](xref:CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)) method is called subsequent to [OnWriteStartDetail](xref:CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)) and prior to writing the end element.
+- uid: CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents
+  commentId: M:CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents
+  id: OnGetReaderAtDetailContents
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: OnGetReaderAtDetailContents()
+  summary: When called in a derived class, returns an [XmlDictionaryReader](xref:System.Xml.XmlDictionaryReader) object that is positioned on the detail object of the [MessageFault](xref:CoreWCF.Channels.MessageFault).
+  nameWithType: MessageFault.OnGetReaderAtDetailContents()
+  fullName: CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual XmlDictionaryReader OnGetReaderAtDetailContents()
+    return:
+      type: System.Xml.XmlDictionaryReader
+      description: An [XmlDictionaryReader](xref:System.Xml.XmlDictionaryReader) object that is positioned on the detail object of the [MessageFault](xref:CoreWCF.Channels.MessageFault).
+    content.vb: Protected Overridable Function OnGetReaderAtDetailContents As XmlDictionaryReader
+  overload: CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.MessageFault.#ctor
+  commentId: M:CoreWCF.Channels.MessageFault.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: MessageFault()
+  summary: When called in a derived class, initializes a new instance of the [MessageFault](xref:CoreWCF.Channels.MessageFault) class.
+  nameWithType: MessageFault.MessageFault()
+  fullName: CoreWCF.Channels.MessageFault.MessageFault()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected MessageFault()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.MessageFault.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageFault.Actor
+  commentId: P:CoreWCF.Channels.MessageFault.Actor
+  id: Actor
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: Actor
+  summary: Gets or sets the value of the actor.
+  nameWithType: MessageFault.Actor
+  fullName: CoreWCF.Channels.MessageFault.Actor
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual string Actor { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The value of the actor.
+    content.vb: Public Overridable ReadOnly Property Actor As String
+  overload: CoreWCF.Channels.MessageFault.Actor*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageFault.Code
+  commentId: P:CoreWCF.Channels.MessageFault.Code
+  id: Code
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: Code
+  summary: Gets the SOAP fault code.
+  nameWithType: MessageFault.Code
+  fullName: CoreWCF.Channels.MessageFault.Code
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract FaultCode Code { get; }
+    parameters: []
+    return:
+      type: CoreWCF.FaultCode
+      description: A [FaultCode](xref:CoreWCF.FaultCode) that contains the SOAP fault code.
+    content.vb: Public MustOverride ReadOnly Property Code As FaultCode
+  overload: CoreWCF.Channels.MessageFault.Code*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageFault.Node
+  commentId: P:CoreWCF.Channels.MessageFault.Node
+  id: Node
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: Node
+  summary: Gets the SOAP node containing information about which SOAP node on a message path cause the fault.
+  nameWithType: MessageFault.Node
+  fullName: CoreWCF.Channels.MessageFault.Node
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual string Node { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The SOAP node containing information about which SOAP node on a message path cause the fault.
+    content.vb: Public Overridable ReadOnly Property Node As String
+  overload: CoreWCF.Channels.MessageFault.Node*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageFault.HasDetail
+  commentId: P:CoreWCF.Channels.MessageFault.HasDetail
+  id: HasDetail
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: HasDetail
+  summary: Gets a value that indicates whether the [MessageFault](xref:CoreWCF.Channels.MessageFault) has a detail object.
+  nameWithType: MessageFault.HasDetail
+  fullName: CoreWCF.Channels.MessageFault.HasDetail
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract bool HasDetail { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the [MessageFault](xref:CoreWCF.Channels.MessageFault) has a detail object; otherwise, false.
+    content.vb: Public MustOverride ReadOnly Property HasDetail As Boolean
+  overload: CoreWCF.Channels.MessageFault.HasDetail*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageFault.Reason
+  commentId: P:CoreWCF.Channels.MessageFault.Reason
+  id: Reason
+  parent: CoreWCF.Channels.MessageFault
+  langs:
+  - csharp
+  - vb
+  name: Reason
+  summary: Gets a textual description of a SOAP fault.
+  nameWithType: MessageFault.Reason
+  fullName: CoreWCF.Channels.MessageFault.Reason
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract FaultReason Reason { get; }
+    parameters: []
+    return:
+      type: CoreWCF.FaultReason
+      description: A [FaultReason](xref:CoreWCF.FaultReason) that contains a textual description of a SOAP fault.
+    content.vb: Public MustOverride ReadOnly Property Reason As FaultReason
+  overload: CoreWCF.Channels.MessageFault.Reason*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageFault.CreateFault*
+  commentId: Overload:CoreWCF.Channels.MessageFault.CreateFault
+  isExternal: true
+  name: CreateFault
+  nameWithType: MessageFault.CreateFault
+  fullName: CoreWCF.Channels.MessageFault.CreateFault
+- uid: CoreWCF.FaultCode
+  commentId: T:CoreWCF.FaultCode
+  parent: CoreWCF
+  isExternal: true
+  name: FaultCode
+  nameWithType: FaultCode
+  fullName: CoreWCF.FaultCode
+- uid: CoreWCF.FaultReason
+  commentId: T:CoreWCF.FaultReason
+  parent: CoreWCF
+  isExternal: true
+  name: FaultReason
+  nameWithType: FaultReason
+  fullName: CoreWCF.FaultReason
+- uid: System.Runtime.Serialization.XmlObjectSerializer
+  isExternal: true
+  name: XmlObjectSerializer
+  nameWithType: XmlObjectSerializer
+  fullName: System.Runtime.Serialization.XmlObjectSerializer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.MessageFault
+  commentId: T:CoreWCF.Channels.MessageFault
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageFault
+  nameWithType: MessageFault
+  fullName: CoreWCF.Channels.MessageFault
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.MessageFault.GetDetail*
+  commentId: Overload:CoreWCF.Channels.MessageFault.GetDetail
+  isExternal: true
+  name: GetDetail
+  nameWithType: MessageFault.GetDetail
+  fullName: CoreWCF.Channels.MessageFault.GetDetail
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.MessageFault.GetReaderAtDetailContents*
+  commentId: Overload:CoreWCF.Channels.MessageFault.GetReaderAtDetailContents
+  isExternal: true
+  name: GetReaderAtDetailContents
+  nameWithType: MessageFault.GetReaderAtDetailContents
+  fullName: CoreWCF.Channels.MessageFault.GetReaderAtDetailContents
+- uid: System.Xml.XmlDictionaryReader
+  isExternal: true
+  name: XmlDictionaryReader
+  nameWithType: XmlDictionaryReader
+  fullName: System.Xml.XmlDictionaryReader
+- uid: CoreWCF.Channels.MessageFault.OnWriteDetail*
+  commentId: Overload:CoreWCF.Channels.MessageFault.OnWriteDetail
+  isExternal: true
+  name: OnWriteDetail
+  nameWithType: MessageFault.OnWriteDetail
+  fullName: CoreWCF.Channels.MessageFault.OnWriteDetail
+- uid: System.Xml.XmlDictionaryWriter
+  isExternal: true
+  name: XmlDictionaryWriter
+  nameWithType: XmlDictionaryWriter
+  fullName: System.Xml.XmlDictionaryWriter
+- uid: CoreWCF.EnvelopeVersion
+  commentId: T:CoreWCF.EnvelopeVersion
+  parent: CoreWCF
+  isExternal: true
+  name: EnvelopeVersion
+  nameWithType: EnvelopeVersion
+  fullName: CoreWCF.EnvelopeVersion
+- uid: CoreWCF.Channels.MessageFault.OnWriteStartDetail*
+  commentId: Overload:CoreWCF.Channels.MessageFault.OnWriteStartDetail
+  isExternal: true
+  name: OnWriteStartDetail
+  nameWithType: MessageFault.OnWriteStartDetail
+  fullName: CoreWCF.Channels.MessageFault.OnWriteStartDetail
+- uid: CoreWCF.Channels.MessageFault.OnWriteDetailContents*
+  commentId: Overload:CoreWCF.Channels.MessageFault.OnWriteDetailContents
+  isExternal: true
+  name: OnWriteDetailContents
+  nameWithType: MessageFault.OnWriteDetailContents
+  fullName: CoreWCF.Channels.MessageFault.OnWriteDetailContents
+- uid: CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents*
+  commentId: Overload:CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents
+  isExternal: true
+  name: OnGetReaderAtDetailContents
+  nameWithType: MessageFault.OnGetReaderAtDetailContents
+  fullName: CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents
+- uid: CoreWCF.Channels.MessageFault.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageFault.#ctor
+  isExternal: true
+  name: MessageFault
+  nameWithType: MessageFault.MessageFault
+  fullName: CoreWCF.Channels.MessageFault.MessageFault
+- uid: CoreWCF.Channels.MessageFault.Actor*
+  commentId: Overload:CoreWCF.Channels.MessageFault.Actor
+  isExternal: true
+  name: Actor
+  nameWithType: MessageFault.Actor
+  fullName: CoreWCF.Channels.MessageFault.Actor
+- uid: CoreWCF.Channels.MessageFault.Code*
+  commentId: Overload:CoreWCF.Channels.MessageFault.Code
+  isExternal: true
+  name: Code
+  nameWithType: MessageFault.Code
+  fullName: CoreWCF.Channels.MessageFault.Code
+- uid: CoreWCF.Channels.MessageFault.Node*
+  commentId: Overload:CoreWCF.Channels.MessageFault.Node
+  isExternal: true
+  name: Node
+  nameWithType: MessageFault.Node
+  fullName: CoreWCF.Channels.MessageFault.Node
+- uid: CoreWCF.Channels.MessageFault.HasDetail*
+  commentId: Overload:CoreWCF.Channels.MessageFault.HasDetail
+  isExternal: true
+  name: HasDetail
+  nameWithType: MessageFault.HasDetail
+  fullName: CoreWCF.Channels.MessageFault.HasDetail
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.MessageFault.Reason*
+  commentId: Overload:CoreWCF.Channels.MessageFault.Reason
+  isExternal: true
+  name: Reason
+  nameWithType: MessageFault.Reason
+  fullName: CoreWCF.Channels.MessageFault.Reason

@@ -1,0 +1,172 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IInstanceProvider
+  commentId: T:CoreWCF.Dispatcher.IInstanceProvider
+  id: IInstanceProvider
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext)
+  - CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext,CoreWCF.Channels.Message)
+  - CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance(CoreWCF.InstanceContext,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: IInstanceProvider
+  nameWithType: IInstanceProvider
+  fullName: CoreWCF.Dispatcher.IInstanceProvider
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Declares methods that provide a service object or recycle a service object for a Windows Communication Foundation (WCF) service.
+  remarks: "Implement the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider> interface to control the creation and recycling of service objects when one is requested or disposed by an &lt;xref:CoreWCF.InstanceContext> object.  \n\nOnce the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider> interface is implemented, you must assign your custom instance provider object to the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider%2A> property using either an endpoint behavior (a &lt;xref:CoreWCF.Description.IEndpointBehavior> object) or a contract behavior (a &lt;xref:CoreWCF.Description.IContractBehavior> object).  \n\nIf the insertion mechanism is an endpoint behavior you can also implement a &lt;xref:CoreWCF.Configuration.BehaviorExtensionElement> object that can insert your custom behavior using a configuration file. If the insertion mechanism is a contract behavior, you can insert the behavior programmatically prior to the opening of the service host or you can implement a custom attribute. (For an example of the contract behavior approach, see the Example section.)  \n\n&lt;xref:CoreWCF.Dispatcher.IInstanceProvider> has two methods, &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A> and &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A>. These methods are typically implemented to create service objects using a non-parameterless constructor or to initialize or dispose of some state related to the lifetime of the object. Service object pooling is one example of custom &lt;xref:CoreWCF.Dispatcher.IInstanceProvider> functionality.  \n\nTypically, the &lt;xref:CoreWCF.InstanceContext> invokes the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A> when the &lt;xref:CoreWCF.InstanceContext> is first created and invokes the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A> method when the &lt;xref:CoreWCF.InstanceContext> is closed.  \n\nThere are two ways to cause an &lt;xref:CoreWCF.InstanceContext> object to release a service object before the &lt;xref:CoreWCF.InstanceContext> is closed. The first method is to set the &lt;xref:CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode%2A> to &lt;xref:CoreWCF.ReleaseInstanceMode.AfterCall> or &lt;xref:CoreWCF.ReleaseInstanceMode.BeforeAndAfterCall>. The second method is to call the &lt;xref:CoreWCF.InstanceContext.ReleaseServiceInstance%2A> method. If this is done, the &lt;xref:CoreWCF.InstanceContext> calls the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A> method on the dispatcher&apos;s instance provider. If a new message arrives after the instance has been released, WCF creates a new instance using the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A> method.  \n\n> [!NOTE]\n>  If the &lt;xref:CoreWCF.InstanceContextMode> of the service is &lt;xref:CoreWCF.InstanceContextMode.Single>, the system does not call the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A> or &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A> methods even when the user did not provide a well-known service object unless the user directly calls &lt;xref:CoreWCF.InstanceContext.ReleaseServiceInstance%2A> and then calls &lt;xref:CoreWCF.InstanceContext.GetServiceInstance%2A>.  \n\n\n\n"
+  syntax:
+    content: public interface IInstanceProvider
+    content.vb: Public Interface IInstanceProvider
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext)
+  commentId: M:CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext)
+  id: GetInstance(CoreWCF.InstanceContext)
+  parent: CoreWCF.Dispatcher.IInstanceProvider
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(InstanceContext)
+  nameWithType: IInstanceProvider.GetInstance(InstanceContext)
+  fullName: CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: object GetInstance(InstanceContext instanceContext)
+    parameters:
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    return:
+      type: System.Object
+    content.vb: Function GetInstance(instanceContext As InstanceContext) As Object
+  overload: CoreWCF.Dispatcher.IInstanceProvider.GetInstance*
+- uid: CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext,CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext,CoreWCF.Channels.Message)
+  id: GetInstance(CoreWCF.InstanceContext,CoreWCF.Channels.Message)
+  parent: CoreWCF.Dispatcher.IInstanceProvider
+  langs:
+  - csharp
+  - vb
+  name: GetInstance(InstanceContext, Message)
+  nameWithType: IInstanceProvider.GetInstance(InstanceContext, Message)
+  fullName: CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext, CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: object GetInstance(InstanceContext instanceContext, Message message)
+    parameters:
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Object
+    content.vb: Function GetInstance(instanceContext As InstanceContext, message As Message) As Object
+  overload: CoreWCF.Dispatcher.IInstanceProvider.GetInstance*
+- uid: CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance(CoreWCF.InstanceContext,System.Object)
+  commentId: M:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance(CoreWCF.InstanceContext,System.Object)
+  id: ReleaseInstance(CoreWCF.InstanceContext,System.Object)
+  parent: CoreWCF.Dispatcher.IInstanceProvider
+  langs:
+  - csharp
+  - vb
+  name: ReleaseInstance(InstanceContext, Object)
+  nameWithType: IInstanceProvider.ReleaseInstance(InstanceContext, Object)
+  fullName: CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance(CoreWCF.InstanceContext, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: void ReleaseInstance(InstanceContext instanceContext, object instance)
+    parameters:
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    - id: instance
+      type: System.Object
+    content.vb: Sub ReleaseInstance(instanceContext As InstanceContext, instance As Object)
+  overload: CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance*
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IInstanceProvider.GetInstance*
+  commentId: Overload:CoreWCF.Dispatcher.IInstanceProvider.GetInstance
+  isExternal: true
+  name: GetInstance
+  nameWithType: IInstanceProvider.GetInstance
+  fullName: CoreWCF.Dispatcher.IInstanceProvider.GetInstance
+- uid: CoreWCF.InstanceContext
+  commentId: T:CoreWCF.InstanceContext
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContext
+  nameWithType: InstanceContext
+  fullName: CoreWCF.InstanceContext
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance*
+  commentId: Overload:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance
+  isExternal: true
+  name: ReleaseInstance
+  nameWithType: IInstanceProvider.ReleaseInstance
+  fullName: CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance

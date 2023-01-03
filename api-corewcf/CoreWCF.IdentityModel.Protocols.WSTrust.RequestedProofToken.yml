@@ -1,0 +1,322 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  commentId: T:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  id: RequestedProofToken
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust
+  children:
+  - CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey)
+  - CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[])
+  - CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[],CoreWCF.IdentityModel.Tokens.EncryptingCredentials)
+  - CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.String)
+  - CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm
+  - CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey
+  langs:
+  - csharp
+  - vb
+  name: RequestedProofToken
+  nameWithType: RequestedProofToken
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nThe content of a RequestedProofToken element could be EncryptedSecurityToken which means that EncryptedKey is used \nunder the RequestedProofToken. If the security token is a regular token, such as a SCT,\nthen its session key will be the material which gets encrypted.  Another possibility is where\nwe use combined entropy, then RequestedProofToken will only contain a ComputedKey element.\n"
+  syntax:
+    content: 'public class RequestedProofToken : Object'
+    content.vb: >-
+      Public Class RequestedProofToken
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.String)
+  commentId: M:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  langs:
+  - csharp
+  - vb
+  name: RequestedProofToken(String)
+  nameWithType: RequestedProofToken.RequestedProofToken(String)
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nIn case of combined entropy, construct a requestedprooftoken \ninstance with computed key algorithm to specify the algorithm used to \ncalculate the session key.\n"
+  syntax:
+    content: public RequestedProofToken(string computedKeyAlgorithm)
+    parameters:
+    - id: computedKeyAlgorithm
+      type: System.String
+      description: "The algorithm used to computed the session key in \n      the combined entropy case."
+    content.vb: Public Sub New(computedKeyAlgorithm As String)
+  overload: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  langs:
+  - csharp
+  - vb
+  name: RequestedProofToken(Byte[])
+  nameWithType: RequestedProofToken.RequestedProofToken(Byte[])
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken(System.Byte[])
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nWhen the requested proof token contains real key in plain text.\n"
+  syntax:
+    content: public RequestedProofToken(byte[] secret)
+    parameters:
+    - id: secret
+      type: System.Byte[]
+      description: The key material.
+    content.vb: Public Sub New(secret As Byte())
+  overload: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor*
+  nameWithType.vb: RequestedProofToken.RequestedProofToken(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken(System.Byte())
+  name.vb: RequestedProofToken(Byte())
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[],CoreWCF.IdentityModel.Tokens.EncryptingCredentials)
+  commentId: M:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(System.Byte[],CoreWCF.IdentityModel.Tokens.EncryptingCredentials)
+  id: '#ctor(System.Byte[],CoreWCF.IdentityModel.Tokens.EncryptingCredentials)'
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  langs:
+  - csharp
+  - vb
+  name: RequestedProofToken(Byte[], EncryptingCredentials)
+  nameWithType: RequestedProofToken.RequestedProofToken(Byte[], EncryptingCredentials)
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken(System.Byte[], CoreWCF.IdentityModel.Tokens.EncryptingCredentials)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nWhen the requested proof token contains real key encrypted.\n"
+  syntax:
+    content: public RequestedProofToken(byte[] secret, EncryptingCredentials wrappingCredentials)
+    parameters:
+    - id: secret
+      type: System.Byte[]
+      description: The key material.
+    - id: wrappingCredentials
+      type: CoreWCF.IdentityModel.Tokens.EncryptingCredentials
+      description: The encrypting credentials to encrypt the key material.
+    content.vb: Public Sub New(secret As Byte(), wrappingCredentials As EncryptingCredentials)
+  overload: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor*
+  nameWithType.vb: RequestedProofToken.RequestedProofToken(Byte(), EncryptingCredentials)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken(System.Byte(), CoreWCF.IdentityModel.Tokens.EncryptingCredentials)
+  name.vb: RequestedProofToken(Byte(), EncryptingCredentials)
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey)
+  commentId: M:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor(CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey)
+  id: '#ctor(CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey)'
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  langs:
+  - csharp
+  - vb
+  name: RequestedProofToken(ProtectedKey)
+  nameWithType: RequestedProofToken.RequestedProofToken(ProtectedKey)
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken(CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nConstructs a requested proof token instance with the protected key.\n"
+  syntax:
+    content: public RequestedProofToken(ProtectedKey protectedKey)
+    parameters:
+    - id: protectedKey
+      type: CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey
+      description: The protected key which can be either binary secret or encrypted key.
+    content.vb: Public Sub New(protectedKey As ProtectedKey)
+  overload: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm
+  commentId: P:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm
+  id: ComputedKeyAlgorithm
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  langs:
+  - csharp
+  - vb
+  name: ComputedKeyAlgorithm
+  nameWithType: RequestedProofToken.ComputedKeyAlgorithm
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nGets the computed key algorithm used to calculate the session key in the combined \nentropy case.\n"
+  syntax:
+    content: public string ComputedKeyAlgorithm { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ComputedKeyAlgorithm As String
+  overload: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey
+  commentId: P:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey
+  id: ProtectedKey
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken
+  langs:
+  - csharp
+  - vb
+  name: ProtectedKey
+  nameWithType: RequestedProofToken.ProtectedKey
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Protocols.WSTrust
+  summary: "\nIn the case when the requested proof token contains the real key, \nProtectedKey getter will returns the real key bytes either encrypted\nor plaintext.\n"
+  syntax:
+    content: public ProtectedKey ProtectedKey { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey
+    content.vb: Public ReadOnly Property ProtectedKey As ProtectedKey
+  overload: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust
+  commentId: N:CoreWCF.IdentityModel.Protocols.WSTrust
+  isExternal: true
+  name: CoreWCF.IdentityModel.Protocols.WSTrust
+  nameWithType: CoreWCF.IdentityModel.Protocols.WSTrust
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.#ctor
+  isExternal: true
+  name: RequestedProofToken
+  nameWithType: RequestedProofToken.RequestedProofToken
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.RequestedProofToken
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Tokens.EncryptingCredentials
+  commentId: T:CoreWCF.IdentityModel.Tokens.EncryptingCredentials
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: EncryptingCredentials
+  nameWithType: EncryptingCredentials
+  fullName: CoreWCF.IdentityModel.Tokens.EncryptingCredentials
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey
+  commentId: T:CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey
+  parent: CoreWCF.IdentityModel.Protocols.WSTrust
+  isExternal: true
+  name: ProtectedKey
+  nameWithType: ProtectedKey
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.ProtectedKey
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm*
+  commentId: Overload:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm
+  isExternal: true
+  name: ComputedKeyAlgorithm
+  nameWithType: RequestedProofToken.ComputedKeyAlgorithm
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ComputedKeyAlgorithm
+- uid: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey*
+  commentId: Overload:CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey
+  isExternal: true
+  name: ProtectedKey
+  nameWithType: RequestedProofToken.ProtectedKey
+  fullName: CoreWCF.IdentityModel.Protocols.WSTrust.RequestedProofToken.ProtectedKey

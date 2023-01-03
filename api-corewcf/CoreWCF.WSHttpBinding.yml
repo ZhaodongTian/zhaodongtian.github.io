@@ -1,0 +1,896 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.WSHttpBinding
+  commentId: T:CoreWCF.WSHttpBinding
+  id: WSHttpBinding
+  parent: CoreWCF
+  children:
+  - CoreWCF.WSHttpBinding.#ctor
+  - CoreWCF.WSHttpBinding.#ctor(CoreWCF.SecurityMode)
+  - CoreWCF.WSHttpBinding.#ctor(CoreWCF.SecurityMode,System.Boolean)
+  - CoreWCF.WSHttpBinding.CreateBindingElements
+  - CoreWCF.WSHttpBinding.CreateMessageSecurity
+  - CoreWCF.WSHttpBinding.GetTransport
+  - CoreWCF.WSHttpBinding.Security
+  langs:
+  - csharp
+  - vb
+  name: WSHttpBinding
+  nameWithType: WSHttpBinding
+  fullName: CoreWCF.WSHttpBinding
+  type: Class
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  summary: Represents an interoperable binding that supports distributed transactions and secure, reliable sessions.
+  remarks: "The &lt;xref:CoreWCF.WSHttpBinding> is similar to the &lt;xref:CoreWCF.BasicHttpBinding> but provides more Web service features. It uses the HTTP transport and provides message security, as does &lt;xref:CoreWCF.BasicHttpBinding>, but it also provides transactions, reliable messaging, and WS-Addressing, either enabled by default or available through a single control setting.  \n\n\n\n"
+  syntax:
+    content: 'public class WSHttpBinding : WSHttpBindingBase, IDefaultCommunicationTimeouts'
+    content.vb: >-
+      Public Class WSHttpBinding
+          Inherits WSHttpBindingBase
+          Implements IDefaultCommunicationTimeouts
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.Binding
+  - CoreWCF.WSHttpBindingBase
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts
+  inheritedMembers:
+  - CoreWCF.WSHttpBindingBase.TransactionFlow
+  - CoreWCF.WSHttpBindingBase.MaxBufferPoolSize
+  - CoreWCF.WSHttpBindingBase.MaxReceivedMessageSize
+  - CoreWCF.WSHttpBindingBase.MessageEncoding
+  - CoreWCF.WSHttpBindingBase.ReaderQuotas
+  - CoreWCF.WSHttpBindingBase.Scheme
+  - CoreWCF.WSHttpBindingBase.EnvelopeVersion
+  - CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Channels.Binding.CloseTimeout
+  - CoreWCF.Channels.Binding.Name
+  - CoreWCF.Channels.Binding.Namespace
+  - CoreWCF.Channels.Binding.OpenTimeout
+  - CoreWCF.Channels.Binding.ReceiveTimeout
+  - CoreWCF.Channels.Binding.MessageVersion
+  - CoreWCF.Channels.Binding.SendTimeout
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.WSHttpBinding.#ctor
+  commentId: M:CoreWCF.WSHttpBinding.#ctor
+  id: '#ctor'
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: WSHttpBinding()
+  nameWithType: WSHttpBinding.WSHttpBinding()
+  fullName: CoreWCF.WSHttpBinding.WSHttpBinding()
+  type: Constructor
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: public WSHttpBinding()
+    content.vb: Public Sub New
+  overload: CoreWCF.WSHttpBinding.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.WSHttpBinding.#ctor(CoreWCF.SecurityMode)
+  commentId: M:CoreWCF.WSHttpBinding.#ctor(CoreWCF.SecurityMode)
+  id: '#ctor(CoreWCF.SecurityMode)'
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: WSHttpBinding(SecurityMode)
+  nameWithType: WSHttpBinding.WSHttpBinding(SecurityMode)
+  fullName: CoreWCF.WSHttpBinding.WSHttpBinding(CoreWCF.SecurityMode)
+  type: Constructor
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: public WSHttpBinding(SecurityMode securityMode)
+    parameters:
+    - id: securityMode
+      type: CoreWCF.SecurityMode
+    content.vb: Public Sub New(securityMode As SecurityMode)
+  overload: CoreWCF.WSHttpBinding.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.WSHttpBinding.#ctor(CoreWCF.SecurityMode,System.Boolean)
+  commentId: M:CoreWCF.WSHttpBinding.#ctor(CoreWCF.SecurityMode,System.Boolean)
+  id: '#ctor(CoreWCF.SecurityMode,System.Boolean)'
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: WSHttpBinding(SecurityMode, Boolean)
+  nameWithType: WSHttpBinding.WSHttpBinding(SecurityMode, Boolean)
+  fullName: CoreWCF.WSHttpBinding.WSHttpBinding(CoreWCF.SecurityMode, System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: public WSHttpBinding(SecurityMode securityMode, bool reliableSessionEnabled)
+    parameters:
+    - id: securityMode
+      type: CoreWCF.SecurityMode
+    - id: reliableSessionEnabled
+      type: System.Boolean
+    content.vb: Public Sub New(securityMode As SecurityMode, reliableSessionEnabled As Boolean)
+  overload: CoreWCF.WSHttpBinding.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.WSHttpBinding.CreateBindingElements
+  commentId: M:CoreWCF.WSHttpBinding.CreateBindingElements
+  id: CreateBindingElements
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: CreateBindingElements()
+  nameWithType: WSHttpBinding.CreateBindingElements()
+  fullName: CoreWCF.WSHttpBinding.CreateBindingElements()
+  type: Method
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: public override BindingElementCollection CreateBindingElements()
+    return:
+      type: CoreWCF.Channels.BindingElementCollection
+    content.vb: Public Overrides Function CreateBindingElements As BindingElementCollection
+  overridden: CoreWCF.WSHttpBindingBase.CreateBindingElements
+  overload: CoreWCF.WSHttpBinding.CreateBindingElements*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.WSHttpBinding.GetTransport
+  commentId: M:CoreWCF.WSHttpBinding.GetTransport
+  id: GetTransport
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: GetTransport()
+  nameWithType: WSHttpBinding.GetTransport()
+  fullName: CoreWCF.WSHttpBinding.GetTransport()
+  type: Method
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: protected override TransportBindingElement GetTransport()
+    return:
+      type: CoreWCF.Channels.TransportBindingElement
+    content.vb: Protected Overrides Function GetTransport As TransportBindingElement
+  overridden: CoreWCF.WSHttpBindingBase.GetTransport
+  overload: CoreWCF.WSHttpBinding.GetTransport*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.WSHttpBinding.CreateMessageSecurity
+  commentId: M:CoreWCF.WSHttpBinding.CreateMessageSecurity
+  id: CreateMessageSecurity
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: CreateMessageSecurity()
+  nameWithType: WSHttpBinding.CreateMessageSecurity()
+  fullName: CoreWCF.WSHttpBinding.CreateMessageSecurity()
+  type: Method
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: protected override SecurityBindingElement CreateMessageSecurity()
+    return:
+      type: CoreWCF.Channels.SecurityBindingElement
+    content.vb: Protected Overrides Function CreateMessageSecurity As SecurityBindingElement
+  overridden: CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+  overload: CoreWCF.WSHttpBinding.CreateMessageSecurity*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.WSHttpBinding.Security
+  commentId: P:CoreWCF.WSHttpBinding.Security
+  id: Security
+  parent: CoreWCF.WSHttpBinding
+  langs:
+  - csharp
+  - vb
+  name: Security
+  nameWithType: WSHttpBinding.Security
+  fullName: CoreWCF.WSHttpBinding.Security
+  type: Property
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF
+  syntax:
+    content: public WSHTTPSecurity Security { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.WSHTTPSecurity
+    content.vb: Public Property Security As WSHTTPSecurity
+  overload: CoreWCF.WSHttpBinding.Security*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.Binding
+  commentId: T:CoreWCF.Channels.Binding
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Binding
+  nameWithType: Binding
+  fullName: CoreWCF.Channels.Binding
+- uid: CoreWCF.WSHttpBindingBase
+  commentId: T:CoreWCF.WSHttpBindingBase
+  parent: CoreWCF
+  isExternal: true
+  name: WSHttpBindingBase
+  nameWithType: WSHttpBindingBase
+  fullName: CoreWCF.WSHttpBindingBase
+- uid: CoreWCF.IDefaultCommunicationTimeouts
+  commentId: T:CoreWCF.IDefaultCommunicationTimeouts
+  parent: CoreWCF
+  isExternal: true
+  name: IDefaultCommunicationTimeouts
+  nameWithType: IDefaultCommunicationTimeouts
+  fullName: CoreWCF.IDefaultCommunicationTimeouts
+- uid: CoreWCF.WSHttpBindingBase.TransactionFlow
+  commentId: P:CoreWCF.WSHttpBindingBase.TransactionFlow
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: TransactionFlow
+  nameWithType: WSHttpBindingBase.TransactionFlow
+  fullName: CoreWCF.WSHttpBindingBase.TransactionFlow
+- uid: CoreWCF.WSHttpBindingBase.MaxBufferPoolSize
+  commentId: P:CoreWCF.WSHttpBindingBase.MaxBufferPoolSize
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: MaxBufferPoolSize
+  nameWithType: WSHttpBindingBase.MaxBufferPoolSize
+  fullName: CoreWCF.WSHttpBindingBase.MaxBufferPoolSize
+- uid: CoreWCF.WSHttpBindingBase.MaxReceivedMessageSize
+  commentId: P:CoreWCF.WSHttpBindingBase.MaxReceivedMessageSize
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: MaxReceivedMessageSize
+  nameWithType: WSHttpBindingBase.MaxReceivedMessageSize
+  fullName: CoreWCF.WSHttpBindingBase.MaxReceivedMessageSize
+- uid: CoreWCF.WSHttpBindingBase.MessageEncoding
+  commentId: P:CoreWCF.WSHttpBindingBase.MessageEncoding
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: MessageEncoding
+  nameWithType: WSHttpBindingBase.MessageEncoding
+  fullName: CoreWCF.WSHttpBindingBase.MessageEncoding
+- uid: CoreWCF.WSHttpBindingBase.ReaderQuotas
+  commentId: P:CoreWCF.WSHttpBindingBase.ReaderQuotas
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: ReaderQuotas
+  nameWithType: WSHttpBindingBase.ReaderQuotas
+  fullName: CoreWCF.WSHttpBindingBase.ReaderQuotas
+- uid: CoreWCF.WSHttpBindingBase.Scheme
+  commentId: P:CoreWCF.WSHttpBindingBase.Scheme
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: Scheme
+  nameWithType: WSHttpBindingBase.Scheme
+  fullName: CoreWCF.WSHttpBindingBase.Scheme
+- uid: CoreWCF.WSHttpBindingBase.EnvelopeVersion
+  commentId: P:CoreWCF.WSHttpBindingBase.EnvelopeVersion
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: EnvelopeVersion
+  nameWithType: WSHttpBindingBase.EnvelopeVersion
+  fullName: CoreWCF.WSHttpBindingBase.EnvelopeVersion
+- uid: CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingParameterCollection)
+  nameWithType: Binding.CanBuildServiceDispatcher<TChannel>(BindingParameterCollection)
+  fullName: CoreWCF.Channels.Binding.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingParameterCollection)
+  nameWithType.vb: Binding.CanBuildServiceDispatcher(Of TChannel)(BindingParameterCollection)
+  fullName.vb: CoreWCF.Channels.Binding.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingParameterCollection)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingParameterCollection)
+  spec.csharp:
+  - uid: CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: Binding.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.Binding.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: Binding.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.Binding.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingParameterCollection, IServiceDispatcher)
+  nameWithType: Binding.BuildServiceDispatcher<TChannel>(BindingParameterCollection, IServiceDispatcher)
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: Binding.BuildServiceDispatcher(Of TChannel)(BindingParameterCollection, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingParameterCollection, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: Binding.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: Binding.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(Uri, BindingParameterCollection, IServiceDispatcher)
+  nameWithType: Binding.BuildServiceDispatcher<TChannel>(Uri, BindingParameterCollection, IServiceDispatcher)
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>(System.Uri, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: Binding.BuildServiceDispatcher(Of TChannel)(Uri, BindingParameterCollection, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)(System.Uri, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(Uri, BindingParameterCollection, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: Binding.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: System.Uri
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: Binding.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: System.Uri
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  nameWithType: Binding.BuildServiceDispatcher<TChannel>(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>(System.Uri, System.String, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: Binding.BuildServiceDispatcher(Of TChannel)(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)(System.Uri, System.String, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: Binding.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: System.Uri
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: Binding.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Uri
+    name: Uri
+    nameWithType: Uri
+    fullName: System.Uri
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: GetProperty<T>(BindingParameterCollection)
+  nameWithType: Binding.GetProperty<T>(BindingParameterCollection)
+  fullName: CoreWCF.Channels.Binding.GetProperty<T>(CoreWCF.Channels.BindingParameterCollection)
+  nameWithType.vb: Binding.GetProperty(Of T)(BindingParameterCollection)
+  fullName.vb: CoreWCF.Channels.Binding.GetProperty(Of T)(CoreWCF.Channels.BindingParameterCollection)
+  name.vb: GetProperty(Of T)(BindingParameterCollection)
+  spec.csharp:
+  - uid: CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+    name: GetProperty<T>
+    nameWithType: Binding.GetProperty<T>
+    fullName: CoreWCF.Channels.Binding.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+    name: GetProperty(Of T)
+    nameWithType: Binding.GetProperty(Of T)
+    fullName: CoreWCF.Channels.Binding.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.Binding.CloseTimeout
+  commentId: P:CoreWCF.Channels.Binding.CloseTimeout
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: CloseTimeout
+  nameWithType: Binding.CloseTimeout
+  fullName: CoreWCF.Channels.Binding.CloseTimeout
+- uid: CoreWCF.Channels.Binding.Name
+  commentId: P:CoreWCF.Channels.Binding.Name
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: Name
+  nameWithType: Binding.Name
+  fullName: CoreWCF.Channels.Binding.Name
+- uid: CoreWCF.Channels.Binding.Namespace
+  commentId: P:CoreWCF.Channels.Binding.Namespace
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: Namespace
+  nameWithType: Binding.Namespace
+  fullName: CoreWCF.Channels.Binding.Namespace
+- uid: CoreWCF.Channels.Binding.OpenTimeout
+  commentId: P:CoreWCF.Channels.Binding.OpenTimeout
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: OpenTimeout
+  nameWithType: Binding.OpenTimeout
+  fullName: CoreWCF.Channels.Binding.OpenTimeout
+- uid: CoreWCF.Channels.Binding.ReceiveTimeout
+  commentId: P:CoreWCF.Channels.Binding.ReceiveTimeout
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: ReceiveTimeout
+  nameWithType: Binding.ReceiveTimeout
+  fullName: CoreWCF.Channels.Binding.ReceiveTimeout
+- uid: CoreWCF.Channels.Binding.MessageVersion
+  commentId: P:CoreWCF.Channels.Binding.MessageVersion
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: MessageVersion
+  nameWithType: Binding.MessageVersion
+  fullName: CoreWCF.Channels.Binding.MessageVersion
+- uid: CoreWCF.Channels.Binding.SendTimeout
+  commentId: P:CoreWCF.Channels.Binding.SendTimeout
+  parent: CoreWCF.Channels.Binding
+  isExternal: true
+  name: SendTimeout
+  nameWithType: Binding.SendTimeout
+  fullName: CoreWCF.Channels.Binding.SendTimeout
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.WSHttpBinding.#ctor*
+  commentId: Overload:CoreWCF.WSHttpBinding.#ctor
+  isExternal: true
+  name: WSHttpBinding
+  nameWithType: WSHttpBinding.WSHttpBinding
+  fullName: CoreWCF.WSHttpBinding.WSHttpBinding
+- uid: CoreWCF.SecurityMode
+  commentId: T:CoreWCF.SecurityMode
+  parent: CoreWCF
+  isExternal: true
+  name: SecurityMode
+  nameWithType: SecurityMode
+  fullName: CoreWCF.SecurityMode
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.WSHttpBindingBase.CreateBindingElements
+  commentId: M:CoreWCF.WSHttpBindingBase.CreateBindingElements
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: CreateBindingElements()
+  nameWithType: WSHttpBindingBase.CreateBindingElements()
+  fullName: CoreWCF.WSHttpBindingBase.CreateBindingElements()
+  spec.csharp:
+  - uid: CoreWCF.WSHttpBindingBase.CreateBindingElements
+    name: CreateBindingElements
+    nameWithType: WSHttpBindingBase.CreateBindingElements
+    fullName: CoreWCF.WSHttpBindingBase.CreateBindingElements
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.WSHttpBindingBase.CreateBindingElements
+    name: CreateBindingElements
+    nameWithType: WSHttpBindingBase.CreateBindingElements
+    fullName: CoreWCF.WSHttpBindingBase.CreateBindingElements
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.WSHttpBinding.CreateBindingElements*
+  commentId: Overload:CoreWCF.WSHttpBinding.CreateBindingElements
+  isExternal: true
+  name: CreateBindingElements
+  nameWithType: WSHttpBinding.CreateBindingElements
+  fullName: CoreWCF.WSHttpBinding.CreateBindingElements
+- uid: CoreWCF.Channels.BindingElementCollection
+  commentId: T:CoreWCF.Channels.BindingElementCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElementCollection
+  nameWithType: BindingElementCollection
+  fullName: CoreWCF.Channels.BindingElementCollection
+- uid: CoreWCF.WSHttpBindingBase.GetTransport
+  commentId: M:CoreWCF.WSHttpBindingBase.GetTransport
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: GetTransport()
+  nameWithType: WSHttpBindingBase.GetTransport()
+  fullName: CoreWCF.WSHttpBindingBase.GetTransport()
+  spec.csharp:
+  - uid: CoreWCF.WSHttpBindingBase.GetTransport
+    name: GetTransport
+    nameWithType: WSHttpBindingBase.GetTransport
+    fullName: CoreWCF.WSHttpBindingBase.GetTransport
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.WSHttpBindingBase.GetTransport
+    name: GetTransport
+    nameWithType: WSHttpBindingBase.GetTransport
+    fullName: CoreWCF.WSHttpBindingBase.GetTransport
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.WSHttpBinding.GetTransport*
+  commentId: Overload:CoreWCF.WSHttpBinding.GetTransport
+  isExternal: true
+  name: GetTransport
+  nameWithType: WSHttpBinding.GetTransport
+  fullName: CoreWCF.WSHttpBinding.GetTransport
+- uid: CoreWCF.Channels.TransportBindingElement
+  commentId: T:CoreWCF.Channels.TransportBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: TransportBindingElement
+  nameWithType: TransportBindingElement
+  fullName: CoreWCF.Channels.TransportBindingElement
+- uid: CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+  commentId: M:CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+  parent: CoreWCF.WSHttpBindingBase
+  isExternal: true
+  name: CreateMessageSecurity()
+  nameWithType: WSHttpBindingBase.CreateMessageSecurity()
+  fullName: CoreWCF.WSHttpBindingBase.CreateMessageSecurity()
+  spec.csharp:
+  - uid: CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+    name: CreateMessageSecurity
+    nameWithType: WSHttpBindingBase.CreateMessageSecurity
+    fullName: CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+    name: CreateMessageSecurity
+    nameWithType: WSHttpBindingBase.CreateMessageSecurity
+    fullName: CoreWCF.WSHttpBindingBase.CreateMessageSecurity
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.WSHttpBinding.CreateMessageSecurity*
+  commentId: Overload:CoreWCF.WSHttpBinding.CreateMessageSecurity
+  isExternal: true
+  name: CreateMessageSecurity
+  nameWithType: WSHttpBinding.CreateMessageSecurity
+  fullName: CoreWCF.WSHttpBinding.CreateMessageSecurity
+- uid: CoreWCF.Channels.SecurityBindingElement
+  commentId: T:CoreWCF.Channels.SecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: SecurityBindingElement
+  nameWithType: SecurityBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement
+- uid: CoreWCF.WSHttpBinding.Security*
+  commentId: Overload:CoreWCF.WSHttpBinding.Security
+  isExternal: true
+  name: Security
+  nameWithType: WSHttpBinding.Security
+  fullName: CoreWCF.WSHttpBinding.Security
+- uid: CoreWCF.WSHTTPSecurity
+  commentId: T:CoreWCF.WSHTTPSecurity
+  parent: CoreWCF
+  isExternal: true
+  name: WSHTTPSecurity
+  nameWithType: WSHTTPSecurity
+  fullName: CoreWCF.WSHTTPSecurity

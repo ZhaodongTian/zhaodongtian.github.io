@@ -1,0 +1,838 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  commentId: T:CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  id: WrappedKeySecurityToken
+  parent: CoreWCF.Security.Tokens
+  children:
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause``1
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause``1
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken
+  - CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference
+  langs:
+  - csharp
+  - vb
+  name: WrappedKeySecurityToken
+  nameWithType: WrappedKeySecurityToken
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  summary: Represents a security token whose key is wrapped inside another token.
+  remarks: "This class represents an encrypted key that comes over the wire. The encrypted key is a symmetric key that is encrypted for the receiving party using the receiving party&apos;s public key. When such a key is received, the receiver&apos;s security token is resolved, the symmetric key is decrypted, and an instance of this class is created that contains these two pieces of information.  \n\n"
+  syntax:
+    content: 'public class WrappedKeySecurityToken : SecurityToken'
+    content.vb: >-
+      Public Class WrappedKeySecurityToken
+          Inherits SecurityToken
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.Tokens.SecurityToken
+  inheritedMembers:
+  - CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey
+  commentId: M:CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey
+  id: GetWrappedKey
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: GetWrappedKey()
+  nameWithType: WrappedKeySecurityToken.GetWrappedKey()
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public byte[] GetWrappedKey()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetWrappedKey As Byte()
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause``1
+  commentId: M:CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause``1
+  id: CanCreateKeyIdentifierClause``1
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: CanCreateKeyIdentifierClause<T>()
+  nameWithType: WrappedKeySecurityToken.CanCreateKeyIdentifierClause<T>()
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: >-
+      public override bool CanCreateKeyIdentifierClause<T>()
+          where T : SecurityKeyIdentifierClause
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function CanCreateKeyIdentifierClause(Of T As SecurityKeyIdentifierClause) As Boolean
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause*
+  nameWithType.vb: WrappedKeySecurityToken.CanCreateKeyIdentifierClause(Of T)()
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause(Of T)()
+  name.vb: CanCreateKeyIdentifierClause(Of T)()
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause``1
+  commentId: M:CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause``1
+  id: CreateKeyIdentifierClause``1
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: CreateKeyIdentifierClause<T>()
+  nameWithType: WrappedKeySecurityToken.CreateKeyIdentifierClause<T>()
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: >-
+      public override T CreateKeyIdentifierClause<T>()
+          where T : SecurityKeyIdentifierClause
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Overrides Function CreateKeyIdentifierClause(Of T As SecurityKeyIdentifierClause) As T
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause*
+  nameWithType.vb: WrappedKeySecurityToken.CreateKeyIdentifierClause(Of T)()
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause(Of T)()
+  name.vb: CreateKeyIdentifierClause(Of T)()
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  id: MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: MatchesKeyIdentifierClause(SecurityKeyIdentifierClause)
+  nameWithType: WrappedKeySecurityToken.MatchesKeyIdentifierClause(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public override bool MatchesKeyIdentifierClause(SecurityKeyIdentifierClause keyIdentifierClause)
+    parameters:
+    - id: keyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function MatchesKeyIdentifierClause(keyIdentifierClause As SecurityKeyIdentifierClause) As Boolean
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id
+  id: Id
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: WrappedKeySecurityToken.Id
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public override string Id { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Id As String
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.Id
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom
+  id: ValidFrom
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: ValidFrom
+  nameWithType: WrappedKeySecurityToken.ValidFrom
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public override DateTime ValidFrom { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Overrides ReadOnly Property ValidFrom As DateTime
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.ValidFrom
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo
+  id: ValidTo
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: ValidTo
+  nameWithType: WrappedKeySecurityToken.ValidTo
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public override DateTime ValidTo { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Overrides ReadOnly Property ValidTo As DateTime
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.ValidTo
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm
+  id: WrappingAlgorithm
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: WrappingAlgorithm
+  nameWithType: WrappedKeySecurityToken.WrappingAlgorithm
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public string WrappingAlgorithm { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property WrappingAlgorithm As String
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken
+  id: WrappingToken
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: WrappingToken
+  nameWithType: WrappedKeySecurityToken.WrappingToken
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public SecurityToken WrappingToken { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Public ReadOnly Property WrappingToken As SecurityToken
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference
+  id: WrappingTokenReference
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: WrappingTokenReference
+  nameWithType: WrappedKeySecurityToken.WrappingTokenReference
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public SecurityKeyIdentifier WrappingTokenReference { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    content.vb: Public ReadOnly Property WrappingTokenReference As SecurityKeyIdentifier
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys
+  commentId: P:CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys
+  id: SecurityKeys
+  parent: CoreWCF.Security.Tokens.WrappedKeySecurityToken
+  langs:
+  - csharp
+  - vb
+  name: SecurityKeys
+  nameWithType: WrappedKeySecurityToken.SecurityKeys
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security.Tokens
+  syntax:
+    content: public override ReadOnlyCollection<SecurityKey> SecurityKeys { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Tokens.SecurityKey}
+    content.vb: Public Overrides ReadOnly Property SecurityKeys As ReadOnlyCollection(Of SecurityKey)
+  overridden: CoreWCF.IdentityModel.Tokens.SecurityToken.SecurityKeys
+  overload: CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+references:
+- uid: CoreWCF.Security.Tokens
+  commentId: N:CoreWCF.Security.Tokens
+  isExternal: true
+  name: CoreWCF.Security.Tokens
+  nameWithType: CoreWCF.Security.Tokens
+  fullName: CoreWCF.Security.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityToken
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityToken
+  nameWithType: SecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: ResolveKeyIdentifierClause(SecurityKeyIdentifierClause)
+  nameWithType: SecurityToken.ResolveKeyIdentifierClause(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: ResolveKeyIdentifierClause
+    nameWithType: SecurityToken.ResolveKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: ResolveKeyIdentifierClause
+    nameWithType: SecurityToken.ResolveKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.ResolveKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey
+  isExternal: true
+  name: GetWrappedKey
+  nameWithType: WrappedKeySecurityToken.GetWrappedKey
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: CanCreateKeyIdentifierClause<T>()
+  nameWithType: SecurityToken.CanCreateKeyIdentifierClause<T>()
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause<T>()
+  nameWithType.vb: SecurityToken.CanCreateKeyIdentifierClause(Of T)()
+  fullName.vb: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause(Of T)()
+  name.vb: CanCreateKeyIdentifierClause(Of T)()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1
+    name: CanCreateKeyIdentifierClause<T>
+    nameWithType: SecurityToken.CanCreateKeyIdentifierClause<T>
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause``1
+    name: CanCreateKeyIdentifierClause(Of T)
+    nameWithType: SecurityToken.CanCreateKeyIdentifierClause(Of T)
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.CanCreateKeyIdentifierClause(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause
+  isExternal: true
+  name: CanCreateKeyIdentifierClause
+  nameWithType: WrappedKeySecurityToken.CanCreateKeyIdentifierClause
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: CreateKeyIdentifierClause<T>()
+  nameWithType: SecurityToken.CreateKeyIdentifierClause<T>()
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause<T>()
+  nameWithType.vb: SecurityToken.CreateKeyIdentifierClause(Of T)()
+  fullName.vb: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause(Of T)()
+  name.vb: CreateKeyIdentifierClause(Of T)()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1
+    name: CreateKeyIdentifierClause<T>
+    nameWithType: SecurityToken.CreateKeyIdentifierClause<T>
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause``1
+    name: CreateKeyIdentifierClause(Of T)
+    nameWithType: SecurityToken.CreateKeyIdentifierClause(Of T)
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.CreateKeyIdentifierClause(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause
+  isExternal: true
+  name: CreateKeyIdentifierClause
+  nameWithType: WrappedKeySecurityToken.CreateKeyIdentifierClause
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: MatchesKeyIdentifierClause(SecurityKeyIdentifierClause)
+  nameWithType: SecurityToken.MatchesKeyIdentifierClause(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: MatchesKeyIdentifierClause
+    nameWithType: SecurityToken.MatchesKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: MatchesKeyIdentifierClause
+    nameWithType: SecurityToken.MatchesKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.MatchesKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause
+  isExternal: true
+  name: MatchesKeyIdentifierClause
+  nameWithType: WrappedKeySecurityToken.MatchesKeyIdentifierClause
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.Id
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityToken.Id
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: Id
+  nameWithType: SecurityToken.Id
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.Id
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id
+  isExternal: true
+  name: Id
+  nameWithType: WrappedKeySecurityToken.Id
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.ValidFrom
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityToken.ValidFrom
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: ValidFrom
+  nameWithType: SecurityToken.ValidFrom
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.ValidFrom
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom
+  isExternal: true
+  name: ValidFrom
+  nameWithType: WrappedKeySecurityToken.ValidFrom
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom
+- uid: System.DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.ValidTo
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityToken.ValidTo
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: ValidTo
+  nameWithType: SecurityToken.ValidTo
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.ValidTo
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo
+  isExternal: true
+  name: ValidTo
+  nameWithType: WrappedKeySecurityToken.ValidTo
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm
+  isExternal: true
+  name: WrappingAlgorithm
+  nameWithType: WrappedKeySecurityToken.WrappingAlgorithm
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken
+  isExternal: true
+  name: WrappingToken
+  nameWithType: WrappedKeySecurityToken.WrappingToken
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference
+  isExternal: true
+  name: WrappingTokenReference
+  nameWithType: WrappedKeySecurityToken.WrappingTokenReference
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityKeyIdentifier
+  nameWithType: SecurityKeyIdentifier
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken.SecurityKeys
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityToken.SecurityKeys
+  parent: CoreWCF.IdentityModel.Tokens.SecurityToken
+  isExternal: true
+  name: SecurityKeys
+  nameWithType: SecurityToken.SecurityKeys
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken.SecurityKeys
+- uid: CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys*
+  commentId: Overload:CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys
+  isExternal: true
+  name: SecurityKeys
+  nameWithType: WrappedKeySecurityToken.SecurityKeys
+  fullName: CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Tokens.SecurityKey}
+  commentId: '!:System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Tokens.SecurityKey}'
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<SecurityKey>
+  nameWithType: ReadOnlyCollection<SecurityKey>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<CoreWCF.IdentityModel.Tokens.SecurityKey>
+  nameWithType.vb: ReadOnlyCollection(Of SecurityKey)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of CoreWCF.IdentityModel.Tokens.SecurityKey)
+  name.vb: ReadOnlyCollection(Of SecurityKey)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey
+    name: SecurityKey
+    nameWithType: SecurityKey
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKey
+    name: SecurityKey
+    nameWithType: SecurityKey
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKey
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<>
+  nameWithType: ReadOnlyCollection<>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<>
+  nameWithType.vb: ReadOnlyCollection(Of )
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of )
+  name.vb: ReadOnlyCollection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

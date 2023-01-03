@@ -1,0 +1,288 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.OperationContractAttribute
+  commentId: T:CoreWCF.OperationContractAttribute
+  id: OperationContractAttribute
+  parent: CoreWCF
+  children:
+  - CoreWCF.OperationContractAttribute.#ctor
+  - CoreWCF.OperationContractAttribute.Action
+  - CoreWCF.OperationContractAttribute.AsyncPattern
+  - CoreWCF.OperationContractAttribute.IsOneWay
+  - CoreWCF.OperationContractAttribute.Name
+  - CoreWCF.OperationContractAttribute.ReplyAction
+  langs:
+  - csharp
+  - vb
+  name: OperationContractAttribute
+  nameWithType: OperationContractAttribute
+  fullName: CoreWCF.OperationContractAttribute
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Indicates that a method defines an operation that is part of a service contract in a Windows Communication Foundation (WCF) application.
+  remarks: "Apply the &lt;xref:CoreWCF.OperationContractAttribute> to a method to indicate that the method implements a service operation as part of a service contract (specified by a &lt;xref:CoreWCF.ServiceContractAttribute> attribute).  \n\nUse the &lt;xref:CoreWCF.OperationContractAttribute> properties to control the structure of the operation and the values expressed in metadata:  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.Action%2A> property specifies the action that uniquely identifies this operation. WCF dispatches request messages to methods based on their action.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.AsyncPattern%2A> property indicates that the operation is implemented or can be called asynchronously using a Begin/End method pair.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.HasProtectionLevel%2A> property indicates whether the &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A> property has been explicitly set.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A> property indicates that the operation only consists of a single input message. The operation has no associated output message.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.IsInitiating%2A> property specifies whether this operation can be the initial operation in a session.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.IsTerminating%2A> property specifies whether WCF attempts to terminate the current session after the operation completes.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A> property specifies the message-level security that an operation requires at run time.  \n\n-   The &lt;xref:CoreWCF.OperationContractAttribute.ReplyAction%2A> property specifies the action of the reply message for the operation.  \n\nThe &lt;xref:CoreWCF.OperationContractAttribute> attribute declares that a method is an operation in a service contract. Only methods attributed with the &lt;xref:CoreWCF.OperationContractAttribute> are exposed as service operations. A service contract without any methods marked with the &lt;xref:CoreWCF.OperationContractAttribute> exposes no operations.  \n\nThe &lt;xref:CoreWCF.OperationContractAttribute.AsyncPattern%2A> property indicates that a pair of `Begin`\\&lt;*methodName*> and `End`\\&lt;*methodName*> methods form a single operation implemented asynchronously (whether on the client or the service). The ability of a service to implement operations asynchronously is a service implementation detail and is not exposed in metadata (such as Web Services Description Language (WSDL)).  \n\nSimilarly, clients can choose to invoke operations asynchronously independent of how the service method is implemented. Calling service operations asynchronously in the client is recommended when a service method takes some time but must return information directly to the client. For details, see &lt;xref:CoreWCF.OperationContractAttribute.AsyncPattern%2A>.  \n\nThe &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A> property indicates that a method does not return any value at all, including an empty underlying response message. This type of method is useful for notifications or event-style communication. Methods of this kind cannot return a reply message so the method&apos;s declaration must return `void`.  \n\n> [!IMPORTANT]\n>  When programmatically retrieving the information store in this attribute, use the &lt;xref:CoreWCF.Description.ContractDescription> class instead of reflection.  \n\n> [!NOTE]\n>  If the &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A> property is set to `false`, (the default), even methods that return `void` are two-way methods at the underlying message level. In this case, the infrastructure creates and sends an empty message to indicate to the caller that the method has returned. Using this approach enables the application and the infrastructure to send error information (such as a SOAP fault) back to the client. Setting &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A> to `true` is the only way to prevent the creation and dispatch of a reply message. For more information, see [One-Way Services](/dotnet/framework/wcf/feature-details/one-way-services).  \n\nThe &lt;xref:CoreWCF.OperationContractAttribute.Action%2A> and &lt;xref:CoreWCF.OperationContractAttribute.ReplyAction%2A> properties can be used not only to modify the default action of SOAP messages but also to create handlers for unrecognized messages or to disable adding actions for direct message programming. Use the &lt;xref:CoreWCF.OperationContractAttribute.IsInitiating%2A> property to prevent clients from calling a particular service operation prior to other operations. Use the &lt;xref:CoreWCF.OperationContractAttribute.IsTerminating%2A> property to have WCF close the channel after clients call a particular service operation. For more information, see [Using Sessions](/dotnet/framework/wcf/using-sessions).  \n\nThe &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A> property enables you to specify on the operation contract whether the operation messages are signed, encrypted, or signed and encrypted. If a binding cannot provide the security level required by the contract, an exception is thrown at run time. For more information, see &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A> and [Understanding Protection Level](/dotnet/framework/wcf/understanding-protection-level).  \n\n\n\n"
+  syntax:
+    content: 'public sealed class OperationContractAttribute : Attribute'
+    content.vb: >-
+      Public NotInheritable Class OperationContractAttribute
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.OperationContractAttribute.#ctor
+  commentId: M:CoreWCF.OperationContractAttribute.#ctor
+  id: '#ctor'
+  parent: CoreWCF.OperationContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: OperationContractAttribute()
+  nameWithType: OperationContractAttribute.OperationContractAttribute()
+  fullName: CoreWCF.OperationContractAttribute.OperationContractAttribute()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public OperationContractAttribute()
+    content.vb: Public Sub New
+  overload: CoreWCF.OperationContractAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContractAttribute.Name
+  commentId: P:CoreWCF.OperationContractAttribute.Name
+  id: Name
+  parent: CoreWCF.OperationContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: OperationContractAttribute.Name
+  fullName: CoreWCF.OperationContractAttribute.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CoreWCF.OperationContractAttribute.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContractAttribute.Action
+  commentId: P:CoreWCF.OperationContractAttribute.Action
+  id: Action
+  parent: CoreWCF.OperationContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: Action
+  nameWithType: OperationContractAttribute.Action
+  fullName: CoreWCF.OperationContractAttribute.Action
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Action { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Action As String
+  overload: CoreWCF.OperationContractAttribute.Action*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContractAttribute.ReplyAction
+  commentId: P:CoreWCF.OperationContractAttribute.ReplyAction
+  id: ReplyAction
+  parent: CoreWCF.OperationContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: ReplyAction
+  nameWithType: OperationContractAttribute.ReplyAction
+  fullName: CoreWCF.OperationContractAttribute.ReplyAction
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string ReplyAction { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ReplyAction As String
+  overload: CoreWCF.OperationContractAttribute.ReplyAction*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContractAttribute.AsyncPattern
+  commentId: P:CoreWCF.OperationContractAttribute.AsyncPattern
+  id: AsyncPattern
+  parent: CoreWCF.OperationContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: AsyncPattern
+  nameWithType: OperationContractAttribute.AsyncPattern
+  fullName: CoreWCF.OperationContractAttribute.AsyncPattern
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool AsyncPattern { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AsyncPattern As Boolean
+  overload: CoreWCF.OperationContractAttribute.AsyncPattern*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContractAttribute.IsOneWay
+  commentId: P:CoreWCF.OperationContractAttribute.IsOneWay
+  id: IsOneWay
+  parent: CoreWCF.OperationContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsOneWay
+  nameWithType: OperationContractAttribute.IsOneWay
+  fullName: CoreWCF.OperationContractAttribute.IsOneWay
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsOneWay { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsOneWay As Boolean
+  overload: CoreWCF.OperationContractAttribute.IsOneWay*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.OperationContractAttribute.#ctor*
+  commentId: Overload:CoreWCF.OperationContractAttribute.#ctor
+  isExternal: true
+  name: OperationContractAttribute
+  nameWithType: OperationContractAttribute.OperationContractAttribute
+  fullName: CoreWCF.OperationContractAttribute.OperationContractAttribute
+- uid: CoreWCF.OperationContractAttribute.Name*
+  commentId: Overload:CoreWCF.OperationContractAttribute.Name
+  isExternal: true
+  name: Name
+  nameWithType: OperationContractAttribute.Name
+  fullName: CoreWCF.OperationContractAttribute.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.OperationContractAttribute.Action*
+  commentId: Overload:CoreWCF.OperationContractAttribute.Action
+  isExternal: true
+  name: Action
+  nameWithType: OperationContractAttribute.Action
+  fullName: CoreWCF.OperationContractAttribute.Action
+- uid: CoreWCF.OperationContractAttribute.ReplyAction*
+  commentId: Overload:CoreWCF.OperationContractAttribute.ReplyAction
+  isExternal: true
+  name: ReplyAction
+  nameWithType: OperationContractAttribute.ReplyAction
+  fullName: CoreWCF.OperationContractAttribute.ReplyAction
+- uid: CoreWCF.OperationContractAttribute.AsyncPattern*
+  commentId: Overload:CoreWCF.OperationContractAttribute.AsyncPattern
+  isExternal: true
+  name: AsyncPattern
+  nameWithType: OperationContractAttribute.AsyncPattern
+  fullName: CoreWCF.OperationContractAttribute.AsyncPattern
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.OperationContractAttribute.IsOneWay*
+  commentId: Overload:CoreWCF.OperationContractAttribute.IsOneWay
+  isExternal: true
+  name: IsOneWay
+  nameWithType: OperationContractAttribute.IsOneWay
+  fullName: CoreWCF.OperationContractAttribute.IsOneWay

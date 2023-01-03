@@ -1,0 +1,162 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IParameterInspector
+  commentId: T:CoreWCF.Dispatcher.IParameterInspector
+  id: IParameterInspector
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IParameterInspector.AfterCall(System.String,System.Object[],System.Object,System.Object)
+  - CoreWCF.Dispatcher.IParameterInspector.BeforeCall(System.String,System.Object[])
+  langs:
+  - csharp
+  - vb
+  name: IParameterInspector
+  nameWithType: IParameterInspector
+  fullName: CoreWCF.Dispatcher.IParameterInspector
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Defines the contract implemented by custom parameter inspectors that enables inspection or modification of information prior to and subsequent to calls on either the client or the service.
+  remarks: "Implement the &lt;xref:CoreWCF.Dispatcher.IParameterInspector> interface to create a custom parameter inspector that can view and modify the contents of a call both before the call and after the call in either client or service applications.  \n\nOn outbound calls from a client, the inspector is invoked before the request contents are serialized and sent to the service. The inspector is also called after the response has been deserialized but before the return values have been dispatched to the proxy method.  \n\nOn inbound calls to a service, the inspector is invoked after parameters are deserialized but before they are dispatched to the service operation.  \n\nUse the &lt;xref:CoreWCF.Dispatcher.ClientOperation.ParameterInspectors%2A?displayProperty=nameWithType> or the &lt;xref:CoreWCF.Dispatcher.DispatchOperation.ParameterInspectors%2A?displayProperty=nameWithType> properties to add an &lt;xref:CoreWCF.Dispatcher.IParameterInspector> implementation to the inspectors collection for a particular operation.  \n\n**Note** Developers and administrators must ensure that the interaction with other &lt;xref:CoreWCF.Dispatcher.IParameterInspector> implementations is understood.  \n\n\n\n"
+  syntax:
+    content: public interface IParameterInspector
+    content.vb: Public Interface IParameterInspector
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.IParameterInspector.BeforeCall(System.String,System.Object[])
+  commentId: M:CoreWCF.Dispatcher.IParameterInspector.BeforeCall(System.String,System.Object[])
+  id: BeforeCall(System.String,System.Object[])
+  parent: CoreWCF.Dispatcher.IParameterInspector
+  langs:
+  - csharp
+  - vb
+  name: BeforeCall(String, Object[])
+  nameWithType: IParameterInspector.BeforeCall(String, Object[])
+  fullName: CoreWCF.Dispatcher.IParameterInspector.BeforeCall(System.String, System.Object[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: object BeforeCall(string operationName, object[] inputs)
+    parameters:
+    - id: operationName
+      type: System.String
+    - id: inputs
+      type: System.Object[]
+    return:
+      type: System.Object
+    content.vb: Function BeforeCall(operationName As String, inputs As Object()) As Object
+  overload: CoreWCF.Dispatcher.IParameterInspector.BeforeCall*
+  nameWithType.vb: IParameterInspector.BeforeCall(String, Object())
+  fullName.vb: CoreWCF.Dispatcher.IParameterInspector.BeforeCall(System.String, System.Object())
+  name.vb: BeforeCall(String, Object())
+- uid: CoreWCF.Dispatcher.IParameterInspector.AfterCall(System.String,System.Object[],System.Object,System.Object)
+  commentId: M:CoreWCF.Dispatcher.IParameterInspector.AfterCall(System.String,System.Object[],System.Object,System.Object)
+  id: AfterCall(System.String,System.Object[],System.Object,System.Object)
+  parent: CoreWCF.Dispatcher.IParameterInspector
+  langs:
+  - csharp
+  - vb
+  name: AfterCall(String, Object[], Object, Object)
+  nameWithType: IParameterInspector.AfterCall(String, Object[], Object, Object)
+  fullName: CoreWCF.Dispatcher.IParameterInspector.AfterCall(System.String, System.Object[], System.Object, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: void AfterCall(string operationName, object[] outputs, object returnValue, object correlationState)
+    parameters:
+    - id: operationName
+      type: System.String
+    - id: outputs
+      type: System.Object[]
+    - id: returnValue
+      type: System.Object
+    - id: correlationState
+      type: System.Object
+    content.vb: Sub AfterCall(operationName As String, outputs As Object(), returnValue As Object, correlationState As Object)
+  overload: CoreWCF.Dispatcher.IParameterInspector.AfterCall*
+  nameWithType.vb: IParameterInspector.AfterCall(String, Object(), Object, Object)
+  fullName.vb: CoreWCF.Dispatcher.IParameterInspector.AfterCall(System.String, System.Object(), System.Object, System.Object)
+  name.vb: AfterCall(String, Object(), Object, Object)
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IParameterInspector.BeforeCall*
+  commentId: Overload:CoreWCF.Dispatcher.IParameterInspector.BeforeCall
+  isExternal: true
+  name: BeforeCall
+  nameWithType: IParameterInspector.BeforeCall
+  fullName: CoreWCF.Dispatcher.IParameterInspector.BeforeCall
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Object[]
+  isExternal: true
+  name: Object[]
+  nameWithType: Object[]
+  fullName: System.Object[]
+  nameWithType.vb: Object()
+  fullName.vb: System.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.IParameterInspector.AfterCall*
+  commentId: Overload:CoreWCF.Dispatcher.IParameterInspector.AfterCall
+  isExternal: true
+  name: AfterCall
+  nameWithType: IParameterInspector.AfterCall
+  fullName: CoreWCF.Dispatcher.IParameterInspector.AfterCall

@@ -1,0 +1,991 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageEncoder
+  commentId: T:CoreWCF.Channels.MessageEncoder
+  id: MessageEncoder
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageEncoder.#ctor
+  - CoreWCF.Channels.MessageEncoder.ContentType
+  - CoreWCF.Channels.MessageEncoder.GetProperty``1
+  - CoreWCF.Channels.MessageEncoder.IsCharSetSupported(System.String)
+  - CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String)
+  - CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String,System.String,System.String)
+  - CoreWCF.Channels.MessageEncoder.MediaType
+  - CoreWCF.Channels.MessageEncoder.MessageVersion
+  - CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)
+  - CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager,System.String)
+  - CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32)
+  - CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32,System.String)
+  - CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion(CoreWCF.Channels.Message)
+  - CoreWCF.Channels.MessageEncoder.ToString
+  - CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)
+  - CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)
+  - CoreWCF.Channels.MessageEncoder.WriteMessageAsync(CoreWCF.Channels.Message,System.IO.Stream)
+  langs:
+  - csharp
+  - vb
+  name: MessageEncoder
+  nameWithType: MessageEncoder
+  fullName: CoreWCF.Channels.MessageEncoder
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: The encoder is the component that is used to write messages to a stream and to read messages from a stream.
+  remarks: "<xref:CoreWCF.Channels.MessageEncoder> is a base class that provides implementations that support a Multipurpose Internet Mail Extensions (MIME) content type and message version, and defines the interface for the serialization and deserialization of messages according to that content type. Use it as a base class for writing your own custom encoder.  \n\nUse this class if you want to implement a custom message encoder. To implement your own custom message encoder, you must provide custom implementations of the following abstract base classes:  \n\n-  <xref:CoreWCF.Channels.MessageEncodingBindingElement>  \n\n-   <xref:CoreWCF.Channels.MessageEncoderFactory>  \n\n-   <xref:CoreWCF.Channels.MessageEncoder>  \n\nOverride the <xref:CoreWCF.Channels.MessageEncoderFactory.Encoder> to return an instance of your custom <xref:CoreWCF.Channels.MessageEncoder>. Then wire up your custom <xref:CoreWCF.Channels.MessageEncoderFactory> to the binding element stack used to configure the service or client by overriding the <xref:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory> method to return an instance of this factory.  \n\nThe task of converting between the in-memory representation of a message and an XML Information Set (Infoset) representation that can be written to a stream is encapsulated within the <xref:CoreWCF.Channels.MessageEncoder> class, which most commonly serves as a factory for XML readers and XML writers that support specific types of XML encodings.  \n\nThe key methods on <xref:CoreWCF.Channels.MessageEncoder> are [WriteMessage](xref:CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)) and [ReadMessage](xref:CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)). [WriteMessage](xref:CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)) takes a <xref:CoreWCF.Channels.Message> object and writes it into a <xref:System.IO.Stream> object. [ReadMessage](xref:CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)) takes a <xref:System.IO.Stream> object and a maximum header size and returns a <xref:CoreWCF.Channels.Message> object.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class MessageEncoder : Object'
+    content.vb: >-
+      Public MustInherit Class MessageEncoder
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.MessageEncoder.GetProperty``1
+  commentId: M:CoreWCF.Channels.MessageEncoder.GetProperty``1
+  id: GetProperty``1
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>()
+  summary: Returns a typed object requested, if present, from the appropriate layer in the channel stack.
+  nameWithType: MessageEncoder.GetProperty<T>()
+  fullName: CoreWCF.Channels.MessageEncoder.GetProperty<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual T GetProperty<T>()
+          where T : class
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not.
+    content.vb: Public Overridable Function GetProperty(Of T As Class) As T
+  overload: CoreWCF.Channels.MessageEncoder.GetProperty*
+  nameWithType.vb: MessageEncoder.GetProperty(Of T)()
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.MessageEncoder.GetProperty(Of T)()
+  name.vb: GetProperty(Of T)()
+  remarks: Use this to request a typed object such as an interface for setting properties or getting status from the appropriate layer in the channel stack. If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no channel layer supported the requested object, then the method returns null.
+- uid: CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32)
+  commentId: M:CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32)
+  id: ReadMessageAsync(System.IO.Stream,System.Int32)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ReadMessageAsync(Stream, Int32)
+  summary: When overridden in a derived class, reads a message from a specified stream.
+  nameWithType: MessageEncoder.ReadMessageAsync(Stream, Int32)
+  fullName: CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream, System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task<Message> ReadMessageAsync(Stream stream, int maxSizeOfHeaders)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The [Stream](xref:System.IO.Stream) object from which the message is read.
+    - id: maxSizeOfHeaders
+      type: System.Int32
+      description: The maximum size of the headers that can be read from the message.
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.Channels.Message}
+      description: The [Message](xref:System.Threading.Tasks.Task{CoreWCF.Channels.Message}) that is read from the stream specified.
+    content.vb: Public Function ReadMessageAsync(stream As Stream, maxSizeOfHeaders As Integer) As Task(Of Message)
+  overload: CoreWCF.Channels.MessageEncoder.ReadMessageAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32,System.String)
+  commentId: M:CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32,System.String)
+  id: ReadMessageAsync(System.IO.Stream,System.Int32,System.String)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ReadMessageAsync(Stream, Int32, String)
+  summary: When overridden in a derived class, reads a message from a specified stream.
+  nameWithType: MessageEncoder.ReadMessageAsync(Stream, Int32, String)
+  fullName: CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream, System.Int32, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task<Message> ReadMessageAsync(Stream stream, int maxSizeOfHeaders, string contentType)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The [Stream](xref:System.IO.Stream) object from which the message is read.
+    - id: maxSizeOfHeaders
+      type: System.Int32
+      description: The maximum size of the headers that can be read from the message.
+    - id: contentType
+      type: System.String
+      description: The Multipurpose Internet Mail Extensions (MIME) message-level content-type.
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.Channels.Message}
+      description: The [Message](xref:System.Threading.Tasks.Task{CoreWCF.Channels.Message}) that is read from the stream specified.
+    content.vb: Public MustOverride Function ReadMessageAsync(stream As Stream, maxSizeOfHeaders As Integer, contentType As String) As Task(Of Message)
+  overload: CoreWCF.Channels.MessageEncoder.ReadMessageAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)
+  commentId: M:CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)
+  id: ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ReadMessage(ArraySegment<Byte>, BufferManager)
+  summary: When overridden in a derived class, reads a message from a specified buffer.
+  nameWithType: MessageEncoder.ReadMessage(ArraySegment<Byte>, BufferManager)
+  fullName: CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment<System.Byte>, CoreWCF.Channels.BufferManager)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Message ReadMessage(ArraySegment<byte> buffer, BufferManager bufferManager)
+    parameters:
+    - id: buffer
+      type: System.ArraySegment{System.Byte}
+      description: A [ArraySegment<T>](https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1) of type <xref:System.Byte> that provides the buffer from which the message is deserialized.
+    - id: bufferManager
+      type: CoreWCF.Channels.BufferManager
+      description: The [BufferManager](xref:CoreWCF.Channels.BufferManager) that manages the buffer from which the message is deserialized.
+    return:
+      type: CoreWCF.Channels.Message
+      description: The [Message](xref:CoreWCF.Channels.Message) that is read from the buffer specified.
+    content.vb: Public Function ReadMessage(buffer As ArraySegment(Of Byte), bufferManager As BufferManager) As Message
+  overload: CoreWCF.Channels.MessageEncoder.ReadMessage*
+  nameWithType.vb: MessageEncoder.ReadMessage(ArraySegment(Of Byte), BufferManager)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment(Of System.Byte), CoreWCF.Channels.BufferManager)
+  name.vb: ReadMessage(ArraySegment(Of Byte), BufferManager)
+- uid: CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager,System.String)
+  commentId: M:CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager,System.String)
+  id: ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager,System.String)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ReadMessage(ArraySegment<Byte>, BufferManager, String)
+  summary: When overridden in a derived class, reads a message from a specified stream.
+  nameWithType: MessageEncoder.ReadMessage(ArraySegment<Byte>, BufferManager, String)
+  fullName: CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment<System.Byte>, CoreWCF.Channels.BufferManager, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Message ReadMessage(ArraySegment<byte> buffer, BufferManager bufferManager, string contentType)
+    parameters:
+    - id: buffer
+      type: System.ArraySegment{System.Byte}
+      description: A [ArraySegment<T>](https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1) of type [Byte](xref:System.Byte) that provides the buffer from which the message is deserialized.
+    - id: bufferManager
+      type: CoreWCF.Channels.BufferManager
+      description: The [BufferManager](xref:CoreWCF.Channels.BufferManager) that manages the buffer from which the message is deserialized.
+    - id: contentType
+      type: System.String
+      description: The Multipurpose Internet Mail Extensions (MIME) message-level content-type.
+    return:
+      type: CoreWCF.Channels.Message
+      description: The [Message](xref:CoreWCF.Channels.Message) that is read from the stream specified.
+    content.vb: Public MustOverride Function ReadMessage(buffer As ArraySegment(Of Byte), bufferManager As BufferManager, contentType As String) As Message
+  overload: CoreWCF.Channels.MessageEncoder.ReadMessage*
+  nameWithType.vb: MessageEncoder.ReadMessage(ArraySegment(Of Byte), BufferManager, String)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment(Of System.Byte), CoreWCF.Channels.BufferManager, System.String)
+  name.vb: ReadMessage(ArraySegment(Of Byte), BufferManager, String)
+- uid: CoreWCF.Channels.MessageEncoder.ToString
+  commentId: M:CoreWCF.Channels.MessageEncoder.ToString
+  id: ToString
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  summary: Returns the content type that is used by the message encoder.
+  nameWithType: MessageEncoder.ToString()
+  fullName: CoreWCF.Channels.MessageEncoder.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The content type that is used by the message encoder.
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.Channels.MessageEncoder.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.MessageEncoder.WriteMessageAsync(CoreWCF.Channels.Message,System.IO.Stream)
+  commentId: M:CoreWCF.Channels.MessageEncoder.WriteMessageAsync(CoreWCF.Channels.Message,System.IO.Stream)
+  id: WriteMessageAsync(CoreWCF.Channels.Message,System.IO.Stream)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: WriteMessageAsync(Message, Stream)
+  summary: When overridden in a derived class, writes a message to a specified stream.
+  nameWithType: MessageEncoder.WriteMessageAsync(Message, Stream)
+  fullName: CoreWCF.Channels.MessageEncoder.WriteMessageAsync(CoreWCF.Channels.Message, System.IO.Stream)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task WriteMessageAsync(Message message, Stream stream)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The [Message](xref:CoreWCF.Channels.Message) to write to the stream.
+    - id: stream
+      type: System.IO.Stream
+      description: The [Stream](xref:System.IO.Stream) object to which the message is written.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public MustOverride Function WriteMessageAsync(message As Message, stream As Stream) As Task
+  overload: CoreWCF.Channels.MessageEncoder.WriteMessageAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)
+  commentId: M:CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)
+  id: WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: WriteMessage(Message, Int32, BufferManager)
+  summary: Writes a message less than a specified size to a byte array buffer.
+  nameWithType: MessageEncoder.WriteMessage(Message, Int32, BufferManager)
+  fullName: CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message, System.Int32, CoreWCF.Channels.BufferManager)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public ArraySegment<byte> WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The Message to write to the message buffer.
+    - id: maxMessageSize
+      type: System.Int32
+      description: The maximum message size that can be written.
+    - id: bufferManager
+      type: CoreWCF.Channels.BufferManager
+      description: The [BufferManager](xref:CoreWCF.Channels.BufferManager) that manages the buffer to which the message is written.
+    return:
+      type: System.ArraySegment{System.Byte}
+      description: A [ArraySegment<T>](https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1) of type byte that provides the buffer to which the message is serialized.
+    content.vb: Public Function WriteMessage(message As Message, maxMessageSize As Integer, bufferManager As BufferManager) As ArraySegment(Of Byte)
+  overload: CoreWCF.Channels.MessageEncoder.WriteMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)
+  commentId: M:CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)
+  id: WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: WriteMessage(Message, Int32, BufferManager, Int32)
+  summary: When overridden in a derived class, writes a message of less than a specified size to a byte array buffer at the specified offset.
+  nameWithType: MessageEncoder.WriteMessage(Message, Int32, BufferManager, Int32)
+  fullName: CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message, System.Int32, CoreWCF.Channels.BufferManager, System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract ArraySegment<byte> WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager, int messageOffset)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The [Message](xref:CoreWCF.Channels.Message) to write to the message buffer.
+    - id: maxMessageSize
+      type: System.Int32
+      description: The maximum message size that can be written.
+    - id: bufferManager
+      type: CoreWCF.Channels.BufferManager
+      description: The [BufferManager](xref:CoreWCF.Channels.BufferManager) that manages the buffer to which the message is written.
+    - id: messageOffset
+      type: System.Int32
+      description: The offset of the segment that begins from the start of the byte array that provides the buffer.
+    return:
+      type: System.ArraySegment{System.Byte}
+      description: A [ArraySegment<T>](https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1) of type byte that provides the buffer to which the message is serialized.
+    content.vb: Public MustOverride Function WriteMessage(message As Message, maxMessageSize As Integer, bufferManager As BufferManager, messageOffset As Integer) As ArraySegment(Of Byte)
+  overload: CoreWCF.Channels.MessageEncoder.WriteMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: This method is called by [WriteMessage(Message, Int32, BufferManager, Int32)](xerf:CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)).
+- uid: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String)
+  commentId: M:CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String)
+  id: IsContentTypeSupported(System.String)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: IsContentTypeSupported(String)
+  summary: Returns a value that indicates whether a specified message-level content-type value is supported by the message encoder.
+  nameWithType: MessageEncoder.IsContentTypeSupported(String)
+  fullName: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual bool IsContentTypeSupported(string contentType)
+    parameters:
+    - id: contentType
+      type: System.String
+      description: The message-level content-type being tested.
+    return:
+      type: System.Boolean
+      description: true if the message-level content-type specified is supported; otherwise false.
+    content.vb: Public Overridable Function IsContentTypeSupported(contentType As String) As Boolean
+  overload: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  remarks: This method is used to determine whether the message encoder can be used to read a particular style of message, based on its content-type. The information in the [ContentType](xref:System.Net.Mime.ContentType) class is used to describe the data that is contained in a message and is used to determine if there is a content-type match.<br/><br/>
+           A grammar that details the syntax of the content-type header is described in [RFC 2045](https://www.ietf.org/rfc/rfc2045.txt?number=2045) Section 5.1. [RFC 2046](https://www.ietf.org/rfc/rfc2046.txt?number=2046) provides detailed information on Multipurpose Internet Mail Extensions (MIME) media types and their parameters.
+- uid: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String,System.String,System.String)
+  commentId: M:CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String,System.String,System.String)
+  id: IsContentTypeSupported(System.String,System.String,System.String)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: IsContentTypeSupported(String, String, String)
+  nameWithType: MessageEncoder.IsContentTypeSupported(String, String, String)
+  fullName: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String, System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected bool IsContentTypeSupported(string contentType, string supportedContentType, string supportedMediaType)
+    parameters:
+    - id: contentType
+      type: System.String
+    - id: supportedContentType
+      type: System.String
+    - id: supportedMediaType
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Function IsContentTypeSupported(contentType As String, supportedContentType As String, supportedMediaType As String) As Boolean
+  overload: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageEncoder.IsCharSetSupported(System.String)
+  commentId: M:CoreWCF.Channels.MessageEncoder.IsCharSetSupported(System.String)
+  id: IsCharSetSupported(System.String)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: IsCharSetSupported(String)
+  nameWithType: MessageEncoder.IsCharSetSupported(String)
+  fullName: CoreWCF.Channels.MessageEncoder.IsCharSetSupported(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual bool IsCharSetSupported(string charset)
+    parameters:
+    - id: charset
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable Function IsCharSetSupported(charset As String) As Boolean
+  overload: CoreWCF.Channels.MessageEncoder.IsCharSetSupported*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion(CoreWCF.Channels.Message)
+  id: ThrowIfMismatchedMessageVersion(CoreWCF.Channels.Message)
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ThrowIfMismatchedMessageVersion(Message)
+  nameWithType: MessageEncoder.ThrowIfMismatchedMessageVersion(Message)
+  fullName: CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected void ThrowIfMismatchedMessageVersion(Message message)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    content.vb: Protected Sub ThrowIfMismatchedMessageVersion(message As Message)
+  overload: CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageEncoder.#ctor
+  commentId: M:CoreWCF.Channels.MessageEncoder.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: MessageEncoder()
+  summary: Initializes a new instance of the [MessageEncoder](xref:CoreWCF.Channels.MessageEncoder) class.
+  nameWithType: MessageEncoder.MessageEncoder()
+  fullName: CoreWCF.Channels.MessageEncoder.MessageEncoder()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected MessageEncoder()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.MessageEncoder.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageEncoder.ContentType
+  commentId: P:CoreWCF.Channels.MessageEncoder.ContentType
+  id: ContentType
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: ContentType
+  summary: When overridden in a derived class, gets the MIME content type used by the encoder.
+  nameWithType: MessageEncoder.ContentType
+  fullName: CoreWCF.Channels.MessageEncoder.ContentType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string ContentType { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The content type that is supported by the message encoder.
+    content.vb: Public MustOverride ReadOnly Property ContentType As String
+  overload: CoreWCF.Channels.MessageEncoder.ContentType*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: "The content type is a Multipurpose Internet Mail Exchange (MIME) header that appears at the beginning of a MIME message as well as within the separate body parts. Content-type headers are used to specify the media type and subtype of data in the body of a message and to fully specify the media type and subtype of data in the body of a message and to specify the character encoding (optional) of the data. An example of a MIME content type that can be supported: \"application/soap+xml; charset='utf8' \".<br/><br/>
+           A grammar that details the syntax of the content-type header is described in [RFC 2045](https://www.ietf.org/rfc/rfc2045.txt?number=2045), Section 5.1. [RFC 2046](https://www.ietf.org/rfc/rfc2046.txt?number=2046) provides detailed information on MIME media types and their parameters."
+- uid: CoreWCF.Channels.MessageEncoder.MediaType
+  commentId: P:CoreWCF.Channels.MessageEncoder.MediaType
+  id: MediaType
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: MediaType
+  summary: When overridden in a derived class, gets the media type value that is used by the encoder.
+  nameWithType: MessageEncoder.MediaType
+  fullName: CoreWCF.Channels.MessageEncoder.MediaType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string MediaType { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The media type that is supported by the message encoder.
+    content.vb: Public MustOverride ReadOnly Property MediaType As String
+  overload: CoreWCF.Channels.MessageEncoder.MediaType*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: The media type is part of the content-type header.
+- uid: CoreWCF.Channels.MessageEncoder.MessageVersion
+  commentId: P:CoreWCF.Channels.MessageEncoder.MessageVersion
+  id: MessageVersion
+  parent: CoreWCF.Channels.MessageEncoder
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  summary: When overridden in a derived class, gets the message version value that is used by the encoder.
+  nameWithType: MessageEncoder.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncoder.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract MessageVersion MessageVersion { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: The [MessageVersion](xref:CoreWCF.Channels.MessageVersion) that is used by the encoder.
+    content.vb: Public MustOverride ReadOnly Property MessageVersion As MessageVersion
+  overload: CoreWCF.Channels.MessageEncoder.MessageVersion*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: Specifies the versions of SOAP and WS-Addressing associated with a message and its exchange. If SOAP versions are not to be used, this property should be overridden to return [None](xref:CoreWCF.Channels.MessageVersion.None).
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageEncoder.GetProperty*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: MessageEncoder.GetProperty
+  fullName: CoreWCF.Channels.MessageEncoder.GetProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.MessageEncoder.ReadMessageAsync*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.ReadMessageAsync
+  isExternal: true
+  name: ReadMessageAsync
+  nameWithType: MessageEncoder.ReadMessageAsync
+  fullName: CoreWCF.Channels.MessageEncoder.ReadMessageAsync
+- uid: System.IO.Stream
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Threading.Tasks.Task{CoreWCF.Channels.Message}
+  commentId: '!:System.Threading.Tasks.Task{CoreWCF.Channels.Message}'
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Message>
+  nameWithType: Task<Message>
+  fullName: System.Threading.Tasks.Task<CoreWCF.Channels.Message>
+  nameWithType.vb: Task(Of Message)
+  fullName.vb: System.Threading.Tasks.Task(Of CoreWCF.Channels.Message)
+  name.vb: Task(Of Message)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Channels.Message
+    name: Message
+    nameWithType: Message
+    fullName: CoreWCF.Channels.Message
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: System.Threading.Tasks.Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: System.Threading.Tasks.Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.MessageEncoder.ReadMessage*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.ReadMessage
+  isExternal: true
+  name: ReadMessage
+  nameWithType: MessageEncoder.ReadMessage
+  fullName: CoreWCF.Channels.MessageEncoder.ReadMessage
+- uid: System.ArraySegment{System.Byte}
+  commentId: '!:System.ArraySegment{System.Byte}'
+  definition: System.ArraySegment`1
+  name: ArraySegment<Byte>
+  nameWithType: ArraySegment<Byte>
+  fullName: System.ArraySegment<System.Byte>
+  nameWithType.vb: ArraySegment(Of Byte)
+  fullName.vb: System.ArraySegment(Of System.Byte)
+  name.vb: ArraySegment(Of Byte)
+  spec.csharp:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BufferManager
+  commentId: T:CoreWCF.Channels.BufferManager
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BufferManager
+  nameWithType: BufferManager
+  fullName: CoreWCF.Channels.BufferManager
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.ArraySegment`1
+  isExternal: true
+  name: ArraySegment<>
+  nameWithType: ArraySegment<>
+  fullName: System.ArraySegment<>
+  nameWithType.vb: ArraySegment(Of )
+  fullName.vb: System.ArraySegment(Of )
+  name.vb: ArraySegment(Of )
+  spec.csharp:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.ArraySegment`1
+    name: ArraySegment
+    nameWithType: ArraySegment
+    fullName: System.ArraySegment
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MessageEncoder.ToString*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: MessageEncoder.ToString
+  fullName: CoreWCF.Channels.MessageEncoder.ToString
+- uid: CoreWCF.Channels.MessageEncoder.WriteMessageAsync*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.WriteMessageAsync
+  isExternal: true
+  name: WriteMessageAsync
+  nameWithType: MessageEncoder.WriteMessageAsync
+  fullName: CoreWCF.Channels.MessageEncoder.WriteMessageAsync
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CoreWCF.Channels.MessageEncoder.WriteMessage*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.WriteMessage
+  isExternal: true
+  name: WriteMessage
+  nameWithType: MessageEncoder.WriteMessage
+  fullName: CoreWCF.Channels.MessageEncoder.WriteMessage
+- uid: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.IsContentTypeSupported
+  isExternal: true
+  name: IsContentTypeSupported
+  nameWithType: MessageEncoder.IsContentTypeSupported
+  fullName: CoreWCF.Channels.MessageEncoder.IsContentTypeSupported
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.MessageEncoder.IsCharSetSupported*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.IsCharSetSupported
+  isExternal: true
+  name: IsCharSetSupported
+  nameWithType: MessageEncoder.IsCharSetSupported
+  fullName: CoreWCF.Channels.MessageEncoder.IsCharSetSupported
+- uid: CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion
+  isExternal: true
+  name: ThrowIfMismatchedMessageVersion
+  nameWithType: MessageEncoder.ThrowIfMismatchedMessageVersion
+  fullName: CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion
+- uid: CoreWCF.Channels.MessageEncoder.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.#ctor
+  isExternal: true
+  name: MessageEncoder
+  nameWithType: MessageEncoder.MessageEncoder
+  fullName: CoreWCF.Channels.MessageEncoder.MessageEncoder
+- uid: CoreWCF.Channels.MessageEncoder.ContentType*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.ContentType
+  isExternal: true
+  name: ContentType
+  nameWithType: MessageEncoder.ContentType
+  fullName: CoreWCF.Channels.MessageEncoder.ContentType
+- uid: CoreWCF.Channels.MessageEncoder.MediaType*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.MediaType
+  isExternal: true
+  name: MediaType
+  nameWithType: MessageEncoder.MediaType
+  fullName: CoreWCF.Channels.MessageEncoder.MediaType
+- uid: CoreWCF.Channels.MessageEncoder.MessageVersion*
+  commentId: Overload:CoreWCF.Channels.MessageEncoder.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageEncoder.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncoder.MessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion

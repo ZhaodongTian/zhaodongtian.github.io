@@ -1,0 +1,220 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.TransferMode
+  commentId: T:CoreWCF.TransferMode
+  id: TransferMode
+  parent: CoreWCF
+  children:
+  - CoreWCF.TransferMode.Buffered
+  - CoreWCF.TransferMode.Streamed
+  - CoreWCF.TransferMode.StreamedRequest
+  - CoreWCF.TransferMode.StreamedResponse
+  - CoreWCF.TransferMode.value__
+  langs:
+  - csharp
+  - vb
+  name: TransferMode
+  nameWithType: TransferMode
+  fullName: CoreWCF.TransferMode
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Indicates whether a channel uses streamed or buffered modes for the transfer of request and response messages.
+  remarks: "Windows Communication Foundation (WCF) transports support two modes of transferring messages in each direction:  \n\n-   Buffered transfers hold the entire message in a memory buffer until the transfer is complete.  \n\n-   Streamed transfers only buffer the message headers and expose the message body as a stream, from which smaller portions can be read at a time.  \n\nSetting the transfer mode to `Streamed` enables streaming communication in both directions. Setting the transfer mode to `StreamedRequest` or `StreamedResponse` enables streaming communication only in the indicated direction.  \n\nStreamed transfers can improve the scalability of a service by eliminating the need for large memory buffers. Whether changing the transfer mode actually improves scalability in practice depends on the size of the messages being transferred. Improvements in scalability should be most evident when large messages use streamed instead of buffered transfers.  \n\nBy default, the HTTP, TCP/IP and named pipe transports use buffered message transfers. You can set the values of `TransferMode` on the &lt;xref:CoreWCF.BasicHttpBinding>, &lt;xref:CoreWCF.NetTcpBinding>, and &lt;xref:CoreWCF.NetNamedPipeBinding> system-provided bindings using the transfer mode properties exposed on them. The mode can be set on the &lt;xref:CoreWCF.NetTcpBinding> class, for example, by using the &lt;xref:CoreWCF.NetTcpBinding.TransferMode%2A?displayProperty=nameWithType> property. It can also be set in the configuration section for the binding.  \n\nFor bindings that do not expose the transfer mode property, the transfer mode can be set on the binding element of the transport and this element can then be added to a custom binding. For example, create an &lt;xref:CoreWCF.Channels.HttpTransportBindingElement> and use the &lt;xref:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.TransferMode%2A> property to set the transfer mode when creating a custom binding. The transfer mode can also be set in the configuration section for the custom binding.  \n\nThe decision to use either buffered or streamed transfers is a local decision of the endpoint for HTTP transports. For HTTP transports, the transfer mode does not propagate across a connection, or to proxy servers or other intermediaries. Setting the transfer mode is not reflected in the description of the service contract. After generating a proxy to a service, you can (it is allowed but not required) edit the configuration file for services intended to be used with streamed transfers to set the transfer mode. For TCP and named pipe transports, the transfer mode is propagated as a policy assertion.  \n\nUsing the `Streamed` transfer mode causes the WCF runtime to enforce some restrictions.  \n\n-   Operations that occur across a streamed transport can have a contract with at most one input and/or one output parameter at the programming model layer. That parameter corresponds to the entire body of the message and must be a &lt;xref:CoreWCF.Channels.Message>, be a subtype of &lt;xref:System.IO.Stream>, or implement the &lt;xref:System.Xml.Serialization.IXmlSerializable> interface. Having a return value for an operation is equivalent to having an output parameter.  \n\n-   Some WCF features such as Reliable Messaging and SOAP message-level security rely on buffering messages for transmissions. Using these features may reduce or eliminate the performance benefits gained by using streaming. To secure a streamed transport, use transport level security only or use mixed-mode security, which combines WS-Security claims with transport security.  \n\n-   SOAP headers are always buffered, even when the transfer mode is set to `Streamed`. The headers for a message must not exceed the size of the MaxBufferSize transport quota which is exposed on the various bindings and binding elements.  \n\nChanging the transfer mode from `Buffered` to `Streamed` also changes the native channel shape of the TCP and named pipe transports. For buffered transfers, the native channel shape is &lt;xref:CoreWCF.Channels.IDuplexSessionChannel>. For streamed transfers, the native channels are &lt;xref:CoreWCF.Channels.IRequestChannel> and &lt;xref:CoreWCF.Channels.IReplyChannel>. A consequence of this is that sessionful service contracts cannot be used with transport streaming.  \n\n"
+  syntax:
+    content: 'public sealed class TransferMode : Enum'
+    content.vb: >-
+      Public NotInheritable Class TransferMode
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.TransferMode.value__
+  commentId: F:CoreWCF.TransferMode.value__
+  id: value__
+  parent: CoreWCF.TransferMode
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: TransferMode.value__
+  fullName: CoreWCF.TransferMode.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.TransferMode.Buffered
+  commentId: F:CoreWCF.TransferMode.Buffered
+  id: Buffered
+  parent: CoreWCF.TransferMode
+  langs:
+  - csharp
+  - vb
+  name: Buffered
+  nameWithType: TransferMode.Buffered
+  fullName: CoreWCF.TransferMode.Buffered
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nBuffer messages in both directions.\n"
+  syntax:
+    content: public const TransferMode Buffered
+    return:
+      type: CoreWCF.TransferMode
+    content.vb: Public Const Buffered As TransferMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.TransferMode.Streamed
+  commentId: F:CoreWCF.TransferMode.Streamed
+  id: Streamed
+  parent: CoreWCF.TransferMode
+  langs:
+  - csharp
+  - vb
+  name: Streamed
+  nameWithType: TransferMode.Streamed
+  fullName: CoreWCF.TransferMode.Streamed
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nStream messages in both directions.\n"
+  syntax:
+    content: public const TransferMode Streamed
+    return:
+      type: CoreWCF.TransferMode
+    content.vb: Public Const Streamed As TransferMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.TransferMode.StreamedRequest
+  commentId: F:CoreWCF.TransferMode.StreamedRequest
+  id: StreamedRequest
+  parent: CoreWCF.TransferMode
+  langs:
+  - csharp
+  - vb
+  name: StreamedRequest
+  nameWithType: TransferMode.StreamedRequest
+  fullName: CoreWCF.TransferMode.StreamedRequest
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nStream request messages, buffer response messages.\n"
+  syntax:
+    content: public const TransferMode StreamedRequest
+    return:
+      type: CoreWCF.TransferMode
+    content.vb: Public Const StreamedRequest As TransferMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.TransferMode.StreamedResponse
+  commentId: F:CoreWCF.TransferMode.StreamedResponse
+  id: StreamedResponse
+  parent: CoreWCF.TransferMode
+  langs:
+  - csharp
+  - vb
+  name: StreamedResponse
+  nameWithType: TransferMode.StreamedResponse
+  fullName: CoreWCF.TransferMode.StreamedResponse
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nBuffer request messages, stream response messages.\n"
+  syntax:
+    content: public const TransferMode StreamedResponse
+    return:
+      type: CoreWCF.TransferMode
+    content.vb: Public Const StreamedResponse As TransferMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.TransferMode
+  commentId: T:CoreWCF.TransferMode
+  parent: CoreWCF
+  isExternal: true
+  name: TransferMode
+  nameWithType: TransferMode
+  fullName: CoreWCF.TransferMode

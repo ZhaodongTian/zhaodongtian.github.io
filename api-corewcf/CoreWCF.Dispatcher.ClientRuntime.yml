@@ -1,0 +1,833 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.ClientRuntime
+  commentId: T:CoreWCF.Dispatcher.ClientRuntime
+  id: ClientRuntime
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.ClientRuntime.CallbackClientType
+  - CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime
+  - CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers
+  - CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors
+  - CoreWCF.Dispatcher.ClientRuntime.ClientOperations
+  - CoreWCF.Dispatcher.ClientRuntime.ContractClientType
+  - CoreWCF.Dispatcher.ClientRuntime.ContractName
+  - CoreWCF.Dispatcher.ClientRuntime.ContractNamespace
+  - CoreWCF.Dispatcher.ClientRuntime.ManualAddressing
+  - CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize
+  - CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled
+  - CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation
+  - CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand
+  - CoreWCF.Dispatcher.ClientRuntime.Via
+  langs:
+  - csharp
+  - vb
+  name: ClientRuntime
+  nameWithType: ClientRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Represents the insertion point for classes that extend the functionality of Windows Communication Foundation (WCF) client objects for all messages handled by a client application.
+  remarks: "WCF client objects, whether an extension of &lt;xref:CoreWCF.ClientBase%601> or of &lt;xref:CoreWCF.IClientChannel>, are used by Windows Communication Foundation (WCF) client applications to convert method calls into outbound messages and convert incoming messages to objects and pass them to the results of client methods.  \n\nThe &lt;xref:CoreWCF.Dispatcher.ClientRuntime> class is an extensibility point to which you can add extension objects that intercept messages and extend client behavior across all operations. Interception objects can process all messages in a particular contract, process only messages for particular operations, perform custom channel initialization, and implement other custom client application behavior. For an overview of client architecture, see [WCF Client Architecture](/dotnet/framework/wcf/feature-details/client-architecture). For more information about client programming, see [Accessing Services Using a WCF Client](/dotnet/framework/wcf/feature-details/accessing-services-using-a-client). For details about customizations and how to perform them, see [Extending Clients](/dotnet/framework/wcf/extending/extending-clients).  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A> property returns the dispatch run-time object for service-initiated callback operations.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.OperationSelector%2A> property accepts a custom operation selector object to control the routing of client messages.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers%2A> property enables the addition of a channel initializer that can inspect or modify the client channel.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.InteractiveChannelInitializers%2A> property can be used to display a visual prompt to enable a user to select credentials prior to opening the channel.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.Operations%2A> property gets a collection of &lt;xref:CoreWCF.Dispatcher.ClientOperation> objects to which you can add custom message interceptors that provide functionality specific to the messages of that operation.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ManualAddressing%2A> property enables an application to turn off some automatic addressing headers to directly control addressing.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize%2A> property enables the client to limit the size of fault messages that the client accepts.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.MessageInspectors%2A> property gets a collection of &lt;xref:CoreWCF.Dispatcher.IClientMessageInspector> objects to which you can add custom message interceptors for all messages traveling through a client.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation%2A> property returns the operation to which unexpected messages are passed.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand%2A> property informs the system whether it should confirm that SOAP headers marked as `MustUnderstand` have, in fact, been understood.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.Via%2A> property sets the value of the destination of the message at the transport level to support intermediaries and other scenarios.  \n\nIn addition, there are a number of other properties that retrieve the client contract information:  \n\n-   &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ContractName%2A>  \n\n-   &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ContractNamespace%2A>  \n\n-   &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ContractClientType%2A>  \n\nIf the client is a duplex client, the following properties also retrieve the client callback type and runtime:  \n\n-   &lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackClientType%2A>  \n\n-   &lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A>  \n\n\n\n"
+  syntax:
+    content: 'public sealed class ClientRuntime : Object'
+    content.vb: >-
+      Public NotInheritable Class ClientRuntime
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Dispatcher.ClientRuntime.CallbackClientType
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.CallbackClientType
+  id: CallbackClientType
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: CallbackClientType
+  nameWithType: ClientRuntime.CallbackClientType
+  fullName: CoreWCF.Dispatcher.ClientRuntime.CallbackClientType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public Type CallbackClientType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property CallbackClientType As Type
+  overload: CoreWCF.Dispatcher.ClientRuntime.CallbackClientType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers
+  id: ChannelInitializers
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ChannelInitializers
+  nameWithType: ClientRuntime.ChannelInitializers
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public SynchronizedCollection<IChannelInitializer> ChannelInitializers { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IChannelInitializer}
+    content.vb: Public ReadOnly Property ChannelInitializers As SynchronizedCollection(Of IChannelInitializer)
+  overload: CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ClientRuntime.ContractName
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ContractName
+  id: ContractName
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ContractName
+  nameWithType: ClientRuntime.ContractName
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ContractName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public string ContractName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ContractName As String
+  overload: CoreWCF.Dispatcher.ClientRuntime.ContractName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ClientRuntime.ContractNamespace
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ContractNamespace
+  id: ContractNamespace
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ContractNamespace
+  nameWithType: ClientRuntime.ContractNamespace
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ContractNamespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public string ContractNamespace { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ContractNamespace As String
+  overload: CoreWCF.Dispatcher.ClientRuntime.ContractNamespace*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ClientRuntime.ContractClientType
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ContractClientType
+  id: ContractClientType
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ContractClientType
+  nameWithType: ClientRuntime.ContractClientType
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ContractClientType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public Type ContractClientType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property ContractClientType As Type
+  overload: CoreWCF.Dispatcher.ClientRuntime.ContractClientType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.Via
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.Via
+  id: Via
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: Via
+  nameWithType: ClientRuntime.Via
+  fullName: CoreWCF.Dispatcher.ClientRuntime.Via
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public Uri Via { get; set; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public Property Via As Uri
+  overload: CoreWCF.Dispatcher.ClientRuntime.Via*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand
+  id: ValidateMustUnderstand
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ValidateMustUnderstand
+  nameWithType: ClientRuntime.ValidateMustUnderstand
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ValidateMustUnderstand { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ValidateMustUnderstand As Boolean
+  overload: CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled
+  id: MessageVersionNoneFaultsEnabled
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: MessageVersionNoneFaultsEnabled
+  nameWithType: ClientRuntime.MessageVersionNoneFaultsEnabled
+  fullName: CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool MessageVersionNoneFaultsEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property MessageVersionNoneFaultsEnabled As Boolean
+  overload: CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime
+  id: CallbackDispatchRuntime
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: CallbackDispatchRuntime
+  nameWithType: ClientRuntime.CallbackDispatchRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public DispatchRuntime CallbackDispatchRuntime { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.DispatchRuntime
+    content.vb: Public ReadOnly Property CallbackDispatchRuntime As DispatchRuntime
+  overload: CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize
+  id: MaxFaultSize
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: MaxFaultSize
+  nameWithType: ClientRuntime.MaxFaultSize
+  fullName: CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public int MaxFaultSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxFaultSize As Integer
+  overload: CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.ManualAddressing
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ManualAddressing
+  id: ManualAddressing
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ManualAddressing
+  nameWithType: ClientRuntime.ManualAddressing
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ManualAddressing
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ManualAddressing { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualAddressing As Boolean
+  overload: CoreWCF.Dispatcher.ClientRuntime.ManualAddressing*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors
+  id: ClientMessageInspectors
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ClientMessageInspectors
+  nameWithType: ClientRuntime.ClientMessageInspectors
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ICollection<IClientMessageInspector> ClientMessageInspectors { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.IClientMessageInspector}
+    content.vb: Public ReadOnly Property ClientMessageInspectors As ICollection(Of IClientMessageInspector)
+  overload: CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ClientRuntime.ClientOperations
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.ClientOperations
+  id: ClientOperations
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: ClientOperations
+  nameWithType: ClientRuntime.ClientOperations
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ClientOperations
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ICollection<ClientOperation> ClientOperations { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.ClientOperation}
+    content.vb: Public ReadOnly Property ClientOperations As ICollection(Of ClientOperation)
+  overload: CoreWCF.Dispatcher.ClientRuntime.ClientOperations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation
+  commentId: P:CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation
+  id: UnhandledClientOperation
+  parent: CoreWCF.Dispatcher.ClientRuntime
+  langs:
+  - csharp
+  - vb
+  name: UnhandledClientOperation
+  nameWithType: ClientRuntime.UnhandledClientOperation
+  fullName: CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ClientOperation UnhandledClientOperation { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.ClientOperation
+    content.vb: Public ReadOnly Property UnhandledClientOperation As ClientOperation
+  overload: CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.ClientRuntime.CallbackClientType*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.CallbackClientType
+  isExternal: true
+  name: CallbackClientType
+  nameWithType: ClientRuntime.CallbackClientType
+  fullName: CoreWCF.Dispatcher.ClientRuntime.CallbackClientType
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers
+  isExternal: true
+  name: ChannelInitializers
+  nameWithType: ClientRuntime.ChannelInitializers
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IChannelInitializer}
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IChannelInitializer}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  name: SynchronizedCollection<IChannelInitializer>
+  nameWithType: SynchronizedCollection<IChannelInitializer>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.Dispatcher.IChannelInitializer>
+  nameWithType.vb: SynchronizedCollection(Of IChannelInitializer)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.Dispatcher.IChannelInitializer)
+  name.vb: SynchronizedCollection(Of IChannelInitializer)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.IChannelInitializer
+    name: IChannelInitializer
+    nameWithType: IChannelInitializer
+    fullName: CoreWCF.Dispatcher.IChannelInitializer
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.IChannelInitializer
+    name: IChannelInitializer
+    nameWithType: IChannelInitializer
+    fullName: CoreWCF.Dispatcher.IChannelInitializer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection`1
+  isExternal: true
+  name: SynchronizedCollection<T>
+  nameWithType: SynchronizedCollection<T>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>
+  nameWithType.vb: SynchronizedCollection(Of T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T)
+  name.vb: SynchronizedCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic
+  commentId: N:CoreWCF.Collections.Generic
+  isExternal: true
+  name: CoreWCF.Collections.Generic
+  nameWithType: CoreWCF.Collections.Generic
+  fullName: CoreWCF.Collections.Generic
+- uid: CoreWCF.Dispatcher.ClientRuntime.ContractName*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ContractName
+  isExternal: true
+  name: ContractName
+  nameWithType: ClientRuntime.ContractName
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ContractName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Dispatcher.ClientRuntime.ContractNamespace*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ContractNamespace
+  isExternal: true
+  name: ContractNamespace
+  nameWithType: ClientRuntime.ContractNamespace
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ContractNamespace
+- uid: CoreWCF.Dispatcher.ClientRuntime.ContractClientType*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ContractClientType
+  isExternal: true
+  name: ContractClientType
+  nameWithType: ClientRuntime.ContractClientType
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ContractClientType
+- uid: CoreWCF.Dispatcher.ClientRuntime.Via*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.Via
+  isExternal: true
+  name: Via
+  nameWithType: ClientRuntime.Via
+  fullName: CoreWCF.Dispatcher.ClientRuntime.Via
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand
+  isExternal: true
+  name: ValidateMustUnderstand
+  nameWithType: ClientRuntime.ValidateMustUnderstand
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled
+  isExternal: true
+  name: MessageVersionNoneFaultsEnabled
+  nameWithType: ClientRuntime.MessageVersionNoneFaultsEnabled
+  fullName: CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled
+- uid: CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime
+  isExternal: true
+  name: CallbackDispatchRuntime
+  nameWithType: ClientRuntime.CallbackDispatchRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime
+- uid: CoreWCF.Dispatcher.DispatchRuntime
+  commentId: T:CoreWCF.Dispatcher.DispatchRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchRuntime
+  nameWithType: DispatchRuntime
+  fullName: CoreWCF.Dispatcher.DispatchRuntime
+- uid: CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize
+  isExternal: true
+  name: MaxFaultSize
+  nameWithType: ClientRuntime.MaxFaultSize
+  fullName: CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Dispatcher.ClientRuntime.ManualAddressing*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ManualAddressing
+  isExternal: true
+  name: ManualAddressing
+  nameWithType: ClientRuntime.ManualAddressing
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ManualAddressing
+- uid: CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors
+  isExternal: true
+  name: ClientMessageInspectors
+  nameWithType: ClientRuntime.ClientMessageInspectors
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors
+- uid: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.IClientMessageInspector}
+  commentId: '!:System.Collections.Generic.ICollection{CoreWCF.Dispatcher.IClientMessageInspector}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<IClientMessageInspector>
+  nameWithType: ICollection<IClientMessageInspector>
+  fullName: System.Collections.Generic.ICollection<CoreWCF.Dispatcher.IClientMessageInspector>
+  nameWithType.vb: ICollection(Of IClientMessageInspector)
+  fullName.vb: System.Collections.Generic.ICollection(Of CoreWCF.Dispatcher.IClientMessageInspector)
+  name.vb: ICollection(Of IClientMessageInspector)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.IClientMessageInspector
+    name: IClientMessageInspector
+    nameWithType: IClientMessageInspector
+    fullName: CoreWCF.Dispatcher.IClientMessageInspector
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.IClientMessageInspector
+    name: IClientMessageInspector
+    nameWithType: IClientMessageInspector
+    fullName: CoreWCF.Dispatcher.IClientMessageInspector
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<>
+  nameWithType: ICollection<>
+  fullName: System.Collections.Generic.ICollection<>
+  nameWithType.vb: ICollection(Of )
+  fullName.vb: System.Collections.Generic.ICollection(Of )
+  name.vb: ICollection(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ClientRuntime.ClientOperations*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.ClientOperations
+  isExternal: true
+  name: ClientOperations
+  nameWithType: ClientRuntime.ClientOperations
+  fullName: CoreWCF.Dispatcher.ClientRuntime.ClientOperations
+- uid: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.ClientOperation}
+  commentId: '!:System.Collections.Generic.ICollection{CoreWCF.Dispatcher.ClientOperation}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<ClientOperation>
+  nameWithType: ICollection<ClientOperation>
+  fullName: System.Collections.Generic.ICollection<CoreWCF.Dispatcher.ClientOperation>
+  nameWithType.vb: ICollection(Of ClientOperation)
+  fullName.vb: System.Collections.Generic.ICollection(Of CoreWCF.Dispatcher.ClientOperation)
+  name.vb: ICollection(Of ClientOperation)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.ClientOperation
+    name: ClientOperation
+    nameWithType: ClientOperation
+    fullName: CoreWCF.Dispatcher.ClientOperation
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.ClientOperation
+    name: ClientOperation
+    nameWithType: ClientOperation
+    fullName: CoreWCF.Dispatcher.ClientOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation*
+  commentId: Overload:CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation
+  isExternal: true
+  name: UnhandledClientOperation
+  nameWithType: ClientRuntime.UnhandledClientOperation
+  fullName: CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation
+- uid: CoreWCF.Dispatcher.ClientOperation
+  commentId: T:CoreWCF.Dispatcher.ClientOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientOperation
+  nameWithType: ClientOperation
+  fullName: CoreWCF.Dispatcher.ClientOperation

@@ -1,0 +1,1019 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.OperationContext
+  commentId: T:CoreWCF.OperationContext
+  id: OperationContext
+  parent: CoreWCF
+  children:
+  - CoreWCF.OperationContext.#ctor(CoreWCF.IContextChannel)
+  - CoreWCF.OperationContext.ClaimsPrincipal
+  - CoreWCF.OperationContext.Current
+  - CoreWCF.OperationContext.EndpointDispatcher
+  - CoreWCF.OperationContext.Extensions
+  - CoreWCF.OperationContext.GetCallbackChannel``1
+  - CoreWCF.OperationContext.Host
+  - CoreWCF.OperationContext.IncomingMessageHeaders
+  - CoreWCF.OperationContext.IncomingMessageProperties
+  - CoreWCF.OperationContext.IncomingMessageVersion
+  - CoreWCF.OperationContext.InstanceContext
+  - CoreWCF.OperationContext.IsUserContext
+  - CoreWCF.OperationContext.OperationCompleted
+  - CoreWCF.OperationContext.OutgoingMessageHeaders
+  - CoreWCF.OperationContext.OutgoingMessageProperties
+  - CoreWCF.OperationContext.RequestContext
+  - CoreWCF.OperationContext.ServiceSecurityContext
+  - CoreWCF.OperationContext.SessionId
+  langs:
+  - csharp
+  - vb
+  name: OperationContext
+  nameWithType: OperationContext
+  fullName: CoreWCF.OperationContext
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Provides access to the execution context of a service method.
+  remarks: "Use the &lt;xref:CoreWCF.OperationContext> from within a service operation to access the current operation execution environment. In particular, the operation context is used to access callback channels in duplex services, to store extra state data across portions of the operations, and to access incoming message headers and properties as well as add outgoing message headers and properties.  \n\nFor more information about using extensions to store state data, see [Extensible Objects](/dotnet/framework/wcf/extending/extensible-objects).  \n\nThe &lt;xref:CoreWCF.OperationContext> has the following properties and methods.  \n\n-   The &lt;xref:CoreWCF.OperationContext.Current%2A> property returns the &lt;xref:CoreWCF.OperationContext> object representing the current execution context.  \n\n-   The &lt;xref:CoreWCF.OperationContext.ServiceSecurityContext%2A> property returns the security environment under which the method executes.  \n\n-   The &lt;xref:CoreWCF.OperationContext.EndpointDispatcher%2A> property gets the operation&apos;s &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher?displayProperty=nameWithType>.  \n\n-   The &lt;xref:CoreWCF.OperationContext.Extensions%2A> property returns an extension collection for the current &lt;xref:CoreWCF.OperationContext>.  \n\n-   The &lt;xref:CoreWCF.OperationContext.Host%2A> property returns the &lt;xref:CoreWCF.ServiceHostBase> object that manages the service.  \n\n-   The &lt;xref:CoreWCF.OperationContext.HasSupportingTokens%2A> property returns a value that indicates whether the method has supporting tokens, if so, the &lt;xref:CoreWCF.OperationContext.SupportingTokens%2A> property gets them.  \n\n-   The &lt;xref:CoreWCF.OperationContext.IncomingMessageHeaders%2A>, &lt;xref:CoreWCF.OperationContext.IncomingMessageProperties%2A>, and &lt;xref:CoreWCF.OperationContext.IncomingMessageVersion%2A> properties get these items from the incoming message.  \n\n-   The &lt;xref:CoreWCF.OperationContext.OperationCompleted> event is fired when the operation has completed.  \n\n-   The &lt;xref:CoreWCF.OperationContext.OutgoingMessageHeaders%2A> and &lt;xref:CoreWCF.OperationContext.OutgoingMessageProperties%2A> properties get these items for the outbound message.  \n\n-   The &lt;xref:CoreWCF.OperationContext.RequestContext%2A> property returns the &lt;xref:CoreWCF.Channels.RequestContext> implementation for the method.  \n\n-   The &lt;xref:CoreWCF.OperationContext.InstanceContext%2A> property returns the &lt;xref:CoreWCF.InstanceContext> associated with the operation.  \n\n-   The &lt;xref:CoreWCF.OperationContext.SessionId%2A> property returns the session identifier for the current channel and object.  \n\n-   The &lt;xref:CoreWCF.OperationContext.GetCallbackChannel%2A> method returns a callback channel to the caller in the case of duplex communication.  \n\n-   The &lt;xref:CoreWCF.OperationContext.SetTransactionComplete%2A> method commits the current transaction.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class OperationContext : Object, IExtensibleObject<OperationContext>'
+    content.vb: >-
+      Public NotInheritable Class OperationContext
+          Inherits Object
+          Implements IExtensibleObject(Of OperationContext)
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.IExtensibleObject{CoreWCF.OperationContext}
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.OperationContext.#ctor(CoreWCF.IContextChannel)
+  commentId: M:CoreWCF.OperationContext.#ctor(CoreWCF.IContextChannel)
+  id: '#ctor(CoreWCF.IContextChannel)'
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: OperationContext(IContextChannel)
+  nameWithType: OperationContext.OperationContext(IContextChannel)
+  fullName: CoreWCF.OperationContext.OperationContext(CoreWCF.IContextChannel)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public OperationContext(IContextChannel channel)
+    parameters:
+    - id: channel
+      type: CoreWCF.IContextChannel
+    content.vb: Public Sub New(channel As IContextChannel)
+  overload: CoreWCF.OperationContext.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContext.GetCallbackChannel``1
+  commentId: M:CoreWCF.OperationContext.GetCallbackChannel``1
+  id: GetCallbackChannel``1
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: GetCallbackChannel<T>()
+  nameWithType: OperationContext.GetCallbackChannel<T>()
+  fullName: CoreWCF.OperationContext.GetCallbackChannel<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public T GetCallbackChannel<T>()
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+    content.vb: Public Function GetCallbackChannel(Of T) As T
+  overload: CoreWCF.OperationContext.GetCallbackChannel*
+  nameWithType.vb: OperationContext.GetCallbackChannel(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.OperationContext.GetCallbackChannel(Of T)()
+  name.vb: GetCallbackChannel(Of T)()
+- uid: CoreWCF.OperationContext.Current
+  commentId: P:CoreWCF.OperationContext.Current
+  id: Current
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: OperationContext.Current
+  fullName: CoreWCF.OperationContext.Current
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static OperationContext Current { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.OperationContext
+    content.vb: Public Shared Property Current As OperationContext
+  overload: CoreWCF.OperationContext.Current*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.OperationContext.Host
+  commentId: P:CoreWCF.OperationContext.Host
+  id: Host
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: Host
+  nameWithType: OperationContext.Host
+  fullName: CoreWCF.OperationContext.Host
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceHostBase Host { get; }
+    parameters: []
+    return:
+      type: CoreWCF.ServiceHostBase
+    content.vb: Public ReadOnly Property Host As ServiceHostBase
+  overload: CoreWCF.OperationContext.Host*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.EndpointDispatcher
+  commentId: P:CoreWCF.OperationContext.EndpointDispatcher
+  id: EndpointDispatcher
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: EndpointDispatcher
+  nameWithType: OperationContext.EndpointDispatcher
+  fullName: CoreWCF.OperationContext.EndpointDispatcher
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public EndpointDispatcher EndpointDispatcher { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.EndpointDispatcher
+    content.vb: Public Property EndpointDispatcher As EndpointDispatcher
+  overload: CoreWCF.OperationContext.EndpointDispatcher*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContext.IsUserContext
+  commentId: P:CoreWCF.OperationContext.IsUserContext
+  id: IsUserContext
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: IsUserContext
+  nameWithType: OperationContext.IsUserContext
+  fullName: CoreWCF.OperationContext.IsUserContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsUserContext { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsUserContext As Boolean
+  overload: CoreWCF.OperationContext.IsUserContext*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.Extensions
+  commentId: P:CoreWCF.OperationContext.Extensions
+  id: Extensions
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: Extensions
+  nameWithType: OperationContext.Extensions
+  fullName: CoreWCF.OperationContext.Extensions
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public IExtensionCollection<OperationContext> Extensions { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IExtensionCollection{CoreWCF.OperationContext}
+    content.vb: Public ReadOnly Property Extensions As IExtensionCollection(Of OperationContext)
+  overload: CoreWCF.OperationContext.Extensions*
+  implements:
+  - CoreWCF.IExtensibleObject{CoreWCF.OperationContext}.Extensions
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.OutgoingMessageHeaders
+  commentId: P:CoreWCF.OperationContext.OutgoingMessageHeaders
+  id: OutgoingMessageHeaders
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: OutgoingMessageHeaders
+  nameWithType: OperationContext.OutgoingMessageHeaders
+  fullName: CoreWCF.OperationContext.OutgoingMessageHeaders
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageHeaders OutgoingMessageHeaders { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageHeaders
+    content.vb: Public ReadOnly Property OutgoingMessageHeaders As MessageHeaders
+  overload: CoreWCF.OperationContext.OutgoingMessageHeaders*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.OutgoingMessageProperties
+  commentId: P:CoreWCF.OperationContext.OutgoingMessageProperties
+  id: OutgoingMessageProperties
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: OutgoingMessageProperties
+  nameWithType: OperationContext.OutgoingMessageProperties
+  fullName: CoreWCF.OperationContext.OutgoingMessageProperties
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageProperties OutgoingMessageProperties { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageProperties
+    content.vb: Public ReadOnly Property OutgoingMessageProperties As MessageProperties
+  overload: CoreWCF.OperationContext.OutgoingMessageProperties*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.IncomingMessageHeaders
+  commentId: P:CoreWCF.OperationContext.IncomingMessageHeaders
+  id: IncomingMessageHeaders
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: IncomingMessageHeaders
+  nameWithType: OperationContext.IncomingMessageHeaders
+  fullName: CoreWCF.OperationContext.IncomingMessageHeaders
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageHeaders IncomingMessageHeaders { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageHeaders
+    content.vb: Public ReadOnly Property IncomingMessageHeaders As MessageHeaders
+  overload: CoreWCF.OperationContext.IncomingMessageHeaders*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.IncomingMessageProperties
+  commentId: P:CoreWCF.OperationContext.IncomingMessageProperties
+  id: IncomingMessageProperties
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: IncomingMessageProperties
+  nameWithType: OperationContext.IncomingMessageProperties
+  fullName: CoreWCF.OperationContext.IncomingMessageProperties
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageProperties IncomingMessageProperties { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageProperties
+    content.vb: Public ReadOnly Property IncomingMessageProperties As MessageProperties
+  overload: CoreWCF.OperationContext.IncomingMessageProperties*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.IncomingMessageVersion
+  commentId: P:CoreWCF.OperationContext.IncomingMessageVersion
+  id: IncomingMessageVersion
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: IncomingMessageVersion
+  nameWithType: OperationContext.IncomingMessageVersion
+  fullName: CoreWCF.OperationContext.IncomingMessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageVersion IncomingMessageVersion { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+    content.vb: Public ReadOnly Property IncomingMessageVersion As MessageVersion
+  overload: CoreWCF.OperationContext.IncomingMessageVersion*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.InstanceContext
+  commentId: P:CoreWCF.OperationContext.InstanceContext
+  id: InstanceContext
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: InstanceContext
+  nameWithType: OperationContext.InstanceContext
+  fullName: CoreWCF.OperationContext.InstanceContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public InstanceContext InstanceContext { get; }
+    parameters: []
+    return:
+      type: CoreWCF.InstanceContext
+    content.vb: Public ReadOnly Property InstanceContext As InstanceContext
+  overload: CoreWCF.OperationContext.InstanceContext*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.RequestContext
+  commentId: P:CoreWCF.OperationContext.RequestContext
+  id: RequestContext
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: RequestContext
+  nameWithType: OperationContext.RequestContext
+  fullName: CoreWCF.OperationContext.RequestContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public RequestContext RequestContext { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.RequestContext
+    content.vb: Public Property RequestContext As RequestContext
+  overload: CoreWCF.OperationContext.RequestContext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationContext.ServiceSecurityContext
+  commentId: P:CoreWCF.OperationContext.ServiceSecurityContext
+  id: ServiceSecurityContext
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: ServiceSecurityContext
+  nameWithType: OperationContext.ServiceSecurityContext
+  fullName: CoreWCF.OperationContext.ServiceSecurityContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceSecurityContext ServiceSecurityContext { get; }
+    parameters: []
+    return:
+      type: CoreWCF.ServiceSecurityContext
+    content.vb: Public ReadOnly Property ServiceSecurityContext As ServiceSecurityContext
+  overload: CoreWCF.OperationContext.ServiceSecurityContext*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.SessionId
+  commentId: P:CoreWCF.OperationContext.SessionId
+  id: SessionId
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: SessionId
+  nameWithType: OperationContext.SessionId
+  fullName: CoreWCF.OperationContext.SessionId
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string SessionId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property SessionId As String
+  overload: CoreWCF.OperationContext.SessionId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.ClaimsPrincipal
+  commentId: P:CoreWCF.OperationContext.ClaimsPrincipal
+  id: ClaimsPrincipal
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: ClaimsPrincipal
+  nameWithType: OperationContext.ClaimsPrincipal
+  fullName: CoreWCF.OperationContext.ClaimsPrincipal
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ClaimsPrincipal ClaimsPrincipal { get; }
+    parameters: []
+    return:
+      type: System.Security.Claims.ClaimsPrincipal
+    content.vb: Public ReadOnly Property ClaimsPrincipal As ClaimsPrincipal
+  overload: CoreWCF.OperationContext.ClaimsPrincipal*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.OperationContext.OperationCompleted
+  commentId: E:CoreWCF.OperationContext.OperationCompleted
+  id: OperationCompleted
+  parent: CoreWCF.OperationContext
+  langs:
+  - csharp
+  - vb
+  name: OperationCompleted
+  nameWithType: OperationContext.OperationCompleted
+  fullName: CoreWCF.OperationContext.OperationCompleted
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public event EventHandler OperationCompleted
+    return:
+      type: System.EventHandler
+    content.vb: Public Event OperationCompleted As EventHandler
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IExtensibleObject{CoreWCF.OperationContext}
+  commentId: T:CoreWCF.IExtensibleObject{CoreWCF.OperationContext}
+  parent: CoreWCF
+  definition: CoreWCF.IExtensibleObject`1
+  name: IExtensibleObject<OperationContext>
+  nameWithType: IExtensibleObject<OperationContext>
+  fullName: CoreWCF.IExtensibleObject<CoreWCF.OperationContext>
+  nameWithType.vb: IExtensibleObject(Of OperationContext)
+  fullName.vb: CoreWCF.IExtensibleObject(Of CoreWCF.OperationContext)
+  name.vb: IExtensibleObject(Of OperationContext)
+  spec.csharp:
+  - uid: CoreWCF.IExtensibleObject`1
+    name: IExtensibleObject
+    nameWithType: IExtensibleObject
+    fullName: CoreWCF.IExtensibleObject
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensibleObject`1
+    name: IExtensibleObject
+    nameWithType: IExtensibleObject
+    fullName: CoreWCF.IExtensibleObject
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IExtensibleObject`1
+  commentId: T:CoreWCF.IExtensibleObject`1
+  isExternal: true
+  name: IExtensibleObject<T>
+  nameWithType: IExtensibleObject<T>
+  fullName: CoreWCF.IExtensibleObject<T>
+  nameWithType.vb: IExtensibleObject(Of T)
+  fullName.vb: CoreWCF.IExtensibleObject(Of T)
+  name.vb: IExtensibleObject(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtensibleObject`1
+    name: IExtensibleObject
+    nameWithType: IExtensibleObject
+    fullName: CoreWCF.IExtensibleObject
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensibleObject`1
+    name: IExtensibleObject
+    nameWithType: IExtensibleObject
+    fullName: CoreWCF.IExtensibleObject
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.OperationContext.#ctor*
+  commentId: Overload:CoreWCF.OperationContext.#ctor
+  isExternal: true
+  name: OperationContext
+  nameWithType: OperationContext.OperationContext
+  fullName: CoreWCF.OperationContext.OperationContext
+- uid: CoreWCF.IContextChannel
+  commentId: T:CoreWCF.IContextChannel
+  parent: CoreWCF
+  isExternal: true
+  name: IContextChannel
+  nameWithType: IContextChannel
+  fullName: CoreWCF.IContextChannel
+- uid: CoreWCF.OperationContext.GetCallbackChannel*
+  commentId: Overload:CoreWCF.OperationContext.GetCallbackChannel
+  isExternal: true
+  name: GetCallbackChannel
+  nameWithType: OperationContext.GetCallbackChannel
+  fullName: CoreWCF.OperationContext.GetCallbackChannel
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.OperationContext.Current*
+  commentId: Overload:CoreWCF.OperationContext.Current
+  isExternal: true
+  name: Current
+  nameWithType: OperationContext.Current
+  fullName: CoreWCF.OperationContext.Current
+- uid: CoreWCF.OperationContext
+  commentId: T:CoreWCF.OperationContext
+  parent: CoreWCF
+  isExternal: true
+  name: OperationContext
+  nameWithType: OperationContext
+  fullName: CoreWCF.OperationContext
+- uid: CoreWCF.OperationContext.Host*
+  commentId: Overload:CoreWCF.OperationContext.Host
+  isExternal: true
+  name: Host
+  nameWithType: OperationContext.Host
+  fullName: CoreWCF.OperationContext.Host
+- uid: CoreWCF.ServiceHostBase
+  commentId: T:CoreWCF.ServiceHostBase
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceHostBase
+  nameWithType: ServiceHostBase
+  fullName: CoreWCF.ServiceHostBase
+- uid: CoreWCF.OperationContext.EndpointDispatcher*
+  commentId: Overload:CoreWCF.OperationContext.EndpointDispatcher
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: OperationContext.EndpointDispatcher
+  fullName: CoreWCF.OperationContext.EndpointDispatcher
+- uid: CoreWCF.Dispatcher.EndpointDispatcher
+  commentId: T:CoreWCF.Dispatcher.EndpointDispatcher
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.OperationContext.IsUserContext*
+  commentId: Overload:CoreWCF.OperationContext.IsUserContext
+  isExternal: true
+  name: IsUserContext
+  nameWithType: OperationContext.IsUserContext
+  fullName: CoreWCF.OperationContext.IsUserContext
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.OperationContext.Extensions*
+  commentId: Overload:CoreWCF.OperationContext.Extensions
+  isExternal: true
+  name: Extensions
+  nameWithType: OperationContext.Extensions
+  fullName: CoreWCF.OperationContext.Extensions
+- uid: CoreWCF.IExtensibleObject{CoreWCF.OperationContext}.Extensions
+  commentId: P:CoreWCF.IExtensibleObject{CoreWCF.OperationContext}.Extensions
+  parent: CoreWCF.IExtensibleObject{CoreWCF.OperationContext}
+  definition: CoreWCF.IExtensibleObject`1.Extensions
+  name: Extensions
+  nameWithType: IExtensibleObject<OperationContext>.Extensions
+  fullName: CoreWCF.IExtensibleObject<CoreWCF.OperationContext>.Extensions
+  nameWithType.vb: IExtensibleObject(Of OperationContext).Extensions
+  fullName.vb: CoreWCF.IExtensibleObject(Of CoreWCF.OperationContext).Extensions
+- uid: CoreWCF.IExtensionCollection{CoreWCF.OperationContext}
+  commentId: T:CoreWCF.IExtensionCollection{CoreWCF.OperationContext}
+  parent: CoreWCF
+  definition: CoreWCF.IExtensionCollection`1
+  name: IExtensionCollection<OperationContext>
+  nameWithType: IExtensionCollection<OperationContext>
+  fullName: CoreWCF.IExtensionCollection<CoreWCF.OperationContext>
+  nameWithType.vb: IExtensionCollection(Of OperationContext)
+  fullName.vb: CoreWCF.IExtensionCollection(Of CoreWCF.OperationContext)
+  name.vb: IExtensionCollection(Of OperationContext)
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtensibleObject`1.Extensions
+  commentId: P:CoreWCF.IExtensibleObject`1.Extensions
+  isExternal: true
+  name: Extensions
+  nameWithType: IExtensibleObject<T>.Extensions
+  fullName: CoreWCF.IExtensibleObject<T>.Extensions
+  nameWithType.vb: IExtensibleObject(Of T).Extensions
+  fullName.vb: CoreWCF.IExtensibleObject(Of T).Extensions
+- uid: CoreWCF.IExtensionCollection`1
+  commentId: T:CoreWCF.IExtensionCollection`1
+  isExternal: true
+  name: IExtensionCollection<T>
+  nameWithType: IExtensionCollection<T>
+  fullName: CoreWCF.IExtensionCollection<T>
+  nameWithType.vb: IExtensionCollection(Of T)
+  fullName.vb: CoreWCF.IExtensionCollection(Of T)
+  name.vb: IExtensionCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.OperationContext.OutgoingMessageHeaders*
+  commentId: Overload:CoreWCF.OperationContext.OutgoingMessageHeaders
+  isExternal: true
+  name: OutgoingMessageHeaders
+  nameWithType: OperationContext.OutgoingMessageHeaders
+  fullName: CoreWCF.OperationContext.OutgoingMessageHeaders
+- uid: CoreWCF.Channels.MessageHeaders
+  commentId: T:CoreWCF.Channels.MessageHeaders
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageHeaders
+  nameWithType: MessageHeaders
+  fullName: CoreWCF.Channels.MessageHeaders
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.OperationContext.OutgoingMessageProperties*
+  commentId: Overload:CoreWCF.OperationContext.OutgoingMessageProperties
+  isExternal: true
+  name: OutgoingMessageProperties
+  nameWithType: OperationContext.OutgoingMessageProperties
+  fullName: CoreWCF.OperationContext.OutgoingMessageProperties
+- uid: CoreWCF.Channels.MessageProperties
+  commentId: T:CoreWCF.Channels.MessageProperties
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageProperties
+  nameWithType: MessageProperties
+  fullName: CoreWCF.Channels.MessageProperties
+- uid: CoreWCF.OperationContext.IncomingMessageHeaders*
+  commentId: Overload:CoreWCF.OperationContext.IncomingMessageHeaders
+  isExternal: true
+  name: IncomingMessageHeaders
+  nameWithType: OperationContext.IncomingMessageHeaders
+  fullName: CoreWCF.OperationContext.IncomingMessageHeaders
+- uid: CoreWCF.OperationContext.IncomingMessageProperties*
+  commentId: Overload:CoreWCF.OperationContext.IncomingMessageProperties
+  isExternal: true
+  name: IncomingMessageProperties
+  nameWithType: OperationContext.IncomingMessageProperties
+  fullName: CoreWCF.OperationContext.IncomingMessageProperties
+- uid: CoreWCF.OperationContext.IncomingMessageVersion*
+  commentId: Overload:CoreWCF.OperationContext.IncomingMessageVersion
+  isExternal: true
+  name: IncomingMessageVersion
+  nameWithType: OperationContext.IncomingMessageVersion
+  fullName: CoreWCF.OperationContext.IncomingMessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.OperationContext.InstanceContext*
+  commentId: Overload:CoreWCF.OperationContext.InstanceContext
+  isExternal: true
+  name: InstanceContext
+  nameWithType: OperationContext.InstanceContext
+  fullName: CoreWCF.OperationContext.InstanceContext
+- uid: CoreWCF.InstanceContext
+  commentId: T:CoreWCF.InstanceContext
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContext
+  nameWithType: InstanceContext
+  fullName: CoreWCF.InstanceContext
+- uid: CoreWCF.OperationContext.RequestContext*
+  commentId: Overload:CoreWCF.OperationContext.RequestContext
+  isExternal: true
+  name: RequestContext
+  nameWithType: OperationContext.RequestContext
+  fullName: CoreWCF.OperationContext.RequestContext
+- uid: CoreWCF.Channels.RequestContext
+  commentId: T:CoreWCF.Channels.RequestContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: RequestContext
+  nameWithType: RequestContext
+  fullName: CoreWCF.Channels.RequestContext
+- uid: CoreWCF.OperationContext.ServiceSecurityContext*
+  commentId: Overload:CoreWCF.OperationContext.ServiceSecurityContext
+  isExternal: true
+  name: ServiceSecurityContext
+  nameWithType: OperationContext.ServiceSecurityContext
+  fullName: CoreWCF.OperationContext.ServiceSecurityContext
+- uid: CoreWCF.ServiceSecurityContext
+  commentId: T:CoreWCF.ServiceSecurityContext
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceSecurityContext
+  nameWithType: ServiceSecurityContext
+  fullName: CoreWCF.ServiceSecurityContext
+- uid: CoreWCF.OperationContext.SessionId*
+  commentId: Overload:CoreWCF.OperationContext.SessionId
+  isExternal: true
+  name: SessionId
+  nameWithType: OperationContext.SessionId
+  fullName: CoreWCF.OperationContext.SessionId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.OperationContext.ClaimsPrincipal*
+  commentId: Overload:CoreWCF.OperationContext.ClaimsPrincipal
+  isExternal: true
+  name: ClaimsPrincipal
+  nameWithType: OperationContext.ClaimsPrincipal
+  fullName: CoreWCF.OperationContext.ClaimsPrincipal
+- uid: System.Security.Claims.ClaimsPrincipal
+  isExternal: true
+  name: ClaimsPrincipal
+  nameWithType: ClaimsPrincipal
+  fullName: System.Security.Claims.ClaimsPrincipal
+- uid: System.EventHandler
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler

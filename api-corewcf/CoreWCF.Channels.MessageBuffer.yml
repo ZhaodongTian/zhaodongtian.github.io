@@ -1,0 +1,322 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageBuffer
+  commentId: T:CoreWCF.Channels.MessageBuffer
+  id: MessageBuffer
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageBuffer.#ctor
+  - CoreWCF.Channels.MessageBuffer.BufferSize
+  - CoreWCF.Channels.MessageBuffer.Close
+  - CoreWCF.Channels.MessageBuffer.CreateMessage
+  - CoreWCF.Channels.MessageBuffer.MessageContentType
+  - CoreWCF.Channels.MessageBuffer.WriteMessage(System.IO.Stream)
+  langs:
+  - csharp
+  - vb
+  name: MessageBuffer
+  nameWithType: MessageBuffer
+  fullName: CoreWCF.Channels.MessageBuffer
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents a memory buffer that stores an entire message for future consumption.
+  remarks: "The body of a <xref:CoreWCF.Channels.Message> instance can only be consumed or written once. If you wish to consume a <xref:CoreWCF.Channels.Message> instance more than once, you should use the <xref:CoreWCF.Channels.MessageBuffer> class to completely store an entire <xref:CoreWCF.Channels.Message> instance into memory.  \n\nA <xref:CoreWCF.Channels.MessageBuffer> instance is constructed by calling [CreateBufferedCopy](xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)) of a <xref:CoreWCF.Channels.Message> instance. A new <xref:CoreWCF.Channels.MessageBuffer> is then created and returned, which assumes ownership of the <xref:CoreWCF.Channels.Message> and reads the entire content into memory.  \n\nIn order to retrieve a copy of a <xref:CoreWCF.Channels.Message> from the <xref:CoreWCF.Channels.MessageBuffer>, you must call the [CreateMessage](xref:CoreWCF.Channels.MessageBuffer.CreateMessage) method of the <xref:CoreWCF.Channels.MessageBuffer>. This returns an identical copy of the original <xref:CoreWCF.Channels.Message> instance you provided.  \n\nYou can control the maximum size of the buffer by setting <xref:CoreWCF.Channels.MessageBuffer.BufferSize> to the maximum number of bytes desired. This number does not necessarily cover any transient allocations related to building the buffer, or properties attached to the message.  \n\nYou should always close a <xref:CoreWCF.Channels.MessageBuffer> instance by calling <xref:CoreWCF.Channels.MessageBuffer.Close> when finished working with it. This allows system resources to potentially be freed sooner.  \n\nSpecial note for Managed C++ users deriving from this class:  \n\n-   Put your cleanup code in (On)(Begin)Close (and/or OnAbort), not in a destructor.  \n\n-   Avoid destructors: they cause the compiler to auto-generate <xref:System.IDisposable>  \n\n-   Avoid non-reference members: they can cause the compiler to auto-generate <xref:System.IDisposable>  \n\n-   Avoid finalizers; but if you include one, you should suppress the build warning and call <xref:System.GC.SuppressFinalize(System.Object)> and the finalizer itself from (On)(Begin)Close (and/or OnAbort) in order to emulate what would have been the auto-generated <xref:System.IDisposable> behavior.  \n\n"
+  syntax:
+    content: 'public abstract class MessageBuffer : Object'
+    content.vb: >-
+      Public MustInherit Class MessageBuffer
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.MessageBuffer.Close
+  commentId: M:CoreWCF.Channels.MessageBuffer.Close
+  id: Close
+  parent: CoreWCF.Channels.MessageBuffer
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  summary: Finishes working with the buffer.
+  nameWithType: MessageBuffer.Close()
+  fullName: CoreWCF.Channels.MessageBuffer.Close()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract void Close()
+    content.vb: Public MustOverride Sub Close
+  overload: CoreWCF.Channels.MessageBuffer.Close*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: You should always close a [MessageBuffer](xref:CoreWCF.Channels.MessageBuffer) instance by calling [Close](xref:CoreWCF.Channels.MessageBuffer.Close) when finished working with it. This allows system resources to potentially be freed sooner.<br/><br/>
+           If you have called [CreateBufferedCopy](xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)) to create a message buffer of a message, and inspected the message using [CreateMessage](xref:CoreWCF.Channels.MessageBuffer.CreateMessage), you will get a [InvalidOperationException](xref:System.InvalidOperationException) when you attempt to close the buffer using this method. To avoid this problem, you need to recreate the message from the buffer before closing. See the code sample in the Example section for a demonstration of the previous scenario and a way to resolve this problem.
+- uid: CoreWCF.Channels.MessageBuffer.WriteMessage(System.IO.Stream)
+  commentId: M:CoreWCF.Channels.MessageBuffer.WriteMessage(System.IO.Stream)
+  id: WriteMessage(System.IO.Stream)
+  parent: CoreWCF.Channels.MessageBuffer
+  langs:
+  - csharp
+  - vb
+  name: WriteMessage(Stream)
+  summary: Writes the entire content of this buffer to the specified IO stream.
+  nameWithType: MessageBuffer.WriteMessage(Stream)
+  fullName: CoreWCF.Channels.MessageBuffer.WriteMessage(System.IO.Stream)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual void WriteMessage(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: An IO stream that the entire content of this buffer is written to.
+    content.vb: Public Overridable Sub WriteMessage(stream As Stream)
+  overload: CoreWCF.Channels.MessageBuffer.WriteMessage*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  remarks: This function uses a binary encoder instead of a UTF-8 encoder. Therefore, you cannot directly convert from a [MessageBuffer](xref:CoreWCF.Channels.MessageBuffer) to a [Message](xref:CoreWCF.Channels.Message). The code in the example section shows how to work around this problem.
+- uid: CoreWCF.Channels.MessageBuffer.CreateMessage
+  commentId: M:CoreWCF.Channels.MessageBuffer.CreateMessage
+  id: CreateMessage
+  parent: CoreWCF.Channels.MessageBuffer
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage()
+  summary: Returns a copy of the original message.
+  nameWithType: MessageBuffer.CreateMessage()
+  fullName: CoreWCF.Channels.MessageBuffer.CreateMessage()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Message CreateMessage()
+    return:
+      type: CoreWCF.Channels.Message
+      description: An identical copy of the original [Message](xref:CoreWCF.Channels.Message) instance you previously provided to the [CreateBufferedCopy(Int32)](xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)) method of a [Message](xref:CoreWCF.Channels.Message) instance.
+    content.vb: Public MustOverride Function CreateMessage As Message
+  overload: CoreWCF.Channels.MessageBuffer.CreateMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: Calling this method creates an identical copy of the original [Message](xref:CoreWCF.Channels.Message) instance you previously provided to the [CreateBufferedCopy](xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)) method of a Message instance. You can then save the [message](xref:CoreWCF.Channels.Message) to a durable storage.
+- uid: CoreWCF.Channels.MessageBuffer.#ctor
+  commentId: M:CoreWCF.Channels.MessageBuffer.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageBuffer
+  langs:
+  - csharp
+  - vb
+  name: MessageBuffer()
+  summary: Initializes a new instance of the [MessageBuffer](xref:CoreWCF.Channels.MessageBuffer) class.
+  nameWithType: MessageBuffer.MessageBuffer()
+  fullName: CoreWCF.Channels.MessageBuffer.MessageBuffer()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected MessageBuffer()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.MessageBuffer.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageBuffer.BufferSize
+  commentId: P:CoreWCF.Channels.MessageBuffer.BufferSize
+  id: BufferSize
+  parent: CoreWCF.Channels.MessageBuffer
+  langs:
+  - csharp
+  - vb
+  name: BufferSize
+  summary: Gets the approximate number of bytes consumed by this [MessageBuffer](xref:CoreWCF.Channels.MessageBuffer).
+  nameWithType: MessageBuffer.BufferSize
+  fullName: CoreWCF.Channels.MessageBuffer.BufferSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract int BufferSize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The approximate number of bytes consumed by this [MessageBuffer](xref:CoreWCF.Channels.MessageBuffer).
+    content.vb: Public MustOverride ReadOnly Property BufferSize As Integer
+  overload: CoreWCF.Channels.MessageBuffer.BufferSize*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: You can control the maximum size of the buffer by setting [BufferSize](xref:CoreWCF.Channels.MessageBuffer.BufferSize) to the maximum number of bytes desired. This number does not necessarily cover any transient allocations related to building the buffer, or properties attached to the message. It is not related to the actual size of the message when serialized.
+- uid: CoreWCF.Channels.MessageBuffer.MessageContentType
+  commentId: P:CoreWCF.Channels.MessageBuffer.MessageContentType
+  id: MessageContentType
+  parent: CoreWCF.Channels.MessageBuffer
+  langs:
+  - csharp
+  - vb
+  name: MessageContentType
+  summary: Gets the type of message content stored in this buffer.
+  nameWithType: MessageBuffer.MessageContentType
+  fullName: CoreWCF.Channels.MessageBuffer.MessageContentType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual string MessageContentType { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The type of message content stored in this buffer.
+    content.vb: Public Overridable ReadOnly Property MessageContentType As String
+  overload: CoreWCF.Channels.MessageBuffer.MessageContentType*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageBuffer.Close*
+  commentId: Overload:CoreWCF.Channels.MessageBuffer.Close
+  isExternal: true
+  name: Close
+  nameWithType: MessageBuffer.Close
+  fullName: CoreWCF.Channels.MessageBuffer.Close
+- uid: CoreWCF.Channels.MessageBuffer.WriteMessage*
+  commentId: Overload:CoreWCF.Channels.MessageBuffer.WriteMessage
+  isExternal: true
+  name: WriteMessage
+  nameWithType: MessageBuffer.WriteMessage
+  fullName: CoreWCF.Channels.MessageBuffer.WriteMessage
+- uid: System.IO.Stream
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: CoreWCF.Channels.MessageBuffer.CreateMessage*
+  commentId: Overload:CoreWCF.Channels.MessageBuffer.CreateMessage
+  isExternal: true
+  name: CreateMessage
+  nameWithType: MessageBuffer.CreateMessage
+  fullName: CoreWCF.Channels.MessageBuffer.CreateMessage
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Channels.MessageBuffer.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageBuffer.#ctor
+  isExternal: true
+  name: MessageBuffer
+  nameWithType: MessageBuffer.MessageBuffer
+  fullName: CoreWCF.Channels.MessageBuffer.MessageBuffer
+- uid: CoreWCF.Channels.MessageBuffer.BufferSize*
+  commentId: Overload:CoreWCF.Channels.MessageBuffer.BufferSize
+  isExternal: true
+  name: BufferSize
+  nameWithType: MessageBuffer.BufferSize
+  fullName: CoreWCF.Channels.MessageBuffer.BufferSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.MessageBuffer.MessageContentType*
+  commentId: Overload:CoreWCF.Channels.MessageBuffer.MessageContentType
+  isExternal: true
+  name: MessageContentType
+  nameWithType: MessageBuffer.MessageContentType
+  fullName: CoreWCF.Channels.MessageBuffer.MessageContentType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

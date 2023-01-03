@@ -1,0 +1,306 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKey
+  id: SecurityKey
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.SecurityKey.#ctor
+  - CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+  - CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+  - CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  - CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  langs:
+  - csharp
+  - vb
+  name: SecurityKey
+  nameWithType: SecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: Base class for security keys.
+  remarks: "Security keys are used for cryptographic operations, such as generating digital signatures and encrypting XML data.  \n\n"
+  syntax:
+    content: 'public abstract class SecurityKey : Object'
+    content.vb: >-
+      Public MustInherit Class SecurityKey
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.IdentityModel.Tokens.AsymmetricSecurityKey
+  - CoreWCF.IdentityModel.Tokens.SecurityKeyElement
+  - CoreWCF.IdentityModel.Tokens.SymmetricSecurityKey
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String,System.Byte[])
+  id: DecryptKey(System.String,System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  langs:
+  - csharp
+  - vb
+  name: DecryptKey(String, Byte[])
+  nameWithType: SecurityKey.DecryptKey(String, Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String, System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public abstract byte[] DecryptKey(string algorithm, byte[] keyData)
+    parameters:
+    - id: algorithm
+      type: System.String
+    - id: keyData
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public MustOverride Function DecryptKey(algorithm As String, keyData As Byte()) As Byte()
+  overload: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey*
+  nameWithType.vb: SecurityKey.DecryptKey(String, Byte())
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey(System.String, System.Byte())
+  name.vb: DecryptKey(String, Byte())
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String,System.Byte[])
+  id: EncryptKey(System.String,System.Byte[])
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  langs:
+  - csharp
+  - vb
+  name: EncryptKey(String, Byte[])
+  nameWithType: SecurityKey.EncryptKey(String, Byte[])
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String, System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public abstract byte[] EncryptKey(string algorithm, byte[] keyData)
+    parameters:
+    - id: algorithm
+      type: System.String
+    - id: keyData
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public MustOverride Function EncryptKey(algorithm As String, keyData As Byte()) As Byte()
+  overload: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey*
+  nameWithType.vb: SecurityKey.EncryptKey(String, Byte())
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey(System.String, System.Byte())
+  name.vb: EncryptKey(String, Byte())
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  id: IsSupportedAlgorithm(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  langs:
+  - csharp
+  - vb
+  name: IsSupportedAlgorithm(String)
+  nameWithType: SecurityKey.IsSupportedAlgorithm(String)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public abstract bool IsSupportedAlgorithm(string algorithm)
+    parameters:
+    - id: algorithm
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function IsSupportedAlgorithm(algorithm As String) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.#ctor
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityKey.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  langs:
+  - csharp
+  - vb
+  name: SecurityKey()
+  nameWithType: SecurityKey.SecurityKey()
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.SecurityKey()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: protected SecurityKey()
+    content.vb: Protected Sub New
+  overload: CoreWCF.IdentityModel.Tokens.SecurityKey.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  id: KeySize
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKey
+  langs:
+  - csharp
+  - vb
+  name: KeySize
+  nameWithType: SecurityKey.KeySize
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public abstract int KeySize { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public MustOverride ReadOnly Property KeySize As Integer
+  overload: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey
+  isExternal: true
+  name: DecryptKey
+  nameWithType: SecurityKey.DecryptKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.DecryptKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey
+  isExternal: true
+  name: EncryptKey
+  nameWithType: SecurityKey.EncryptKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.EncryptKey
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm
+  isExternal: true
+  name: IsSupportedAlgorithm
+  nameWithType: SecurityKey.IsSupportedAlgorithm
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.IsSupportedAlgorithm
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityKey.#ctor
+  isExternal: true
+  name: SecurityKey
+  nameWithType: SecurityKey.SecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.SecurityKey
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+  isExternal: true
+  name: KeySize
+  nameWithType: SecurityKey.KeySize
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey.KeySize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

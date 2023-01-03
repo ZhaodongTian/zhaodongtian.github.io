@@ -1,0 +1,1314 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.MtomMessageEncodingBindingElement
+  id: MtomMessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor(CoreWCF.Channels.MessageVersion,System.Text.Encoding)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding
+  langs:
+  - csharp
+  - vb
+  name: MtomMessageEncodingBindingElement
+  nameWithType: MtomMessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: The binding element that specifies the encoding and versioning used for Message Transmission Optimization Mechanism (MTOM) messages.
+  remarks: "Encoding is the process of transforming a message into a sequence of bytes. Decoding is the reverse process. Windows Communication Foundation (WCF) includes three types of encoding for SOAP messages: Text, Binary and Message Transmission Optimization Mechanism (MTOM).  \n\nThe <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement> represents the binding element that specifies the character encoding and message versioning and other settings used for messages using a Message Transmission Optimization Mechanism (MTOM) encoding. MTOM is an efficient technology for transmitting binary data in WCF messages. The MTOM encoder attempts to create a balance between efficiency and interoperability. The MTOM encoding transmits most XML in textual form, but optimizes large blocks of binary data by transmitting them as-is, without conversion to their base64 encoded format.  \n\nFor more information about the binding element that specifies that messages are encoded using a textual representation of XML, see <xref:CoreWCF.Channels.TextMessageEncodingBindingElement>.  \n\nFor more information about the binding element that specifies messages are encoded using the .NET Binary Format for XML, see <xref:CoreWCF.Channels.BinaryMessageEncodingBindingElement>.  \n\nTo implement a custom message encoder, use the <xref:CoreWCF.Channels.MessageEncodingBindingElement> class.  \n\n"
+  syntax:
+    content: 'public sealed class MtomMessageEncodingBindingElement : MessageEncodingBindingElement, IWsdlExportExtension, IPolicyExportExtension'
+    content.vb: >-
+      Public NotInheritable Class MtomMessageEncodingBindingElement
+          Inherits MessageEncodingBindingElement
+          Implements IWsdlExportExtension, IPolicyExportExtension
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  - CoreWCF.Channels.MessageEncodingBindingElement
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension
+  - CoreWCF.Description.IPolicyExportExtension
+  inheritedMembers:
+  - CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MtomMessageEncodingBindingElement()
+  nameWithType: MtomMessageEncodingBindingElement.MtomMessageEncodingBindingElement()
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MtomMessageEncodingBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement> class."
+  syntax:
+    content: public MtomMessageEncodingBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The default <xref:CoreWCF.Channels.MessageVersion> used consists of the version of WS-Addressing 1.0 and SOAP1.2. The default character encoding is UTF-8."
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor(CoreWCF.Channels.MessageVersion,System.Text.Encoding)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor(CoreWCF.Channels.MessageVersion,System.Text.Encoding)
+  id: '#ctor(CoreWCF.Channels.MessageVersion,System.Text.Encoding)'
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MtomMessageEncodingBindingElement(MessageVersion, Encoding)
+  nameWithType: MtomMessageEncodingBindingElement.MtomMessageEncodingBindingElement(MessageVersion, Encoding)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MtomMessageEncodingBindingElement(CoreWCF.Channels.MessageVersion, System.Text.Encoding)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement> class with a specified message version and character encoding."
+  syntax:
+    content: public MtomMessageEncodingBindingElement(MessageVersion messageVersion, Encoding writeEncoding)
+    parameters:
+    - id: messageVersion
+      type: CoreWCF.Channels.MessageVersion
+      description: "The <xref:CoreWCF.Channels.MessageVersion> that is used for the SOAP message."
+    - id: writeEncoding
+      type: System.Text.Encoding
+      description: "The [Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to format the message characters."
+    content.vb: Public Sub New(messageVersion As MessageVersion, writeEncoding As Encoding)
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: MtomMessageEncodingBindingElement.Clone()
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Creates a new <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement> object initialized from the current one."
+  syntax:
+    content: public override BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: "A <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement> object with property values equal to those of the current element."
+    content.vb: Public Overrides Function Clone As BindingElement
+  overridden: CoreWCF.Channels.BindingElement.Clone
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: This creates a complete copy of the current binding element object tree, also called a deep clone. A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. (This is called copying the entire object graph.) Returning a deep clone enables the runtime to support the case in which multiple custom bindings share a custom binding element. If a deep clone is not returned, the run-time behavior is undefined. A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects.
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory
+  id: CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateMessageEncoderFactory()
+  nameWithType: MtomMessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message encoder factory that encodes MTOM messages.
+  syntax:
+    content: public override MessageEncoderFactory CreateMessageEncoderFactory()
+    return:
+      type: CoreWCF.Channels.MessageEncoderFactory
+      description: "The <xref:CoreWCF.Channels.MessageEncoderFactory> that encodes MTOM messages."
+    content.vb: Public Overrides Function CreateMessageEncoderFactory As MessageEncoderFactory
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  nameWithType: MtomMessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Returns a typed object requested, if present, from the appropriate layer in the binding element stack.
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "The <xref:CoreWCF.Channels.BindingContext> for the binding element."
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not.
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty*
+  nameWithType.vb: MtomMessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: Use this to request a typed object for setting properties or getting status from the appropriate layer in the binding element stack. If a layer supports returning the requested object, it returns it. If not, it simply delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no binding element layer supported the requested object, then the method returns null.
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  id: CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: MtomMessageEncodingBindingElement.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IPolicyExportExtension.ExportPolicy(MetadataExporter exporter, PolicyConversionContext policyContext)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+    - id: policyContext
+      type: CoreWCF.Description.PolicyConversionContext
+    content.vb: Sub CoreWCF.Description.IPolicyExportExtension.ExportPolicy(exporter As MetadataExporter, policyContext As PolicyConversionContext) Implements IPolicyExportExtension.ExportPolicy
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*
+  implements:
+  - CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  nameWithType.vb: MtomMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  id: CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  nameWithType: MtomMessageEncodingBindingElement.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlContractConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IWsdlExportExtension.ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.WsdlExporter
+    - id: context
+      type: CoreWCF.Description.WsdlContractConversionContext
+    content.vb: Sub CoreWCF.Description.IWsdlExportExtension.ExportContract(exporter As WsdlExporter, context As WsdlContractConversionContext) Implements IWsdlExportExtension.ExportContract
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract*
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  nameWithType.vb: MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  id: CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  nameWithType: MtomMessageEncodingBindingElement.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IWsdlExportExtension.ExportEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.WsdlExporter
+    - id: context
+      type: CoreWCF.Description.WsdlEndpointConversionContext
+    content.vb: Sub CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(exporter As WsdlExporter, context As WsdlEndpointConversionContext) Implements IWsdlExportExtension.ExportEndpoint
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint*
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  nameWithType.vb: MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  id: CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CheckEncodingVersion(EnvelopeVersion)
+  nameWithType: MtomMessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool CheckEncodingVersion(EnvelopeVersion version)
+    parameters:
+    - id: version
+      type: CoreWCF.EnvelopeVersion
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CheckEncodingVersion(version As EnvelopeVersion) As Boolean
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  id: IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IsMatch(BindingElement)
+  nameWithType: MtomMessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool IsMatch(BindingElement b)
+    parameters:
+    - id: b
+      type: CoreWCF.Channels.BindingElement
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function IsMatch(b As BindingElement) As Boolean
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize
+  commentId: P:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize
+  id: MaxReadPoolSize
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxReadPoolSize
+  nameWithType: MtomMessageEncodingBindingElement.MaxReadPoolSize
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the maximum number of XML readers that is allocated to a pool and is ready for use to process incoming messages.
+  syntax:
+    content: public int MaxReadPoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum number of readers to be kept in the pool. The default value is 64 readers.
+    content.vb: Public Property MaxReadPoolSize As Integer
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of incoming messages because it is able to use readers from the pool that are already created instead of creating new ones.
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize
+  commentId: P:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize
+  id: MaxWritePoolSize
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxWritePoolSize
+  nameWithType: MtomMessageEncodingBindingElement.MaxWritePoolSize
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the maximum number of XML writers that is allocated to a pool and are ready for use to process outgoing messages.
+  syntax:
+    content: public int MaxWritePoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum number of writers to be kept in the pool. The default value is 16 writers.
+    content.vb: Public Property MaxWritePoolSize As Integer
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of outgoing messages because it is able to use writers from the pool that are already created instead of creating new ones.
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas
+  commentId: P:CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas
+  id: ReaderQuotas
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ReaderQuotas
+  nameWithType: MtomMessageEncodingBindingElement.ReaderQuotas
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets constraints on the complexity of XML messages that can be processed by endpoints configured with this binding element.
+  syntax:
+    content: public XmlDictionaryReaderQuotas ReaderQuotas { get; }
+    parameters: []
+    return:
+      type: System.Xml.XmlDictionaryReaderQuotas
+      description: "The [XmlDictionaryReaderQuotas](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that specifies the complexity constraints on SOAP messages exchanged. The default values for these constraints are provided in the following Remarks section."
+    content.vb: Public ReadOnly Property ReaderQuotas As XmlDictionaryReaderQuotas
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: "\nThe complexity constraints protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources. The properties that express these constraints and their default values are as follows:\n \n* [MaxDepth](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxdepth?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 32\n \n* [MaxStringContentLength](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxstringcontentlength?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 8192\n \n* [MaxArrayLength](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxarraylength?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 16384\n \n* [MaxBytesPerRead](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxbytesperread?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 4096\n \n* [MaxNameTableCharCount](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxnametablecharcount?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 16384\n \nFor more information, see [XmlDictionaryReaderQuotas](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0).\n"
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize
+  commentId: P:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize
+  id: MaxBufferSize
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxBufferSize
+  nameWithType: MtomMessageEncodingBindingElement.MaxBufferSize
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the maximum buffer size.
+  syntax:
+    content: public int MaxBufferSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum size of the buffer. The default value is 65536 (0x10000) bytes.
+    content.vb: Public Property MaxBufferSize As Integer
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "\nMessage Transmission Optimization Mechanism (MTOM) messages in Windows Communication Foundation (WCF) can consist of multiple MIME parts. The message always includes a Multipurpose Internet Mail Extensions (MIME) part that contains the infoset portion of the message. In addition, if the message contains binary data that is optimized, it may contain additional MIME parts that contain binary data. There are no requirements imposed about what order these MIME parts must appear in the message. The message reading process sometimes must buffer MIME parts if they appear out of order. The message reading process also may have to buffer relevant MIME header information in each part. This <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize> quota is intended to cap the amount of memory that can be allocated when reading MTOM messages and so limit the excessive consumption of memory due to the buffering requirements.\n"
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding
+  commentId: P:CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding
+  id: WriteEncoding
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: WriteEncoding
+  nameWithType: MtomMessageEncodingBindingElement.WriteEncoding
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the encoding that is used to format the characters in the text message.
+  syntax:
+    content: public Encoding WriteEncoding { get; set; }
+    parameters: []
+    return:
+      type: System.Text.Encoding
+      description: "The [Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to format the characters in the text message."
+    content.vb: Public Property WriteEncoding As Encoding
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: The default text encoding is the UTF-8 format. Other possible encodings include, for example, Unicode and Big Endian Unicode.
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion
+  id: MessageVersion
+  parent: CoreWCF.Channels.MtomMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  nameWithType: MtomMessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the SOAP message and WS-Addressing versions that are used or expected.
+  syntax:
+    content: public override MessageVersion MessageVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: "The <xref:CoreWCF.Channels.MessageVersion> that is used for the SOAP message."
+    content.vb: Public Overrides Property MessageVersion As MessageVersion
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  overload: CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.MessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.MessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncodingBindingElement
+  nameWithType: MessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement
+- uid: CoreWCF.Description.IWsdlExportExtension
+  commentId: T:CoreWCF.Description.IWsdlExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IWsdlExportExtension
+  nameWithType: IWsdlExportExtension
+  fullName: CoreWCF.Description.IWsdlExportExtension
+- uid: CoreWCF.Description.IPolicyExportExtension
+  commentId: T:CoreWCF.Description.IPolicyExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IPolicyExportExtension
+  nameWithType: IPolicyExportExtension
+  fullName: CoreWCF.Description.IPolicyExportExtension
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.#ctor
+  isExternal: true
+  name: MtomMessageEncodingBindingElement
+  nameWithType: MtomMessageEncodingBindingElement.MtomMessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MtomMessageEncodingBindingElement
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: System.Text.Encoding
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: MtomMessageEncodingBindingElement.Clone
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.Clone
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: CreateMessageEncoderFactory()
+  nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    name: CreateMessageEncoderFactory
+    nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    name: CreateMessageEncoderFactory
+    nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory
+  isExternal: true
+  name: CreateMessageEncoderFactory
+  nameWithType: MtomMessageEncodingBindingElement.CreateMessageEncoderFactory
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CreateMessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncoderFactory
+  commentId: T:CoreWCF.Channels.MessageEncoderFactory
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncoderFactory
+  nameWithType: MessageEncoderFactory
+  fullName: CoreWCF.Channels.MessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: MessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: MessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: MessageEncodingBindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: MessageEncodingBindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: MtomMessageEncodingBindingElement.GetProperty
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.GetProperty
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy
+  isExternal: true
+  name: IPolicyExportExtension.ExportPolicy
+  nameWithType: MtomMessageEncodingBindingElement.IPolicyExportExtension.ExportPolicy
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  nameWithType.vb: MtomMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+- uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Description.IPolicyExportExtension
+  isExternal: true
+  name: ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: ExportPolicy
+    nameWithType: IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: ExportPolicy
+    nameWithType: IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract
+  isExternal: true
+  name: IWsdlExportExtension.ExportContract
+  nameWithType: MtomMessageEncodingBindingElement.IWsdlExportExtension.ExportContract
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+  nameWithType.vb: MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportContract
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  commentId: M:CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  parent: CoreWCF.Description.IWsdlExportExtension
+  isExternal: true
+  name: ExportContract(WsdlExporter, WsdlContractConversionContext)
+  nameWithType: IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlContractConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+    name: ExportContract
+    nameWithType: IWsdlExportExtension.ExportContract
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlContractConversionContext
+    name: WsdlContractConversionContext
+    nameWithType: WsdlContractConversionContext
+    fullName: CoreWCF.Description.WsdlContractConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+    name: ExportContract
+    nameWithType: IWsdlExportExtension.ExportContract
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlContractConversionContext
+    name: WsdlContractConversionContext
+    nameWithType: WsdlContractConversionContext
+    fullName: CoreWCF.Description.WsdlContractConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlExporter
+  commentId: T:CoreWCF.Description.WsdlExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlExporter
+  nameWithType: WsdlExporter
+  fullName: CoreWCF.Description.WsdlExporter
+- uid: CoreWCF.Description.WsdlContractConversionContext
+  commentId: T:CoreWCF.Description.WsdlContractConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlContractConversionContext
+  nameWithType: WsdlContractConversionContext
+  fullName: CoreWCF.Description.WsdlContractConversionContext
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint
+  isExternal: true
+  name: IWsdlExportExtension.ExportEndpoint
+  nameWithType: MtomMessageEncodingBindingElement.IWsdlExportExtension.ExportEndpoint
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+  nameWithType.vb: MtomMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  commentId: M:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  parent: CoreWCF.Description.IWsdlExportExtension
+  isExternal: true
+  name: ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  nameWithType: IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+    name: ExportEndpoint
+    nameWithType: IWsdlExportExtension.ExportEndpoint
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+    name: ExportEndpoint
+    nameWithType: IWsdlExportExtension.ExportEndpoint
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlEndpointConversionContext
+  commentId: T:CoreWCF.Description.WsdlEndpointConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlEndpointConversionContext
+  nameWithType: WsdlEndpointConversionContext
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: CheckEncodingVersion(EnvelopeVersion)
+  nameWithType: MessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+    name: CheckEncodingVersion
+    nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.EnvelopeVersion
+    name: EnvelopeVersion
+    nameWithType: EnvelopeVersion
+    fullName: CoreWCF.EnvelopeVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+    name: CheckEncodingVersion
+    nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.EnvelopeVersion
+    name: EnvelopeVersion
+    nameWithType: EnvelopeVersion
+    fullName: CoreWCF.EnvelopeVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion
+  isExternal: true
+  name: CheckEncodingVersion
+  nameWithType: MtomMessageEncodingBindingElement.CheckEncodingVersion
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.CheckEncodingVersion
+- uid: CoreWCF.EnvelopeVersion
+  commentId: T:CoreWCF.EnvelopeVersion
+  parent: CoreWCF
+  isExternal: true
+  name: EnvelopeVersion
+  nameWithType: EnvelopeVersion
+  fullName: CoreWCF.EnvelopeVersion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: MessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: MessageEncodingBindingElement.IsMatch
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: MessageEncodingBindingElement.IsMatch
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch
+  isExternal: true
+  name: IsMatch
+  nameWithType: MtomMessageEncodingBindingElement.IsMatch
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.IsMatch
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize
+  isExternal: true
+  name: MaxReadPoolSize
+  nameWithType: MtomMessageEncodingBindingElement.MaxReadPoolSize
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxReadPoolSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize
+  isExternal: true
+  name: MaxWritePoolSize
+  nameWithType: MtomMessageEncodingBindingElement.MaxWritePoolSize
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxWritePoolSize
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas
+  isExternal: true
+  name: ReaderQuotas
+  nameWithType: MtomMessageEncodingBindingElement.ReaderQuotas
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.ReaderQuotas
+- uid: System.Xml.XmlDictionaryReaderQuotas
+  isExternal: true
+  name: XmlDictionaryReaderQuotas
+  nameWithType: XmlDictionaryReaderQuotas
+  fullName: System.Xml.XmlDictionaryReaderQuotas
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize
+  isExternal: true
+  name: MaxBufferSize
+  nameWithType: MtomMessageEncodingBindingElement.MaxBufferSize
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MaxBufferSize
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding
+  isExternal: true
+  name: WriteEncoding
+  nameWithType: MtomMessageEncodingBindingElement.WriteEncoding
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.WriteEncoding
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+- uid: CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion*
+  commentId: Overload:CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MtomMessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MtomMessageEncodingBindingElement.MessageVersion

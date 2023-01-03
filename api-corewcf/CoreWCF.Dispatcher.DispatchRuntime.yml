@@ -1,0 +1,1184 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.DispatchRuntime
+  commentId: T:CoreWCF.Dispatcher.DispatchRuntime
+  id: DispatchRuntime
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown
+  - CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime
+  - CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher
+  - CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode
+  - CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher
+  - CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch
+  - CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty
+  - CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations
+  - CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply
+  - CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider
+  - CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider
+  - CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors
+  - CoreWCF.Dispatcher.DispatchRuntime.Operations
+  - CoreWCF.Dispatcher.DispatchRuntime.OperationSelector
+  - CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode
+  - CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager
+  - CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager
+  - CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext
+  - CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext
+  - CoreWCF.Dispatcher.DispatchRuntime.Type
+  - CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation
+  - CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand
+  langs:
+  - csharp
+  - vb
+  name: DispatchRuntime
+  nameWithType: DispatchRuntime
+  fullName: CoreWCF.Dispatcher.DispatchRuntime
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Exposes properties that can be used to modify default service behavior as well as attach custom objects that can modify how incoming messages are transformed into objects and dispatched to operations. This class cannot be inherited.
+  remarks: "Use the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> class either to modify the default behavior of a service or individual endpoint, or to insert objects that implement custom modifications to one or both of the following service processes:  \n\n1.  The transformation of incoming messages into objects and releasing those objects as method invocations on a service object.  \n\n2.  The transformation of objects received from the response to a service operation invocation into outbound messages.  \n\nIn Windows Communication Foundation (WCF), the channel and endpoint dispatchers are the service components responsible for accepting new channels, receiving messages, method dispatch and invocation, and response processing. Each endpoint exposed by a &lt;xref:CoreWCF.ServiceHost> object has one endpoint dispatcher and an associated channel dispatcher; in addition, each client that participates in duplex communication also has an endpoint dispatcher and channel dispatcher for each callback endpoint.  \n\nThe &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> enables you to intercept and extend the channel or endpoint dispatcher for all messages across a particular contract, even when a message is not recognized. When a message arrives that does not match any messages declared in the contract it is dispatched to the operation that was returned by the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation%2A> property. To intercept or extend across all messages for a particular operation, see the &lt;xref:CoreWCF.Dispatcher.DispatchOperation> class.  \n\nThere are four main areas of dispatcher extensibility exposed by the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> class:  \n\n1.  Dispatch components use the properties of the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> and those of the associated channel dispatcher returned by the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher%2A> property to customize how the channel dispatcher accepts and closes channels. This category includes the &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers%2A> and &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.InputSessionShutdownHandlers%2A> properties.  \n\n2.  Message components are customized for each message processed. This category includes the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors%2A>, &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.OperationSelector%2A>, &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.Operations%2A>, and the &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers%2A> properties.  \n\n3.  Instance components customize the creation, lifetime, and disposal of instances of the service type. For more information about service object lifetimes, see the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A> property. This category includes the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.InstanceContextInitializers%2A> and the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider%2A> properties.  \n\n4.  Security-related components can use the following properties:  \n\n-   &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A> indicates where audit events are written.  \n\n-   &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations%2A> controls whether the service attempts to impersonate using the credentials provided by the incoming message.  \n\n-   &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.MessageAuthenticationAuditLevel%2A> controls whether successful message authentication events are written to the event log specified by &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.SecurityAuditLogLocation%2A>.  \n\n-   &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode%2A> controls how the &lt;xref:System.Threading.Thread.CurrentPrincipal%2A> property is set.  \n\n-   &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationAuditLevel%2A> specifies how the auditing of authorization events is performed.  \n\n-   &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.SuppressAuditFailure%2A> specifies whether to suppress non-critical exceptions that occur during the logging process.  \n\nTypically custom extension objects are assigned to a &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> property or inserted into a collection by a service behavior (an object that implements &lt;xref:CoreWCF.Description.IServiceBehavior>), a contract behavior (an object that implements &lt;xref:CoreWCF.Description.IContractBehavior>), or an endpoint behavior (an object that implements &lt;xref:CoreWCF.Description.IEndpointBehavior>). Then the installing behavior object is added to the appropriate collection of behaviors either programmatically or by implementing a custom &lt;xref:CoreWCF.Configuration.BehaviorExtensionElement> object to enable the behavior to be inserted using an application configuration file.  \n\n"
+  syntax:
+    content: 'public sealed class DispatchRuntime : Object'
+    content.vb: >-
+      Public NotInheritable Class DispatchRuntime
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider
+  id: InstanceContextProvider
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: InstanceContextProvider
+  nameWithType: DispatchRuntime.InstanceContextProvider
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public IInstanceContextProvider InstanceContextProvider { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.IInstanceContextProvider
+    content.vb: Public Property InstanceContextProvider As IInstanceContextProvider
+  overload: CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext
+  id: SingletonInstanceContext
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: SingletonInstanceContext
+  nameWithType: DispatchRuntime.SingletonInstanceContext
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public InstanceContext SingletonInstanceContext { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.InstanceContext
+    content.vb: Public Property SingletonInstanceContext As InstanceContext
+  overload: CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode
+  id: ConcurrencyMode
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ConcurrencyMode
+  nameWithType: DispatchRuntime.ConcurrencyMode
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ConcurrencyMode ConcurrencyMode { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.ConcurrencyMode
+    content.vb: Public Property ConcurrencyMode As ConcurrencyMode
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch
+  id: EnsureOrderedDispatch
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: EnsureOrderedDispatch
+  nameWithType: DispatchRuntime.EnsureOrderedDispatch
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool EnsureOrderedDispatch { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnsureOrderedDispatch As Boolean
+  overload: CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager
+  id: ServiceAuthenticationManager
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ServiceAuthenticationManager
+  nameWithType: DispatchRuntime.ServiceAuthenticationManager
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ServiceAuthenticationManager ServiceAuthenticationManager { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.ServiceAuthenticationManager
+    content.vb: Public Property ServiceAuthenticationManager As ServiceAuthenticationManager
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager
+  id: ServiceAuthorizationManager
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ServiceAuthorizationManager
+  nameWithType: DispatchRuntime.ServiceAuthorizationManager
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ServiceAuthorizationManager ServiceAuthorizationManager { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.ServiceAuthorizationManager
+    content.vb: Public Property ServiceAuthorizationManager As ServiceAuthorizationManager
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown
+  id: AutomaticInputSessionShutdown
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: AutomaticInputSessionShutdown
+  nameWithType: DispatchRuntime.AutomaticInputSessionShutdown
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool AutomaticInputSessionShutdown { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AutomaticInputSessionShutdown As Boolean
+  overload: CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher
+  id: ChannelDispatcher
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ChannelDispatcher
+  nameWithType: DispatchRuntime.ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ChannelDispatcher ChannelDispatcher { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.ChannelDispatcher
+    content.vb: Public ReadOnly Property ChannelDispatcher As ChannelDispatcher
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime
+  id: CallbackClientRuntime
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: CallbackClientRuntime
+  nameWithType: DispatchRuntime.CallbackClientRuntime
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ClientRuntime CallbackClientRuntime { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.ClientRuntime
+    content.vb: Public ReadOnly Property CallbackClientRuntime As ClientRuntime
+  overload: CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher
+  id: EndpointDispatcher
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: EndpointDispatcher
+  nameWithType: DispatchRuntime.EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public EndpointDispatcher EndpointDispatcher { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.EndpointDispatcher
+    content.vb: Public ReadOnly Property EndpointDispatcher As EndpointDispatcher
+  overload: CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations
+  id: ImpersonateCallerForAllOperations
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ImpersonateCallerForAllOperations
+  nameWithType: DispatchRuntime.ImpersonateCallerForAllOperations
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ImpersonateCallerForAllOperations { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ImpersonateCallerForAllOperations As Boolean
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply
+  id: ImpersonateOnSerializingReply
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ImpersonateOnSerializingReply
+  nameWithType: DispatchRuntime.ImpersonateOnSerializingReply
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ImpersonateOnSerializingReply { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ImpersonateOnSerializingReply As Boolean
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty
+  id: IgnoreTransactionMessageProperty
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: IgnoreTransactionMessageProperty
+  nameWithType: DispatchRuntime.IgnoreTransactionMessageProperty
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool IgnoreTransactionMessageProperty { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IgnoreTransactionMessageProperty As Boolean
+  overload: CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider
+  id: InstanceProvider
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: InstanceProvider
+  nameWithType: DispatchRuntime.InstanceProvider
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public IInstanceProvider InstanceProvider { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.IInstanceProvider
+    content.vb: Public Property InstanceProvider As IInstanceProvider
+  overload: CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors
+  id: MessageInspectors
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: MessageInspectors
+  nameWithType: DispatchRuntime.MessageInspectors
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public SynchronizedCollection<IDispatchMessageInspector> MessageInspectors { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IDispatchMessageInspector}
+    content.vb: Public ReadOnly Property MessageInspectors As SynchronizedCollection(Of IDispatchMessageInspector)
+  overload: CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.DispatchRuntime.Operations
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.Operations
+  id: Operations
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: Operations
+  nameWithType: DispatchRuntime.Operations
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.Operations
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public SynchronizedKeyedCollection<string, DispatchOperation> Operations { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Collections.Generic.SynchronizedKeyedCollection{System.String,CoreWCF.Dispatcher.DispatchOperation}
+    content.vb: Public ReadOnly Property Operations As SynchronizedKeyedCollection(Of String, DispatchOperation)
+  overload: CoreWCF.Dispatcher.DispatchRuntime.Operations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.DispatchRuntime.OperationSelector
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.OperationSelector
+  id: OperationSelector
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: OperationSelector
+  nameWithType: DispatchRuntime.OperationSelector
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.OperationSelector
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public IDispatchOperationSelector OperationSelector { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.IDispatchOperationSelector
+    content.vb: Public Property OperationSelector As IDispatchOperationSelector
+  overload: CoreWCF.Dispatcher.DispatchRuntime.OperationSelector*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext
+  id: SynchronizationContext
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: SynchronizationContext
+  nameWithType: DispatchRuntime.SynchronizationContext
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public SynchronizationContext SynchronizationContext { get; set; }
+    parameters: []
+    return:
+      type: System.Threading.SynchronizationContext
+    content.vb: Public Property SynchronizationContext As SynchronizationContext
+  overload: CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode
+  id: PrincipalPermissionMode
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: PrincipalPermissionMode
+  nameWithType: DispatchRuntime.PrincipalPermissionMode
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public PrincipalPermissionMode PrincipalPermissionMode { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.PrincipalPermissionMode
+    content.vb: Public Property PrincipalPermissionMode As PrincipalPermissionMode
+  overload: CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.Type
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.Type
+  id: Type
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: DispatchRuntime.Type
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.Type
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public Type Type { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property Type As Type
+  overload: CoreWCF.Dispatcher.DispatchRuntime.Type*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation
+  id: UnhandledDispatchOperation
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: UnhandledDispatchOperation
+  nameWithType: DispatchRuntime.UnhandledDispatchOperation
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public DispatchOperation UnhandledDispatchOperation { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.DispatchOperation
+    content.vb: Public Property UnhandledDispatchOperation As DispatchOperation
+  overload: CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand
+  commentId: P:CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand
+  id: ValidateMustUnderstand
+  parent: CoreWCF.Dispatcher.DispatchRuntime
+  langs:
+  - csharp
+  - vb
+  name: ValidateMustUnderstand
+  nameWithType: DispatchRuntime.ValidateMustUnderstand
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ValidateMustUnderstand { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ValidateMustUnderstand As Boolean
+  overload: CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider
+  isExternal: true
+  name: InstanceContextProvider
+  nameWithType: DispatchRuntime.InstanceContextProvider
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.InstanceContextProvider
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider
+  commentId: T:CoreWCF.Dispatcher.IInstanceContextProvider
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: IInstanceContextProvider
+  nameWithType: IInstanceContextProvider
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider
+- uid: CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext
+  isExternal: true
+  name: SingletonInstanceContext
+  nameWithType: DispatchRuntime.SingletonInstanceContext
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.SingletonInstanceContext
+- uid: CoreWCF.InstanceContext
+  commentId: T:CoreWCF.InstanceContext
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContext
+  nameWithType: InstanceContext
+  fullName: CoreWCF.InstanceContext
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode
+  isExternal: true
+  name: ConcurrencyMode
+  nameWithType: DispatchRuntime.ConcurrencyMode
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ConcurrencyMode
+- uid: CoreWCF.ConcurrencyMode
+  commentId: T:CoreWCF.ConcurrencyMode
+  parent: CoreWCF
+  isExternal: true
+  name: ConcurrencyMode
+  nameWithType: ConcurrencyMode
+  fullName: CoreWCF.ConcurrencyMode
+- uid: CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch
+  isExternal: true
+  name: EnsureOrderedDispatch
+  nameWithType: DispatchRuntime.EnsureOrderedDispatch
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.EnsureOrderedDispatch
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager
+  isExternal: true
+  name: ServiceAuthenticationManager
+  nameWithType: DispatchRuntime.ServiceAuthenticationManager
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthenticationManager
+- uid: CoreWCF.ServiceAuthenticationManager
+  commentId: T:CoreWCF.ServiceAuthenticationManager
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceAuthenticationManager
+  nameWithType: ServiceAuthenticationManager
+  fullName: CoreWCF.ServiceAuthenticationManager
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager
+  isExternal: true
+  name: ServiceAuthorizationManager
+  nameWithType: DispatchRuntime.ServiceAuthorizationManager
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager
+- uid: CoreWCF.ServiceAuthorizationManager
+  commentId: T:CoreWCF.ServiceAuthorizationManager
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceAuthorizationManager
+  nameWithType: ServiceAuthorizationManager
+  fullName: CoreWCF.ServiceAuthorizationManager
+- uid: CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown
+  isExternal: true
+  name: AutomaticInputSessionShutdown
+  nameWithType: DispatchRuntime.AutomaticInputSessionShutdown
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.AutomaticInputSessionShutdown
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher
+  isExternal: true
+  name: ChannelDispatcher
+  nameWithType: DispatchRuntime.ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ChannelDispatcher
+- uid: CoreWCF.Dispatcher.ChannelDispatcher
+  commentId: T:CoreWCF.Dispatcher.ChannelDispatcher
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ChannelDispatcher
+  nameWithType: ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher
+- uid: CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime
+  isExternal: true
+  name: CallbackClientRuntime
+  nameWithType: DispatchRuntime.CallbackClientRuntime
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime
+- uid: CoreWCF.Dispatcher.ClientRuntime
+  commentId: T:CoreWCF.Dispatcher.ClientRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientRuntime
+  nameWithType: ClientRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime
+- uid: CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: DispatchRuntime.EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.EndpointDispatcher
+- uid: CoreWCF.Dispatcher.EndpointDispatcher
+  commentId: T:CoreWCF.Dispatcher.EndpointDispatcher
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations
+  isExternal: true
+  name: ImpersonateCallerForAllOperations
+  nameWithType: DispatchRuntime.ImpersonateCallerForAllOperations
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateCallerForAllOperations
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply
+  isExternal: true
+  name: ImpersonateOnSerializingReply
+  nameWithType: DispatchRuntime.ImpersonateOnSerializingReply
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ImpersonateOnSerializingReply
+- uid: CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty
+  isExternal: true
+  name: IgnoreTransactionMessageProperty
+  nameWithType: DispatchRuntime.IgnoreTransactionMessageProperty
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.IgnoreTransactionMessageProperty
+- uid: CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider
+  isExternal: true
+  name: InstanceProvider
+  nameWithType: DispatchRuntime.InstanceProvider
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider
+- uid: CoreWCF.Dispatcher.IInstanceProvider
+  commentId: T:CoreWCF.Dispatcher.IInstanceProvider
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: IInstanceProvider
+  nameWithType: IInstanceProvider
+  fullName: CoreWCF.Dispatcher.IInstanceProvider
+- uid: CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors
+  isExternal: true
+  name: MessageInspectors
+  nameWithType: DispatchRuntime.MessageInspectors
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.MessageInspectors
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IDispatchMessageInspector}
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IDispatchMessageInspector}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  name: SynchronizedCollection<IDispatchMessageInspector>
+  nameWithType: SynchronizedCollection<IDispatchMessageInspector>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.Dispatcher.IDispatchMessageInspector>
+  nameWithType.vb: SynchronizedCollection(Of IDispatchMessageInspector)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.Dispatcher.IDispatchMessageInspector)
+  name.vb: SynchronizedCollection(Of IDispatchMessageInspector)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.IDispatchMessageInspector
+    name: IDispatchMessageInspector
+    nameWithType: IDispatchMessageInspector
+    fullName: CoreWCF.Dispatcher.IDispatchMessageInspector
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.IDispatchMessageInspector
+    name: IDispatchMessageInspector
+    nameWithType: IDispatchMessageInspector
+    fullName: CoreWCF.Dispatcher.IDispatchMessageInspector
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection`1
+  isExternal: true
+  name: SynchronizedCollection<T>
+  nameWithType: SynchronizedCollection<T>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>
+  nameWithType.vb: SynchronizedCollection(Of T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T)
+  name.vb: SynchronizedCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic
+  commentId: N:CoreWCF.Collections.Generic
+  isExternal: true
+  name: CoreWCF.Collections.Generic
+  nameWithType: CoreWCF.Collections.Generic
+  fullName: CoreWCF.Collections.Generic
+- uid: CoreWCF.Dispatcher.DispatchRuntime.Operations*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.Operations
+  isExternal: true
+  name: Operations
+  nameWithType: DispatchRuntime.Operations
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.Operations
+- uid: CoreWCF.Collections.Generic.SynchronizedKeyedCollection{System.String,CoreWCF.Dispatcher.DispatchOperation}
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedKeyedCollection{System.String,CoreWCF.Dispatcher.DispatchOperation}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+  name: SynchronizedKeyedCollection<String, DispatchOperation>
+  nameWithType: SynchronizedKeyedCollection<String, DispatchOperation>
+  fullName: CoreWCF.Collections.Generic.SynchronizedKeyedCollection<System.String, CoreWCF.Dispatcher.DispatchOperation>
+  nameWithType.vb: SynchronizedKeyedCollection(Of String, DispatchOperation)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedKeyedCollection(Of System.String, CoreWCF.Dispatcher.DispatchOperation)
+  name.vb: SynchronizedKeyedCollection(Of String, DispatchOperation)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+    name: SynchronizedKeyedCollection
+    nameWithType: SynchronizedKeyedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedKeyedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.DispatchOperation
+    name: DispatchOperation
+    nameWithType: DispatchOperation
+    fullName: CoreWCF.Dispatcher.DispatchOperation
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+    name: SynchronizedKeyedCollection
+    nameWithType: SynchronizedKeyedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedKeyedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.DispatchOperation
+    name: DispatchOperation
+    nameWithType: DispatchOperation
+    fullName: CoreWCF.Dispatcher.DispatchOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+  isExternal: true
+  name: SynchronizedKeyedCollection<K, T>
+  nameWithType: SynchronizedKeyedCollection<K, T>
+  fullName: CoreWCF.Collections.Generic.SynchronizedKeyedCollection<K, T>
+  nameWithType.vb: SynchronizedKeyedCollection(Of K, T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedKeyedCollection(Of K, T)
+  name.vb: SynchronizedKeyedCollection(Of K, T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+    name: SynchronizedKeyedCollection
+    nameWithType: SynchronizedKeyedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedKeyedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedKeyedCollection`2
+    name: SynchronizedKeyedCollection
+    nameWithType: SynchronizedKeyedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedKeyedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: K
+    nameWithType: K
+    fullName: K
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.DispatchRuntime.OperationSelector*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.OperationSelector
+  isExternal: true
+  name: OperationSelector
+  nameWithType: DispatchRuntime.OperationSelector
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.OperationSelector
+- uid: CoreWCF.Dispatcher.IDispatchOperationSelector
+  commentId: T:CoreWCF.Dispatcher.IDispatchOperationSelector
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: IDispatchOperationSelector
+  nameWithType: IDispatchOperationSelector
+  fullName: CoreWCF.Dispatcher.IDispatchOperationSelector
+- uid: CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext
+  isExternal: true
+  name: SynchronizationContext
+  nameWithType: DispatchRuntime.SynchronizationContext
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.SynchronizationContext
+- uid: System.Threading.SynchronizationContext
+  isExternal: true
+  name: SynchronizationContext
+  nameWithType: SynchronizationContext
+  fullName: System.Threading.SynchronizationContext
+- uid: CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode
+  isExternal: true
+  name: PrincipalPermissionMode
+  nameWithType: DispatchRuntime.PrincipalPermissionMode
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.PrincipalPermissionMode
+- uid: CoreWCF.Description.PrincipalPermissionMode
+  commentId: T:CoreWCF.Description.PrincipalPermissionMode
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PrincipalPermissionMode
+  nameWithType: PrincipalPermissionMode
+  fullName: CoreWCF.Description.PrincipalPermissionMode
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Dispatcher.DispatchRuntime.Type*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.Type
+  isExternal: true
+  name: Type
+  nameWithType: DispatchRuntime.Type
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.Type
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation
+  isExternal: true
+  name: UnhandledDispatchOperation
+  nameWithType: DispatchRuntime.UnhandledDispatchOperation
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.UnhandledDispatchOperation
+- uid: CoreWCF.Dispatcher.DispatchOperation
+  commentId: T:CoreWCF.Dispatcher.DispatchOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchOperation
+  nameWithType: DispatchOperation
+  fullName: CoreWCF.Dispatcher.DispatchOperation
+- uid: CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand*
+  commentId: Overload:CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand
+  isExternal: true
+  name: ValidateMustUnderstand
+  nameWithType: DispatchRuntime.ValidateMustUnderstand
+  fullName: CoreWCF.Dispatcher.DispatchRuntime.ValidateMustUnderstand

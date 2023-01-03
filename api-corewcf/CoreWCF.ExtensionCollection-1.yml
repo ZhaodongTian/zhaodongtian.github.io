@@ -1,0 +1,2675 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ExtensionCollection`1
+  commentId: T:CoreWCF.ExtensionCollection`1
+  id: ExtensionCollection`1
+  parent: CoreWCF
+  children:
+  - CoreWCF.ExtensionCollection`1.#ctor(`0)
+  - CoreWCF.ExtensionCollection`1.#ctor(`0,System.Object)
+  - CoreWCF.ExtensionCollection`1.ClearItems
+  - CoreWCF.ExtensionCollection`1.Find``1
+  - CoreWCF.ExtensionCollection`1.FindAll``1
+  - CoreWCF.ExtensionCollection`1.InsertItem(System.Int32,CoreWCF.IExtension{`0})
+  - CoreWCF.ExtensionCollection`1.RemoveItem(System.Int32)
+  - CoreWCF.ExtensionCollection`1.SetItem(System.Int32,CoreWCF.IExtension{`0})
+  langs:
+  - csharp
+  - vb
+  name: ExtensionCollection<T>
+  nameWithType: ExtensionCollection<T>
+  fullName: CoreWCF.ExtensionCollection<T>
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Represents a collection of extensions.
+  remarks: "Typically, implementations of &lt;xref:CoreWCF.IExtensibleObject%601?displayProperty=nameWithType> return an &lt;xref:CoreWCF.ExtensionCollection%601> from the &lt;xref:CoreWCF.IExtensibleObject%601.Extensions%2A?displayProperty=nameWithType> property.  \n\n"
+  syntax:
+    content: 'public sealed class ExtensionCollection<T> : SynchronizedCollection<IExtension<T>>, IExtensionCollection<T> where T : IExtensibleObject<T>'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public NotInheritable Class ExtensionCollection(Of T As IExtensibleObject(Of T))
+          Inherits SynchronizedCollection(Of IExtension(Of T))
+          Implements IExtensionCollection(Of T)
+  inheritance:
+  - System.Object
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  implements:
+  - System.Collections.Generic.IList{CoreWCF.IExtension{{T}}}
+  - System.Collections.IList
+  - System.Collections.ICollection
+  - CoreWCF.IExtensionCollection{{T}}
+  - System.Collections.Generic.ICollection{CoreWCF.IExtension{{T}}}
+  - System.Collections.Generic.IEnumerable{CoreWCF.IExtension{{T}}}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Add(CoreWCF.IExtension{{T}})
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Clear
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.CopyTo(CoreWCF.IExtension{{T}}[],System.Int32)
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Contains(CoreWCF.IExtension{{T}})
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.GetEnumerator
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.IndexOf(CoreWCF.IExtension{{T}})
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Insert(System.Int32,CoreWCF.IExtension{{T}})
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Remove(CoreWCF.IExtension{{T}})
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.RemoveAt(System.Int32)
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Count
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Items
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.SyncRoot
+  - CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Item(System.Int32)
+  nameWithType.vb: ExtensionCollection(Of T)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: CoreWCF.ExtensionCollection(Of T)
+  name.vb: ExtensionCollection(Of T)
+- uid: CoreWCF.ExtensionCollection`1.#ctor(`0)
+  commentId: M:CoreWCF.ExtensionCollection`1.#ctor(`0)
+  id: '#ctor(`0)'
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: ExtensionCollection(T)
+  nameWithType: ExtensionCollection<T>.ExtensionCollection(T)
+  fullName: CoreWCF.ExtensionCollection<T>.ExtensionCollection(T)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ExtensionCollection(T owner)
+    parameters:
+    - id: owner
+      type: '{T}'
+    content.vb: Public Sub New(owner As T)
+  overload: CoreWCF.ExtensionCollection`1.#ctor*
+  nameWithType.vb: ExtensionCollection(Of T).ExtensionCollection(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).ExtensionCollection(T)
+- uid: CoreWCF.ExtensionCollection`1.#ctor(`0,System.Object)
+  commentId: M:CoreWCF.ExtensionCollection`1.#ctor(`0,System.Object)
+  id: '#ctor(`0,System.Object)'
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: ExtensionCollection(T, Object)
+  nameWithType: ExtensionCollection<T>.ExtensionCollection(T, Object)
+  fullName: CoreWCF.ExtensionCollection<T>.ExtensionCollection(T, System.Object)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ExtensionCollection(T owner, object syncRoot)
+    parameters:
+    - id: owner
+      type: '{T}'
+    - id: syncRoot
+      type: System.Object
+    content.vb: Public Sub New(owner As T, syncRoot As Object)
+  overload: CoreWCF.ExtensionCollection`1.#ctor*
+  nameWithType.vb: ExtensionCollection(Of T).ExtensionCollection(T, Object)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).ExtensionCollection(T, System.Object)
+- uid: CoreWCF.ExtensionCollection`1.ClearItems
+  commentId: M:CoreWCF.ExtensionCollection`1.ClearItems
+  id: ClearItems
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: ClearItems()
+  nameWithType: ExtensionCollection<T>.ClearItems()
+  fullName: CoreWCF.ExtensionCollection<T>.ClearItems()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected override void ClearItems()
+    content.vb: Protected Overrides Sub ClearItems
+  overridden: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.ClearItems
+  overload: CoreWCF.ExtensionCollection`1.ClearItems*
+  nameWithType.vb: ExtensionCollection(Of T).ClearItems()
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).ClearItems()
+- uid: CoreWCF.ExtensionCollection`1.Find``1
+  commentId: M:CoreWCF.ExtensionCollection`1.Find``1
+  id: Find``1
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Find<TE>()
+  nameWithType: ExtensionCollection<T>.Find<TE>()
+  fullName: CoreWCF.ExtensionCollection<T>.Find<TE>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public TE Find<TE>()
+    typeParameters:
+    - id: TE
+    return:
+      type: '{TE}'
+    content.vb: Public Function Find(Of TE) As TE
+  overload: CoreWCF.ExtensionCollection`1.Find*
+  implements:
+  - CoreWCF.IExtensionCollection{{T}}.Find``1
+  nameWithType.vb: ExtensionCollection(Of T).Find(Of TE)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).Find(Of TE)()
+  name.vb: Find(Of TE)()
+- uid: CoreWCF.ExtensionCollection`1.FindAll``1
+  commentId: M:CoreWCF.ExtensionCollection`1.FindAll``1
+  id: FindAll``1
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: FindAll<TE>()
+  nameWithType: ExtensionCollection<T>.FindAll<TE>()
+  fullName: CoreWCF.ExtensionCollection<T>.FindAll<TE>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public Collection<TE> FindAll<TE>()
+    typeParameters:
+    - id: TE
+    return:
+      type: System.Collections.ObjectModel.Collection{{TE}}
+    content.vb: Public Function FindAll(Of TE) As Collection(Of TE)
+  overload: CoreWCF.ExtensionCollection`1.FindAll*
+  implements:
+  - CoreWCF.IExtensionCollection{{T}}.FindAll``1
+  nameWithType.vb: ExtensionCollection(Of T).FindAll(Of TE)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).FindAll(Of TE)()
+  name.vb: FindAll(Of TE)()
+- uid: CoreWCF.ExtensionCollection`1.InsertItem(System.Int32,CoreWCF.IExtension{`0})
+  commentId: M:CoreWCF.ExtensionCollection`1.InsertItem(System.Int32,CoreWCF.IExtension{`0})
+  id: InsertItem(System.Int32,CoreWCF.IExtension{`0})
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: InsertItem(Int32, IExtension<T>)
+  nameWithType: ExtensionCollection<T>.InsertItem(Int32, IExtension<T>)
+  fullName: CoreWCF.ExtensionCollection<T>.InsertItem(System.Int32, CoreWCF.IExtension<T>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected override void InsertItem(int index, IExtension<T> item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: CoreWCF.IExtension{{T}}
+    content.vb: Protected Overrides Sub InsertItem(index As Integer, item As IExtension(Of T))
+  overridden: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.InsertItem(System.Int32,CoreWCF.IExtension{{T}})
+  overload: CoreWCF.ExtensionCollection`1.InsertItem*
+  nameWithType.vb: ExtensionCollection(Of T).InsertItem(Int32, IExtension(Of T))
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).InsertItem(System.Int32, CoreWCF.IExtension(Of T))
+  name.vb: InsertItem(Int32, IExtension(Of T))
+- uid: CoreWCF.ExtensionCollection`1.RemoveItem(System.Int32)
+  commentId: M:CoreWCF.ExtensionCollection`1.RemoveItem(System.Int32)
+  id: RemoveItem(System.Int32)
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveItem(Int32)
+  nameWithType: ExtensionCollection<T>.RemoveItem(Int32)
+  fullName: CoreWCF.ExtensionCollection<T>.RemoveItem(System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected override void RemoveItem(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    content.vb: Protected Overrides Sub RemoveItem(index As Integer)
+  overridden: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.RemoveItem(System.Int32)
+  overload: CoreWCF.ExtensionCollection`1.RemoveItem*
+  nameWithType.vb: ExtensionCollection(Of T).RemoveItem(Int32)
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).RemoveItem(System.Int32)
+- uid: CoreWCF.ExtensionCollection`1.SetItem(System.Int32,CoreWCF.IExtension{`0})
+  commentId: M:CoreWCF.ExtensionCollection`1.SetItem(System.Int32,CoreWCF.IExtension{`0})
+  id: SetItem(System.Int32,CoreWCF.IExtension{`0})
+  parent: CoreWCF.ExtensionCollection`1
+  langs:
+  - csharp
+  - vb
+  name: SetItem(Int32, IExtension<T>)
+  nameWithType: ExtensionCollection<T>.SetItem(Int32, IExtension<T>)
+  fullName: CoreWCF.ExtensionCollection<T>.SetItem(System.Int32, CoreWCF.IExtension<T>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected override void SetItem(int index, IExtension<T> item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: CoreWCF.IExtension{{T}}
+    content.vb: Protected Overrides Sub SetItem(index As Integer, item As IExtension(Of T))
+  overridden: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.SetItem(System.Int32,CoreWCF.IExtension{{T}})
+  overload: CoreWCF.ExtensionCollection`1.SetItem*
+  nameWithType.vb: ExtensionCollection(Of T).SetItem(Int32, IExtension(Of T))
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).SetItem(System.Int32, CoreWCF.IExtension(Of T))
+  name.vb: SetItem(Int32, IExtension(Of T))
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  name: SynchronizedCollection<IExtension<T>>
+  nameWithType: SynchronizedCollection<IExtension<T>>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T))
+  name.vb: SynchronizedCollection(Of IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList{CoreWCF.IExtension{{T}}}
+  commentId: '!:System.Collections.Generic.IList{CoreWCF.IExtension{`0}}'
+  definition: System.Collections.Generic.IList`1
+  name: IList<IExtension<T>>
+  nameWithType: IList<IExtension<T>>
+  fullName: System.Collections.Generic.IList<CoreWCF.IExtension<T>>
+  nameWithType.vb: IList(Of IExtension(Of T))
+  fullName.vb: System.Collections.Generic.IList(Of CoreWCF.IExtension(Of T))
+  name.vb: IList(Of IExtension(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IList
+  isExternal: true
+  name: IList
+  nameWithType: IList
+  fullName: System.Collections.IList
+- uid: System.Collections.ICollection
+  isExternal: true
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: CoreWCF.IExtensionCollection{{T}}
+  commentId: T:CoreWCF.IExtensionCollection{`0}
+  parent: CoreWCF
+  definition: CoreWCF.IExtensionCollection`1
+  name: IExtensionCollection<T>
+  nameWithType: IExtensionCollection<T>
+  fullName: CoreWCF.IExtensionCollection<T>
+  nameWithType.vb: IExtensionCollection(Of T)
+  fullName.vb: CoreWCF.IExtensionCollection(Of T)
+  name.vb: IExtensionCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{CoreWCF.IExtension{{T}}}
+  commentId: '!:System.Collections.Generic.ICollection{CoreWCF.IExtension{`0}}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<IExtension<T>>
+  nameWithType: ICollection<IExtension<T>>
+  fullName: System.Collections.Generic.ICollection<CoreWCF.IExtension<T>>
+  nameWithType.vb: ICollection(Of IExtension(Of T))
+  fullName.vb: System.Collections.Generic.ICollection(Of CoreWCF.IExtension(Of T))
+  name.vb: ICollection(Of IExtension(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.IExtension{{T}}}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.IExtension{`0}}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<IExtension<T>>
+  nameWithType: IEnumerable<IExtension<T>>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.IExtension<T>>
+  nameWithType.vb: IEnumerable(Of IExtension(Of T))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.IExtension(Of T))
+  name.vb: IEnumerable(Of IExtension(Of T))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Add(CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Add(CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+  name: Add(IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.Add(IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Add(CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Add(IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Add(CoreWCF.IExtension(Of T))
+  name.vb: Add(IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+    name: Add
+    nameWithType: SynchronizedCollection<IExtension<T>>.Add
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+    name: Add
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).Add
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Clear
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Clear
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+  name: Clear()
+  nameWithType: SynchronizedCollection<IExtension<T>>.Clear()
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Clear()
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Clear()
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Clear()
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+    name: Clear
+    nameWithType: SynchronizedCollection<IExtension<T>>.Clear
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+    name: Clear
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).Clear
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.CopyTo(CoreWCF.IExtension{{T}}[],System.Int32)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.CopyTo(CoreWCF.IExtension{`0}[],System.Int32)
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(IExtension<T>[], Int32)
+  nameWithType: SynchronizedCollection<IExtension<T>>.CopyTo(IExtension<T>[], Int32)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.CopyTo(CoreWCF.IExtension<T>[], System.Int32)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).CopyTo(IExtension(Of T)(), Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).CopyTo(CoreWCF.IExtension(Of T)(), System.Int32)
+  name.vb: CopyTo(IExtension(Of T)(), Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: SynchronizedCollection<IExtension<T>>.CopyTo
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).CopyTo
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Contains(CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Contains(CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+  name: Contains(IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.Contains(IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Contains(CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Contains(IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Contains(CoreWCF.IExtension(Of T))
+  name.vb: Contains(IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+    name: Contains
+    nameWithType: SynchronizedCollection<IExtension<T>>.Contains
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+    name: Contains
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).Contains
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.GetEnumerator
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.GetEnumerator
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: SynchronizedCollection<IExtension<T>>.GetEnumerator()
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.GetEnumerator()
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).GetEnumerator()
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).GetEnumerator()
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: SynchronizedCollection<IExtension<T>>.GetEnumerator
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).GetEnumerator
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.IndexOf(CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.IndexOf(CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+  name: IndexOf(IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.IndexOf(IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.IndexOf(CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).IndexOf(IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).IndexOf(CoreWCF.IExtension(Of T))
+  name.vb: IndexOf(IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: SynchronizedCollection<IExtension<T>>.IndexOf
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).IndexOf
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Insert(System.Int32,CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Insert(System.Int32,CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+  name: Insert(Int32, IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.Insert(Int32, IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Insert(System.Int32, CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Insert(Int32, IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Insert(System.Int32, CoreWCF.IExtension(Of T))
+  name.vb: Insert(Int32, IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: SynchronizedCollection<IExtension<T>>.Insert
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).Insert
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Remove(CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Remove(CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+  name: Remove(IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.Remove(IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Remove(CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Remove(IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Remove(CoreWCF.IExtension(Of T))
+  name.vb: Remove(IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+    name: Remove
+    nameWithType: SynchronizedCollection<IExtension<T>>.Remove
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+    name: Remove
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).Remove
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.RemoveAt(System.Int32)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.RemoveAt(System.Int32)
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+  name: RemoveAt(Int32)
+  nameWithType: SynchronizedCollection<IExtension<T>>.RemoveAt(Int32)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.RemoveAt(System.Int32)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).RemoveAt(Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).RemoveAt(System.Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: SynchronizedCollection<IExtension<T>>.RemoveAt
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).RemoveAt
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Count
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Count
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Count
+  name: Count
+  nameWithType: SynchronizedCollection<IExtension<T>>.Count
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Count
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Count
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Count
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Items
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Items
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Items
+  name: Items
+  nameWithType: SynchronizedCollection<IExtension<T>>.Items
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Items
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Items
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Items
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.SyncRoot
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.SyncRoot
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.SyncRoot
+  name: SyncRoot
+  nameWithType: SynchronizedCollection<IExtension<T>>.SyncRoot
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.SyncRoot
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).SyncRoot
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).SyncRoot
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.Item(System.Int32)
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.Item(System.Int32)
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+  name: Item[Int32]
+  nameWithType: SynchronizedCollection<IExtension<T>>.Item[Int32]
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Item[System.Int32]
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).Item(Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+    name: Item
+    nameWithType: SynchronizedCollection<IExtension<T>>.Item
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+    name: Item
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).Item
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection`1
+  isExternal: true
+  name: SynchronizedCollection<T>
+  nameWithType: SynchronizedCollection<T>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>
+  nameWithType.vb: SynchronizedCollection(Of T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T)
+  name.vb: SynchronizedCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic
+  commentId: N:CoreWCF.Collections.Generic
+  isExternal: true
+  name: CoreWCF.Collections.Generic
+  nameWithType: CoreWCF.Collections.Generic
+  fullName: CoreWCF.Collections.Generic
+- uid: System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: System.Collections.Generic.IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: System.Collections.Generic.IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtensionCollection`1
+  commentId: T:CoreWCF.IExtensionCollection`1
+  isExternal: true
+  name: IExtensionCollection<T>
+  nameWithType: IExtensionCollection<T>
+  fullName: CoreWCF.IExtensionCollection<T>
+  nameWithType.vb: IExtensionCollection(Of T)
+  fullName.vb: CoreWCF.IExtensionCollection(Of T)
+  name.vb: IExtensionCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<>
+  nameWithType: ICollection<>
+  fullName: System.Collections.Generic.ICollection<>
+  nameWithType.vb: ICollection(Of )
+  fullName.vb: System.Collections.Generic.ICollection(Of )
+  name.vb: ICollection(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+  isExternal: true
+  name: Add(T)
+  nameWithType: SynchronizedCollection<T>.Add(T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Add(T)
+  nameWithType.vb: SynchronizedCollection(Of T).Add(T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Add(T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+    name: Add
+    nameWithType: SynchronizedCollection<T>.Add
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Add(`0)
+    name: Add
+    nameWithType: SynchronizedCollection(Of T).Add
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: SynchronizedCollection<T>.Clear()
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Clear()
+  nameWithType.vb: SynchronizedCollection(Of T).Clear()
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Clear()
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+    name: Clear
+    nameWithType: SynchronizedCollection<T>.Clear
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Clear
+    name: Clear
+    nameWithType: SynchronizedCollection(Of T).Clear
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: SynchronizedCollection<T>.CopyTo(T[], Int32)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: SynchronizedCollection(Of T).CopyTo(T(), Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: SynchronizedCollection<T>.CopyTo
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: SynchronizedCollection(Of T).CopyTo
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+  isExternal: true
+  name: Contains(T)
+  nameWithType: SynchronizedCollection<T>.Contains(T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Contains(T)
+  nameWithType.vb: SynchronizedCollection(Of T).Contains(T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+    name: Contains
+    nameWithType: SynchronizedCollection<T>.Contains
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Contains(`0)
+    name: Contains
+    nameWithType: SynchronizedCollection(Of T).Contains
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: SynchronizedCollection<T>.GetEnumerator()
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.GetEnumerator()
+  nameWithType.vb: SynchronizedCollection(Of T).GetEnumerator()
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: SynchronizedCollection<T>.GetEnumerator
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: SynchronizedCollection(Of T).GetEnumerator
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+  isExternal: true
+  name: IndexOf(T)
+  nameWithType: SynchronizedCollection<T>.IndexOf(T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.IndexOf(T)
+  nameWithType.vb: SynchronizedCollection(Of T).IndexOf(T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).IndexOf(T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: SynchronizedCollection<T>.IndexOf
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: SynchronizedCollection(Of T).IndexOf
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+  isExternal: true
+  name: Insert(Int32, T)
+  nameWithType: SynchronizedCollection<T>.Insert(Int32, T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Insert(System.Int32, T)
+  nameWithType.vb: SynchronizedCollection(Of T).Insert(Int32, T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Insert(System.Int32, T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: SynchronizedCollection<T>.Insert
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: SynchronizedCollection(Of T).Insert
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+  isExternal: true
+  name: Remove(T)
+  nameWithType: SynchronizedCollection<T>.Remove(T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Remove(T)
+  nameWithType.vb: SynchronizedCollection(Of T).Remove(T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+    name: Remove
+    nameWithType: SynchronizedCollection<T>.Remove
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Remove(`0)
+    name: Remove
+    nameWithType: SynchronizedCollection(Of T).Remove
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+  isExternal: true
+  name: RemoveAt(Int32)
+  nameWithType: SynchronizedCollection<T>.RemoveAt(Int32)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.RemoveAt(System.Int32)
+  nameWithType.vb: SynchronizedCollection(Of T).RemoveAt(Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).RemoveAt(System.Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: SynchronizedCollection<T>.RemoveAt
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: SynchronizedCollection(Of T).RemoveAt
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Count
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: SynchronizedCollection<T>.Count
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Count
+  nameWithType.vb: SynchronizedCollection(Of T).Count
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Count
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Items
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection`1.Items
+  isExternal: true
+  name: Items
+  nameWithType: SynchronizedCollection<T>.Items
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Items
+  nameWithType.vb: SynchronizedCollection(Of T).Items
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Items
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.SyncRoot
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection`1.SyncRoot
+  isExternal: true
+  name: SyncRoot
+  nameWithType: SynchronizedCollection<T>.SyncRoot
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.SyncRoot
+  nameWithType.vb: SynchronizedCollection(Of T).SyncRoot
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).SyncRoot
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+  commentId: P:CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+  isExternal: true
+  name: Item[Int32]
+  nameWithType: SynchronizedCollection<T>.Item[Int32]
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Item[System.Int32]
+  nameWithType.vb: SynchronizedCollection(Of T).Item(Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+    name: Item
+    nameWithType: SynchronizedCollection<T>.Item
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.Item(System.Int32)
+    name: Item
+    nameWithType: SynchronizedCollection(Of T).Item
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ExtensionCollection`1.#ctor*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.#ctor
+  isExternal: true
+  name: ExtensionCollection
+  nameWithType: ExtensionCollection<T>.ExtensionCollection
+  fullName: CoreWCF.ExtensionCollection<T>.ExtensionCollection
+  nameWithType.vb: ExtensionCollection(Of T).ExtensionCollection
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).ExtensionCollection
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.ClearItems
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.ClearItems
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+  name: ClearItems()
+  nameWithType: SynchronizedCollection<IExtension<T>>.ClearItems()
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.ClearItems()
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).ClearItems()
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).ClearItems()
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+    name: ClearItems
+    nameWithType: SynchronizedCollection<IExtension<T>>.ClearItems
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+    name: ClearItems
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).ClearItems
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ExtensionCollection`1.ClearItems*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.ClearItems
+  isExternal: true
+  name: ClearItems
+  nameWithType: ExtensionCollection<T>.ClearItems
+  fullName: CoreWCF.ExtensionCollection<T>.ClearItems
+  nameWithType.vb: ExtensionCollection(Of T).ClearItems
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).ClearItems
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+  isExternal: true
+  name: ClearItems()
+  nameWithType: SynchronizedCollection<T>.ClearItems()
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.ClearItems()
+  nameWithType.vb: SynchronizedCollection(Of T).ClearItems()
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).ClearItems()
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+    name: ClearItems
+    nameWithType: SynchronizedCollection<T>.ClearItems
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.ClearItems
+    name: ClearItems
+    nameWithType: SynchronizedCollection(Of T).ClearItems
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).ClearItems
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ExtensionCollection`1.Find*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.Find
+  isExternal: true
+  name: Find
+  nameWithType: ExtensionCollection<T>.Find
+  fullName: CoreWCF.ExtensionCollection<T>.Find
+  nameWithType.vb: ExtensionCollection(Of T).Find
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).Find
+- uid: CoreWCF.IExtensionCollection{{T}}.Find``1
+  commentId: M:CoreWCF.IExtensionCollection{`0}.Find``1
+  parent: CoreWCF.IExtensionCollection{{T}}
+  definition: CoreWCF.IExtensionCollection`1.Find``1
+  name: Find<TE>()
+  nameWithType: IExtensionCollection<T>.Find<TE>()
+  fullName: CoreWCF.IExtensionCollection<T>.Find<TE>()
+  nameWithType.vb: IExtensionCollection(Of T).Find(Of TE)()
+  fullName.vb: CoreWCF.IExtensionCollection(Of T).Find(Of TE)()
+  name.vb: Find(Of TE)()
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1.Find``1
+    name: Find<TE>
+    nameWithType: IExtensionCollection<T>.Find<TE>
+    fullName: CoreWCF.IExtensionCollection<T>.Find<TE>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1.Find``1
+    name: Find(Of TE)
+    nameWithType: IExtensionCollection(Of T).Find(Of TE)
+    fullName: CoreWCF.IExtensionCollection(Of T).Find(Of TE)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TE}'
+  commentId: '!:TE'
+  definition: TE
+  name: TE
+  nameWithType: TE
+  fullName: TE
+- uid: CoreWCF.IExtensionCollection`1.Find``1
+  commentId: M:CoreWCF.IExtensionCollection`1.Find``1
+  isExternal: true
+  name: Find<E>()
+  nameWithType: IExtensionCollection<T>.Find<E>()
+  fullName: CoreWCF.IExtensionCollection<T>.Find<E>()
+  nameWithType.vb: IExtensionCollection(Of T).Find(Of E)()
+  fullName.vb: CoreWCF.IExtensionCollection(Of T).Find(Of E)()
+  name.vb: Find(Of E)()
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1.Find``1
+    name: Find<E>
+    nameWithType: IExtensionCollection<T>.Find<E>
+    fullName: CoreWCF.IExtensionCollection<T>.Find<E>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1.Find``1
+    name: Find(Of E)
+    nameWithType: IExtensionCollection(Of T).Find(Of E)
+    fullName: CoreWCF.IExtensionCollection(Of T).Find(Of E)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TE
+  commentId: '!:TE'
+  name: TE
+  nameWithType: TE
+  fullName: TE
+- uid: CoreWCF.ExtensionCollection`1.FindAll*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.FindAll
+  isExternal: true
+  name: FindAll
+  nameWithType: ExtensionCollection<T>.FindAll
+  fullName: CoreWCF.ExtensionCollection<T>.FindAll
+  nameWithType.vb: ExtensionCollection(Of T).FindAll
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).FindAll
+- uid: CoreWCF.IExtensionCollection{{T}}.FindAll``1
+  commentId: M:CoreWCF.IExtensionCollection{`0}.FindAll``1
+  parent: CoreWCF.IExtensionCollection{{T}}
+  definition: CoreWCF.IExtensionCollection`1.FindAll``1
+  name: FindAll<TE>()
+  nameWithType: IExtensionCollection<T>.FindAll<TE>()
+  fullName: CoreWCF.IExtensionCollection<T>.FindAll<TE>()
+  nameWithType.vb: IExtensionCollection(Of T).FindAll(Of TE)()
+  fullName.vb: CoreWCF.IExtensionCollection(Of T).FindAll(Of TE)()
+  name.vb: FindAll(Of TE)()
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1.FindAll``1
+    name: FindAll<TE>
+    nameWithType: IExtensionCollection<T>.FindAll<TE>
+    fullName: CoreWCF.IExtensionCollection<T>.FindAll<TE>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1.FindAll``1
+    name: FindAll(Of TE)
+    nameWithType: IExtensionCollection(Of T).FindAll(Of TE)
+    fullName: CoreWCF.IExtensionCollection(Of T).FindAll(Of TE)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection{{TE}}
+  commentId: '!:System.Collections.ObjectModel.Collection{``0}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<TE>
+  nameWithType: Collection<TE>
+  fullName: System.Collections.ObjectModel.Collection<TE>
+  nameWithType.vb: Collection(Of TE)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of TE)
+  name.vb: Collection(Of TE)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TE
+    nameWithType: TE
+    fullName: TE
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TE
+    nameWithType: TE
+    fullName: TE
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtensionCollection`1.FindAll``1
+  commentId: M:CoreWCF.IExtensionCollection`1.FindAll``1
+  isExternal: true
+  name: FindAll<E>()
+  nameWithType: IExtensionCollection<T>.FindAll<E>()
+  fullName: CoreWCF.IExtensionCollection<T>.FindAll<E>()
+  nameWithType.vb: IExtensionCollection(Of T).FindAll(Of E)()
+  fullName.vb: CoreWCF.IExtensionCollection(Of T).FindAll(Of E)()
+  name.vb: FindAll(Of E)()
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1.FindAll``1
+    name: FindAll<E>
+    nameWithType: IExtensionCollection<T>.FindAll<E>
+    fullName: CoreWCF.IExtensionCollection<T>.FindAll<E>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1.FindAll``1
+    name: FindAll(Of E)
+    nameWithType: IExtensionCollection(Of T).FindAll(Of E)
+    fullName: CoreWCF.IExtensionCollection(Of T).FindAll(Of E)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.InsertItem(System.Int32,CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.InsertItem(System.Int32,CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+  name: InsertItem(Int32, IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.InsertItem(Int32, IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.InsertItem(System.Int32, CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).InsertItem(Int32, IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).InsertItem(System.Int32, CoreWCF.IExtension(Of T))
+  name.vb: InsertItem(Int32, IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: SynchronizedCollection<IExtension<T>>.InsertItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).InsertItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ExtensionCollection`1.InsertItem*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.InsertItem
+  isExternal: true
+  name: InsertItem
+  nameWithType: ExtensionCollection<T>.InsertItem
+  fullName: CoreWCF.ExtensionCollection<T>.InsertItem
+  nameWithType.vb: ExtensionCollection(Of T).InsertItem
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).InsertItem
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IExtension{{T}}
+  commentId: T:CoreWCF.IExtension{`0}
+  parent: CoreWCF
+  definition: CoreWCF.IExtension`1
+  name: IExtension<T>
+  nameWithType: IExtension<T>
+  fullName: CoreWCF.IExtension<T>
+  nameWithType.vb: IExtension(Of T)
+  fullName.vb: CoreWCF.IExtension(Of T)
+  name.vb: IExtension(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+  isExternal: true
+  name: InsertItem(Int32, T)
+  nameWithType: SynchronizedCollection<T>.InsertItem(Int32, T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.InsertItem(System.Int32, T)
+  nameWithType.vb: SynchronizedCollection(Of T).InsertItem(Int32, T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).InsertItem(System.Int32, T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: SynchronizedCollection<T>.InsertItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.InsertItem(System.Int32,`0)
+    name: InsertItem
+    nameWithType: SynchronizedCollection(Of T).InsertItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).InsertItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtension`1
+  commentId: T:CoreWCF.IExtension`1
+  isExternal: true
+  name: IExtension<T>
+  nameWithType: IExtension<T>
+  fullName: CoreWCF.IExtension<T>
+  nameWithType.vb: IExtension(Of T)
+  fullName.vb: CoreWCF.IExtension(Of T)
+  name.vb: IExtension(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.RemoveItem(System.Int32)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.RemoveItem(System.Int32)
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+  name: RemoveItem(Int32)
+  nameWithType: SynchronizedCollection<IExtension<T>>.RemoveItem(Int32)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.RemoveItem(System.Int32)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).RemoveItem(Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).RemoveItem(System.Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: SynchronizedCollection<IExtension<T>>.RemoveItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).RemoveItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ExtensionCollection`1.RemoveItem*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.RemoveItem
+  isExternal: true
+  name: RemoveItem
+  nameWithType: ExtensionCollection<T>.RemoveItem
+  fullName: CoreWCF.ExtensionCollection<T>.RemoveItem
+  nameWithType.vb: ExtensionCollection(Of T).RemoveItem
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).RemoveItem
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+  isExternal: true
+  name: RemoveItem(Int32)
+  nameWithType: SynchronizedCollection<T>.RemoveItem(Int32)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.RemoveItem(System.Int32)
+  nameWithType.vb: SynchronizedCollection(Of T).RemoveItem(Int32)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).RemoveItem(System.Int32)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: SynchronizedCollection<T>.RemoveItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.RemoveItem(System.Int32)
+    name: RemoveItem
+    nameWithType: SynchronizedCollection(Of T).RemoveItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).RemoveItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}.SetItem(System.Int32,CoreWCF.IExtension{{T}})
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{`0}}.SetItem(System.Int32,CoreWCF.IExtension{`0})
+  parent: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.IExtension{{T}}}
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+  name: SetItem(Int32, IExtension<T>)
+  nameWithType: SynchronizedCollection<IExtension<T>>.SetItem(Int32, IExtension<T>)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.SetItem(System.Int32, CoreWCF.IExtension<T>)
+  nameWithType.vb: SynchronizedCollection(Of IExtension(Of T)).SetItem(Int32, IExtension(Of T))
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).SetItem(System.Int32, CoreWCF.IExtension(Of T))
+  name.vb: SetItem(Int32, IExtension(Of T))
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: SynchronizedCollection<IExtension<T>>.SetItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.IExtension<T>>.SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: SynchronizedCollection(Of IExtension(Of T)).SetItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.IExtension(Of T)).SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ExtensionCollection`1.SetItem*
+  commentId: Overload:CoreWCF.ExtensionCollection`1.SetItem
+  isExternal: true
+  name: SetItem
+  nameWithType: ExtensionCollection<T>.SetItem
+  fullName: CoreWCF.ExtensionCollection<T>.SetItem
+  nameWithType.vb: ExtensionCollection(Of T).SetItem
+  fullName.vb: CoreWCF.ExtensionCollection(Of T).SetItem
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+  commentId: M:CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+  isExternal: true
+  name: SetItem(Int32, T)
+  nameWithType: SynchronizedCollection<T>.SetItem(Int32, T)
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.SetItem(System.Int32, T)
+  nameWithType.vb: SynchronizedCollection(Of T).SetItem(Int32, T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).SetItem(System.Int32, T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: SynchronizedCollection<T>.SetItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>.SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1.SetItem(System.Int32,`0)
+    name: SetItem
+    nameWithType: SynchronizedCollection(Of T).SetItem
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection(Of T).SetItem
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,476 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.ServiceEndpointCollection
+  commentId: T:CoreWCF.Description.ServiceEndpointCollection
+  id: ServiceEndpointCollection
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.ServiceEndpointCollection.Find(System.Type)
+  - CoreWCF.Description.ServiceEndpointCollection.Find(System.Type,System.Xml.XmlQualifiedName)
+  - CoreWCF.Description.ServiceEndpointCollection.Find(System.Uri)
+  - CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName)
+  - CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)
+  - CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Type)
+  - CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Xml.XmlQualifiedName)
+  - CoreWCF.Description.ServiceEndpointCollection.InsertItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.ServiceEndpointCollection.SetItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  langs:
+  - csharp
+  - vb
+  name: ServiceEndpointCollection
+  nameWithType: ServiceEndpointCollection
+  fullName: CoreWCF.Description.ServiceEndpointCollection
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: A collection that contains the endpoints for a service.
+  remarks: "This collection of endpoints for a service is used by the metadata API to manage services with multiple endpoints. &lt;xref:CoreWCF.Description.ServiceEndpointCollection> is returned, for example, by the &lt;xref:CoreWCF.Description.ServiceDescription.Endpoints%2A> property and by the &lt;xref:CoreWCF.Description.WsdlImporter.ImportAllEndpoints%2A> method when creating service endpoints from WSDL port types.  \n\nThe collection provides the functionality to &lt;xref:CoreWCF.Description.ServiceEndpointCollection.Find%2A> the endpoints of a particular type, that have a specific name or address, or to &lt;xref:CoreWCF.Description.ServiceEndpointCollection.FindAll%2A> of the endpoints for a service that meet a specified contract type or name criteria.  \n\n\n\n"
+  syntax:
+    content: 'public class ServiceEndpointCollection : Collection<ServiceEndpoint>'
+    content.vb: >-
+      Public Class ServiceEndpointCollection
+          Inherits Collection(Of ServiceEndpoint)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.ServiceEndpointCollection.Find(System.Type)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.Find(System.Type)
+  id: Find(System.Type)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: Find(Type)
+  nameWithType: ServiceEndpointCollection.Find(Type)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.Find(System.Type)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint Find(Type contractType)
+    parameters:
+    - id: contractType
+      type: System.Type
+    return:
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Function Find(contractType As Type) As ServiceEndpoint
+  overload: CoreWCF.Description.ServiceEndpointCollection.Find*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName)
+  id: Find(System.Xml.XmlQualifiedName)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: Find(XmlQualifiedName)
+  nameWithType: ServiceEndpointCollection.Find(XmlQualifiedName)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint Find(XmlQualifiedName contractName)
+    parameters:
+    - id: contractName
+      type: System.Xml.XmlQualifiedName
+    return:
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Function Find(contractName As XmlQualifiedName) As ServiceEndpoint
+  overload: CoreWCF.Description.ServiceEndpointCollection.Find*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.Find(System.Type,System.Xml.XmlQualifiedName)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.Find(System.Type,System.Xml.XmlQualifiedName)
+  id: Find(System.Type,System.Xml.XmlQualifiedName)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: Find(Type, XmlQualifiedName)
+  nameWithType: ServiceEndpointCollection.Find(Type, XmlQualifiedName)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.Find(System.Type, System.Xml.XmlQualifiedName)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint Find(Type contractType, XmlQualifiedName bindingName)
+    parameters:
+    - id: contractType
+      type: System.Type
+    - id: bindingName
+      type: System.Xml.XmlQualifiedName
+    return:
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Function Find(contractType As Type, bindingName As XmlQualifiedName) As ServiceEndpoint
+  overload: CoreWCF.Description.ServiceEndpointCollection.Find*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)
+  id: Find(System.Xml.XmlQualifiedName,System.Xml.XmlQualifiedName)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: Find(XmlQualifiedName, XmlQualifiedName)
+  nameWithType: ServiceEndpointCollection.Find(XmlQualifiedName, XmlQualifiedName)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.Find(System.Xml.XmlQualifiedName, System.Xml.XmlQualifiedName)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint Find(XmlQualifiedName contractName, XmlQualifiedName bindingName)
+    parameters:
+    - id: contractName
+      type: System.Xml.XmlQualifiedName
+    - id: bindingName
+      type: System.Xml.XmlQualifiedName
+    return:
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Function Find(contractName As XmlQualifiedName, bindingName As XmlQualifiedName) As ServiceEndpoint
+  overload: CoreWCF.Description.ServiceEndpointCollection.Find*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.Find(System.Uri)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.Find(System.Uri)
+  id: Find(System.Uri)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: Find(Uri)
+  nameWithType: ServiceEndpointCollection.Find(Uri)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.Find(System.Uri)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint Find(Uri address)
+    parameters:
+    - id: address
+      type: System.Uri
+    return:
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Function Find(address As Uri) As ServiceEndpoint
+  overload: CoreWCF.Description.ServiceEndpointCollection.Find*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Type)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Type)
+  id: FindAll(System.Type)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: FindAll(Type)
+  nameWithType: ServiceEndpointCollection.FindAll(Type)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Type)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Collection<ServiceEndpoint> FindAll(Type contractType)
+    parameters:
+    - id: contractType
+      type: System.Type
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}
+    content.vb: Public Function FindAll(contractType As Type) As Collection(Of ServiceEndpoint)
+  overload: CoreWCF.Description.ServiceEndpointCollection.FindAll*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Xml.XmlQualifiedName)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Xml.XmlQualifiedName)
+  id: FindAll(System.Xml.XmlQualifiedName)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: FindAll(XmlQualifiedName)
+  nameWithType: ServiceEndpointCollection.FindAll(XmlQualifiedName)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.FindAll(System.Xml.XmlQualifiedName)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Collection<ServiceEndpoint> FindAll(XmlQualifiedName contractName)
+    parameters:
+    - id: contractName
+      type: System.Xml.XmlQualifiedName
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}
+    content.vb: Public Function FindAll(contractName As XmlQualifiedName) As Collection(Of ServiceEndpoint)
+  overload: CoreWCF.Description.ServiceEndpointCollection.FindAll*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpointCollection.InsertItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.InsertItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  id: InsertItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: InsertItem(Int32, ServiceEndpoint)
+  nameWithType: ServiceEndpointCollection.InsertItem(Int32, ServiceEndpoint)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.InsertItem(System.Int32, CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected override void InsertItem(int index, ServiceEndpoint item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Protected Overrides Sub InsertItem(index As Integer, item As ServiceEndpoint)
+  overload: CoreWCF.Description.ServiceEndpointCollection.InsertItem*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Description.ServiceEndpointCollection.SetItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.ServiceEndpointCollection.SetItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  id: SetItem(System.Int32,CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.ServiceEndpointCollection
+  langs:
+  - csharp
+  - vb
+  name: SetItem(Int32, ServiceEndpoint)
+  nameWithType: ServiceEndpointCollection.SetItem(Int32, ServiceEndpoint)
+  fullName: CoreWCF.Description.ServiceEndpointCollection.SetItem(System.Int32, CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected override void SetItem(int index, ServiceEndpoint item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Protected Overrides Sub SetItem(index As Integer, item As ServiceEndpoint)
+  overload: CoreWCF.Description.ServiceEndpointCollection.SetItem*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.ServiceEndpointCollection.Find*
+  commentId: Overload:CoreWCF.Description.ServiceEndpointCollection.Find
+  isExternal: true
+  name: Find
+  nameWithType: ServiceEndpointCollection.Find
+  fullName: CoreWCF.Description.ServiceEndpointCollection.Find
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: System.Xml.XmlQualifiedName
+  isExternal: true
+  name: XmlQualifiedName
+  nameWithType: XmlQualifiedName
+  fullName: System.Xml.XmlQualifiedName
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.Description.ServiceEndpointCollection.FindAll*
+  commentId: Overload:CoreWCF.Description.ServiceEndpointCollection.FindAll
+  isExternal: true
+  name: FindAll
+  nameWithType: ServiceEndpointCollection.FindAll
+  fullName: CoreWCF.Description.ServiceEndpointCollection.FindAll
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<ServiceEndpoint>
+  nameWithType: Collection<ServiceEndpoint>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.Description.ServiceEndpoint>
+  nameWithType.vb: Collection(Of ServiceEndpoint)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.Description.ServiceEndpoint)
+  name.vb: Collection(Of ServiceEndpoint)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ServiceEndpointCollection.InsertItem*
+  commentId: Overload:CoreWCF.Description.ServiceEndpointCollection.InsertItem
+  isExternal: true
+  name: InsertItem
+  nameWithType: ServiceEndpointCollection.InsertItem
+  fullName: CoreWCF.Description.ServiceEndpointCollection.InsertItem
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Description.ServiceEndpointCollection.SetItem*
+  commentId: Overload:CoreWCF.Description.ServiceEndpointCollection.SetItem
+  isExternal: true
+  name: SetItem
+  nameWithType: ServiceEndpointCollection.SetItem
+  fullName: CoreWCF.Description.ServiceEndpointCollection.SetItem

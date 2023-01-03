@@ -1,0 +1,895 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.UriTemplate
+  commentId: T:CoreWCF.UriTemplate
+  id: UriTemplate
+  parent: CoreWCF
+  children:
+  - CoreWCF.UriTemplate.#ctor(System.String)
+  - CoreWCF.UriTemplate.#ctor(System.String,System.Boolean)
+  - CoreWCF.UriTemplate.#ctor(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})
+  - CoreWCF.UriTemplate.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})
+  - CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})
+  - CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+  - CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Specialized.NameValueCollection)
+  - CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Specialized.NameValueCollection,System.Boolean)
+  - CoreWCF.UriTemplate.BindByPosition(System.Uri,System.String[])
+  - CoreWCF.UriTemplate.Defaults
+  - CoreWCF.UriTemplate.IgnoreTrailingSlash
+  - CoreWCF.UriTemplate.IsEquivalentTo(CoreWCF.UriTemplate)
+  - CoreWCF.UriTemplate.Match(System.Uri,System.Uri)
+  - CoreWCF.UriTemplate.PathSegmentVariableNames
+  - CoreWCF.UriTemplate.QueryValueVariableNames
+  - CoreWCF.UriTemplate.ToString
+  langs:
+  - csharp
+  - vb
+  name: UriTemplate
+  nameWithType: UriTemplate
+  fullName: CoreWCF.UriTemplate
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  summary: A class that represents a Uniform Resource Identifier (URI) template.
+  remarks: "A URI template allows you to define a set of structurally similar URIs. Templates are composed of two parts, a path and a query. A path consists of a series of segments delimited by a slash (/). Each segment can have a literal value, a variable value (written within curly braces [{ }], constrained to match the contents of exactly one segment), or a wildcard (written as an asterisk [*], which matches &quot;the rest of the path&quot;), which must appear at the end of the path. The query expression can be omitted entirely. If present, it specifies an unordered series of name/value pairs. Elements of the query expression can be either literal pairs (?x=2) or variable pairs (?x={val}). Unpaired values are not permitted. The following examples show valid template strings:  \n\n-   &quot;weather/WA/Seattle&quot;  \n\n-   &quot;weather/{state}/{city}&quot;  \n\n-   &quot;weather/*&quot;  \n\n-   &quot;weather/{state}/{city}?forecast=today  \n\n-   &quot;weather/{state}/{city}?forecast={day}  \n\nThe preceding URI templates might be used for organizing weather reports. Segments enclosed in curly braces are variables, everything else is a literal. You can convert a &lt;xref:System.UriTemplate> instance into a &lt;xref:System.Uri> by replacing variables with actual values. For example, taking the template &quot;weather/{state}/{city}&quot; and putting in values for the variables &quot;{state}&quot; and &quot;{city}&quot; gives you &quot;weather/WA/Seattle&quot;. Given a candidate URI, you can test whether it matches a given URI template by calling &lt;xref:System.UriTemplate.Match%28System.Uri%2CSystem.Uri%29>. You can also use &lt;xref:System.UriTemplate> instances to create a &lt;xref:System.Uri> from a set of variable values by calling &lt;xref:System.UriTemplate.BindByName%28System.Uri%2CSystem.Collections.Specialized.NameValueCollection%29> or &lt;xref:System.UriTemplate.BindByPosition%28System.Uri%2CSystem.String%5B%5D%29>.  \n\n\n\n"
+  syntax:
+    content: 'public class UriTemplate : Object'
+    content.vb: >-
+      Public Class UriTemplate
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.UriTemplate.#ctor(System.String)
+  commentId: M:CoreWCF.UriTemplate.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: UriTemplate(String)
+  nameWithType: UriTemplate.UriTemplate(String)
+  fullName: CoreWCF.UriTemplate.UriTemplate(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplate(string template)
+    parameters:
+    - id: template
+      type: System.String
+    content.vb: Public Sub New(template As String)
+  overload: CoreWCF.UriTemplate.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplate.#ctor(System.String,System.Boolean)
+  commentId: M:CoreWCF.UriTemplate.#ctor(System.String,System.Boolean)
+  id: '#ctor(System.String,System.Boolean)'
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: UriTemplate(String, Boolean)
+  nameWithType: UriTemplate.UriTemplate(String, Boolean)
+  fullName: CoreWCF.UriTemplate.UriTemplate(System.String, System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplate(string template, bool ignoreTrailingSlash)
+    parameters:
+    - id: template
+      type: System.String
+    - id: ignoreTrailingSlash
+      type: System.Boolean
+    content.vb: Public Sub New(template As String, ignoreTrailingSlash As Boolean)
+  overload: CoreWCF.UriTemplate.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplate.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:CoreWCF.UriTemplate.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})
+  id: '#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})'
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: UriTemplate(String, IDictionary<String, String>)
+  nameWithType: UriTemplate.UriTemplate(String, IDictionary<String, String>)
+  fullName: CoreWCF.UriTemplate.UriTemplate(System.String, System.Collections.Generic.IDictionary<System.String, System.String>)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplate(string template, IDictionary<string, string> additionalDefaults)
+    parameters:
+    - id: template
+      type: System.String
+    - id: additionalDefaults
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub New(template As String, additionalDefaults As IDictionary(Of String, String))
+  overload: CoreWCF.UriTemplate.#ctor*
+  nameWithType.vb: UriTemplate.UriTemplate(String, IDictionary(Of String, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplate.UriTemplate(System.String, System.Collections.Generic.IDictionary(Of System.String, System.String))
+  name.vb: UriTemplate(String, IDictionary(Of String, String))
+- uid: CoreWCF.UriTemplate.#ctor(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:CoreWCF.UriTemplate.#ctor(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})
+  id: '#ctor(System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})'
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: UriTemplate(String, Boolean, IDictionary<String, String>)
+  nameWithType: UriTemplate.UriTemplate(String, Boolean, IDictionary<String, String>)
+  fullName: CoreWCF.UriTemplate.UriTemplate(System.String, System.Boolean, System.Collections.Generic.IDictionary<System.String, System.String>)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplate(string template, bool ignoreTrailingSlash, IDictionary<string, string> additionalDefaults)
+    parameters:
+    - id: template
+      type: System.String
+    - id: ignoreTrailingSlash
+      type: System.Boolean
+    - id: additionalDefaults
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public Sub New(template As String, ignoreTrailingSlash As Boolean, additionalDefaults As IDictionary(Of String, String))
+  overload: CoreWCF.UriTemplate.#ctor*
+  nameWithType.vb: UriTemplate.UriTemplate(String, Boolean, IDictionary(Of String, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplate.UriTemplate(System.String, System.Boolean, System.Collections.Generic.IDictionary(Of System.String, System.String))
+  name.vb: UriTemplate(String, Boolean, IDictionary(Of String, String))
+- uid: CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})
+  commentId: M:CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})
+  id: BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: BindByName(Uri, IDictionary<String, String>)
+  nameWithType: UriTemplate.BindByName(Uri, IDictionary<String, String>)
+  fullName: CoreWCF.UriTemplate.BindByName(System.Uri, System.Collections.Generic.IDictionary<System.String, System.String>)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri BindByName(Uri baseAddress, IDictionary<string, string> parameters)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: parameters
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    return:
+      type: System.Uri
+    content.vb: Public Function BindByName(baseAddress As Uri, parameters As IDictionary(Of String, String)) As Uri
+  overload: CoreWCF.UriTemplate.BindByName*
+  nameWithType.vb: UriTemplate.BindByName(Uri, IDictionary(Of String, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplate.BindByName(System.Uri, System.Collections.Generic.IDictionary(Of System.String, System.String))
+  name.vb: BindByName(Uri, IDictionary(Of String, String))
+- uid: CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+  commentId: M:CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+  id: BindByName(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean)
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: BindByName(Uri, IDictionary<String, String>, Boolean)
+  nameWithType: UriTemplate.BindByName(Uri, IDictionary<String, String>, Boolean)
+  fullName: CoreWCF.UriTemplate.BindByName(System.Uri, System.Collections.Generic.IDictionary<System.String, System.String>, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri BindByName(Uri baseAddress, IDictionary<string, string> parameters, bool omitDefaults)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: parameters
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    - id: omitDefaults
+      type: System.Boolean
+    return:
+      type: System.Uri
+    content.vb: Public Function BindByName(baseAddress As Uri, parameters As IDictionary(Of String, String), omitDefaults As Boolean) As Uri
+  overload: CoreWCF.UriTemplate.BindByName*
+  nameWithType.vb: UriTemplate.BindByName(Uri, IDictionary(Of String, String), Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplate.BindByName(System.Uri, System.Collections.Generic.IDictionary(Of System.String, System.String), System.Boolean)
+  name.vb: BindByName(Uri, IDictionary(Of String, String), Boolean)
+- uid: CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Specialized.NameValueCollection)
+  commentId: M:CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Specialized.NameValueCollection)
+  id: BindByName(System.Uri,System.Collections.Specialized.NameValueCollection)
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: BindByName(Uri, NameValueCollection)
+  nameWithType: UriTemplate.BindByName(Uri, NameValueCollection)
+  fullName: CoreWCF.UriTemplate.BindByName(System.Uri, System.Collections.Specialized.NameValueCollection)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri BindByName(Uri baseAddress, NameValueCollection parameters)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: parameters
+      type: System.Collections.Specialized.NameValueCollection
+    return:
+      type: System.Uri
+    content.vb: Public Function BindByName(baseAddress As Uri, parameters As NameValueCollection) As Uri
+  overload: CoreWCF.UriTemplate.BindByName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Specialized.NameValueCollection,System.Boolean)
+  commentId: M:CoreWCF.UriTemplate.BindByName(System.Uri,System.Collections.Specialized.NameValueCollection,System.Boolean)
+  id: BindByName(System.Uri,System.Collections.Specialized.NameValueCollection,System.Boolean)
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: BindByName(Uri, NameValueCollection, Boolean)
+  nameWithType: UriTemplate.BindByName(Uri, NameValueCollection, Boolean)
+  fullName: CoreWCF.UriTemplate.BindByName(System.Uri, System.Collections.Specialized.NameValueCollection, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri BindByName(Uri baseAddress, NameValueCollection parameters, bool omitDefaults)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: parameters
+      type: System.Collections.Specialized.NameValueCollection
+    - id: omitDefaults
+      type: System.Boolean
+    return:
+      type: System.Uri
+    content.vb: Public Function BindByName(baseAddress As Uri, parameters As NameValueCollection, omitDefaults As Boolean) As Uri
+  overload: CoreWCF.UriTemplate.BindByName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplate.BindByPosition(System.Uri,System.String[])
+  commentId: M:CoreWCF.UriTemplate.BindByPosition(System.Uri,System.String[])
+  id: BindByPosition(System.Uri,System.String[])
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: BindByPosition(Uri, String[])
+  nameWithType: UriTemplate.BindByPosition(Uri, String[])
+  fullName: CoreWCF.UriTemplate.BindByPosition(System.Uri, System.String[])
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri BindByPosition(Uri baseAddress, params string[] values)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: values
+      type: System.String[]
+    return:
+      type: System.Uri
+    content.vb: Public Function BindByPosition(baseAddress As Uri, ParamArray values As String()) As Uri
+  overload: CoreWCF.UriTemplate.BindByPosition*
+  nameWithType.vb: UriTemplate.BindByPosition(Uri, String())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplate.BindByPosition(System.Uri, System.String())
+  name.vb: BindByPosition(Uri, String())
+- uid: CoreWCF.UriTemplate.IsEquivalentTo(CoreWCF.UriTemplate)
+  commentId: M:CoreWCF.UriTemplate.IsEquivalentTo(CoreWCF.UriTemplate)
+  id: IsEquivalentTo(CoreWCF.UriTemplate)
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: IsEquivalentTo(UriTemplate)
+  nameWithType: UriTemplate.IsEquivalentTo(UriTemplate)
+  fullName: CoreWCF.UriTemplate.IsEquivalentTo(CoreWCF.UriTemplate)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsEquivalentTo(UriTemplate other)
+    parameters:
+    - id: other
+      type: CoreWCF.UriTemplate
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsEquivalentTo(other As UriTemplate) As Boolean
+  overload: CoreWCF.UriTemplate.IsEquivalentTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplate.Match(System.Uri,System.Uri)
+  commentId: M:CoreWCF.UriTemplate.Match(System.Uri,System.Uri)
+  id: Match(System.Uri,System.Uri)
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: Match(Uri, Uri)
+  nameWithType: UriTemplate.Match(Uri, Uri)
+  fullName: CoreWCF.UriTemplate.Match(System.Uri, System.Uri)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplateMatch Match(Uri baseAddress, Uri candidate)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: candidate
+      type: System.Uri
+    return:
+      type: CoreWCF.UriTemplateMatch
+    content.vb: Public Function Match(baseAddress As Uri, candidate As Uri) As UriTemplateMatch
+  overload: CoreWCF.UriTemplate.Match*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplate.ToString
+  commentId: M:CoreWCF.UriTemplate.ToString
+  id: ToString
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: UriTemplate.ToString()
+  fullName: CoreWCF.UriTemplate.ToString()
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.UriTemplate.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.UriTemplate.Defaults
+  commentId: P:CoreWCF.UriTemplate.Defaults
+  id: Defaults
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: Defaults
+  nameWithType: UriTemplate.Defaults
+  fullName: CoreWCF.UriTemplate.Defaults
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public IDictionary<string, string> Defaults { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public ReadOnly Property Defaults As IDictionary(Of String, String)
+  overload: CoreWCF.UriTemplate.Defaults*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.UriTemplate.IgnoreTrailingSlash
+  commentId: P:CoreWCF.UriTemplate.IgnoreTrailingSlash
+  id: IgnoreTrailingSlash
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: IgnoreTrailingSlash
+  nameWithType: UriTemplate.IgnoreTrailingSlash
+  fullName: CoreWCF.UriTemplate.IgnoreTrailingSlash
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public bool IgnoreTrailingSlash { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IgnoreTrailingSlash As Boolean
+  overload: CoreWCF.UriTemplate.IgnoreTrailingSlash*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.UriTemplate.PathSegmentVariableNames
+  commentId: P:CoreWCF.UriTemplate.PathSegmentVariableNames
+  id: PathSegmentVariableNames
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: PathSegmentVariableNames
+  nameWithType: UriTemplate.PathSegmentVariableNames
+  fullName: CoreWCF.UriTemplate.PathSegmentVariableNames
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public ReadOnlyCollection<string> PathSegmentVariableNames { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{System.String}
+    content.vb: Public ReadOnly Property PathSegmentVariableNames As ReadOnlyCollection(Of String)
+  overload: CoreWCF.UriTemplate.PathSegmentVariableNames*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.UriTemplate.QueryValueVariableNames
+  commentId: P:CoreWCF.UriTemplate.QueryValueVariableNames
+  id: QueryValueVariableNames
+  parent: CoreWCF.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: QueryValueVariableNames
+  nameWithType: UriTemplate.QueryValueVariableNames
+  fullName: CoreWCF.UriTemplate.QueryValueVariableNames
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public ReadOnlyCollection<string> QueryValueVariableNames { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{System.String}
+    content.vb: Public ReadOnly Property QueryValueVariableNames As ReadOnlyCollection(Of String)
+  overload: CoreWCF.UriTemplate.QueryValueVariableNames*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.UriTemplate.#ctor*
+  commentId: Overload:CoreWCF.UriTemplate.#ctor
+  isExternal: true
+  name: UriTemplate
+  nameWithType: UriTemplate.UriTemplate
+  fullName: CoreWCF.UriTemplate.UriTemplate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: '!:System.Collections.Generic.IDictionary{System.String,System.String}'
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<String, String>
+  nameWithType: IDictionary<String, String>
+  fullName: System.Collections.Generic.IDictionary<System.String, System.String>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.String, System.String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<, >
+  nameWithType: IDictionary<, >
+  fullName: System.Collections.Generic.IDictionary<, >
+  nameWithType.vb: IDictionary(Of , )
+  fullName.vb: System.Collections.Generic.IDictionary(Of , )
+  name.vb: IDictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.UriTemplate.BindByName*
+  commentId: Overload:CoreWCF.UriTemplate.BindByName
+  isExternal: true
+  name: BindByName
+  nameWithType: UriTemplate.BindByName
+  fullName: CoreWCF.UriTemplate.BindByName
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: System.Collections.Specialized.NameValueCollection
+  isExternal: true
+  name: NameValueCollection
+  nameWithType: NameValueCollection
+  fullName: System.Collections.Specialized.NameValueCollection
+- uid: CoreWCF.UriTemplate.BindByPosition*
+  commentId: Overload:CoreWCF.UriTemplate.BindByPosition
+  isExternal: true
+  name: BindByPosition
+  nameWithType: UriTemplate.BindByPosition
+  fullName: CoreWCF.UriTemplate.BindByPosition
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.UriTemplate.IsEquivalentTo*
+  commentId: Overload:CoreWCF.UriTemplate.IsEquivalentTo
+  isExternal: true
+  name: IsEquivalentTo
+  nameWithType: UriTemplate.IsEquivalentTo
+  fullName: CoreWCF.UriTemplate.IsEquivalentTo
+- uid: CoreWCF.UriTemplate
+  commentId: T:CoreWCF.UriTemplate
+  parent: CoreWCF
+  isExternal: true
+  name: UriTemplate
+  nameWithType: UriTemplate
+  fullName: CoreWCF.UriTemplate
+- uid: CoreWCF.UriTemplate.Match*
+  commentId: Overload:CoreWCF.UriTemplate.Match
+  isExternal: true
+  name: Match
+  nameWithType: UriTemplate.Match
+  fullName: CoreWCF.UriTemplate.Match
+- uid: CoreWCF.UriTemplateMatch
+  commentId: T:CoreWCF.UriTemplateMatch
+  parent: CoreWCF
+  isExternal: true
+  name: UriTemplateMatch
+  nameWithType: UriTemplateMatch
+  fullName: CoreWCF.UriTemplateMatch
+- uid: CoreWCF.UriTemplate.ToString*
+  commentId: Overload:CoreWCF.UriTemplate.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: UriTemplate.ToString
+  fullName: CoreWCF.UriTemplate.ToString
+- uid: CoreWCF.UriTemplate.Defaults*
+  commentId: Overload:CoreWCF.UriTemplate.Defaults
+  isExternal: true
+  name: Defaults
+  nameWithType: UriTemplate.Defaults
+  fullName: CoreWCF.UriTemplate.Defaults
+- uid: CoreWCF.UriTemplate.IgnoreTrailingSlash*
+  commentId: Overload:CoreWCF.UriTemplate.IgnoreTrailingSlash
+  isExternal: true
+  name: IgnoreTrailingSlash
+  nameWithType: UriTemplate.IgnoreTrailingSlash
+  fullName: CoreWCF.UriTemplate.IgnoreTrailingSlash
+- uid: CoreWCF.UriTemplate.PathSegmentVariableNames*
+  commentId: Overload:CoreWCF.UriTemplate.PathSegmentVariableNames
+  isExternal: true
+  name: PathSegmentVariableNames
+  nameWithType: UriTemplate.PathSegmentVariableNames
+  fullName: CoreWCF.UriTemplate.PathSegmentVariableNames
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{System.String}
+  commentId: '!:System.Collections.ObjectModel.ReadOnlyCollection{System.String}'
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<String>
+  nameWithType: ReadOnlyCollection<String>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<System.String>
+  nameWithType.vb: ReadOnlyCollection(Of String)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of System.String)
+  name.vb: ReadOnlyCollection(Of String)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<>
+  nameWithType: ReadOnlyCollection<>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<>
+  nameWithType.vb: ReadOnlyCollection(Of )
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of )
+  name.vb: ReadOnlyCollection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.UriTemplate.QueryValueVariableNames*
+  commentId: Overload:CoreWCF.UriTemplate.QueryValueVariableNames
+  isExternal: true
+  name: QueryValueVariableNames
+  nameWithType: UriTemplate.QueryValueVariableNames
+  fullName: CoreWCF.UriTemplate.QueryValueVariableNames

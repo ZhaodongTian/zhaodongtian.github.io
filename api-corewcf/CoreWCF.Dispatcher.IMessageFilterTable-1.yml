@@ -1,0 +1,503 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1
+  commentId: T:CoreWCF.Dispatcher.IMessageFilterTable`1
+  id: IMessageFilterTable`1
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.Message,CoreWCF.Dispatcher.MessageFilter@)
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.MessageBuffer,CoreWCF.Dispatcher.MessageFilter@)
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.Message,`0@)
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.MessageBuffer,`0@)
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{`0})
+  - CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})
+  langs:
+  - csharp
+  - vb
+  name: IMessageFilterTable<TFilterData>
+  nameWithType: IMessageFilterTable<TFilterData>
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: An  that defines the contract that a filter table must implement to inspect messages with query criteria derived from one or more filters.
+  remarks: "The filter table is a core component of the filter engine. The primary use of the filter engine in Windows Communication Foundation (WCF) is to match application logic to messages by finding all the filters that match a message.  \n\nA filter table allows multiple filters to be matched against a single message more efficiently than they can be matched separately. A filter table associates filter data with filters. The table is a collection of key-value pairs, where the key is the &lt;xref:CoreWCF.Dispatcher.MessageFilter>, and the value is the associated filter data. Filter data can be any data of the type specified in the generic parameter and can be used to specify what actions to take if a message is matched by a filter in the table.  \n\nFilter table entries can be accessed using the &lt;xref:System.Collections.Generic.IDictionary%602> functionality that &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601> inherits.  \n\nNote that a filter instance can only be added to a given &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601> once. To add multiple instances of this filter to the same filter table, use a filter constructor to create additional instances.  \n\nA filter matches a message when the message satisfies the query criteria of the filter. There are four overloaded matching methods. The data returned is either the filter data or the &lt;xref:CoreWCF.Dispatcher.MessageFilter> objects themselves. This data is returned whether multiple matches are allowed or only a single match. The following table shows this information for each overload.  \n\n|Method Name|Matches|Data Returned|  \n|-----------------|-------------|-------------------|  \n|&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingValue%2A>|Single|`FilterData`|  \n|&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A>|Single|&lt;xref:CoreWCF.Dispatcher.MessageFilter>|  \n|&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A>|Multiple|`FilterData`|  \n|&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingFilters%2A>|Multiple|&lt;xref:CoreWCF.Dispatcher.MessageFilter> objects|  \n\nEach method contains two overloads. The difference between the two overloads is that one takes a &lt;xref:CoreWCF.Channels.Message> parameter and is not permitted to examine the contents of the body; the other takes a &lt;xref:CoreWCF.Channels.MessageBuffer> parameter and can examine any part of the message. If you call a method with the message parameter, and the filter table contains a filter that examines the content of the message body, an exception is thrown. If you are unsure about the filters in a table, call the overload that takes a message buffer.  \n\nMessage headers are automatically buffered and can be inspected by a filter without being consumed. But if the body is to be inspected by a filter, then the entire message must be buffered because an unbuffered message body is consumed by a query and its contents destroyed.  \n\nThe following classes implement &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601>:  \n\n-   &lt;xref:CoreWCF.Dispatcher.MessageFilterTable%601>  \n\n-   &lt;xref:CoreWCF.Dispatcher.XPathMessageFilterTable%601>  \n\n"
+  syntax:
+    content: public interface IMessageFilterTable<TFilterData>
+    typeParameters:
+    - id: TFilterData
+    content.vb: >-
+      Public Interface IMessageFilterTable(Of TFilterData)
+          Inherits IDictionary(Of MessageFilter, TFilterData), ICollection(Of KeyValuePair(Of MessageFilter, TFilterData)), IEnumerable(Of KeyValuePair(Of MessageFilter, TFilterData)), IEnumerable
+  nameWithType.vb: IMessageFilterTable(Of TFilterData)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData)
+  name.vb: IMessageFilterTable(Of TFilterData)
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.Message,`0@)
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.Message,`0@)
+  id: GetMatchingValue(CoreWCF.Channels.Message,`0@)
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingValue(Message, out TFilterData)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingValue(Message, out TFilterData)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingValue(CoreWCF.Channels.Message, out TFilterData)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingValue(Message message, out TFilterData value)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: value
+      type: '{TFilterData}'
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingValue(message As Message, ByRef value As TFilterData) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingValue(Message, ByRef TFilterData)
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingValue(CoreWCF.Channels.Message, ByRef TFilterData)
+  name.vb: GetMatchingValue(Message, ByRef TFilterData)
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.MessageBuffer,`0@)
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.MessageBuffer,`0@)
+  id: GetMatchingValue(CoreWCF.Channels.MessageBuffer,`0@)
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingValue(MessageBuffer, out TFilterData)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingValue(MessageBuffer, out TFilterData)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingValue(CoreWCF.Channels.MessageBuffer, out TFilterData)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingValue(MessageBuffer messageBuffer, out TFilterData value)
+    parameters:
+    - id: messageBuffer
+      type: CoreWCF.Channels.MessageBuffer
+    - id: value
+      type: '{TFilterData}'
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingValue(messageBuffer As MessageBuffer, ByRef value As TFilterData) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingValue(MessageBuffer, ByRef TFilterData)
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingValue(CoreWCF.Channels.MessageBuffer, ByRef TFilterData)
+  name.vb: GetMatchingValue(MessageBuffer, ByRef TFilterData)
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{`0})
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{`0})
+  id: GetMatchingValues(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{`0})
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingValues(Message, ICollection<TFilterData>)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingValues(Message, ICollection<TFilterData>)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingValues(CoreWCF.Channels.Message, System.Collections.Generic.ICollection<TFilterData>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingValues(Message message, ICollection<TFilterData> results)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: results
+      type: System.Collections.Generic.ICollection{{TFilterData}}
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingValues(message As Message, results As ICollection(Of TFilterData)) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingValues(Message, ICollection(Of TFilterData))
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingValues(CoreWCF.Channels.Message, System.Collections.Generic.ICollection(Of TFilterData))
+  name.vb: GetMatchingValues(Message, ICollection(Of TFilterData))
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})
+  id: GetMatchingValues(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingValues(MessageBuffer, ICollection<TFilterData>)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingValues(MessageBuffer, ICollection<TFilterData>)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingValues(CoreWCF.Channels.MessageBuffer, System.Collections.Generic.ICollection<TFilterData>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingValues(MessageBuffer messageBuffer, ICollection<TFilterData> results)
+    parameters:
+    - id: messageBuffer
+      type: CoreWCF.Channels.MessageBuffer
+    - id: results
+      type: System.Collections.Generic.ICollection{{TFilterData}}
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingValues(messageBuffer As MessageBuffer, results As ICollection(Of TFilterData)) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingValues(MessageBuffer, ICollection(Of TFilterData))
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingValues(CoreWCF.Channels.MessageBuffer, System.Collections.Generic.ICollection(Of TFilterData))
+  name.vb: GetMatchingValues(MessageBuffer, ICollection(Of TFilterData))
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.Message,CoreWCF.Dispatcher.MessageFilter@)
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.Message,CoreWCF.Dispatcher.MessageFilter@)
+  id: GetMatchingFilter(CoreWCF.Channels.Message,CoreWCF.Dispatcher.MessageFilter@)
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingFilter(Message, out MessageFilter)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingFilter(Message, out MessageFilter)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingFilter(CoreWCF.Channels.Message, out CoreWCF.Dispatcher.MessageFilter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingFilter(Message message, out MessageFilter filter)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: filter
+      type: CoreWCF.Dispatcher.MessageFilter
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingFilter(message As Message, ByRef filter As MessageFilter) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingFilter(Message, ByRef MessageFilter)
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingFilter(CoreWCF.Channels.Message, ByRef CoreWCF.Dispatcher.MessageFilter)
+  name.vb: GetMatchingFilter(Message, ByRef MessageFilter)
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.MessageBuffer,CoreWCF.Dispatcher.MessageFilter@)
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.MessageBuffer,CoreWCF.Dispatcher.MessageFilter@)
+  id: GetMatchingFilter(CoreWCF.Channels.MessageBuffer,CoreWCF.Dispatcher.MessageFilter@)
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingFilter(MessageBuffer, out MessageFilter)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingFilter(MessageBuffer, out MessageFilter)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingFilter(CoreWCF.Channels.MessageBuffer, out CoreWCF.Dispatcher.MessageFilter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingFilter(MessageBuffer messageBuffer, out MessageFilter filter)
+    parameters:
+    - id: messageBuffer
+      type: CoreWCF.Channels.MessageBuffer
+    - id: filter
+      type: CoreWCF.Dispatcher.MessageFilter
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingFilter(messageBuffer As MessageBuffer, ByRef filter As MessageFilter) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingFilter(MessageBuffer, ByRef MessageFilter)
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingFilter(CoreWCF.Channels.MessageBuffer, ByRef CoreWCF.Dispatcher.MessageFilter)
+  name.vb: GetMatchingFilter(MessageBuffer, ByRef MessageFilter)
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  id: GetMatchingFilters(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingFilters(Message, ICollection<MessageFilter>)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingFilters(Message, ICollection<MessageFilter>)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingFilters(CoreWCF.Channels.Message, System.Collections.Generic.ICollection<CoreWCF.Dispatcher.MessageFilter>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingFilters(Message message, ICollection<MessageFilter> results)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: results
+      type: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter}
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingFilters(message As Message, results As ICollection(Of MessageFilter)) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingFilters(Message, ICollection(Of MessageFilter))
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingFilters(CoreWCF.Channels.Message, System.Collections.Generic.ICollection(Of CoreWCF.Dispatcher.MessageFilter))
+  name.vb: GetMatchingFilters(Message, ICollection(Of MessageFilter))
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  commentId: M:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  id: GetMatchingFilters(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})
+  parent: CoreWCF.Dispatcher.IMessageFilterTable`1
+  langs:
+  - csharp
+  - vb
+  name: GetMatchingFilters(MessageBuffer, ICollection<MessageFilter>)
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingFilters(MessageBuffer, ICollection<MessageFilter>)
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingFilters(CoreWCF.Channels.MessageBuffer, System.Collections.Generic.ICollection<CoreWCF.Dispatcher.MessageFilter>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool GetMatchingFilters(MessageBuffer messageBuffer, ICollection<MessageFilter> results)
+    parameters:
+    - id: messageBuffer
+      type: CoreWCF.Channels.MessageBuffer
+    - id: results
+      type: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter}
+    return:
+      type: System.Boolean
+    content.vb: Function GetMatchingFilters(messageBuffer As MessageBuffer, results As ICollection(Of MessageFilter)) As Boolean
+  overload: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters*
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingFilters(MessageBuffer, ICollection(Of MessageFilter))
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingFilters(CoreWCF.Channels.MessageBuffer, System.Collections.Generic.ICollection(Of CoreWCF.Dispatcher.MessageFilter))
+  name.vb: GetMatchingFilters(MessageBuffer, ICollection(Of MessageFilter))
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue*
+  commentId: Overload:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue
+  isExternal: true
+  name: GetMatchingValue
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingValue
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingValue
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingValue
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingValue
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: '{TFilterData}'
+  commentId: '!:TFilterData'
+  definition: TFilterData
+  name: TFilterData
+  nameWithType: TFilterData
+  fullName: TFilterData
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: TFilterData
+  name: TFilterData
+  nameWithType: TFilterData
+  fullName: TFilterData
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageBuffer
+  commentId: T:CoreWCF.Channels.MessageBuffer
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageBuffer
+  nameWithType: MessageBuffer
+  fullName: CoreWCF.Channels.MessageBuffer
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues*
+  commentId: Overload:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues
+  isExternal: true
+  name: GetMatchingValues
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingValues
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingValues
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingValues
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingValues
+- uid: System.Collections.Generic.ICollection{{TFilterData}}
+  commentId: '!:System.Collections.Generic.ICollection{`0}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<TFilterData>
+  nameWithType: ICollection<TFilterData>
+  fullName: System.Collections.Generic.ICollection<TFilterData>
+  nameWithType.vb: ICollection(Of TFilterData)
+  fullName.vb: System.Collections.Generic.ICollection(Of TFilterData)
+  name.vb: ICollection(Of TFilterData)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TFilterData
+    nameWithType: TFilterData
+    fullName: TFilterData
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TFilterData
+    nameWithType: TFilterData
+    fullName: TFilterData
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<>
+  nameWithType: ICollection<>
+  fullName: System.Collections.Generic.ICollection<>
+  nameWithType.vb: ICollection(Of )
+  fullName.vb: System.Collections.Generic.ICollection(Of )
+  name.vb: ICollection(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter*
+  commentId: Overload:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter
+  isExternal: true
+  name: GetMatchingFilter
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingFilter
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingFilter
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingFilter
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingFilter
+- uid: CoreWCF.Dispatcher.MessageFilter
+  commentId: T:CoreWCF.Dispatcher.MessageFilter
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: MessageFilter
+  nameWithType: MessageFilter
+  fullName: CoreWCF.Dispatcher.MessageFilter
+- uid: CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters*
+  commentId: Overload:CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters
+  isExternal: true
+  name: GetMatchingFilters
+  nameWithType: IMessageFilterTable<TFilterData>.GetMatchingFilters
+  fullName: CoreWCF.Dispatcher.IMessageFilterTable<TFilterData>.GetMatchingFilters
+  nameWithType.vb: IMessageFilterTable(Of TFilterData).GetMatchingFilters
+  fullName.vb: CoreWCF.Dispatcher.IMessageFilterTable(Of TFilterData).GetMatchingFilters
+- uid: System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter}
+  commentId: '!:System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<MessageFilter>
+  nameWithType: ICollection<MessageFilter>
+  fullName: System.Collections.Generic.ICollection<CoreWCF.Dispatcher.MessageFilter>
+  nameWithType.vb: ICollection(Of MessageFilter)
+  fullName.vb: System.Collections.Generic.ICollection(Of CoreWCF.Dispatcher.MessageFilter)
+  name.vb: ICollection(Of MessageFilter)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.MessageFilter
+    name: MessageFilter
+    nameWithType: MessageFilter
+    fullName: CoreWCF.Dispatcher.MessageFilter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.MessageFilter
+    name: MessageFilter
+    nameWithType: MessageFilter
+    fullName: CoreWCF.Dispatcher.MessageFilter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

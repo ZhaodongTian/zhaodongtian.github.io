@@ -1,0 +1,827 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.SecurityMessageProperty
+  commentId: T:CoreWCF.Security.SecurityMessageProperty
+  id: SecurityMessageProperty
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.SecurityMessageProperty.#ctor
+  - CoreWCF.Security.SecurityMessageProperty.CreateCopy
+  - CoreWCF.Security.SecurityMessageProperty.Dispose
+  - CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies
+  - CoreWCF.Security.SecurityMessageProperty.GetOrCreate(CoreWCF.Channels.Message)
+  - CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens
+  - CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens
+  - CoreWCF.Security.SecurityMessageProperty.InitiatorToken
+  - CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens
+  - CoreWCF.Security.SecurityMessageProperty.ProtectionToken
+  - CoreWCF.Security.SecurityMessageProperty.RecipientToken
+  - CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix
+  - CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext
+  - CoreWCF.Security.SecurityMessageProperty.TransportToken
+  langs:
+  - csharp
+  - vb
+  name: SecurityMessageProperty
+  nameWithType: SecurityMessageProperty
+  fullName: CoreWCF.Security.SecurityMessageProperty
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: Contains security-related properties and is attached to a message.
+  remarks: "Client authentication results are translated into an instance of &lt;xref:CoreWCF.ServiceSecurityContext>, which is attached to the message using a &lt;xref:CoreWCF.Security.SecurityMessageProperty>. This property can be used by higher layers to implement custom authorization logic.  \n\n"
+  syntax:
+    content: 'public class SecurityMessageProperty : Object, IMessageProperty'
+    content.vb: >-
+      Public Class SecurityMessageProperty
+          Inherits Object
+          Implements IMessageProperty
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.Channels.IMessageProperty
+  - System.IDisposable
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Security.SecurityMessageProperty.#ctor
+  commentId: M:CoreWCF.Security.SecurityMessageProperty.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: SecurityMessageProperty()
+  nameWithType: SecurityMessageProperty.SecurityMessageProperty()
+  fullName: CoreWCF.Security.SecurityMessageProperty.SecurityMessageProperty()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public SecurityMessageProperty()
+    content.vb: Public Sub New
+  overload: CoreWCF.Security.SecurityMessageProperty.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.CreateCopy
+  commentId: M:CoreWCF.Security.SecurityMessageProperty.CreateCopy
+  id: CreateCopy
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: CreateCopy()
+  nameWithType: SecurityMessageProperty.CreateCopy()
+  fullName: CoreWCF.Security.SecurityMessageProperty.CreateCopy()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public IMessageProperty CreateCopy()
+    return:
+      type: CoreWCF.Channels.IMessageProperty
+    content.vb: Public Function CreateCopy As IMessageProperty
+  overload: CoreWCF.Security.SecurityMessageProperty.CreateCopy*
+  implements:
+  - CoreWCF.Channels.IMessageProperty.CreateCopy
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.GetOrCreate(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Security.SecurityMessageProperty.GetOrCreate(CoreWCF.Channels.Message)
+  id: GetOrCreate(CoreWCF.Channels.Message)
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: GetOrCreate(Message)
+  nameWithType: SecurityMessageProperty.GetOrCreate(Message)
+  fullName: CoreWCF.Security.SecurityMessageProperty.GetOrCreate(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public static SecurityMessageProperty GetOrCreate(Message message)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: CoreWCF.Security.SecurityMessageProperty
+    content.vb: Public Shared Function GetOrCreate(message As Message) As SecurityMessageProperty
+  overload: CoreWCF.Security.SecurityMessageProperty.GetOrCreate*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Security.SecurityMessageProperty.Dispose
+  commentId: M:CoreWCF.Security.SecurityMessageProperty.Dispose
+  id: Dispose
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: SecurityMessageProperty.Dispose()
+  fullName: CoreWCF.Security.SecurityMessageProperty.Dispose()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: CoreWCF.Security.SecurityMessageProperty.Dispose*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext
+  id: ServiceSecurityContext
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: ServiceSecurityContext
+  nameWithType: SecurityMessageProperty.ServiceSecurityContext
+  fullName: CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public ServiceSecurityContext ServiceSecurityContext { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.ServiceSecurityContext
+    content.vb: Public Property ServiceSecurityContext As ServiceSecurityContext
+  overload: CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies
+  id: ExternalAuthorizationPolicies
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: ExternalAuthorizationPolicies
+  nameWithType: SecurityMessageProperty.ExternalAuthorizationPolicies
+  fullName: CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public ReadOnlyCollection<IAuthorizationPolicy> ExternalAuthorizationPolicies { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}
+    content.vb: Public Property ExternalAuthorizationPolicies As ReadOnlyCollection(Of IAuthorizationPolicy)
+  overload: CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.ProtectionToken
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.ProtectionToken
+  id: ProtectionToken
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: ProtectionToken
+  nameWithType: SecurityMessageProperty.ProtectionToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.ProtectionToken
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public SecurityTokenSpecification ProtectionToken { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityTokenSpecification
+    content.vb: Public Property ProtectionToken As SecurityTokenSpecification
+  overload: CoreWCF.Security.SecurityMessageProperty.ProtectionToken*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.InitiatorToken
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.InitiatorToken
+  id: InitiatorToken
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: InitiatorToken
+  nameWithType: SecurityMessageProperty.InitiatorToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.InitiatorToken
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public SecurityTokenSpecification InitiatorToken { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityTokenSpecification
+    content.vb: Public Property InitiatorToken As SecurityTokenSpecification
+  overload: CoreWCF.Security.SecurityMessageProperty.InitiatorToken*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.RecipientToken
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.RecipientToken
+  id: RecipientToken
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: RecipientToken
+  nameWithType: SecurityMessageProperty.RecipientToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.RecipientToken
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public SecurityTokenSpecification RecipientToken { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityTokenSpecification
+    content.vb: Public Property RecipientToken As SecurityTokenSpecification
+  overload: CoreWCF.Security.SecurityMessageProperty.RecipientToken*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.TransportToken
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.TransportToken
+  id: TransportToken
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: TransportToken
+  nameWithType: SecurityMessageProperty.TransportToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.TransportToken
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public SecurityTokenSpecification TransportToken { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityTokenSpecification
+    content.vb: Public Property TransportToken As SecurityTokenSpecification
+  overload: CoreWCF.Security.SecurityMessageProperty.TransportToken*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix
+  id: SenderIdPrefix
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: SenderIdPrefix
+  nameWithType: SecurityMessageProperty.SenderIdPrefix
+  fullName: CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public string SenderIdPrefix { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SenderIdPrefix As String
+  overload: CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens
+  id: HasIncomingSupportingTokens
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: HasIncomingSupportingTokens
+  nameWithType: SecurityMessageProperty.HasIncomingSupportingTokens
+  fullName: CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public bool HasIncomingSupportingTokens { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasIncomingSupportingTokens As Boolean
+  overload: CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens
+  id: IncomingSupportingTokens
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: IncomingSupportingTokens
+  nameWithType: SecurityMessageProperty.IncomingSupportingTokens
+  fullName: CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public Collection<SupportingTokenSpecification> IncomingSupportingTokens { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Security.SupportingTokenSpecification}
+    content.vb: Public ReadOnly Property IncomingSupportingTokens As Collection(Of SupportingTokenSpecification)
+  overload: CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens
+  commentId: P:CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens
+  id: OutgoingSupportingTokens
+  parent: CoreWCF.Security.SecurityMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: OutgoingSupportingTokens
+  nameWithType: SecurityMessageProperty.OutgoingSupportingTokens
+  fullName: CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public Collection<SupportingTokenSpecification> OutgoingSupportingTokens { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Security.SupportingTokenSpecification}
+    content.vb: Public ReadOnly Property OutgoingSupportingTokens As Collection(Of SupportingTokenSpecification)
+  overload: CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.IMessageProperty
+  commentId: T:CoreWCF.Channels.IMessageProperty
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: IMessageProperty
+  nameWithType: IMessageProperty
+  fullName: CoreWCF.Channels.IMessageProperty
+- uid: System.IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Security.SecurityMessageProperty.#ctor*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.#ctor
+  isExternal: true
+  name: SecurityMessageProperty
+  nameWithType: SecurityMessageProperty.SecurityMessageProperty
+  fullName: CoreWCF.Security.SecurityMessageProperty.SecurityMessageProperty
+- uid: CoreWCF.Security.SecurityMessageProperty.CreateCopy*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.CreateCopy
+  isExternal: true
+  name: CreateCopy
+  nameWithType: SecurityMessageProperty.CreateCopy
+  fullName: CoreWCF.Security.SecurityMessageProperty.CreateCopy
+- uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+  commentId: M:CoreWCF.Channels.IMessageProperty.CreateCopy
+  parent: CoreWCF.Channels.IMessageProperty
+  isExternal: true
+  name: CreateCopy()
+  nameWithType: IMessageProperty.CreateCopy()
+  fullName: CoreWCF.Channels.IMessageProperty.CreateCopy()
+  spec.csharp:
+  - uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+    name: CreateCopy
+    nameWithType: IMessageProperty.CreateCopy
+    fullName: CoreWCF.Channels.IMessageProperty.CreateCopy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+    name: CreateCopy
+    nameWithType: IMessageProperty.CreateCopy
+    fullName: CoreWCF.Channels.IMessageProperty.CreateCopy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.SecurityMessageProperty.GetOrCreate*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.GetOrCreate
+  isExternal: true
+  name: GetOrCreate
+  nameWithType: SecurityMessageProperty.GetOrCreate
+  fullName: CoreWCF.Security.SecurityMessageProperty.GetOrCreate
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Security.SecurityMessageProperty
+  commentId: T:CoreWCF.Security.SecurityMessageProperty
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityMessageProperty
+  nameWithType: SecurityMessageProperty
+  fullName: CoreWCF.Security.SecurityMessageProperty
+- uid: CoreWCF.Security.SecurityMessageProperty.Dispose*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.Dispose
+  isExternal: true
+  name: Dispose
+  nameWithType: SecurityMessageProperty.Dispose
+  fullName: CoreWCF.Security.SecurityMessageProperty.Dispose
+- uid: CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext
+  isExternal: true
+  name: ServiceSecurityContext
+  nameWithType: SecurityMessageProperty.ServiceSecurityContext
+  fullName: CoreWCF.Security.SecurityMessageProperty.ServiceSecurityContext
+- uid: CoreWCF.ServiceSecurityContext
+  commentId: T:CoreWCF.ServiceSecurityContext
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceSecurityContext
+  nameWithType: ServiceSecurityContext
+  fullName: CoreWCF.ServiceSecurityContext
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies
+  isExternal: true
+  name: ExternalAuthorizationPolicies
+  nameWithType: SecurityMessageProperty.ExternalAuthorizationPolicies
+  fullName: CoreWCF.Security.SecurityMessageProperty.ExternalAuthorizationPolicies
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}
+  commentId: '!:System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}'
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<IAuthorizationPolicy>
+  nameWithType: ReadOnlyCollection<IAuthorizationPolicy>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<CoreWCF.IdentityModel.Policy.IAuthorizationPolicy>
+  nameWithType.vb: ReadOnlyCollection(Of IAuthorizationPolicy)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of CoreWCF.IdentityModel.Policy.IAuthorizationPolicy)
+  name.vb: ReadOnlyCollection(Of IAuthorizationPolicy)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    name: IAuthorizationPolicy
+    nameWithType: IAuthorizationPolicy
+    fullName: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    name: IAuthorizationPolicy
+    nameWithType: IAuthorizationPolicy
+    fullName: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<>
+  nameWithType: ReadOnlyCollection<>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<>
+  nameWithType.vb: ReadOnlyCollection(Of )
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of )
+  name.vb: ReadOnlyCollection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.SecurityMessageProperty.ProtectionToken*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.ProtectionToken
+  isExternal: true
+  name: ProtectionToken
+  nameWithType: SecurityMessageProperty.ProtectionToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.ProtectionToken
+- uid: CoreWCF.Security.SecurityTokenSpecification
+  commentId: T:CoreWCF.Security.SecurityTokenSpecification
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityTokenSpecification
+  nameWithType: SecurityTokenSpecification
+  fullName: CoreWCF.Security.SecurityTokenSpecification
+- uid: CoreWCF.Security.SecurityMessageProperty.InitiatorToken*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.InitiatorToken
+  isExternal: true
+  name: InitiatorToken
+  nameWithType: SecurityMessageProperty.InitiatorToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.InitiatorToken
+- uid: CoreWCF.Security.SecurityMessageProperty.RecipientToken*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.RecipientToken
+  isExternal: true
+  name: RecipientToken
+  nameWithType: SecurityMessageProperty.RecipientToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.RecipientToken
+- uid: CoreWCF.Security.SecurityMessageProperty.TransportToken*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.TransportToken
+  isExternal: true
+  name: TransportToken
+  nameWithType: SecurityMessageProperty.TransportToken
+  fullName: CoreWCF.Security.SecurityMessageProperty.TransportToken
+- uid: CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix
+  isExternal: true
+  name: SenderIdPrefix
+  nameWithType: SecurityMessageProperty.SenderIdPrefix
+  fullName: CoreWCF.Security.SecurityMessageProperty.SenderIdPrefix
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens
+  isExternal: true
+  name: HasIncomingSupportingTokens
+  nameWithType: SecurityMessageProperty.HasIncomingSupportingTokens
+  fullName: CoreWCF.Security.SecurityMessageProperty.HasIncomingSupportingTokens
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens
+  isExternal: true
+  name: IncomingSupportingTokens
+  nameWithType: SecurityMessageProperty.IncomingSupportingTokens
+  fullName: CoreWCF.Security.SecurityMessageProperty.IncomingSupportingTokens
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.Security.SupportingTokenSpecification}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.Security.SupportingTokenSpecification}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<SupportingTokenSpecification>
+  nameWithType: Collection<SupportingTokenSpecification>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.Security.SupportingTokenSpecification>
+  nameWithType.vb: Collection(Of SupportingTokenSpecification)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.Security.SupportingTokenSpecification)
+  name.vb: Collection(Of SupportingTokenSpecification)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Security.SupportingTokenSpecification
+    name: SupportingTokenSpecification
+    nameWithType: SupportingTokenSpecification
+    fullName: CoreWCF.Security.SupportingTokenSpecification
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Security.SupportingTokenSpecification
+    name: SupportingTokenSpecification
+    nameWithType: SupportingTokenSpecification
+    fullName: CoreWCF.Security.SupportingTokenSpecification
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens*
+  commentId: Overload:CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens
+  isExternal: true
+  name: OutgoingSupportingTokens
+  nameWithType: SecurityMessageProperty.OutgoingSupportingTokens
+  fullName: CoreWCF.Security.SecurityMessageProperty.OutgoingSupportingTokens

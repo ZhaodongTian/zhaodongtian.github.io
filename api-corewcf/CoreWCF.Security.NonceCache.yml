@@ -1,0 +1,294 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.NonceCache
+  commentId: T:CoreWCF.Security.NonceCache
+  id: NonceCache
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.NonceCache.#ctor
+  - CoreWCF.Security.NonceCache.CacheSize
+  - CoreWCF.Security.NonceCache.CachingTimeSpan
+  - CoreWCF.Security.NonceCache.CheckNonce(System.Byte[])
+  - CoreWCF.Security.NonceCache.TryAddNonce(System.Byte[])
+  langs:
+  - csharp
+  - vb
+  name: NonceCache
+  nameWithType: NonceCache
+  fullName: CoreWCF.Security.NonceCache
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: An abstract base class that represents a cache for nonces.
+  remarks: To be added.
+  syntax:
+    content: 'public abstract class NonceCache : Object'
+    content.vb: >-
+      Public MustInherit Class NonceCache
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Security.NonceCache.TryAddNonce(System.Byte[])
+  commentId: M:CoreWCF.Security.NonceCache.TryAddNonce(System.Byte[])
+  id: TryAddNonce(System.Byte[])
+  parent: CoreWCF.Security.NonceCache
+  langs:
+  - csharp
+  - vb
+  name: TryAddNonce(Byte[])
+  nameWithType: NonceCache.TryAddNonce(Byte[])
+  fullName: CoreWCF.Security.NonceCache.TryAddNonce(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public abstract bool TryAddNonce(byte[] nonce)
+    parameters:
+    - id: nonce
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function TryAddNonce(nonce As Byte()) As Boolean
+  overload: CoreWCF.Security.NonceCache.TryAddNonce*
+  nameWithType.vb: NonceCache.TryAddNonce(Byte())
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.Security.NonceCache.TryAddNonce(System.Byte())
+  name.vb: TryAddNonce(Byte())
+- uid: CoreWCF.Security.NonceCache.CheckNonce(System.Byte[])
+  commentId: M:CoreWCF.Security.NonceCache.CheckNonce(System.Byte[])
+  id: CheckNonce(System.Byte[])
+  parent: CoreWCF.Security.NonceCache
+  langs:
+  - csharp
+  - vb
+  name: CheckNonce(Byte[])
+  nameWithType: NonceCache.CheckNonce(Byte[])
+  fullName: CoreWCF.Security.NonceCache.CheckNonce(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public abstract bool CheckNonce(byte[] nonce)
+    parameters:
+    - id: nonce
+      type: System.Byte[]
+    return:
+      type: System.Boolean
+    content.vb: Public MustOverride Function CheckNonce(nonce As Byte()) As Boolean
+  overload: CoreWCF.Security.NonceCache.CheckNonce*
+  nameWithType.vb: NonceCache.CheckNonce(Byte())
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.Security.NonceCache.CheckNonce(System.Byte())
+  name.vb: CheckNonce(Byte())
+- uid: CoreWCF.Security.NonceCache.#ctor
+  commentId: M:CoreWCF.Security.NonceCache.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Security.NonceCache
+  langs:
+  - csharp
+  - vb
+  name: NonceCache()
+  nameWithType: NonceCache.NonceCache()
+  fullName: CoreWCF.Security.NonceCache.NonceCache()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected NonceCache()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Security.NonceCache.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Security.NonceCache.CachingTimeSpan
+  commentId: P:CoreWCF.Security.NonceCache.CachingTimeSpan
+  id: CachingTimeSpan
+  parent: CoreWCF.Security.NonceCache
+  langs:
+  - csharp
+  - vb
+  name: CachingTimeSpan
+  nameWithType: NonceCache.CachingTimeSpan
+  fullName: CoreWCF.Security.NonceCache.CachingTimeSpan
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nTThe max timespan after which a Nonce is deleted from the NonceCache. This value should be atleast twice the maxclock Skew added to the replayWindow size.\n"
+  syntax:
+    content: public TimeSpan CachingTimeSpan { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property CachingTimeSpan As TimeSpan
+  overload: CoreWCF.Security.NonceCache.CachingTimeSpan*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.NonceCache.CacheSize
+  commentId: P:CoreWCF.Security.NonceCache.CacheSize
+  id: CacheSize
+  parent: CoreWCF.Security.NonceCache
+  langs:
+  - csharp
+  - vb
+  name: CacheSize
+  nameWithType: NonceCache.CacheSize
+  fullName: CoreWCF.Security.NonceCache.CacheSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe maximum size of the NonceCache.\n"
+  syntax:
+    content: public int CacheSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CacheSize As Integer
+  overload: CoreWCF.Security.NonceCache.CacheSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Security.NonceCache.TryAddNonce*
+  commentId: Overload:CoreWCF.Security.NonceCache.TryAddNonce
+  isExternal: true
+  name: TryAddNonce
+  nameWithType: NonceCache.TryAddNonce
+  fullName: CoreWCF.Security.NonceCache.TryAddNonce
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Security.NonceCache.CheckNonce*
+  commentId: Overload:CoreWCF.Security.NonceCache.CheckNonce
+  isExternal: true
+  name: CheckNonce
+  nameWithType: NonceCache.CheckNonce
+  fullName: CoreWCF.Security.NonceCache.CheckNonce
+- uid: CoreWCF.Security.NonceCache.#ctor*
+  commentId: Overload:CoreWCF.Security.NonceCache.#ctor
+  isExternal: true
+  name: NonceCache
+  nameWithType: NonceCache.NonceCache
+  fullName: CoreWCF.Security.NonceCache.NonceCache
+- uid: CoreWCF.Security.NonceCache.CachingTimeSpan*
+  commentId: Overload:CoreWCF.Security.NonceCache.CachingTimeSpan
+  isExternal: true
+  name: CachingTimeSpan
+  nameWithType: NonceCache.CachingTimeSpan
+  fullName: CoreWCF.Security.NonceCache.CachingTimeSpan
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.Security.NonceCache.CacheSize*
+  commentId: Overload:CoreWCF.Security.NonceCache.CacheSize
+  isExternal: true
+  name: CacheSize
+  nameWithType: NonceCache.CacheSize
+  fullName: CoreWCF.Security.NonceCache.CacheSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

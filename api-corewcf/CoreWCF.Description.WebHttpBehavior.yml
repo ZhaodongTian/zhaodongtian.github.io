@@ -1,0 +1,1044 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.WebHttpBehavior
+  commentId: T:CoreWCF.Description.WebHttpBehavior
+  id: WebHttpBehavior
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.WebHttpBehavior.#ctor(System.IServiceProvider)
+  - CoreWCF.Description.WebHttpBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  - CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  - CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  - CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled
+  - CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle
+  - CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat
+  - CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat
+  - CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled
+  - CoreWCF.Description.WebHttpBehavior.GetOperationSelector(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter(CoreWCF.Description.OperationDescription)
+  - CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.WebHttpBehavior.HelpEnabled
+  - CoreWCF.Description.WebHttpBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.WebHttpBehavior.ValidateBinding(CoreWCF.Description.ServiceEndpoint)
+  langs:
+  - csharp
+  - vb
+  name: WebHttpBehavior
+  nameWithType: WebHttpBehavior
+  fullName: CoreWCF.Description.WebHttpBehavior
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  summary: Enables the Web programming model for a Windows Communication Foundation (WCF) service.
+  remarks: "The &lt;xref:CoreWCF.Description.WebHttpBehavior> behavior, when used in conjunction with the &lt;xref:CoreWCF.WebHttpBinding> binding, enables WCF to expose and access Web style services. &lt;xref:CoreWCF.Web.WebServiceHost> automatically adds this behavior to endpoints that use the &lt;xref:CoreWCF.WebHttpBinding>.  \n\n"
+  syntax:
+    content: 'public class WebHttpBehavior : Object, IEndpointBehavior'
+    content.vb: >-
+      Public Class WebHttpBehavior
+          Inherits Object
+          Implements IEndpointBehavior
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.Description.IEndpointBehavior
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.WebHttpBehavior.#ctor(System.IServiceProvider)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.#ctor(System.IServiceProvider)
+  id: '#ctor(System.IServiceProvider)'
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: WebHttpBehavior(IServiceProvider)
+  nameWithType: WebHttpBehavior.WebHttpBehavior(IServiceProvider)
+  fullName: CoreWCF.Description.WebHttpBehavior.WebHttpBehavior(System.IServiceProvider)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public WebHttpBehavior(IServiceProvider serviceProvider)
+    parameters:
+    - id: serviceProvider
+      type: System.IServiceProvider
+    content.vb: Public Sub New(serviceProvider As IServiceProvider)
+  overload: CoreWCF.Description.WebHttpBehavior.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WebHttpBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  id: AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddBindingParameters(ServiceEndpoint, BindingParameterCollection)
+  nameWithType: WebHttpBehavior.AddBindingParameters(ServiceEndpoint, BindingParameterCollection)
+  fullName: CoreWCF.Description.WebHttpBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual void AddBindingParameters(ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Public Overridable Sub AddBindingParameters(endpoint As ServiceEndpoint, bindingParameters As BindingParameterCollection)
+  overload: CoreWCF.Description.WebHttpBehavior.AddBindingParameters*
+  implements:
+  - CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  id: ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyClientBehavior(ServiceEndpoint, ClientRuntime)
+  nameWithType: WebHttpBehavior.ApplyClientBehavior(ServiceEndpoint, ClientRuntime)
+  fullName: CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.ClientRuntime)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: clientRuntime
+      type: CoreWCF.Dispatcher.ClientRuntime
+    content.vb: Public Overridable Sub ApplyClientBehavior(endpoint As ServiceEndpoint, clientRuntime As ClientRuntime)
+  overload: CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior*
+  implements:
+  - CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  id: ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyDispatchBehavior(ServiceEndpoint, EndpointDispatcher)
+  nameWithType: WebHttpBehavior.ApplyDispatchBehavior(ServiceEndpoint, EndpointDispatcher)
+  fullName: CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.EndpointDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual void ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: endpointDispatcher
+      type: CoreWCF.Dispatcher.EndpointDispatcher
+    content.vb: Public Overridable Sub ApplyDispatchBehavior(endpoint As ServiceEndpoint, endpointDispatcher As EndpointDispatcher)
+  overload: CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior*
+  implements:
+  - CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  id: Validate(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: Validate(ServiceEndpoint)
+  nameWithType: WebHttpBehavior.Validate(ServiceEndpoint)
+  fullName: CoreWCF.Description.WebHttpBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual void Validate(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Overridable Sub Validate(endpoint As ServiceEndpoint)
+  overload: CoreWCF.Description.WebHttpBehavior.Validate*
+  implements:
+  - CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.ValidateBinding(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.ValidateBinding(CoreWCF.Description.ServiceEndpoint)
+  id: ValidateBinding(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: ValidateBinding(ServiceEndpoint)
+  nameWithType: WebHttpBehavior.ValidateBinding(ServiceEndpoint)
+  fullName: CoreWCF.Description.WebHttpBehavior.ValidateBinding(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected virtual void ValidateBinding(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Protected Overridable Sub ValidateBinding(endpoint As ServiceEndpoint)
+  overload: CoreWCF.Description.WebHttpBehavior.ValidateBinding*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  id: AddServerErrorHandlers(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddServerErrorHandlers(ServiceEndpoint, EndpointDispatcher)
+  nameWithType: WebHttpBehavior.AddServerErrorHandlers(ServiceEndpoint, EndpointDispatcher)
+  fullName: CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.EndpointDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected virtual void AddServerErrorHandlers(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: endpointDispatcher
+      type: CoreWCF.Dispatcher.EndpointDispatcher
+    content.vb: Protected Overridable Sub AddServerErrorHandlers(endpoint As ServiceEndpoint, endpointDispatcher As EndpointDispatcher)
+  overload: CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.GetOperationSelector(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.GetOperationSelector(CoreWCF.Description.ServiceEndpoint)
+  id: GetOperationSelector(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: GetOperationSelector(ServiceEndpoint)
+  nameWithType: WebHttpBehavior.GetOperationSelector(ServiceEndpoint)
+  fullName: CoreWCF.Description.WebHttpBehavior.GetOperationSelector(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected virtual WebHttpDispatchOperationSelector GetOperationSelector(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    return:
+      type: CoreWCF.Dispatcher.WebHttpDispatchOperationSelector
+    content.vb: Protected Overridable Function GetOperationSelector(endpoint As ServiceEndpoint) As WebHttpDispatchOperationSelector
+  overload: CoreWCF.Description.WebHttpBehavior.GetOperationSelector*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter(CoreWCF.Description.OperationDescription)
+  id: GetQueryStringConverter(CoreWCF.Description.OperationDescription)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: GetQueryStringConverter(OperationDescription)
+  nameWithType: WebHttpBehavior.GetQueryStringConverter(OperationDescription)
+  fullName: CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter(CoreWCF.Description.OperationDescription)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected virtual QueryStringConverter GetQueryStringConverter(OperationDescription operationDescription)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    return:
+      type: CoreWCF.Dispatcher.QueryStringConverter
+    content.vb: Protected Overridable Function GetQueryStringConverter(operationDescription As OperationDescription) As QueryStringConverter
+  overload: CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  id: GetReplyDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: GetReplyDispatchFormatter(OperationDescription, ServiceEndpoint)
+  nameWithType: WebHttpBehavior.GetReplyDispatchFormatter(OperationDescription, ServiceEndpoint)
+  fullName: CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter(CoreWCF.Description.OperationDescription, CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected virtual IDispatchMessageFormatter GetReplyDispatchFormatter(OperationDescription operationDescription, ServiceEndpoint endpoint)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    return:
+      type: CoreWCF.Dispatcher.IDispatchMessageFormatter
+    content.vb: Protected Overridable Function GetReplyDispatchFormatter(operationDescription As OperationDescription, endpoint As ServiceEndpoint) As IDispatchMessageFormatter
+  overload: CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  id: GetRequestDispatchFormatter(CoreWCF.Description.OperationDescription,CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: GetRequestDispatchFormatter(OperationDescription, ServiceEndpoint)
+  nameWithType: WebHttpBehavior.GetRequestDispatchFormatter(OperationDescription, ServiceEndpoint)
+  fullName: CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter(CoreWCF.Description.OperationDescription, CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected virtual IDispatchMessageFormatter GetRequestDispatchFormatter(OperationDescription operationDescription, ServiceEndpoint endpoint)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    return:
+      type: CoreWCF.Dispatcher.IDispatchMessageFormatter
+    content.vb: Protected Overridable Function GetRequestDispatchFormatter(operationDescription As OperationDescription, endpoint As ServiceEndpoint) As IDispatchMessageFormatter
+  overload: CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle
+  commentId: P:CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle
+  id: DefaultBodyStyle
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: DefaultBodyStyle
+  nameWithType: WebHttpBehavior.DefaultBodyStyle
+  fullName: CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual WebMessageBodyStyle DefaultBodyStyle { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebMessageBodyStyle
+    content.vb: Public Overridable Property DefaultBodyStyle As WebMessageBodyStyle
+  overload: CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat
+  commentId: P:CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat
+  id: DefaultOutgoingRequestFormat
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: DefaultOutgoingRequestFormat
+  nameWithType: WebHttpBehavior.DefaultOutgoingRequestFormat
+  fullName: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual WebMessageFormat DefaultOutgoingRequestFormat { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebMessageFormat
+    content.vb: Public Overridable Property DefaultOutgoingRequestFormat As WebMessageFormat
+  overload: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat
+  commentId: P:CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat
+  id: DefaultOutgoingResponseFormat
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: DefaultOutgoingResponseFormat
+  nameWithType: WebHttpBehavior.DefaultOutgoingResponseFormat
+  fullName: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual WebMessageFormat DefaultOutgoingResponseFormat { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebMessageFormat
+    content.vb: Public Overridable Property DefaultOutgoingResponseFormat As WebMessageFormat
+  overload: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.HelpEnabled
+  commentId: P:CoreWCF.Description.WebHttpBehavior.HelpEnabled
+  id: HelpEnabled
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: HelpEnabled
+  nameWithType: WebHttpBehavior.HelpEnabled
+  fullName: CoreWCF.Description.WebHttpBehavior.HelpEnabled
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual bool HelpEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Property HelpEnabled As Boolean
+  overload: CoreWCF.Description.WebHttpBehavior.HelpEnabled*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled
+  commentId: P:CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled
+  id: AutomaticFormatSelectionEnabled
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: AutomaticFormatSelectionEnabled
+  nameWithType: WebHttpBehavior.AutomaticFormatSelectionEnabled
+  fullName: CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual bool AutomaticFormatSelectionEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Property AutomaticFormatSelectionEnabled As Boolean
+  overload: CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled
+  commentId: P:CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled
+  id: FaultExceptionEnabled
+  parent: CoreWCF.Description.WebHttpBehavior
+  langs:
+  - csharp
+  - vb
+  name: FaultExceptionEnabled
+  nameWithType: WebHttpBehavior.FaultExceptionEnabled
+  fullName: CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual bool FaultExceptionEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Property FaultExceptionEnabled As Boolean
+  overload: CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Description.IEndpointBehavior
+  commentId: T:CoreWCF.Description.IEndpointBehavior
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IEndpointBehavior
+  nameWithType: IEndpointBehavior
+  fullName: CoreWCF.Description.IEndpointBehavior
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.WebHttpBehavior.#ctor*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.#ctor
+  isExternal: true
+  name: WebHttpBehavior
+  nameWithType: WebHttpBehavior.WebHttpBehavior
+  fullName: CoreWCF.Description.WebHttpBehavior.WebHttpBehavior
+- uid: System.IServiceProvider
+  isExternal: true
+  name: IServiceProvider
+  nameWithType: IServiceProvider
+  fullName: System.IServiceProvider
+- uid: CoreWCF.Description.WebHttpBehavior.AddBindingParameters*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.AddBindingParameters
+  isExternal: true
+  name: AddBindingParameters
+  nameWithType: WebHttpBehavior.AddBindingParameters
+  fullName: CoreWCF.Description.WebHttpBehavior.AddBindingParameters
+- uid: CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IEndpointBehavior
+  isExternal: true
+  name: AddBindingParameters(ServiceEndpoint, BindingParameterCollection)
+  nameWithType: IEndpointBehavior.AddBindingParameters(ServiceEndpoint, BindingParameterCollection)
+  fullName: CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint, CoreWCF.Channels.BindingParameterCollection)
+  spec.csharp:
+  - uid: CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+    name: AddBindingParameters
+    nameWithType: IEndpointBehavior.AddBindingParameters
+    fullName: CoreWCF.Description.IEndpointBehavior.AddBindingParameters
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+    name: AddBindingParameters
+    nameWithType: IEndpointBehavior.AddBindingParameters
+    fullName: CoreWCF.Description.IEndpointBehavior.AddBindingParameters
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior
+  isExternal: true
+  name: ApplyClientBehavior
+  nameWithType: WebHttpBehavior.ApplyClientBehavior
+  fullName: CoreWCF.Description.WebHttpBehavior.ApplyClientBehavior
+- uid: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  parent: CoreWCF.Description.IEndpointBehavior
+  isExternal: true
+  name: ApplyClientBehavior(ServiceEndpoint, ClientRuntime)
+  nameWithType: IEndpointBehavior.ApplyClientBehavior(ServiceEndpoint, ClientRuntime)
+  fullName: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.ClientRuntime)
+  spec.csharp:
+  - uid: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+    name: ApplyClientBehavior
+    nameWithType: IEndpointBehavior.ApplyClientBehavior
+    fullName: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.ClientRuntime
+    name: ClientRuntime
+    nameWithType: ClientRuntime
+    fullName: CoreWCF.Dispatcher.ClientRuntime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+    name: ApplyClientBehavior
+    nameWithType: IEndpointBehavior.ApplyClientBehavior
+    fullName: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.ClientRuntime
+    name: ClientRuntime
+    nameWithType: ClientRuntime
+    fullName: CoreWCF.Dispatcher.ClientRuntime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ClientRuntime
+  commentId: T:CoreWCF.Dispatcher.ClientRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientRuntime
+  nameWithType: ClientRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior
+  nameWithType: WebHttpBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.Description.WebHttpBehavior.ApplyDispatchBehavior
+- uid: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  parent: CoreWCF.Description.IEndpointBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior(ServiceEndpoint, EndpointDispatcher)
+  nameWithType: IEndpointBehavior.ApplyDispatchBehavior(ServiceEndpoint, EndpointDispatcher)
+  fullName: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.EndpointDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+    name: ApplyDispatchBehavior
+    nameWithType: IEndpointBehavior.ApplyDispatchBehavior
+    fullName: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.EndpointDispatcher
+    name: EndpointDispatcher
+    nameWithType: EndpointDispatcher
+    fullName: CoreWCF.Dispatcher.EndpointDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+    name: ApplyDispatchBehavior
+    nameWithType: IEndpointBehavior.ApplyDispatchBehavior
+    fullName: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.EndpointDispatcher
+    name: EndpointDispatcher
+    nameWithType: EndpointDispatcher
+    fullName: CoreWCF.Dispatcher.EndpointDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.EndpointDispatcher
+  commentId: T:CoreWCF.Dispatcher.EndpointDispatcher
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher
+- uid: CoreWCF.Description.WebHttpBehavior.Validate*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.Validate
+  isExternal: true
+  name: Validate
+  nameWithType: WebHttpBehavior.Validate
+  fullName: CoreWCF.Description.WebHttpBehavior.Validate
+- uid: CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.IEndpointBehavior
+  isExternal: true
+  name: Validate(ServiceEndpoint)
+  nameWithType: IEndpointBehavior.Validate(ServiceEndpoint)
+  fullName: CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  spec.csharp:
+  - uid: CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+    name: Validate
+    nameWithType: IEndpointBehavior.Validate
+    fullName: CoreWCF.Description.IEndpointBehavior.Validate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+    name: Validate
+    nameWithType: IEndpointBehavior.Validate
+    fullName: CoreWCF.Description.IEndpointBehavior.Validate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WebHttpBehavior.ValidateBinding*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.ValidateBinding
+  isExternal: true
+  name: ValidateBinding
+  nameWithType: WebHttpBehavior.ValidateBinding
+  fullName: CoreWCF.Description.WebHttpBehavior.ValidateBinding
+- uid: CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers
+  isExternal: true
+  name: AddServerErrorHandlers
+  nameWithType: WebHttpBehavior.AddServerErrorHandlers
+  fullName: CoreWCF.Description.WebHttpBehavior.AddServerErrorHandlers
+- uid: CoreWCF.Description.WebHttpBehavior.GetOperationSelector*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.GetOperationSelector
+  isExternal: true
+  name: GetOperationSelector
+  nameWithType: WebHttpBehavior.GetOperationSelector
+  fullName: CoreWCF.Description.WebHttpBehavior.GetOperationSelector
+- uid: CoreWCF.Dispatcher.WebHttpDispatchOperationSelector
+  commentId: T:CoreWCF.Dispatcher.WebHttpDispatchOperationSelector
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: WebHttpDispatchOperationSelector
+  nameWithType: WebHttpDispatchOperationSelector
+  fullName: CoreWCF.Dispatcher.WebHttpDispatchOperationSelector
+- uid: CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter
+  isExternal: true
+  name: GetQueryStringConverter
+  nameWithType: WebHttpBehavior.GetQueryStringConverter
+  fullName: CoreWCF.Description.WebHttpBehavior.GetQueryStringConverter
+- uid: CoreWCF.Description.OperationDescription
+  commentId: T:CoreWCF.Description.OperationDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescription
+  nameWithType: OperationDescription
+  fullName: CoreWCF.Description.OperationDescription
+- uid: CoreWCF.Dispatcher.QueryStringConverter
+  commentId: T:CoreWCF.Dispatcher.QueryStringConverter
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: QueryStringConverter
+  nameWithType: QueryStringConverter
+  fullName: CoreWCF.Dispatcher.QueryStringConverter
+- uid: CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter
+  isExternal: true
+  name: GetReplyDispatchFormatter
+  nameWithType: WebHttpBehavior.GetReplyDispatchFormatter
+  fullName: CoreWCF.Description.WebHttpBehavior.GetReplyDispatchFormatter
+- uid: CoreWCF.Dispatcher.IDispatchMessageFormatter
+  commentId: T:CoreWCF.Dispatcher.IDispatchMessageFormatter
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: IDispatchMessageFormatter
+  nameWithType: IDispatchMessageFormatter
+  fullName: CoreWCF.Dispatcher.IDispatchMessageFormatter
+- uid: CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter
+  isExternal: true
+  name: GetRequestDispatchFormatter
+  nameWithType: WebHttpBehavior.GetRequestDispatchFormatter
+  fullName: CoreWCF.Description.WebHttpBehavior.GetRequestDispatchFormatter
+- uid: CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle
+  isExternal: true
+  name: DefaultBodyStyle
+  nameWithType: WebHttpBehavior.DefaultBodyStyle
+  fullName: CoreWCF.Description.WebHttpBehavior.DefaultBodyStyle
+- uid: CoreWCF.Web.WebMessageBodyStyle
+  commentId: T:CoreWCF.Web.WebMessageBodyStyle
+  parent: CoreWCF.Web
+  isExternal: true
+  name: WebMessageBodyStyle
+  nameWithType: WebMessageBodyStyle
+  fullName: CoreWCF.Web.WebMessageBodyStyle
+- uid: CoreWCF.Web
+  commentId: N:CoreWCF.Web
+  isExternal: true
+  name: CoreWCF.Web
+  nameWithType: CoreWCF.Web
+  fullName: CoreWCF.Web
+- uid: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat
+  isExternal: true
+  name: DefaultOutgoingRequestFormat
+  nameWithType: WebHttpBehavior.DefaultOutgoingRequestFormat
+  fullName: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingRequestFormat
+- uid: CoreWCF.Web.WebMessageFormat
+  commentId: T:CoreWCF.Web.WebMessageFormat
+  parent: CoreWCF.Web
+  isExternal: true
+  name: WebMessageFormat
+  nameWithType: WebMessageFormat
+  fullName: CoreWCF.Web.WebMessageFormat
+- uid: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat
+  isExternal: true
+  name: DefaultOutgoingResponseFormat
+  nameWithType: WebHttpBehavior.DefaultOutgoingResponseFormat
+  fullName: CoreWCF.Description.WebHttpBehavior.DefaultOutgoingResponseFormat
+- uid: CoreWCF.Description.WebHttpBehavior.HelpEnabled*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.HelpEnabled
+  isExternal: true
+  name: HelpEnabled
+  nameWithType: WebHttpBehavior.HelpEnabled
+  fullName: CoreWCF.Description.WebHttpBehavior.HelpEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled
+  isExternal: true
+  name: AutomaticFormatSelectionEnabled
+  nameWithType: WebHttpBehavior.AutomaticFormatSelectionEnabled
+  fullName: CoreWCF.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled
+- uid: CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled*
+  commentId: Overload:CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled
+  isExternal: true
+  name: FaultExceptionEnabled
+  nameWithType: WebHttpBehavior.FaultExceptionEnabled
+  fullName: CoreWCF.Description.WebHttpBehavior.FaultExceptionEnabled

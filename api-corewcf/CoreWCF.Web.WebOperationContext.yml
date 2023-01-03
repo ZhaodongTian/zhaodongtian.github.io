@@ -1,0 +1,1427 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Web.WebOperationContext
+  commentId: T:CoreWCF.Web.WebOperationContext
+  id: WebOperationContext
+  parent: CoreWCF.Web
+  children:
+  - CoreWCF.Web.WebOperationContext.#ctor(CoreWCF.OperationContext)
+  - CoreWCF.Web.WebOperationContext.Attach(CoreWCF.OperationContext)
+  - CoreWCF.Web.WebOperationContext.CreateJsonResponse``1(``0)
+  - CoreWCF.Web.WebOperationContext.CreateJsonResponse``1(``0,System.Runtime.Serialization.Json.DataContractJsonSerializer)
+  - CoreWCF.Web.WebOperationContext.CreateStreamResponse(CoreWCF.Channels.StreamBodyWriter,System.String)
+  - CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.Action{System.IO.Stream},System.String)
+  - CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.IO.Stream,System.String)
+  - CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action{System.IO.TextWriter},System.String)
+  - CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action{System.IO.TextWriter},System.String,System.Text.Encoding)
+  - CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String)
+  - CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String,System.String)
+  - CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String,System.String,System.Text.Encoding)
+  - CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XDocument)
+  - CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XElement)
+  - CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0)
+  - CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0,System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0,System.Xml.Serialization.XmlSerializer)
+  - CoreWCF.Web.WebOperationContext.Current
+  - CoreWCF.Web.WebOperationContext.Detach(CoreWCF.OperationContext)
+  - CoreWCF.Web.WebOperationContext.GetUriTemplate(System.String)
+  - CoreWCF.Web.WebOperationContext.IncomingRequest
+  - CoreWCF.Web.WebOperationContext.OutgoingResponse
+  langs:
+  - csharp
+  - vb
+  name: WebOperationContext
+  nameWithType: WebOperationContext
+  fullName: CoreWCF.Web.WebOperationContext
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  summary: A helper class that provides easy access to contextual properties of Web requests and responses.
+  remarks: "\n"
+  syntax:
+    content: 'public class WebOperationContext : Object, IExtension<OperationContext>'
+    content.vb: >-
+      Public Class WebOperationContext
+          Inherits Object
+          Implements IExtension(Of OperationContext)
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.IExtension{CoreWCF.OperationContext}
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Web.WebOperationContext.#ctor(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.Web.WebOperationContext.#ctor(CoreWCF.OperationContext)Initializes a new instance of the WebOperationContext class with the specified <xref:CoreWCF.OperationContext> instance
+  summary: Initializes a new instance of the <xref:CoreWCF.Web.WebOperationContext> class with the specified OperationContext instance.
+  id: '#ctor(CoreWCF.OperationContext)'
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: WebOperationContext(OperationContext)
+  nameWithType: WebOperationContext.WebOperationContext(OperationContext)
+  fullName: CoreWCF.Web.WebOperationContext.WebOperationContext(CoreWCF.OperationContext)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebOperationContext(OperationContext operationContext)
+    parameters:
+    - id: operationContext
+      type: CoreWCF.OperationContext
+      description: The operation context.
+    content.vb: Public Sub New(operationContext As OperationContext)
+  overload: CoreWCF.Web.WebOperationContext.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.Attach(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.Web.WebOperationContext.Attach(CoreWCF.OperationContext)
+  summary: Attaches the current <xref:CoreWCF.Web.WebOperationContext> instance to the specified <xref:CoreWCF.OperationContext> instance.
+  id: Attach(CoreWCF.OperationContext)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: Attach(OperationContext)
+  nameWithType: WebOperationContext.Attach(OperationContext)
+  fullName: CoreWCF.Web.WebOperationContext.Attach(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public void Attach(OperationContext owner)
+    parameters:
+    - id: owner
+      type: CoreWCF.OperationContext
+      description: The <xref:CoreWCF.OperationContext> to attach to
+    content.vb: Public Sub Attach(owner As OperationContext)
+  overload: CoreWCF.Web.WebOperationContext.Attach*
+  implements:
+  - CoreWCF.IExtension{CoreWCF.OperationContext}.Attach(CoreWCF.OperationContext)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.Detach(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.Web.WebOperationContext.Detach(CoreWCF.OperationContext)
+  summary: Detaches the current <xref:CoreWCF.Web.WebOperationContext> instance from the specified <xref:CoreWCF.OperationContext> instance
+  id: Detach(CoreWCF.OperationContext)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: Detach(OperationContext)
+  nameWithType: WebOperationContext.Detach(OperationContext)
+  fullName: CoreWCF.Web.WebOperationContext.Detach(CoreWCF.OperationContext)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public void Detach(OperationContext owner)
+    parameters:
+    - id: owner
+      type: CoreWCF.OperationContext
+      description: The <xref:CoreWCF.OperationContext> to detach from
+    content.vb: Public Sub Detach(owner As OperationContext)
+  overload: CoreWCF.Web.WebOperationContext.Detach*
+  implements:
+  - CoreWCF.IExtension{CoreWCF.OperationContext}.Detach(CoreWCF.OperationContext)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateJsonResponse``1(``0)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateJsonResponse``1(``0)
+  summary: Creates a JSON formatted message
+  id: CreateJsonResponse``1(``0)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateJsonResponse<T>(T)
+  nameWithType: WebOperationContext.CreateJsonResponse<T>(T)
+  fullName: CoreWCF.Web.WebOperationContext.CreateJsonResponse<T>(T)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateJsonResponse<T>(T instance)
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: The object to write to the message
+    typeParameters:
+    - id: T
+      description: The type of object to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A JSON formatted message
+    content.vb: Public Function CreateJsonResponse(Of T)(instance As T) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateJsonResponse*
+  nameWithType.vb: WebOperationContext.CreateJsonResponse(Of T)(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateJsonResponse(Of T)(T)
+  name.vb: CreateJsonResponse(Of T)(T)
+- uid: CoreWCF.Web.WebOperationContext.CreateJsonResponse``1(``0,System.Runtime.Serialization.Json.DataContractJsonSerializer)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateJsonResponse``1(``0,System.Runtime.Serialization.Json.DataContractJsonSerializer)
+  summary: Creates a JSON formatted message.
+  id: CreateJsonResponse``1(``0,System.Runtime.Serialization.Json.DataContractJsonSerializer)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateJsonResponse<T>(T, DataContractJsonSerializer)
+  nameWithType: WebOperationContext.CreateJsonResponse<T>(T, DataContractJsonSerializer)
+  fullName: CoreWCF.Web.WebOperationContext.CreateJsonResponse<T>(T, System.Runtime.Serialization.Json.DataContractJsonSerializer)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateJsonResponse<T>(T instance, DataContractJsonSerializer serializer)
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: The object to write to the message
+    - id: serializer
+      type: System.Runtime.Serialization.Json.DataContractJsonSerializer
+      description: The serializer to use.
+    typeParameters:
+    - id: T
+      description: The type of object to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A JSON formatted message
+    content.vb: Public Function CreateJsonResponse(Of T)(instance As T, serializer As DataContractJsonSerializer) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateJsonResponse*
+  nameWithType.vb: WebOperationContext.CreateJsonResponse(Of T)(T, DataContractJsonSerializer)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateJsonResponse(Of T)(T, System.Runtime.Serialization.Json.DataContractJsonSerializer)
+  name.vb: CreateJsonResponse(Of T)(T, DataContractJsonSerializer)
+- uid: CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0)
+  summary: Creates an XML formatted message
+  id: CreateXmlResponse``1(``0)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateXmlResponse<T>(T)
+  nameWithType: WebOperationContext.CreateXmlResponse<T>(T)
+  fullName: CoreWCF.Web.WebOperationContext.CreateXmlResponse<T>(T)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateXmlResponse<T>(T instance)
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: The object to write to write to the message
+    typeParameters:
+    - id: T
+      description: The type of object to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: An XML formatted message
+    content.vb: Public Function CreateXmlResponse(Of T)(instance As T) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateXmlResponse*
+  nameWithType.vb: WebOperationContext.CreateXmlResponse(Of T)(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateXmlResponse(Of T)(T)
+  name.vb: CreateXmlResponse(Of T)(T)
+- uid: CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0,System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0,System.Runtime.Serialization.XmlObjectSerializer)
+  summary: Creates an XML formatted message
+  id: CreateXmlResponse``1(``0,System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateXmlResponse<T>(T, XmlObjectSerializer)
+  nameWithType: WebOperationContext.CreateXmlResponse<T>(T, XmlObjectSerializer)
+  fullName: CoreWCF.Web.WebOperationContext.CreateXmlResponse<T>(T, System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateXmlResponse<T>(T instance, XmlObjectSerializer serializer)
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: The object to write to the message
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: The serializer to use
+    typeParameters:
+    - id: T
+      description: The type of object to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: An XML formatted message
+    content.vb: Public Function CreateXmlResponse(Of T)(instance As T, serializer As XmlObjectSerializer) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateXmlResponse*
+  nameWithType.vb: WebOperationContext.CreateXmlResponse(Of T)(T, XmlObjectSerializer)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateXmlResponse(Of T)(T, System.Runtime.Serialization.XmlObjectSerializer)
+  name.vb: CreateXmlResponse(Of T)(T, XmlObjectSerializer)
+- uid: CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0,System.Xml.Serialization.XmlSerializer)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateXmlResponse``1(``0,System.Xml.Serialization.XmlSerializer)
+  summary: Creates an XML formatted message.
+  id: CreateXmlResponse``1(``0,System.Xml.Serialization.XmlSerializer)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateXmlResponse<T>(T, XmlSerializer)
+  nameWithType: WebOperationContext.CreateXmlResponse<T>(T, XmlSerializer)
+  fullName: CoreWCF.Web.WebOperationContext.CreateXmlResponse<T>(T, System.Xml.Serialization.XmlSerializer)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateXmlResponse<T>(T instance, XmlSerializer serializer)
+    parameters:
+    - id: instance
+      type: '{T}'
+      description: The object to write to the message.
+    - id: serializer
+      type: System.Xml.Serialization.XmlSerializer
+      description: The serializer to use.
+    typeParameters:
+    - id: T
+      description: The type of object to write to the message.
+    return:
+      type: CoreWCF.Channels.Message
+      description: An XML formatted message.
+    content.vb: Public Function CreateXmlResponse(Of T)(instance As T, serializer As XmlSerializer) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateXmlResponse*
+  nameWithType.vb: WebOperationContext.CreateXmlResponse(Of T)(T, XmlSerializer)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateXmlResponse(Of T)(T, System.Xml.Serialization.XmlSerializer)
+  name.vb: CreateXmlResponse(Of T)(T, XmlSerializer)
+- uid: CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XDocument)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XDocument)
+  summary: Creates an XML formatted message
+  id: CreateXmlResponse(System.Xml.Linq.XDocument)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateXmlResponse(XDocument)
+  nameWithType: WebOperationContext.CreateXmlResponse(XDocument)
+  fullName: CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XDocument)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateXmlResponse(XDocument document)
+    parameters:
+    - id: document
+      type: System.Xml.Linq.XDocument
+      description: The data to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: An XML formatted message
+    content.vb: Public Function CreateXmlResponse(document As XDocument) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateXmlResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XElement)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XElement)
+  summary: Creates an XML formatted message.
+  id: CreateXmlResponse(System.Xml.Linq.XElement)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateXmlResponse(XElement)
+  nameWithType: WebOperationContext.CreateXmlResponse(XElement)
+  fullName: CoreWCF.Web.WebOperationContext.CreateXmlResponse(System.Xml.Linq.XElement)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateXmlResponse(XElement element)
+    parameters:
+    - id: element
+      type: System.Xml.Linq.XElement
+      description: The data to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: An XML formatted message
+    content.vb: Public Function CreateXmlResponse(element As XElement) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateXmlResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String)
+  summary: Creates a text formatted response message.
+  id: CreateTextResponse(System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateTextResponse(String)
+  nameWithType: WebOperationContext.CreateTextResponse(String)
+  fullName: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateTextResponse(string text)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text to write to the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A text formatted message
+    content.vb: Public Function CreateTextResponse(text As String) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateTextResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String,System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String,System.String)
+  summary: Creates a text formatted message
+  id: CreateTextResponse(System.String,System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateTextResponse(String, String)
+  nameWithType: WebOperationContext.CreateTextResponse(String, String)
+  fullName: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateTextResponse(string text, string contentType)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text to write to the message.
+    - id: contentType
+      type: System.String
+      description: The content type of the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A text formatted message
+    content.vb: Public Function CreateTextResponse(text As String, contentType As String) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateTextResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String,System.String,System.Text.Encoding)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String,System.String,System.Text.Encoding)
+  summary: Creates a text formatted message
+  id: CreateTextResponse(System.String,System.String,System.Text.Encoding)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateTextResponse(String, String, Encoding)
+  nameWithType: WebOperationContext.CreateTextResponse(String, String, Encoding)
+  fullName: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.String, System.String, System.Text.Encoding)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateTextResponse(string text, string contentType, Encoding encoding)
+    parameters:
+    - id: text
+      type: System.String
+      description: The text to write to the message
+    - id: contentType
+      type: System.String
+      description: The content type of the message
+    - id: encoding
+      type: System.Text.Encoding
+      description: The encoding to use
+    return:
+      type: CoreWCF.Channels.Message
+      description: A text formatted message
+    content.vb: Public Function CreateTextResponse(text As String, contentType As String, encoding As Encoding) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateTextResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action{System.IO.TextWriter},System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action{System.IO.TextWriter},System.String)
+  summary: Creates a text formatted message
+  id: CreateTextResponse(System.Action{System.IO.TextWriter},System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateTextResponse(Action<TextWriter>, String)
+  nameWithType: WebOperationContext.CreateTextResponse(Action<TextWriter>, String)
+  fullName: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action<System.IO.TextWriter>, System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateTextResponse(Action<TextWriter> textWriter, string contentType)
+    parameters:
+    - id: textWriter
+      type: System.Action{System.IO.TextWriter}
+      description: A delegate that writes the text data
+    - id: contentType
+      type: System.String
+      description: The content type for the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A text formatted message
+    content.vb: Public Function CreateTextResponse(textWriter As Action(Of TextWriter), contentType As String) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateTextResponse*
+  nameWithType.vb: WebOperationContext.CreateTextResponse(Action(Of TextWriter), String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action(Of System.IO.TextWriter), System.String)
+  name.vb: CreateTextResponse(Action(Of TextWriter), String)
+- uid: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action{System.IO.TextWriter},System.String,System.Text.Encoding)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action{System.IO.TextWriter},System.String,System.Text.Encoding)
+  summary: Creates a text formatted message.
+  id: CreateTextResponse(System.Action{System.IO.TextWriter},System.String,System.Text.Encoding)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateTextResponse(Action<TextWriter>, String, Encoding)
+  nameWithType: WebOperationContext.CreateTextResponse(Action<TextWriter>, String, Encoding)
+  fullName: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action<System.IO.TextWriter>, System.String, System.Text.Encoding)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateTextResponse(Action<TextWriter> textWriter, string contentType, Encoding encoding)
+    parameters:
+    - id: textWriter
+      type: System.Action{System.IO.TextWriter}
+      description: A delegate that writes the text data
+    - id: contentType
+      type: System.String
+      description: The content type of the message
+    - id: encoding
+      type: System.Text.Encoding
+      description: The encoding to use
+    return:
+      type: CoreWCF.Channels.Message
+      description: A text formatted message
+    content.vb: Public Function CreateTextResponse(textWriter As Action(Of TextWriter), contentType As String, encoding As Encoding) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateTextResponse*
+  nameWithType.vb: WebOperationContext.CreateTextResponse(Action(Of TextWriter), String, Encoding)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateTextResponse(System.Action(Of System.IO.TextWriter), System.String, System.Text.Encoding)
+  name.vb: CreateTextResponse(Action(Of TextWriter), String, Encoding)
+- uid: CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.IO.Stream,System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.IO.Stream,System.String)
+  summary: Creates a stream formatted message
+  id: CreateStreamResponse(System.IO.Stream,System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateStreamResponse(Stream, String)
+  nameWithType: WebOperationContext.CreateStreamResponse(Stream, String)
+  fullName: CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.IO.Stream, System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateStreamResponse(Stream stream, string contentType)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream containing the data to write to the stream
+    - id: contentType
+      type: System.String
+      description: The content type of the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A stream formatted message
+    content.vb: Public Function CreateStreamResponse(stream As Stream, contentType As String) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateStreamResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateStreamResponse(CoreWCF.Channels.StreamBodyWriter,System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateStreamResponse(CoreWCF.Channels.StreamBodyWriter,System.String)
+  summary: Creates a stream formatted message
+  id: CreateStreamResponse(CoreWCF.Channels.StreamBodyWriter,System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateStreamResponse(StreamBodyWriter, String)
+  nameWithType: WebOperationContext.CreateStreamResponse(StreamBodyWriter, String)
+  fullName: CoreWCF.Web.WebOperationContext.CreateStreamResponse(CoreWCF.Channels.StreamBodyWriter, System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateStreamResponse(StreamBodyWriter bodyWriter, string contentType)
+    parameters:
+    - id: bodyWriter
+      type: CoreWCF.Channels.StreamBodyWriter
+      description: The stream body writer containing the data to write to the message
+    - id: contentType
+      type: System.String
+      description: The content type of the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A stream formatted message.
+    content.vb: Public Function CreateStreamResponse(bodyWriter As StreamBodyWriter, contentType As String) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateStreamResponse*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.Action{System.IO.Stream},System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.Action{System.IO.Stream},System.String)
+  summary: Creates a stream formatted message
+  id: CreateStreamResponse(System.Action{System.IO.Stream},System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateStreamResponse(Action<Stream>, String)
+  nameWithType: WebOperationContext.CreateStreamResponse(Action<Stream>, String)
+  fullName: CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.Action<System.IO.Stream>, System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public Message CreateStreamResponse(Action<Stream> streamWriter, string contentType)
+    parameters:
+    - id: streamWriter
+      type: System.Action{System.IO.Stream}
+      description: The stream writer containing the data to write to the stream
+    - id: contentType
+      type: System.String
+      description: The content type for the message
+    return:
+      type: CoreWCF.Channels.Message
+      description: A stream formatted message.
+    content.vb: Public Function CreateStreamResponse(streamWriter As Action(Of Stream), contentType As String) As Message
+  overload: CoreWCF.Web.WebOperationContext.CreateStreamResponse*
+  nameWithType.vb: WebOperationContext.CreateStreamResponse(Action(Of Stream), String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Web.WebOperationContext.CreateStreamResponse(System.Action(Of System.IO.Stream), System.String)
+  name.vb: CreateStreamResponse(Action(Of Stream), String)
+- uid: CoreWCF.Web.WebOperationContext.GetUriTemplate(System.String)
+  commentId: M:CoreWCF.Web.WebOperationContext.GetUriTemplate(System.String)
+  summary: Gets the URI template associated with the specified operation
+  id: GetUriTemplate(System.String)
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: GetUriTemplate(String)
+  nameWithType: WebOperationContext.GetUriTemplate(String)
+  fullName: CoreWCF.Web.WebOperationContext.GetUriTemplate(System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public UriTemplate GetUriTemplate(string operationName)
+    parameters:
+    - id: operationName
+      type: System.String
+      description: The operation
+    return:
+      type: CoreWCF.UriTemplate
+      description: A URI template
+    content.vb: Public Function GetUriTemplate(operationName As String) As UriTemplate
+  overload: CoreWCF.Web.WebOperationContext.GetUriTemplate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebOperationContext.Current
+  commentId: P:CoreWCF.Web.WebOperationContext.Current
+  summary: Gets the current Web operation context
+  id: Current
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: Current
+  nameWithType: WebOperationContext.Current
+  fullName: CoreWCF.Web.WebOperationContext.Current
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public static WebOperationContext Current { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebOperationContext
+      description: A <xref:CoreWCF.Web.WebOperationContext> instance
+    content.vb: Public Shared ReadOnly Property Current As WebOperationContext
+  overload: CoreWCF.Web.WebOperationContext.Current*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Web.WebOperationContext.IncomingRequest
+  commentId: P:CoreWCF.Web.WebOperationContext.IncomingRequest
+  summary: Gets the Web request context for the request being received
+  id: IncomingRequest
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: IncomingRequest
+  nameWithType: WebOperationContext.IncomingRequest
+  fullName: CoreWCF.Web.WebOperationContext.IncomingRequest
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public IncomingWebRequestContext IncomingRequest { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.IncomingWebRequestContext
+      description: An <xref:CoreWCF.Web.IncomingWebRequestContext> instance
+    content.vb: Public ReadOnly Property IncomingRequest As IncomingWebRequestContext
+  overload: CoreWCF.Web.WebOperationContext.IncomingRequest*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Web.WebOperationContext.OutgoingResponse
+  commentId: P:CoreWCF.Web.WebOperationContext.OutgoingResponse
+  summary: Gets the Web response context for the response being sent
+  id: OutgoingResponse
+  parent: CoreWCF.Web.WebOperationContext
+  langs:
+  - csharp
+  - vb
+  name: OutgoingResponse
+  nameWithType: WebOperationContext.OutgoingResponse
+  fullName: CoreWCF.Web.WebOperationContext.OutgoingResponse
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public OutgoingWebResponseContext OutgoingResponse { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.OutgoingWebResponseContext
+      description: An <xref:CoreWCF.Web.OutgoingWebResponseContext> instance
+    content.vb: Public ReadOnly Property OutgoingResponse As OutgoingWebResponseContext
+  overload: CoreWCF.Web.WebOperationContext.OutgoingResponse*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Web
+  commentId: N:CoreWCF.Web
+  isExternal: true
+  name: CoreWCF.Web
+  nameWithType: CoreWCF.Web
+  fullName: CoreWCF.Web
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IExtension{CoreWCF.OperationContext}
+  commentId: T:CoreWCF.IExtension{CoreWCF.OperationContext}
+  parent: CoreWCF
+  definition: CoreWCF.IExtension`1
+  name: IExtension<OperationContext>
+  nameWithType: IExtension<OperationContext>
+  fullName: CoreWCF.IExtension<CoreWCF.OperationContext>
+  nameWithType.vb: IExtension(Of OperationContext)
+  fullName.vb: CoreWCF.IExtension(Of CoreWCF.OperationContext)
+  name.vb: IExtension(Of OperationContext)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IExtension`1
+  commentId: T:CoreWCF.IExtension`1
+  isExternal: true
+  name: IExtension<T>
+  nameWithType: IExtension<T>
+  fullName: CoreWCF.IExtension<T>
+  nameWithType.vb: IExtension(Of T)
+  fullName.vb: CoreWCF.IExtension(Of T)
+  name.vb: IExtension(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Web.WebOperationContext.#ctor*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.#ctor
+  isExternal: true
+  name: WebOperationContext
+  nameWithType: WebOperationContext.WebOperationContext
+  fullName: CoreWCF.Web.WebOperationContext.WebOperationContext
+- uid: CoreWCF.OperationContext
+  commentId: T:CoreWCF.OperationContext
+  parent: CoreWCF
+  isExternal: true
+  name: OperationContext
+  nameWithType: OperationContext
+  fullName: CoreWCF.OperationContext
+- uid: CoreWCF.Web.WebOperationContext.Attach*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.Attach
+  isExternal: true
+  name: Attach
+  nameWithType: WebOperationContext.Attach
+  fullName: CoreWCF.Web.WebOperationContext.Attach
+- uid: CoreWCF.IExtension{CoreWCF.OperationContext}.Attach(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.IExtension{CoreWCF.OperationContext}.Attach(CoreWCF.OperationContext)
+  parent: CoreWCF.IExtension{CoreWCF.OperationContext}
+  definition: CoreWCF.IExtension`1.Attach(`0)
+  name: Attach(OperationContext)
+  nameWithType: IExtension<OperationContext>.Attach(OperationContext)
+  fullName: CoreWCF.IExtension<CoreWCF.OperationContext>.Attach(CoreWCF.OperationContext)
+  nameWithType.vb: IExtension(Of OperationContext).Attach(OperationContext)
+  fullName.vb: CoreWCF.IExtension(Of CoreWCF.OperationContext).Attach(CoreWCF.OperationContext)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension<OperationContext>.Attach
+    fullName: CoreWCF.IExtension<CoreWCF.OperationContext>.Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension(Of OperationContext).Attach
+    fullName: CoreWCF.IExtension(Of CoreWCF.OperationContext).Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtension`1.Attach(`0)
+  commentId: M:CoreWCF.IExtension`1.Attach(`0)
+  isExternal: true
+  name: Attach(T)
+  nameWithType: IExtension<T>.Attach(T)
+  fullName: CoreWCF.IExtension<T>.Attach(T)
+  nameWithType.vb: IExtension(Of T).Attach(T)
+  fullName.vb: CoreWCF.IExtension(Of T).Attach(T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension<T>.Attach
+    fullName: CoreWCF.IExtension<T>.Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension(Of T).Attach
+    fullName: CoreWCF.IExtension(Of T).Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebOperationContext.Detach*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.Detach
+  isExternal: true
+  name: Detach
+  nameWithType: WebOperationContext.Detach
+  fullName: CoreWCF.Web.WebOperationContext.Detach
+- uid: CoreWCF.IExtension{CoreWCF.OperationContext}.Detach(CoreWCF.OperationContext)
+  commentId: M:CoreWCF.IExtension{CoreWCF.OperationContext}.Detach(CoreWCF.OperationContext)
+  parent: CoreWCF.IExtension{CoreWCF.OperationContext}
+  definition: CoreWCF.IExtension`1.Detach(`0)
+  name: Detach(OperationContext)
+  nameWithType: IExtension<OperationContext>.Detach(OperationContext)
+  fullName: CoreWCF.IExtension<CoreWCF.OperationContext>.Detach(CoreWCF.OperationContext)
+  nameWithType.vb: IExtension(Of OperationContext).Detach(OperationContext)
+  fullName.vb: CoreWCF.IExtension(Of CoreWCF.OperationContext).Detach(CoreWCF.OperationContext)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension<OperationContext>.Detach
+    fullName: CoreWCF.IExtension<CoreWCF.OperationContext>.Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension(Of OperationContext).Detach
+    fullName: CoreWCF.IExtension(Of CoreWCF.OperationContext).Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.OperationContext
+    name: OperationContext
+    nameWithType: OperationContext
+    fullName: CoreWCF.OperationContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtension`1.Detach(`0)
+  commentId: M:CoreWCF.IExtension`1.Detach(`0)
+  isExternal: true
+  name: Detach(T)
+  nameWithType: IExtension<T>.Detach(T)
+  fullName: CoreWCF.IExtension<T>.Detach(T)
+  nameWithType.vb: IExtension(Of T).Detach(T)
+  fullName.vb: CoreWCF.IExtension(Of T).Detach(T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension<T>.Detach
+    fullName: CoreWCF.IExtension<T>.Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension(Of T).Detach
+    fullName: CoreWCF.IExtension(Of T).Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebOperationContext.CreateJsonResponse*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.CreateJsonResponse
+  isExternal: true
+  name: CreateJsonResponse
+  nameWithType: WebOperationContext.CreateJsonResponse
+  fullName: CoreWCF.Web.WebOperationContext.CreateJsonResponse
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Runtime.Serialization.Json.DataContractJsonSerializer
+  commentId: '!:System.Runtime.Serialization.Json.DataContractJsonSerializer'
+  isExternal: true
+  name: DataContractJsonSerializer
+  nameWithType: DataContractJsonSerializer
+  fullName: System.Runtime.Serialization.Json.DataContractJsonSerializer
+- uid: CoreWCF.Web.WebOperationContext.CreateXmlResponse*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.CreateXmlResponse
+  isExternal: true
+  name: CreateXmlResponse
+  nameWithType: WebOperationContext.CreateXmlResponse
+  fullName: CoreWCF.Web.WebOperationContext.CreateXmlResponse
+- uid: System.Runtime.Serialization.XmlObjectSerializer
+  isExternal: true
+  name: XmlObjectSerializer
+  nameWithType: XmlObjectSerializer
+  fullName: System.Runtime.Serialization.XmlObjectSerializer
+- uid: System.Xml.Serialization.XmlSerializer
+  commentId: '!:System.Xml.Serialization.XmlSerializer'
+  isExternal: true
+  name: XmlSerializer
+  nameWithType: XmlSerializer
+  fullName: System.Xml.Serialization.XmlSerializer
+- uid: System.Xml.Linq.XDocument
+  commentId: '!:System.Xml.Linq.XDocument'
+  isExternal: true
+  name: XDocument
+  nameWithType: XDocument
+  fullName: System.Xml.Linq.XDocument
+- uid: System.Xml.Linq.XElement
+  commentId: '!:System.Xml.Linq.XElement'
+  isExternal: true
+  name: XElement
+  nameWithType: XElement
+  fullName: System.Xml.Linq.XElement
+- uid: CoreWCF.Web.WebOperationContext.CreateTextResponse*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.CreateTextResponse
+  isExternal: true
+  name: CreateTextResponse
+  nameWithType: WebOperationContext.CreateTextResponse
+  fullName: CoreWCF.Web.WebOperationContext.CreateTextResponse
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Text.Encoding
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Action{System.IO.TextWriter}
+  commentId: '!:System.Action{System.IO.TextWriter}'
+  definition: System.Action`1
+  name: Action<TextWriter>
+  nameWithType: Action<TextWriter>
+  fullName: System.Action<System.IO.TextWriter>
+  nameWithType.vb: Action(Of TextWriter)
+  fullName.vb: System.Action(Of System.IO.TextWriter)
+  name.vb: Action(Of TextWriter)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.IO.TextWriter
+    name: TextWriter
+    nameWithType: TextWriter
+    fullName: System.IO.TextWriter
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.IO.TextWriter
+    name: TextWriter
+    nameWithType: TextWriter
+    fullName: System.IO.TextWriter
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: System.Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: System.Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebOperationContext.CreateStreamResponse*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.CreateStreamResponse
+  isExternal: true
+  name: CreateStreamResponse
+  nameWithType: WebOperationContext.CreateStreamResponse
+  fullName: CoreWCF.Web.WebOperationContext.CreateStreamResponse
+- uid: System.IO.Stream
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: CoreWCF.Channels.StreamBodyWriter
+  commentId: T:CoreWCF.Channels.StreamBodyWriter
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: StreamBodyWriter
+  nameWithType: StreamBodyWriter
+  fullName: CoreWCF.Channels.StreamBodyWriter
+- uid: System.Action{System.IO.Stream}
+  commentId: '!:System.Action{System.IO.Stream}'
+  definition: System.Action`1
+  name: Action<Stream>
+  nameWithType: Action<Stream>
+  fullName: System.Action<System.IO.Stream>
+  nameWithType.vb: Action(Of Stream)
+  fullName.vb: System.Action(Of System.IO.Stream)
+  name.vb: Action(Of Stream)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebOperationContext.GetUriTemplate*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.GetUriTemplate
+  isExternal: true
+  name: GetUriTemplate
+  nameWithType: WebOperationContext.GetUriTemplate
+  fullName: CoreWCF.Web.WebOperationContext.GetUriTemplate
+- uid: CoreWCF.UriTemplate
+  commentId: T:CoreWCF.UriTemplate
+  parent: CoreWCF
+  isExternal: true
+  name: UriTemplate
+  nameWithType: UriTemplate
+  fullName: CoreWCF.UriTemplate
+- uid: CoreWCF.Web.WebOperationContext.Current*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.Current
+  isExternal: true
+  name: Current
+  nameWithType: WebOperationContext.Current
+  fullName: CoreWCF.Web.WebOperationContext.Current
+- uid: CoreWCF.Web.WebOperationContext
+  commentId: T:CoreWCF.Web.WebOperationContext
+  parent: CoreWCF.Web
+  isExternal: true
+  name: WebOperationContext
+  nameWithType: WebOperationContext
+  fullName: CoreWCF.Web.WebOperationContext
+- uid: CoreWCF.Web.WebOperationContext.IncomingRequest*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.IncomingRequest
+  isExternal: true
+  name: IncomingRequest
+  nameWithType: WebOperationContext.IncomingRequest
+  fullName: CoreWCF.Web.WebOperationContext.IncomingRequest
+- uid: CoreWCF.Web.IncomingWebRequestContext
+  commentId: T:CoreWCF.Web.IncomingWebRequestContext
+  parent: CoreWCF.Web
+  isExternal: true
+  name: IncomingWebRequestContext
+  nameWithType: IncomingWebRequestContext
+  fullName: CoreWCF.Web.IncomingWebRequestContext
+- uid: CoreWCF.Web.WebOperationContext.OutgoingResponse*
+  commentId: Overload:CoreWCF.Web.WebOperationContext.OutgoingResponse
+  isExternal: true
+  name: OutgoingResponse
+  nameWithType: WebOperationContext.OutgoingResponse
+  fullName: CoreWCF.Web.WebOperationContext.OutgoingResponse
+- uid: CoreWCF.Web.OutgoingWebResponseContext
+  commentId: T:CoreWCF.Web.OutgoingWebResponseContext
+  parent: CoreWCF.Web
+  isExternal: true
+  name: OutgoingWebResponseContext
+  nameWithType: OutgoingWebResponseContext
+  fullName: CoreWCF.Web.OutgoingWebResponseContext

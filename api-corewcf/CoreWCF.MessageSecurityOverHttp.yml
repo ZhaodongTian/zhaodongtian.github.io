@@ -1,0 +1,324 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.MessageSecurityOverHttp
+  commentId: T:CoreWCF.MessageSecurityOverHttp
+  id: MessageSecurityOverHttp
+  parent: CoreWCF
+  children:
+  - CoreWCF.MessageSecurityOverHttp.#ctor
+  - CoreWCF.MessageSecurityOverHttp.AlgorithmSuite
+  - CoreWCF.MessageSecurityOverHttp.ClientCredentialType
+  - CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement(System.Boolean,System.Boolean,CoreWCF.MessageSecurityVersion)
+  - CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled
+  - CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential
+  langs:
+  - csharp
+  - vb
+  name: MessageSecurityOverHttp
+  nameWithType: MessageSecurityOverHttp
+  fullName: CoreWCF.MessageSecurityOverHttp
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Enables setting message-level security properties on the wsDualHttpBinding binding.
+  remarks: "This object is accessed from the binding by means of the &lt;xref:CoreWCF.WSDualHttpBinding.Security%2A> property, which returns a &lt;xref:CoreWCF.WSDualHttpSecurity> object. The &lt;xref:CoreWCF.WSDualHttpSecurity.Message%2A> property provides a reference to the &lt;xref:CoreWCF.MessageSecurityOverHttp> object.  \n\n"
+  syntax:
+    content: 'public class MessageSecurityOverHttp : Object'
+    content.vb: >-
+      Public Class MessageSecurityOverHttp
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.NonDualMessageSecurityOverHttp
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.MessageSecurityOverHttp.#ctor
+  commentId: M:CoreWCF.MessageSecurityOverHttp.#ctor
+  id: '#ctor'
+  parent: CoreWCF.MessageSecurityOverHttp
+  langs:
+  - csharp
+  - vb
+  name: MessageSecurityOverHttp()
+  nameWithType: MessageSecurityOverHttp.MessageSecurityOverHttp()
+  fullName: CoreWCF.MessageSecurityOverHttp.MessageSecurityOverHttp()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageSecurityOverHttp()
+    content.vb: Public Sub New
+  overload: CoreWCF.MessageSecurityOverHttp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled
+  commentId: M:CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled
+  id: IsSecureConversationEnabled
+  parent: CoreWCF.MessageSecurityOverHttp
+  langs:
+  - csharp
+  - vb
+  name: IsSecureConversationEnabled()
+  nameWithType: MessageSecurityOverHttp.IsSecureConversationEnabled()
+  fullName: CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected virtual bool IsSecureConversationEnabled()
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable Function IsSecureConversationEnabled As Boolean
+  overload: CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement(System.Boolean,System.Boolean,CoreWCF.MessageSecurityVersion)
+  commentId: M:CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement(System.Boolean,System.Boolean,CoreWCF.MessageSecurityVersion)
+  id: CreateSecurityBindingElement(System.Boolean,System.Boolean,CoreWCF.MessageSecurityVersion)
+  parent: CoreWCF.MessageSecurityOverHttp
+  langs:
+  - csharp
+  - vb
+  name: CreateSecurityBindingElement(Boolean, Boolean, MessageSecurityVersion)
+  nameWithType: MessageSecurityOverHttp.CreateSecurityBindingElement(Boolean, Boolean, MessageSecurityVersion)
+  fullName: CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement(System.Boolean, System.Boolean, CoreWCF.MessageSecurityVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public SecurityBindingElement CreateSecurityBindingElement(bool isSecureTransportMode, bool isReliableSession, MessageSecurityVersion version)
+    parameters:
+    - id: isSecureTransportMode
+      type: System.Boolean
+    - id: isReliableSession
+      type: System.Boolean
+    - id: version
+      type: CoreWCF.MessageSecurityVersion
+    return:
+      type: CoreWCF.Channels.SecurityBindingElement
+    content.vb: Public Function CreateSecurityBindingElement(isSecureTransportMode As Boolean, isReliableSession As Boolean, version As MessageSecurityVersion) As SecurityBindingElement
+  overload: CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageSecurityOverHttp.ClientCredentialType
+  commentId: P:CoreWCF.MessageSecurityOverHttp.ClientCredentialType
+  id: ClientCredentialType
+  parent: CoreWCF.MessageSecurityOverHttp
+  langs:
+  - csharp
+  - vb
+  name: ClientCredentialType
+  nameWithType: MessageSecurityOverHttp.ClientCredentialType
+  fullName: CoreWCF.MessageSecurityOverHttp.ClientCredentialType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageCredentialType ClientCredentialType { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.MessageCredentialType
+    content.vb: Public Property ClientCredentialType As MessageCredentialType
+  overload: CoreWCF.MessageSecurityOverHttp.ClientCredentialType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential
+  commentId: P:CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential
+  id: NegotiateServiceCredential
+  parent: CoreWCF.MessageSecurityOverHttp
+  langs:
+  - csharp
+  - vb
+  name: NegotiateServiceCredential
+  nameWithType: MessageSecurityOverHttp.NegotiateServiceCredential
+  fullName: CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool NegotiateServiceCredential { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property NegotiateServiceCredential As Boolean
+  overload: CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageSecurityOverHttp.AlgorithmSuite
+  commentId: P:CoreWCF.MessageSecurityOverHttp.AlgorithmSuite
+  id: AlgorithmSuite
+  parent: CoreWCF.MessageSecurityOverHttp
+  langs:
+  - csharp
+  - vb
+  name: AlgorithmSuite
+  nameWithType: MessageSecurityOverHttp.AlgorithmSuite
+  fullName: CoreWCF.MessageSecurityOverHttp.AlgorithmSuite
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public SecurityAlgorithmSuite AlgorithmSuite { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityAlgorithmSuite
+    content.vb: Public Property AlgorithmSuite As SecurityAlgorithmSuite
+  overload: CoreWCF.MessageSecurityOverHttp.AlgorithmSuite*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.MessageSecurityOverHttp.#ctor*
+  commentId: Overload:CoreWCF.MessageSecurityOverHttp.#ctor
+  isExternal: true
+  name: MessageSecurityOverHttp
+  nameWithType: MessageSecurityOverHttp.MessageSecurityOverHttp
+  fullName: CoreWCF.MessageSecurityOverHttp.MessageSecurityOverHttp
+- uid: CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled*
+  commentId: Overload:CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled
+  isExternal: true
+  name: IsSecureConversationEnabled
+  nameWithType: MessageSecurityOverHttp.IsSecureConversationEnabled
+  fullName: CoreWCF.MessageSecurityOverHttp.IsSecureConversationEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement*
+  commentId: Overload:CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement
+  isExternal: true
+  name: CreateSecurityBindingElement
+  nameWithType: MessageSecurityOverHttp.CreateSecurityBindingElement
+  fullName: CoreWCF.MessageSecurityOverHttp.CreateSecurityBindingElement
+- uid: CoreWCF.MessageSecurityVersion
+  commentId: T:CoreWCF.MessageSecurityVersion
+  parent: CoreWCF
+  isExternal: true
+  name: MessageSecurityVersion
+  nameWithType: MessageSecurityVersion
+  fullName: CoreWCF.MessageSecurityVersion
+- uid: CoreWCF.Channels.SecurityBindingElement
+  commentId: T:CoreWCF.Channels.SecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: SecurityBindingElement
+  nameWithType: SecurityBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.MessageSecurityOverHttp.ClientCredentialType*
+  commentId: Overload:CoreWCF.MessageSecurityOverHttp.ClientCredentialType
+  isExternal: true
+  name: ClientCredentialType
+  nameWithType: MessageSecurityOverHttp.ClientCredentialType
+  fullName: CoreWCF.MessageSecurityOverHttp.ClientCredentialType
+- uid: CoreWCF.MessageCredentialType
+  commentId: T:CoreWCF.MessageCredentialType
+  parent: CoreWCF
+  isExternal: true
+  name: MessageCredentialType
+  nameWithType: MessageCredentialType
+  fullName: CoreWCF.MessageCredentialType
+- uid: CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential*
+  commentId: Overload:CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential
+  isExternal: true
+  name: NegotiateServiceCredential
+  nameWithType: MessageSecurityOverHttp.NegotiateServiceCredential
+  fullName: CoreWCF.MessageSecurityOverHttp.NegotiateServiceCredential
+- uid: CoreWCF.MessageSecurityOverHttp.AlgorithmSuite*
+  commentId: Overload:CoreWCF.MessageSecurityOverHttp.AlgorithmSuite
+  isExternal: true
+  name: AlgorithmSuite
+  nameWithType: MessageSecurityOverHttp.AlgorithmSuite
+  fullName: CoreWCF.MessageSecurityOverHttp.AlgorithmSuite
+- uid: CoreWCF.Security.SecurityAlgorithmSuite
+  commentId: T:CoreWCF.Security.SecurityAlgorithmSuite
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityAlgorithmSuite
+  nameWithType: SecurityAlgorithmSuite
+  fullName: CoreWCF.Security.SecurityAlgorithmSuite
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security

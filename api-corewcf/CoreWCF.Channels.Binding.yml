@@ -1,0 +1,954 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.Binding
+  commentId: T:CoreWCF.Channels.Binding
+  summary: Contains the binding elements that specify the protocols, transports, and message encoders used for communication between clients and services
+  id: Binding
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.Binding.#ctor
+  - CoreWCF.Channels.Binding.#ctor(System.String,System.String)
+  - CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Channels.Binding.CloseTimeout
+  - CoreWCF.Channels.Binding.CreateBindingElements
+  - CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Channels.Binding.MessageVersion
+  - CoreWCF.Channels.Binding.Name
+  - CoreWCF.Channels.Binding.Namespace
+  - CoreWCF.Channels.Binding.OpenTimeout
+  - CoreWCF.Channels.Binding.ReceiveTimeout
+  - CoreWCF.Channels.Binding.Scheme
+  - CoreWCF.Channels.Binding.SendTimeout
+  langs:
+  - csharp
+  - vb
+  name: Binding
+  nameWithType: Binding
+  fullName: CoreWCF.Channels.Binding
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  remarks: "Represents a collection of binding elements, each of which describes an aspect of how an endpoint communicates with other endpoints and that are built, consistently, into a channel factory on the client and into a channel listener on the service. A binding contains a collection of binding elements that correspond to protocol channels, transport channels, and message encoders. There can be any number of binding elements for protocol channels but one and only one binding element for each the transport and message encoder. There are commonly six layers of binding elements in a binding. Only the transport and encoding binding elements at the bottom of the stack are required. Because an encoding is required for each binding, if an encoding is not specified, Windows Communication Foundation (WCF) adds a default encoding for you. The default is Text/XML for the HTTP and HTTPS transports, and Binary for other transports.
+
+\nThe following table summarizes the options for each layer.
+\n
+<table>
+  <tr>
+    <th>Layer</th>
+    <th>Options</th>
+    <th>Required</th>
+  </tr>
+  <tr>
+    <td>Transaction Flow</td>
+    <td>**TransactionFlowBindingElement**</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Reliability</td>
+    <td>**ReliableSessionBindingElement**</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Security</td>
+    <td>Symmetric, Asymmetric, Transport-Level</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Shape Change</td>
+    <td>**CompositeDuplexBindingElement**</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Transport Upgrades</td>
+    <td>SSL stream, Windows stream, Peer Resolver</td>
+    <td>No</td>
+  </tr>
+  <tr>
+    <td>Encoding</td>
+    <td>Text, Binary, MTOM, Custom</td>
+    <td>Yes</td>
+  </tr>
+  <tr>
+    <td>Transport</td>
+    <td>TCP, Named Pipes, HTTP, HTTPS, MSMQ, Custom</td>
+    <td>Yes</td>
+  </tr>
+</table>\nEach binding element provides the specification for building a channel factory on the client and a channel listener on the service. When the channel factory stack is constructed, for example, there is one channel factory in the stack for each binding element in the binding. The same sort of mapping applies to the channel listeners in the stack on the service. Consistency on the client and service is critical for establishing the channel-based connection between these endpoints. Each factory and listener, in turn, processes the sending and accepting of the corresponding channels in the channel stack that connects them, and these channels can then send and receive the messages used to communicate.
+
+\nEach instance of a <xref:CoreWCF.Channels.Binding> has a [Name](xref:CoreWCF.Channels.Binding) and [Namespace](xref:CoreWCF.Channels.Binding) that together uniquely identify it in the metadata of the service. If no name or namespace is specified, WCF adds a default values for you. The default name is null and the default namespace is **http://tempuri.org/**. This user name for the binding is distinct from the specification of the protocol name, which is specified by the [Scheme](xref:CoreWCF.Channels.Binding) property. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the Scheme. So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name.
+
+\n The <xref:CoreWCF.Channels.Binding> class implements the <xref:CoreWCF.IDefaultCommunicationTimeouts> interface to mitigate Denial of Service (DOS) attacks that rely on tying up resources for extended intervals of time. The implementation specifies the communication timeouts values for opening and closing connections and for the reading and writing operations associated with receiving and sending messages. The properties used to get and set these timeouts and their default values operations are summarized in the following table.
+\n
+<table>
+  <tr>
+    <th>**Timeout Property**</th>
+    <th>**Default Value**</th>
+  </tr>
+  <tr>
+    <td>[OpenTimeout](xref:CoreWCF.Channels.Binding)</td>
+    <td>1 minute</td>
+  </tr>
+  <tr>
+    <td>[CloseTimeout](xref:CoreWCF.Channels.Binding)</td>
+    <td>1 minute</td>
+  </tr>
+  <tr>
+    <td>[SendTimeout](xref:CoreWCF.Channels.Binding)</td>
+    <td>1 minute</td>
+  </tr>
+  <tr>
+    <td>[ReceiveTimeout](xref:CoreWCF.Channels.Binding)</td>
+    <td>10 minutes</td>
+  </tr>
+</table>
+\n When you create a binding by inheriting from <xref:CoreWCF.Channels.Binding>, you must override [CreateBindingElements](xref:CoreWCF.Channels.Binding).
+\n In addition, you can define your own binding elements and insert them between any of the defined layers in the preceding table. For more information, see the CustomBinding class."
+  syntax:
+    content: 'public abstract class Binding : Object, IDefaultCommunicationTimeouts'
+    content.vb: >-
+      Public MustInherit Class Binding
+
+          Inherits Object
+
+          Implements IDefaultCommunicationTimeouts
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.CustomBinding
+  - CoreWCF.HttpBindingBase
+  - CoreWCF.NetTcpBinding
+  - CoreWCF.WebHttpBinding
+  - CoreWCF.WSHttpBindingBase
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.Binding.#ctor
+  commentId: M:CoreWCF.Channels.Binding.#ctor
+  summary: Initializes a new instance of the <xref:CoreWCF.Channels.Binding> class.
+  id: '#ctor'
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: Binding()
+  nameWithType: Binding.Binding()
+  fullName: CoreWCF.Channels.Binding.Binding()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected Binding()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.Binding.#ctor*
+  description: Initializes a new instance of the <xref:CoreWCF.Channels.Binding> class with a default name and namespace.
+  remarks: 'The default name is **null** and the default namespace is http:\\tempuri.org'
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.Binding.#ctor(System.String,System.String)
+  commentId: M:CoreWCF.Channels.Binding.#ctor(System.String,System.String)
+  summary: Initializes a new instance of the <xref:CoreWCF.Channels.Binding> class from a specified binding of the service.
+  id: '#ctor(System.String,System.String)'
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: Binding(String, String)
+  nameWithType: Binding.Binding(String, String)
+  fullName: CoreWCF.Channels.Binding.Binding(System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected Binding(string name, string ns)
+    parameters:
+    - id: name
+      type: System.String
+      description: The [Name](xref:CoreWCF.Channels.Binding) of the binding.
+    - id: ns
+      type: System.String
+      description: The [Namespace](xref:CoreWCF.Channels.Binding) of the binding.
+    content.vb: Protected Sub New(name As String, ns As String)
+  remarks: The [Name](xref:CoreWCF.Channels.Binding) and [Namespace](xref:CoreWCF.Channels.Binding) together uniquely identify an instance of a <xref:CoreWCF.Channels.Binding> in the metadata of the service.
+  exceptions:
+  - id: name
+    type: System.Argumentexception
+    description: name is null or an empty string
+  - id: ns
+    type: System.Argumentnullexception
+    description: ns is null
+  overload: CoreWCF.Channels.Binding.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  id: CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: CanBuildServiceDispatcher<TChannel>(BindingParameterCollection)
+  nameWithType: Binding.CanBuildServiceDispatcher<TChannel>(BindingParameterCollection)
+  fullName: CoreWCF.Channels.Binding.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual bool CanBuildServiceDispatcher<TChannel>(BindingParameterCollection parameters)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    typeParameters:
+    - id: TChannel
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function CanBuildServiceDispatcher(Of TChannel As {Class, IChannel})(parameters As BindingParameterCollection) As Boolean
+  overload: CoreWCF.Channels.Binding.CanBuildServiceDispatcher*
+  nameWithType.vb: Binding.CanBuildServiceDispatcher(Of TChannel)(BindingParameterCollection)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.Binding.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingParameterCollection)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingParameterCollection)
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(BindingParameterCollection, IServiceDispatcher)
+  nameWithType: Binding.BuildServiceDispatcher<TChannel>(BindingParameterCollection, IServiceDispatcher)
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual IServiceDispatcher BuildServiceDispatcher<TChannel>(BindingParameterCollection parameters, IServiceDispatcher dispatcher)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    - id: dispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overridable Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(parameters As BindingParameterCollection, dispatcher As IServiceDispatcher) As IServiceDispatcher
+  overload: CoreWCF.Channels.Binding.BuildServiceDispatcher*
+  nameWithType.vb: Binding.BuildServiceDispatcher(Of TChannel)(BindingParameterCollection, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingParameterCollection, IServiceDispatcher)
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(Uri, BindingParameterCollection, IServiceDispatcher)
+  nameWithType: Binding.BuildServiceDispatcher<TChannel>(Uri, BindingParameterCollection, IServiceDispatcher)
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>(System.Uri, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual IServiceDispatcher BuildServiceDispatcher<TChannel>(Uri listenUriBaseAddress, BindingParameterCollection parameters, IServiceDispatcher dispatcher)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: listenUriBaseAddress
+      type: System.Uri
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    - id: dispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overridable Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(listenUriBaseAddress As Uri, parameters As BindingParameterCollection, dispatcher As IServiceDispatcher) As IServiceDispatcher
+  overload: CoreWCF.Channels.Binding.BuildServiceDispatcher*
+  nameWithType.vb: Binding.BuildServiceDispatcher(Of TChannel)(Uri, BindingParameterCollection, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)(System.Uri, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(Uri, BindingParameterCollection, IServiceDispatcher)
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  nameWithType: Binding.BuildServiceDispatcher<TChannel>(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher<TChannel>(System.Uri, System.String, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual IServiceDispatcher BuildServiceDispatcher<TChannel>(Uri listenUriBaseAddress, string listenUriRelativeAddress, BindingParameterCollection parameters, IServiceDispatcher dispatcher)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: listenUriBaseAddress
+      type: System.Uri
+    - id: listenUriRelativeAddress
+      type: System.String
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    - id: dispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overridable Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(listenUriBaseAddress As Uri, listenUriRelativeAddress As String, parameters As BindingParameterCollection, dispatcher As IServiceDispatcher) As IServiceDispatcher
+  overload: CoreWCF.Channels.Binding.BuildServiceDispatcher*
+  nameWithType.vb: Binding.BuildServiceDispatcher(Of TChannel)(Uri, String, BindingParameterCollection, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.Binding.BuildServiceDispatcher(Of TChannel)(System.Uri, System.String, CoreWCF.Channels.BindingParameterCollection, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(Uri, String, BindingParameterCollection, IServiceDispatcher)
+- uid: CoreWCF.Channels.Binding.CreateBindingElements
+  commentId: M:CoreWCF.Channels.Binding.CreateBindingElements
+  summary: When overridden in a derived class, creates a collection that contains the binding elements that are part of the current binding.
+  id: CreateBindingElements
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: CreateBindingElements()
+  nameWithType: Binding.CreateBindingElements()
+  fullName: CoreWCF.Channels.Binding.CreateBindingElements()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract BindingElementCollection CreateBindingElements()
+    return:
+      type: CoreWCF.Channels.BindingElementCollection
+      description: A [ICollection<T>](xref:System.Collections.Generic) object of type <xref:CoreWCF.Channels.BindingElement> that contains the binding elements from the current binding object in the correct order.
+    content.vb: Public MustOverride Function CreateBindingElements As BindingElementCollection
+  overload: CoreWCF.Channels.Binding.CreateBindingElements*
+  remarks: The elements should not reference any internal elements that the <xref:CoreWCF.Channels.Binding> object uses.
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  summary: Returns a typed object requested, if present, from the appropriate layer in the binding stack.
+  id: GetProperty``1(CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingParameterCollection)
+  nameWithType: Binding.GetProperty<T>(BindingParameterCollection)
+  fullName: CoreWCF.Channels.Binding.GetProperty<T>(CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public T GetProperty<T>(BindingParameterCollection parameters)
+
+          where T : class
+    parameters:
+    - id: parameters
+      type: CoreWCF.Channels.BindingParameterCollection
+      description: The <xref:CoreWCF.Channels.BindingParameterCollection> that specifies requirements for the channel listener that is built.
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not.
+    content.vb: Public Function GetProperty(Of T As Class)(parameters As BindingParameterCollection) As T
+  overload: CoreWCF.Channels.Binding.GetProperty*
+  nameWithType.vb: Binding.GetProperty(Of T)(BindingParameterCollection)
+  remarks: If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no layer supported the requested object, then the method returns null.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.Binding.GetProperty(Of T)(CoreWCF.Channels.BindingParameterCollection)
+  name.vb: GetProperty(Of T)(BindingParameterCollection)
+- uid: CoreWCF.Channels.Binding.CloseTimeout
+  commentId: P:CoreWCF.Channels.Binding.CloseTimeout
+  summary: Gets or sets the interval of time provided for a connection to close before the transport raises an exception.
+  id: CloseTimeout
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: CloseTimeout
+  nameWithType: Binding.CloseTimeout
+  fullName: CoreWCF.Channels.Binding.CloseTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public TimeSpan CloseTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+      description: The [TimeSpan](xref:System.Timespan) that specifies how long the close operation has to complete before timing out. The default value is 1 minute.
+    content.vb: Public Property CloseTimeout As TimeSpan
+  overload: CoreWCF.Channels.Binding.CloseTimeout*
+  remarks: The value of this property is used by the channels and listeners produced by the factories of the binding.
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Binding.Name
+  commentId: P:CoreWCF.Channels.Binding.Name
+  summary: Gets or sets the name of the binding
+  id: Name
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Binding.Name
+  fullName: CoreWCF.Channels.Binding.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name of the binding. The default name is null.
+    content.vb: Public Property Name As String
+  overload: CoreWCF.Channels.Binding.Name*
+  remarks: "Each instance of a <xref:CoreWCF.Channels.Binding> has a [Name](xref:CoreWCF.Channels.Binding) and [Namespace](xref:CoreWCF.Channels.Binding) that together uniquely identify the user name for the binding in the metadata of the service.\n This user name for the binding is distinct from the specification of the protocol name, which is specified by the [Scheme](xref:CoreWCF.Channels.Binding) property. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the [Scheme](xref:CoreWCF.Channels.Binding). So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name."
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Binding.Namespace
+  commentId: P:CoreWCF.Channels.Binding.Namespace
+  summary: Gets or sets the XML namespace of the binding
+  id: Namespace
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  nameWithType: Binding.Namespace
+  fullName: CoreWCF.Channels.Binding.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public string Namespace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The XML namespace of the binding. The default value is "http:\\tempuri.org\"
+    content.vb: Public Property Namespace As String
+  overload: CoreWCF.Channels.Binding.Namespace*
+  remarks: "Each instance of a <xref:CoreWCF.Channels.Binding> has a [Name](xref:CoreWCF.Channels.Binding) and [Namespace](xref:CoreWCF.Channels.Binding) that together uniquely identify the user name for the binding in the metadata of the service.\n This user name for the binding is distinct from the specification of the protocol name, which is specified by the Scheme property. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the [Scheme](xref:CoreWCF.Channels.Binding). So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name"
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Binding.OpenTimeout
+  commentId: P:CoreWCF.Channels.Binding.OpenTimeout
+  summary: Gets or sets the interval of time provided for a connection to open before the transport raises an exception
+  id: OpenTimeout
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: OpenTimeout
+  nameWithType: Binding.OpenTimeout
+  fullName: CoreWCF.Channels.Binding.OpenTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public TimeSpan OpenTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+      decription: The [TimeSpan](xref:System.Timespan) that specifies how long the open operation has to complete before timing out. The default value is 1 minute.
+    content.vb: Public Property OpenTimeout As TimeSpan
+  overload: CoreWCF.Channels.Binding.OpenTimeout*
+  remarks: The value of this property is used by the channels and listeners produced by the factories of the binding
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Binding.ReceiveTimeout
+  commentId: P:CoreWCF.Channels.Binding.ReceiveTimeout
+  summary: Gets or sets the interval of time that a connection can remain inactive, during which no application messages are received, before it is dropped.
+  id: ReceiveTimeout
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: ReceiveTimeout
+  nameWithType: Binding.ReceiveTimeout
+  fullName: CoreWCF.Channels.Binding.ReceiveTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public TimeSpan ReceiveTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+      description: The [TimeSpan](xref:System.Timespan) that specifies how long the application has to receive a message before timing out. The default value is 10 minutes.
+    content.vb: Public Property ReceiveTimeout As TimeSpan
+  overload: CoreWCF.Channels.Binding.ReceiveTimeout*
+  remarks: "When using a reliable session, there are two different inactivity timers that must be satisfied to keep the connection alive. If either of these inactivity timers goes off, then the connection is dropped.
+
+\n     The first inactivity timer is on the reliable session and is called the **InactivityTimeout**. This inactivity timer fires if no messages, either application or infrastructure, are received within the timeout period. An infrastructure message is a message that is generated for the purpose of one of the protocols in the channel stack, such as a keep alive or an acknowledgment, rather than containing application data.
+
+\n     The second inactivity timer is on the service and uses the [ReceiveTimeout](xref:CoreWCF.Channels.Binding) setting of the binding. This inactivity timer fires if no application messages are received within the timeout period. This specifies, for example, the maximum time a client may take to send at least one message to the server before the server will close the channel used by a session. This behavior ensures that clients cannot hold on to server resources for arbitrary long periods.
+
+\nSince the connection is dropped if either inactivity timer fires, increasing **InactivityTimeout** once it is greater than [ReceiveTimeout](xref:CoreWCF.Channels.Binding) has no effect. The default for both of these timeouts is 10 minutes, so you always have to increase both of them to make a difference when using a reliable session.
+
+\nIf transaction flow is enabled on the binding or the channel, the operation may take longer to execute than the specified timeout. In these circumstances the operation fails due to the expired timeout and the transaction aborts appropriately.
+
+\nWhen security is used with sessions, the [ReceiveTimeout](xref:CoreWCF.Channels.Binding) value set on the binding is also used as the session timeout."
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Binding.Scheme
+  commentId: P:CoreWCF.Channels.Binding.Scheme
+  summary: When implemented in a derived class, sets the URI scheme that specifies the transport used by the channel and listener factories that are built by the bindings.
+  id: Scheme
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: Scheme
+  nameWithType: Binding.Scheme
+  fullName: CoreWCF.Channels.Binding.Scheme
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string Scheme { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The URI scheme that is used by the channels or listeners that are created by the factories built by the current binding.
+    content.vb: Public MustOverride ReadOnly Property Scheme As String
+  overload: CoreWCF.Channels.Binding.Scheme*
+  remarks: "This user name for the binding is distinct from the specification of the protocol name, which is specified by the [Scheme](xref:CoreWCF.Channels.Binding) property. Each instance of a <xref:CoreWCF.Channels.Binding> has a [Name](xref:CoreWCF.Channels.Binding) and [Namespace](xref:CoreWCF.Channels.Binding) that together uniquely identify the user name for the binding in the metadata of the service. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the [Scheme](xref:CoreWCF.Channels.Binding). So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name."
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.Binding.MessageVersion
+  commentId: P:CoreWCF.Channels.Binding.MessageVersion
+  summary: Gets the message version used by clients and services configured with the binding
+  id: MessageVersion
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  nameWithType: Binding.MessageVersion
+  fullName: CoreWCF.Channels.Binding.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public MessageVersion MessageVersion { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: The [MessageVersion](xref:CoreWCF.Channels.MessageVersion) used by clients and services configured with the binding
+    content.vb: Public ReadOnly Property MessageVersion As MessageVersion
+  overload: CoreWCF.Channels.Binding.MessageVersion*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.Binding.SendTimeout
+  commentId: P:CoreWCF.Channels.Binding.SendTimeout
+  summary: Gets or sets the interval of time provided for a write operation to complete before the transport raises an exception.
+  id: SendTimeout
+  parent: CoreWCF.Channels.Binding
+  langs:
+  - csharp
+  - vb
+  name: SendTimeout
+  nameWithType: Binding.SendTimeout
+  fullName: CoreWCF.Channels.Binding.SendTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public TimeSpan SendTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+      description: The [TimeSpan](xref:System.Timespan) that specifies how long the write operation has to complete before timing out. The default value is 1 minute.
+    content.vb: Public Property SendTimeout As TimeSpan
+  overload: CoreWCF.Channels.Binding.SendTimeout*
+  remarks: If transaction flow is enabled on the binding or the channel, the operation may take longer to execute than the specified timeout. In these circumstances the operation fails due to the expired timeout and the transaction aborts appropriately.
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IDefaultCommunicationTimeouts
+  commentId: T:CoreWCF.IDefaultCommunicationTimeouts
+  parent: CoreWCF
+  isExternal: true
+  name: IDefaultCommunicationTimeouts
+  nameWithType: IDefaultCommunicationTimeouts
+  fullName: CoreWCF.IDefaultCommunicationTimeouts
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.Binding.#ctor*
+  commentId: Overload:CoreWCF.Channels.Binding.#ctor
+  isExternal: true
+  name: Binding
+  nameWithType: Binding.Binding
+  fullName: CoreWCF.Channels.Binding.Binding
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.Binding.CanBuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.Binding.CanBuildServiceDispatcher
+  isExternal: true
+  name: CanBuildServiceDispatcher
+  nameWithType: Binding.CanBuildServiceDispatcher
+  fullName: CoreWCF.Channels.Binding.CanBuildServiceDispatcher
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.Binding.BuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.Binding.BuildServiceDispatcher
+  isExternal: true
+  name: BuildServiceDispatcher
+  nameWithType: Binding.BuildServiceDispatcher
+  fullName: CoreWCF.Channels.Binding.BuildServiceDispatcher
+- uid: CoreWCF.Configuration.IServiceDispatcher
+  commentId: T:CoreWCF.Configuration.IServiceDispatcher
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IServiceDispatcher
+  nameWithType: IServiceDispatcher
+  fullName: CoreWCF.Configuration.IServiceDispatcher
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.Channels.Binding.CreateBindingElements*
+  commentId: Overload:CoreWCF.Channels.Binding.CreateBindingElements
+  isExternal: true
+  name: CreateBindingElements
+  nameWithType: Binding.CreateBindingElements
+  fullName: CoreWCF.Channels.Binding.CreateBindingElements
+- uid: CoreWCF.Channels.BindingElementCollection
+  commentId: T:CoreWCF.Channels.BindingElementCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElementCollection
+  nameWithType: BindingElementCollection
+  fullName: CoreWCF.Channels.BindingElementCollection
+- uid: CoreWCF.Channels.Binding.GetProperty*
+  commentId: Overload:CoreWCF.Channels.Binding.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: Binding.GetProperty
+  fullName: CoreWCF.Channels.Binding.GetProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.Binding.CloseTimeout*
+  commentId: Overload:CoreWCF.Channels.Binding.CloseTimeout
+  isExternal: true
+  name: CloseTimeout
+  nameWithType: Binding.CloseTimeout
+  fullName: CoreWCF.Channels.Binding.CloseTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: CloseTimeout
+  nameWithType: IDefaultCommunicationTimeouts.CloseTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.Channels.Binding.Name*
+  commentId: Overload:CoreWCF.Channels.Binding.Name
+  isExternal: true
+  name: Name
+  nameWithType: Binding.Name
+  fullName: CoreWCF.Channels.Binding.Name
+- uid: CoreWCF.Channels.Binding.Namespace*
+  commentId: Overload:CoreWCF.Channels.Binding.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: Binding.Namespace
+  fullName: CoreWCF.Channels.Binding.Namespace
+- uid: CoreWCF.Channels.Binding.OpenTimeout*
+  commentId: Overload:CoreWCF.Channels.Binding.OpenTimeout
+  isExternal: true
+  name: OpenTimeout
+  nameWithType: Binding.OpenTimeout
+  fullName: CoreWCF.Channels.Binding.OpenTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: OpenTimeout
+  nameWithType: IDefaultCommunicationTimeouts.OpenTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+- uid: CoreWCF.Channels.Binding.ReceiveTimeout*
+  commentId: Overload:CoreWCF.Channels.Binding.ReceiveTimeout
+  isExternal: true
+  name: ReceiveTimeout
+  nameWithType: Binding.ReceiveTimeout
+  fullName: CoreWCF.Channels.Binding.ReceiveTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: ReceiveTimeout
+  nameWithType: IDefaultCommunicationTimeouts.ReceiveTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+- uid: CoreWCF.Channels.Binding.Scheme*
+  commentId: Overload:CoreWCF.Channels.Binding.Scheme
+  isExternal: true
+  name: Scheme
+  nameWithType: Binding.Scheme
+  fullName: CoreWCF.Channels.Binding.Scheme
+- uid: CoreWCF.Channels.Binding.MessageVersion*
+  commentId: Overload:CoreWCF.Channels.Binding.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: Binding.MessageVersion
+  fullName: CoreWCF.Channels.Binding.MessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.Channels.Binding.SendTimeout*
+  commentId: Overload:CoreWCF.Channels.Binding.SendTimeout
+  isExternal: true
+  name: SendTimeout
+  nameWithType: Binding.SendTimeout
+  fullName: CoreWCF.Channels.Binding.SendTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: SendTimeout
+  nameWithType: IDefaultCommunicationTimeouts.SendTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+- uid: System.Argumentexception
+  isExternal: true
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.Argumentexception
+- uid: System.Argumentnullexception
+  isExternal: true
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.Argumentnullexception

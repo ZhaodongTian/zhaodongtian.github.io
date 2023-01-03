@@ -1,0 +1,740 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.WsdlExporter
+  commentId: T:CoreWCF.Description.WsdlExporter
+  id: WsdlExporter
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.WsdlExporter.#ctor
+  - CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort(System.Web.Services.Description.Port,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  - CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext,CoreWCF.Channels.AddressingVersion)
+  - CoreWCF.Description.WsdlExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  - CoreWCF.Description.WsdlExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)
+  - CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments
+  - CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas
+  - CoreWCF.Description.WsdlExporter.GetGeneratedMetadata
+  langs:
+  - csharp
+  - vb
+  name: WsdlExporter
+  nameWithType: WsdlExporter
+  fullName: CoreWCF.Description.WsdlExporter
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Converts service, contract, and endpoint information into metadata documents.
+  remarks: "Use the &lt;xref:CoreWCF.Description.WsdlExporter> class to transform &lt;xref:CoreWCF.Description.ContractDescription> or &lt;xref:CoreWCF.Description.ServiceEndpoint> objects into metadata represented by &lt;xref:CoreWCF.Description.MetadataSection> objects.  \n\nThe &lt;xref:CoreWCF.Description.WsdlExporter> is used in a three-step process.  \n\n1.  Call the &lt;xref:CoreWCF.Description.WsdlExporter.ExportContract%2A>, &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoint%2A>, or &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoints%2A> method, passing the appropriate parameters.  \n\n2.  Determine whether there are any export errors by checking the base &lt;xref:CoreWCF.Description.MetadataExporter.Errors%2A> property.  \n\n3.  If there are no errors, use the &lt;xref:CoreWCF.Description.WsdlExporter.GetGeneratedMetadata%2A> to get a collection of &lt;xref:CoreWCF.Description.MetadataSection> objects or get more specific versions of the metadata using the &lt;xref:CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments%2A> or &lt;xref:CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas%2A> properties.  \n\nYou can support exporting custom WSDL extensions by implementing the &lt;xref:CoreWCF.Description.IWsdlExportExtension> interface and custom policy assertions by implementing the &lt;xref:CoreWCF.Description.IPolicyExportExtension> interface. For details, see the documentation for those interfaces.  \n\n> [!NOTE]\n>  The `WsdlExporter` can only be used to export metadata from `ContractDescription` instances that contain Common Language Runtime (CLR) type information, such as a `ContractDescription` instance created using the `ContractDescription.GetContract` method or created as part of the `ServiceDescription` for a `ServiceHost` instance. You cannot use the `WsdlExporter` to export metadata from `ContractDescription` instances imported from service metadata or constructed without type information.  \n\n\n\n"
+  syntax:
+    content: 'public class WsdlExporter : MetadataExporter'
+    content.vb: >-
+      Public Class WsdlExporter
+          Inherits MetadataExporter
+  inheritance:
+  - System.Object
+  - CoreWCF.Description.MetadataExporter
+  inheritedMembers:
+  - CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.MetadataExporter.PolicyVersion
+  - CoreWCF.Description.MetadataExporter.Errors
+  - CoreWCF.Description.MetadataExporter.State
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.WsdlExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  commentId: M:CoreWCF.Description.WsdlExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  id: ExportContract(CoreWCF.Description.ContractDescription)
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportContract(ContractDescription)
+  nameWithType: WsdlExporter.ExportContract(ContractDescription)
+  fullName: CoreWCF.Description.WsdlExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public override void ExportContract(ContractDescription contract)
+    parameters:
+    - id: contract
+      type: CoreWCF.Description.ContractDescription
+    content.vb: Public Overrides Sub ExportContract(contract As ContractDescription)
+  overridden: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  overload: CoreWCF.Description.WsdlExporter.ExportContract*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Description.WsdlExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.WsdlExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  id: ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportEndpoint(ServiceEndpoint)
+  nameWithType: WsdlExporter.ExportEndpoint(ServiceEndpoint)
+  fullName: CoreWCF.Description.WsdlExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public override void ExportEndpoint(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public Overrides Sub ExportEndpoint(endpoint As ServiceEndpoint)
+  overridden: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  overload: CoreWCF.Description.WsdlExporter.ExportEndpoint*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)
+  commentId: M:CoreWCF.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)
+  id: ExportEndpoints(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportEndpoints(IEnumerable<ServiceEndpoint>, XmlQualifiedName)
+  nameWithType: WsdlExporter.ExportEndpoints(IEnumerable<ServiceEndpoint>, XmlQualifiedName)
+  fullName: CoreWCF.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable<CoreWCF.Description.ServiceEndpoint>, System.Xml.XmlQualifiedName)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public void ExportEndpoints(IEnumerable<ServiceEndpoint> endpoints, XmlQualifiedName wsdlServiceQName)
+    parameters:
+    - id: endpoints
+      type: System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint}
+    - id: wsdlServiceQName
+      type: System.Xml.XmlQualifiedName
+    content.vb: Public Sub ExportEndpoints(endpoints As IEnumerable(Of ServiceEndpoint), wsdlServiceQName As XmlQualifiedName)
+  overload: CoreWCF.Description.WsdlExporter.ExportEndpoints*
+  nameWithType.vb: WsdlExporter.ExportEndpoints(IEnumerable(Of ServiceEndpoint), XmlQualifiedName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable(Of CoreWCF.Description.ServiceEndpoint), System.Xml.XmlQualifiedName)
+  name.vb: ExportEndpoints(IEnumerable(Of ServiceEndpoint), XmlQualifiedName)
+- uid: CoreWCF.Description.WsdlExporter.GetGeneratedMetadata
+  commentId: M:CoreWCF.Description.WsdlExporter.GetGeneratedMetadata
+  id: GetGeneratedMetadata
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: GetGeneratedMetadata()
+  nameWithType: WsdlExporter.GetGeneratedMetadata()
+  fullName: CoreWCF.Description.WsdlExporter.GetGeneratedMetadata()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public override MetadataSet GetGeneratedMetadata()
+    return:
+      type: CoreWCF.Description.MetadataSet
+    content.vb: Public Overrides Function GetGeneratedMetadata As MetadataSet
+  overridden: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  overload: CoreWCF.Description.WsdlExporter.GetGeneratedMetadata*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext,CoreWCF.Channels.AddressingVersion)
+  commentId: M:CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext,CoreWCF.Channels.AddressingVersion)
+  id: AddWSAddressingAssertion(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext,CoreWCF.Channels.AddressingVersion)
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: AddWSAddressingAssertion(MetadataExporter, PolicyConversionContext, AddressingVersion)
+  nameWithType: WsdlExporter.AddWSAddressingAssertion(MetadataExporter, PolicyConversionContext, AddressingVersion)
+  fullName: CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext, CoreWCF.Channels.AddressingVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static void AddWSAddressingAssertion(MetadataExporter exporter, PolicyConversionContext context, AddressingVersion addressing)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+    - id: context
+      type: CoreWCF.Description.PolicyConversionContext
+    - id: addressing
+      type: CoreWCF.Channels.AddressingVersion
+    content.vb: Public Shared Sub AddWSAddressingAssertion(exporter As MetadataExporter, context As PolicyConversionContext, addressing As AddressingVersion)
+  overload: CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort(System.Web.Services.Description.Port,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  commentId: M:CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort(System.Web.Services.Description.Port,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  id: AddAddressToWsdlPort(System.Web.Services.Description.Port,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: AddAddressToWsdlPort(Port, EndpointAddress, AddressingVersion)
+  nameWithType: WsdlExporter.AddAddressToWsdlPort(Port, EndpointAddress, AddressingVersion)
+  fullName: CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort(System.Web.Services.Description.Port, CoreWCF.EndpointAddress, CoreWCF.Channels.AddressingVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static void AddAddressToWsdlPort(Port wsdlPort, EndpointAddress address, AddressingVersion addressingVersion)
+    parameters:
+    - id: wsdlPort
+      type: System.Web.Services.Description.Port
+    - id: address
+      type: CoreWCF.EndpointAddress
+    - id: addressingVersion
+      type: CoreWCF.Channels.AddressingVersion
+    content.vb: Public Shared Sub AddAddressToWsdlPort(wsdlPort As Port, address As EndpointAddress, addressingVersion As AddressingVersion)
+  overload: CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.WsdlExporter.#ctor
+  commentId: M:CoreWCF.Description.WsdlExporter.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: WsdlExporter()
+  nameWithType: WsdlExporter.WsdlExporter()
+  fullName: CoreWCF.Description.WsdlExporter.WsdlExporter()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public WsdlExporter()
+    content.vb: Public Sub New
+  overload: CoreWCF.Description.WsdlExporter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments
+  commentId: P:CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments
+  id: GeneratedWsdlDocuments
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: GeneratedWsdlDocuments
+  nameWithType: WsdlExporter.GeneratedWsdlDocuments
+  fullName: CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceDescriptionCollection GeneratedWsdlDocuments { get; }
+    parameters: []
+    return:
+      type: System.Web.Services.Description.ServiceDescriptionCollection
+    content.vb: Public ReadOnly Property GeneratedWsdlDocuments As ServiceDescriptionCollection
+  overload: CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas
+  commentId: P:CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas
+  id: GeneratedXmlSchemas
+  parent: CoreWCF.Description.WsdlExporter
+  langs:
+  - csharp
+  - vb
+  name: GeneratedXmlSchemas
+  nameWithType: WsdlExporter.GeneratedXmlSchemas
+  fullName: CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public XmlSchemaSet GeneratedXmlSchemas { get; }
+    parameters: []
+    return:
+      type: System.Xml.Schema.XmlSchemaSet
+    content.vb: Public ReadOnly Property GeneratedXmlSchemas As XmlSchemaSet
+  overload: CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+- uid: CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: ExportPolicy(ServiceEndpoint)
+  nameWithType: MetadataExporter.ExportPolicy(ServiceEndpoint)
+  fullName: CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  spec.csharp:
+  - uid: CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+    name: ExportPolicy
+    nameWithType: MetadataExporter.ExportPolicy
+    fullName: CoreWCF.Description.MetadataExporter.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+    name: ExportPolicy
+    nameWithType: MetadataExporter.ExportPolicy
+    fullName: CoreWCF.Description.MetadataExporter.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataExporter.PolicyVersion
+  commentId: P:CoreWCF.Description.MetadataExporter.PolicyVersion
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: PolicyVersion
+  nameWithType: MetadataExporter.PolicyVersion
+  fullName: CoreWCF.Description.MetadataExporter.PolicyVersion
+- uid: CoreWCF.Description.MetadataExporter.Errors
+  commentId: P:CoreWCF.Description.MetadataExporter.Errors
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: Errors
+  nameWithType: MetadataExporter.Errors
+  fullName: CoreWCF.Description.MetadataExporter.Errors
+- uid: CoreWCF.Description.MetadataExporter.State
+  commentId: P:CoreWCF.Description.MetadataExporter.State
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: State
+  nameWithType: MetadataExporter.State
+  fullName: CoreWCF.Description.MetadataExporter.State
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  commentId: M:CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: ExportContract(ContractDescription)
+  nameWithType: MetadataExporter.ExportContract(ContractDescription)
+  fullName: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  spec.csharp:
+  - uid: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+    name: ExportContract
+    nameWithType: MetadataExporter.ExportContract
+    fullName: CoreWCF.Description.MetadataExporter.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ContractDescription
+    name: ContractDescription
+    nameWithType: ContractDescription
+    fullName: CoreWCF.Description.ContractDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+    name: ExportContract
+    nameWithType: MetadataExporter.ExportContract
+    fullName: CoreWCF.Description.MetadataExporter.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ContractDescription
+    name: ContractDescription
+    nameWithType: ContractDescription
+    fullName: CoreWCF.Description.ContractDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlExporter.ExportContract*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.ExportContract
+  isExternal: true
+  name: ExportContract
+  nameWithType: WsdlExporter.ExportContract
+  fullName: CoreWCF.Description.WsdlExporter.ExportContract
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription
+- uid: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: ExportEndpoint(ServiceEndpoint)
+  nameWithType: MetadataExporter.ExportEndpoint(ServiceEndpoint)
+  fullName: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  spec.csharp:
+  - uid: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+    name: ExportEndpoint
+    nameWithType: MetadataExporter.ExportEndpoint
+    fullName: CoreWCF.Description.MetadataExporter.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+    name: ExportEndpoint
+    nameWithType: MetadataExporter.ExportEndpoint
+    fullName: CoreWCF.Description.MetadataExporter.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlExporter.ExportEndpoint*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.ExportEndpoint
+  isExternal: true
+  name: ExportEndpoint
+  nameWithType: WsdlExporter.ExportEndpoint
+  fullName: CoreWCF.Description.WsdlExporter.ExportEndpoint
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Description.WsdlExporter.ExportEndpoints*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.ExportEndpoints
+  isExternal: true
+  name: ExportEndpoints
+  nameWithType: WsdlExporter.ExportEndpoints
+  fullName: CoreWCF.Description.WsdlExporter.ExportEndpoints
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ServiceEndpoint>
+  nameWithType: IEnumerable<ServiceEndpoint>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.Description.ServiceEndpoint>
+  nameWithType.vb: IEnumerable(Of ServiceEndpoint)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.Description.ServiceEndpoint)
+  name.vb: IEnumerable(Of ServiceEndpoint)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Xml.XmlQualifiedName
+  isExternal: true
+  name: XmlQualifiedName
+  nameWithType: XmlQualifiedName
+  fullName: System.Xml.XmlQualifiedName
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  commentId: M:CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  parent: CoreWCF.Description.MetadataExporter
+  isExternal: true
+  name: GetGeneratedMetadata()
+  nameWithType: MetadataExporter.GetGeneratedMetadata()
+  fullName: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata()
+  spec.csharp:
+  - uid: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+    name: GetGeneratedMetadata
+    nameWithType: MetadataExporter.GetGeneratedMetadata
+    fullName: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+    name: GetGeneratedMetadata
+    nameWithType: MetadataExporter.GetGeneratedMetadata
+    fullName: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlExporter.GetGeneratedMetadata*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.GetGeneratedMetadata
+  isExternal: true
+  name: GetGeneratedMetadata
+  nameWithType: WsdlExporter.GetGeneratedMetadata
+  fullName: CoreWCF.Description.WsdlExporter.GetGeneratedMetadata
+- uid: CoreWCF.Description.MetadataSet
+  commentId: T:CoreWCF.Description.MetadataSet
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataSet
+  nameWithType: MetadataSet
+  fullName: CoreWCF.Description.MetadataSet
+- uid: CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion
+  isExternal: true
+  name: AddWSAddressingAssertion
+  nameWithType: WsdlExporter.AddWSAddressingAssertion
+  fullName: CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+- uid: CoreWCF.Channels.AddressingVersion
+  commentId: T:CoreWCF.Channels.AddressingVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: AddressingVersion
+  nameWithType: AddressingVersion
+  fullName: CoreWCF.Channels.AddressingVersion
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort
+  isExternal: true
+  name: AddAddressToWsdlPort
+  nameWithType: WsdlExporter.AddAddressToWsdlPort
+  fullName: CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort
+- uid: System.Web.Services.Description.Port
+  isExternal: true
+  name: Port
+  nameWithType: Port
+  fullName: System.Web.Services.Description.Port
+- uid: CoreWCF.EndpointAddress
+  commentId: T:CoreWCF.EndpointAddress
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointAddress
+  fullName: CoreWCF.EndpointAddress
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Description.WsdlExporter.#ctor*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.#ctor
+  isExternal: true
+  name: WsdlExporter
+  nameWithType: WsdlExporter.WsdlExporter
+  fullName: CoreWCF.Description.WsdlExporter.WsdlExporter
+- uid: CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments
+  isExternal: true
+  name: GeneratedWsdlDocuments
+  nameWithType: WsdlExporter.GeneratedWsdlDocuments
+  fullName: CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments
+- uid: System.Web.Services.Description.ServiceDescriptionCollection
+  commentId: '!:System.Web.Services.Description.ServiceDescriptionCollection'
+  isExternal: true
+  name: ServiceDescriptionCollection
+  nameWithType: ServiceDescriptionCollection
+  fullName: System.Web.Services.Description.ServiceDescriptionCollection
+- uid: CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas*
+  commentId: Overload:CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas
+  isExternal: true
+  name: GeneratedXmlSchemas
+  nameWithType: WsdlExporter.GeneratedXmlSchemas
+  fullName: CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas
+- uid: System.Xml.Schema.XmlSchemaSet
+  isExternal: true
+  name: XmlSchemaSet
+  nameWithType: XmlSchemaSet
+  fullName: System.Xml.Schema.XmlSchemaSet

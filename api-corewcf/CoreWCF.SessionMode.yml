@@ -1,0 +1,187 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.SessionMode
+  commentId: T:CoreWCF.SessionMode
+  id: SessionMode
+  parent: CoreWCF
+  children:
+  - CoreWCF.SessionMode.Allowed
+  - CoreWCF.SessionMode.NotAllowed
+  - CoreWCF.SessionMode.Required
+  - CoreWCF.SessionMode.value__
+  langs:
+  - csharp
+  - vb
+  name: SessionMode
+  nameWithType: SessionMode
+  fullName: CoreWCF.SessionMode
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Specifies the values available to indicate the support for reliable sessions that a contract requires or supports.
+  remarks: "Use the &lt;xref:CoreWCF.SessionMode> enumeration with the &lt;xref:CoreWCF.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> property to require, allow, or prohibit bindings to use sessions between endpoints that connect to or support the service contract. A session is a way of correlating a set of messages exchanged between two or more endpoints. For more information about sessions, see [Using Sessions](/dotnet/framework/wcf/using-sessions).  \n\nIf your service supports sessions, you can then use the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> property to specify the relationship between instances of your service contract implementation and the channel session.  \n\nFor example, if the &lt;xref:CoreWCF.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> property is set to `Allowed` and the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> property is set to &lt;xref:CoreWCF.InstanceContextMode.PerSession?displayProperty=nameWithType>, a client can use a binding that supports reliable sessions to make repeated calls to the same service object.  \n\nBecause a session is a channel-level concept that the application model uses, there is an interaction between the &lt;xref:CoreWCF.SessionMode> enumeration in a contract and the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> property, which controls the association between channels and specific service objects.  \n\nThe following table shows the result of an incoming channel either supporting reliable sessions or not supporting reliable sessions given a service&apos;s combination of the values of the &lt;xref:CoreWCF.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> property and the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> property.  \n\n|InstanceContextMode Value|Required|Allowed|NotAllowed|  \n|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|  \n|PerCall|-   Behavior with sessionful channel: A session and &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each call.&lt;br />-   Behavior with sessionless channel: An exception is thrown.|-   Behavior with sessionful channel: A session and &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each call.&lt;br />-   Behavior with sessionless channel: An &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each call.|-   Behavior with sessionful channel: An exception is thrown.&lt;br />-   Behavior with sessionless channel: An &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each call.|  \n|PerSession|-   Behavior with sessionful channel: A session and &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each channel.&lt;br />-   Behavior with sessionless channel: An exception is thrown.|-   Behavior with sessionful channel: A session and &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each channel.&lt;br />-   Behavior with sessionless channel: An &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each call.|-   Behavior with sessionful channel: An exception is thrown.&lt;br />-   Behavior with sessionless channel: An &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each call.|  \n|Single|-   Behavior with sessionful channel: One session and one &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for all calls.&lt;br />-   Behavior with sessionless channel: An exception is thrown.|-   Behavior with sessionful channel: A session and &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each created singleton or for the user-specified singleton.&lt;br />-   Behavior with sessionless channel: An &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each created singleton or for the user-specified singleton.|-   Behavior with sessionful channel: An exception is thrown.&lt;br />-   Behavior with sessionless channel: An &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> for each created singleton or for the user-specified singleton.|  \n\n\n\n"
+  syntax:
+    content: 'public sealed class SessionMode : Enum'
+    content.vb: >-
+      Public NotInheritable Class SessionMode
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.SessionMode.value__
+  commentId: F:CoreWCF.SessionMode.value__
+  id: value__
+  parent: CoreWCF.SessionMode
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: SessionMode.value__
+  fullName: CoreWCF.SessionMode.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.SessionMode.Allowed
+  commentId: F:CoreWCF.SessionMode.Allowed
+  id: Allowed
+  parent: CoreWCF.SessionMode
+  langs:
+  - csharp
+  - vb
+  name: Allowed
+  nameWithType: SessionMode.Allowed
+  fullName: CoreWCF.SessionMode.Allowed
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const SessionMode Allowed
+    return:
+      type: CoreWCF.SessionMode
+    content.vb: Public Const Allowed As SessionMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.SessionMode.Required
+  commentId: F:CoreWCF.SessionMode.Required
+  id: Required
+  parent: CoreWCF.SessionMode
+  langs:
+  - csharp
+  - vb
+  name: Required
+  nameWithType: SessionMode.Required
+  fullName: CoreWCF.SessionMode.Required
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const SessionMode Required
+    return:
+      type: CoreWCF.SessionMode
+    content.vb: Public Const Required As SessionMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.SessionMode.NotAllowed
+  commentId: F:CoreWCF.SessionMode.NotAllowed
+  id: NotAllowed
+  parent: CoreWCF.SessionMode
+  langs:
+  - csharp
+  - vb
+  name: NotAllowed
+  nameWithType: SessionMode.NotAllowed
+  fullName: CoreWCF.SessionMode.NotAllowed
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const SessionMode NotAllowed
+    return:
+      type: CoreWCF.SessionMode
+    content.vb: Public Const NotAllowed As SessionMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.SessionMode
+  commentId: T:CoreWCF.SessionMode
+  parent: CoreWCF
+  isExternal: true
+  name: SessionMode
+  nameWithType: SessionMode
+  fullName: CoreWCF.SessionMode

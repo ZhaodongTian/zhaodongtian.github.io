@@ -1,0 +1,89 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.ISession
+  commentId: T:CoreWCF.Channels.ISession
+  id: ISession
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.ISession.Id
+  langs:
+  - csharp
+  - vb
+  name: ISession
+  nameWithType: ISession
+  fullName: CoreWCF.Channels.ISession
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Defines the interface to establish a shared context among parties that exchange messages by providing an ID for the communication session.
+  remarks: "The <xref:CoreWCF.Channels.ISession> interface is the base interface for all sessions. It contains a <xref:CoreWCF.Channels.ISession.Id%2A> property for identifying the session.  \n\nA session is a shared context among all participants in a communication exchange. This shared context is characterized by the following three properties:  \n\n-   Session establishment - a process for establishing shared context among all participants.  \n\n-   Message correlation - a method for correlating a group of messages to an instance of shared context.  \n\n-   The <xref:CoreWCF.Channels.ISession> interface is not informed as to the number of participants in a session or the lifetime of a session.  \n\nThese session properties are provided by associating an ID with a session.  \n\n<xref:CoreWCF.Channels.ISession> is inherited by:  \n\n-   <xref:CoreWCF.Channels.IInputSession>  \n\n-   <xref:CoreWCF.Channels.IOutputSession>  \n\n-   <xref:CoreWCF.Channels.IDuplexSession>  \n\n-   <xref:CoreWCF.Channels.ISessionChannel%601> of type <xref:CoreWCF.Channels.ISession>  \n\n"
+  syntax:
+    content: public interface ISession
+    content.vb: Public Interface ISession
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Channels.ISession.Id
+  commentId: P:CoreWCF.Channels.ISession.Id
+  id: Id
+  parent: CoreWCF.Channels.ISession
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ISession.Id
+  fullName: CoreWCF.Channels.ISession.Id
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the ID that uniquely identifies the session.
+  syntax:
+    content: string Id { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The ID that uniquely identifies the session
+    content.vb: ReadOnly Property Id As String
+  overload: CoreWCF.Channels.ISession.Id*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  remarks: "If the session is interrupted, it can be retrieved using the <xref:CoreWCF.Channels.ISession.Id>."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Channels.ISession.Id*
+  commentId: Overload:CoreWCF.Channels.ISession.Id
+  isExternal: true
+  name: Id
+  nameWithType: ISession.Id
+  fullName: CoreWCF.Channels.ISession.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

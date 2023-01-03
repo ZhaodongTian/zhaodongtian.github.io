@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.MessageHeaderAttribute
+  commentId: T:CoreWCF.MessageHeaderAttribute
+  id: MessageHeaderAttribute
+  parent: CoreWCF
+  children:
+  - CoreWCF.MessageHeaderAttribute.#ctor
+  - CoreWCF.MessageHeaderAttribute.Actor
+  - CoreWCF.MessageHeaderAttribute.MustUnderstand
+  - CoreWCF.MessageHeaderAttribute.Relay
+  langs:
+  - csharp
+  - vb
+  name: MessageHeaderAttribute
+  nameWithType: MessageHeaderAttribute
+  fullName: CoreWCF.MessageHeaderAttribute
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Specifies that a data member is a SOAP message header.
+  remarks: "The &lt;xref:CoreWCF.MessageHeaderAttribute> attribute allows you to map fields and properties of a type marked with the &lt;xref:CoreWCF.MessageContractAttribute> attribute to SOAP message headers. The field or property can be of a simple type or a composite type that can be serialized.  \n\nFor information on controlling the serialization of the contents of a SOAP body without modifying the default SOAP envelope itself, see &lt;xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>, [Specifying Data Transfer in Service Contracts](/dotnet/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts), and [Using Data Contracts](/dotnet/framework/wcf/feature-details/using-data-contracts).  \n\nFor more information about creating message contracts, see [Using Message Contracts](/dotnet/framework/wcf/feature-details/using-message-contracts).  \n\nThe SOAP standard defines the following attributes that can exist on a header:  \n\n-   `Actor` or `Role` (`Actor` in SOAP 1.1, `Role` in SOAP 1.2)  \n\n-   `MustUnderstand`  \n\n-   `Relay`  \n\nThe `Actor` or `Role` attribute specifies the URI of the node for which a given header is intended. The `MustUnderstand` attribute specifies whether the header understands the node processing. The `Relay` attribute specifies whether the header is to be relayed to downstream nodes. Windows Communication Foundation (WCF) does not perform any processing of these attributes on incoming messages, except for the `MustUnderstand` attribute.  \n\nYou can, however, read and write these attributes, even though they are not sent by default. You can set the attribute values in two ways. First, you can change the &lt;xref:CoreWCF.MessageHeaderAttribute.Actor%2A>, &lt;xref:CoreWCF.MessageHeaderAttribute.MustUnderstand%2A> and &lt;xref:CoreWCF.MessageHeaderAttribute.Relay%2A> properties on the &lt;xref:CoreWCF.MessageHeaderAttribute>. (There is no `Role` property - set the &lt;xref:CoreWCF.MessageHeaderAttribute.Actor%2A> property and `Role` is passed if SOAP 1.2 is used). For example:  \n\n\n\nThe second way to control these attributes is by making the desired header type the type parameter of the &lt;xref:CoreWCF.MessageHeader%601> class and using the resulting type together with the &lt;xref:CoreWCF.MessageHeaderAttribute>. Then use the &lt;xref:CoreWCF.MessageHeader%601> properties programmatically to set the SOAP attributes. For example:  \n\n\n\n\n\nIf both the dynamic and the static control mechanisms are used, the static settings are the default but can be overridden using the dynamic mechanism. For example:  \n\n\n\n\n\nCreating repeated headers with dynamic attribute control is allowed. For example:  \n\n```  \n[MessageHeaderArray] public MessageHeader&lt;Person> documentApprovers[];  \n```  \n\nOn the receiving side, reading these SOAP attributes can only be done if the generic &lt;xref:CoreWCF.MessageHeader%601> class is used. Examine the &lt;xref:CoreWCF.MessageHeader%601.Actor%2A>, &lt;xref:CoreWCF.MessageHeader%601.Relay%2A> or &lt;xref:CoreWCF.MessageHeader%601.MustUnderstand%2A> properties of a header of the &lt;xref:CoreWCF.MessageHeader%601> type to discover the attribute settings on the received message.  \n\nWhen a message is received and then sent back, the SOAP attribute settings only roundtrip for headers of the &lt;xref:CoreWCF.MessageHeader%601> type.  \n\n\n\n"
+  syntax:
+    content: 'public class MessageHeaderAttribute : MessageContractMemberAttribute'
+    content.vb: >-
+      Public Class MessageHeaderAttribute
+          Inherits MessageContractMemberAttribute
+  inheritance:
+  - System.Object
+  - CoreWCF.MessageContractMemberAttribute
+  derivedClasses:
+  - CoreWCF.MessageHeaderArrayAttribute
+  inheritedMembers:
+  - CoreWCF.MessageContractMemberAttribute.Namespace
+  - CoreWCF.MessageContractMemberAttribute.Name
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.MessageHeaderAttribute.#ctor
+  commentId: M:CoreWCF.MessageHeaderAttribute.#ctor
+  id: '#ctor'
+  parent: CoreWCF.MessageHeaderAttribute
+  langs:
+  - csharp
+  - vb
+  name: MessageHeaderAttribute()
+  nameWithType: MessageHeaderAttribute.MessageHeaderAttribute()
+  fullName: CoreWCF.MessageHeaderAttribute.MessageHeaderAttribute()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageHeaderAttribute()
+    content.vb: Public Sub New
+  overload: CoreWCF.MessageHeaderAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageHeaderAttribute.MustUnderstand
+  commentId: P:CoreWCF.MessageHeaderAttribute.MustUnderstand
+  id: MustUnderstand
+  parent: CoreWCF.MessageHeaderAttribute
+  langs:
+  - csharp
+  - vb
+  name: MustUnderstand
+  nameWithType: MessageHeaderAttribute.MustUnderstand
+  fullName: CoreWCF.MessageHeaderAttribute.MustUnderstand
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool MustUnderstand { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property MustUnderstand As Boolean
+  overload: CoreWCF.MessageHeaderAttribute.MustUnderstand*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageHeaderAttribute.Relay
+  commentId: P:CoreWCF.MessageHeaderAttribute.Relay
+  id: Relay
+  parent: CoreWCF.MessageHeaderAttribute
+  langs:
+  - csharp
+  - vb
+  name: Relay
+  nameWithType: MessageHeaderAttribute.Relay
+  fullName: CoreWCF.MessageHeaderAttribute.Relay
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool Relay { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Relay As Boolean
+  overload: CoreWCF.MessageHeaderAttribute.Relay*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageHeaderAttribute.Actor
+  commentId: P:CoreWCF.MessageHeaderAttribute.Actor
+  id: Actor
+  parent: CoreWCF.MessageHeaderAttribute
+  langs:
+  - csharp
+  - vb
+  name: Actor
+  nameWithType: MessageHeaderAttribute.Actor
+  fullName: CoreWCF.MessageHeaderAttribute.Actor
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Actor { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Actor As String
+  overload: CoreWCF.MessageHeaderAttribute.Actor*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.MessageContractMemberAttribute
+  commentId: T:CoreWCF.MessageContractMemberAttribute
+  parent: CoreWCF
+  isExternal: true
+  name: MessageContractMemberAttribute
+  nameWithType: MessageContractMemberAttribute
+  fullName: CoreWCF.MessageContractMemberAttribute
+- uid: CoreWCF.MessageContractMemberAttribute.Namespace
+  commentId: P:CoreWCF.MessageContractMemberAttribute.Namespace
+  parent: CoreWCF.MessageContractMemberAttribute
+  isExternal: true
+  name: Namespace
+  nameWithType: MessageContractMemberAttribute.Namespace
+  fullName: CoreWCF.MessageContractMemberAttribute.Namespace
+- uid: CoreWCF.MessageContractMemberAttribute.Name
+  commentId: P:CoreWCF.MessageContractMemberAttribute.Name
+  parent: CoreWCF.MessageContractMemberAttribute
+  isExternal: true
+  name: Name
+  nameWithType: MessageContractMemberAttribute.Name
+  fullName: CoreWCF.MessageContractMemberAttribute.Name
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.MessageHeaderAttribute.#ctor*
+  commentId: Overload:CoreWCF.MessageHeaderAttribute.#ctor
+  isExternal: true
+  name: MessageHeaderAttribute
+  nameWithType: MessageHeaderAttribute.MessageHeaderAttribute
+  fullName: CoreWCF.MessageHeaderAttribute.MessageHeaderAttribute
+- uid: CoreWCF.MessageHeaderAttribute.MustUnderstand*
+  commentId: Overload:CoreWCF.MessageHeaderAttribute.MustUnderstand
+  isExternal: true
+  name: MustUnderstand
+  nameWithType: MessageHeaderAttribute.MustUnderstand
+  fullName: CoreWCF.MessageHeaderAttribute.MustUnderstand
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.MessageHeaderAttribute.Relay*
+  commentId: Overload:CoreWCF.MessageHeaderAttribute.Relay
+  isExternal: true
+  name: Relay
+  nameWithType: MessageHeaderAttribute.Relay
+  fullName: CoreWCF.MessageHeaderAttribute.Relay
+- uid: CoreWCF.MessageHeaderAttribute.Actor*
+  commentId: Overload:CoreWCF.MessageHeaderAttribute.Actor
+  isExternal: true
+  name: Actor
+  nameWithType: MessageHeaderAttribute.Actor
+  fullName: CoreWCF.MessageHeaderAttribute.Actor
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

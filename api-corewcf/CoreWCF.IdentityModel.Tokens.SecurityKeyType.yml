@@ -1,0 +1,187 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  id: SecurityKeyType
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey
+  - CoreWCF.IdentityModel.Tokens.SecurityKeyType.BearerKey
+  - CoreWCF.IdentityModel.Tokens.SecurityKeyType.SymmetricKey
+  - CoreWCF.IdentityModel.Tokens.SecurityKeyType.value__
+  langs:
+  - csharp
+  - vb
+  name: SecurityKeyType
+  nameWithType: SecurityKeyType
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: Specifies the type of key that is associated with a security token.
+  remarks: "Use the &lt;xref:System.IdentityModel.Tokens.SecurityKeyType> enumeration to set the &lt;xref:System.IdentityModel.Selectors.SecurityTokenRequirement.KeyType%2A> property.  \n\nThe `BearerKey` field is used with the &lt;xref:CoreWCF.Configuration.IssuedTokenParametersElement.KeyType%2A> property.  \n\n### BearerKey Requires Wsu:Id or Transport Security with Message Credentials  \nIn federation scenarios, an issued token is generally configured as an endorsing supporting token for message security between a client and the relying parties. However, when a Security Token Service (STS) issues a token with no key (BearerKey), WCF configures it as a &lt;xref:CoreWCF.Security.SecurityTokenAttachmentMode.SignedEncrypted?displayProperty=nameWithType> supporting token (WCF cannot endorse without a key). This requires the issued token to be referenced in the signature. WCF currently uses the following: `http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd:Id` as a reference mechanism (Wsu:Id).  \n\nIf an issued token does not have such an attribute, on a client, a &lt;xref:CoreWCF.Security.MessageSecurityException> is thrown with the text &quot;Element to sign must have id&quot;. This happens when a SAML 1.1 token is used as an issued token (the Wsu:Id is not defined in the SAML 1.1 specification).  \n\nTo work around this situation, either use transport security with message credentials (for example, &lt;xref:CoreWCF.Configuration.AuthenticationMode.IssuedTokenOverTransport?displayProperty=nameWithType>), or an STS must add the `http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd:Id` (Wsu:Id) to the issued token.  \n\nNote that if the Wsu:Id is added to a SAML 1.1 token, the resulting XML does not comply to the SAML 1.1 specification. The alternative is to add a Wsu:Id to the `EncryptedData` which is a result of encrypting the issued token. This procedure complies with the SAML 1.1 specification, because the `EncryptedData` element supports the Wsu:Id attribute.  \n\nSo to be compliant with the specification, the bearer token must be encrypted by the STS.  \n\n"
+  syntax:
+    content: 'public sealed class SecurityKeyType : Enum'
+    content.vb: >-
+      Public NotInheritable Class SecurityKeyType
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyType.value__
+  commentId: F:CoreWCF.IdentityModel.Tokens.SecurityKeyType.value__
+  id: value__
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: SecurityKeyType.value__
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyType.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyType.SymmetricKey
+  commentId: F:CoreWCF.IdentityModel.Tokens.SecurityKeyType.SymmetricKey
+  id: SymmetricKey
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  langs:
+  - csharp
+  - vb
+  name: SymmetricKey
+  nameWithType: SecurityKeyType.SymmetricKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyType.SymmetricKey
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public const SecurityKeyType SymmetricKey
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+    content.vb: Public Const SymmetricKey As SecurityKeyType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey
+  commentId: F:CoreWCF.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey
+  id: AsymmetricKey
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  langs:
+  - csharp
+  - vb
+  name: AsymmetricKey
+  nameWithType: SecurityKeyType.AsymmetricKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyType.AsymmetricKey
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public const SecurityKeyType AsymmetricKey
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+    content.vb: Public Const AsymmetricKey As SecurityKeyType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyType.BearerKey
+  commentId: F:CoreWCF.IdentityModel.Tokens.SecurityKeyType.BearerKey
+  id: BearerKey
+  parent: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  langs:
+  - csharp
+  - vb
+  name: BearerKey
+  nameWithType: SecurityKeyType.BearerKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyType.BearerKey
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public const SecurityKeyType BearerKey
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+    content.vb: Public Const BearerKey As SecurityKeyType
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKeyType
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityKeyType
+  nameWithType: SecurityKeyType
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyType

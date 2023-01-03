@@ -1,0 +1,777 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.UriTemplateTable
+  commentId: T:CoreWCF.UriTemplateTable
+  id: UriTemplateTable
+  parent: CoreWCF
+  children:
+  - CoreWCF.UriTemplateTable.#ctor
+  - CoreWCF.UriTemplateTable.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})
+  - CoreWCF.UriTemplateTable.#ctor(System.Uri)
+  - CoreWCF.UriTemplateTable.#ctor(System.Uri,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})
+  - CoreWCF.UriTemplateTable.BaseAddress
+  - CoreWCF.UriTemplateTable.IsReadOnly
+  - CoreWCF.UriTemplateTable.KeyValuePairs
+  - CoreWCF.UriTemplateTable.MakeReadOnly(System.Boolean)
+  - CoreWCF.UriTemplateTable.Match(System.Uri)
+  - CoreWCF.UriTemplateTable.MatchSingle(System.Uri)
+  - CoreWCF.UriTemplateTable.OriginalBaseAddress
+  langs:
+  - csharp
+  - vb
+  name: UriTemplateTable
+  nameWithType: UriTemplateTable
+  fullName: CoreWCF.UriTemplateTable
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  summary: A class that represents an associative set of  objects.
+  remarks: "A &lt;xref:System.UriTemplateTable> is an associative set of &lt;xref:System.UriTemplate> objects bound to an object of the developer&apos;s choosing. It allows you to match candidate Uniform Resource Identifiers (URIs) against the templates in the set and retrieve the data associated with the matching templates. The contents of &lt;xref:System.UriTemplateTable> can be changed until the &lt;xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> method is called, at which time one of following types of validation occurs:  \n\n-   When &lt;xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> is called passing in `false`, the &lt;xref:System.UriTemplateTable> checks to make sure the table contains no multiple structurally-equivalent templates. If it finds such templates, it throws an exception. This type of validation is used in conjunction with &lt;xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> when you want to ensure only one template matches an incoming URI.  \n\n-   When &lt;xref:System.UriTemplateTable.MakeReadOnly%28System.Boolean%29> is called passing in `true`, multiple structurally-equivalent templates can be contained within a &lt;xref:System.UriTemplateTable>. However, any query strings in the templates must not be ambiguous; identical query strings are allowed. For more information about ambiguous query strings, see [UriTemplate and UriTemplateTable](/dotnet/framework/wcf/feature-details/uritemplate-and-uritemplatetable).  \n\n\n\n"
+  syntax:
+    content: 'public class UriTemplateTable : Object'
+    content.vb: >-
+      Public Class UriTemplateTable
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.UriTemplateTable.#ctor
+  commentId: M:CoreWCF.UriTemplateTable.#ctor
+  id: '#ctor'
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: UriTemplateTable()
+  nameWithType: UriTemplateTable.UriTemplateTable()
+  fullName: CoreWCF.UriTemplateTable.UriTemplateTable()
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplateTable()
+    content.vb: Public Sub New
+  overload: CoreWCF.UriTemplateTable.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplateTable.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})
+  commentId: M:CoreWCF.UriTemplateTable.#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})
+  id: '#ctor(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})'
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: UriTemplateTable(IEnumerable<KeyValuePair<UriTemplate, Object>>)
+  nameWithType: UriTemplateTable.UriTemplateTable(IEnumerable<KeyValuePair<UriTemplate, Object>>)
+  fullName: CoreWCF.UriTemplateTable.UriTemplateTable(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<CoreWCF.UriTemplate, System.Object>>)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplateTable(IEnumerable<KeyValuePair<UriTemplate, object>> keyValuePairs)
+    parameters:
+    - id: keyValuePairs
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}
+    content.vb: Public Sub New(keyValuePairs As IEnumerable(Of KeyValuePair(Of UriTemplate, Object)))
+  overload: CoreWCF.UriTemplateTable.#ctor*
+  nameWithType.vb: UriTemplateTable.UriTemplateTable(IEnumerable(Of KeyValuePair(Of UriTemplate, Object)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplateTable.UriTemplateTable(System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of CoreWCF.UriTemplate, System.Object)))
+  name.vb: UriTemplateTable(IEnumerable(Of KeyValuePair(Of UriTemplate, Object)))
+- uid: CoreWCF.UriTemplateTable.#ctor(System.Uri)
+  commentId: M:CoreWCF.UriTemplateTable.#ctor(System.Uri)
+  id: '#ctor(System.Uri)'
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: UriTemplateTable(Uri)
+  nameWithType: UriTemplateTable.UriTemplateTable(Uri)
+  fullName: CoreWCF.UriTemplateTable.UriTemplateTable(System.Uri)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplateTable(Uri baseAddress)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    content.vb: Public Sub New(baseAddress As Uri)
+  overload: CoreWCF.UriTemplateTable.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplateTable.#ctor(System.Uri,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})
+  commentId: M:CoreWCF.UriTemplateTable.#ctor(System.Uri,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})
+  id: '#ctor(System.Uri,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}})'
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: UriTemplateTable(Uri, IEnumerable<KeyValuePair<UriTemplate, Object>>)
+  nameWithType: UriTemplateTable.UriTemplateTable(Uri, IEnumerable<KeyValuePair<UriTemplate, Object>>)
+  fullName: CoreWCF.UriTemplateTable.UriTemplateTable(System.Uri, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<CoreWCF.UriTemplate, System.Object>>)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplateTable(Uri baseAddress, IEnumerable<KeyValuePair<UriTemplate, object>> keyValuePairs)
+    parameters:
+    - id: baseAddress
+      type: System.Uri
+    - id: keyValuePairs
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}
+    content.vb: Public Sub New(baseAddress As Uri, keyValuePairs As IEnumerable(Of KeyValuePair(Of UriTemplate, Object)))
+  overload: CoreWCF.UriTemplateTable.#ctor*
+  nameWithType.vb: UriTemplateTable.UriTemplateTable(Uri, IEnumerable(Of KeyValuePair(Of UriTemplate, Object)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.UriTemplateTable.UriTemplateTable(System.Uri, System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of CoreWCF.UriTemplate, System.Object)))
+  name.vb: UriTemplateTable(Uri, IEnumerable(Of KeyValuePair(Of UriTemplate, Object)))
+- uid: CoreWCF.UriTemplateTable.MakeReadOnly(System.Boolean)
+  commentId: M:CoreWCF.UriTemplateTable.MakeReadOnly(System.Boolean)
+  id: MakeReadOnly(System.Boolean)
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: MakeReadOnly(Boolean)
+  nameWithType: UriTemplateTable.MakeReadOnly(Boolean)
+  fullName: CoreWCF.UriTemplateTable.MakeReadOnly(System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public void MakeReadOnly(bool allowDuplicateEquivalentUriTemplates)
+    parameters:
+    - id: allowDuplicateEquivalentUriTemplates
+      type: System.Boolean
+    content.vb: Public Sub MakeReadOnly(allowDuplicateEquivalentUriTemplates As Boolean)
+  overload: CoreWCF.UriTemplateTable.MakeReadOnly*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplateTable.Match(System.Uri)
+  commentId: M:CoreWCF.UriTemplateTable.Match(System.Uri)
+  id: Match(System.Uri)
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: Match(Uri)
+  nameWithType: UriTemplateTable.Match(Uri)
+  fullName: CoreWCF.UriTemplateTable.Match(System.Uri)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Collection<UriTemplateMatch> Match(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.UriTemplateMatch}
+    content.vb: Public Function Match(uri As Uri) As Collection(Of UriTemplateMatch)
+  overload: CoreWCF.UriTemplateTable.Match*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplateTable.MatchSingle(System.Uri)
+  commentId: M:CoreWCF.UriTemplateTable.MatchSingle(System.Uri)
+  id: MatchSingle(System.Uri)
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: MatchSingle(Uri)
+  nameWithType: UriTemplateTable.MatchSingle(Uri)
+  fullName: CoreWCF.UriTemplateTable.MatchSingle(System.Uri)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public UriTemplateMatch MatchSingle(Uri uri)
+    parameters:
+    - id: uri
+      type: System.Uri
+    return:
+      type: CoreWCF.UriTemplateMatch
+    content.vb: Public Function MatchSingle(uri As Uri) As UriTemplateMatch
+  overload: CoreWCF.UriTemplateTable.MatchSingle*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplateTable.BaseAddress
+  commentId: P:CoreWCF.UriTemplateTable.BaseAddress
+  id: BaseAddress
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: BaseAddress
+  nameWithType: UriTemplateTable.BaseAddress
+  fullName: CoreWCF.UriTemplateTable.BaseAddress
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri BaseAddress { get; set; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public Property BaseAddress As Uri
+  overload: CoreWCF.UriTemplateTable.BaseAddress*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.UriTemplateTable.OriginalBaseAddress
+  commentId: P:CoreWCF.UriTemplateTable.OriginalBaseAddress
+  id: OriginalBaseAddress
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: OriginalBaseAddress
+  nameWithType: UriTemplateTable.OriginalBaseAddress
+  fullName: CoreWCF.UriTemplateTable.OriginalBaseAddress
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public Uri OriginalBaseAddress { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public ReadOnly Property OriginalBaseAddress As Uri
+  overload: CoreWCF.UriTemplateTable.OriginalBaseAddress*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.UriTemplateTable.IsReadOnly
+  commentId: P:CoreWCF.UriTemplateTable.IsReadOnly
+  id: IsReadOnly
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: UriTemplateTable.IsReadOnly
+  fullName: CoreWCF.UriTemplateTable.IsReadOnly
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: CoreWCF.UriTemplateTable.IsReadOnly*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.UriTemplateTable.KeyValuePairs
+  commentId: P:CoreWCF.UriTemplateTable.KeyValuePairs
+  id: KeyValuePairs
+  parent: CoreWCF.UriTemplateTable
+  langs:
+  - csharp
+  - vb
+  name: KeyValuePairs
+  nameWithType: UriTemplateTable.KeyValuePairs
+  fullName: CoreWCF.UriTemplateTable.KeyValuePairs
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF
+  syntax:
+    content: public IList<KeyValuePair<UriTemplate, object>> KeyValuePairs { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}
+    content.vb: Public ReadOnly Property KeyValuePairs As IList(Of KeyValuePair(Of UriTemplate, Object))
+  overload: CoreWCF.UriTemplateTable.KeyValuePairs*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.UriTemplateTable.#ctor*
+  commentId: Overload:CoreWCF.UriTemplateTable.#ctor
+  isExternal: true
+  name: UriTemplateTable
+  nameWithType: UriTemplateTable.UriTemplateTable
+  fullName: CoreWCF.UriTemplateTable.UriTemplateTable
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}
+  commentId: '!:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<UriTemplate, Object>>
+  nameWithType: IEnumerable<KeyValuePair<UriTemplate, Object>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<CoreWCF.UriTemplate, System.Object>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of UriTemplate, Object))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of CoreWCF.UriTemplate, System.Object))
+  name.vb: IEnumerable(Of KeyValuePair(Of UriTemplate, Object))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.UriTemplate
+    name: UriTemplate
+    nameWithType: UriTemplate
+    fullName: CoreWCF.UriTemplate
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.UriTemplate
+    name: UriTemplate
+    nameWithType: UriTemplate
+    fullName: CoreWCF.UriTemplate
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.UriTemplateTable.MakeReadOnly*
+  commentId: Overload:CoreWCF.UriTemplateTable.MakeReadOnly
+  isExternal: true
+  name: MakeReadOnly
+  nameWithType: UriTemplateTable.MakeReadOnly
+  fullName: CoreWCF.UriTemplateTable.MakeReadOnly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.UriTemplateTable.Match*
+  commentId: Overload:CoreWCF.UriTemplateTable.Match
+  isExternal: true
+  name: Match
+  nameWithType: UriTemplateTable.Match
+  fullName: CoreWCF.UriTemplateTable.Match
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.UriTemplateMatch}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.UriTemplateMatch}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<UriTemplateMatch>
+  nameWithType: Collection<UriTemplateMatch>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.UriTemplateMatch>
+  nameWithType.vb: Collection(Of UriTemplateMatch)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.UriTemplateMatch)
+  name.vb: Collection(Of UriTemplateMatch)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: CoreWCF.UriTemplateMatch
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.UriTemplateMatch
+    name: UriTemplateMatch
+    nameWithType: UriTemplateMatch
+    fullName: CoreWCF.UriTemplateMatch
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.UriTemplateTable.MatchSingle*
+  commentId: Overload:CoreWCF.UriTemplateTable.MatchSingle
+  isExternal: true
+  name: MatchSingle
+  nameWithType: UriTemplateTable.MatchSingle
+  fullName: CoreWCF.UriTemplateTable.MatchSingle
+- uid: CoreWCF.UriTemplateMatch
+  commentId: T:CoreWCF.UriTemplateMatch
+  parent: CoreWCF
+  isExternal: true
+  name: UriTemplateMatch
+  nameWithType: UriTemplateMatch
+  fullName: CoreWCF.UriTemplateMatch
+- uid: CoreWCF.UriTemplateTable.BaseAddress*
+  commentId: Overload:CoreWCF.UriTemplateTable.BaseAddress
+  isExternal: true
+  name: BaseAddress
+  nameWithType: UriTemplateTable.BaseAddress
+  fullName: CoreWCF.UriTemplateTable.BaseAddress
+- uid: CoreWCF.UriTemplateTable.OriginalBaseAddress*
+  commentId: Overload:CoreWCF.UriTemplateTable.OriginalBaseAddress
+  isExternal: true
+  name: OriginalBaseAddress
+  nameWithType: UriTemplateTable.OriginalBaseAddress
+  fullName: CoreWCF.UriTemplateTable.OriginalBaseAddress
+- uid: CoreWCF.UriTemplateTable.IsReadOnly*
+  commentId: Overload:CoreWCF.UriTemplateTable.IsReadOnly
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: UriTemplateTable.IsReadOnly
+  fullName: CoreWCF.UriTemplateTable.IsReadOnly
+- uid: CoreWCF.UriTemplateTable.KeyValuePairs*
+  commentId: Overload:CoreWCF.UriTemplateTable.KeyValuePairs
+  isExternal: true
+  name: KeyValuePairs
+  nameWithType: UriTemplateTable.KeyValuePairs
+  fullName: CoreWCF.UriTemplateTable.KeyValuePairs
+- uid: System.Collections.Generic.IList{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}
+  commentId: '!:System.Collections.Generic.IList{System.Collections.Generic.KeyValuePair{CoreWCF.UriTemplate,System.Object}}'
+  definition: System.Collections.Generic.IList`1
+  name: IList<KeyValuePair<UriTemplate, Object>>
+  nameWithType: IList<KeyValuePair<UriTemplate, Object>>
+  fullName: System.Collections.Generic.IList<System.Collections.Generic.KeyValuePair<CoreWCF.UriTemplate, System.Object>>
+  nameWithType.vb: IList(Of KeyValuePair(Of UriTemplate, Object))
+  fullName.vb: System.Collections.Generic.IList(Of System.Collections.Generic.KeyValuePair(Of CoreWCF.UriTemplate, System.Object))
+  name.vb: IList(Of KeyValuePair(Of UriTemplate, Object))
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.UriTemplate
+    name: UriTemplate
+    nameWithType: UriTemplate
+    fullName: CoreWCF.UriTemplate
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.UriTemplate
+    name: UriTemplate
+    nameWithType: UriTemplate
+    fullName: CoreWCF.UriTemplate
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: System.Collections.Generic.IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: System.Collections.Generic.IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

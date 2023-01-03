@@ -1,0 +1,799 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.AddressHeader
+  commentId: T:CoreWCF.Channels.AddressHeader
+  id: AddressHeader
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.AddressHeader.#ctor
+  - CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String,System.String,System.Object)
+  - CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Channels.AddressHeader.Equals(System.Object)
+  - CoreWCF.Channels.AddressHeader.GetAddressHeaderReader
+  - CoreWCF.Channels.AddressHeader.GetHashCode
+  - CoreWCF.Channels.AddressHeader.GetValue``1
+  - CoreWCF.Channels.AddressHeader.GetValue``1(System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Channels.AddressHeader.Name
+  - CoreWCF.Channels.AddressHeader.Namespace
+  - CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.AddressHeader.ToMessageHeader
+  - CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlWriter)
+  - CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.AddressHeader.WriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  langs:
+  - csharp
+  - vb
+  name: AddressHeader
+  nameWithType: AddressHeader
+  fullName: CoreWCF.Channels.AddressHeader
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents a header that encapsulates an address information item used to identify or interact with an endpoint.
+  syntax:
+    content: 'public abstract class AddressHeader : Object'
+    content.vb: >-
+      Public MustInherit Class AddressHeader
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  remarks: An <xref:CoreWCF.Channels.AddressHeader> is characterized by a name and namespace and has a value that contains optional information used to identify or interact with an endpoint. The name can be accessed by the [Name](xref:CoreWCF.Channels.AddressHeader.Name) property and the namespace by the [Namespace](xref:CoreWCF.Channels.AddressHeader.Namespace) property.
+- uid: CoreWCF.Channels.AddressHeader.#ctor
+  commentId: M:CoreWCF.Channels.AddressHeader.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: AddressHeader()
+  summary: Initializes a new instance of the <xref:CoreWCF.Channels.AddressHeader> class.
+  nameWithType: AddressHeader.AddressHeader()
+  fullName: CoreWCF.Channels.AddressHeader.AddressHeader()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected AddressHeader()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.AddressHeader.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: Use the [CreateAddressHeader](xref:CoreWCF.Channels.AddressHeader) to create new [AddressHeader](xref:CoreWCF.Channels.AddressHeader) objects.
+- uid: CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String,System.String,System.Object)
+  commentId: M:CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String,System.String,System.Object)
+  id: CreateAddressHeader(System.String,System.String,System.Object)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateAddressHeader(String, String, Object)
+  summary: Creates a new instance of the <xref:CoreWCF.Channels.AddressHeader> class with a specified value, name and namespace.
+  nameWithType: AddressHeader.CreateAddressHeader(String, String, Object)
+  fullName: CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String, System.String, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static AddressHeader CreateAddressHeader(string name, string ns, object value)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the address header.
+    - id: ns
+      type: System.String
+      description: The namespace of the address header.
+    - id: value
+      type: System.Object
+      description: The information item for the address header.
+    return:
+      type: CoreWCF.Channels.AddressHeader
+      description: The <xref:CoreWCF.Channels.AddressHeader> with the specified name and ns that contains the information item specified by value.
+    content.vb: Public Shared Function CreateAddressHeader(name As String, ns As String, value As Object) As AddressHeader
+  overload: CoreWCF.Channels.AddressHeader.CreateAddressHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  id: CreateAddressHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: CreateAddressHeader(String, String, Object, XmlObjectSerializer)
+  summary: Creates a new instance of the <xref:CoreWCF.Channels.AddressHeader> class with a specified name and namespace that uses a specified formatter to serialize the information item from a specified object.
+  nameWithType: AddressHeader.CreateAddressHeader(String, String, Object, XmlObjectSerializer)
+  fullName: CoreWCF.Channels.AddressHeader.CreateAddressHeader(System.String, System.String, System.Object, System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static AddressHeader CreateAddressHeader(string name, string ns, object value, XmlObjectSerializer serializer)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the address header.
+    - id: ns
+      type: System.String
+      description: The namespace of the address header.
+    - id: value
+      type: System.Object
+      description: The information item for the address header.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: The [XmlObjectSerializer](xref:System.Runtime.Serialization.XmlObjectSerializer) used to serialize the specified object in the value parameter.
+    return:
+      type: CoreWCF.Channels.AddressHeader
+      description: The <xref:CoreWCF.Channels.AddressHeader> with the specified name and ns that contains the information item specified by value.
+    content.vb: Public Shared Function CreateAddressHeader(name As String, ns As String, value As Object, serializer As XmlObjectSerializer) As AddressHeader
+  overload: CoreWCF.Channels.AddressHeader.CreateAddressHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.AddressHeader.Equals(System.Object)
+  commentId: M:CoreWCF.Channels.AddressHeader.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  summary: Determines whether the information item in a specified object is equal to the object contained in the current address header.
+  nameWithType: AddressHeader.Equals(Object)
+  fullName: CoreWCF.Channels.AddressHeader.Equals(System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The [Object](xref:System.Object) to compare with the object contained in the current address header.
+    return:
+      type: System.Boolean
+      description: true if the information item in a specified obj is equivalent to the information item contained in the current address header; otherwise, false. In particular, returns false if obj is null.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overload: CoreWCF.Channels.AddressHeader.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: Checks for equivalence of serialized canonical XML between the information items.
+- uid: CoreWCF.Channels.AddressHeader.GetHashCode
+  commentId: M:CoreWCF.Channels.AddressHeader.GetHashCode
+  id: GetHashCode
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  summary: Provides a unique hash code for an address header.
+  nameWithType: AddressHeader.GetHashCode()
+  fullName: CoreWCF.Channels.AddressHeader.GetHashCode()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A unique hash code for the current address header. 
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overload: CoreWCF.Channels.AddressHeader.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: This is the string-based implementation.<br/><br/>
+           [GetHashCode](xref:CoreWCF.Channels.AddressHeader.GetHashCode) is suitable for use in hashing algorithms and data structures like a hash table.
+- uid: CoreWCF.Channels.AddressHeader.GetValue``1
+  commentId: M:CoreWCF.Channels.AddressHeader.GetValue``1
+  id: GetValue``1
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: GetValue<T>()
+  summary: Deserializes the information item from the current address header to an object of a specified type. 
+  nameWithType: AddressHeader.GetValue<T>()
+  fullName: CoreWCF.Channels.AddressHeader.GetValue<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public T GetValue<T>()
+    typeParameters:
+    - id: T
+      description: A class of type T with its fields and properties set to the values supplied by the current address header object.
+    return:
+      type: '{T}'
+      description: An instance of a class of type T with its fields and properties set to the values supplied by the current address header object.
+    content.vb: Public Function GetValue(Of T) As T
+  overload: CoreWCF.Channels.AddressHeader.GetValue*
+  nameWithType.vb: AddressHeader.GetValue(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.AddressHeader.GetValue(Of T)()
+  name.vb: GetValue(Of T)()
+  remarks: When using this overload, you must supply a type for the generic parameter T. The type of the return value is determined by the generic type parameter.<br/><br/>
+           Use the [GetValue<T>(XmlObjectSerializer)](xref:CoreWCF.Channels.AddressHeader.GetValue``1(System.Runtime.Serialization.XmlObjectSerializer)) overload if you want to use a customized XML formatter.
+- uid: CoreWCF.Channels.AddressHeader.GetValue``1(System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Channels.AddressHeader.GetValue``1(System.Runtime.Serialization.XmlObjectSerializer)
+  id: GetValue``1(System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: GetValue<T>(XmlObjectSerializer)
+  summary: Deserializes the information item from the current address header to an object of a specified type that uses a specified formatter to serialize this information.
+  nameWithType: AddressHeader.GetValue<T>(XmlObjectSerializer)
+  fullName: CoreWCF.Channels.AddressHeader.GetValue<T>(System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public T GetValue<T>(XmlObjectSerializer serializer)
+    parameters:
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: The [XmlObjectSerializer](xref:System.Runtime.Serialization.XmlObjectSerializer) used to deserialize the information item from the current address header object.
+    typeParameters:
+    - id: T
+      description: A class of type T with its fields and properties set to the values supplied by the current address header object.
+    return:
+      type: '{T}'
+      description: An instance of a class of type T with its fields and properties set to the values supplied by the current address header object.
+    content.vb: Public Function GetValue(Of T)(serializer As XmlObjectSerializer) As T
+  overload: CoreWCF.Channels.AddressHeader.GetValue*
+  nameWithType.vb: AddressHeader.GetValue(Of T)(XmlObjectSerializer)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.AddressHeader.GetValue(Of T)(System.Runtime.Serialization.XmlObjectSerializer)
+  name.vb: GetValue(Of T)(XmlObjectSerializer)
+  remarks: When using this overload, you must supply a type for the generic parameter T. The type of the return value is determined by the generic type parameter.<br/><br/>
+           Use this overload only if you want to use a customized XML formatter; otherwise use the [GetValue<T>()](xref:CoreWCF.Channels.AddressHeader.GetValue``1) overload.
+- uid: CoreWCF.Channels.AddressHeader.GetAddressHeaderReader
+  commentId: M:CoreWCF.Channels.AddressHeader.GetAddressHeaderReader
+  id: GetAddressHeaderReader
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: GetAddressHeaderReader()
+  summary: Returns an XML reader that can serialize the current address header object.
+  nameWithType: AddressHeader.GetAddressHeaderReader()
+  fullName: CoreWCF.Channels.AddressHeader.GetAddressHeaderReader()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual XmlDictionaryReader GetAddressHeaderReader()
+    return:
+      type: System.Xml.XmlDictionaryReader
+      description: An instance of [XmlDictionaryReader](xref:System.Xml.XmlDictionaryReader) that can serialize the current address header object.
+    content.vb: Public Overridable Function GetAddressHeaderReader As XmlDictionaryReader
+  overload: CoreWCF.Channels.AddressHeader.GetAddressHeaderReader*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  id: OnWriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: OnWriteStartAddressHeader(XmlDictionaryWriter)
+  summary: When overridden in a derived class, is invoked when the address header contents are written to a stream or file.
+  nameWithType: AddressHeader.OnWriteStartAddressHeader(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual void OnWriteStartAddressHeader(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the address header contents to a stream or file.
+    content.vb: Protected Overridable Sub OnWriteStartAddressHeader(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  id: OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: OnWriteAddressHeaderContents(XmlDictionaryWriter)
+  summary: When overridden in a derived class, is invoked when the address header contents are written to a stream or file.
+  nameWithType: AddressHeader.OnWriteAddressHeaderContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected abstract void OnWriteAddressHeaderContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the address header contents to a stream or file.
+    content.vb: Protected MustOverride Sub OnWriteAddressHeaderContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.Channels.AddressHeader.ToMessageHeader
+  commentId: M:CoreWCF.Channels.AddressHeader.ToMessageHeader
+  id: ToMessageHeader
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: ToMessageHeader()
+  summary: Wraps the address header as a message header.
+  nameWithType: AddressHeader.ToMessageHeader()
+  fullName: CoreWCF.Channels.AddressHeader.ToMessageHeader()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public MessageHeader ToMessageHeader()
+    return:
+      type: CoreWCF.Channels.MessageHeader
+      description: The <xref:CoreWCF.Channels.MessageHeader> that wraps the current address header.
+    content.vb: Public Function ToMessageHeader As MessageHeader
+  overload: CoreWCF.Channels.AddressHeader.ToMessageHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlWriter)
+  id: WriteAddressHeader(System.Xml.XmlWriter)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteAddressHeader(XmlWriter)
+  summary: Writes the address header to a stream or file using a specified <xref:System.Xml.XmlWriter>.
+  nameWithType: AddressHeader.WriteAddressHeader(XmlWriter)
+  fullName: CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void WriteAddressHeader(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: The [XmlWriter](xref:System.Xml.XmlWriter) used to write the address header to a stream or file.
+    content.vb: Public Sub WriteAddressHeader(writer As XmlWriter)
+  overload: CoreWCF.Channels.AddressHeader.WriteAddressHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: This overload wraps [XmlWriter](xref:System.Xml.XmlWriter) as a [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) and then the calls the abstract<br/><br/>
+           [OnWriteAddressHeaderContents(XmlDictionaryWriter)](xref:CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)) method. Users must provide an implementation for that abstract method to use this overload.
+- uid: CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlDictionaryWriter)
+  id: WriteAddressHeader(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteAddressHeader(XmlDictionaryWriter)
+  summary: Writes the address header to a stream or file using a specified <xref:System.Xml.XmlDictionaryWriter>.
+  nameWithType: AddressHeader.WriteAddressHeader(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.AddressHeader.WriteAddressHeader(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void WriteAddressHeader(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the address header to a stream or file.
+    content.vb: Public Sub WriteAddressHeader(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.AddressHeader.WriteAddressHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: This overload calls the abstract<br/><br/>
+           [OnWriteAddressHeaderContents(XmlDictionaryWriter](xref:CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)) method, so users must provide an implementation of that method to use this method.
+- uid: CoreWCF.Channels.AddressHeader.WriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.AddressHeader.WriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  id: WriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteStartAddressHeader(XmlDictionaryWriter)
+  summary: Starts to write the address header contents to a stream or file.
+  nameWithType: AddressHeader.WriteStartAddressHeader(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.AddressHeader.WriteStartAddressHeader(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void WriteStartAddressHeader(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the address header to a stream or file.
+    content.vb: Public Sub WriteStartAddressHeader(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.AddressHeader.WriteStartAddressHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  id: WriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: WriteAddressHeaderContents(XmlDictionaryWriter)
+  summary: Writes the address header contents to a stream or file.
+  nameWithType: AddressHeader.WriteAddressHeaderContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void WriteAddressHeaderContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write the address header contents to a stream or file.
+    content.vb: Public Sub WriteAddressHeaderContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.AddressHeader.Name
+  commentId: P:CoreWCF.Channels.AddressHeader.Name
+  id: Name
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: Name
+  summary: When implemented, gets the name of the address header.
+  nameWithType: AddressHeader.Name
+  fullName: CoreWCF.Channels.AddressHeader.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name of the address header.
+    content.vb: Public MustOverride ReadOnly Property Name As String
+  overload: CoreWCF.Channels.AddressHeader.Name*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.AddressHeader.Namespace
+  commentId: P:CoreWCF.Channels.AddressHeader.Namespace
+  id: Namespace
+  parent: CoreWCF.Channels.AddressHeader
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  summary: When implemented, gets the namespace of the address header.
+  nameWithType: AddressHeader.Namespace
+  fullName: CoreWCF.Channels.AddressHeader.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string Namespace { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The namespace of the address header.
+    content.vb: Public MustOverride ReadOnly Property Namespace As String
+  overload: CoreWCF.Channels.AddressHeader.Namespace*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.AddressHeader.#ctor*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.#ctor
+  isExternal: true
+  name: AddressHeader
+  nameWithType: AddressHeader.AddressHeader
+  fullName: CoreWCF.Channels.AddressHeader.AddressHeader
+- uid: CoreWCF.Channels.AddressHeader.CreateAddressHeader*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.CreateAddressHeader
+  isExternal: true
+  name: CreateAddressHeader
+  nameWithType: AddressHeader.CreateAddressHeader
+  fullName: CoreWCF.Channels.AddressHeader.CreateAddressHeader
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.AddressHeader
+  commentId: T:CoreWCF.Channels.AddressHeader
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: AddressHeader
+  nameWithType: AddressHeader
+  fullName: CoreWCF.Channels.AddressHeader
+- uid: System.Runtime.Serialization.XmlObjectSerializer
+  isExternal: true
+  name: XmlObjectSerializer
+  nameWithType: XmlObjectSerializer
+  fullName: System.Runtime.Serialization.XmlObjectSerializer
+- uid: CoreWCF.Channels.AddressHeader.Equals*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.Equals
+  isExternal: true
+  name: Equals
+  nameWithType: AddressHeader.Equals
+  fullName: CoreWCF.Channels.AddressHeader.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.AddressHeader.GetHashCode*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.GetHashCode
+  isExternal: true
+  name: GetHashCode
+  nameWithType: AddressHeader.GetHashCode
+  fullName: CoreWCF.Channels.AddressHeader.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.AddressHeader.GetValue*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.GetValue
+  isExternal: true
+  name: GetValue
+  nameWithType: AddressHeader.GetValue
+  fullName: CoreWCF.Channels.AddressHeader.GetValue
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.AddressHeader.GetAddressHeaderReader*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.GetAddressHeaderReader
+  isExternal: true
+  name: GetAddressHeaderReader
+  nameWithType: AddressHeader.GetAddressHeaderReader
+  fullName: CoreWCF.Channels.AddressHeader.GetAddressHeaderReader
+- uid: System.Xml.XmlDictionaryReader
+  isExternal: true
+  name: XmlDictionaryReader
+  nameWithType: XmlDictionaryReader
+  fullName: System.Xml.XmlDictionaryReader
+- uid: CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader
+  isExternal: true
+  name: OnWriteStartAddressHeader
+  nameWithType: AddressHeader.OnWriteStartAddressHeader
+  fullName: CoreWCF.Channels.AddressHeader.OnWriteStartAddressHeader
+- uid: System.Xml.XmlDictionaryWriter
+  isExternal: true
+  name: XmlDictionaryWriter
+  nameWithType: XmlDictionaryWriter
+  fullName: System.Xml.XmlDictionaryWriter
+- uid: CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents
+  isExternal: true
+  name: OnWriteAddressHeaderContents
+  nameWithType: AddressHeader.OnWriteAddressHeaderContents
+  fullName: CoreWCF.Channels.AddressHeader.OnWriteAddressHeaderContents
+- uid: CoreWCF.Channels.AddressHeader.ToMessageHeader*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.ToMessageHeader
+  isExternal: true
+  name: ToMessageHeader
+  nameWithType: AddressHeader.ToMessageHeader
+  fullName: CoreWCF.Channels.AddressHeader.ToMessageHeader
+- uid: CoreWCF.Channels.MessageHeader
+  commentId: T:CoreWCF.Channels.MessageHeader
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageHeader
+  nameWithType: MessageHeader
+  fullName: CoreWCF.Channels.MessageHeader
+- uid: CoreWCF.Channels.AddressHeader.WriteAddressHeader*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.WriteAddressHeader
+  isExternal: true
+  name: WriteAddressHeader
+  nameWithType: AddressHeader.WriteAddressHeader
+  fullName: CoreWCF.Channels.AddressHeader.WriteAddressHeader
+- uid: System.Xml.XmlWriter
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: CoreWCF.Channels.AddressHeader.WriteStartAddressHeader*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.WriteStartAddressHeader
+  isExternal: true
+  name: WriteStartAddressHeader
+  nameWithType: AddressHeader.WriteStartAddressHeader
+  fullName: CoreWCF.Channels.AddressHeader.WriteStartAddressHeader
+- uid: CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents
+  isExternal: true
+  name: WriteAddressHeaderContents
+  nameWithType: AddressHeader.WriteAddressHeaderContents
+  fullName: CoreWCF.Channels.AddressHeader.WriteAddressHeaderContents
+- uid: CoreWCF.Channels.AddressHeader.Name*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.Name
+  isExternal: true
+  name: Name
+  nameWithType: AddressHeader.Name
+  fullName: CoreWCF.Channels.AddressHeader.Name
+- uid: CoreWCF.Channels.AddressHeader.Namespace*
+  commentId: Overload:CoreWCF.Channels.AddressHeader.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: AddressHeader.Namespace
+  fullName: CoreWCF.Channels.AddressHeader.Namespace

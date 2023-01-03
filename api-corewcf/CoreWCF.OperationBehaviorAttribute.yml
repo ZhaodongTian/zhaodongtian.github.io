@@ -1,0 +1,647 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.OperationBehaviorAttribute
+  commentId: T:CoreWCF.OperationBehaviorAttribute
+  id: OperationBehaviorAttribute
+  parent: CoreWCF
+  children:
+  - CoreWCF.OperationBehaviorAttribute.#ctor
+  - CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters
+  - CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  - CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  - CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  - CoreWCF.OperationBehaviorAttribute.Impersonation
+  - CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode
+  langs:
+  - csharp
+  - vb
+  name: OperationBehaviorAttribute
+  nameWithType: OperationBehaviorAttribute
+  fullName: CoreWCF.OperationBehaviorAttribute
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Specifies the local execution behavior of a service method.
+  remarks: "Use the &lt;xref:CoreWCF.OperationBehaviorAttribute> attribute to indicate what operation-specific execution behavior the operation has when executed. (To specify execution behavior at the service level, use the &lt;xref:CoreWCF.ServiceBehaviorAttribute> attribute.)  \n\n> [!NOTE]\n>  You can also use &lt;xref:CoreWCF.OperationBehaviorAttribute> to configure a callback contract operation in a duplex client application. When used on a callback operation, the &lt;xref:CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode%2A> property must be &lt;xref:CoreWCF.ReleaseInstanceMode.None> or an &lt;xref:System.InvalidOperationException> exception is thrown at runtime.  \n\nThe &lt;xref:CoreWCF.OperationBehaviorAttribute> attribute is a Windows Communication Foundation (WCF) programming model feature that enables common features that developers otherwise must implement themselves.  \n\n-   The &lt;xref:CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters%2A> property controls whether parameter objects passed to an operation are disposed when the operation completes.  \n\n-   The &lt;xref:CoreWCF.OperationBehaviorAttribute.TransactionAutoComplete%2A> property specifies whether the transaction in which the method executes is automatically committed if no unhandled exceptions occur.  \n\n-   The &lt;xref:CoreWCF.OperationBehaviorAttribute.TransactionScopeRequired%2A> property specifies whether a method must execute within a transaction.  \n\n-   The &lt;xref:CoreWCF.OperationBehaviorAttribute.Impersonation%2A> property specifies whether the service operation can, must, or cannot impersonate the caller&apos;s identity.  \n\n-   The &lt;xref:CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode%2A> property specifies when service objects are recycled during the method invocation process.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class OperationBehaviorAttribute : Attribute, IOperationBehavior'
+    content.vb: >-
+      Public NotInheritable Class OperationBehaviorAttribute
+          Inherits Attribute
+          Implements IOperationBehavior
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.Description.IOperationBehavior
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  id: CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  isEii: true
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: void IOperationBehavior.AddBindingParameters(OperationDescription operationDescription, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.AddBindingParameters(operationDescription As OperationDescription, bindingParameters As BindingParameterCollection) Implements IOperationBehavior.AddBindingParameters
+  overload: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters*
+  implements:
+  - CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  name.vb: CoreWCF.Description.IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  id: CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  isEii: true
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.Validate(OperationDescription)
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.Validate(OperationDescription)
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: void IOperationBehavior.Validate(OperationDescription operationDescription)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.Validate(operationDescription As OperationDescription) Implements IOperationBehavior.Validate
+  overload: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#Validate*
+  implements:
+  - CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.Validate(OperationDescription)
+  name.vb: CoreWCF.Description.IOperationBehavior.Validate(OperationDescription)
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  commentId: M:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  id: CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  isEii: true
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.DispatchOperation)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: void IOperationBehavior.ApplyDispatchBehavior(OperationDescription description, DispatchOperation dispatch)
+    parameters:
+    - id: description
+      type: CoreWCF.Description.OperationDescription
+    - id: dispatch
+      type: CoreWCF.Dispatcher.DispatchOperation
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(description As OperationDescription, dispatch As DispatchOperation) Implements IOperationBehavior.ApplyDispatchBehavior
+  overload: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*
+  implements:
+  - CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  commentId: M:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  id: CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  isEii: true
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.ClientOperation)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: void IOperationBehavior.ApplyClientBehavior(OperationDescription description, ClientOperation proxy)
+    parameters:
+    - id: description
+      type: CoreWCF.Description.OperationDescription
+    - id: proxy
+      type: CoreWCF.Dispatcher.ClientOperation
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(description As OperationDescription, proxy As ClientOperation) Implements IOperationBehavior.ApplyClientBehavior
+  overload: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*
+  implements:
+  - CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+- uid: CoreWCF.OperationBehaviorAttribute.#ctor
+  commentId: M:CoreWCF.OperationBehaviorAttribute.#ctor
+  id: '#ctor'
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: OperationBehaviorAttribute()
+  nameWithType: OperationBehaviorAttribute.OperationBehaviorAttribute()
+  fullName: CoreWCF.OperationBehaviorAttribute.OperationBehaviorAttribute()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public OperationBehaviorAttribute()
+    content.vb: Public Sub New
+  overload: CoreWCF.OperationBehaviorAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters
+  commentId: P:CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters
+  id: AutoDisposeParameters
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: AutoDisposeParameters
+  nameWithType: OperationBehaviorAttribute.AutoDisposeParameters
+  fullName: CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool AutoDisposeParameters { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AutoDisposeParameters As Boolean
+  overload: CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationBehaviorAttribute.Impersonation
+  commentId: P:CoreWCF.OperationBehaviorAttribute.Impersonation
+  id: Impersonation
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: Impersonation
+  nameWithType: OperationBehaviorAttribute.Impersonation
+  fullName: CoreWCF.OperationBehaviorAttribute.Impersonation
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ImpersonationOption Impersonation { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.ImpersonationOption
+    content.vb: Public Property Impersonation As ImpersonationOption
+  overload: CoreWCF.OperationBehaviorAttribute.Impersonation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode
+  commentId: P:CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode
+  id: ReleaseInstanceMode
+  parent: CoreWCF.OperationBehaviorAttribute
+  langs:
+  - csharp
+  - vb
+  name: ReleaseInstanceMode
+  nameWithType: OperationBehaviorAttribute.ReleaseInstanceMode
+  fullName: CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ReleaseInstanceMode ReleaseInstanceMode { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.ReleaseInstanceMode
+    content.vb: Public Property ReleaseInstanceMode As ReleaseInstanceMode
+  overload: CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Description.IOperationBehavior
+  commentId: T:CoreWCF.Description.IOperationBehavior
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IOperationBehavior
+  nameWithType: IOperationBehavior
+  fullName: CoreWCF.Description.IOperationBehavior
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters
+  isExternal: true
+  name: IOperationBehavior.AddBindingParameters
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.AddBindingParameters
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters
+  name.vb: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+- uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: AddBindingParameters(OperationDescription, BindingParameterCollection)
+  nameWithType: IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription, CoreWCF.Channels.BindingParameterCollection)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+    name: AddBindingParameters
+    nameWithType: IOperationBehavior.AddBindingParameters
+    fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+    name: AddBindingParameters
+    nameWithType: IOperationBehavior.AddBindingParameters
+    fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.OperationDescription
+  commentId: T:CoreWCF.Description.OperationDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescription
+  nameWithType: OperationDescription
+  fullName: CoreWCF.Description.OperationDescription
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#Validate*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#Validate
+  isExternal: true
+  name: IOperationBehavior.Validate
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.Validate
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.Validate
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.Validate
+  name.vb: CoreWCF.Description.IOperationBehavior.Validate
+- uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: Validate(OperationDescription)
+  nameWithType: IOperationBehavior.Validate(OperationDescription)
+  fullName: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+    name: Validate
+    nameWithType: IOperationBehavior.Validate
+    fullName: CoreWCF.Description.IOperationBehavior.Validate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+    name: Validate
+    nameWithType: IOperationBehavior.Validate
+    fullName: CoreWCF.Description.IOperationBehavior.Validate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior
+  isExternal: true
+  name: IOperationBehavior.ApplyDispatchBehavior
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+- uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  commentId: M:CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  nameWithType: IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.DispatchOperation)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+    name: ApplyDispatchBehavior
+    nameWithType: IOperationBehavior.ApplyDispatchBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.DispatchOperation
+    name: DispatchOperation
+    nameWithType: DispatchOperation
+    fullName: CoreWCF.Dispatcher.DispatchOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+    name: ApplyDispatchBehavior
+    nameWithType: IOperationBehavior.ApplyDispatchBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.DispatchOperation
+    name: DispatchOperation
+    nameWithType: DispatchOperation
+    fullName: CoreWCF.Dispatcher.DispatchOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.DispatchOperation
+  commentId: T:CoreWCF.Dispatcher.DispatchOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchOperation
+  nameWithType: DispatchOperation
+  fullName: CoreWCF.Dispatcher.DispatchOperation
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior
+  isExternal: true
+  name: IOperationBehavior.ApplyClientBehavior
+  nameWithType: OperationBehaviorAttribute.IOperationBehavior.ApplyClientBehavior
+  fullName: CoreWCF.OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+  nameWithType.vb: OperationBehaviorAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+- uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  commentId: M:CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: ApplyClientBehavior(OperationDescription, ClientOperation)
+  nameWithType: IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.ClientOperation)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+    name: ApplyClientBehavior
+    nameWithType: IOperationBehavior.ApplyClientBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.ClientOperation
+    name: ClientOperation
+    nameWithType: ClientOperation
+    fullName: CoreWCF.Dispatcher.ClientOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+    name: ApplyClientBehavior
+    nameWithType: IOperationBehavior.ApplyClientBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.ClientOperation
+    name: ClientOperation
+    nameWithType: ClientOperation
+    fullName: CoreWCF.Dispatcher.ClientOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ClientOperation
+  commentId: T:CoreWCF.Dispatcher.ClientOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientOperation
+  nameWithType: ClientOperation
+  fullName: CoreWCF.Dispatcher.ClientOperation
+- uid: CoreWCF.OperationBehaviorAttribute.#ctor*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.#ctor
+  isExternal: true
+  name: OperationBehaviorAttribute
+  nameWithType: OperationBehaviorAttribute.OperationBehaviorAttribute
+  fullName: CoreWCF.OperationBehaviorAttribute.OperationBehaviorAttribute
+- uid: CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters
+  isExternal: true
+  name: AutoDisposeParameters
+  nameWithType: OperationBehaviorAttribute.AutoDisposeParameters
+  fullName: CoreWCF.OperationBehaviorAttribute.AutoDisposeParameters
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.OperationBehaviorAttribute.Impersonation*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.Impersonation
+  isExternal: true
+  name: Impersonation
+  nameWithType: OperationBehaviorAttribute.Impersonation
+  fullName: CoreWCF.OperationBehaviorAttribute.Impersonation
+- uid: CoreWCF.ImpersonationOption
+  commentId: T:CoreWCF.ImpersonationOption
+  parent: CoreWCF
+  isExternal: true
+  name: ImpersonationOption
+  nameWithType: ImpersonationOption
+  fullName: CoreWCF.ImpersonationOption
+- uid: CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode*
+  commentId: Overload:CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode
+  isExternal: true
+  name: ReleaseInstanceMode
+  nameWithType: OperationBehaviorAttribute.ReleaseInstanceMode
+  fullName: CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode
+- uid: CoreWCF.ReleaseInstanceMode
+  commentId: T:CoreWCF.ReleaseInstanceMode
+  parent: CoreWCF
+  isExternal: true
+  name: ReleaseInstanceMode
+  nameWithType: ReleaseInstanceMode
+  fullName: CoreWCF.ReleaseInstanceMode

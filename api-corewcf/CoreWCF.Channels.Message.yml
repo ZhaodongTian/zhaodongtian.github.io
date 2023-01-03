@@ -1,0 +1,2159 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  id: Message
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.Message.#ctor
+  - CoreWCF.Channels.Message.Close
+  - CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,CoreWCF.Channels.MessageFault,System.String)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,CoreWCF.Channels.BodyWriter)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlDictionaryReader)
+  - CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlReader)
+  - CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlDictionaryReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.Message.GetBody``1
+  - CoreWCF.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)
+  - CoreWCF.Channels.Message.GetBodyAttribute(System.String,System.String)
+  - CoreWCF.Channels.Message.GetReaderAtBodyContents
+  - CoreWCF.Channels.Message.GetReaderAtHeader
+  - CoreWCF.Channels.Message.Headers
+  - CoreWCF.Channels.Message.IsDisposed
+  - CoreWCF.Channels.Message.IsEmpty
+  - CoreWCF.Channels.Message.IsFault
+  - CoreWCF.Channels.Message.OnBodyToString(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.OnClose
+  - CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32)
+  - CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32,System.Xml.XmlDictionaryReaderQuotas)
+  - CoreWCF.Channels.Message.OnGetBody``1(System.Xml.XmlDictionaryReader)
+  - CoreWCF.Channels.Message.OnGetBodyAttribute(System.String,System.String)
+  - CoreWCF.Channels.Message.OnGetReaderAtBodyContents
+  - CoreWCF.Channels.Message.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.OnWriteMessage(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.OnWriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.OnWriteStartBody(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.OnWriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.OnWriteStartHeaders(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.Properties
+  - CoreWCF.Channels.Message.RecycledMessageState
+  - CoreWCF.Channels.Message.State
+  - CoreWCF.Channels.Message.ToString
+  - CoreWCF.Channels.Message.Version
+  - CoreWCF.Channels.Message.WriteBody(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.WriteBody(System.Xml.XmlWriter)
+  - CoreWCF.Channels.Message.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlWriter)
+  - CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlWriter)
+  - CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlWriter)
+  - CoreWCF.Channels.Message.WriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents the unit of communication between endpoints in a distributed environment.
+  remarks: "\nThe <xref:CoreWCF.Channels.Message> class provides a means of communicating arbitrary information between a sender and a receiver on a network. It can be used to relay information, suggest or demand a course of action, or request data.\n \nThe structure of a <xref:CoreWCF.Channels.Message> object represents a SOAP envelope. It consists of two distinct parts: the message's body and an optional collection of headers, represented by the <xref:CoreWCF.Channels.Message.Headers> class. The message content is application-defined data sent from a sender to a receiver. The message headers enable system and application extensibility to meet the changing requirements, because you can define code to manipulate and respond to specific headers. You can also define your own headers. Message headers are serialized or deserialized along with the contents of the message.\n \nMessages are received and sent in particular formats. Support is provided for two formats: the standard text-based XML format and a binary-based XML format. The <xref:CoreWCF.Channels.Message> object can be used to represent both SOAP 1.1 and SOAP 1.2 envelopes. Note that an instance of <xref:CoreWCF.Channels.Message> is fixed upon creation and is bound to a specific SOAP version. The <xref:CoreWCF.Channels.Message.Version> property represents the SOAP version of the message.\n \nA <xref:CoreWCF.Channels.Message> object can be serialized to an external store by using the [WriteMessage](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.writemessage?view=dotnet-plat-ext-7.0) method. Properties of the message can also be serialized, but they have to be individually identified and serialized separately. Deserializing a message to create an in-memory <xref:CoreWCF.Channels.Message> object can be done using [CreateMessage](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.createmessage?view=dotnet-plat-ext-7.0). Properties must also be deserialized individually and manually added to the property collection for the specific <xref:CoreWCF.Channels.Message> instance.\n \nThe size of a <xref:CoreWCF.Channels.Message> object is fixed to the size of data it is transmitting. Every body is modeled as an instance of [XmlReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0), with no predefined limit on the size of the stream that the [XmlReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) instance is wrapping. However, specific channel providers can have a limit on the size of messages that they process.\n \nA <xref:CoreWCF.Channels.Message> can be annotated with useful information generated by an entity that has examined and processed the message. This functionality is provided by the <xref:CoreWCF.Channels.Message.Headers> and <xref:CoreWCF.Channels.Message.Properties> properties. The <xref:CoreWCF.Channels.Message.Headers> collection represents the set of SOAP headers on the message.\n \nThe <xref:CoreWCF.Channels.Message.Properties> property represents the set of processing-level annotations on the message. Because information in headers is transmitted on the wire, an entity that examines a header must support the underlying version(s) of the protocols used by the header. However, properties provide a more version-independent way of annotating a message.\n \nTo create a <xref:CoreWCF.Channels.Message> instance, use one of the [CreateMessage](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.createmessage?view=dotnet-plat-ext-7.0) methods.\n \nIt is recommended that a consumer of a message always call <xref:CoreWCF.Channels.Message.Close> when the consumer is finished accessing the contents of the message. This action frees finite system resources (for example, sockets, named pipes) that are tied to the lifetime of the message.\n \nSpecial note for Managed C++ users deriving from this class:\n \n* Put your cleanup code in (On)(Begin)Close (and/or OnAbort), not in a destructor.\n \n* Avoid destructors: they cause the compiler to auto-generate [IDisposable](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0).\n \n* Avoid non-reference members: they can cause the compiler to auto-generate [IDisposable](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0).\n \n* Avoid finalizers; but if you include one, suppress the build warning and call [SuppressFinalize(Object)](https://learn.microsoft.com/en-us/dotnet/api/system.gc.suppressfinalize?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0#system-gc-suppressfinalize(system-object)) and the finalizer itself from (On)(Begin)Close (and/or OnAbort) to emulate what would have been the auto-generated [IDisposable](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) behavior.\n"
+  syntax:
+    content: 'public abstract class Message : Object'
+    content.vb: >-
+      Public MustInherit Class Message
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.Message.Close
+  commentId: M:CoreWCF.Channels.Message.Close
+  id: Close
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: Message.Close()
+  fullName: CoreWCF.Channels.Message.Close()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Closes the <xref:CoreWCF.Channels.Message> and releases any resources."
+  syntax:
+    content: public void Close()
+    content.vb: Public Sub Close
+  overload: CoreWCF.Channels.Message.Close*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "\nThe <xref:CoreWCF.Channels.Message> does have a finalizer, which causes <xref:CoreWCF.Channels.Message.Close> to be called for you when the message is garbage-collected. This is non-optimal, as the .NET Framework's Garbage Collection (GC) mechanism does not necessarily run when you run out of system resources other than memory. For this reason, you should always call this method when finished with the contents of the message. The <xref:CoreWCF.Channels.Message.Close> method is a synonym for [Dispose](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable.dispose?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) (which Message also implements). The message also disposes the object that was used to construct the body when it is disposed.\n \nAn [ObjectDisposedException](https://learn.microsoft.com/en-us/dotnet/api/system.objectdisposedexception?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) is thrown if you call any method or access any properties of the message once it is closed. Calling any method or accessing any properties of other objects related to the message once it is closed, (such as message header collection, message property values, or [XmlReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) instances returned for the body or for a header) has undefined behavior.\n"
+- uid: CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)
+  commentId: M:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)
+  id: CreateBufferedCopy(System.Int32)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateBufferedCopy(Int32)
+  nameWithType: Message.CreateBufferedCopy(Int32)
+  fullName: CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Stores an entire Message into a memory buffer for future access."
+  syntax:
+    content: public MessageBuffer CreateBufferedCopy(int maxBufferSize)
+    parameters:
+    - id: maxBufferSize
+      type: System.Int32
+      description: The maximum size of the buffer to be created.
+    return:
+      type: CoreWCF.Channels.MessageBuffer
+      description: "A newly created <xref:CoreWCF.Channels.MessageBuffer> object."
+    content.vb: Public Function CreateBufferedCopy(maxBufferSize As Integer) As MessageBuffer
+  overload: CoreWCF.Channels.Message.CreateBufferedCopy*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The body of a <xref:CoreWCF.Channels.Message> instance can only be accessed or written once. If you want to access a <xref:CoreWCF.Channels.Message> instance more than once, you should use the <xref:CoreWCF.Channels.MessageBuffer> class to completely store an entire <xref:CoreWCF.Channels.Message> instance into memory. A <xref:CoreWCF.Channels.MessageBuffer> instance is constructed by calling <xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)> of a Message instance."
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, String, Object)
+  nameWithType: Message.CreateMessage(MessageVersion, String, Object)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, System.String, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message with the specified version, action and body.
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, string action, object body)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    - id: action
+      type: System.String
+      description: A description of how the message should be processed.
+    - id: body
+      type: System.Object
+      description: The body of the message.
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, action As String, body As Object) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThis static method is used to create a new copy of message ready for sending.\n \nWhen working with JSON messages use the <xref:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)> method, the <xref:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object)> method does not work with JSON messages.\n"
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, String, Object, XmlObjectSerializer)
+  nameWithType: Message.CreateMessage(MessageVersion, String, Object, XmlObjectSerializer)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, System.String, System.Object, System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message using the specified version, action, message body and serializer.
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, string action, object body, XmlObjectSerializer serializer)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    - id: action
+      type: System.String
+      description: A description of how the message should be processed.
+    - id: body
+      type: System.Object
+      description: The body of the message.
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: "A [XmlObjectSerializer](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object used to serialize the message."
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, action As String, body As Object, serializer As XmlObjectSerializer) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThis static method is used to create a new copy of message ready for sending.\n \nWhen working with JSON messages use the <xref:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)> method, the <xref:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Object)> method does not work with JSON messages.\n"
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlReader)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlReader)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlReader)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, String, XmlReader)
+  nameWithType: Message.CreateMessage(MessageVersion, String, XmlReader)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, System.String, System.Xml.XmlReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Creates a message using the specified reader, action and version."
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, string action, XmlReader body)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    - id: action
+      type: System.String
+      description: A description of how the message should be processed.
+    - id: body
+      type: System.Xml.XmlReader
+      description: "The [XmlReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used for reading the SOAP message."
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, action As String, body As XmlReader) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: This static method is used to create a new copy of message ready for sending.
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlDictionaryReader)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlDictionaryReader)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,System.String,System.Xml.XmlDictionaryReader)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, String, XmlDictionaryReader)
+  nameWithType: Message.CreateMessage(MessageVersion, String, XmlDictionaryReader)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, System.String, System.Xml.XmlDictionaryReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message with the specified version, action and body.
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, string action, XmlDictionaryReader body)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    - id: action
+      type: System.String
+      description: A description of how the message should be processed.
+    - id: body
+      type: System.Xml.XmlDictionaryReader
+      description: The body of the message.
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, action As String, body As XmlDictionaryReader) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: This static method is used to create a new copy of message ready for sending.
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,CoreWCF.Channels.BodyWriter)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String,CoreWCF.Channels.BodyWriter)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,System.String,CoreWCF.Channels.BodyWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, String, BodyWriter)
+  nameWithType: Message.CreateMessage(MessageVersion, String, BodyWriter)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, System.String, CoreWCF.Channels.BodyWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message with a body that consists of an array of bytes.
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, string action, BodyWriter body)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    - id: action
+      type: System.String
+      description: A description of how the message should be processed.
+    - id: body
+      type: CoreWCF.Channels.BodyWriter
+      description: "A <xref:CoreWCF.Channels.BodyWriter> of type byte."
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, action As String, body As BodyWriter) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: An empty message is useful for an endpoint to send an alert to another endpoint without any actual content.
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,System.String)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,System.String)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, String)
+  nameWithType: Message.CreateMessage(MessageVersion, String)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message that contains a version and an action.
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, string action)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    - id: action
+      type: System.String
+      description: A description of how the message should be processed.
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, action As String) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: This static method is used to create a new copy of message ready for sending.
+- uid: CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  id: CreateMessage(System.Xml.XmlReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(XmlReader, Int32, MessageVersion)
+  nameWithType: Message.CreateMessage(XmlReader, Int32, MessageVersion)
+  fullName: CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlReader, System.Int32, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message using the specified reader, action and version.
+  syntax:
+    content: public static Message CreateMessage(XmlReader envelopeReader, int maxSizeOfHeaders, MessageVersion version)
+    parameters:
+    - id: envelopeReader
+      type: System.Xml.XmlReader
+      description: "The [XmlReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used for reading the SOAP message."
+    - id: maxSizeOfHeaders
+      type: System.Int32
+      description: "The maximum size in bytes of a header."
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that specifies the SOAP version to use for the message."
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(envelopeReader As XmlReader, maxSizeOfHeaders As Integer, version As MessageVersion) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\n<xref:CoreWCF.Channels.Message> takes ownership of envelopeReader.\n \nThis method reads the envelope, buffers all the headers into the header collection, and reads up to but not including the Body start tag, and returns the message. If the method call throws an exception, it closes the reader.\n \nThe body of the returned message can then be either read or written.\n \nThe message body can be read using the [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) methods on the returned message. The returned object encapsulates all the child elements within the Body element. The message body can be written using [WriteBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.writebody?view=dotnet-plat-ext-7.0) or [WriteMessage](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.writemessage?view=dotnet-plat-ext-7.0). Once written, it cannot be read.\n \nClosing the message closes the underlying envelope reader.\n"
+- uid: CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlDictionaryReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlDictionaryReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  id: CreateMessage(System.Xml.XmlDictionaryReader,System.Int32,CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(XmlDictionaryReader, Int32, MessageVersion)
+  nameWithType: Message.CreateMessage(XmlDictionaryReader, Int32, MessageVersion)
+  fullName: CoreWCF.Channels.Message.CreateMessage(System.Xml.XmlDictionaryReader, System.Int32, CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a message using the specified reader, action and version.
+  syntax:
+    content: public static Message CreateMessage(XmlDictionaryReader envelopeReader, int maxSizeOfHeaders, MessageVersion version)
+    parameters:
+    - id: envelopeReader
+      type: System.Xml.XmlDictionaryReader
+      description: "The [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used for reading the SOAP message."
+    - id: maxSizeOfHeaders
+      type: System.Int32
+      description: The maximum size in bytes of a header.
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: "A valid <xref:CoreWCF.Channels.MessageVersion> value that specifies the SOAP version to use for the message."
+    return:
+      type: CoreWCF.Channels.Message
+      description: "A <xref:CoreWCF.Channels.Message> object for the message created."
+    content.vb: Public Shared Function CreateMessage(envelopeReader As XmlDictionaryReader, maxSizeOfHeaders As Integer, version As MessageVersion) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\n<xref:CoreWCF.Channels.Message> takes ownership of envelopeReader.\n \nThis method reads the envelope, buffers all the headers into the header collection, and reads up to but not including the Body start tag, and returns the message. If the method call throws an exception, it closes the reader.\n \nThe body of the returned message can then be either read or written.\n \nThe message body can be read using the [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) methods on the returned message. The returned object encapsulates all the child elements within the Body element. The message body can be written using [WriteBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.writebody?view=dotnet-plat-ext-7.0) or [WriteMessage](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.writemessage?view=dotnet-plat-ext-7.0). Once written, it cannot be read.\n \nClosing the message closes the underlying envelope reader.\n"
+- uid: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,CoreWCF.Channels.MessageFault,System.String)
+  commentId: M:CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion,CoreWCF.Channels.MessageFault,System.String)
+  id: CreateMessage(CoreWCF.Channels.MessageVersion,CoreWCF.Channels.MessageFault,System.String)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: CreateMessage(MessageVersion, MessageFault, String)
+  nameWithType: Message.CreateMessage(MessageVersion, MessageFault, String)
+  fullName: CoreWCF.Channels.Message.CreateMessage(CoreWCF.Channels.MessageVersion, CoreWCF.Channels.MessageFault, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static Message CreateMessage(MessageVersion version, MessageFault fault, string action)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+    - id: fault
+      type: CoreWCF.Channels.MessageFault
+    - id: action
+      type: System.String
+    return:
+      type: CoreWCF.Channels.Message
+    content.vb: Public Shared Function CreateMessage(version As MessageVersion, fault As MessageFault, action As String) As Message
+  overload: CoreWCF.Channels.Message.CreateMessage*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.Message.GetBody``1
+  commentId: M:CoreWCF.Channels.Message.GetBody``1
+  id: GetBody``1
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: GetBody<T>()
+  nameWithType: Message.GetBody<T>()
+  fullName: CoreWCF.Channels.Message.GetBody<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Retrieves the body of this <xref:CoreWCF.Channels.Message> instance."
+  syntax:
+    content: public T GetBody<T>()
+    typeParameters:
+    - id: T
+      description: The body of the message.
+    return:
+      type: '{T}'
+      description: An object of type T that contains the body of this message.
+    content.vb: Public Function GetBody(Of T) As T
+  overload: CoreWCF.Channels.Message.GetBody*
+  nameWithType.vb: Message.GetBody(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.Message.GetBody(Of T)()
+  name.vb: GetBody(Of T)()
+  remarks: "\nA <xref:CoreWCF.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) by calling <xref:CoreWCF.Channels.Message.GetReaderAtBodyContents>. It is initially positioned directly after the <S:Body> element, and it returns EOF on reaching the </S:Body> element. Alternatively, if you expect the body to contain a serialized object, you can call [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the Body multiple times, use <xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)> to create a <xref:CoreWCF.Channels.MessageBuffer> instance.\n \nUse the <xref:CoreWCF.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)> overload when working with JSON messages; the <xref:CoreWCF.Channels.Message.GetBody``1> overload does not work.\n"
+- uid: CoreWCF.Channels.Message.OnGetBody``1(System.Xml.XmlDictionaryReader)
+  commentId: M:CoreWCF.Channels.Message.OnGetBody``1(System.Xml.XmlDictionaryReader)
+  id: OnGetBody``1(System.Xml.XmlDictionaryReader)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnGetBody<T>(XmlDictionaryReader)
+  nameWithType: Message.OnGetBody<T>(XmlDictionaryReader)
+  fullName: CoreWCF.Channels.Message.OnGetBody<T>(System.Xml.XmlDictionaryReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the body of the message is retrieved.
+  syntax:
+    content: protected virtual T OnGetBody<T>(XmlDictionaryReader reader)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlDictionaryReader
+      description: "A [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object used to read the body of the message."
+    typeParameters:
+    - id: T
+      description: The type of the message body.
+    return:
+      type: '{T}'
+      description: "A <xref:CoreWCF.Channels.MessageBuffer> that represents the body of the message."
+    content.vb: Protected Overridable Function OnGetBody(Of T)(reader As XmlDictionaryReader) As T
+  overload: CoreWCF.Channels.Message.OnGetBody*
+  nameWithType.vb: Message.OnGetBody(Of T)(XmlDictionaryReader)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: CoreWCF.Channels.Message.OnGetBody(Of T)(System.Xml.XmlDictionaryReader)
+  name.vb: OnGetBody(Of T)(XmlDictionaryReader)
+  remarks: "\nA <xref:CoreWCF.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) by calling <xref:CoreWCF.Channels.Message.GetReaderAtBodyContents>. It is initially positioned directly after the <S:Body> element, and it returns EOF on reaching the </S:Body> element. Alternatively, if you expect the body to contain a serialized object, you can call [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the Body multiple times, use <xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)> to create a <xref:CoreWCF.Channels.MessageBuffer> instance.\n \nUse the <xref:CoreWCF.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)> overload when working with JSON messages; the <xref:CoreWCF.Channels.Message.GetBody``1> overload does not work.\n"
+- uid: CoreWCF.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)
+  commentId: M:CoreWCF.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)
+  id: GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: GetBody<T>(XmlObjectSerializer)
+  nameWithType: Message.GetBody<T>(XmlObjectSerializer)
+  fullName: CoreWCF.Channels.Message.GetBody<T>(System.Runtime.Serialization.XmlObjectSerializer)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Retrieves the body of this <xref:CoreWCF.Channels.Message> using the specified serializer."
+  syntax:
+    content: public T GetBody<T>(XmlObjectSerializer serializer)
+    parameters:
+    - id: serializer
+      type: System.Runtime.Serialization.XmlObjectSerializer
+      description: "A [XmlObjectSerializer](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object used to read the body of the message."
+    typeParameters:
+    - id: T
+      description: The body of the message.
+    return:
+      type: '{T}'
+      description: An object of type T that contains the body of this message.
+    content.vb: Public Function GetBody(Of T)(serializer As XmlObjectSerializer) As T
+  overload: CoreWCF.Channels.Message.GetBody*
+  nameWithType.vb: Message.GetBody(Of T)(XmlObjectSerializer)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.Message.GetBody(Of T)(System.Runtime.Serialization.XmlObjectSerializer)
+  name.vb: GetBody(Of T)(XmlObjectSerializer)
+  remarks: "\nA <xref:CoreWCF.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) by calling <xref:CoreWCF.Channels.Message.GetReaderAtBodyContents>. It is initially positioned directly after the <S:Body> element, and it returns EOF on reaching the </S:Body> element. Alternatively, if you expect the body to contain a serialized object, you can call [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the Body multiple times, use <xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)> to create a <xref:CoreWCF.Channels.MessageBuffer> instance.\n \nUse the <xref:CoreWCF.Channels.Message.GetBody``1(System.Runtime.Serialization.XmlObjectSerializer)> overload when working with JSON messages; the <xref:CoreWCF.Channels.Message.GetBody``1> overload does not work.\n"
+- uid: CoreWCF.Channels.Message.GetReaderAtHeader
+  commentId: M:CoreWCF.Channels.Message.GetReaderAtHeader
+  id: GetReaderAtHeader
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: GetReaderAtHeader()
+  nameWithType: Message.GetReaderAtHeader()
+  fullName: CoreWCF.Channels.Message.GetReaderAtHeader()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual XmlDictionaryReader GetReaderAtHeader()
+    return:
+      type: System.Xml.XmlDictionaryReader
+    content.vb: Public Overridable Function GetReaderAtHeader As XmlDictionaryReader
+  overload: CoreWCF.Channels.Message.GetReaderAtHeader*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.Message.GetReaderAtBodyContents
+  commentId: M:CoreWCF.Channels.Message.GetReaderAtBodyContents
+  id: GetReaderAtBodyContents
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: GetReaderAtBodyContents()
+  nameWithType: Message.GetReaderAtBodyContents()
+  fullName: CoreWCF.Channels.Message.GetReaderAtBodyContents()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the XML dictionary reader that accesses the body content of this message.
+  syntax:
+    content: public XmlDictionaryReader GetReaderAtBodyContents()
+    return:
+      type: System.Xml.XmlDictionaryReader
+      description: "A [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object that accesses the body content of this message."
+    content.vb: Public Function GetReaderAtBodyContents As XmlDictionaryReader
+  overload: CoreWCF.Channels.Message.GetReaderAtBodyContents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "\nA <xref:CoreWCF.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) by calling <xref:CoreWCF.Channels.Message.GetReaderAtBodyContents>. It is initially positioned directly after the <S:Body> element. Alternatively, if you expect the body to contain a serialized object, you can call [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the Body multiple times, use <xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)> to create a <xref:CoreWCF.Channels.MessageBuffer> instance.\n"
+- uid: CoreWCF.Channels.Message.OnBodyToString(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnBodyToString(System.Xml.XmlDictionaryWriter)
+  id: OnBodyToString(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnBodyToString(XmlDictionaryWriter)
+  nameWithType: Message.OnBodyToString(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnBodyToString(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the message body is converted to a string.
+  syntax:
+    content: protected virtual void OnBodyToString(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "A [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to convert the message body to a string."
+    content.vb: Protected Overridable Sub OnBodyToString(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.OnBodyToString*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32)
+  commentId: M:CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32)
+  id: OnCreateBufferedCopy(System.Int32)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnCreateBufferedCopy(Int32)
+  nameWithType: Message.OnCreateBufferedCopy(Int32)
+  fullName: CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when a message buffer is created to store this message.
+  syntax:
+    content: protected virtual MessageBuffer OnCreateBufferedCopy(int maxBufferSize)
+    parameters:
+    - id: maxBufferSize
+      type: System.Int32
+      description: The maximum size of the buffer to be created.
+    return:
+      type: CoreWCF.Channels.MessageBuffer
+      description: "A <xref:CoreWCF.Channels.MessageBuffer> object for the newly created message copy."
+    content.vb: Protected Overridable Function OnCreateBufferedCopy(maxBufferSize As Integer) As MessageBuffer
+  overload: CoreWCF.Channels.Message.OnCreateBufferedCopy*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32,System.Xml.XmlDictionaryReaderQuotas)
+  commentId: M:CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32,System.Xml.XmlDictionaryReaderQuotas)
+  id: OnCreateBufferedCopy(System.Int32,System.Xml.XmlDictionaryReaderQuotas)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnCreateBufferedCopy(Int32, XmlDictionaryReaderQuotas)
+  nameWithType: Message.OnCreateBufferedCopy(Int32, XmlDictionaryReaderQuotas)
+  fullName: CoreWCF.Channels.Message.OnCreateBufferedCopy(System.Int32, System.Xml.XmlDictionaryReaderQuotas)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public MessageBuffer OnCreateBufferedCopy(int maxBufferSize, XmlDictionaryReaderQuotas quotas)
+    parameters:
+    - id: maxBufferSize
+      type: System.Int32
+    - id: quotas
+      type: System.Xml.XmlDictionaryReaderQuotas
+    return:
+      type: CoreWCF.Channels.MessageBuffer
+    content.vb: Public Function OnCreateBufferedCopy(maxBufferSize As Integer, quotas As XmlDictionaryReaderQuotas) As MessageBuffer
+  overload: CoreWCF.Channels.Message.OnCreateBufferedCopy*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Message.OnClose
+  commentId: M:CoreWCF.Channels.Message.OnClose
+  id: OnClose
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnClose()
+  nameWithType: Message.OnClose()
+  fullName: CoreWCF.Channels.Message.OnClose()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the message is closing.
+  syntax:
+    content: protected virtual void OnClose()
+    content.vb: Protected Overridable Sub OnClose
+  overload: CoreWCF.Channels.Message.OnClose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnGetReaderAtBodyContents
+  commentId: M:CoreWCF.Channels.Message.OnGetReaderAtBodyContents
+  id: OnGetReaderAtBodyContents
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnGetReaderAtBodyContents()
+  nameWithType: Message.OnGetReaderAtBodyContents()
+  fullName: CoreWCF.Channels.Message.OnGetReaderAtBodyContents()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when an XML dictionary reader that accesses the body content of this message is retrieved.
+  syntax:
+    content: protected virtual XmlDictionaryReader OnGetReaderAtBodyContents()
+    return:
+      type: System.Xml.XmlDictionaryReader
+      description: "A [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object that accesses the body content of this message."
+    content.vb: Protected Overridable Function OnGetReaderAtBodyContents As XmlDictionaryReader
+  overload: CoreWCF.Channels.Message.OnGetReaderAtBodyContents*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnWriteStartBody(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnWriteStartBody(System.Xml.XmlDictionaryWriter)
+  id: OnWriteStartBody(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnWriteStartBody(XmlDictionaryWriter)
+  nameWithType: Message.OnWriteStartBody(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnWriteStartBody(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the start body is written to an XML file.
+  syntax:
+    content: protected virtual void OnWriteStartBody(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "A [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to write the start body to an XML file."
+    content.vb: Protected Overridable Sub OnWriteStartBody(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.OnWriteStartBody*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  id: WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteBodyContents(XmlDictionaryWriter)
+  nameWithType: Message.WriteBodyContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the body content using the specified [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteBodyContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the body element."
+    content.vb: Public Sub WriteBodyContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.WriteBodyContents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Message.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  id: WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteBodyContentsAsync(XmlDictionaryWriter)
+  nameWithType: Message.WriteBodyContentsAsync(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task WriteBodyContentsAsync(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function WriteBodyContentsAsync(writer As XmlDictionaryWriter) As Task
+  overload: CoreWCF.Channels.Message.WriteBodyContentsAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Message.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  id: OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnWriteBodyContents(XmlDictionaryWriter)
+  nameWithType: Message.OnWriteBodyContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the message body is written to an XML file.
+  syntax:
+    content: protected abstract void OnWriteBodyContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "A [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to write this message body to an XML file."
+    content.vb: Protected MustOverride Sub OnWriteBodyContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.OnWriteBodyContents*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.Channels.Message.WriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  id: WriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteStartEnvelope(XmlDictionaryWriter)
+  nameWithType: Message.WriteStartEnvelope(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the start envelope using the specified [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteStartEnvelope(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the start envelope."
+    content.vb: Public Sub WriteStartEnvelope(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.WriteStartEnvelope*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Message.OnWriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnWriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  id: OnWriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnWriteStartEnvelope(XmlDictionaryWriter)
+  nameWithType: Message.OnWriteStartEnvelope(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnWriteStartEnvelope(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the start envelope is written to an XML file.
+  syntax:
+    content: protected virtual void OnWriteStartEnvelope(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "A [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to write the start envelope to an XML file."
+    content.vb: Protected Overridable Sub OnWriteStartEnvelope(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.OnWriteStartEnvelope*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnWriteStartHeaders(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnWriteStartHeaders(System.Xml.XmlDictionaryWriter)
+  id: OnWriteStartHeaders(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnWriteStartHeaders(XmlDictionaryWriter)
+  nameWithType: Message.OnWriteStartHeaders(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnWriteStartHeaders(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the start header is written to an XML file.
+  syntax:
+    content: protected virtual void OnWriteStartHeaders(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "A [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to write the start header to an XML file."
+    content.vb: Protected Overridable Sub OnWriteStartHeaders(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.OnWriteStartHeaders*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.ToString
+  commentId: M:CoreWCF.Channels.Message.ToString
+  id: ToString
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Message.ToString()
+  fullName: CoreWCF.Channels.Message.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Returns a string that represents the current <xref:CoreWCF.Channels.Message> instance."
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: "The string representation of the current <xref:CoreWCF.Channels.Message> instance."
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.Channels.Message.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.Message.GetBodyAttribute(System.String,System.String)
+  commentId: M:CoreWCF.Channels.Message.GetBodyAttribute(System.String,System.String)
+  id: GetBodyAttribute(System.String,System.String)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: GetBodyAttribute(String, String)
+  nameWithType: Message.GetBodyAttribute(String, String)
+  fullName: CoreWCF.Channels.Message.GetBodyAttribute(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Retrieves the attributes of the message body.
+  syntax:
+    content: public string GetBodyAttribute(string localName, string ns)
+    parameters:
+    - id: localName
+      type: System.String
+      description: "\nThe local name of the XML node.\n \nThe name of the element that corresponds to this member. This string must be a valid XML element name.\n"
+    - id: ns
+      type: System.String
+      description: "\nThe namespace to which this XML element belongs.\n \nThe namespace URI of the element that corresponds to this member. The system does not validate any URIs other than transport addresses.\n"
+    return:
+      type: System.String
+      description: The attributes of the message body.
+    content.vb: Public Function GetBodyAttribute(localName As String, ns As String) As String
+  overload: CoreWCF.Channels.Message.GetBodyAttribute*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "\nA <xref:CoreWCF.Channels.Message> instance has a body that corresponds to the SOAP body. It can be accessed as an [XmlDictionaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreader?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) by calling <xref:CoreWCF.Channels.Message.GetReaderAtBodyContents>. It is initially positioned directly after the <S:Body> element, and it returns EOF on reaching the </S:Body> element. Alternatively, if you expect the body to contain a serialized object, you can call [GetBody](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.message.getbody?view=dotnet-plat-ext-7.0) instead. You should be aware that a message body can only be accessed once and a message can only be written once. If you want to access the Body multiple times, use <xref:CoreWCF.Channels.Message.CreateBufferedCopy(System.Int32)> to create a <xref:CoreWCF.Channels.MessageBuffer> instance.\n"
+- uid: CoreWCF.Channels.Message.OnGetBodyAttribute(System.String,System.String)
+  commentId: M:CoreWCF.Channels.Message.OnGetBodyAttribute(System.String,System.String)
+  id: OnGetBodyAttribute(System.String,System.String)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnGetBodyAttribute(String, String)
+  nameWithType: Message.OnGetBodyAttribute(String, String)
+  fullName: CoreWCF.Channels.Message.OnGetBodyAttribute(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the attributes of the message body is retrieved.
+  syntax:
+    content: protected virtual string OnGetBodyAttribute(string localName, string ns)
+    parameters:
+    - id: localName
+      type: System.String
+      description: "\nThe local name of the XML node.\n \nThe name of the element that corresponds to this member. This string must be a valid XML element name.\n"
+    - id: ns
+      type: System.String
+      description: "\nThe namespace to which this XML element belongs.\n \nThe namespace URI of the element that corresponds to this member. The system does not validate any URIs other than transport addresses.\n"
+    return:
+      type: System.String
+      description: The attributes of the message body.
+    content.vb: Protected Overridable Function OnGetBodyAttribute(localName As String, ns As String) As String
+  overload: CoreWCF.Channels.Message.OnGetBodyAttribute*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.WriteBody(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteBody(System.Xml.XmlWriter)
+  id: WriteBody(System.Xml.XmlWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteBody(XmlWriter)
+  nameWithType: Message.WriteBody(XmlWriter)
+  fullName: CoreWCF.Channels.Message.WriteBody(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the message body using the specified [XmlWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteBody(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "The [XmlWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the body of the message."
+    content.vb: Public Sub WriteBody(writer As XmlWriter)
+  overload: CoreWCF.Channels.Message.WriteBody*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: This method writes the body contents as well as the start and end tags of the element.
+- uid: CoreWCF.Channels.Message.WriteBody(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteBody(System.Xml.XmlDictionaryWriter)
+  id: WriteBody(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteBody(XmlDictionaryWriter)
+  nameWithType: Message.WriteBody(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteBody(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Writes the body element using the specified [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteBody(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the body element."
+    content.vb: Public Sub WriteBody(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.WriteBody*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: This method writes the body contents as well as the start and end tags of the element.
+- uid: CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlWriter)
+  id: WriteStartBody(System.Xml.XmlWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteStartBody(XmlWriter)
+  nameWithType: Message.WriteStartBody(XmlWriter)
+  fullName: CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the start body of the message using the specified [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteStartBody(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "The [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the start body of the message."
+    content.vb: Public Sub WriteStartBody(writer As XmlWriter)
+  overload: CoreWCF.Channels.Message.WriteStartBody*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlDictionaryWriter)
+  id: WriteStartBody(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteStartBody(XmlDictionaryWriter)
+  nameWithType: Message.WriteStartBody(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteStartBody(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the start body of the message using the specified [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteStartBody(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the start body."
+    content.vb: Public Sub WriteStartBody(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.WriteStartBody*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlWriter)
+  id: WriteMessage(System.Xml.XmlWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteMessage(XmlWriter)
+  nameWithType: Message.WriteMessage(XmlWriter)
+  fullName: CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the entire message using the specified [XmlWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteMessage(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+      description: "The [XmlWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the entire message."
+    content.vb: Public Sub WriteMessage(writer As XmlWriter)
+  overload: CoreWCF.Channels.Message.WriteMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "This method serializes the entire message. Once a message is written, it cannot be rewritten unless there is a <xref:CoreWCF.Channels.MessageBuffer> for the message."
+- uid: CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlDictionaryWriter)
+  id: WriteMessage(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteMessage(XmlDictionaryWriter)
+  nameWithType: Message.WriteMessage(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteMessage(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Serializes the entire message using the specified [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0)."
+  syntax:
+    content: public void WriteMessage(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "An [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) object to be used to write the message."
+    content.vb: Public Sub WriteMessage(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.WriteMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "This method serializes the entire message. Once a message is written, it cannot be rewritten unless a <xref:CoreWCF.Channels.MessageBuffer> instance exists for the message."
+- uid: CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlWriter)
+  id: WriteMessageAsync(System.Xml.XmlWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteMessageAsync(XmlWriter)
+  nameWithType: Message.WriteMessageAsync(XmlWriter)
+  fullName: CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual Task WriteMessageAsync(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Overridable Function WriteMessageAsync(writer As XmlWriter) As Task
+  overload: CoreWCF.Channels.Message.WriteMessageAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  id: WriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: WriteMessageAsync(XmlDictionaryWriter)
+  nameWithType: Message.WriteMessageAsync(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.WriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual Task WriteMessageAsync(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Overridable Function WriteMessageAsync(writer As XmlDictionaryWriter) As Task
+  overload: CoreWCF.Channels.Message.WriteMessageAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnWriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnWriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  id: OnWriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnWriteMessageAsync(XmlDictionaryWriter)
+  nameWithType: Message.OnWriteMessageAsync(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnWriteMessageAsync(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual Task OnWriteMessageAsync(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Overridable Function OnWriteMessageAsync(writer As XmlDictionaryWriter) As Task
+  overload: CoreWCF.Channels.Message.OnWriteMessageAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.Message.OnWriteMessage(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.Message.OnWriteMessage(System.Xml.XmlDictionaryWriter)
+  id: OnWriteMessage(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: OnWriteMessage(XmlDictionaryWriter)
+  nameWithType: Message.OnWriteMessage(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.Message.OnWriteMessage(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Called when the entire message is written to an XML file.
+  syntax:
+    content: protected virtual void OnWriteMessage(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: "A [XmlDictionaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that is used to write this message to an XML file."
+    content.vb: Protected Overridable Sub OnWriteMessage(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.Message.OnWriteMessage*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.Message.#ctor
+  commentId: M:CoreWCF.Channels.Message.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: Message()
+  nameWithType: Message.Message()
+  fullName: CoreWCF.Channels.Message.Message()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.Message> class."
+  syntax:
+    content: protected Message()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.Message.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.Message.Headers
+  commentId: P:CoreWCF.Channels.Message.Headers
+  id: Headers
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: Headers
+  nameWithType: Message.Headers
+  fullName: CoreWCF.Channels.Message.Headers
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, gets the headers of the message.
+  syntax:
+    content: public abstract MessageHeaders Headers { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageHeaders
+      description: "A <xref:CoreWCF.Channels.MessageHeaders> object that represents the headers of the message."
+    content.vb: Public MustOverride ReadOnly Property Headers As MessageHeaders
+  overload: CoreWCF.Channels.Message.Headers*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: "A <xref:CoreWCF.Channels.Message> can have zero or more headers that are used as an extension mechanism to pass information in messages that is application-specific. You can use <xref:CoreWCF.Channels.Message.Headers> to add message headers to a message by calling the [Add](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.messageheaders.add?view=dotnet-plat-ext-7.0) method. \nWindows Communication Foundation (WCF) provides a number of predefined message headers, as shown in the following table.\n  \n\n|Header Name|Description|  \n|-----------------|-----------------|  \n|To|Contains the role that the message is targeting.|  \n|Action|Provides a description of how the message should be processed.|  \n|FaultTo|Contains the address of the node to which faults should be sent.|  \n|From|Contains the address of the node that sent the message.|  \n|Request|Indicates whether the message is a request.|  \n|MessageID|Contains the unique ID of the message.|  \n|RelatesTo|Contains the IDs of messages that are related to this message.|  \n|ReplyTo|Contains the address of the node to which a reply should be sent for a request.|  \n\n"
+- uid: CoreWCF.Channels.Message.IsDisposed
+  commentId: P:CoreWCF.Channels.Message.IsDisposed
+  id: IsDisposed
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: IsDisposed
+  nameWithType: Message.IsDisposed
+  fullName: CoreWCF.Channels.Message.IsDisposed
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Returns a value that indicates whether the <xref:CoreWCF.Channels.Message> is disposed."
+  syntax:
+    content: protected bool IsDisposed { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the message is disposed; otherwise, false.
+    content.vb: Protected ReadOnly Property IsDisposed As Boolean
+  overload: CoreWCF.Channels.Message.IsDisposed*
+  modifiers.csharp:
+  - protected
+  - get
+  modifiers.vb:
+  - Protected
+  - ReadOnly
+- uid: CoreWCF.Channels.Message.IsFault
+  commentId: P:CoreWCF.Channels.Message.IsFault
+  id: IsFault
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: IsFault
+  nameWithType: Message.IsFault
+  fullName: CoreWCF.Channels.Message.IsFault
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets a value that indicates whether this message generates any SOAP faults.
+  syntax:
+    content: public virtual bool IsFault { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if this message generates any SOAP faults; otherwise, false.
+    content.vb: Public Overridable ReadOnly Property IsFault As Boolean
+  overload: CoreWCF.Channels.Message.IsFault*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.Channels.Message.IsEmpty
+  commentId: P:CoreWCF.Channels.Message.IsEmpty
+  id: IsEmpty
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: IsEmpty
+  nameWithType: Message.IsEmpty
+  fullName: CoreWCF.Channels.Message.IsEmpty
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Returns a value that indicates whether the <xref:CoreWCF.Channels.Message> is empty."
+  syntax:
+    content: public virtual bool IsEmpty { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the message is empty; otherwise, false.
+    content.vb: Public Overridable ReadOnly Property IsEmpty As Boolean
+  overload: CoreWCF.Channels.Message.IsEmpty*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.Channels.Message.Properties
+  commentId: P:CoreWCF.Channels.Message.Properties
+  id: Properties
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: Properties
+  nameWithType: Message.Properties
+  fullName: CoreWCF.Channels.Message.Properties
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, gets a set of processing-level annotations to the message.
+  syntax:
+    content: public abstract MessageProperties Properties { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageProperties
+      description: "A <xref:CoreWCF.Channels.MessageProperties> that contains a set of processing-level annotations to the message."
+    content.vb: Public MustOverride ReadOnly Property Properties As MessageProperties
+  overload: CoreWCF.Channels.Message.Properties*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: "Because information in headers is transmitted on the wire, an entity that examines a header must support the underlying version(s) of the protocols used by the header. However, properties provide a more version-independent way of annotating a message."
+- uid: CoreWCF.Channels.Message.Version
+  commentId: P:CoreWCF.Channels.Message.Version
+  id: Version
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: Message.Version
+  fullName: CoreWCF.Channels.Message.Version
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, gets the SOAP version of the message.
+  syntax:
+    content: public abstract MessageVersion Version { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: "A <xref:CoreWCF.Channels.MessageVersion> object that represents the SOAP version."
+    content.vb: Public MustOverride ReadOnly Property Version As MessageVersion
+  overload: CoreWCF.Channels.Message.Version*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: "\nThis value is immutable for the message. There are two possible values for the version: <xref:CoreWCF.Channels.MessageVersion.Soap11> and <xref:CoreWCF.Channels.MessageVersion.Soap12> that correspond to SOAP 1.1 and SOAP 1.2 respectively.\n \nKnowing the underlying SOAP version is important because the structure of <xref:CoreWCF.Channels.Message> is firmly correlated with that of a SOAP message.\n"
+- uid: CoreWCF.Channels.Message.RecycledMessageState
+  commentId: P:CoreWCF.Channels.Message.RecycledMessageState
+  id: RecycledMessageState
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: RecycledMessageState
+  nameWithType: Message.RecycledMessageState
+  fullName: CoreWCF.Channels.Message.RecycledMessageState
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual RecycledMessageState RecycledMessageState { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.RecycledMessageState
+    content.vb: Public Overridable ReadOnly Property RecycledMessageState As RecycledMessageState
+  overload: CoreWCF.Channels.Message.RecycledMessageState*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.Channels.Message.State
+  commentId: P:CoreWCF.Channels.Message.State
+  id: State
+  parent: CoreWCF.Channels.Message
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: Message.State
+  fullName: CoreWCF.Channels.Message.State
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets the current state of this <xref:CoreWCF.Channels.Message>."
+  syntax:
+    content: public MessageState State { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageState
+      description: "A <xref:CoreWCF.Channels.MessageState> that contains the current state of this <xref:CoreWCF.Channels.Message>."
+    content.vb: Public ReadOnly Property State As MessageState
+  overload: CoreWCF.Channels.Message.State*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: "Because the body of a <xref:CoreWCF.Channels.Message> object is a stream, it can only be read or written once. This is enforced by maintaining the current state of the <xref:CoreWCF.Channels.Message> object. A <xref:CoreWCF.Channels.Message> object can be read, written, or copied when in the <xref:CoreWCF.Channels.MessageState.Created> state. Other states are <xref:CoreWCF.Channels.MessageState.Read>, <xref:CoreWCF.Channels.MessageState.Written> and <xref:CoreWCF.Channels.MessageState.Copied>, which means that the respective action has been performed already once."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.Message.Close*
+  commentId: Overload:CoreWCF.Channels.Message.Close
+  isExternal: true
+  name: Close
+  nameWithType: Message.Close
+  fullName: CoreWCF.Channels.Message.Close
+- uid: CoreWCF.Channels.Message.CreateBufferedCopy*
+  commentId: Overload:CoreWCF.Channels.Message.CreateBufferedCopy
+  isExternal: true
+  name: CreateBufferedCopy
+  nameWithType: Message.CreateBufferedCopy
+  fullName: CoreWCF.Channels.Message.CreateBufferedCopy
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.MessageBuffer
+  commentId: T:CoreWCF.Channels.MessageBuffer
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageBuffer
+  nameWithType: MessageBuffer
+  fullName: CoreWCF.Channels.MessageBuffer
+- uid: CoreWCF.Channels.Message.CreateMessage*
+  commentId: Overload:CoreWCF.Channels.Message.CreateMessage
+  isExternal: true
+  name: CreateMessage
+  nameWithType: Message.CreateMessage
+  fullName: CoreWCF.Channels.Message.CreateMessage
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.Runtime.Serialization.XmlObjectSerializer
+  isExternal: true
+  name: XmlObjectSerializer
+  nameWithType: XmlObjectSerializer
+  fullName: System.Runtime.Serialization.XmlObjectSerializer
+- uid: System.Xml.XmlReader
+  isExternal: true
+  name: XmlReader
+  nameWithType: XmlReader
+  fullName: System.Xml.XmlReader
+- uid: System.Xml.XmlDictionaryReader
+  isExternal: true
+  name: XmlDictionaryReader
+  nameWithType: XmlDictionaryReader
+  fullName: System.Xml.XmlDictionaryReader
+- uid: CoreWCF.Channels.BodyWriter
+  commentId: T:CoreWCF.Channels.BodyWriter
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BodyWriter
+  nameWithType: BodyWriter
+  fullName: CoreWCF.Channels.BodyWriter
+- uid: CoreWCF.Channels.MessageFault
+  commentId: T:CoreWCF.Channels.MessageFault
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageFault
+  nameWithType: MessageFault
+  fullName: CoreWCF.Channels.MessageFault
+- uid: CoreWCF.Channels.Message.GetBody*
+  commentId: Overload:CoreWCF.Channels.Message.GetBody
+  isExternal: true
+  name: GetBody
+  nameWithType: Message.GetBody
+  fullName: CoreWCF.Channels.Message.GetBody
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.Message.OnGetBody*
+  commentId: Overload:CoreWCF.Channels.Message.OnGetBody
+  isExternal: true
+  name: OnGetBody
+  nameWithType: Message.OnGetBody
+  fullName: CoreWCF.Channels.Message.OnGetBody
+- uid: CoreWCF.Channels.Message.GetReaderAtHeader*
+  commentId: Overload:CoreWCF.Channels.Message.GetReaderAtHeader
+  isExternal: true
+  name: GetReaderAtHeader
+  nameWithType: Message.GetReaderAtHeader
+  fullName: CoreWCF.Channels.Message.GetReaderAtHeader
+- uid: CoreWCF.Channels.Message.GetReaderAtBodyContents*
+  commentId: Overload:CoreWCF.Channels.Message.GetReaderAtBodyContents
+  isExternal: true
+  name: GetReaderAtBodyContents
+  nameWithType: Message.GetReaderAtBodyContents
+  fullName: CoreWCF.Channels.Message.GetReaderAtBodyContents
+- uid: CoreWCF.Channels.Message.OnBodyToString*
+  commentId: Overload:CoreWCF.Channels.Message.OnBodyToString
+  isExternal: true
+  name: OnBodyToString
+  nameWithType: Message.OnBodyToString
+  fullName: CoreWCF.Channels.Message.OnBodyToString
+- uid: System.Xml.XmlDictionaryWriter
+  isExternal: true
+  name: XmlDictionaryWriter
+  nameWithType: XmlDictionaryWriter
+  fullName: System.Xml.XmlDictionaryWriter
+- uid: CoreWCF.Channels.Message.OnCreateBufferedCopy*
+  commentId: Overload:CoreWCF.Channels.Message.OnCreateBufferedCopy
+  isExternal: true
+  name: OnCreateBufferedCopy
+  nameWithType: Message.OnCreateBufferedCopy
+  fullName: CoreWCF.Channels.Message.OnCreateBufferedCopy
+- uid: System.Xml.XmlDictionaryReaderQuotas
+  isExternal: true
+  name: XmlDictionaryReaderQuotas
+  nameWithType: XmlDictionaryReaderQuotas
+  fullName: System.Xml.XmlDictionaryReaderQuotas
+- uid: CoreWCF.Channels.Message.OnClose*
+  commentId: Overload:CoreWCF.Channels.Message.OnClose
+  isExternal: true
+  name: OnClose
+  nameWithType: Message.OnClose
+  fullName: CoreWCF.Channels.Message.OnClose
+- uid: CoreWCF.Channels.Message.OnGetReaderAtBodyContents*
+  commentId: Overload:CoreWCF.Channels.Message.OnGetReaderAtBodyContents
+  isExternal: true
+  name: OnGetReaderAtBodyContents
+  nameWithType: Message.OnGetReaderAtBodyContents
+  fullName: CoreWCF.Channels.Message.OnGetReaderAtBodyContents
+- uid: CoreWCF.Channels.Message.OnWriteStartBody*
+  commentId: Overload:CoreWCF.Channels.Message.OnWriteStartBody
+  isExternal: true
+  name: OnWriteStartBody
+  nameWithType: Message.OnWriteStartBody
+  fullName: CoreWCF.Channels.Message.OnWriteStartBody
+- uid: CoreWCF.Channels.Message.WriteBodyContents*
+  commentId: Overload:CoreWCF.Channels.Message.WriteBodyContents
+  isExternal: true
+  name: WriteBodyContents
+  nameWithType: Message.WriteBodyContents
+  fullName: CoreWCF.Channels.Message.WriteBodyContents
+- uid: CoreWCF.Channels.Message.WriteBodyContentsAsync*
+  commentId: Overload:CoreWCF.Channels.Message.WriteBodyContentsAsync
+  isExternal: true
+  name: WriteBodyContentsAsync
+  nameWithType: Message.WriteBodyContentsAsync
+  fullName: CoreWCF.Channels.Message.WriteBodyContentsAsync
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CoreWCF.Channels.Message.OnWriteBodyContents*
+  commentId: Overload:CoreWCF.Channels.Message.OnWriteBodyContents
+  isExternal: true
+  name: OnWriteBodyContents
+  nameWithType: Message.OnWriteBodyContents
+  fullName: CoreWCF.Channels.Message.OnWriteBodyContents
+- uid: CoreWCF.Channels.Message.WriteStartEnvelope*
+  commentId: Overload:CoreWCF.Channels.Message.WriteStartEnvelope
+  isExternal: true
+  name: WriteStartEnvelope
+  nameWithType: Message.WriteStartEnvelope
+  fullName: CoreWCF.Channels.Message.WriteStartEnvelope
+- uid: CoreWCF.Channels.Message.OnWriteStartEnvelope*
+  commentId: Overload:CoreWCF.Channels.Message.OnWriteStartEnvelope
+  isExternal: true
+  name: OnWriteStartEnvelope
+  nameWithType: Message.OnWriteStartEnvelope
+  fullName: CoreWCF.Channels.Message.OnWriteStartEnvelope
+- uid: CoreWCF.Channels.Message.OnWriteStartHeaders*
+  commentId: Overload:CoreWCF.Channels.Message.OnWriteStartHeaders
+  isExternal: true
+  name: OnWriteStartHeaders
+  nameWithType: Message.OnWriteStartHeaders
+  fullName: CoreWCF.Channels.Message.OnWriteStartHeaders
+- uid: CoreWCF.Channels.Message.ToString*
+  commentId: Overload:CoreWCF.Channels.Message.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: Message.ToString
+  fullName: CoreWCF.Channels.Message.ToString
+- uid: CoreWCF.Channels.Message.GetBodyAttribute*
+  commentId: Overload:CoreWCF.Channels.Message.GetBodyAttribute
+  isExternal: true
+  name: GetBodyAttribute
+  nameWithType: Message.GetBodyAttribute
+  fullName: CoreWCF.Channels.Message.GetBodyAttribute
+- uid: CoreWCF.Channels.Message.OnGetBodyAttribute*
+  commentId: Overload:CoreWCF.Channels.Message.OnGetBodyAttribute
+  isExternal: true
+  name: OnGetBodyAttribute
+  nameWithType: Message.OnGetBodyAttribute
+  fullName: CoreWCF.Channels.Message.OnGetBodyAttribute
+- uid: CoreWCF.Channels.Message.WriteBody*
+  commentId: Overload:CoreWCF.Channels.Message.WriteBody
+  isExternal: true
+  name: WriteBody
+  nameWithType: Message.WriteBody
+  fullName: CoreWCF.Channels.Message.WriteBody
+- uid: System.Xml.XmlWriter
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: CoreWCF.Channels.Message.WriteStartBody*
+  commentId: Overload:CoreWCF.Channels.Message.WriteStartBody
+  isExternal: true
+  name: WriteStartBody
+  nameWithType: Message.WriteStartBody
+  fullName: CoreWCF.Channels.Message.WriteStartBody
+- uid: CoreWCF.Channels.Message.WriteMessage*
+  commentId: Overload:CoreWCF.Channels.Message.WriteMessage
+  isExternal: true
+  name: WriteMessage
+  nameWithType: Message.WriteMessage
+  fullName: CoreWCF.Channels.Message.WriteMessage
+- uid: CoreWCF.Channels.Message.WriteMessageAsync*
+  commentId: Overload:CoreWCF.Channels.Message.WriteMessageAsync
+  isExternal: true
+  name: WriteMessageAsync
+  nameWithType: Message.WriteMessageAsync
+  fullName: CoreWCF.Channels.Message.WriteMessageAsync
+- uid: CoreWCF.Channels.Message.OnWriteMessageAsync*
+  commentId: Overload:CoreWCF.Channels.Message.OnWriteMessageAsync
+  isExternal: true
+  name: OnWriteMessageAsync
+  nameWithType: Message.OnWriteMessageAsync
+  fullName: CoreWCF.Channels.Message.OnWriteMessageAsync
+- uid: CoreWCF.Channels.Message.OnWriteMessage*
+  commentId: Overload:CoreWCF.Channels.Message.OnWriteMessage
+  isExternal: true
+  name: OnWriteMessage
+  nameWithType: Message.OnWriteMessage
+  fullName: CoreWCF.Channels.Message.OnWriteMessage
+- uid: CoreWCF.Channels.Message.#ctor*
+  commentId: Overload:CoreWCF.Channels.Message.#ctor
+  isExternal: true
+  name: Message
+  nameWithType: Message.Message
+  fullName: CoreWCF.Channels.Message.Message
+- uid: CoreWCF.Channels.Message.Headers*
+  commentId: Overload:CoreWCF.Channels.Message.Headers
+  isExternal: true
+  name: Headers
+  nameWithType: Message.Headers
+  fullName: CoreWCF.Channels.Message.Headers
+- uid: CoreWCF.Channels.MessageHeaders
+  commentId: T:CoreWCF.Channels.MessageHeaders
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageHeaders
+  nameWithType: MessageHeaders
+  fullName: CoreWCF.Channels.MessageHeaders
+- uid: CoreWCF.Channels.Message.IsDisposed*
+  commentId: Overload:CoreWCF.Channels.Message.IsDisposed
+  isExternal: true
+  name: IsDisposed
+  nameWithType: Message.IsDisposed
+  fullName: CoreWCF.Channels.Message.IsDisposed
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.Message.IsFault*
+  commentId: Overload:CoreWCF.Channels.Message.IsFault
+  isExternal: true
+  name: IsFault
+  nameWithType: Message.IsFault
+  fullName: CoreWCF.Channels.Message.IsFault
+- uid: CoreWCF.Channels.Message.IsEmpty*
+  commentId: Overload:CoreWCF.Channels.Message.IsEmpty
+  isExternal: true
+  name: IsEmpty
+  nameWithType: Message.IsEmpty
+  fullName: CoreWCF.Channels.Message.IsEmpty
+- uid: CoreWCF.Channels.Message.Properties*
+  commentId: Overload:CoreWCF.Channels.Message.Properties
+  isExternal: true
+  name: Properties
+  nameWithType: Message.Properties
+  fullName: CoreWCF.Channels.Message.Properties
+- uid: CoreWCF.Channels.MessageProperties
+  commentId: T:CoreWCF.Channels.MessageProperties
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageProperties
+  nameWithType: MessageProperties
+  fullName: CoreWCF.Channels.MessageProperties
+- uid: CoreWCF.Channels.Message.Version*
+  commentId: Overload:CoreWCF.Channels.Message.Version
+  isExternal: true
+  name: Version
+  nameWithType: Message.Version
+  fullName: CoreWCF.Channels.Message.Version
+- uid: CoreWCF.Channels.Message.RecycledMessageState*
+  commentId: Overload:CoreWCF.Channels.Message.RecycledMessageState
+  isExternal: true
+  name: RecycledMessageState
+  nameWithType: Message.RecycledMessageState
+  fullName: CoreWCF.Channels.Message.RecycledMessageState
+- uid: CoreWCF.Channels.RecycledMessageState
+  commentId: T:CoreWCF.Channels.RecycledMessageState
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: RecycledMessageState
+  nameWithType: RecycledMessageState
+  fullName: CoreWCF.Channels.RecycledMessageState
+- uid: CoreWCF.Channels.Message.State*
+  commentId: Overload:CoreWCF.Channels.Message.State
+  isExternal: true
+  name: State
+  nameWithType: Message.State
+  fullName: CoreWCF.Channels.Message.State
+- uid: CoreWCF.Channels.MessageState
+  commentId: T:CoreWCF.Channels.MessageState
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageState
+  nameWithType: MessageState
+  fullName: CoreWCF.Channels.MessageState

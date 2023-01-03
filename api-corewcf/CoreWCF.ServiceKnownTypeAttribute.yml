@@ -1,0 +1,275 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ServiceKnownTypeAttribute
+  commentId: T:CoreWCF.ServiceKnownTypeAttribute
+  id: ServiceKnownTypeAttribute
+  parent: CoreWCF
+  children:
+  - CoreWCF.ServiceKnownTypeAttribute.#ctor(System.String)
+  - CoreWCF.ServiceKnownTypeAttribute.#ctor(System.String,System.Type)
+  - CoreWCF.ServiceKnownTypeAttribute.#ctor(System.Type)
+  - CoreWCF.ServiceKnownTypeAttribute.DeclaringType
+  - CoreWCF.ServiceKnownTypeAttribute.MethodName
+  - CoreWCF.ServiceKnownTypeAttribute.Type
+  langs:
+  - csharp
+  - vb
+  name: ServiceKnownTypeAttribute
+  nameWithType: ServiceKnownTypeAttribute
+  fullName: CoreWCF.ServiceKnownTypeAttribute
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Specifies known types to be used by a service when serializing or deserializing.
+  remarks: "The &lt;xref:CoreWCF.ServiceKnownTypeAttribute> is intended for use when creating Windows Communication Foundation (WCF) service contracts (interfaces that define the service and its methods). The *known types* are types that may be present in an object graph when serialization or deserialization occurs. For more information about known types, see [Data Contract Known Types](/dotnet/framework/wcf/feature-details/data-contract-known-types).  \n\nTo use the &lt;xref:CoreWCF.ServiceKnownTypeAttribute.MethodName%2A> property, create a class that contains a method (or methods) that returns an array of types (each being a known type). When applying the attribute, set the `methodName` to the name of a method that returns the list of types and set the `declaringType` to the type that contains the method. The method must return a type that implements the &lt;xref:System.Collections.Generic.IEnumerable%601> interface. The method must also include a parameter of type &lt;xref:System.Reflection.ICustomAttributeProvider>.  \n\nYou can also apply the attribute several times to an interface, class, or method, each time specifying a new known type.  \n\n> [!NOTE]\n>  You can use the word `ServiceKnownType` in your Microsoft Visual Basic or C# code instead of the longer `ServiceKnownTypeAttribute`.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class ServiceKnownTypeAttribute : Attribute'
+    content.vb: >-
+      Public NotInheritable Class ServiceKnownTypeAttribute
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.ServiceKnownTypeAttribute.#ctor(System.Type)
+  commentId: M:CoreWCF.ServiceKnownTypeAttribute.#ctor(System.Type)
+  id: '#ctor(System.Type)'
+  parent: CoreWCF.ServiceKnownTypeAttribute
+  langs:
+  - csharp
+  - vb
+  name: ServiceKnownTypeAttribute(Type)
+  nameWithType: ServiceKnownTypeAttribute.ServiceKnownTypeAttribute(Type)
+  fullName: CoreWCF.ServiceKnownTypeAttribute.ServiceKnownTypeAttribute(System.Type)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceKnownTypeAttribute(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    content.vb: Public Sub New(type As Type)
+  overload: CoreWCF.ServiceKnownTypeAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceKnownTypeAttribute.#ctor(System.String)
+  commentId: M:CoreWCF.ServiceKnownTypeAttribute.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.ServiceKnownTypeAttribute
+  langs:
+  - csharp
+  - vb
+  name: ServiceKnownTypeAttribute(String)
+  nameWithType: ServiceKnownTypeAttribute.ServiceKnownTypeAttribute(String)
+  fullName: CoreWCF.ServiceKnownTypeAttribute.ServiceKnownTypeAttribute(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceKnownTypeAttribute(string methodName)
+    parameters:
+    - id: methodName
+      type: System.String
+    content.vb: Public Sub New(methodName As String)
+  overload: CoreWCF.ServiceKnownTypeAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceKnownTypeAttribute.#ctor(System.String,System.Type)
+  commentId: M:CoreWCF.ServiceKnownTypeAttribute.#ctor(System.String,System.Type)
+  id: '#ctor(System.String,System.Type)'
+  parent: CoreWCF.ServiceKnownTypeAttribute
+  langs:
+  - csharp
+  - vb
+  name: ServiceKnownTypeAttribute(String, Type)
+  nameWithType: ServiceKnownTypeAttribute.ServiceKnownTypeAttribute(String, Type)
+  fullName: CoreWCF.ServiceKnownTypeAttribute.ServiceKnownTypeAttribute(System.String, System.Type)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceKnownTypeAttribute(string methodName, Type declaringType)
+    parameters:
+    - id: methodName
+      type: System.String
+    - id: declaringType
+      type: System.Type
+    content.vb: Public Sub New(methodName As String, declaringType As Type)
+  overload: CoreWCF.ServiceKnownTypeAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceKnownTypeAttribute.DeclaringType
+  commentId: P:CoreWCF.ServiceKnownTypeAttribute.DeclaringType
+  id: DeclaringType
+  parent: CoreWCF.ServiceKnownTypeAttribute
+  langs:
+  - csharp
+  - vb
+  name: DeclaringType
+  nameWithType: ServiceKnownTypeAttribute.DeclaringType
+  fullName: CoreWCF.ServiceKnownTypeAttribute.DeclaringType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public Type DeclaringType { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public ReadOnly Property DeclaringType As Type
+  overload: CoreWCF.ServiceKnownTypeAttribute.DeclaringType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.ServiceKnownTypeAttribute.MethodName
+  commentId: P:CoreWCF.ServiceKnownTypeAttribute.MethodName
+  id: MethodName
+  parent: CoreWCF.ServiceKnownTypeAttribute
+  langs:
+  - csharp
+  - vb
+  name: MethodName
+  nameWithType: ServiceKnownTypeAttribute.MethodName
+  fullName: CoreWCF.ServiceKnownTypeAttribute.MethodName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string MethodName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MethodName As String
+  overload: CoreWCF.ServiceKnownTypeAttribute.MethodName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.ServiceKnownTypeAttribute.Type
+  commentId: P:CoreWCF.ServiceKnownTypeAttribute.Type
+  id: Type
+  parent: CoreWCF.ServiceKnownTypeAttribute
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: ServiceKnownTypeAttribute.Type
+  fullName: CoreWCF.ServiceKnownTypeAttribute.Type
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public Type Type { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public ReadOnly Property Type As Type
+  overload: CoreWCF.ServiceKnownTypeAttribute.Type*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.ServiceKnownTypeAttribute.#ctor*
+  commentId: Overload:CoreWCF.ServiceKnownTypeAttribute.#ctor
+  isExternal: true
+  name: ServiceKnownTypeAttribute
+  nameWithType: ServiceKnownTypeAttribute.ServiceKnownTypeAttribute
+  fullName: CoreWCF.ServiceKnownTypeAttribute.ServiceKnownTypeAttribute
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.ServiceKnownTypeAttribute.DeclaringType*
+  commentId: Overload:CoreWCF.ServiceKnownTypeAttribute.DeclaringType
+  isExternal: true
+  name: DeclaringType
+  nameWithType: ServiceKnownTypeAttribute.DeclaringType
+  fullName: CoreWCF.ServiceKnownTypeAttribute.DeclaringType
+- uid: CoreWCF.ServiceKnownTypeAttribute.MethodName*
+  commentId: Overload:CoreWCF.ServiceKnownTypeAttribute.MethodName
+  isExternal: true
+  name: MethodName
+  nameWithType: ServiceKnownTypeAttribute.MethodName
+  fullName: CoreWCF.ServiceKnownTypeAttribute.MethodName
+- uid: CoreWCF.ServiceKnownTypeAttribute.Type*
+  commentId: Overload:CoreWCF.ServiceKnownTypeAttribute.Type
+  isExternal: true
+  name: Type
+  nameWithType: ServiceKnownTypeAttribute.Type
+  fullName: CoreWCF.ServiceKnownTypeAttribute.Type

@@ -1,0 +1,492 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  commentId: T:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  id: ConfigurationBasedIssuerNameRegistry
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor
+  - CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(System.String,System.String)
+  - CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  - CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationBasedIssuerNameRegistry
+  nameWithType: ConfigurationBasedIssuerNameRegistry
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: Represents an issuer name registry that maintains a list of trusted issuers loaded from elements in the application configuration file that associate each issuer name to the X.509 certificate that is needed to verify the signature of tokens produced by the issuer.
+  remarks: "The &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> class maintains a dictionary of trusted issuers by mapping the certificate of each trusted issuer to a name that refers to that issuer. The certificates are specified using the ASN.1 encoded form of the thumbprint. The issuer name can be any string, as long as it is unique within the scope of the application. This dictionary can be accessed through the &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers%2A> property. The class can only resolve X.509 certificates.  \n\nThe map of trusted issuers is specified in a configuration file by adding entries under the [&amp;lt;trustedIssuers&amp;gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers) element. The `&lt;trustedIssuers>` element is a child element of the [&amp;lt;issuerNameRegistry&amp;gt;](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry) element and it is valid when the &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> class is specified in the `type` attribute of that element. For more information, see the documentation for each of these elements in the [WIF Configuration Schema](/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/). For more information about issuer name registries, see the &lt;xref:System.IdentityModel.Tokens.IssuerNameRegistry> class.  \n\nYou can derive from &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry> to implement your own configuration based issuer name registry. Which methods you override will depend upon your implementation. For example, you can override the &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.LoadCustomConfiguration%2A> method to load configuration from a custom configuration schema.  \n\n\n\n"
+  syntax:
+    content: 'public class ConfigurationBasedIssuerNameRegistry : IssuerNameRegistry'
+    content.vb: >-
+      Public Class ConfigurationBasedIssuerNameRegistry
+          Inherits IssuerNameRegistry
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+  inheritedMembers:
+  - CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken,System.String)
+  - CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor
+  commentId: M:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationBasedIssuerNameRegistry()
+  nameWithType: ConfigurationBasedIssuerNameRegistry.ConfigurationBasedIssuerNameRegistry()
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfigurationBasedIssuerNameRegistry()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nCreates an instance of <xref href=\"CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry\" data-throw-if-not-resolved=\"false\"></xref>"
+  syntax:
+    content: public ConfigurationBasedIssuerNameRegistry()
+    content.vb: Public Sub New
+  overload: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  langs:
+  - csharp
+  - vb
+  name: GetIssuerName(SecurityToken)
+  nameWithType: ConfigurationBasedIssuerNameRegistry.GetIssuerName(SecurityToken)
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nReturns the issuer name of the given X509SecurityToken mapping the Certificate Thumbprint to \na name in the configured map.\n"
+  syntax:
+    content: public override string GetIssuerName(SecurityToken securityToken)
+    parameters:
+    - id: securityToken
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+      description: SecurityToken for which the issuer name is requested.
+    return:
+      type: System.String
+      description: Issuer name if the token was registered, null otherwise.
+    content.vb: Public Overrides Function GetIssuerName(securityToken As SecurityToken) As String
+  overridden: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  overload: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: The input parameter &apos;securityToken&apos; is null.
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(System.String,System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(System.String,System.String)
+  id: AddTrustedIssuer(System.String,System.String)
+  parent: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  langs:
+  - csharp
+  - vb
+  name: AddTrustedIssuer(String, String)
+  nameWithType: ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(String, String)
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nAdds a trusted issuer to the collection.\n"
+  syntax:
+    content: public void AddTrustedIssuer(string certificateThumbprint, string name)
+    parameters:
+    - id: certificateThumbprint
+      type: System.String
+      description: ASN.1 encoded form of the trusted issuer&apos;s certificate Thumbprint.
+    - id: name
+      type: System.String
+      description: Name of the trusted issuer.
+    content.vb: Public Sub AddTrustedIssuer(certificateThumbprint As String, name As String)
+  overload: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The argument &apos;certificateThumbprint&apos; or &apos;name&apos; is either null or Empty.
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: The issuer specified by &apos;certificateThumbprint&apos; argument has already been configured.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  commentId: P:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  id: ConfiguredTrustedIssuers
+  parent: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry
+  langs:
+  - csharp
+  - vb
+  name: ConfiguredTrustedIssuers
+  nameWithType: ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the Dictionary of Configured Trusted Issuers. The key\nto the dictionary is the ASN.1 encoded form of the Thumbprint \nof the trusted issuer&apos;s certificate and the value is the issuer name. \n"
+  syntax:
+    content: public IDictionary<string, string> ConfiguredTrustedIssuers { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+    content.vb: Public ReadOnly Property ConfiguredTrustedIssuers As IDictionary(Of String, String)
+  overload: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+  commentId: T:CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: IssuerNameRegistry
+  nameWithType: IssuerNameRegistry
+  fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+- uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken,System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken,System.String)
+  parent: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+  isExternal: true
+  name: GetIssuerName(SecurityToken, String)
+  nameWithType: IssuerNameRegistry.GetIssuerName(SecurityToken, String)
+  fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken, System.String)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken,System.String)
+    name: GetIssuerName
+    nameWithType: IssuerNameRegistry.GetIssuerName
+    fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken,System.String)
+    name: GetIssuerName
+    nameWithType: IssuerNameRegistry.GetIssuerName
+    fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+  commentId: M:CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+  parent: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+  isExternal: true
+  name: GetWindowsIssuerName()
+  nameWithType: IssuerNameRegistry.GetWindowsIssuerName()
+  fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+    name: GetWindowsIssuerName
+    nameWithType: IssuerNameRegistry.GetWindowsIssuerName
+    fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+    name: GetWindowsIssuerName
+    nameWithType: IssuerNameRegistry.GetWindowsIssuerName
+    fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetWindowsIssuerName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor
+  isExternal: true
+  name: ConfigurationBasedIssuerNameRegistry
+  nameWithType: ConfigurationBasedIssuerNameRegistry.ConfigurationBasedIssuerNameRegistry
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfigurationBasedIssuerNameRegistry
+- uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry
+  isExternal: true
+  name: GetIssuerName(SecurityToken)
+  nameWithType: IssuerNameRegistry.GetIssuerName(SecurityToken)
+  fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: GetIssuerName
+    nameWithType: IssuerNameRegistry.GetIssuerName
+    fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: GetIssuerName
+    nameWithType: IssuerNameRegistry.GetIssuerName
+    fullName: CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.GetIssuerName
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName
+  isExternal: true
+  name: GetIssuerName
+  nameWithType: ConfigurationBasedIssuerNameRegistry.GetIssuerName
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityToken
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityToken
+  nameWithType: SecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer
+  isExternal: true
+  name: AddTrustedIssuer
+  nameWithType: ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  isExternal: true
+  name: ConfiguredTrustedIssuers
+  nameWithType: ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+  fullName: CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: '!:System.Collections.Generic.IDictionary{System.String,System.String}'
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<String, String>
+  nameWithType: IDictionary<String, String>
+  fullName: System.Collections.Generic.IDictionary<System.String, System.String>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.String, System.String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<, >
+  nameWithType: IDictionary<, >
+  fullName: System.Collections.Generic.IDictionary<, >
+  nameWithType.vb: IDictionary(Of , )
+  fullName.vb: System.Collections.Generic.IDictionary(Of , )
+  name.vb: IDictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,631 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.ServiceDescription
+  commentId: T:CoreWCF.Description.ServiceDescription
+  id: ServiceDescription
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.ServiceDescription.#ctor
+  - CoreWCF.Description.ServiceDescription.#ctor(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint})
+  - CoreWCF.Description.ServiceDescription.Behaviors
+  - CoreWCF.Description.ServiceDescription.ConfigurationName
+  - CoreWCF.Description.ServiceDescription.Endpoints
+  - CoreWCF.Description.ServiceDescription.GetService``1
+  - CoreWCF.Description.ServiceDescription.GetService``1(``0)
+  - CoreWCF.Description.ServiceDescription.Name
+  - CoreWCF.Description.ServiceDescription.Namespace
+  - CoreWCF.Description.ServiceDescription.ServiceType
+  langs:
+  - csharp
+  - vb
+  name: ServiceDescription
+  nameWithType: ServiceDescription
+  fullName: CoreWCF.Description.ServiceDescription
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Represents a complete, in-memory description of the service, including all the endpoints for the service and specifications for their respective addresses, bindings, contracts and behaviors.
+  remarks: "The information contained in the &lt;xref:CoreWCF.Description.ServiceDescription> is used by the Windows Communication Foundation (WCF) system to building the run-time components for the service.  \n\nUse this method when adding custom behaviors to extend &lt;xref:CoreWCF.ServiceHost>. Programmatically, you must &lt;xref:System.Collections.ObjectModel.Collection%601.Add%28%600%29> the custom service behavior to the &lt;xref:CoreWCF.Description.ServiceDescription.Behaviors%2A> prior to when you call the &lt;xref:CoreWCF.ICommunicationObject.Open%2A> method on the &lt;xref:CoreWCF.ServiceHost> object.  \n\nThe &lt;xref:CoreWCF.Description.ServiceDescription.GetService%28System.Object%29> and &lt;xref:CoreWCF.Description.ServiceDescription.GetService%28System.Type%29> methods are available to reflect on behaviors using the Windows Communication Foundation (WCF) programming model when replacing &lt;xref:CoreWCF.ServiceHostBase> with you own hosting mechanism.  \n\nExport metadata about a service endpoint by passing &lt;xref:CoreWCF.Description.ServiceEndpoint> as a parameter to &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoint%28CoreWCF.Description.ServiceEndpoint%29>. After calling this method, or one of the other export methods provided by &lt;xref:CoreWCF.Description.WsdlExporter>, use the &lt;xref:CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments%2A> property to return the collection of &lt;xref:System.Web.Services.Description.ServiceDescription> objects.  \n\n\n\n"
+  syntax:
+    content: 'public class ServiceDescription : Object'
+    content.vb: >-
+      Public Class ServiceDescription
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.ServiceDescription.#ctor
+  commentId: M:CoreWCF.Description.ServiceDescription.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: ServiceDescription()
+  nameWithType: ServiceDescription.ServiceDescription()
+  fullName: CoreWCF.Description.ServiceDescription.ServiceDescription()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceDescription()
+    content.vb: Public Sub New
+  overload: CoreWCF.Description.ServiceDescription.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceDescription.#ctor(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint})
+  commentId: M:CoreWCF.Description.ServiceDescription.#ctor(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint})
+  id: '#ctor(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint})'
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: ServiceDescription(IEnumerable<ServiceEndpoint>)
+  nameWithType: ServiceDescription.ServiceDescription(IEnumerable<ServiceEndpoint>)
+  fullName: CoreWCF.Description.ServiceDescription.ServiceDescription(System.Collections.Generic.IEnumerable<CoreWCF.Description.ServiceEndpoint>)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceDescription(IEnumerable<ServiceEndpoint> endpoints)
+    parameters:
+    - id: endpoints
+      type: System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint}
+    content.vb: Public Sub New(endpoints As IEnumerable(Of ServiceEndpoint))
+  overload: CoreWCF.Description.ServiceDescription.#ctor*
+  nameWithType.vb: ServiceDescription.ServiceDescription(IEnumerable(Of ServiceEndpoint))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Description.ServiceDescription.ServiceDescription(System.Collections.Generic.IEnumerable(Of CoreWCF.Description.ServiceEndpoint))
+  name.vb: ServiceDescription(IEnumerable(Of ServiceEndpoint))
+- uid: CoreWCF.Description.ServiceDescription.GetService``1
+  commentId: M:CoreWCF.Description.ServiceDescription.GetService``1
+  id: GetService``1
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: GetService<TService>()
+  nameWithType: ServiceDescription.GetService<TService>()
+  fullName: CoreWCF.Description.ServiceDescription.GetService<TService>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: >-
+      public static ServiceDescription GetService<TService>()
+          where TService : class
+    typeParameters:
+    - id: TService
+    return:
+      type: CoreWCF.Description.ServiceDescription
+    content.vb: Public Shared Function GetService(Of TService As Class) As ServiceDescription
+  overload: CoreWCF.Description.ServiceDescription.GetService*
+  nameWithType.vb: ServiceDescription.GetService(Of TService)()
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.Description.ServiceDescription.GetService(Of TService)()
+  name.vb: GetService(Of TService)()
+- uid: CoreWCF.Description.ServiceDescription.GetService``1(``0)
+  commentId: M:CoreWCF.Description.ServiceDescription.GetService``1(``0)
+  id: GetService``1(``0)
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: GetService<TService>(TService)
+  nameWithType: ServiceDescription.GetService<TService>(TService)
+  fullName: CoreWCF.Description.ServiceDescription.GetService<TService>(TService)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: >-
+      public static ServiceDescription GetService<TService>(TService serviceImplementation)
+          where TService : class
+    parameters:
+    - id: serviceImplementation
+      type: '{TService}'
+    typeParameters:
+    - id: TService
+    return:
+      type: CoreWCF.Description.ServiceDescription
+    content.vb: Public Shared Function GetService(Of TService As Class)(serviceImplementation As TService) As ServiceDescription
+  overload: CoreWCF.Description.ServiceDescription.GetService*
+  nameWithType.vb: ServiceDescription.GetService(Of TService)(TService)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.Description.ServiceDescription.GetService(Of TService)(TService)
+  name.vb: GetService(Of TService)(TService)
+- uid: CoreWCF.Description.ServiceDescription.Name
+  commentId: P:CoreWCF.Description.ServiceDescription.Name
+  id: Name
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ServiceDescription.Name
+  fullName: CoreWCF.Description.ServiceDescription.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CoreWCF.Description.ServiceDescription.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceDescription.Namespace
+  commentId: P:CoreWCF.Description.ServiceDescription.Namespace
+  id: Namespace
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  nameWithType: ServiceDescription.Namespace
+  fullName: CoreWCF.Description.ServiceDescription.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Namespace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Namespace As String
+  overload: CoreWCF.Description.ServiceDescription.Namespace*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceDescription.Behaviors
+  commentId: P:CoreWCF.Description.ServiceDescription.Behaviors
+  id: Behaviors
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: Behaviors
+  nameWithType: ServiceDescription.Behaviors
+  fullName: CoreWCF.Description.ServiceDescription.Behaviors
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public KeyedByTypeCollection<IServiceBehavior> Behaviors { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Collections.Generic.KeyedByTypeCollection{CoreWCF.Description.IServiceBehavior}
+    content.vb: Public ReadOnly Property Behaviors As KeyedByTypeCollection(Of IServiceBehavior)
+  overload: CoreWCF.Description.ServiceDescription.Behaviors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.ServiceDescription.ConfigurationName
+  commentId: P:CoreWCF.Description.ServiceDescription.ConfigurationName
+  id: ConfigurationName
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationName
+  nameWithType: ServiceDescription.ConfigurationName
+  fullName: CoreWCF.Description.ServiceDescription.ConfigurationName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string ConfigurationName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ConfigurationName As String
+  overload: CoreWCF.Description.ServiceDescription.ConfigurationName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceDescription.Endpoints
+  commentId: P:CoreWCF.Description.ServiceDescription.Endpoints
+  id: Endpoints
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: Endpoints
+  nameWithType: ServiceDescription.Endpoints
+  fullName: CoreWCF.Description.ServiceDescription.Endpoints
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpointCollection Endpoints { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.ServiceEndpointCollection
+    content.vb: Public ReadOnly Property Endpoints As ServiceEndpointCollection
+  overload: CoreWCF.Description.ServiceDescription.Endpoints*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.ServiceDescription.ServiceType
+  commentId: P:CoreWCF.Description.ServiceDescription.ServiceType
+  id: ServiceType
+  parent: CoreWCF.Description.ServiceDescription
+  langs:
+  - csharp
+  - vb
+  name: ServiceType
+  nameWithType: ServiceDescription.ServiceType
+  fullName: CoreWCF.Description.ServiceDescription.ServiceType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Type ServiceType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property ServiceType As Type
+  overload: CoreWCF.Description.ServiceDescription.ServiceType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.ServiceDescription.#ctor*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.#ctor
+  isExternal: true
+  name: ServiceDescription
+  nameWithType: ServiceDescription.ServiceDescription
+  fullName: CoreWCF.Description.ServiceDescription.ServiceDescription
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ServiceEndpoint>
+  nameWithType: IEnumerable<ServiceEndpoint>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.Description.ServiceEndpoint>
+  nameWithType.vb: IEnumerable(Of ServiceEndpoint)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.Description.ServiceEndpoint)
+  name.vb: IEnumerable(Of ServiceEndpoint)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.ServiceEndpoint
+    name: ServiceEndpoint
+    nameWithType: ServiceEndpoint
+    fullName: CoreWCF.Description.ServiceEndpoint
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ServiceDescription.GetService*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.GetService
+  isExternal: true
+  name: GetService
+  nameWithType: ServiceDescription.GetService
+  fullName: CoreWCF.Description.ServiceDescription.GetService
+- uid: CoreWCF.Description.ServiceDescription
+  commentId: T:CoreWCF.Description.ServiceDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceDescription
+  nameWithType: ServiceDescription
+  fullName: CoreWCF.Description.ServiceDescription
+- uid: '{TService}'
+  commentId: '!:TService'
+  definition: TService
+  name: TService
+  nameWithType: TService
+  fullName: TService
+- uid: TService
+  commentId: '!:TService'
+  name: TService
+  nameWithType: TService
+  fullName: TService
+- uid: CoreWCF.Description.ServiceDescription.Name*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.Name
+  isExternal: true
+  name: Name
+  nameWithType: ServiceDescription.Name
+  fullName: CoreWCF.Description.ServiceDescription.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Description.ServiceDescription.Namespace*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: ServiceDescription.Namespace
+  fullName: CoreWCF.Description.ServiceDescription.Namespace
+- uid: CoreWCF.Description.ServiceDescription.Behaviors*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.Behaviors
+  isExternal: true
+  name: Behaviors
+  nameWithType: ServiceDescription.Behaviors
+  fullName: CoreWCF.Description.ServiceDescription.Behaviors
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection{CoreWCF.Description.IServiceBehavior}
+  commentId: T:CoreWCF.Collections.Generic.KeyedByTypeCollection{CoreWCF.Description.IServiceBehavior}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  name: KeyedByTypeCollection<IServiceBehavior>
+  nameWithType: KeyedByTypeCollection<IServiceBehavior>
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<CoreWCF.Description.IServiceBehavior>
+  nameWithType.vb: KeyedByTypeCollection(Of IServiceBehavior)
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of CoreWCF.Description.IServiceBehavior)
+  name.vb: KeyedByTypeCollection(Of IServiceBehavior)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+    name: KeyedByTypeCollection
+    nameWithType: KeyedByTypeCollection
+    fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.IServiceBehavior
+    name: IServiceBehavior
+    nameWithType: IServiceBehavior
+    fullName: CoreWCF.Description.IServiceBehavior
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+    name: KeyedByTypeCollection
+    nameWithType: KeyedByTypeCollection
+    fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.IServiceBehavior
+    name: IServiceBehavior
+    nameWithType: IServiceBehavior
+    fullName: CoreWCF.Description.IServiceBehavior
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  commentId: T:CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  isExternal: true
+  name: KeyedByTypeCollection<TItem>
+  nameWithType: KeyedByTypeCollection<TItem>
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>
+  nameWithType.vb: KeyedByTypeCollection(Of TItem)
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem)
+  name.vb: KeyedByTypeCollection(Of TItem)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+    name: KeyedByTypeCollection
+    nameWithType: KeyedByTypeCollection
+    fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TItem
+    nameWithType: TItem
+    fullName: TItem
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+    name: KeyedByTypeCollection
+    nameWithType: KeyedByTypeCollection
+    fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TItem
+    nameWithType: TItem
+    fullName: TItem
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic
+  commentId: N:CoreWCF.Collections.Generic
+  isExternal: true
+  name: CoreWCF.Collections.Generic
+  nameWithType: CoreWCF.Collections.Generic
+  fullName: CoreWCF.Collections.Generic
+- uid: CoreWCF.Description.ServiceDescription.ConfigurationName*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.ConfigurationName
+  isExternal: true
+  name: ConfigurationName
+  nameWithType: ServiceDescription.ConfigurationName
+  fullName: CoreWCF.Description.ServiceDescription.ConfigurationName
+- uid: CoreWCF.Description.ServiceDescription.Endpoints*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.Endpoints
+  isExternal: true
+  name: Endpoints
+  nameWithType: ServiceDescription.Endpoints
+  fullName: CoreWCF.Description.ServiceDescription.Endpoints
+- uid: CoreWCF.Description.ServiceEndpointCollection
+  commentId: T:CoreWCF.Description.ServiceEndpointCollection
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpointCollection
+  nameWithType: ServiceEndpointCollection
+  fullName: CoreWCF.Description.ServiceEndpointCollection
+- uid: CoreWCF.Description.ServiceDescription.ServiceType*
+  commentId: Overload:CoreWCF.Description.ServiceDescription.ServiceType
+  isExternal: true
+  name: ServiceType
+  nameWithType: ServiceDescription.ServiceType
+  fullName: CoreWCF.Description.ServiceDescription.ServiceType
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

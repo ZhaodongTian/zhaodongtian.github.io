@@ -1,0 +1,280 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.CommunicationState
+  commentId: T:CoreWCF.CommunicationState
+  id: CommunicationState
+  parent: CoreWCF
+  children:
+  - CoreWCF.CommunicationState.Closed
+  - CoreWCF.CommunicationState.Closing
+  - CoreWCF.CommunicationState.Created
+  - CoreWCF.CommunicationState.Faulted
+  - CoreWCF.CommunicationState.Opened
+  - CoreWCF.CommunicationState.Opening
+  - CoreWCF.CommunicationState.value__
+  langs:
+  - csharp
+  - vb
+  name: CommunicationState
+  nameWithType: CommunicationState
+  fullName: CoreWCF.CommunicationState
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Defines the states in which an  can exist.
+  remarks: "This enumeration defines the states that are valid for all communication objects in the system, including channels, listeners, factories, dispatchers, and service hosts.  \n\nThe methods that manage transitions between these states and the events that can be associated with them are defined in the <xref:CoreWCF.ICommunicationObject> interface. The state of an object can be obtained using the <xref:CoreWCF.ICommunicationObject.State%2A> property.  \n\nThere are four main states and two transient states that a communication object can occupy. The main states are:  \n\n-   Created  \n\n-   Opened  \n\n-   Closed  \n\n-   Faulted  \n\nThe two transitory states that a communication object can occupy when transitioning between these main states are:  \n\n-   Opening  \n\n-   Closing  \n\nThe communication object can be configured in the Created state. For example, its properties can be changed, and its events can be registered. No input or output can occur in this state. So messages, for example, cannot be sent or received from a channel in this state.  \n\nThe Opening is a temporary state that the communication object enters when the [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.icommunicationobject.open?view=dotnet-plat-ext-7.0) method is invoked. Unless otherwise noted on derived classes, objects in the opening state cannot be configured. This transition state can only be entered from the Created state.  \n\nObjects transition to the Opened state when the open process completes. This transition to the Opened state is only valid from the Opening state. Unless otherwise noted on derived classes, the configuration of the object is now disabled. At this point, the object is fully usable for message transfers.  \n\nThe Closing is a temporary state that the object enters when the [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.icommunicationobject.close?view=dotnet-plat-ext-7.0) method is invoked for a graceful shutdown or the object is aborted. At this point, the object becomes (if not already) unusable. This transition is valid from any state except the Closed state.  \n\nThe Closed state is equivalent to being disposed and the configuration of the object can still be inspected.  \n\nThe Faulted state is used to indicate that the object has transitioned to a state where it can no longer be used. There are two primary scenarios where this can happen:  \n\n-   If the [Open](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.icommunicationobject.open?view=dotnet-plat-ext-7.0) method fails for any reason, the object transitions to the faulted state.  \n\n-   If a session-based channel detects an error that it cannot recover from, it transitions to the faulted state. This can happen for instance if there is a protocol error (that is, it receives a protocol message at an invalid time) or if the remote endpoint aborts the session.  \n\nAn object in the Faulted state is not closed and may be holding resources. The <xref:CoreWCF.ICommunicationObject.Abort%2A> method should be used to close an object that has faulted. If [Close](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.icommunicationobject.close?view=dotnet-plat-ext-7.0) is called on an object in the Faulted state, a <xref:CoreWCF.CommunicationObjectFaultedException> is thrown because the object cannot be gracefully closed.  \n\n"
+  syntax:
+    content: 'public sealed class CommunicationState : Enum'
+    content.vb: >-
+      Public NotInheritable Class CommunicationState
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.CommunicationState.value__
+  commentId: F:CoreWCF.CommunicationState.value__
+  id: value__
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: CommunicationState.value__
+  fullName: CoreWCF.CommunicationState.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.CommunicationState.Faulted
+  commentId: F:CoreWCF.CommunicationState.Faulted
+  id: Faulted
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: Faulted
+  nameWithType: CommunicationState.Faulted
+  fullName: CoreWCF.CommunicationState.Faulted
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const CommunicationState Faulted
+    return:
+      type: CoreWCF.CommunicationState
+      description: "Indicates that the communication object has encountered an error or fault from which it cannot recover and from which it is no longer usable."
+    content.vb: Public Const Faulted As CommunicationState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.CommunicationState.Closed
+  commentId: F:CoreWCF.CommunicationState.Closed
+  id: Closed
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: Closed
+  nameWithType: CommunicationState.Closed
+  fullName: CoreWCF.CommunicationState.Closed
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const CommunicationState Closed
+    return:
+      type: CoreWCF.CommunicationState
+      description: "Indicates that the communication object has been instantiated and is configurable, but not yet open or ready for use."
+    content.vb: Public Const Closed As CommunicationState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.CommunicationState.Closing
+  commentId: F:CoreWCF.CommunicationState.Closing
+  id: Closing
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: Closing
+  nameWithType: CommunicationState.Closing
+  fullName: CoreWCF.CommunicationState.Closing
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const CommunicationState Closing
+    return:
+      type: CoreWCF.CommunicationState
+      description: "Indicates that the communication object is transitioning to the <xref:CoreWCF.CommunicationState.Closed> state."
+    content.vb: Public Const Closing As CommunicationState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.CommunicationState.Opened
+  commentId: F:CoreWCF.CommunicationState.Opened
+  id: Opened
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: Opened
+  nameWithType: CommunicationState.Opened
+  fullName: CoreWCF.CommunicationState.Opened
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const CommunicationState Opened
+    return:
+      type: CoreWCF.CommunicationState
+      description: Indicates that the communication object is now open and ready to be used.
+    content.vb: Public Const Opened As CommunicationState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.CommunicationState.Opening
+  commentId: F:CoreWCF.CommunicationState.Opening
+  id: Opening
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: Opening
+  nameWithType: CommunicationState.Opening
+  fullName: CoreWCF.CommunicationState.Opening
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const CommunicationState Opening
+    return:
+      type: CoreWCF.CommunicationState
+      description: "Indicates that the communication object is being transitioned from the <xref:CoreWCF.CommunicationState.Created> state to the <xref:CoreWCF.CommunicationState.Opened> state."
+    content.vb: Public Const Opening As CommunicationState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.CommunicationState.Created
+  commentId: F:CoreWCF.CommunicationState.Created
+  id: Created
+  parent: CoreWCF.CommunicationState
+  langs:
+  - csharp
+  - vb
+  name: Created
+  nameWithType: CommunicationState.Created
+  fullName: CoreWCF.CommunicationState.Created
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const CommunicationState Created
+    return:
+      type: CoreWCF.CommunicationState
+      description: "Indicates that the communication object has been instantiated and is configurable, but not yet open or ready for use."
+    content.vb: Public Const Created As CommunicationState
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.CommunicationState
+  commentId: T:CoreWCF.CommunicationState
+  parent: CoreWCF
+  isExternal: true
+  name: CommunicationState
+  nameWithType: CommunicationState
+  fullName: CoreWCF.CommunicationState

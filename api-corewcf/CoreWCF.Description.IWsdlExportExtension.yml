@@ -1,0 +1,125 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IWsdlExportExtension
+  commentId: T:CoreWCF.Description.IWsdlExportExtension
+  id: IWsdlExportExtension
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  - CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  langs:
+  - csharp
+  - vb
+  name: IWsdlExportExtension
+  nameWithType: IWsdlExportExtension
+  fullName: CoreWCF.Description.IWsdlExportExtension
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Defines endpoint or contract behaviors that can export custom metadata.
+  remarks: "To modify and extend the Web Services Description Language (WSDL) exported by &lt;xref:CoreWCF.Description.WsdlExporter> objects, implement the &lt;xref:CoreWCF.Description.IWsdlExportExtension> interface on an endpoint, contract, or operation behavior (an object that implements either &lt;xref:CoreWCF.Description.IContractBehavior>, &lt;xref:CoreWCF.Description.IEndpointBehavior>, or &lt;xref:CoreWCF.Description.IOperationBehavior>) and add the behavior to the &lt;xref:CoreWCF.Description.ServiceEndpoint.Behaviors%2A>, &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A>, or &lt;xref:CoreWCF.Description.OperationDescription.Behaviors%2A> property. In addition, you can also implement &lt;xref:CoreWCF.Description.IWsdlExportExtension> on a &lt;xref:CoreWCF.Channels.BindingElement>.  \n\n> [!NOTE]\n>  &lt;xref:CoreWCF.Description.IWsdlExportExtension> implementations are never invoked if they are implemented as an &lt;xref:CoreWCF.Description.IServiceBehavior>.  \n\n&lt;xref:CoreWCF.Description.IWsdlExportExtension> does not export custom policy assertions even though Windows Communication Foundation (WCF) exports custom binding policy assertions to the appropriate element inside WSDL. If you want to export custom policy assertions, implement the &lt;xref:CoreWCF.Description.IPolicyExportExtension> interface.  \n\nThe metadata publication process begins by calling &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoints%2A?displayProperty=nameWithType> which in turn calls &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoint%2A?displayProperty=nameWithType> for each endpoint.  \n\nThe endpoint is exported by first exporting its contract.When exporting a contract the &lt;xref:CoreWCF.Description.WsdlExporter?displayProperty=nameWithType> calls the &lt;xref:CoreWCF.Description.IWsdlExportExtension.ExportContract%2A?displayProperty=nameWithType> method on all &lt;xref:CoreWCF.Description.IWsdlExportExtension> implementations on the contract, and operation behaviors for that contract. Operations that use wildcard actions are not exported in metadata, so &lt;xref:CoreWCF.Description.IWsdlExportExtension> implementations on operation behaviors for these operations are not exported.  \n\nAfter exporting the contract, the port and binding are exported and exported policy expressions are attached.  \n\nBoth the &lt;xref:CoreWCF.Description.IWsdlExportExtension.ExportContract%2A> and the &lt;xref:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint%2A> methods provide access to the &lt;xref:CoreWCF.Description.WsdlExporter> so that &lt;xref:CoreWCF.Description.IWsdlExportExtension> implementations can report recoverable errors and warnings through the &lt;xref:CoreWCF.Description.MetadataExporter.Errors%2A> property. The context objects passed into both methods provide convenient mappings from exported WSDL elements to properties of &lt;xref:CoreWCF.Description.ContractDescription> and &lt;xref:CoreWCF.Description.ServiceEndpoint> objects.  \n\nIf an &lt;xref:CoreWCF.Description.IWsdlExportExtension> implementation throws an exception on export, the generated metadata is in an inconsistent state and the &lt;xref:CoreWCF.Description.WsdlExporter> object should be discarded.  \n\n> [!NOTE]\n>  Custom export extension must run after the built-in serializer populates the service description.  \n\n\n\n"
+  syntax:
+    content: public interface IWsdlExportExtension
+    content.vb: Public Interface IWsdlExportExtension
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  commentId: M:CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  id: ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  parent: CoreWCF.Description.IWsdlExportExtension
+  langs:
+  - csharp
+  - vb
+  name: ExportContract(WsdlExporter, WsdlContractConversionContext)
+  nameWithType: IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlContractConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.WsdlExporter
+    - id: context
+      type: CoreWCF.Description.WsdlContractConversionContext
+    content.vb: Sub ExportContract(exporter As WsdlExporter, context As WsdlContractConversionContext)
+  overload: CoreWCF.Description.IWsdlExportExtension.ExportContract*
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  commentId: M:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  id: ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  parent: CoreWCF.Description.IWsdlExportExtension
+  langs:
+  - csharp
+  - vb
+  name: ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  nameWithType: IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ExportEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.WsdlExporter
+    - id: context
+      type: CoreWCF.Description.WsdlEndpointConversionContext
+    content.vb: Sub ExportEndpoint(exporter As WsdlExporter, context As WsdlEndpointConversionContext)
+  overload: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint*
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportContract*
+  commentId: Overload:CoreWCF.Description.IWsdlExportExtension.ExportContract
+  isExternal: true
+  name: ExportContract
+  nameWithType: IWsdlExportExtension.ExportContract
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract
+- uid: CoreWCF.Description.WsdlExporter
+  commentId: T:CoreWCF.Description.WsdlExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlExporter
+  nameWithType: WsdlExporter
+  fullName: CoreWCF.Description.WsdlExporter
+- uid: CoreWCF.Description.WsdlContractConversionContext
+  commentId: T:CoreWCF.Description.WsdlContractConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlContractConversionContext
+  nameWithType: WsdlContractConversionContext
+  fullName: CoreWCF.Description.WsdlContractConversionContext
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint*
+  commentId: Overload:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+  isExternal: true
+  name: ExportEndpoint
+  nameWithType: IWsdlExportExtension.ExportEndpoint
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+- uid: CoreWCF.Description.WsdlEndpointConversionContext
+  commentId: T:CoreWCF.Description.WsdlEndpointConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlEndpointConversionContext
+  nameWithType: WsdlEndpointConversionContext
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext

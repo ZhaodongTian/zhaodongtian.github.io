@@ -1,0 +1,104 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.ISecuritySession
+  commentId: T:CoreWCF.Channels.ISecuritySession
+  id: ISecuritySession
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.ISecuritySession.RemoteIdentity
+  langs:
+  - csharp
+  - vb
+  name: ISecuritySession
+  nameWithType: ISecuritySession
+  fullName: CoreWCF.Channels.ISecuritySession
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents a kind of  that enforces the requirement that all messages exchanged on the session are between the same communicating parties that established the session.
+  remarks: "&lt;xref:CoreWCF.Security.ISecuritySession> instances are provided by message security channels (which use WS-SecureConversation) and by TCP secure transport channels.  \n\n"
+  syntax:
+    content: 'public interface ISecuritySession : ISession'
+    content.vb: >-
+      Public Interface ISecuritySession
+          Inherits ISession
+  inheritedMembers:
+  - CoreWCF.Channels.ISession.Id
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Channels.ISecuritySession.RemoteIdentity
+  commentId: P:CoreWCF.Channels.ISecuritySession.RemoteIdentity
+  id: RemoteIdentity
+  parent: CoreWCF.Channels.ISecuritySession
+  langs:
+  - csharp
+  - vb
+  name: RemoteIdentity
+  nameWithType: ISecuritySession.RemoteIdentity
+  fullName: CoreWCF.Channels.ISecuritySession.RemoteIdentity
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: EndpointIdentity RemoteIdentity { get; }
+    parameters: []
+    return:
+      type: CoreWCF.EndpointIdentity
+    content.vb: ReadOnly Property RemoteIdentity As EndpointIdentity
+  overload: CoreWCF.Channels.ISecuritySession.RemoteIdentity*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Channels.ISession.Id
+  commentId: P:CoreWCF.Channels.ISession.Id
+  parent: CoreWCF.Channels.ISession
+  isExternal: true
+  name: Id
+  nameWithType: ISession.Id
+  fullName: CoreWCF.Channels.ISession.Id
+- uid: CoreWCF.Channels.ISession
+  commentId: T:CoreWCF.Channels.ISession
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: ISession
+  nameWithType: ISession
+  fullName: CoreWCF.Channels.ISession
+- uid: CoreWCF.Channels.ISecuritySession.RemoteIdentity*
+  commentId: Overload:CoreWCF.Channels.ISecuritySession.RemoteIdentity
+  isExternal: true
+  name: RemoteIdentity
+  nameWithType: ISecuritySession.RemoteIdentity
+  fullName: CoreWCF.Channels.ISecuritySession.RemoteIdentity
+- uid: CoreWCF.EndpointIdentity
+  commentId: T:CoreWCF.EndpointIdentity
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointIdentity
+  nameWithType: EndpointIdentity
+  fullName: CoreWCF.EndpointIdentity
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF

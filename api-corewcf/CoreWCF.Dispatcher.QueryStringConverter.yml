@@ -1,0 +1,227 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.QueryStringConverter
+  commentId: T:CoreWCF.Dispatcher.QueryStringConverter
+  id: QueryStringConverter
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.QueryStringConverter.#ctor
+  - CoreWCF.Dispatcher.QueryStringConverter.CanConvert(System.Type)
+  - CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue(System.String,System.Type)
+  - CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString(System.Object,System.Type)
+  langs:
+  - csharp
+  - vb
+  name: QueryStringConverter
+  nameWithType: QueryStringConverter
+  fullName: CoreWCF.Dispatcher.QueryStringConverter
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Dispatcher
+  summary: This class converts a parameter in a query string to an object of the appropriate type. It can also convert a parameter from an object to its query string representation.
+  remarks: "Parameters can be specified in a query string within a URL. This class takes those parameters specified in a string and converts them into objects. For example, the following contract is defined.  \n\n```csharp\n[ServiceContract]  \ninterface Calculator  \n{  \n[WebGet(UriTemplate=&quot;Add?n1={n1}&amp;n2={n2}&quot;)]  \n[OperationContract]  \nlong Add(long n1, long n2);  \n}  \n```  \n\nA Windows Communication Foundation (WCF) service implements this interface and exposes it on an endpoint with the &lt;xref:CoreWCF.Description.WebHttpBehavior> at `http://localhost:8000/MyCalcService`. The `Add` service operation can be called by sending an HTTP GET to `http://localhost:8000/MyCalcService/Add?n1=10&amp;n2=5`. The &lt;xref:CoreWCF.Dispatcher.QueryStringConverter> receives this URL and converts the two parameters (n1 and n2) specified in the URL into two `long` objects with the appropriate values.  \n\nYou can derive a class from &lt;xref:CoreWCF.Dispatcher.QueryStringConverter> to control how query string parameters are mapped into a service operation&apos;s parameters.  \n\nThe &lt;xref:CoreWCF.Dispatcher.QueryStringConverter> supports the following types by default:  \n\n-   &lt;xref:System.Byte>  \n\n-   &lt;xref:System.SByte>  \n\n-   &lt;xref:System.Int16>  \n\n-   &lt;xref:System.Int32>  \n\n-   &lt;xref:System.Int64>  \n\n-   &lt;xref:System.UInt16>  \n\n-   &lt;xref:System.UInt32>  \n\n-   &lt;xref:System.UInt64>  \n\n-   &lt;xref:System.Single>  \n\n-   &lt;xref:System.Double>  \n\n-   &lt;xref:System.Char>  \n\n-   &lt;xref:System.Decimal>  \n\n-   &lt;xref:System.Boolean>  \n\n-   &lt;xref:System.String>  \n\n-   &lt;xref:System.DateTime>  \n\n-   &lt;xref:System.TimeSpan>  \n\n-   &lt;xref:System.Guid>  \n\n-   &lt;xref:System.Byte> array  \n\n-   &lt;xref:System.Uri>  \n\n-   &lt;xref:System.Object>  \n\n-   &lt;xref:System.DateTimeOffset>  \n\n-   Enums  \n\n-   Types that have a `TypeConverterAttribute` that can convert the type to and from a string representation.  \n\n\n\n"
+  syntax:
+    content: 'public class QueryStringConverter : Object'
+    content.vb: >-
+      Public Class QueryStringConverter
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Dispatcher.QueryStringConverter.#ctor
+  commentId: M:CoreWCF.Dispatcher.QueryStringConverter.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Dispatcher.QueryStringConverter
+  langs:
+  - csharp
+  - vb
+  name: QueryStringConverter()
+  nameWithType: QueryStringConverter.QueryStringConverter()
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.QueryStringConverter()
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public QueryStringConverter()
+    content.vb: Public Sub New
+  overload: CoreWCF.Dispatcher.QueryStringConverter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.QueryStringConverter.CanConvert(System.Type)
+  commentId: M:CoreWCF.Dispatcher.QueryStringConverter.CanConvert(System.Type)
+  id: CanConvert(System.Type)
+  parent: CoreWCF.Dispatcher.QueryStringConverter
+  langs:
+  - csharp
+  - vb
+  name: CanConvert(Type)
+  nameWithType: QueryStringConverter.CanConvert(Type)
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.CanConvert(System.Type)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public virtual bool CanConvert(Type type)
+    parameters:
+    - id: type
+      type: System.Type
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function CanConvert(type As Type) As Boolean
+  overload: CoreWCF.Dispatcher.QueryStringConverter.CanConvert*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue(System.String,System.Type)
+  commentId: M:CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue(System.String,System.Type)
+  id: ConvertStringToValue(System.String,System.Type)
+  parent: CoreWCF.Dispatcher.QueryStringConverter
+  langs:
+  - csharp
+  - vb
+  name: ConvertStringToValue(String, Type)
+  nameWithType: QueryStringConverter.ConvertStringToValue(String, Type)
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue(System.String, System.Type)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public virtual object ConvertStringToValue(string parameter, Type parameterType)
+    parameters:
+    - id: parameter
+      type: System.String
+    - id: parameterType
+      type: System.Type
+    return:
+      type: System.Object
+    content.vb: Public Overridable Function ConvertStringToValue(parameter As String, parameterType As Type) As Object
+  overload: CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString(System.Object,System.Type)
+  commentId: M:CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString(System.Object,System.Type)
+  id: ConvertValueToString(System.Object,System.Type)
+  parent: CoreWCF.Dispatcher.QueryStringConverter
+  langs:
+  - csharp
+  - vb
+  name: ConvertValueToString(Object, Type)
+  nameWithType: QueryStringConverter.ConvertValueToString(Object, Type)
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString(System.Object, System.Type)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public virtual string ConvertValueToString(object parameter, Type parameterType)
+    parameters:
+    - id: parameter
+      type: System.Object
+    - id: parameterType
+      type: System.Type
+    return:
+      type: System.String
+    content.vb: Public Overridable Function ConvertValueToString(parameter As Object, parameterType As Type) As String
+  overload: CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.QueryStringConverter.#ctor*
+  commentId: Overload:CoreWCF.Dispatcher.QueryStringConverter.#ctor
+  isExternal: true
+  name: QueryStringConverter
+  nameWithType: QueryStringConverter.QueryStringConverter
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.QueryStringConverter
+- uid: CoreWCF.Dispatcher.QueryStringConverter.CanConvert*
+  commentId: Overload:CoreWCF.Dispatcher.QueryStringConverter.CanConvert
+  isExternal: true
+  name: CanConvert
+  nameWithType: QueryStringConverter.CanConvert
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.CanConvert
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue*
+  commentId: Overload:CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue
+  isExternal: true
+  name: ConvertStringToValue
+  nameWithType: QueryStringConverter.ConvertStringToValue
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.ConvertStringToValue
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString*
+  commentId: Overload:CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString
+  isExternal: true
+  name: ConvertValueToString
+  nameWithType: QueryStringConverter.ConvertValueToString
+  fullName: CoreWCF.Dispatcher.QueryStringConverter.ConvertValueToString

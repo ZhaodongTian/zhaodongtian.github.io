@@ -1,0 +1,422 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  id: PolicyConversionContext
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.PolicyConversionContext.#ctor(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.PolicyConversionContext.BindingElements
+  - CoreWCF.Description.PolicyConversionContext.BindingParameters
+  - CoreWCF.Description.PolicyConversionContext.Contract
+  - CoreWCF.Description.PolicyConversionContext.GetBindingAssertions
+  - CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions(CoreWCF.Description.FaultDescription)
+  - CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions(CoreWCF.Description.MessageDescription)
+  - CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions(CoreWCF.Description.OperationDescription)
+  langs:
+  - csharp
+  - vb
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Defines a class used to retrieve binding assertions in metadata and to attach implementing binding elements at the appropriate scope.
+  remarks: "An implementation of the &lt;xref:CoreWCF.Description.PolicyConversionContext> is passed to &lt;xref:CoreWCF.Description.IPolicyExportExtension> and &lt;xref:CoreWCF.Description.IPolicyImportExtension> objects to export and import, respectively, custom policy assertions to and from metadata. On export, a collection of policy assertions are retrieved in order to add custom assertions. On import, the assertions are retrieved in order to import specific ones and configure binding elements appropriately.  \n\n-   The &lt;xref:CoreWCF.Description.PolicyConversionContext.GetBindingAssertions%2A> method returns all policy assertions that are for the binding.  \n\n-   The &lt;xref:CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions%2A> method returns all policy assertions for a specific fault message.  \n\n-   The &lt;xref:CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions%2A> method returns all policy assertions for a specific message.  \n\n-   The &lt;xref:CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions%2A> method returns all policy assertions for a specific operation.  \n\n-   The &lt;xref:CoreWCF.Description.PolicyConversionContext.BindingElements%2A> property gets the binding elements for the binding being described or configured.  \n\n-   The &lt;xref:CoreWCF.Description.PolicyConversionContext.Contract%2A> property gets the contract description for which the binding is being described or configured.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class PolicyConversionContext : Object'
+    content.vb: >-
+      Public MustInherit Class PolicyConversionContext
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Description.PolicyConversionContext.#ctor(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.PolicyConversionContext.#ctor(CoreWCF.Description.ServiceEndpoint)
+  id: '#ctor(CoreWCF.Description.ServiceEndpoint)'
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: PolicyConversionContext(ServiceEndpoint)
+  nameWithType: PolicyConversionContext.PolicyConversionContext(ServiceEndpoint)
+  fullName: CoreWCF.Description.PolicyConversionContext.PolicyConversionContext(CoreWCF.Description.ServiceEndpoint)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected PolicyConversionContext(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Protected Sub New(endpoint As ServiceEndpoint)
+  overload: CoreWCF.Description.PolicyConversionContext.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Description.PolicyConversionContext.GetBindingAssertions
+  commentId: M:CoreWCF.Description.PolicyConversionContext.GetBindingAssertions
+  id: GetBindingAssertions
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetBindingAssertions()
+  nameWithType: PolicyConversionContext.GetBindingAssertions()
+  fullName: CoreWCF.Description.PolicyConversionContext.GetBindingAssertions()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract PolicyAssertionCollection GetBindingAssertions()
+    return:
+      type: CoreWCF.Description.PolicyAssertionCollection
+    content.vb: Public MustOverride Function GetBindingAssertions As PolicyAssertionCollection
+  overload: CoreWCF.Description.PolicyConversionContext.GetBindingAssertions*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions(CoreWCF.Description.OperationDescription)
+  id: GetOperationBindingAssertions(CoreWCF.Description.OperationDescription)
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetOperationBindingAssertions(OperationDescription)
+  nameWithType: PolicyConversionContext.GetOperationBindingAssertions(OperationDescription)
+  fullName: CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions(CoreWCF.Description.OperationDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract PolicyAssertionCollection GetOperationBindingAssertions(OperationDescription operation)
+    parameters:
+    - id: operation
+      type: CoreWCF.Description.OperationDescription
+    return:
+      type: CoreWCF.Description.PolicyAssertionCollection
+    content.vb: Public MustOverride Function GetOperationBindingAssertions(operation As OperationDescription) As PolicyAssertionCollection
+  overload: CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions(CoreWCF.Description.MessageDescription)
+  commentId: M:CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions(CoreWCF.Description.MessageDescription)
+  id: GetMessageBindingAssertions(CoreWCF.Description.MessageDescription)
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetMessageBindingAssertions(MessageDescription)
+  nameWithType: PolicyConversionContext.GetMessageBindingAssertions(MessageDescription)
+  fullName: CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions(CoreWCF.Description.MessageDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract PolicyAssertionCollection GetMessageBindingAssertions(MessageDescription message)
+    parameters:
+    - id: message
+      type: CoreWCF.Description.MessageDescription
+    return:
+      type: CoreWCF.Description.PolicyAssertionCollection
+    content.vb: Public MustOverride Function GetMessageBindingAssertions(message As MessageDescription) As PolicyAssertionCollection
+  overload: CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions(CoreWCF.Description.FaultDescription)
+  commentId: M:CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions(CoreWCF.Description.FaultDescription)
+  id: GetFaultBindingAssertions(CoreWCF.Description.FaultDescription)
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetFaultBindingAssertions(FaultDescription)
+  nameWithType: PolicyConversionContext.GetFaultBindingAssertions(FaultDescription)
+  fullName: CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions(CoreWCF.Description.FaultDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract PolicyAssertionCollection GetFaultBindingAssertions(FaultDescription fault)
+    parameters:
+    - id: fault
+      type: CoreWCF.Description.FaultDescription
+    return:
+      type: CoreWCF.Description.PolicyAssertionCollection
+    content.vb: Public MustOverride Function GetFaultBindingAssertions(fault As FaultDescription) As PolicyAssertionCollection
+  overload: CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.PolicyConversionContext.BindingElements
+  commentId: P:CoreWCF.Description.PolicyConversionContext.BindingElements
+  id: BindingElements
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: BindingElements
+  nameWithType: PolicyConversionContext.BindingElements
+  fullName: CoreWCF.Description.PolicyConversionContext.BindingElements
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract BindingElementCollection BindingElements { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.BindingElementCollection
+    content.vb: Public MustOverride ReadOnly Property BindingElements As BindingElementCollection
+  overload: CoreWCF.Description.PolicyConversionContext.BindingElements*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Description.PolicyConversionContext.BindingParameters
+  commentId: P:CoreWCF.Description.PolicyConversionContext.BindingParameters
+  id: BindingParameters
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: BindingParameters
+  nameWithType: PolicyConversionContext.BindingParameters
+  fullName: CoreWCF.Description.PolicyConversionContext.BindingParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public virtual BindingParameterCollection BindingParameters { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Public Overridable ReadOnly Property BindingParameters As BindingParameterCollection
+  overload: CoreWCF.Description.PolicyConversionContext.BindingParameters*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.Description.PolicyConversionContext.Contract
+  commentId: P:CoreWCF.Description.PolicyConversionContext.Contract
+  id: Contract
+  parent: CoreWCF.Description.PolicyConversionContext
+  langs:
+  - csharp
+  - vb
+  name: Contract
+  nameWithType: PolicyConversionContext.Contract
+  fullName: CoreWCF.Description.PolicyConversionContext.Contract
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ContractDescription Contract { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.ContractDescription
+    content.vb: Public ReadOnly Property Contract As ContractDescription
+  overload: CoreWCF.Description.PolicyConversionContext.Contract*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.PolicyConversionContext.#ctor*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.#ctor
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext.PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext.PolicyConversionContext
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Description.PolicyConversionContext.GetBindingAssertions*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.GetBindingAssertions
+  isExternal: true
+  name: GetBindingAssertions
+  nameWithType: PolicyConversionContext.GetBindingAssertions
+  fullName: CoreWCF.Description.PolicyConversionContext.GetBindingAssertions
+- uid: CoreWCF.Description.PolicyAssertionCollection
+  commentId: T:CoreWCF.Description.PolicyAssertionCollection
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyAssertionCollection
+  nameWithType: PolicyAssertionCollection
+  fullName: CoreWCF.Description.PolicyAssertionCollection
+- uid: CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions
+  isExternal: true
+  name: GetOperationBindingAssertions
+  nameWithType: PolicyConversionContext.GetOperationBindingAssertions
+  fullName: CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions
+- uid: CoreWCF.Description.OperationDescription
+  commentId: T:CoreWCF.Description.OperationDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescription
+  nameWithType: OperationDescription
+  fullName: CoreWCF.Description.OperationDescription
+- uid: CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions
+  isExternal: true
+  name: GetMessageBindingAssertions
+  nameWithType: PolicyConversionContext.GetMessageBindingAssertions
+  fullName: CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions
+- uid: CoreWCF.Description.MessageDescription
+  commentId: T:CoreWCF.Description.MessageDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MessageDescription
+  nameWithType: MessageDescription
+  fullName: CoreWCF.Description.MessageDescription
+- uid: CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions
+  isExternal: true
+  name: GetFaultBindingAssertions
+  nameWithType: PolicyConversionContext.GetFaultBindingAssertions
+  fullName: CoreWCF.Description.PolicyConversionContext.GetFaultBindingAssertions
+- uid: CoreWCF.Description.FaultDescription
+  commentId: T:CoreWCF.Description.FaultDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: FaultDescription
+  nameWithType: FaultDescription
+  fullName: CoreWCF.Description.FaultDescription
+- uid: CoreWCF.Description.PolicyConversionContext.BindingElements*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.BindingElements
+  isExternal: true
+  name: BindingElements
+  nameWithType: PolicyConversionContext.BindingElements
+  fullName: CoreWCF.Description.PolicyConversionContext.BindingElements
+- uid: CoreWCF.Channels.BindingElementCollection
+  commentId: T:CoreWCF.Channels.BindingElementCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElementCollection
+  nameWithType: BindingElementCollection
+  fullName: CoreWCF.Channels.BindingElementCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.PolicyConversionContext.BindingParameters*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.BindingParameters
+  isExternal: true
+  name: BindingParameters
+  nameWithType: PolicyConversionContext.BindingParameters
+  fullName: CoreWCF.Description.PolicyConversionContext.BindingParameters
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Description.PolicyConversionContext.Contract*
+  commentId: Overload:CoreWCF.Description.PolicyConversionContext.Contract
+  isExternal: true
+  name: Contract
+  nameWithType: PolicyConversionContext.Contract
+  fullName: CoreWCF.Description.PolicyConversionContext.Contract
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription

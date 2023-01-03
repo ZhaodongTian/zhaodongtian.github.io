@@ -1,0 +1,123 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.IDuplexSession
+  commentId: T:CoreWCF.Channels.IDuplexSession
+  id: IDuplexSession
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync
+  - CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDuplexSession
+  nameWithType: IDuplexSession
+  fullName: CoreWCF.Channels.IDuplexSession
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Defines the interface for the session implemented on each side of a bi-directional communication between messaging endpoints.
+  remarks: "The <xref:CoreWCF.Channels.IDuplexSession> interface is the union of the inbound session, defined by the <xref:CoreWCF.Channels.IInputSession> interface, and the outbound session, defined by the <xref:CoreWCF.Channels.IOutputSession> interface. Either the inbound session or outbound session can be terminated independently of the other. The outbound session can be terminated synchronously by calling <xref:System.ServiceModel.Channels.IDuplexSession.CloseOutputSession> or asynchronously by calling [BeginCloseOutputSession](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.iduplexsession.begincloseoutputsession?view=dotnet-plat-ext-7.0).  \n\nThe inbound session can be remotely terminated. The <xref:System.ServiceModel.Channels.IInputChannel.Receive> associated with the inbound session starts returning `null` when that session is shutdown.  \n\n"
+  syntax:
+    content: 'public interface IDuplexSession : IInputSession, IOutputSession, ISession'
+    content.vb: >-
+      Public Interface IDuplexSession
+          Inherits IInputSession, ISession, IOutputSession
+  inheritedMembers:
+  - CoreWCF.Channels.ISession.Id
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync
+  commentId: M:CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync
+  id: CloseOutputSessionAsync
+  parent: CoreWCF.Channels.IDuplexSession
+  langs:
+  - csharp
+  - vb
+  name: CloseOutputSessionAsync()
+  nameWithType: IDuplexSession.CloseOutputSessionAsync()
+  fullName: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: Task CloseOutputSessionAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CloseOutputSessionAsync As Task
+  overload: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync*
+- uid: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync(System.Threading.CancellationToken)
+  id: CloseOutputSessionAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.IDuplexSession
+  langs:
+  - csharp
+  - vb
+  name: CloseOutputSessionAsync(CancellationToken)
+  nameWithType: IDuplexSession.CloseOutputSessionAsync(CancellationToken)
+  fullName: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: Task CloseOutputSessionAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CloseOutputSessionAsync(token As CancellationToken) As Task
+  overload: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync*
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Channels.ISession.Id
+  commentId: P:CoreWCF.Channels.ISession.Id
+  parent: CoreWCF.Channels.ISession
+  isExternal: true
+  name: Id
+  nameWithType: ISession.Id
+  fullName: CoreWCF.Channels.ISession.Id
+- uid: CoreWCF.Channels.ISession
+  commentId: T:CoreWCF.Channels.ISession
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: ISession
+  nameWithType: ISession
+  fullName: CoreWCF.Channels.ISession
+- uid: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync*
+  commentId: Overload:CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync
+  isExternal: true
+  name: CloseOutputSessionAsync
+  nameWithType: IDuplexSession.CloseOutputSessionAsync
+  fullName: CoreWCF.Channels.IDuplexSession.CloseOutputSessionAsync
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken

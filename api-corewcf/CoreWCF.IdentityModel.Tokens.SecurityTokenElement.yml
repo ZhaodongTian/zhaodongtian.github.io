@@ -1,0 +1,441 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  id: SecurityTokenElement
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml
+  - CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenElement
+  nameWithType: SecurityTokenElement
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nThis class represents a number elements found in a <see cref=\"!:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken\"></see> which represent security tokens.\n"
+  remarks: "\nThis class is not thread-safe.\n"
+  syntax:
+    content: 'public class SecurityTokenElement : Object'
+    content.vb: >-
+      Public Class SecurityTokenElement
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: '#ctor(CoreWCF.IdentityModel.Tokens.SecurityToken)'
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenElement(SecurityToken)
+  nameWithType: SecurityTokenElement.SecurityTokenElement(SecurityToken)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenElement(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nCreates an instance of this object using a <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityToken\" data-throw-if-not-resolved=\"false\"></xref> object.\n"
+  remarks: "\n<xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities\" data-throw-if-not-resolved=\"false\"></xref> is not supported by this object if this constructor is used unless\n<xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement%2cCoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)\" data-throw-if-not-resolved=\"false\"></xref> is overriden.\nIf the securityToken passed in is a <xref href=\"CoreWCF.IdentityModel.Tokens.GenericXmlSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> then SecurityTokenXml will \nbe set to the value found in <xref href=\"CoreWCF.IdentityModel.Tokens.GenericXmlSecurityToken\" data-throw-if-not-resolved=\"false\"></xref>"
+  syntax:
+    content: public SecurityTokenElement(SecurityToken securityToken)
+    parameters:
+    - id: securityToken
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+      description: The security token this object represents.
+    content.vb: Public Sub New(securityToken As SecurityToken)
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  id: '#ctor(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)'
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenElement(XmlElement, SecurityTokenHandlerCollection)
+  nameWithType: SecurityTokenElement.SecurityTokenElement(XmlElement, SecurityTokenHandlerCollection)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenElement(System.Xml.XmlElement, CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nCreates an instance of this object using XML representation of the security token.\n"
+  syntax:
+    content: public SecurityTokenElement(XmlElement securityTokenXml, SecurityTokenHandlerCollection securityTokenHandlers)
+    parameters:
+    - id: securityTokenXml
+      type: System.Xml.XmlElement
+      description: The <xref href="System.Xml.XmlElement" data-throw-if-not-resolved="false"></xref> representation of the security token.
+    - id: securityTokenHandlers
+      type: CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection
+      description: "The collection of <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenHandler\" data-throw-if-not-resolved=\"false\"></xref> objects that may \n      be used to read and validate the security token this object represents."
+    content.vb: Public Sub New(securityTokenXml As XmlElement, securityTokenHandlers As SecurityTokenHandlerCollection)
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken
+  id: GetSecurityToken
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: GetSecurityToken()
+  nameWithType: SecurityTokenElement.GetSecurityToken()
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the security token this object represents.\n"
+  remarks: "\nIf this object was not constructed directly with a <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityToken\" data-throw-if-not-resolved=\"false\"></xref> using\n<xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenElement.%23ctor(CoreWCF.IdentityModel.Tokens.SecurityToken)\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken(System.Xml.XmlElement%2cCoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)\" data-throw-if-not-resolved=\"false\"></xref>\nwill be called for this value.\n"
+  syntax:
+    content: public SecurityToken GetSecurityToken()
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+      description: The <xref href="CoreWCF.IdentityModel.Tokens.SecurityToken" data-throw-if-not-resolved="false"></xref> this object represents
+    content.vb: Public Function GetSecurityToken As SecurityToken
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities
+  id: GetIdentities
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: GetIdentities()
+  nameWithType: SecurityTokenElement.GetIdentities()
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the collection of <xref href=\"System.Security.Claims.ClaimsIdentity\" data-throw-if-not-resolved=\"false\"></xref> contained in the token.\n<xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement%2cCoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)\" data-throw-if-not-resolved=\"false\"></xref>"
+  syntax:
+    content: public ReadOnlyCollection<ClaimsIdentity> GetIdentities()
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{System.Security.Claims.ClaimsIdentity}
+      description: A <xref href="System.Collections.ObjectModel.ReadOnlyCollection%601" data-throw-if-not-resolved="false"></xref> of <xref href="System.Security.Claims.ClaimsIdentity" data-throw-if-not-resolved="false"></xref> representing the identities contained in the token.
+    content.vb: Public Function GetIdentities As ReadOnlyCollection(Of ClaimsIdentity)
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  id: ValidateToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: ValidateToken(XmlElement, SecurityTokenHandlerCollection)
+  nameWithType: SecurityTokenElement.ValidateToken(XmlElement, SecurityTokenHandlerCollection)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement, CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nCreates the identities for the represented by the <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityToken\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  syntax:
+    content: protected virtual ReadOnlyCollection<ClaimsIdentity> ValidateToken(XmlElement securityTokenXml, SecurityTokenHandlerCollection securityTokenHandlers)
+    parameters:
+    - id: securityTokenXml
+      type: System.Xml.XmlElement
+      description: The <xref href="System.Xml.XmlElement" data-throw-if-not-resolved="false"></xref> representation of the security token.
+    - id: securityTokenHandlers
+      type: CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection
+      description: "The collection of <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityTokenHandler\" data-throw-if-not-resolved=\"false\"></xref> objects that may \n      be used to read and validate the security token this object represents."
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{System.Security.Claims.ClaimsIdentity}
+      description: A <xref href="System.Collections.ObjectModel.ReadOnlyCollection%601" data-throw-if-not-resolved="false"></xref> of <xref href="System.Security.Claims.ClaimsIdentity" data-throw-if-not-resolved="false"></xref> representing the identities contained in the token.
+    content.vb: Protected Overridable Function ValidateToken(securityTokenXml As XmlElement, securityTokenHandlers As SecurityTokenHandlerCollection) As ReadOnlyCollection(Of ClaimsIdentity)
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: If either parameter &apos;securityTokenXml&apos; or &apos;securityTokenHandlers&apos; are null.
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  id: ReadSecurityToken(System.Xml.XmlElement,CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: ReadSecurityToken(XmlElement, SecurityTokenHandlerCollection)
+  nameWithType: SecurityTokenElement.ReadSecurityToken(XmlElement, SecurityTokenHandlerCollection)
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken(System.Xml.XmlElement, CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nReads a <xref href=\"CoreWCF.IdentityModel.Tokens.SecurityToken\" data-throw-if-not-resolved=\"false\"></xref> from the provided XML representation.\n"
+  syntax:
+    content: protected virtual SecurityToken ReadSecurityToken(XmlElement securityTokenXml, SecurityTokenHandlerCollection securityTokenHandlers)
+    parameters:
+    - id: securityTokenXml
+      type: System.Xml.XmlElement
+      description: The XML representation of the security token.
+    - id: securityTokenHandlers
+      type: CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection
+      description: >-
+        The <xref href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection" data-throw-if-not-resolved="false"></xref> used to
+              read the token.
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+      description: A <xref href="CoreWCF.IdentityModel.Tokens.SecurityToken" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Protected Overridable Function ReadSecurityToken(securityTokenXml As XmlElement, securityTokenHandlers As SecurityTokenHandlerCollection) As SecurityToken
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml
+  commentId: P:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml
+  id: SecurityTokenXml
+  parent: CoreWCF.IdentityModel.Tokens.SecurityTokenElement
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenXml
+  nameWithType: SecurityTokenElement.SecurityTokenXml
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the XML representation of the token.\n"
+  remarks: >
+    This property will be null unless this object was constructed using
+
+    <xref href="CoreWCF.IdentityModel.Tokens.SecurityTokenElement.%23ctor(System.Xml.XmlElement%2cCoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection)" data-throw-if-not-resolved="false"></xref>.
+  syntax:
+    content: public XmlElement SecurityTokenXml { get; }
+    parameters: []
+    return:
+      type: System.Xml.XmlElement
+    content.vb: Public ReadOnly Property SecurityTokenXml As XmlElement
+  overload: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.#ctor
+  isExternal: true
+  name: SecurityTokenElement
+  nameWithType: SecurityTokenElement.SecurityTokenElement
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenElement
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityToken
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityToken
+  nameWithType: SecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+- uid: System.Xml.XmlElement
+  isExternal: true
+  name: XmlElement
+  nameWithType: XmlElement
+  fullName: System.Xml.XmlElement
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityTokenHandlerCollection
+  nameWithType: SecurityTokenHandlerCollection
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerCollection
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken
+  isExternal: true
+  name: GetSecurityToken
+  nameWithType: SecurityTokenElement.GetSecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities
+  isExternal: true
+  name: GetIdentities
+  nameWithType: SecurityTokenElement.GetIdentities
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.GetIdentities
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{System.Security.Claims.ClaimsIdentity}
+  commentId: '!:System.Collections.ObjectModel.ReadOnlyCollection{System.Security.Claims.ClaimsIdentity}'
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<ClaimsIdentity>
+  nameWithType: ReadOnlyCollection<ClaimsIdentity>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<System.Security.Claims.ClaimsIdentity>
+  nameWithType.vb: ReadOnlyCollection(Of ClaimsIdentity)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of System.Security.Claims.ClaimsIdentity)
+  name.vb: ReadOnlyCollection(Of ClaimsIdentity)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Security.Claims.ClaimsIdentity
+    name: ClaimsIdentity
+    nameWithType: ClaimsIdentity
+    fullName: System.Security.Claims.ClaimsIdentity
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Security.Claims.ClaimsIdentity
+    name: ClaimsIdentity
+    nameWithType: ClaimsIdentity
+    fullName: System.Security.Claims.ClaimsIdentity
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<>
+  nameWithType: ReadOnlyCollection<>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<>
+  nameWithType.vb: ReadOnlyCollection(Of )
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of )
+  name.vb: ReadOnlyCollection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken
+  isExternal: true
+  name: ValidateToken
+  nameWithType: SecurityTokenElement.ValidateToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ValidateToken
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken
+  isExternal: true
+  name: ReadSecurityToken
+  nameWithType: SecurityTokenElement.ReadSecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml
+  isExternal: true
+  name: SecurityTokenXml
+  nameWithType: SecurityTokenElement.SecurityTokenXml
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml

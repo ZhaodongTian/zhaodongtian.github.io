@@ -1,0 +1,554 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.ServiceMetadataExtension
+  commentId: T:CoreWCF.Description.ServiceMetadataExtension
+  id: ServiceMetadataExtension
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.ServiceMetadataExtension.#ctor
+  - CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach(CoreWCF.ServiceHostBase)
+  - CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach(CoreWCF.ServiceHostBase)
+  - CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  - CoreWCF.Description.ServiceMetadataExtension.Metadata
+  - CoreWCF.Description.ServiceMetadataExtension.SingleWsdl
+  langs:
+  - csharp
+  - vb
+  name: ServiceMetadataExtension
+  nameWithType: ServiceMetadataExtension
+  fullName: CoreWCF.Description.ServiceMetadataExtension
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Provides the implementation for the metadata publishing protocols.
+  remarks: "The &lt;xref:CoreWCF.Description.ServiceMetadataExtension> is configured and used by configuring a service with the &lt;xref:CoreWCF.Description.ServiceMetadataBehavior?displayProperty=nameWithType>.  \n\nYou can also use the &lt;xref:CoreWCF.Description.ServiceMetadataExtension> class to get the service&apos;s metadata at runtime by accessing the &lt;xref:CoreWCF.Description.ServiceMetadataExtension.Metadata%2A> property.  \n\n"
+  syntax:
+    content: 'public class ServiceMetadataExtension : Object, IExtension<ServiceHostBase>'
+    content.vb: >-
+      Public Class ServiceMetadataExtension
+          Inherits Object
+          Implements IExtension(Of ServiceHostBase)
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.IExtension{CoreWCF.ServiceHostBase}
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.ServiceMetadataExtension.#ctor
+  commentId: M:CoreWCF.Description.ServiceMetadataExtension.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Description.ServiceMetadataExtension
+  langs:
+  - csharp
+  - vb
+  name: ServiceMetadataExtension()
+  nameWithType: ServiceMetadataExtension.ServiceMetadataExtension()
+  fullName: CoreWCF.Description.ServiceMetadataExtension.ServiceMetadataExtension()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceMetadataExtension()
+    content.vb: Public Sub New
+  overload: CoreWCF.Description.ServiceMetadataExtension.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach(CoreWCF.ServiceHostBase)
+  id: CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach(CoreWCF.ServiceHostBase)
+  isEii: true
+  parent: CoreWCF.Description.ServiceMetadataExtension
+  langs:
+  - csharp
+  - vb
+  name: IExtension<ServiceHostBase>.Attach(ServiceHostBase)
+  nameWithType: ServiceMetadataExtension.IExtension<ServiceHostBase>.Attach(ServiceHostBase)
+  fullName: CoreWCF.Description.ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach(CoreWCF.ServiceHostBase)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void IExtension<ServiceHostBase>.Attach(ServiceHostBase owner)
+    parameters:
+    - id: owner
+      type: CoreWCF.ServiceHostBase
+    content.vb: Sub CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach(owner As ServiceHostBase) Implements IExtension(Of ServiceHostBase).Attach
+  overload: CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach*
+  implements:
+  - CoreWCF.IExtension{CoreWCF.ServiceHostBase}.Attach(CoreWCF.ServiceHostBase)
+  nameWithType.vb: ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach(ServiceHostBase)
+  name.vb: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach(ServiceHostBase)
+- uid: CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach(CoreWCF.ServiceHostBase)
+  id: CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach(CoreWCF.ServiceHostBase)
+  isEii: true
+  parent: CoreWCF.Description.ServiceMetadataExtension
+  langs:
+  - csharp
+  - vb
+  name: IExtension<ServiceHostBase>.Detach(ServiceHostBase)
+  nameWithType: ServiceMetadataExtension.IExtension<ServiceHostBase>.Detach(ServiceHostBase)
+  fullName: CoreWCF.Description.ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach(CoreWCF.ServiceHostBase)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void IExtension<ServiceHostBase>.Detach(ServiceHostBase owner)
+    parameters:
+    - id: owner
+      type: CoreWCF.ServiceHostBase
+    content.vb: Sub CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach(owner As ServiceHostBase) Implements IExtension(Of ServiceHostBase).Detach
+  overload: CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach*
+  implements:
+  - CoreWCF.IExtension{CoreWCF.ServiceHostBase}.Detach(CoreWCF.ServiceHostBase)
+  nameWithType.vb: ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach(ServiceHostBase)
+  name.vb: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach(ServiceHostBase)
+- uid: CoreWCF.Description.ServiceMetadataExtension.Metadata
+  commentId: P:CoreWCF.Description.ServiceMetadataExtension.Metadata
+  id: Metadata
+  parent: CoreWCF.Description.ServiceMetadataExtension
+  langs:
+  - csharp
+  - vb
+  name: Metadata
+  nameWithType: ServiceMetadataExtension.Metadata
+  fullName: CoreWCF.Description.ServiceMetadataExtension.Metadata
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MetadataSet Metadata { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.MetadataSet
+    content.vb: Public ReadOnly Property Metadata As MetadataSet
+  overload: CoreWCF.Description.ServiceMetadataExtension.Metadata*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.ServiceMetadataExtension.SingleWsdl
+  commentId: P:CoreWCF.Description.ServiceMetadataExtension.SingleWsdl
+  id: SingleWsdl
+  parent: CoreWCF.Description.ServiceMetadataExtension
+  langs:
+  - csharp
+  - vb
+  name: SingleWsdl
+  nameWithType: ServiceMetadataExtension.SingleWsdl
+  fullName: CoreWCF.Description.ServiceMetadataExtension.SingleWsdl
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceDescription SingleWsdl { get; }
+    parameters: []
+    return:
+      type: System.Web.Services.Description.ServiceDescription
+    content.vb: Public ReadOnly Property SingleWsdl As ServiceDescription
+  overload: CoreWCF.Description.ServiceMetadataExtension.SingleWsdl*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  commentId: P:CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  id: DynamicMetadataEndpointAddressProvider
+  parent: CoreWCF.Description.ServiceMetadataExtension
+  langs:
+  - csharp
+  - vb
+  name: DynamicMetadataEndpointAddressProvider
+  nameWithType: ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  fullName: CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public IMetadataEndpointAddressProvider DynamicMetadataEndpointAddressProvider { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.IMetadataEndpointAddressProvider
+    content.vb: Public ReadOnly Property DynamicMetadataEndpointAddressProvider As IMetadataEndpointAddressProvider
+  overload: CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IExtension{CoreWCF.ServiceHostBase}
+  commentId: T:CoreWCF.IExtension{CoreWCF.ServiceHostBase}
+  parent: CoreWCF
+  definition: CoreWCF.IExtension`1
+  name: IExtension<ServiceHostBase>
+  nameWithType: IExtension<ServiceHostBase>
+  fullName: CoreWCF.IExtension<CoreWCF.ServiceHostBase>
+  nameWithType.vb: IExtension(Of ServiceHostBase)
+  fullName.vb: CoreWCF.IExtension(Of CoreWCF.ServiceHostBase)
+  name.vb: IExtension(Of ServiceHostBase)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IExtension`1
+  commentId: T:CoreWCF.IExtension`1
+  isExternal: true
+  name: IExtension<T>
+  nameWithType: IExtension<T>
+  fullName: CoreWCF.IExtension<T>
+  nameWithType.vb: IExtension(Of T)
+  fullName.vb: CoreWCF.IExtension(Of T)
+  name.vb: IExtension(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtension`1
+    name: IExtension
+    nameWithType: IExtension
+    fullName: CoreWCF.IExtension
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Description.ServiceMetadataExtension.#ctor*
+  commentId: Overload:CoreWCF.Description.ServiceMetadataExtension.#ctor
+  isExternal: true
+  name: ServiceMetadataExtension
+  nameWithType: ServiceMetadataExtension.ServiceMetadataExtension
+  fullName: CoreWCF.Description.ServiceMetadataExtension.ServiceMetadataExtension
+- uid: CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach*
+  commentId: Overload:CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Attach
+  isExternal: true
+  name: IExtension<ServiceHostBase>.Attach
+  nameWithType: ServiceMetadataExtension.IExtension<ServiceHostBase>.Attach
+  fullName: CoreWCF.Description.ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach
+  nameWithType.vb: ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach
+  name.vb: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach
+- uid: CoreWCF.IExtension{CoreWCF.ServiceHostBase}.Attach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.IExtension{CoreWCF.ServiceHostBase}.Attach(CoreWCF.ServiceHostBase)
+  parent: CoreWCF.IExtension{CoreWCF.ServiceHostBase}
+  definition: CoreWCF.IExtension`1.Attach(`0)
+  name: Attach(ServiceHostBase)
+  nameWithType: IExtension<ServiceHostBase>.Attach(ServiceHostBase)
+  fullName: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach(CoreWCF.ServiceHostBase)
+  nameWithType.vb: IExtension(Of ServiceHostBase).Attach(ServiceHostBase)
+  fullName.vb: CoreWCF.IExtension(Of CoreWCF.ServiceHostBase).Attach(CoreWCF.ServiceHostBase)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension<ServiceHostBase>.Attach
+    fullName: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension(Of ServiceHostBase).Attach
+    fullName: CoreWCF.IExtension(Of CoreWCF.ServiceHostBase).Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ServiceHostBase
+  commentId: T:CoreWCF.ServiceHostBase
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceHostBase
+  nameWithType: ServiceHostBase
+  fullName: CoreWCF.ServiceHostBase
+- uid: CoreWCF.IExtension`1.Attach(`0)
+  commentId: M:CoreWCF.IExtension`1.Attach(`0)
+  isExternal: true
+  name: Attach(T)
+  nameWithType: IExtension<T>.Attach(T)
+  fullName: CoreWCF.IExtension<T>.Attach(T)
+  nameWithType.vb: IExtension(Of T).Attach(T)
+  fullName.vb: CoreWCF.IExtension(Of T).Attach(T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension<T>.Attach
+    fullName: CoreWCF.IExtension<T>.Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Attach(`0)
+    name: Attach
+    nameWithType: IExtension(Of T).Attach
+    fullName: CoreWCF.IExtension(Of T).Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach*
+  commentId: Overload:CoreWCF.Description.ServiceMetadataExtension.CoreWCF#IExtension{CoreWCF#ServiceHostBase}#Detach
+  isExternal: true
+  name: IExtension<ServiceHostBase>.Detach
+  nameWithType: ServiceMetadataExtension.IExtension<ServiceHostBase>.Detach
+  fullName: CoreWCF.Description.ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach
+  nameWithType.vb: ServiceMetadataExtension.CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach
+  name.vb: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach
+- uid: CoreWCF.IExtension{CoreWCF.ServiceHostBase}.Detach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.IExtension{CoreWCF.ServiceHostBase}.Detach(CoreWCF.ServiceHostBase)
+  parent: CoreWCF.IExtension{CoreWCF.ServiceHostBase}
+  definition: CoreWCF.IExtension`1.Detach(`0)
+  name: Detach(ServiceHostBase)
+  nameWithType: IExtension<ServiceHostBase>.Detach(ServiceHostBase)
+  fullName: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach(CoreWCF.ServiceHostBase)
+  nameWithType.vb: IExtension(Of ServiceHostBase).Detach(ServiceHostBase)
+  fullName.vb: CoreWCF.IExtension(Of CoreWCF.ServiceHostBase).Detach(CoreWCF.ServiceHostBase)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension<ServiceHostBase>.Detach
+    fullName: CoreWCF.IExtension<CoreWCF.ServiceHostBase>.Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension(Of ServiceHostBase).Detach
+    fullName: CoreWCF.IExtension(Of CoreWCF.ServiceHostBase).Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtension`1.Detach(`0)
+  commentId: M:CoreWCF.IExtension`1.Detach(`0)
+  isExternal: true
+  name: Detach(T)
+  nameWithType: IExtension<T>.Detach(T)
+  fullName: CoreWCF.IExtension<T>.Detach(T)
+  nameWithType.vb: IExtension(Of T).Detach(T)
+  fullName.vb: CoreWCF.IExtension(Of T).Detach(T)
+  spec.csharp:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension<T>.Detach
+    fullName: CoreWCF.IExtension<T>.Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IExtension`1.Detach(`0)
+    name: Detach
+    nameWithType: IExtension(Of T).Detach
+    fullName: CoreWCF.IExtension(Of T).Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ServiceMetadataExtension.Metadata*
+  commentId: Overload:CoreWCF.Description.ServiceMetadataExtension.Metadata
+  isExternal: true
+  name: Metadata
+  nameWithType: ServiceMetadataExtension.Metadata
+  fullName: CoreWCF.Description.ServiceMetadataExtension.Metadata
+- uid: CoreWCF.Description.MetadataSet
+  commentId: T:CoreWCF.Description.MetadataSet
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataSet
+  nameWithType: MetadataSet
+  fullName: CoreWCF.Description.MetadataSet
+- uid: CoreWCF.Description.ServiceMetadataExtension.SingleWsdl*
+  commentId: Overload:CoreWCF.Description.ServiceMetadataExtension.SingleWsdl
+  isExternal: true
+  name: SingleWsdl
+  nameWithType: ServiceMetadataExtension.SingleWsdl
+  fullName: CoreWCF.Description.ServiceMetadataExtension.SingleWsdl
+- uid: System.Web.Services.Description.ServiceDescription
+  isExternal: true
+  name: ServiceDescription
+  nameWithType: ServiceDescription
+  fullName: System.Web.Services.Description.ServiceDescription
+- uid: CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider*
+  commentId: Overload:CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  isExternal: true
+  name: DynamicMetadataEndpointAddressProvider
+  nameWithType: ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+  fullName: CoreWCF.Description.ServiceMetadataExtension.DynamicMetadataEndpointAddressProvider
+- uid: CoreWCF.Description.IMetadataEndpointAddressProvider
+  commentId: T:CoreWCF.Description.IMetadataEndpointAddressProvider
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IMetadataEndpointAddressProvider
+  nameWithType: IMetadataEndpointAddressProvider
+  fullName: CoreWCF.Description.IMetadataEndpointAddressProvider

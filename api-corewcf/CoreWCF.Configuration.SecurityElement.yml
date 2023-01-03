@@ -1,0 +1,1350 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Configuration.SecurityElement
+  commentId: T:CoreWCF.Configuration.SecurityElement
+  id: SecurityElement
+  parent: CoreWCF.Configuration
+  children:
+  - CoreWCF.Configuration.SecurityElement.#ctor
+  - CoreWCF.Configuration.SecurityElement.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  - CoreWCF.Configuration.SecurityElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  - CoreWCF.Configuration.SecurityElement.CreateBindingElement(System.Boolean)
+  - CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  - CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap
+  langs:
+  - csharp
+  - vb
+  name: SecurityElement
+  nameWithType: SecurityElement
+  fullName: CoreWCF.Configuration.SecurityElement
+  type: Class
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  summary: Represents the XML object model for encoding security objects. This class cannot be inherited.
+  remarks: "This class is intended to be a lightweight implementation of a simple XML object model for use within the security system, and not for use as a general XML object model. This documentation assumes a basic knowledge of XML.  \n\nThe simple XML object model for an element consists of the following parts:  \n\n-   The tag is the element name.  \n\n-   The attributes are zero or more name/value attribute pairs on the element.  \n\n-   The children are zero or more elements nested within `&lt;tag>` and `&lt;/tag>`.  \n\nIt is strongly suggested that attribute based XML representation is used to express security elements and their values. This means properties of an element are expressed as attributes and property values are expressed as attribute values. Avoid nesting text within tags. For any `&lt;tag>text&lt;/tag>` representation a representation of type `&lt;tag value=&quot;text&quot;/>` is usually available. Using this attribute-based XML representation increases readability and allows easy WMI portability of the resulting XML serialization.  \n\nAn attribute name must be one character or longer, and cannot be `null`. If element-based value representation is used, elements with a text string that is `null` are represented in the `&lt;tag/>` form; otherwise, text is delimited by the `&lt;tag>` and `&lt;/tag>` tokens. Both forms can be combined with attributes, which are shown if present.  \n\nThe tags, attributes, and text of elements, if present, are always case-sensitive. The XML form contains quotations and escapes where necessary. String values that include characters invalid for use in XML result in an &lt;xref:System.ArgumentException>. These rules apply to all properties and methods.  \n\n> [!NOTE]\n>  For performance reasons, character validity is only checked when the element is encoded into XML text form, and not on every set of a property or method. Static methods allow explicit checking where needed.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class SecurityElement : SecurityElementBase'
+    content.vb: >-
+      Public NotInheritable Class SecurityElement
+          Inherits SecurityElementBase
+  inheritance:
+  - System.Object
+  - CoreWCF.Configuration.ServiceModelConfigurationElement
+  - CoreWCF.Configuration.ServiceModelExtensionElement
+  - CoreWCF.Configuration.BindingElementExtensionElement
+  - CoreWCF.Configuration.SecurityElementBase
+  inheritedMembers:
+  - CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+  - CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement},CoreWCF.Configuration.AuthenticationMode)
+  - CoreWCF.Configuration.SecurityElementBase.InitializeFrom(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter,System.String)
+  - CoreWCF.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter,System.Boolean)
+  - CoreWCF.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  - CoreWCF.Configuration.SecurityElementBase.DefaultAlgorithmSuite
+  - CoreWCF.Configuration.SecurityElementBase.EnableUnsecuredResponse
+  - CoreWCF.Configuration.SecurityElementBase.AuthenticationMode
+  - CoreWCF.Configuration.SecurityElementBase.BindingElementType
+  - CoreWCF.Configuration.SecurityElementBase.RequireDerivedKeys
+  - CoreWCF.Configuration.SecurityElementBase.SecurityHeaderLayout
+  - CoreWCF.Configuration.SecurityElementBase.IncludeTimestamp
+  - CoreWCF.Configuration.SecurityElementBase.AllowInsecureTransport
+  - CoreWCF.Configuration.SecurityElementBase.KeyEntropyMode
+  - CoreWCF.Configuration.SecurityElementBase.IssuedTokenParameters
+  - CoreWCF.Configuration.SecurityElementBase.LocalServiceSettings
+  - CoreWCF.Configuration.SecurityElementBase.MessageProtectionOrder
+  - CoreWCF.Configuration.SecurityElementBase.ProtectTokens
+  - CoreWCF.Configuration.SecurityElementBase.MessageSecurityVersion
+  - CoreWCF.Configuration.SecurityElementBase.RequireSecurityContextCancellation
+  - CoreWCF.Configuration.SecurityElementBase.RequireSignatureConfirmation
+  - CoreWCF.Configuration.SecurityElementBase.CanRenewSecurityContextToken
+  - CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+  - CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+  - CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,{T})
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Configuration.SecurityElement.#ctor
+  commentId: M:CoreWCF.Configuration.SecurityElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Configuration.SecurityElement
+  langs:
+  - csharp
+  - vb
+  name: SecurityElement()
+  nameWithType: SecurityElement.SecurityElement()
+  fullName: CoreWCF.Configuration.SecurityElement.SecurityElement()
+  type: Constructor
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public SecurityElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Configuration.SecurityElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.SecurityElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  commentId: M:CoreWCF.Configuration.SecurityElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  id: CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  parent: CoreWCF.Configuration.SecurityElement
+  langs:
+  - csharp
+  - vb
+  name: CopyFrom(ServiceModelExtensionElement)
+  nameWithType: SecurityElement.CopyFrom(ServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.SecurityElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public override void CopyFrom(ServiceModelExtensionElement from)
+    parameters:
+    - id: from
+      type: CoreWCF.Configuration.ServiceModelExtensionElement
+    content.vb: Public Overrides Sub CopyFrom(from As ServiceModelExtensionElement)
+  overridden: CoreWCF.Configuration.SecurityElementBase.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  overload: CoreWCF.Configuration.SecurityElement.CopyFrom*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Configuration.SecurityElement.CreateBindingElement(System.Boolean)
+  commentId: M:CoreWCF.Configuration.SecurityElement.CreateBindingElement(System.Boolean)
+  id: CreateBindingElement(System.Boolean)
+  parent: CoreWCF.Configuration.SecurityElement
+  langs:
+  - csharp
+  - vb
+  name: CreateBindingElement(Boolean)
+  nameWithType: SecurityElement.CreateBindingElement(Boolean)
+  fullName: CoreWCF.Configuration.SecurityElement.CreateBindingElement(System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected override BindingElement CreateBindingElement(bool createTemplateOnly)
+    parameters:
+    - id: createTemplateOnly
+      type: System.Boolean
+    return:
+      type: CoreWCF.Channels.BindingElement
+    content.vb: Protected Overrides Function CreateBindingElement(createTemplateOnly As Boolean) As BindingElement
+  overridden: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)
+  overload: CoreWCF.Configuration.SecurityElement.CreateBindingElement*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Configuration.SecurityElement.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  commentId: M:CoreWCF.Configuration.SecurityElement.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  id: AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  parent: CoreWCF.Configuration.SecurityElement
+  langs:
+  - csharp
+  - vb
+  name: AddBindingTemplates(Dictionary<AuthenticationMode, SecurityBindingElement>)
+  nameWithType: SecurityElement.AddBindingTemplates(Dictionary<AuthenticationMode, SecurityBindingElement>)
+  fullName: CoreWCF.Configuration.SecurityElement.AddBindingTemplates(System.Collections.Generic.Dictionary<CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement>)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected override void AddBindingTemplates(Dictionary<AuthenticationMode, SecurityBindingElement> bindingTemplates)
+    parameters:
+    - id: bindingTemplates
+      type: System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement}
+    content.vb: Protected Overrides Sub AddBindingTemplates(bindingTemplates As Dictionary(Of AuthenticationMode, SecurityBindingElement))
+  overridden: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  overload: CoreWCF.Configuration.SecurityElement.AddBindingTemplates*
+  nameWithType.vb: SecurityElement.AddBindingTemplates(Dictionary(Of AuthenticationMode, SecurityBindingElement))
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Configuration.SecurityElement.AddBindingTemplates(System.Collections.Generic.Dictionary(Of CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement))
+  name.vb: AddBindingTemplates(Dictionary(Of AuthenticationMode, SecurityBindingElement))
+- uid: CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  commentId: M:CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  id: InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  parent: CoreWCF.Configuration.SecurityElement
+  langs:
+  - csharp
+  - vb
+  name: InitializeNestedTokenParameterSettings(SecurityTokenParameters, Boolean)
+  nameWithType: SecurityElement.InitializeNestedTokenParameterSettings(SecurityTokenParameters, Boolean)
+  fullName: CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected override void InitializeNestedTokenParameterSettings(SecurityTokenParameters sp, bool initializeNestedBindings)
+    parameters:
+    - id: sp
+      type: CoreWCF.Security.Tokens.SecurityTokenParameters
+    - id: initializeNestedBindings
+      type: System.Boolean
+    content.vb: Protected Overrides Sub InitializeNestedTokenParameterSettings(sp As SecurityTokenParameters, initializeNestedBindings As Boolean)
+  overridden: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  overload: CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap
+  commentId: P:CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap
+  id: SecureConversationBootstrap
+  parent: CoreWCF.Configuration.SecurityElement
+  langs:
+  - csharp
+  - vb
+  name: SecureConversationBootstrap
+  nameWithType: SecurityElement.SecureConversationBootstrap
+  fullName: CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public SecurityElementBase SecureConversationBootstrap { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Configuration.SecurityElementBase
+    content.vb: Public ReadOnly Property SecureConversationBootstrap As SecurityElementBase
+  overload: CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement
+  commentId: T:CoreWCF.Configuration.ServiceModelConfigurationElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: ServiceModelConfigurationElement
+  nameWithType: ServiceModelConfigurationElement
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement
+  commentId: T:CoreWCF.Configuration.ServiceModelExtensionElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: ServiceModelExtensionElement
+  nameWithType: ServiceModelExtensionElement
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement
+- uid: CoreWCF.Configuration.BindingElementExtensionElement
+  commentId: T:CoreWCF.Configuration.BindingElementExtensionElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: BindingElementExtensionElement
+  nameWithType: BindingElementExtensionElement
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement
+- uid: CoreWCF.Configuration.SecurityElementBase
+  commentId: T:CoreWCF.Configuration.SecurityElementBase
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: SecurityElementBase
+  nameWithType: SecurityElementBase
+  fullName: CoreWCF.Configuration.SecurityElementBase
+- uid: CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: ApplyConfiguration(BindingElement)
+  nameWithType: SecurityElementBase.ApplyConfiguration(BindingElement)
+  fullName: CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+    name: ApplyConfiguration
+    nameWithType: SecurityElementBase.ApplyConfiguration
+    fullName: CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+    name: ApplyConfiguration
+    nameWithType: SecurityElementBase.ApplyConfiguration
+    fullName: CoreWCF.Configuration.SecurityElementBase.ApplyConfiguration
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: CreateBindingElement()
+  nameWithType: SecurityElementBase.CreateBindingElement()
+  fullName: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+    name: CreateBindingElement
+    nameWithType: SecurityElementBase.CreateBindingElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+    name: CreateBindingElement
+    nameWithType: SecurityElementBase.CreateBindingElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement},CoreWCF.Configuration.AuthenticationMode)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement},CoreWCF.Configuration.AuthenticationMode)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: AddBindingTemplate(Dictionary<AuthenticationMode, SecurityBindingElement>, AuthenticationMode)
+  nameWithType: SecurityElementBase.AddBindingTemplate(Dictionary<AuthenticationMode, SecurityBindingElement>, AuthenticationMode)
+  fullName: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary<CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement>, CoreWCF.Configuration.AuthenticationMode)
+  nameWithType.vb: SecurityElementBase.AddBindingTemplate(Dictionary(Of AuthenticationMode, SecurityBindingElement), AuthenticationMode)
+  fullName.vb: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary(Of CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement), CoreWCF.Configuration.AuthenticationMode)
+  name.vb: AddBindingTemplate(Dictionary(Of AuthenticationMode, SecurityBindingElement), AuthenticationMode)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement},CoreWCF.Configuration.AuthenticationMode)
+    name: AddBindingTemplate
+    nameWithType: SecurityElementBase.AddBindingTemplate
+    fullName: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.SecurityBindingElement
+    name: SecurityBindingElement
+    nameWithType: SecurityBindingElement
+    fullName: CoreWCF.Channels.SecurityBindingElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement},CoreWCF.Configuration.AuthenticationMode)
+    name: AddBindingTemplate
+    nameWithType: SecurityElementBase.AddBindingTemplate
+    fullName: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.SecurityBindingElement
+    name: SecurityBindingElement
+    nameWithType: SecurityBindingElement
+    fullName: CoreWCF.Channels.SecurityBindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.InitializeFrom(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.InitializeFrom(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: InitializeFrom(BindingElement)
+  nameWithType: SecurityElementBase.InitializeFrom(BindingElement)
+  fullName: CoreWCF.Configuration.SecurityElementBase.InitializeFrom(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.InitializeFrom(CoreWCF.Channels.BindingElement)
+    name: InitializeFrom
+    nameWithType: SecurityElementBase.InitializeFrom
+    fullName: CoreWCF.Configuration.SecurityElementBase.InitializeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.InitializeFrom(CoreWCF.Channels.BindingElement)
+    name: InitializeFrom
+    nameWithType: SecurityElementBase.InitializeFrom
+    fullName: CoreWCF.Configuration.SecurityElementBase.InitializeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter,System.String)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter,System.String)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: SerializeToXmlElement(XmlWriter, String)
+  nameWithType: SecurityElementBase.SerializeToXmlElement(XmlWriter, String)
+  fullName: CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter, System.String)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter,System.String)
+    name: SerializeToXmlElement
+    nameWithType: SecurityElementBase.SerializeToXmlElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement(System.Xml.XmlWriter,System.String)
+    name: SerializeToXmlElement
+    nameWithType: SecurityElementBase.SerializeToXmlElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.SerializeToXmlElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter,System.Boolean)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter,System.Boolean)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: SerializeElement(XmlWriter, Boolean)
+  nameWithType: SecurityElementBase.SerializeElement(XmlWriter, Boolean)
+  fullName: CoreWCF.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter, System.Boolean)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter,System.Boolean)
+    name: SerializeElement
+    nameWithType: SecurityElementBase.SerializeElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.SerializeElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.SerializeElement(System.Xml.XmlWriter,System.Boolean)
+    name: SerializeElement
+    nameWithType: SecurityElementBase.SerializeElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.SerializeElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  nameWithType: SecurityElementBase.Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  fullName: CoreWCF.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement, System.Configuration.ConfigurationElement, System.Configuration.ConfigurationSaveMode)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+    name: Unmerge
+    nameWithType: SecurityElementBase.Unmerge
+    fullName: CoreWCF.Configuration.SecurityElementBase.Unmerge
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationSaveMode
+    name: ConfigurationSaveMode
+    nameWithType: ConfigurationSaveMode
+    fullName: System.Configuration.ConfigurationSaveMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+    name: Unmerge
+    nameWithType: SecurityElementBase.Unmerge
+    fullName: CoreWCF.Configuration.SecurityElementBase.Unmerge
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationSaveMode
+    name: ConfigurationSaveMode
+    nameWithType: ConfigurationSaveMode
+    fullName: System.Configuration.ConfigurationSaveMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.DefaultAlgorithmSuite
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.DefaultAlgorithmSuite
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: DefaultAlgorithmSuite
+  nameWithType: SecurityElementBase.DefaultAlgorithmSuite
+  fullName: CoreWCF.Configuration.SecurityElementBase.DefaultAlgorithmSuite
+- uid: CoreWCF.Configuration.SecurityElementBase.EnableUnsecuredResponse
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.EnableUnsecuredResponse
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: EnableUnsecuredResponse
+  nameWithType: SecurityElementBase.EnableUnsecuredResponse
+  fullName: CoreWCF.Configuration.SecurityElementBase.EnableUnsecuredResponse
+- uid: CoreWCF.Configuration.SecurityElementBase.AuthenticationMode
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.AuthenticationMode
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: AuthenticationMode
+  nameWithType: SecurityElementBase.AuthenticationMode
+  fullName: CoreWCF.Configuration.SecurityElementBase.AuthenticationMode
+- uid: CoreWCF.Configuration.SecurityElementBase.BindingElementType
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.BindingElementType
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: BindingElementType
+  nameWithType: SecurityElementBase.BindingElementType
+  fullName: CoreWCF.Configuration.SecurityElementBase.BindingElementType
+- uid: CoreWCF.Configuration.SecurityElementBase.RequireDerivedKeys
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.RequireDerivedKeys
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: RequireDerivedKeys
+  nameWithType: SecurityElementBase.RequireDerivedKeys
+  fullName: CoreWCF.Configuration.SecurityElementBase.RequireDerivedKeys
+- uid: CoreWCF.Configuration.SecurityElementBase.SecurityHeaderLayout
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.SecurityHeaderLayout
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: SecurityHeaderLayout
+  nameWithType: SecurityElementBase.SecurityHeaderLayout
+  fullName: CoreWCF.Configuration.SecurityElementBase.SecurityHeaderLayout
+- uid: CoreWCF.Configuration.SecurityElementBase.IncludeTimestamp
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.IncludeTimestamp
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: IncludeTimestamp
+  nameWithType: SecurityElementBase.IncludeTimestamp
+  fullName: CoreWCF.Configuration.SecurityElementBase.IncludeTimestamp
+- uid: CoreWCF.Configuration.SecurityElementBase.AllowInsecureTransport
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.AllowInsecureTransport
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: AllowInsecureTransport
+  nameWithType: SecurityElementBase.AllowInsecureTransport
+  fullName: CoreWCF.Configuration.SecurityElementBase.AllowInsecureTransport
+- uid: CoreWCF.Configuration.SecurityElementBase.KeyEntropyMode
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.KeyEntropyMode
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: KeyEntropyMode
+  nameWithType: SecurityElementBase.KeyEntropyMode
+  fullName: CoreWCF.Configuration.SecurityElementBase.KeyEntropyMode
+- uid: CoreWCF.Configuration.SecurityElementBase.IssuedTokenParameters
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.IssuedTokenParameters
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: IssuedTokenParameters
+  nameWithType: SecurityElementBase.IssuedTokenParameters
+  fullName: CoreWCF.Configuration.SecurityElementBase.IssuedTokenParameters
+- uid: CoreWCF.Configuration.SecurityElementBase.LocalServiceSettings
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.LocalServiceSettings
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: LocalServiceSettings
+  nameWithType: SecurityElementBase.LocalServiceSettings
+  fullName: CoreWCF.Configuration.SecurityElementBase.LocalServiceSettings
+- uid: CoreWCF.Configuration.SecurityElementBase.MessageProtectionOrder
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.MessageProtectionOrder
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: MessageProtectionOrder
+  nameWithType: SecurityElementBase.MessageProtectionOrder
+  fullName: CoreWCF.Configuration.SecurityElementBase.MessageProtectionOrder
+- uid: CoreWCF.Configuration.SecurityElementBase.ProtectTokens
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.ProtectTokens
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: ProtectTokens
+  nameWithType: SecurityElementBase.ProtectTokens
+  fullName: CoreWCF.Configuration.SecurityElementBase.ProtectTokens
+- uid: CoreWCF.Configuration.SecurityElementBase.MessageSecurityVersion
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.MessageSecurityVersion
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: MessageSecurityVersion
+  nameWithType: SecurityElementBase.MessageSecurityVersion
+  fullName: CoreWCF.Configuration.SecurityElementBase.MessageSecurityVersion
+- uid: CoreWCF.Configuration.SecurityElementBase.RequireSecurityContextCancellation
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.RequireSecurityContextCancellation
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: RequireSecurityContextCancellation
+  nameWithType: SecurityElementBase.RequireSecurityContextCancellation
+  fullName: CoreWCF.Configuration.SecurityElementBase.RequireSecurityContextCancellation
+- uid: CoreWCF.Configuration.SecurityElementBase.RequireSignatureConfirmation
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.RequireSignatureConfirmation
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: RequireSignatureConfirmation
+  nameWithType: SecurityElementBase.RequireSignatureConfirmation
+  fullName: CoreWCF.Configuration.SecurityElementBase.RequireSignatureConfirmation
+- uid: CoreWCF.Configuration.SecurityElementBase.CanRenewSecurityContextToken
+  commentId: P:CoreWCF.Configuration.SecurityElementBase.CanRenewSecurityContextToken
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: CanRenewSecurityContextToken
+  nameWithType: SecurityElementBase.CanRenewSecurityContextToken
+  fullName: CoreWCF.Configuration.SecurityElementBase.CanRenewSecurityContextToken
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+  parent: CoreWCF.Configuration.ServiceModelExtensionElement
+  isExternal: true
+  name: ExtensionCollectionName
+  nameWithType: ServiceModelExtensionElement.ExtensionCollectionName
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+  parent: CoreWCF.Configuration.ServiceModelExtensionElement
+  isExternal: true
+  name: ConfigurationElementName
+  nameWithType: ServiceModelExtensionElement.ConfigurationElementName
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,{T})
+  commentId: M:CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  parent: CoreWCF.Configuration.ServiceModelConfigurationElement
+  definition: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  name: SetPropertyValueIfNotDefaultValue<T>(String, T)
+  nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(String, T)
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(System.String, T)
+  nameWithType.vb: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  fullName.vb: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(System.String, T)
+  name.vb: SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue<T>
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue(Of T)
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  commentId: M:CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  isExternal: true
+  name: SetPropertyValueIfNotDefaultValue<T>(String, T)
+  nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(String, T)
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(System.String, T)
+  nameWithType.vb: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  fullName.vb: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(System.String, T)
+  name.vb: SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue<T>
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue(Of T)
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElement.#ctor*
+  commentId: Overload:CoreWCF.Configuration.SecurityElement.#ctor
+  isExternal: true
+  name: SecurityElement
+  nameWithType: SecurityElement.SecurityElement
+  fullName: CoreWCF.Configuration.SecurityElement.SecurityElement
+- uid: CoreWCF.Configuration.SecurityElementBase.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: CopyFrom(ServiceModelExtensionElement)
+  nameWithType: SecurityElementBase.CopyFrom(ServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.SecurityElementBase.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+    name: CopyFrom
+    nameWithType: SecurityElementBase.CopyFrom
+    fullName: CoreWCF.Configuration.SecurityElementBase.CopyFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.ServiceModelExtensionElement
+    name: ServiceModelExtensionElement
+    nameWithType: ServiceModelExtensionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+    name: CopyFrom
+    nameWithType: SecurityElementBase.CopyFrom
+    fullName: CoreWCF.Configuration.SecurityElementBase.CopyFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.ServiceModelExtensionElement
+    name: ServiceModelExtensionElement
+    nameWithType: ServiceModelExtensionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElement.CopyFrom*
+  commentId: Overload:CoreWCF.Configuration.SecurityElement.CopyFrom
+  isExternal: true
+  name: CopyFrom
+  nameWithType: SecurityElement.CopyFrom
+  fullName: CoreWCF.Configuration.SecurityElement.CopyFrom
+- uid: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: CreateBindingElement(Boolean)
+  nameWithType: SecurityElementBase.CreateBindingElement(Boolean)
+  fullName: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)
+    name: CreateBindingElement
+    nameWithType: SecurityElementBase.CreateBindingElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement(System.Boolean)
+    name: CreateBindingElement
+    nameWithType: SecurityElementBase.CreateBindingElement
+    fullName: CoreWCF.Configuration.SecurityElementBase.CreateBindingElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElement.CreateBindingElement*
+  commentId: Overload:CoreWCF.Configuration.SecurityElement.CreateBindingElement
+  isExternal: true
+  name: CreateBindingElement
+  nameWithType: SecurityElement.CreateBindingElement
+  fullName: CoreWCF.Configuration.SecurityElement.CreateBindingElement
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: AddBindingTemplates(Dictionary<AuthenticationMode, SecurityBindingElement>)
+  nameWithType: SecurityElementBase.AddBindingTemplates(Dictionary<AuthenticationMode, SecurityBindingElement>)
+  fullName: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary<CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement>)
+  nameWithType.vb: SecurityElementBase.AddBindingTemplates(Dictionary(Of AuthenticationMode, SecurityBindingElement))
+  fullName.vb: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary(Of CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement))
+  name.vb: AddBindingTemplates(Dictionary(Of AuthenticationMode, SecurityBindingElement))
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+    name: AddBindingTemplates
+    nameWithType: SecurityElementBase.AddBindingTemplates
+    fullName: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.SecurityBindingElement
+    name: SecurityBindingElement
+    nameWithType: SecurityBindingElement
+    fullName: CoreWCF.Channels.SecurityBindingElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates(System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement})
+    name: AddBindingTemplates
+    nameWithType: SecurityElementBase.AddBindingTemplates
+    fullName: CoreWCF.Configuration.SecurityElementBase.AddBindingTemplates
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.SecurityBindingElement
+    name: SecurityBindingElement
+    nameWithType: SecurityBindingElement
+    fullName: CoreWCF.Channels.SecurityBindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElement.AddBindingTemplates*
+  commentId: Overload:CoreWCF.Configuration.SecurityElement.AddBindingTemplates
+  isExternal: true
+  name: AddBindingTemplates
+  nameWithType: SecurityElement.AddBindingTemplates
+  fullName: CoreWCF.Configuration.SecurityElement.AddBindingTemplates
+- uid: System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement}
+  commentId: '!:System.Collections.Generic.Dictionary{CoreWCF.Configuration.AuthenticationMode,CoreWCF.Channels.SecurityBindingElement}'
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<AuthenticationMode, SecurityBindingElement>
+  nameWithType: Dictionary<AuthenticationMode, SecurityBindingElement>
+  fullName: System.Collections.Generic.Dictionary<CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement>
+  nameWithType.vb: Dictionary(Of AuthenticationMode, SecurityBindingElement)
+  fullName.vb: System.Collections.Generic.Dictionary(Of CoreWCF.Configuration.AuthenticationMode, CoreWCF.Channels.SecurityBindingElement)
+  name.vb: Dictionary(Of AuthenticationMode, SecurityBindingElement)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.SecurityBindingElement
+    name: SecurityBindingElement
+    nameWithType: SecurityBindingElement
+    fullName: CoreWCF.Channels.SecurityBindingElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.AuthenticationMode
+    name: AuthenticationMode
+    nameWithType: AuthenticationMode
+    fullName: CoreWCF.Configuration.AuthenticationMode
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.SecurityBindingElement
+    name: SecurityBindingElement
+    nameWithType: SecurityBindingElement
+    fullName: CoreWCF.Channels.SecurityBindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<, >
+  nameWithType: Dictionary<, >
+  fullName: System.Collections.Generic.Dictionary<, >
+  nameWithType.vb: Dictionary(Of , )
+  fullName.vb: System.Collections.Generic.Dictionary(Of , )
+  name.vb: Dictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  commentId: M:CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+  parent: CoreWCF.Configuration.SecurityElementBase
+  isExternal: true
+  name: InitializeNestedTokenParameterSettings(SecurityTokenParameters, Boolean)
+  nameWithType: SecurityElementBase.InitializeNestedTokenParameterSettings(SecurityTokenParameters, Boolean)
+  fullName: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters, System.Boolean)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+    name: InitializeNestedTokenParameterSettings
+    nameWithType: SecurityElementBase.InitializeNestedTokenParameterSettings
+    fullName: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Security.Tokens.SecurityTokenParameters
+    name: SecurityTokenParameters
+    nameWithType: SecurityTokenParameters
+    fullName: CoreWCF.Security.Tokens.SecurityTokenParameters
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings(CoreWCF.Security.Tokens.SecurityTokenParameters,System.Boolean)
+    name: InitializeNestedTokenParameterSettings
+    nameWithType: SecurityElementBase.InitializeNestedTokenParameterSettings
+    fullName: CoreWCF.Configuration.SecurityElementBase.InitializeNestedTokenParameterSettings
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Security.Tokens.SecurityTokenParameters
+    name: SecurityTokenParameters
+    nameWithType: SecurityTokenParameters
+    fullName: CoreWCF.Security.Tokens.SecurityTokenParameters
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings*
+  commentId: Overload:CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings
+  isExternal: true
+  name: InitializeNestedTokenParameterSettings
+  nameWithType: SecurityElement.InitializeNestedTokenParameterSettings
+  fullName: CoreWCF.Configuration.SecurityElement.InitializeNestedTokenParameterSettings
+- uid: CoreWCF.Security.Tokens.SecurityTokenParameters
+  commentId: T:CoreWCF.Security.Tokens.SecurityTokenParameters
+  parent: CoreWCF.Security.Tokens
+  isExternal: true
+  name: SecurityTokenParameters
+  nameWithType: SecurityTokenParameters
+  fullName: CoreWCF.Security.Tokens.SecurityTokenParameters
+- uid: CoreWCF.Security.Tokens
+  commentId: N:CoreWCF.Security.Tokens
+  isExternal: true
+  name: CoreWCF.Security.Tokens
+  nameWithType: CoreWCF.Security.Tokens
+  fullName: CoreWCF.Security.Tokens
+- uid: CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap*
+  commentId: Overload:CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap
+  isExternal: true
+  name: SecureConversationBootstrap
+  nameWithType: SecurityElement.SecureConversationBootstrap
+  fullName: CoreWCF.Configuration.SecurityElement.SecureConversationBootstrap

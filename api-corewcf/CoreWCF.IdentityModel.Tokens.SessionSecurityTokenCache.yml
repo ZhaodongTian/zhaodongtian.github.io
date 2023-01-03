@@ -1,0 +1,446 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  commentId: T:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  id: SessionSecurityTokenCache
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.#ctor
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityToken,System.DateTime)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll(System.String,System.Xml.UniqueId)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String,System.Xml.UniqueId)
+  langs:
+  - csharp
+  - vb
+  name: SessionSecurityTokenCache
+  nameWithType: SessionSecurityTokenCache
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nDefines a simple interface to a cache of security tokens.\n"
+  syntax:
+    content: 'public abstract class SessionSecurityTokenCache : Object'
+    content.vb: >-
+      Public MustInherit Class SessionSecurityTokenCache
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityToken,System.DateTime)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityToken,System.DateTime)
+  id: AddOrUpdate(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityToken,System.DateTime)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: AddOrUpdate(SessionSecurityTokenCacheKey, SessionSecurityToken, DateTime)
+  nameWithType: SessionSecurityTokenCache.AddOrUpdate(SessionSecurityTokenCacheKey, SessionSecurityToken, DateTime)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey, CoreWCF.IdentityModel.Tokens.SessionSecurityToken, System.DateTime)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nAttempts to add an entry to the cache or update an existing one.\n"
+  syntax:
+    content: public abstract void AddOrUpdate(SessionSecurityTokenCacheKey key, SessionSecurityToken value, DateTime expiryTime)
+    parameters:
+    - id: key
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: The key of the entry to be added.
+    - id: value
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+      description: The associated SessionSecurityToken to be added.
+    - id: expiryTime
+      type: System.DateTime
+      description: The expiration time of the entry.
+    content.vb: Public MustOverride Sub AddOrUpdate(key As SessionSecurityTokenCacheKey, value As SessionSecurityToken, expiryTime As DateTime)
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll(System.String,System.Xml.UniqueId)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll(System.String,System.Xml.UniqueId)
+  id: GetAll(System.String,System.Xml.UniqueId)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: GetAll(String, UniqueId)
+  nameWithType: SessionSecurityTokenCache.GetAll(String, UniqueId)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll(System.String, System.Xml.UniqueId)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nRetrieves all tokens associated with a given key.\n"
+  syntax:
+    content: public abstract IEnumerable<SessionSecurityToken> GetAll(string endpointId, UniqueId contextId)
+    parameters:
+    - id: endpointId
+      type: System.String
+      description: The endpointId to search for.
+    - id: contextId
+      type: System.Xml.UniqueId
+      description: The contextId to search for.
+    return:
+      type: System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Tokens.SessionSecurityToken}
+      description: In the derived class returns, the collection of tokens associated with the key.
+    content.vb: Public MustOverride Function GetAll(endpointId As String, contextId As UniqueId) As IEnumerable(Of SessionSecurityToken)
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  id: Get(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: Get(SessionSecurityTokenCacheKey)
+  nameWithType: SessionSecurityTokenCache.Get(SessionSecurityTokenCacheKey)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nAttempts to retrieve an entry from the cache.\n"
+  syntax:
+    content: public abstract SessionSecurityToken Get(SessionSecurityTokenCacheKey key)
+    parameters:
+    - id: key
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: The key of the entry to be retrieved.
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+      description: The SessionSecurityToken associated with the input key, null if not match is found.
+    content.vb: Public MustOverride Function Get(key As SessionSecurityTokenCacheKey) As SessionSecurityToken
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String,System.Xml.UniqueId)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String,System.Xml.UniqueId)
+  id: RemoveAll(System.String,System.Xml.UniqueId)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: RemoveAll(String, UniqueId)
+  nameWithType: SessionSecurityTokenCache.RemoveAll(String, UniqueId)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String, System.Xml.UniqueId)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nAttempts to remove all matching entries from cache.\n"
+  syntax:
+    content: public abstract void RemoveAll(string endpointId, UniqueId contextId)
+    parameters:
+    - id: endpointId
+      type: System.String
+      description: The endpoint id for the entry to be removed.
+    - id: contextId
+      type: System.Xml.UniqueId
+      description: The context Id for the entry to be removed.
+    content.vb: Public MustOverride Sub RemoveAll(endpointId As String, contextId As UniqueId)
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String)
+  id: RemoveAll(System.String)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: RemoveAll(String)
+  nameWithType: SessionSecurityTokenCache.RemoveAll(String)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll(System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nAttempts to remove all entries with a matching endpoint Id from the cache.\n"
+  syntax:
+    content: public abstract void RemoveAll(string endpointId)
+    parameters:
+    - id: endpointId
+      type: System.String
+      description: The endpoint id for the entry to be removed.
+    content.vb: Public MustOverride Sub RemoveAll(endpointId As String)
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  id: Remove(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: Remove(SessionSecurityTokenCacheKey)
+  nameWithType: SessionSecurityTokenCache.Remove(SessionSecurityTokenCacheKey)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nAttempts to remove an entry from the cache.\n"
+  syntax:
+    content: public abstract void Remove(SessionSecurityTokenCacheKey key)
+    parameters:
+    - id: key
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: The key of the entry to be removed.
+    content.vb: Public MustOverride Sub Remove(key As SessionSecurityTokenCacheKey)
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.#ctor
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache
+  langs:
+  - csharp
+  - vb
+  name: SessionSecurityTokenCache()
+  nameWithType: SessionSecurityTokenCache.SessionSecurityTokenCache()
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.SessionSecurityTokenCache()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: protected SessionSecurityTokenCache()
+    content.vb: Protected Sub New
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate
+  isExternal: true
+  name: AddOrUpdate
+  nameWithType: SessionSecurityTokenCache.AddOrUpdate
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.AddOrUpdate
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SessionSecurityTokenCacheKey
+  nameWithType: SessionSecurityTokenCacheKey
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+  commentId: T:CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SessionSecurityToken
+  nameWithType: SessionSecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+- uid: System.DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll
+  isExternal: true
+  name: GetAll
+  nameWithType: SessionSecurityTokenCache.GetAll
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.GetAll
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Xml.UniqueId
+  isExternal: true
+  name: UniqueId
+  nameWithType: UniqueId
+  fullName: System.Xml.UniqueId
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Tokens.SessionSecurityToken}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Tokens.SessionSecurityToken}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<SessionSecurityToken>
+  nameWithType: IEnumerable<SessionSecurityToken>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.IdentityModel.Tokens.SessionSecurityToken>
+  nameWithType.vb: IEnumerable(Of SessionSecurityToken)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.IdentityModel.Tokens.SessionSecurityToken)
+  name.vb: IEnumerable(Of SessionSecurityToken)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+    name: SessionSecurityToken
+    nameWithType: SessionSecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+    name: SessionSecurityToken
+    nameWithType: SessionSecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get
+  isExternal: true
+  name: Get
+  nameWithType: SessionSecurityTokenCache.Get
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Get
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll
+  isExternal: true
+  name: RemoveAll
+  nameWithType: SessionSecurityTokenCache.RemoveAll
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.RemoveAll
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove
+  isExternal: true
+  name: Remove
+  nameWithType: SessionSecurityTokenCache.Remove
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.Remove
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.#ctor
+  isExternal: true
+  name: SessionSecurityTokenCache
+  nameWithType: SessionSecurityTokenCache.SessionSecurityTokenCache
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCache.SessionSecurityTokenCache

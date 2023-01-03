@@ -1,0 +1,1752 @@
+'?xml':
+  '@_version': '1.0'
+  '@_encoding': utf-8
+Type:
+  TypeSignature:
+    - '@_Language': C#
+      '@_Value': 'public class BasicHttpBinding : CoreWCF.HttpBindingBase'
+    - '@_Language': ILAsm
+      '@_Value': >-
+        .class public auto ansi beforefieldinit BasicHttpBinding extends
+        CoreWCF.HttpBindingBase
+    - '@_Language': DocId
+      '@_Value': T:CoreWCF.BasicHttpBinding
+    - '@_Language': VB.NET
+      '@_Value': Public Class BasicHttpBinding&#xA;Inherits HttpBindingBase
+    - '@_Language': F#
+      '@_Value': type BasicHttpBinding = class&#xA;    inherit HttpBindingBase
+    - '@_Language': C++ CLI
+      '@_Value': >-
+        public ref class BasicHttpBinding :
+        System::ServiceModel::HttpBindingBase
+  AssemblyInfo:
+    AssemblyName: CoreWCF.Http
+    AssemblyVersion: 1
+  Base:
+    BaseTypeName: CoreWCF.HttpBindingBase
+  Interfaces:
+    Interface:
+      InterfaceName: CoreWCF.IDefaultCommunicationTimeouts
+  Docs:
+    summary: >-
+      Represents a binding that a Windows Communication Foundation (WCF) service
+      can use to configure and expose endpoints that are able to communicate
+      with ASMX-based Web services and clients and other services that conform
+      to the WS-I Basic Profile 1.1.
+    remarks:
+      format:
+        '#text': >2
+            
+          ## Remarks  
+
+          The <xref:CoreWCF.BasicHttpBinding> uses HTTP as the transport for
+          sending SOAP 1.1 messages. A service can use this binding to expose
+          endpoints that conform to WS-I BP 1.1, such as those that ASMX clients
+          access. Similarly, a client can use the
+          <xref:CoreWCF.BasicHttpBinding> to communicate with services exposing
+          endpoints that conform to WS-I BP 1.1, such as ASMX Web services or
+          Windows Communication Foundation (WCF) services configured with the
+          <xref:CoreWCF.BasicHttpBinding>.  
+
+          Security is turned off by default, but can be added setting the
+          <xref:CoreWCF.BasicHttpSecurityMode> to a value other than
+          <xref:CoreWCF.BasicHttpSecurityMode.None> in the
+          <xref:CoreWCF.BasicHttpBinding.%23ctor%28CoreWCF.BasicHttpSecurityMode%29>
+          constructor. It uses a "Text" message encoding and UTF-8 text encoding
+          by default.  
+        '@_type': text/markdown
+    ExampleRemoved: >2
+        
+      ## Examples  
+
+      The following example shows how to configure the
+      <xref:CoreWCF.BasicHttpBinding> in an application configuration file.  
+
+      The following example shows how to programmatically configure
+      <xref:CoreWCF.BasicHttpBinding>.  
+
+      :::code language="csharp"
+      source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/service.cs"
+      id="Snippet1":::
+       :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/service.vb" id="Snippet1":::  
+  Members:
+    MemberGroup:
+      AssemblyInfo:
+        AssemblyName: CoreWCF
+        AssemblyVersion:
+          - 2.0.5.0
+          - 4.0.0.0
+      Docs:
+        summary:
+          see:
+            '@_cref': T:CoreWCF.BasicHttpBinding
+          '#text': Initializes a new instance of theclass.
+      '@_MemberName': .ctor
+    Member:
+      - MemberSignature:
+          - '@_Language': C#
+            '@_Value': public BasicHttpBinding ();
+          - '@_Language': ILAsm
+            '@_Value': >-
+              .method public hidebysig specialname rtspecialname instance void
+              .ctor() cil managed
+          - '@_Language': DocId
+            '@_Value': M:CoreWCF.BasicHttpBinding.#ctor
+          - '@_Language': VB.NET
+            '@_Value': Public Sub New ()
+          - '@_Language': C++ CLI
+            '@_Value': public:&#xA; BasicHttpBinding();
+        MemberType: Constructor
+        AssemblyInfo:
+          AssemblyName: CoreWCF.Http
+          AssemblyVersion: 1
+        Attributes: ''
+        Parameters: ''
+        Docs:
+          summary:
+            see:
+              '@_cref': T:CoreWCF.BasicHttpBinding
+            '#text': Initializes a new instance of theclass.
+          remarks:
+            format:
+              '#text': >2
+                  
+                ## Remarks  
+
+                The default value of <xref:CoreWCF.BasicHttpSecurityMode> used
+                is <xref:CoreWCF.BasicHttpSecurityMode.None>, which specifies
+                that the SOAP message is not secured and the client is not
+                authenticated.  
+              '@_type': text/markdown
+          ExampleRemoved: >2
+              
+            ## Examples  
+
+            :::code language="csharp"
+            source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/service.cs"
+            id="Snippet2":::
+             :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/service.vb" id="Snippet2":::  
+        '@_MemberName': .ctor
+      - MemberSignature:
+          - '@_Language': C#
+            '@_Value': >-
+              public override CoreWCF.Channels.BindingElementCollection
+              CreateBindingElements ();
+          - '@_Language': ILAsm
+            '@_Value': >-
+              .method public hidebysig virtual instance class
+              CoreWCF.Channels.BindingElementCollection CreateBindingElements()
+              cil managed
+          - '@_Language': DocId
+            '@_Value': M:CoreWCF.BasicHttpBinding.CreateBindingElements
+          - '@_Language': VB.NET
+            '@_Value': >-
+              Public Overrides Function CreateBindingElements () As
+              BindingElementCollection
+          - '@_Language': F#
+            '@_Value': >-
+              override this.CreateBindingElements : unit ->
+              CoreWCF.Channels.BindingElementCollection
+            '@_Usage': basicHttpBinding.CreateBindingElements
+          - '@_Language': C++ CLI
+            '@_Value': >-
+              public:&#xA; override
+              System::ServiceModel::Channels::BindingElementCollection ^
+              CreateBindingElements();
+        MemberType: Method
+        AssemblyInfo:
+          AssemblyName: CoreWCF.Http
+          AssemblyVersion: 1
+        ReturnValue:
+          ReturnType: CoreWCF.Channels.BindingElementCollection
+        Parameters: ''
+        Docs:
+          summary: >-
+            Creates and returns an ordered collection of binding elements
+            contained in the current binding.
+          returns:
+            see:
+              - '@_cref': T:CoreWCF.Channels.BindingElementCollection
+              - '@_cref': T:CoreWCF.BasicHttpBinding
+            '#text': >-
+              Thethat contains the ordered stack of binding elements described
+              by the.
+          remarks:
+            format:
+              '#text': >2
+                  
+                ## Remarks  
+
+                The order of the binding elements is important. It reflects the
+                order in which the protocol and transport channels are
+                constructed and stacked. This collection of binding elements is
+                a new collection and can be modified and then used to create a
+                <xref:CoreWCF.Channels.CustomBinding>.  
+              '@_type': text/markdown
+          ExampleRemoved: >2
+              
+            ## Examples  
+
+            The following example creates an ordered collection of the binding
+            elements in the current binding.  
+
+            :::code language="csharp"
+            source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/client.cs"
+            id="Snippet26":::  
+        '@_MemberName': CreateBindingElements
+      - MemberSignature:
+          - '@_Language': C#
+            '@_Value': public CoreWCF.WSMessageEncoding MessageEncoding { get; set; }
+          - '@_Language': ILAsm
+            '@_Value': >-
+              .property instance valuetype CoreWCF.WSMessageEncoding
+              MessageEncoding
+          - '@_Language': DocId
+            '@_Value': P:CoreWCF.BasicHttpBinding.MessageEncoding
+          - '@_Language': VB.NET
+            '@_Value': Public Property MessageEncoding As WSMessageEncoding
+          - '@_Language': F#
+            '@_Value': >-
+              member this.MessageEncoding : CoreWCF.WSMessageEncoding with get,
+              set
+            '@_Usage': CoreWCF.BasicHttpBinding.MessageEncoding
+          - '@_Language': C++ CLI
+            '@_Value': >-
+              public:&#xA; property System::ServiceModel::WSMessageEncoding
+              MessageEncoding { System::ServiceModel::WSMessageEncoding get();
+              void set(System::ServiceModel::WSMessageEncoding value); };
+        MemberType: Property
+        AssemblyInfo:
+          AssemblyName: CoreWCF.Http
+          AssemblyVersion: 1
+        Attributes: ''
+        ReturnValue:
+          ReturnType: CoreWCF.WSMessageEncoding
+        Docs:
+          summary: Gets or sets whether MTOM or Text is used to encode SOAP messages.
+          value:
+            see:
+              - '@_cref': T:CoreWCF.WSMessageEncoding
+              - '@_cref': F:CoreWCF.WSMessageEncoding.Text
+            '#text': >-
+              The value ofthat indicates whether MTOM or Text/XML is used to
+              encode SOAP messages. The default value is.
+          remarks:
+            format:
+              '#text': |2
+                  
+              '@_type': text/markdown
+          ExampleRemoved: >2
+              
+            ## Examples  
+
+            The following example sets MessageEncoding to Text.  
+
+            :::code language="csharp"
+            source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/client.cs"
+            id="Snippet19":::  
+
+            The value of this property can also be set in the configuration
+            file.  
+        '@_MemberName': MessageEncoding
+      - MemberSignature:
+          - '@_Language': C#
+            '@_Value': public CoreWCF.BasicHttpSecurity Security { get; set; }
+          - '@_Language': ILAsm
+            '@_Value': .property instance class CoreWCF.BasicHttpSecurity Security
+          - '@_Language': DocId
+            '@_Value': P:CoreWCF.BasicHttpBinding.Security
+          - '@_Language': VB.NET
+            '@_Value': Public Property Security As BasicHttpSecurity
+          - '@_Language': F#
+            '@_Value': 'member this.Security : CoreWCF.BasicHttpSecurity with get, set'
+            '@_Usage': CoreWCF.BasicHttpBinding.Security
+          - '@_Language': C++ CLI
+            '@_Value': >-
+              public:&#xA; property System::ServiceModel::BasicHttpSecurity ^
+              Security { System::ServiceModel::BasicHttpSecurity ^ get(); void
+              set(System::ServiceModel::BasicHttpSecurity ^ value); };
+        MemberType: Property
+        AssemblyInfo:
+          AssemblyName: CoreWCF.Http
+          AssemblyVersion: 1
+        Attributes: ''
+        ReturnValue:
+          ReturnType: CoreWCF.BasicHttpSecurity
+        Docs:
+          summary: Gets the type of security used with this binding.
+          value:
+            see:
+              - '@_cref': T:CoreWCF.BasicHttpSecurity
+              - '@_cref': F:CoreWCF.BasicHttpSecurityMode.None
+            '#text': Thethat is used with this binding. The default value is.
+          remarks:
+            format:
+              '#text': >2
+                  
+                ## Remarks  
+
+                By default, the SOAP message is not secured and the client is
+                not authenticated. To use a non-default type of security, use
+                the
+                <xref:CoreWCF.BasicHttpBinding.%23ctor%28CoreWCF.BasicHttpSecurityMode%29>
+                constructor.  
+              '@_type': text/markdown
+          ExampleRemoved: >2
+              
+            ## Examples  
+
+            The following example gets the `Security` property.  
+
+            :::code language="csharp"
+            source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/client.cs"
+            id="Snippet23":::  
+        '@_MemberName': Security
+    UnmatchedMembers:
+      Member:
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': >-
+                public BasicHttpBinding (CoreWCF.BasicHttpSecurityMode
+                securityMode);
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig specialname rtspecialname instance void
+                .ctor(valuetype CoreWCF.BasicHttpSecurityMode securityMode) cil
+                managed
+            - '@_Language': DocId
+              '@_Value': M:CoreWCF.BasicHttpBinding.#ctor(CoreWCF.BasicHttpSecurityMode)
+            - '@_Language': VB.NET
+              '@_Value': Public Sub New (securityMode As BasicHttpSecurityMode)
+            - '@_Language': F#
+              '@_Value': >-
+                new CoreWCF.BasicHttpBinding : CoreWCF.BasicHttpSecurityMode ->
+                CoreWCF.BasicHttpBinding
+              '@_Usage': new CoreWCF.BasicHttpBinding securityMode
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA;
+                BasicHttpBinding(System::ServiceModel::BasicHttpSecurityMode
+                securityMode);
+          MemberType: Constructor
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Parameters:
+            Parameter:
+              '@_Name': securityMode
+              '@_Type': CoreWCF.BasicHttpSecurityMode
+          Docs:
+            param:
+              see:
+                '@_cref': T:CoreWCF.BasicHttpSecurityMode
+              '#text': >-
+                The value ofthat specifies the type of security that is used
+                with the SOAP message and for the client.
+              '@_name': securityMode
+            summary:
+              see:
+                '@_cref': T:CoreWCF.BasicHttpBinding
+              '#text': >-
+                Initializes a new instance of theclass with a specified type of
+                security used by the binding.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  The default value of <xref:CoreWCF.BasicHttpSecurityMode> used
+                  is <xref:CoreWCF.BasicHttpSecurityMode.None>, which specifies
+                  that the SOAP message is not secured and the client is not
+                  authenticated.  
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples  
+
+              :::code language="csharp"
+              source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs"
+              id="Snippet3":::
+               :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb" id="Snippet3":::  
+          '@_MemberName': .ctor
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public BasicHttpBinding (string configurationName);
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig specialname rtspecialname instance void
+                .ctor(string configurationName) cil managed
+            - '@_Language': DocId
+              '@_Value': M:CoreWCF.BasicHttpBinding.#ctor(System.String)
+            - '@_Language': VB.NET
+              '@_Value': Public Sub New (configurationName As String)
+            - '@_Language': F#
+              '@_Value': >-
+                new CoreWCF.BasicHttpBinding : string ->
+                CoreWCF.BasicHttpBinding
+              '@_Usage': new CoreWCF.BasicHttpBinding configurationName
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; BasicHttpBinding(System::String ^
+                configurationName);
+          MemberType: Constructor
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Parameters:
+            Parameter:
+              '@_Name': configurationName
+              '@_Type': System.String
+              '@_Index': '0'
+              '@_FrameworkAlternate': >-
+                netframework-3.0;netframework-3.5;netframework-4.0;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8
+          Docs:
+            param:
+              see:
+                '@_cref': T:CoreWCF.Configuration.BasicHttpBindingElement
+              '#text': The binding configuration name for the.
+              '@_name': configurationName
+            summary:
+              see:
+                '@_cref': T:CoreWCF.BasicHttpBinding
+              '#text': >-
+                Initializes a new instance of theclass with a binding specified
+                by its configuration name.
+            remarks:
+              format:
+                '#text': |2
+                    
+                '@_type': text/markdown
+            exception:
+              paramref:
+                '@_name': configurationName
+              '#text': The binding with the configuration namewas not found.
+              '@_cref': T:System.Configuration.ConfigurationErrorsException
+            ExampleRemoved: >2
+                
+              ## Examples  
+
+              This example initializes a new <xref:CoreWCF.BasicHttpBinding>
+              class with a binding specified by the configuration name
+              `myBinding`. You must create a bindings section in the service's
+              configuration file.  
+
+              :::code language="csharp"
+              source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs"
+              id="Snippet5":::
+               :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb" id="Snippet5":::  
+              Then the name of the binding configuration is specified in the
+              call to the <xref:CoreWCF.BasicHttpBinding> constructor.  
+
+              :::code language="csharp"
+              source="~/snippets/csharp/VS_Snippets_CFX/s_uebasichttpbinding/cs/snippets.cs"
+              id="Snippet4":::
+               :::code language="vb" source="~/snippets/visualbasic/VS_Snippets_CFX/s_uebasichttpbinding/vb/snippets.vb" id="Snippet4":::  
+          '@_MemberName': .ctor
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool AllowCookies { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance bool AllowCookies
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.AllowCookies
+            - '@_Language': VB.NET
+              '@_Value': Public Property AllowCookies As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.AllowCookies : bool with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.AllowCookies
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property bool AllowCookies { bool get(); void
+                set(bool value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Docs:
+            summary: >-
+              Gets or sets a value that indicates whether the client accepts
+              cookies and propagates them on future requests.
+            value:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+                - '@_langword': 'false'
+              '#text': if cookies are allowed; otherwise,. The default is.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  This property is provided as a convenience for interacting
+                  with ASMX Web services that use cookies. 
+
+                  When cookies are accepted by the client by setting the
+                  property to `true`, cookies returned from the server are
+                  automatically copied to all future client requests to that
+                  service.
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets this property to indicate that all
+              cookies from the server should be copied to future client
+              requests:
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              binding.AllowCookies = true;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+          '@_MemberName': AllowCookies
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': >-
+                public override CoreWCF.Channels.IChannelFactory<TChannel>
+                BuildChannelFactory<TChannel>
+                (CoreWCF.Channels.BindingParameterCollection parameters);
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig virtual instance class
+                CoreWCF.Channels.IChannelFactory`1<!!TChannel>
+                BuildChannelFactory<TChannel>(class
+                CoreWCF.Channels.BindingParameterCollection parameters) cil
+                managed
+            - '@_Language': DocId
+              '@_Value': >-
+                M:CoreWCF.BasicHttpBinding.BuildChannelFactory``1(CoreWCF.Channels.BindingParameterCollection)
+            - '@_Language': VB.NET
+              '@_Value': >-
+                Public Overrides Function BuildChannelFactory(Of TChannel)
+                (parameters As BindingParameterCollection) As IChannelFactory(Of
+                TChannel)
+            - '@_Language': F#
+              '@_Value': >-
+                override this.BuildChannelFactory :
+                CoreWCF.Channels.BindingParameterCollection ->
+                CoreWCF.Channels.IChannelFactory<'Channel>
+              '@_Usage': basicHttpBinding.BuildChannelFactory parameters
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA;generic <typename TChannel>&#xA; override
+                System::ServiceModel::Channels::IChannelFactory<TChannel> ^
+                BuildChannelFactory(System::ServiceModel::Channels::BindingParameterCollection
+                ^ parameters);
+          MemberType: Method
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          ReturnValue:
+            ReturnType: CoreWCF.Channels.IChannelFactory<TChannel>
+          TypeParameters:
+            TypeParameter:
+              '@_Name': TChannel
+          Parameters:
+            Parameter:
+              '@_Name': parameters
+              '@_Type': CoreWCF.Channels.BindingParameterCollection
+              '@_Index': '0'
+              '@_FrameworkAlternate': >-
+                dotnet-plat-ext-2.1;dotnet-plat-ext-2.2;dotnet-plat-ext-3.0;dotnet-plat-ext-3.1;dotnet-plat-ext-5.0;dotnet-plat-ext-6.0;dotnet-uwp-10.0;netcore-1.0;netcore-1.1;netframework-4.5;netframework-4.5.1;netframework-4.5.2;netframework-4.6;netframework-4.6.1;netframework-4.6.2;netframework-4.7;netframework-4.7.1;netframework-4.7.2;netframework-4.8
+          Docs:
+            typeparam:
+              '#text': The type of channel the channel factory produces.
+              '@_name': TChannel
+            param:
+              '#text': Specifies the requirements for the channel factory built.
+              '@_name': parameters
+            summary: >-
+              Builds the channel factory stack on the client that creates a
+              specified type of channel and that satisfies the features
+              specified by a collection of binding parameters.
+            returns:
+              see:
+                '@_cref': T:CoreWCF.Channels.IChannelFactory`1
+              paramref:
+                '@_name': TChannel
+              '#text': >-
+                Anof typethat satisfies the features specified by the
+                collection.
+            remarks: To be added.
+          '@_MemberName': BuildChannelFactory<TChannel>
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool BypassProxyOnLocal { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance bool BypassProxyOnLocal
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.BypassProxyOnLocal
+            - '@_Language': VB.NET
+              '@_Value': Public Property BypassProxyOnLocal As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.BypassProxyOnLocal : bool with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.BypassProxyOnLocal
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property bool BypassProxyOnLocal { bool get(); void
+                set(bool value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Docs:
+            summary: >-
+              Gets or sets a value that indicates whether to bypass the proxy
+              server for local addresses.
+            value:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+                - '@_langword': 'false'
+              '#text': >-
+                to bypass the proxy server for local addresses; otherwise,. The
+                default value is.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  An Internet resource is local if it has a local address. A
+                  local address is one that is on same computer, the local LAN
+                  or intranet and is identified, syntactically, by the lack of a
+                  period (\.) as in the URIs `http://webserver/` and
+                  `http://localhost/`.
+
+                  Setting the BypassProxyOnLocal property determines whether
+                  endpoints configured with the <xref:CoreWCF.BasicHttpBinding>
+                  use the proxy server when accessing local resources.
+
+                  If BypassProxyOnLocal is `true`, requests to local Internet
+                  resources do not use the proxy server. Use the host name
+                  (rather than `localhost`) if you want clients to go through a
+                  proxy when talking to services on the same machine when this
+                  property is set to `true`.
+
+                  When BypassProxyOnLocal is `false`, all Internet requests to
+                  non-localhost URIs are made through the proxy server. Requests
+                  to URIs with localhost will not use the proxy server
+                  regardless of the BypassProxyOnLocal setting.
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets this property to indicate that the
+              proxy should be bypassed for local resources.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              binding.BypassProxyOnLocal = true;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+
+              ```xml
+
+              <configuration>
+                <system.serviceModel>
+
+                  <bindings>
+                    <basicHttpBinding>
+                      <binding name="Binding1" 
+                               bypassProxyOnLocal="true">
+                        <security mode="None" />
+                      </binding>
+                    </basicHttpBinding>
+                  </bindings>
+                </system.serviceModel>
+
+              </configuration>
+
+              ```
+          '@_MemberName': BypassProxyOnLocal
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool EnableHttpCookieContainer { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance bool EnableHttpCookieContainer
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.EnableHttpCookieContainer
+            - '@_Language': VB.NET
+              '@_Value': Public Property EnableHttpCookieContainer As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.EnableHttpCookieContainer : bool with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.EnableHttpCookieContainer
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property bool EnableHttpCookieContainer { bool
+                get(); void set(bool value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Docs:
+            summary: >-
+              Gets or sets a value that indicates whether HTTP cookie container
+              is enabled.
+            value:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+              '#text': if HTTP cookie container is enabled; otherwise,.
+            remarks: To be added.
+          '@_MemberName': EnableHttpCookieContainer
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public CoreWCF.EnvelopeVersion EnvelopeVersion { get; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance class CoreWCF.EnvelopeVersion EnvelopeVersion
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.EnvelopeVersion
+            - '@_Language': VB.NET
+              '@_Value': Public ReadOnly Property EnvelopeVersion As EnvelopeVersion
+            - '@_Language': F#
+              '@_Value': 'member this.EnvelopeVersion : CoreWCF.EnvelopeVersion'
+              '@_Usage': CoreWCF.BasicHttpBinding.EnvelopeVersion
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property System::ServiceModel::EnvelopeVersion ^
+                EnvelopeVersion { System::ServiceModel::EnvelopeVersion ^ get();
+                };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          ReturnValue:
+            ReturnType: CoreWCF.EnvelopeVersion
+          Docs:
+            summary: >-
+              Gets the version of SOAP that is used for messages that are
+              processed by this binding.
+            value:
+              see:
+                '@_cref': T:CoreWCF.EnvelopeVersion
+              '#text': >-
+                The value of thethat is used with this binding. The value is
+                always SOAP 1.1.
+            remarks:
+              format:
+                '#text': |2-
+                    
+
+                  ## Remarks  
+
+                  SOAP 1.1 is the only value that can be used with this binding.
+
+                   
+                '@_type': text/markdown
+          '@_MemberName': EnvelopeVersion
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': >-
+                public CoreWCF.HostNameComparisonMode HostNameComparisonMode {
+                get; set; }
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .property instance valuetype CoreWCF.HostNameComparisonMode
+                HostNameComparisonMode
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.HostNameComparisonMode
+            - '@_Language': VB.NET
+              '@_Value': Public Property HostNameComparisonMode As HostNameComparisonMode
+            - '@_Language': F#
+              '@_Value': >-
+                member this.HostNameComparisonMode :
+                CoreWCF.HostNameComparisonMode with get, set
+              '@_Usage': CoreWCF.BasicHttpBinding.HostNameComparisonMode
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property
+                System::ServiceModel::HostNameComparisonMode
+                HostNameComparisonMode {
+                System::ServiceModel::HostNameComparisonMode get(); void
+                set(System::ServiceModel::HostNameComparisonMode value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: CoreWCF.HostNameComparisonMode
+          Docs:
+            summary: >-
+              Gets or sets a value that indicates whether the hostname is used
+              to reach the service when matching the URI.
+            value:
+              see:
+                - '@_cref': T:CoreWCF.HostNameComparisonMode
+                - '@_cref': F:CoreWCF.HostNameComparisonMode.StrongWildcard
+              '#text': >-
+                Thevalue that indicates whether the hostname is used to reach
+                the service when matching on the URI. The default value is,
+                which ignores the hostname in the match.
+            remarks:
+              format:
+                '#text': |2
+                    
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets this property to indicate that an exact
+              match is required.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              binding.HostNameComparisonMode = HostNameComparisonMode.Exact;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+
+              ```xml
+
+              <configuration>
+                <system.serviceModel>
+
+                  <bindings>
+                    <basicHttpBinding>
+                      <binding name="Binding1"
+                               hostNameComparisonMode ="Exact">
+                        <security mode="None" />
+                      </binding>
+                    </basicHttpBinding>
+                  </bindings>
+
+                </system.serviceModel>
+
+              </configuration>
+
+              ```
+          '@_MemberName': HostNameComparisonMode
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public long MaxBufferPoolSize { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance int64 MaxBufferPoolSize
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.MaxBufferPoolSize
+            - '@_Language': VB.NET
+              '@_Value': Public Property MaxBufferPoolSize As Long
+            - '@_Language': F#
+              '@_Value': 'member this.MaxBufferPoolSize : int64 with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.MaxBufferPoolSize
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property long MaxBufferPoolSize { long get(); void
+                set(long value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Int64
+          Docs:
+            summary: >-
+              Gets or sets the maximum amount of memory, in bytes,  that is
+              allocated for use by the manager of the message buffers that
+              receive messages from the channel.
+            value: >-
+              The maximum amount of memory, in bytes, available for use by the
+              message buffer manager. The default value is 524288 (0x80000)
+              bytes.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  The <xref:CoreWCF.Channels.BufferManager> minimizes the cost
+                  of using buffers by using a buffer pool. 
+
+                  Buffers are required to process messages by the service when
+                  they come out of the channel. 
+
+                  If there is not sufficient memory in the buffer pool to
+                  process the message load, the
+                  <xref:CoreWCF.Channels.BufferManager> must allocate additional
+                  memory from the CLR heap, which increases the garbage
+                  collection overhead. 
+
+                  Extensive allocation from the CLR garbage heap is an
+                  indication that the buffer pool size is too small and that
+                  performance can be improved with a larger allocation by
+                  increasing the MaxBufferPoolSize limit.
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets this property to twice the default
+              value.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              // Use double the default value
+
+              binding.MaxBufferPoolSize = 0x80000 * 2;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+
+              ```xml
+
+              <configuration>
+                <system.serviceModel>
+
+                  <bindings>
+                    <basicHttpBinding>
+                      <binding name="Binding1">
+
+                        <!-- set pool size to double default of 0x80000 -->
+                        maxBufferPoolSize = 0x100000
+
+                        <security mode="None" />
+                      </binding>
+                    </basicHttpBinding>
+                  </bindings>
+
+                </system.serviceModel>
+
+              </configuration>
+
+              ```
+          '@_MemberName': MaxBufferPoolSize
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public int MaxBufferSize { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance int32 MaxBufferSize
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.MaxBufferSize
+            - '@_Language': VB.NET
+              '@_Value': Public Property MaxBufferSize As Integer
+            - '@_Language': F#
+              '@_Value': 'member this.MaxBufferSize : int with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.MaxBufferSize
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property int MaxBufferSize { int get(); void
+                set(int value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Int32
+          Docs:
+            summary: >-
+              Gets or sets the maximum size, in bytes, for a buffer that
+              receives messages from the channel.
+            value: >-
+              The maximum size, in bytes, of a buffer that stores messages while
+              they are processed for an endpoint configured with this binding.
+              The default value is 65,536 bytes.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  If there is not sufficient memory in the buffer to store the
+                  message while it is processed, more memory must be allocated
+                  from the CLR heap, which increases the garbage collection
+                  overhead. 
+
+                  Extensive allocation from the CLR garbage heap is an
+                  indication that the message buffer size is too small and that
+                  performance can be improved with a larger allocation.
+
+                  The value of the MaxBufferSize property and its significance
+                  is different depending on whether the messages are being
+                  buffered or streamed on the channel through which they are
+                  being received:
+
+                  - For buffered transports
+                  (<xref:CoreWCF.BasicHttpBinding.TransferMode> set to
+                  <xref:CoreWCF.TransferMode.Buffered?displayProperty=nameWithType>),
+                  this value is always equal to that specified by the
+                  <xref:CoreWCF.BasicHttpBinding.MaxReceivedMessageSize>
+                  property.
+
+
+                  - For streamed transports
+                  (<xref:CoreWCF.BasicHttpBinding.TransferMode> set to
+                  <xref:CoreWCF.TransferMode.Streamed?displayProperty=nameWithType>),
+                  only the SOAP headers must be buffered to generate the
+                  message. 
+
+                  The body can be streamed in on-demand. In this case,
+                  MaxBufferSize is less than or equal to
+                  <xref:CoreWCF.BasicHttpBinding.MaxReceivedMessageSize>, where
+                  <xref:CoreWCF.BasicHttpBinding.MaxReceivedMessageSize> bounds
+                  the size of the overall message (headers and body) and
+                  MaxBufferSize bounds only the size of the SOAP headers.
+
+
+                  The limitations on buffer size set here are for optimizing the
+                  performance of message exchanges. 
+
+                  If a message exceeds the maximum value set for the buffer, it
+                  is not dropped. 
+
+                  Instead, more memory is requested from the CLR heap and this
+                  incurs more garbage collection overhead than using the
+                  buffers.
+
+                  > [!NOTE]
+
+                  > The settings for MaxBufferSize and MaxReceivedMessageSize,
+                  are local behavioral settings. 
+
+                  > This means that they are not transmitted to other endpoints
+                  in metadata. 
+
+                  > If you generate a proxy to a service with a maximum message
+                  size of 2GB from metadata, the proxy still has a default value
+                  of 64K. 
+
+                  > This leaves control of the appropriate bounds for message
+                  and message buffer size in the scope of local administrators.
+                '@_type': text/markdown
+            ExampleRemoved: "  \n## Examples\nThe following example sets **MaxBufferSize** to 1,000,000 bytes.\n```csharp\nBasicHttpBinding binding = new BasicHttpBinding();\n\t\t    \n// set to one million\nbinding.MaxBufferSize = 1000000;\n```\nThe value of this property can also be set in the configuration file.\n"
+          '@_MemberName': MaxBufferSize
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public long MaxReceivedMessageSize { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance int64 MaxReceivedMessageSize
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.MaxReceivedMessageSize
+            - '@_Language': VB.NET
+              '@_Value': Public Property MaxReceivedMessageSize As Long
+            - '@_Language': F#
+              '@_Value': 'member this.MaxReceivedMessageSize : int64 with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.MaxReceivedMessageSize
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property long MaxReceivedMessageSize { long get();
+                void set(long value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Int64
+          Docs:
+            summary: >-
+              Gets or sets the maximum size, in bytes, for a message that can be
+              received on a channel configured with this binding.
+            value: >-
+              The maximum size, in bytes, for a message that is processed by the
+              binding. The default value is 65,536 bytes.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  The size of the messages that can be received on the wire by
+                  services using the BasicHttpBinding is bounded by the amount
+                  of memory allocated for each message. 
+
+                  This bound on message size is intended to limit exposure to
+                  DoS-style attacks.
+
+                  There is also a <xref:CoreWCF.BasicHttpBinding.MaxBufferSize>
+                  property on the <xref:CoreWCF.BasicHttpBinding>:
+
+                  For buffered transports,
+                  (<xref:CoreWCF.BasicHttpBinding.TransferMode> set to
+                  <xref:CoreWCF.TransferMode.Buffered>). 
+
+                  This value is always equal to that specified by the
+                  MaxReceivedMessageSize.
+
+                  For streamed transports
+                  (<xref:CoreWCF.BasicHttpBinding.TransferMode> set to
+                  <xref:CoreWCF.TransferMode.Streamed>), only the SOAP headers
+                  must be buffered to generate the message. 
+
+                  The body can be streamed in on-demand. In this case,
+                  <xref:CoreWCF.BasicHttpBinding.MaxBufferSize> is less than or
+                  equal to MaxReceivedMessageSize, 
+
+                  where MaxReceivedMessageSize bounds the size of the overall
+                  message (headers and body) and
+                  <xref:CoreWCF.BasicHttpBinding.MaxBufferSize> bounds the size
+                  of the SOAP headers.
+                '@_type': text/markdown
+            exception:
+              '#text': The value is less than zero.
+              '@_cref': T:System.ArgumentOutOfRangeException
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets MaxReceivedMessageSize to 1,000,000
+              bytes.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+
+              // Use double the default value
+
+              binding.MaxReceivedMessageSize = 65536 * 2;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+
+              ```xml
+
+              <configuration>
+                <system.serviceModel>
+
+                  <bindings>
+                    <basicHttpBinding>
+                      <binding name="Binding1"
+                               maxReceivedMessageSize = "1000000">
+                        <security mode="None" />
+                      </binding>
+                    </basicHttpBinding>
+                  </bindings>
+
+                </system.serviceModel>
+
+              </configuration>
+
+              ```
+          '@_MemberName': MaxReceivedMessageSize
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public Uri ProxyAddress { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance class System.Uri ProxyAddress
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.ProxyAddress
+            - '@_Language': VB.NET
+              '@_Value': Public Property ProxyAddress As Uri
+            - '@_Language': F#
+              '@_Value': 'member this.ProxyAddress : Uri with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.ProxyAddress
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property Uri ^ ProxyAddress { Uri ^ get(); void
+                set(Uri ^ value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Uri
+          Docs:
+            summary: Gets or sets the URI address of the HTTP proxy.
+            value:
+              see:
+                '@_cref': T:System.Uri
+              '#text': >-
+                Athat serves as the address of the HTTP proxy. The default value
+                is null.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  If the <xref:CoreWCF.BasicHttpBinding.UseDefaultWebProxy> is
+                  set to `true`, the default address is used and the value of
+                  the ProxyAddress set is ignored.
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets ProxyAddress to application settings.
+
+              ```csharp
+
+              // Get base address from app settings in configuration
+
+              Uri baseAddress = new
+              Uri(ConfigurationManager.AppSettings["baseAddress"]);
+
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+
+              binding.ProxyAddress = baseAddress;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+
+              ```xml
+
+              <configuration>
+                <system.serviceModel>
+
+                  <bindings>
+                    <basicHttpBinding>
+                      <binding name="Binding1"
+                               proxyAddress = "http://myProxy">
+                        <security mode="None" />
+                      </binding>
+                    </basicHttpBinding>
+                  </bindings>
+
+                </system.serviceModel>
+
+              </configuration>
+
+              ```
+          '@_MemberName': ProxyAddress
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': >-
+                public System.Xml.XmlDictionaryReaderQuotas ReaderQuotas { get;
+                set; }
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .property instance class System.Xml.XmlDictionaryReaderQuotas
+                ReaderQuotas
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.ReaderQuotas
+            - '@_Language': VB.NET
+              '@_Value': Public Property ReaderQuotas As XmlDictionaryReaderQuotas
+            - '@_Language': F#
+              '@_Value': >-
+                member this.ReaderQuotas : System.Xml.XmlDictionaryReaderQuotas
+                with get, set
+              '@_Usage': CoreWCF.BasicHttpBinding.ReaderQuotas
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property System::Xml::XmlDictionaryReaderQuotas ^
+                ReaderQuotas { System::Xml::XmlDictionaryReaderQuotas ^ get();
+                void set(System::Xml::XmlDictionaryReaderQuotas ^ value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          ReturnValue:
+            ReturnType: System.Xml.XmlDictionaryReaderQuotas
+          Docs:
+            summary: >-
+              Gets or sets constraints on the complexity of SOAP messages that
+              can be processed by endpoints configured with this binding.
+            value:
+              see:
+                '@_cref': T:System.Xml.XmlDictionaryReaderQuotas
+              '#text': Thethat specifies the complexity constraints.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks  
+
+                  The complexity constraints provide protection from denial of
+                  service (DOS) attacks that attempt to use message complexity
+                  to tie up endpoint processing resources. 
+
+                  Other complexity constraints include items such as a maximum
+                  element depth and a maximum length for string content within
+                  the message.
+                '@_type': text/markdown
+            ExampleRemoved: "  \n## Examples\nThe following example sets ReaderQuotas to application settings.\n```csharp\nBasicHttpBinding binding = new BasicHttpBinding();\nXmlDictionaryReaderQuotas readerQuotas = new XmlDictionaryReaderQuotas();\nreaderQuotas.MaxArrayLength = 25 * 1024;\n\t\t\nbinding.ReaderQuotas = readerQuotas;\n```\nThe value of this property can also be set in the configuration file.\n```xml\n<configuration>\n  <system.serviceModel>\n\n    <bindings>\n      <basicHttpBinding>\n        <binding name=\"Binding1\">\n          <readerQuotas maxBytesPerRead =\"1000\" \n                        maxDepth=\"100\"/>\n\n          <security mode=\"None\" />\n        </binding>\n      </basicHttpBinding>\n    </bindings>\n\n  </system.serviceModel>\n\n</configuration>\n```\n"
+          '@_MemberName': ReaderQuotas
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public override string Scheme { get; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance string Scheme
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.Scheme
+            - '@_Language': VB.NET
+              '@_Value': Public Overrides ReadOnly Property Scheme As String
+            - '@_Language': F#
+              '@_Value': 'member this.Scheme : string'
+              '@_Usage': CoreWCF.BasicHttpBinding.Scheme
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; virtual property System::String ^ Scheme {
+                System::String ^ get(); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          ReturnValue:
+            ReturnType: System.String
+          Docs:
+            summary: >-
+              Gets the URI transport scheme for the channels and listeners that
+              are configured with this binding.
+            value:
+              see:
+                - '@_cref': F:CoreWCF.BasicHttpSecurityMode.Transport
+                - '@_cref': >-
+                    F:CoreWCF.BasicHttpSecurityMode.TransportWithMessageCredential
+              '#text': >-
+                "https" if the security mode in the transport binding element is
+                set toor; "http" otherwise.
+            remarks:
+              format:
+                '#text': |2
+                    
+                '@_type': text/markdown
+            ExampleRemoved: |2
+                
+              ## Examples
+              The following example gets the current Scheme.
+              ```csharp
+              BasicHttpBinding binding = new BasicHttpBinding();
+              string thisScheme = binding.Scheme;
+              ```
+          '@_MemberName': Scheme
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool ShouldSerializeEnableHttpCookieContainer ();
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig instance bool
+                ShouldSerializeEnableHttpCookieContainer() cil managed
+            - '@_Language': DocId
+              '@_Value': >-
+                M:CoreWCF.BasicHttpBinding.ShouldSerializeEnableHttpCookieContainer
+            - '@_Language': VB.NET
+              '@_Value': >-
+                Public Function ShouldSerializeEnableHttpCookieContainer () As
+                Boolean
+            - '@_Language': F#
+              '@_Value': >-
+                member this.ShouldSerializeEnableHttpCookieContainer : unit ->
+                bool
+              '@_Usage': basicHttpBinding.ShouldSerializeEnableHttpCookieContainer
+            - '@_Language': C++ CLI
+              '@_Value': public:&#xA; bool ShouldSerializeEnableHttpCookieContainer();
+          MemberType: Method
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Parameters: ''
+          Docs:
+            summary: >-
+              Indicates whether the http cookie container should enable the
+              serialization.
+            returns:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+              '#text': >-
+                if the http cookie container should enable the serialization;
+                otherwise,.
+            remarks: To be added.
+          '@_MemberName': ShouldSerializeEnableHttpCookieContainer
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool ShouldSerializeReaderQuotas ();
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig instance bool
+                ShouldSerializeReaderQuotas() cil managed
+            - '@_Language': DocId
+              '@_Value': M:CoreWCF.BasicHttpBinding.ShouldSerializeReaderQuotas
+            - '@_Language': VB.NET
+              '@_Value': Public Function ShouldSerializeReaderQuotas () As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.ShouldSerializeReaderQuotas : unit -> bool'
+              '@_Usage': basicHttpBinding.ShouldSerializeReaderQuotas
+            - '@_Language': C++ CLI
+              '@_Value': public:&#xA; bool ShouldSerializeReaderQuotas();
+          MemberType: Method
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Parameters: ''
+          Docs:
+            summary: >-
+              Returns whether the constraint values placed on the complexity of
+              SOAP message structure should be serialized.
+            returns:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+              '#text': if reader quotas should be serialized; otherwise,.
+            remarks: To be added.
+          '@_MemberName': ShouldSerializeReaderQuotas
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool ShouldSerializeSecurity ();
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig instance bool ShouldSerializeSecurity()
+                cil managed
+            - '@_Language': DocId
+              '@_Value': M:CoreWCF.BasicHttpBinding.ShouldSerializeSecurity
+            - '@_Language': VB.NET
+              '@_Value': Public Function ShouldSerializeSecurity () As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.ShouldSerializeSecurity : unit -> bool'
+              '@_Usage': basicHttpBinding.ShouldSerializeSecurity
+            - '@_Language': C++ CLI
+              '@_Value': public:&#xA; bool ShouldSerializeSecurity();
+          MemberType: Method
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Parameters: ''
+          Docs:
+            summary: >-
+              Returns whether security settings should be serialized based upon
+              whether serialization already occurs, for example at the message
+              or transport level.
+            returns:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+              '#text': if security should be serialized; otherwise,.
+            remarks: To be added.
+          '@_MemberName': ShouldSerializeSecurity
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool ShouldSerializeTextEncoding ();
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .method public hidebysig instance bool
+                ShouldSerializeTextEncoding() cil managed
+            - '@_Language': DocId
+              '@_Value': M:CoreWCF.BasicHttpBinding.ShouldSerializeTextEncoding
+            - '@_Language': VB.NET
+              '@_Value': Public Function ShouldSerializeTextEncoding () As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.ShouldSerializeTextEncoding : unit -> bool'
+              '@_Usage': basicHttpBinding.ShouldSerializeTextEncoding
+            - '@_Language': C++ CLI
+              '@_Value': public:&#xA; bool ShouldSerializeTextEncoding();
+          MemberType: Method
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Parameters: ''
+          Docs:
+            summary: Returns whether settings for text encoding should be serialized.
+            returns:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+              '#text': if text encoding should be serialized; otherwise,.
+            remarks: To be added.
+          '@_MemberName': ShouldSerializeTextEncoding
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': >-
+                bool
+                CoreWCF.Channels.IBindingRuntimePreferences.ReceiveSynchronously
+                { get; }
+            - '@_Language': ILAsm
+              '@_Value': >-
+                .property instance bool
+                CoreWCF.Channels.IBindingRuntimePreferences.ReceiveSynchronously
+            - '@_Language': DocId
+              '@_Value': >-
+                P:CoreWCF.BasicHttpBinding.System#ServiceModel#Channels#IBindingRuntimePreferences#ReceiveSynchronously
+            - '@_Language': VB.NET
+              '@_Value': >-
+                ReadOnly Property ReceiveSynchronously As Boolean Implements
+                IBindingRuntimePreferences.ReceiveSynchronously
+            - '@_Language': F#
+              '@_Value': >-
+                member
+                this.CoreWCF.Channels.IBindingRuntimePreferences.ReceiveSynchronously
+                : bool
+              '@_Usage': CoreWCF.Channels.IBindingRuntimePreferences.ReceiveSynchronously
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                property bool
+                System::ServiceModel::Channels::IBindingRuntimePreferences::ReceiveSynchronously
+                { bool get(); };
+          MemberType: Property
+          Implements:
+            InterfaceMember: P:CoreWCF.Channels.IBindingRuntimePreferences.ReceiveSynchronously
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          ReturnValue:
+            ReturnType: System.Boolean
+          Docs:
+            summary: >-
+              Gets a value that indicates whether incoming requests are handled
+              synchronously or asynchronously.
+            value:
+              see:
+                '@_langword': 'false'
+              '#text': Always.
+            remarks:
+              format:
+                '#text': |2
+                    
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              This example gets the ReceiveSynchronously value.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              IBindingRuntimePreferences s = (binding as
+              IBindingRuntimePreferences);
+
+              bool receiveSynchronously = s.ReceiveSynchronously;
+
+              ```
+          '@_MemberName': CoreWCF.Channels.IBindingRuntimePreferences.ReceiveSynchronously
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public System.Text.Encoding TextEncoding { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance class System.Text.Encoding TextEncoding
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.TextEncoding
+            - '@_Language': VB.NET
+              '@_Value': Public Property TextEncoding As Encoding
+            - '@_Language': F#
+              '@_Value': 'member this.TextEncoding : System.Text.Encoding with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.TextEncoding
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property System::Text::Encoding ^ TextEncoding {
+                System::Text::Encoding ^ get(); void set(System::Text::Encoding
+                ^ value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Text.Encoding
+          Docs:
+            summary: >-
+              Gets or sets the character encoding that is used for the message
+              text.
+            value:
+              see:
+                - '@_cref': T:System.Text.Encoding
+                - '@_cref': T:System.Text.UTF8Encoding
+              '#text': >-
+                Thethat indicates the character encoding that is used. The
+                default is.
+            remarks:
+              format:
+                '#text': |2
+                    
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets TextEncoding to
+              <xref:System.Text.Encoding.Unicode?displayProperty=nameWithType>.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              binding.TextEncoding = System.Text.Encoding.Unicode;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+
+              ```xml
+
+              <configuration>
+                <system.serviceModel>
+
+                  <bindings>
+                    <basicHttpBinding>
+                      <binding name="Binding1"
+                        textEncoding = "UnicodeFffeTextEncoding">
+
+                        <security mode="None" />
+                      </binding>
+                    </basicHttpBinding>
+                  </bindings>
+                </system.serviceModel>
+
+              </configuration>
+
+              ```
+          '@_MemberName': TextEncoding
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public CoreWCF.TransferMode TransferMode { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance valuetype CoreWCF.TransferMode TransferMode
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.TransferMode
+            - '@_Language': VB.NET
+              '@_Value': Public Property TransferMode As TransferMode
+            - '@_Language': F#
+              '@_Value': 'member this.TransferMode : CoreWCF.TransferMode with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.TransferMode
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property System::ServiceModel::TransferMode
+                TransferMode { System::ServiceModel::TransferMode get(); void
+                set(System::ServiceModel::TransferMode value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: CoreWCF.TransferMode
+          Docs:
+            summary: >-
+              Gets or sets a value that indicates whether messages are sent
+              buffered or streamed.
+            value:
+              see:
+                '@_cref': T:CoreWCF.TransferMode
+              '#text': >-
+                Thethat indicates whether messages are sent buffered or
+                streamed.
+            remarks:
+              format:
+                '#text': |2
+                    
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              The following example sets TransferMode to
+              <xref:CoreWCF.TransferMode.Streamed>.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              binding.TransferMode = TransferMode.Streamed;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+          '@_MemberName': TransferMode
+        - MemberSignature:
+            - '@_Language': C#
+              '@_Value': public bool UseDefaultWebProxy { get; set; }
+            - '@_Language': ILAsm
+              '@_Value': .property instance bool UseDefaultWebProxy
+            - '@_Language': DocId
+              '@_Value': P:CoreWCF.BasicHttpBinding.UseDefaultWebProxy
+            - '@_Language': VB.NET
+              '@_Value': Public Property UseDefaultWebProxy As Boolean
+            - '@_Language': F#
+              '@_Value': 'member this.UseDefaultWebProxy : bool with get, set'
+              '@_Usage': CoreWCF.BasicHttpBinding.UseDefaultWebProxy
+            - '@_Language': C++ CLI
+              '@_Value': >-
+                public:&#xA; property bool UseDefaultWebProxy { bool get(); void
+                set(bool value); };
+          MemberType: Property
+          AssemblyInfo:
+            AssemblyName: CoreWCF.Http
+            AssemblyVersion: 1
+          Attributes: ''
+          ReturnValue:
+            ReturnType: System.Boolean
+          Docs:
+            summary: >-
+              Gets or sets a value that indicates whether the auto-configured
+              HTTP proxy of the system should be used, if available.
+            value:
+              see:
+                - '@_langword': 'true'
+                - '@_langword': 'false'
+                - '@_langword': 'true'
+              '#text': >-
+                if the auto-configured HTTP proxy of the system should be used,
+                if available; otherwise,. The default value is.
+            remarks:
+              format:
+                '#text': >2
+                    
+                  ## Remarks
+
+                  It is an error for this to be `true` and
+                  <xref:CoreWCF.BasicHttpBinding.ProxyAddress> to be non-null.
+                '@_type': text/markdown
+            ExampleRemoved: >2
+                
+              ## Examples
+
+              This example sets the value of UseDefaultWebProxy to `false`.
+
+              ```csharp
+
+              BasicHttpBinding binding = new BasicHttpBinding();
+
+              binding.UseDefaultWebProxy = false;
+
+              ```
+
+              The value of this property can also be set in the configuration
+              file.
+          '@_MemberName': UseDefaultWebProxy
+  '@_Name': BasicHttpBinding
+  '@_FullName': CoreWCF.BasicHttpBinding

@@ -1,0 +1,208 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IEndpointBehavior
+  commentId: T:CoreWCF.Description.IEndpointBehavior
+  id: IEndpointBehavior
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  - CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  - CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  langs:
+  - csharp
+  - vb
+  name: IEndpointBehavior
+  nameWithType: IEndpointBehavior
+  fullName: CoreWCF.Description.IEndpointBehavior
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Implements methods that can be used to extend run-time behavior for an endpoint in either a service or client application.
+  remarks: "Implement the &lt;xref:CoreWCF.Description.IEndpointBehavior> interface to modify, examine, or extend some aspect of endpoint-wide execution at the application level for either client or service applications.  \n\n-   Use the &lt;xref:CoreWCF.Description.IEndpointBehavior.AddBindingParameters%2A> method to pass custom data at runtime to enable bindings to support custom behavior.  \n\n-   Use the &lt;xref:CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior%2A> method to modify, examine, or insert extensions to an endpoint in a client application.  \n\n-   Use the &lt;xref:CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior%2A> method to modify, examine, or insert extensions to endpoint-wide execution in a service application.  \n\n-   Use the &lt;xref:CoreWCF.Description.IEndpointBehavior.Validate%2A> method to confirm that a &lt;xref:CoreWCF.Description.ServiceEndpoint> meets specific requirements. This can be used to ensure that an endpoint has a certain configuration setting enabled, supports a particular feature and other requirements.  \n\n&lt;xref:CoreWCF.Description.IEndpointBehavior> objects can make use of any of these methods, but often only one is important; in such cases, the unused methods can return, performing no action.  \n\n> [!NOTE]\n>  All of the &lt;xref:CoreWCF.Description.IEndpointBehavior> methods pass a &lt;xref:CoreWCF.Description.ServiceEndpoint> object as a parameter. This parameter is for examination only; if you modify the &lt;xref:CoreWCF.Description.ServiceEndpoint> object the execution behavior is undefined.  \n\n&lt;xref:CoreWCF.Description.IEndpointBehavior> objects are typically used to access the various properties of the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime?displayProperty=nameWithType>, &lt;xref:CoreWCF.Dispatcher.DispatchOperation?displayProperty=nameWithType>, &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher?displayProperty=nameWithType>, and &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher?displayProperty=nameWithType> objects in a service application and the &lt;xref:CoreWCF.Dispatcher.ClientRuntime?displayProperty=nameWithType> and &lt;xref:CoreWCF.Dispatcher.ClientOperation?displayProperty=nameWithType> in a client application. In addition, you can access the properties of duplex clients and services using the &lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A?displayProperty=nameWithType> and &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.CallbackClientRuntime%2A?displayProperty=nameWithType> properties, respectively.  \n\nFor a description of the various properties and customizations available, see [Extending ServiceHost and the Service Model Layer](/dotnet/framework/wcf/extending/extending-servicehost-and-the-service-model-layer).  \n\nOnce a customization has been decided upon (and the customization interface implemented if necessary) and the &lt;xref:CoreWCF.Description.IEndpointBehavior> has been decided is the appropriate scope of customization, the customization must be inserted into the Windows Communication Foundation (WCF) runtime by implementing &lt;xref:CoreWCF.Description.IEndpointBehavior> and adding the endpoint behavior to the runtime.  \n\nThere are two ways to add the behavior to the runtime:  \n\n-   Programmatically add the custom endpoint behavior to the &lt;xref:CoreWCF.Description.ServiceEndpoint.Behaviors%2A> property prior to the opening of the service host (in a service application) or the channel factory (in a client application).  \n\n-   Configure the behavior using an application configuration file. For details, see [&amp;lt;behaviorExtensions&amp;gt;](/dotnet/framework/configure-apps/file-schema/wcf/behaviorextensions).  \n\nTo perform the service customization task for which it is intended, the &lt;xref:CoreWCF.Description.IEndpointBehavior> object must be added to the &lt;xref:CoreWCF.Description.ServiceEndpoint.Behaviors%2A?displayProperty=nameWithType> property prior to the construction of the service runtime, which occurs when &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method is called on &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType>. To perform a client customization task, the &lt;xref:CoreWCF.Description.IEndpointBehavior> object must be added to the &lt;xref:CoreWCF.Description.ServiceEndpoint.Behaviors%2A?displayProperty=nameWithType> property before calling the &lt;xref:CoreWCF.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> method or the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method on &lt;xref:CoreWCF.ChannelFactory%601>.  \n\n\n\n"
+  syntax:
+    content: public interface IEndpointBehavior
+    content.vb: Public Interface IEndpointBehavior
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  id: AddBindingParameters(CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IEndpointBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddBindingParameters(ServiceEndpoint, BindingParameterCollection)
+  nameWithType: IEndpointBehavior.AddBindingParameters(ServiceEndpoint, BindingParameterCollection)
+  fullName: CoreWCF.Description.IEndpointBehavior.AddBindingParameters(CoreWCF.Description.ServiceEndpoint, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void AddBindingParameters(ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Sub AddBindingParameters(endpoint As ServiceEndpoint, bindingParameters As BindingParameterCollection)
+  overload: CoreWCF.Description.IEndpointBehavior.AddBindingParameters*
+- uid: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  id: ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  parent: CoreWCF.Description.IEndpointBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyClientBehavior(ServiceEndpoint, ClientRuntime)
+  nameWithType: IEndpointBehavior.ApplyClientBehavior(ServiceEndpoint, ClientRuntime)
+  fullName: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.ClientRuntime)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyClientBehavior(ServiceEndpoint endpoint, ClientRuntime clientRuntime)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: clientRuntime
+      type: CoreWCF.Dispatcher.ClientRuntime
+    content.vb: Sub ApplyClientBehavior(endpoint As ServiceEndpoint, clientRuntime As ClientRuntime)
+  overload: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior*
+- uid: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  id: ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.EndpointDispatcher)
+  parent: CoreWCF.Description.IEndpointBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyDispatchBehavior(ServiceEndpoint, EndpointDispatcher)
+  nameWithType: IEndpointBehavior.ApplyDispatchBehavior(ServiceEndpoint, EndpointDispatcher)
+  fullName: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior(CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.EndpointDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyDispatchBehavior(ServiceEndpoint endpoint, EndpointDispatcher endpointDispatcher)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: endpointDispatcher
+      type: CoreWCF.Dispatcher.EndpointDispatcher
+    content.vb: Sub ApplyDispatchBehavior(endpoint As ServiceEndpoint, endpointDispatcher As EndpointDispatcher)
+  overload: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior*
+- uid: CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  id: Validate(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.IEndpointBehavior
+  langs:
+  - csharp
+  - vb
+  name: Validate(ServiceEndpoint)
+  nameWithType: IEndpointBehavior.Validate(ServiceEndpoint)
+  fullName: CoreWCF.Description.IEndpointBehavior.Validate(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void Validate(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Sub Validate(endpoint As ServiceEndpoint)
+  overload: CoreWCF.Description.IEndpointBehavior.Validate*
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IEndpointBehavior.AddBindingParameters*
+  commentId: Overload:CoreWCF.Description.IEndpointBehavior.AddBindingParameters
+  isExternal: true
+  name: AddBindingParameters
+  nameWithType: IEndpointBehavior.AddBindingParameters
+  fullName: CoreWCF.Description.IEndpointBehavior.AddBindingParameters
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior*
+  commentId: Overload:CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior
+  isExternal: true
+  name: ApplyClientBehavior
+  nameWithType: IEndpointBehavior.ApplyClientBehavior
+  fullName: CoreWCF.Description.IEndpointBehavior.ApplyClientBehavior
+- uid: CoreWCF.Dispatcher.ClientRuntime
+  commentId: T:CoreWCF.Dispatcher.ClientRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientRuntime
+  nameWithType: ClientRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior
+  nameWithType: IEndpointBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.Description.IEndpointBehavior.ApplyDispatchBehavior
+- uid: CoreWCF.Dispatcher.EndpointDispatcher
+  commentId: T:CoreWCF.Dispatcher.EndpointDispatcher
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher
+- uid: CoreWCF.Description.IEndpointBehavior.Validate*
+  commentId: Overload:CoreWCF.Description.IEndpointBehavior.Validate
+  isExternal: true
+  name: Validate
+  nameWithType: IEndpointBehavior.Validate
+  fullName: CoreWCF.Description.IEndpointBehavior.Validate

@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.IMessageProperty
+  commentId: T:CoreWCF.Channels.IMessageProperty
+  id: IMessageProperty
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.IMessageProperty.CreateCopy
+  langs:
+  - csharp
+  - vb
+  name: IMessageProperty
+  nameWithType: IMessageProperty
+  fullName: CoreWCF.Channels.IMessageProperty
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Defines an interface that you can implement to describe a set of properties for a message.
+  remarks: "You can implement this interface to create a message property, and attach it to the message during runtime.  \n\nIf an object that implements this interface is added to <xref:CoreWCF.Channels.Message.Properties>, it is added by value instead of by reference. After this, users of this message instance&apos;s message properties can copy this object to other messages by cloning, instead of sharing a single object across all messages.  \n\n"
+  syntax:
+    content: public interface IMessageProperty
+    content.vb: Public Interface IMessageProperty
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+  commentId: M:CoreWCF.Channels.IMessageProperty.CreateCopy
+  id: CreateCopy
+  parent: CoreWCF.Channels.IMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: CreateCopy()
+  nameWithType: IMessageProperty.CreateCopy()
+  fullName: CoreWCF.Channels.IMessageProperty.CreateCopy()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a copy of the current instance.
+  syntax:
+    content: IMessageProperty CreateCopy()
+    return:
+      type: CoreWCF.Channels.IMessageProperty
+      description: "A <xref:CoreWCF.Channels.IMessageProperty> object that is a copy of the current instance."
+    content.vb: Function CreateCopy As IMessageProperty
+  overload: CoreWCF.Channels.IMessageProperty.CreateCopy*
+  remarks: "This method is called whenever an implementor of this interface is created. This happens when an object that implements this interface is added to <xref:CoreWCF.Channels.Message.Properties> as a custom property."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Channels.IMessageProperty.CreateCopy*
+  commentId: Overload:CoreWCF.Channels.IMessageProperty.CreateCopy
+  isExternal: true
+  name: CreateCopy
+  nameWithType: IMessageProperty.CreateCopy
+  fullName: CoreWCF.Channels.IMessageProperty.CreateCopy
+- uid: CoreWCF.Channels.IMessageProperty
+  commentId: T:CoreWCF.Channels.IMessageProperty
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: IMessageProperty
+  nameWithType: IMessageProperty
+  fullName: CoreWCF.Channels.IMessageProperty

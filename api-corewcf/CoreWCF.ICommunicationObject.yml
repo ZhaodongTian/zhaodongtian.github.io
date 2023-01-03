@@ -1,0 +1,352 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ICommunicationObject
+  commentId: T:CoreWCF.ICommunicationObject
+  id: ICommunicationObject
+  parent: CoreWCF
+  children:
+  - CoreWCF.ICommunicationObject.Abort
+  - CoreWCF.ICommunicationObject.CloseAsync
+  - CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.ICommunicationObject.Closed
+  - CoreWCF.ICommunicationObject.Closing
+  - CoreWCF.ICommunicationObject.Faulted
+  - CoreWCF.ICommunicationObject.OpenAsync
+  - CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  - CoreWCF.ICommunicationObject.Opened
+  - CoreWCF.ICommunicationObject.Opening
+  - CoreWCF.ICommunicationObject.State
+  langs:
+  - csharp
+  - vb
+  name: ICommunicationObject
+  nameWithType: ICommunicationObject
+  fullName: CoreWCF.ICommunicationObject
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Defines the contract for the basic state machine for all communication-oriented objects in the system, including channels, the channel managers, factories, listeners, and dispatchers, and service hosts.
+  remarks: "The &lt;xref:CoreWCF.ICommunicationObject> interface defines:  \n\n-   A set of open, close and abort methods for initiating state transitions:  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Open%2A>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Close%2A>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Abort%2A>  \n\n-   Asynchronous versions of the open and close methods:  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.BeginOpen%2A>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.EndOpen%28System.IAsyncResult%29>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.BeginClose%2A>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.EndClose%2A>  \n\n-   A set of events that provide notifications of state transitions:  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Opening>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Opened>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Closing>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Closed>  \n\n-   &lt;xref:CoreWCF.ICommunicationObject.Faulted>  \n\n-   A common &lt;xref:CoreWCF.ICommunicationObject.State%2A> property for inspecting the state of an object  \n\n"
+  syntax:
+    content: public interface ICommunicationObject
+    content.vb: Public Interface ICommunicationObject
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.ICommunicationObject.Abort
+  commentId: M:CoreWCF.ICommunicationObject.Abort
+  id: Abort
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Abort()
+  nameWithType: ICommunicationObject.Abort()
+  fullName: CoreWCF.ICommunicationObject.Abort()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: void Abort()
+    content.vb: Sub Abort
+  overload: CoreWCF.ICommunicationObject.Abort*
+- uid: CoreWCF.ICommunicationObject.CloseAsync
+  commentId: M:CoreWCF.ICommunicationObject.CloseAsync
+  id: CloseAsync
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: CloseAsync()
+  nameWithType: ICommunicationObject.CloseAsync()
+  fullName: CoreWCF.ICommunicationObject.CloseAsync()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: Task CloseAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CloseAsync As Task
+  overload: CoreWCF.ICommunicationObject.CloseAsync*
+- uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  id: CloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: CloseAsync(CancellationToken)
+  nameWithType: ICommunicationObject.CloseAsync(CancellationToken)
+  fullName: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: Task CloseAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CloseAsync(token As CancellationToken) As Task
+  overload: CoreWCF.ICommunicationObject.CloseAsync*
+- uid: CoreWCF.ICommunicationObject.OpenAsync
+  commentId: M:CoreWCF.ICommunicationObject.OpenAsync
+  id: OpenAsync
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OpenAsync()
+  nameWithType: ICommunicationObject.OpenAsync()
+  fullName: CoreWCF.ICommunicationObject.OpenAsync()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: Task OpenAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function OpenAsync As Task
+  overload: CoreWCF.ICommunicationObject.OpenAsync*
+- uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  id: OpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: OpenAsync(CancellationToken)
+  nameWithType: ICommunicationObject.OpenAsync(CancellationToken)
+  fullName: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: Task OpenAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function OpenAsync(token As CancellationToken) As Task
+  overload: CoreWCF.ICommunicationObject.OpenAsync*
+- uid: CoreWCF.ICommunicationObject.State
+  commentId: P:CoreWCF.ICommunicationObject.State
+  id: State
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: ICommunicationObject.State
+  fullName: CoreWCF.ICommunicationObject.State
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: CommunicationState State { get; }
+    parameters: []
+    return:
+      type: CoreWCF.CommunicationState
+    content.vb: ReadOnly Property State As CommunicationState
+  overload: CoreWCF.ICommunicationObject.State*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+- uid: CoreWCF.ICommunicationObject.Closed
+  commentId: E:CoreWCF.ICommunicationObject.Closed
+  id: Closed
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Closed
+  nameWithType: ICommunicationObject.Closed
+  fullName: CoreWCF.ICommunicationObject.Closed
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: event EventHandler Closed
+    return:
+      type: System.EventHandler
+    content.vb: Event Closed As EventHandler
+- uid: CoreWCF.ICommunicationObject.Closing
+  commentId: E:CoreWCF.ICommunicationObject.Closing
+  id: Closing
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Closing
+  nameWithType: ICommunicationObject.Closing
+  fullName: CoreWCF.ICommunicationObject.Closing
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: event EventHandler Closing
+    return:
+      type: System.EventHandler
+    content.vb: Event Closing As EventHandler
+- uid: CoreWCF.ICommunicationObject.Faulted
+  commentId: E:CoreWCF.ICommunicationObject.Faulted
+  id: Faulted
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Faulted
+  nameWithType: ICommunicationObject.Faulted
+  fullName: CoreWCF.ICommunicationObject.Faulted
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: event EventHandler Faulted
+    return:
+      type: System.EventHandler
+    content.vb: Event Faulted As EventHandler
+- uid: CoreWCF.ICommunicationObject.Opened
+  commentId: E:CoreWCF.ICommunicationObject.Opened
+  id: Opened
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Opened
+  nameWithType: ICommunicationObject.Opened
+  fullName: CoreWCF.ICommunicationObject.Opened
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: event EventHandler Opened
+    return:
+      type: System.EventHandler
+    content.vb: Event Opened As EventHandler
+- uid: CoreWCF.ICommunicationObject.Opening
+  commentId: E:CoreWCF.ICommunicationObject.Opening
+  id: Opening
+  parent: CoreWCF.ICommunicationObject
+  langs:
+  - csharp
+  - vb
+  name: Opening
+  nameWithType: ICommunicationObject.Opening
+  fullName: CoreWCF.ICommunicationObject.Opening
+  type: Event
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: event EventHandler Opening
+    return:
+      type: System.EventHandler
+    content.vb: Event Opening As EventHandler
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.ICommunicationObject.Abort*
+  commentId: Overload:CoreWCF.ICommunicationObject.Abort
+  isExternal: true
+  name: Abort
+  nameWithType: ICommunicationObject.Abort
+  fullName: CoreWCF.ICommunicationObject.Abort
+- uid: CoreWCF.ICommunicationObject.CloseAsync*
+  commentId: Overload:CoreWCF.ICommunicationObject.CloseAsync
+  isExternal: true
+  name: CloseAsync
+  nameWithType: ICommunicationObject.CloseAsync
+  fullName: CoreWCF.ICommunicationObject.CloseAsync
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: CoreWCF.ICommunicationObject.OpenAsync*
+  commentId: Overload:CoreWCF.ICommunicationObject.OpenAsync
+  isExternal: true
+  name: OpenAsync
+  nameWithType: ICommunicationObject.OpenAsync
+  fullName: CoreWCF.ICommunicationObject.OpenAsync
+- uid: CoreWCF.ICommunicationObject.State*
+  commentId: Overload:CoreWCF.ICommunicationObject.State
+  isExternal: true
+  name: State
+  nameWithType: ICommunicationObject.State
+  fullName: CoreWCF.ICommunicationObject.State
+- uid: CoreWCF.CommunicationState
+  commentId: T:CoreWCF.CommunicationState
+  parent: CoreWCF
+  isExternal: true
+  name: CommunicationState
+  nameWithType: CommunicationState
+  fullName: CoreWCF.CommunicationState
+- uid: System.EventHandler
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler

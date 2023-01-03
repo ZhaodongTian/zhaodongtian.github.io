@@ -1,0 +1,304 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider
+  commentId: T:CoreWCF.Dispatcher.IInstanceContextProvider
+  id: IInstanceContextProvider
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext(CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  - CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext(CoreWCF.InstanceContext,CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  - CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle(CoreWCF.InstanceContext)
+  - CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle(System.Action{CoreWCF.InstanceContext},CoreWCF.InstanceContext)
+  langs:
+  - csharp
+  - vb
+  name: IInstanceContextProvider
+  nameWithType: IInstanceContextProvider
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Implement to participate in the creation or choosing of a  object, especially to enable shared sessions.
+  remarks: "Implement the &lt;xref:CoreWCF.Dispatcher.IInstanceContextProvider> interface to provide the appropriate &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType> object to the system. Typically, this interface is implemented to support shared sessions, enable service instance pooling, control lifetimes of service instances, or to group contexts among clients.  \n\nFor example, to implement sharing, insert a custom &lt;xref:CoreWCF.Dispatcher.IInstanceContextProvider> to decide which session or call from a client is associated with which &lt;xref:CoreWCF.InstanceContext> object. For an example that demonstrates the sharing of instance contexts, see [InstanceContextSharing](https://msdn.microsoft.com/library/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230).  \n\n> [!NOTE]\n>  When an &lt;xref:CoreWCF.Dispatcher.IInstanceContextProvider> is inserted into Windows Communication Foundation (WCF), the normal property that controls the creation of &lt;xref:CoreWCF.InstanceContext> objects (the &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> property) is no longer checked and has no effect.  \n\nA more generic mechanism by which you can initialize &lt;xref:CoreWCF.InstanceContext> objects when created (for example, to attach custom extensions to each &lt;xref:CoreWCF.InstanceContext>) is the &lt;xref:CoreWCF.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType>.  \n\n"
+  syntax:
+    content: public interface IInstanceContextProvider
+    content.vb: Public Interface IInstanceContextProvider
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext(CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  commentId: M:CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext(CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  id: GetExistingInstanceContext(CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  parent: CoreWCF.Dispatcher.IInstanceContextProvider
+  langs:
+  - csharp
+  - vb
+  name: GetExistingInstanceContext(Message, IContextChannel)
+  nameWithType: IInstanceContextProvider.GetExistingInstanceContext(Message, IContextChannel)
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext(CoreWCF.Channels.Message, CoreWCF.IContextChannel)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: InstanceContext GetExistingInstanceContext(Message message, IContextChannel channel)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: channel
+      type: CoreWCF.IContextChannel
+    return:
+      type: CoreWCF.InstanceContext
+    content.vb: Function GetExistingInstanceContext(message As Message, channel As IContextChannel) As InstanceContext
+  overload: CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext*
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext(CoreWCF.InstanceContext,CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  commentId: M:CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext(CoreWCF.InstanceContext,CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  id: InitializeInstanceContext(CoreWCF.InstanceContext,CoreWCF.Channels.Message,CoreWCF.IContextChannel)
+  parent: CoreWCF.Dispatcher.IInstanceContextProvider
+  langs:
+  - csharp
+  - vb
+  name: InitializeInstanceContext(InstanceContext, Message, IContextChannel)
+  nameWithType: IInstanceContextProvider.InitializeInstanceContext(InstanceContext, Message, IContextChannel)
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext(CoreWCF.InstanceContext, CoreWCF.Channels.Message, CoreWCF.IContextChannel)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: void InitializeInstanceContext(InstanceContext instanceContext, Message message, IContextChannel channel)
+    parameters:
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: channel
+      type: CoreWCF.IContextChannel
+    content.vb: Sub InitializeInstanceContext(instanceContext As InstanceContext, message As Message, channel As IContextChannel)
+  overload: CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext*
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle(CoreWCF.InstanceContext)
+  commentId: M:CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle(CoreWCF.InstanceContext)
+  id: IsIdle(CoreWCF.InstanceContext)
+  parent: CoreWCF.Dispatcher.IInstanceContextProvider
+  langs:
+  - csharp
+  - vb
+  name: IsIdle(InstanceContext)
+  nameWithType: IInstanceContextProvider.IsIdle(InstanceContext)
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle(CoreWCF.InstanceContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: bool IsIdle(InstanceContext instanceContext)
+    parameters:
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    return:
+      type: System.Boolean
+    content.vb: Function IsIdle(instanceContext As InstanceContext) As Boolean
+  overload: CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle*
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle(System.Action{CoreWCF.InstanceContext},CoreWCF.InstanceContext)
+  commentId: M:CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle(System.Action{CoreWCF.InstanceContext},CoreWCF.InstanceContext)
+  id: NotifyIdle(System.Action{CoreWCF.InstanceContext},CoreWCF.InstanceContext)
+  parent: CoreWCF.Dispatcher.IInstanceContextProvider
+  langs:
+  - csharp
+  - vb
+  name: NotifyIdle(Action<InstanceContext>, InstanceContext)
+  nameWithType: IInstanceContextProvider.NotifyIdle(Action<InstanceContext>, InstanceContext)
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle(System.Action<CoreWCF.InstanceContext>, CoreWCF.InstanceContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: void NotifyIdle(Action<InstanceContext> callback, InstanceContext instanceContext)
+    parameters:
+    - id: callback
+      type: System.Action{CoreWCF.InstanceContext}
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    content.vb: Sub NotifyIdle(callback As Action(Of InstanceContext), instanceContext As InstanceContext)
+  overload: CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle*
+  nameWithType.vb: IInstanceContextProvider.NotifyIdle(Action(Of InstanceContext), InstanceContext)
+  fullName.vb: CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle(System.Action(Of CoreWCF.InstanceContext), CoreWCF.InstanceContext)
+  name.vb: NotifyIdle(Action(Of InstanceContext), InstanceContext)
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext*
+  commentId: Overload:CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext
+  isExternal: true
+  name: GetExistingInstanceContext
+  nameWithType: IInstanceContextProvider.GetExistingInstanceContext
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.IContextChannel
+  commentId: T:CoreWCF.IContextChannel
+  parent: CoreWCF
+  isExternal: true
+  name: IContextChannel
+  nameWithType: IContextChannel
+  fullName: CoreWCF.IContextChannel
+- uid: CoreWCF.InstanceContext
+  commentId: T:CoreWCF.InstanceContext
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContext
+  nameWithType: InstanceContext
+  fullName: CoreWCF.InstanceContext
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext*
+  commentId: Overload:CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext
+  isExternal: true
+  name: InitializeInstanceContext
+  nameWithType: IInstanceContextProvider.InitializeInstanceContext
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.InitializeInstanceContext
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle*
+  commentId: Overload:CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle
+  isExternal: true
+  name: IsIdle
+  nameWithType: IInstanceContextProvider.IsIdle
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.IsIdle
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle*
+  commentId: Overload:CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle
+  isExternal: true
+  name: NotifyIdle
+  nameWithType: IInstanceContextProvider.NotifyIdle
+  fullName: CoreWCF.Dispatcher.IInstanceContextProvider.NotifyIdle
+- uid: System.Action{CoreWCF.InstanceContext}
+  commentId: '!:System.Action{CoreWCF.InstanceContext}'
+  definition: System.Action`1
+  name: Action<InstanceContext>
+  nameWithType: Action<InstanceContext>
+  fullName: System.Action<CoreWCF.InstanceContext>
+  nameWithType.vb: Action(Of InstanceContext)
+  fullName.vb: System.Action(Of CoreWCF.InstanceContext)
+  name.vb: Action(Of InstanceContext)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.InstanceContext
+    name: InstanceContext
+    nameWithType: InstanceContext
+    fullName: CoreWCF.InstanceContext
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.InstanceContext
+    name: InstanceContext
+    nameWithType: InstanceContext
+    fullName: CoreWCF.InstanceContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Action`1
+  isExternal: true
+  name: Action<>
+  nameWithType: Action<>
+  fullName: System.Action<>
+  nameWithType.vb: Action(Of )
+  fullName.vb: System.Action(Of )
+  name.vb: Action(Of )
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    nameWithType: Action
+    fullName: System.Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

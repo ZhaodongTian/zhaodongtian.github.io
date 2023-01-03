@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.WebContentTypeMapper
+  commentId: T:CoreWCF.Channels.WebContentTypeMapper
+  id: WebContentTypeMapper
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.WebContentTypeMapper.#ctor
+  - CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType(System.String)
+  langs:
+  - csharp
+  - vb
+  name: WebContentTypeMapper
+  nameWithType: WebContentTypeMapper
+  fullName: CoreWCF.Channels.WebContentTypeMapper
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  summary: Specifies the format to which the content type of an incoming message is mapped.
+  remarks: "This is an extensibility point in the programming model that is used by the Web message encoder to override how content types are mapped to formats. To implement this class, override the <xref:CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType%28System.String%29> method.  \n\n"
+  syntax:
+    content: 'public abstract class WebContentTypeMapper : Object'
+    content.vb: >-
+      Public MustInherit Class WebContentTypeMapper
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType(System.String)
+  commentId: M:CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType(System.String)
+  id: GetMessageFormatForContentType(System.String)
+  parent: CoreWCF.Channels.WebContentTypeMapper
+  langs:
+  - csharp
+  - vb
+  name: GetMessageFormatForContentType(String)
+  nameWithType: WebContentTypeMapper.GetMessageFormatForContentType(String)
+  fullName: CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType(System.String)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, returns the message format used for a specified content type.
+  syntax:
+    content: public abstract WebContentFormat GetMessageFormatForContentType(string contentType)
+    parameters:
+    - id: contentType
+      type: System.String
+      description: "The content type that indicates the MIME type of data to be interpreted."
+    return:
+      type: CoreWCF.Channels.WebContentFormat
+      description: "The <xref:CoreWCF.Channels.WebContentFormat> that specifies the format to which the message content type is mapped."
+    content.vb: Public MustOverride Function GetMessageFormatForContentType(contentType As String) As WebContentFormat
+  overload: CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: "\nThis is intended to be an extensibility mechanism that can be used to override how content types are mapped to Web content formats. For example, if all incoming messages are processed as \"raw binary data\" without ever doing XML or JSON parsing, you could implement a <xref:CoreWCF.Channels.WebContentTypeMapper> that always returned <xref:CoreWCF.Channels.WebContentFormat.Raw> regardless of the content type that was passed in.\n"
+- uid: CoreWCF.Channels.WebContentTypeMapper.#ctor
+  commentId: M:CoreWCF.Channels.WebContentTypeMapper.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.WebContentTypeMapper
+  langs:
+  - csharp
+  - vb
+  name: WebContentTypeMapper()
+  nameWithType: WebContentTypeMapper.WebContentTypeMapper()
+  fullName: CoreWCF.Channels.WebContentTypeMapper.WebContentTypeMapper()
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.WebContentTypeMapper> class."
+  syntax:
+    content: protected WebContentTypeMapper()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.WebContentTypeMapper.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType*
+  commentId: Overload:CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType
+  isExternal: true
+  name: GetMessageFormatForContentType
+  nameWithType: WebContentTypeMapper.GetMessageFormatForContentType
+  fullName: CoreWCF.Channels.WebContentTypeMapper.GetMessageFormatForContentType
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.WebContentFormat
+  commentId: T:CoreWCF.Channels.WebContentFormat
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: WebContentFormat
+  nameWithType: WebContentFormat
+  fullName: CoreWCF.Channels.WebContentFormat
+- uid: CoreWCF.Channels.WebContentTypeMapper.#ctor*
+  commentId: Overload:CoreWCF.Channels.WebContentTypeMapper.#ctor
+  isExternal: true
+  name: WebContentTypeMapper
+  nameWithType: WebContentTypeMapper.WebContentTypeMapper
+  fullName: CoreWCF.Channels.WebContentTypeMapper.WebContentTypeMapper

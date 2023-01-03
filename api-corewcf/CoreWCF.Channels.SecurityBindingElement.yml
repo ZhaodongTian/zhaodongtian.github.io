@@ -1,0 +1,1811 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.SecurityBindingElement
+  commentId: T:CoreWCF.Channels.SecurityBindingElement
+  id: SecurityBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport
+  - CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement
+  - CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement(CoreWCF.MessageSecurityVersion)
+  - CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  - CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters,System.Boolean)
+  - CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  - CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement)
+  - CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean)
+  - CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean,CoreWCF.Security.ChannelProtectionRequirements)
+  - CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(System.Boolean)
+  - CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement
+  - CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite
+  - CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse
+  - CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters
+  - CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  - CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement(CoreWCF.Channels.TransportSecurityBindingElement,CoreWCF.Channels.ITransportTokenAssertionProvider,CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  - CoreWCF.Channels.SecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp
+  - CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode
+  - CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings
+  - CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion
+  - CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters
+  - CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  - CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  - CoreWCF.Channels.SecurityBindingElement.ProtectTokens
+  - CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout
+  - CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired(CoreWCF.Security.Tokens.SecurityTokenParameters,CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation(System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: SecurityBindingElement
+  nameWithType: SecurityBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: An abstract class that, when implemented, represents a binding element that supports channel SOAP message security.
+  remarks: "This class is the base class for the SOAP message security binding elements in WCF. There are three implementations of this abstract class: <xref:CoreWCF.Channels.SymmetricSecurityBindingElement>, [AsymmetricSecurityBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0), and <xref:CoreWCF.Channels.TransportSecurityBindingElement>. These implementations model the bindings defined in the WS-Security Policy specification.  \n\nA custom binding contains a collection of binding elements arranged in a specific order: the element that represents the top of the binding stack is added first, the next element down in the binding stack is added second, and so on.  \n\nTo add this class to a binding, do the following:  \n\n1.  Create a <xref:CoreWCF.Channels.BindingElementCollection>.  \n\n2.  Create a custom binding element that is above this binding element in the binding stack, such as the optional [TransactionFlowBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.transactionflowbindingelement?view=netframework-4.8.1) and [ReliableSessionBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.reliablesessionbindingelement?view=netframework-4.8.1).  \n\n3.  Add these elements in the order previously described to the <xref:CoreWCF.Channels.BindingElementCollection> using the <xref:CoreWCF.Channels.BindingElementCollection.InsertItem%2A> method.  \n\n4.  Create an instance of a security binding element derived from <xref:CoreWCF.Channels.SecurityBindingElement>, such as [AsymmetricSecurityBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0), <xref:CoreWCF.Channels.SymmetricSecurityBindingElement>, or <xref:CoreWCF.Channels.TransportSecurityBindingElement>.  \n\n5.  Add the derived security binding element to the collection.  \n\n6.  Add any additional custom binding elements to the collection, such as <xref:CoreWCF.Channels.TcpTransportBindingElement>.  \n\nFor more information about using a <xref:CoreWCF.Channels.SecurityBindingElement>, see [SecurityBindingElement Authentication Modes](/dotnet/framework/wcf/feature-details/securitybindingelement-authentication-modes) and [How to: Create a Custom Binding Using the SecurityBindingElement](/dotnet/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement).  \n\n> [!NOTE]\n>  Once a <xref:CoreWCF.Channels.SecurityBindingElement> object is created, you should treat its properties as immutable. Calling `set` on some properties may have unpredictable effects: the binding may behave as if the property retained its old value, with a runtime failure being the only indication of an issue. Two properties known to behave this way are <xref:CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.KeyType%2A> and <xref:CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion%2A>. There may be other properties of which this is also true.  \n\n"
+  syntax:
+    content: 'public abstract class SecurityBindingElement : BindingElement'
+    content.vb: >-
+      Public MustInherit Class SecurityBindingElement
+          Inherits BindingElement
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  derivedClasses:
+  - CoreWCF.Channels.SymmetricSecurityBindingElement
+  - CoreWCF.Channels.TransportSecurityBindingElement
+  inheritedMembers:
+  - CoreWCF.Channels.BindingElement.Clone
+  - CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  id: CreateIssuedTokenOverTransportBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateIssuedTokenOverTransportBindingElement(IssuedSecurityTokenParameters)
+  nameWithType: SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(IssuedSecurityTokenParameters)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a security binding element configured to require SOAP security based client authentication using an issued token. This binding element requires the transport to provide server authentication and message protection (for example, HTTPS).
+  syntax:
+    content: public static TransportSecurityBindingElement CreateIssuedTokenOverTransportBindingElement(IssuedSecurityTokenParameters issuedTokenParameters)
+    parameters:
+    - id: issuedTokenParameters
+      type: CoreWCF.Security.Tokens.IssuedSecurityTokenParameters
+      description: "An <xref:CoreWCF.Security.Tokens.IssuedSecurityTokenParameters>."
+    return:
+      type: CoreWCF.Channels.TransportSecurityBindingElement
+      description: "A <xref:CoreWCF.Channels.TransportSecurityBindingElement> object."
+    content.vb: Public Shared Function CreateIssuedTokenOverTransportBindingElement(issuedTokenParameters As IssuedSecurityTokenParameters) As TransportSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThe created binding has <xref:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`.\n \nThe [LocalClientSecuritySettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0) object returned from [LocalClientSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0) property set to `false`.\n \nThe <xref:CoreWCF.Channels.LocalServiceSecuritySettings> object returned from [LocalServiceSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localservicesettings?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) property set to `false`.\n \n> [!NOTE]\n> Once a <xref:CoreWCF.Channels.SecurityBindingElement> object is created by calling this method, the <xref:CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.KeyType> property should be treated as immutable. Inconsistent binding behavior may occur if this value is modified."
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  id: CreateIssuedTokenForCertificateBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateIssuedTokenForCertificateBindingElement(IssuedSecurityTokenParameters)
+  nameWithType: SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(IssuedSecurityTokenParameters)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static SymmetricSecurityBindingElement CreateIssuedTokenForCertificateBindingElement(IssuedSecurityTokenParameters issuedTokenParameters)
+    parameters:
+    - id: issuedTokenParameters
+      type: CoreWCF.Security.Tokens.IssuedSecurityTokenParameters
+    return:
+      type: CoreWCF.Channels.SymmetricSecurityBindingElement
+    content.vb: Public Shared Function CreateIssuedTokenForCertificateBindingElement(issuedTokenParameters As IssuedSecurityTokenParameters) As SymmetricSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters,System.Boolean)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters,System.Boolean)
+  id: CreateIssuedTokenForSslBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters,System.Boolean)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateIssuedTokenForSslBindingElement(IssuedSecurityTokenParameters, Boolean)
+  nameWithType: SecurityBindingElement.CreateIssuedTokenForSslBindingElement(IssuedSecurityTokenParameters, Boolean)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static SymmetricSecurityBindingElement CreateIssuedTokenForSslBindingElement(IssuedSecurityTokenParameters issuedTokenParameters, bool requireCancellation)
+    parameters:
+    - id: issuedTokenParameters
+      type: CoreWCF.Security.Tokens.IssuedSecurityTokenParameters
+    - id: requireCancellation
+      type: System.Boolean
+    return:
+      type: CoreWCF.Channels.SymmetricSecurityBindingElement
+    content.vb: Public Shared Function CreateIssuedTokenForSslBindingElement(issuedTokenParameters As IssuedSecurityTokenParameters, requireCancellation As Boolean) As SymmetricSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: SecurityBindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override IServiceDispatcher BuildServiceDispatcher<TChannel>(BindingContext context, IServiceDispatcher innerDispatcher)
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    - id: innerDispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overrides Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(context As BindingContext, innerDispatcher As IServiceDispatcher) As IServiceDispatcher
+  overridden: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  overload: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher*
+  nameWithType.vb: SecurityBindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+- uid: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcherCore``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcherCore<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: SecurityBindingElement.BuildServiceDispatcherCore<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      protected abstract IServiceDispatcher BuildServiceDispatcherCore<TChannel>(BindingContext context, IServiceDispatcher serviceDispatcher)
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    - id: serviceDispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Protected MustOverride Function BuildServiceDispatcherCore(Of TChannel As {Class, IChannel})(context As BindingContext, serviceDispatcher As IServiceDispatcher) As IServiceDispatcher
+  overload: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore*
+  nameWithType.vb: SecurityBindingElement.BuildServiceDispatcherCore(Of TChannel)(BindingContext, IServiceDispatcher)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcherCore(Of TChannel)(BindingContext, IServiceDispatcher)
+- uid: CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  id: CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: SecurityBindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override bool CanBuildServiceDispatcher<TChannel>(BindingContext context)
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    typeParameters:
+    - id: TChannel
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function CanBuildServiceDispatcher(Of TChannel As {Class, IChannel})(context As BindingContext) As Boolean
+  overridden: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher*
+  nameWithType.vb: SecurityBindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+- uid: CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation(System.Boolean)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation(System.Boolean)
+  id: SetKeyDerivation(System.Boolean)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SetKeyDerivation(Boolean)
+  nameWithType: SecurityBindingElement.SetKeyDerivation(Boolean)
+  fullName: CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation(System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual void SetKeyDerivation(bool requireDerivedKeys)
+    parameters:
+    - id: requireDerivedKeys
+      type: System.Boolean
+    content.vb: Public Overridable Sub SetKeyDerivation(requireDerivedKeys As Boolean)
+  overload: CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.SecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  nameWithType: SecurityBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.SecurityBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets a specified object using the specified <xref:CoreWCF.Channels.BindingContext>."
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "The <xref:CoreWCF.Channels.BindingContext>."
+    typeParameters:
+    - id: T
+      description: The property to get.
+    return:
+      type: '{T}'
+      description: "The specified object from the <xref:CoreWCF.Channels.BindingContext> or null if the object is not found."
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.SecurityBindingElement.GetProperty*
+  nameWithType.vb: SecurityBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.SecurityBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: "\nThis method gets the specified object from the base class, or from one of that class's ancestors. The object returned is usually a collection of properties, for example, an object that implements <xref:CoreWCF.Channels.ISecurityCapabilities>.\n \nIf the `SecurityBindingElement` does not recognize the type of property requested, it delegates the call to the binding element stack below it, passing the binding context parameter. The types of properties that the `SecurityBindingElement` can provide are <xref:CoreWCF.Channels.ISecurityCapabilities> and [IdentityVerifier](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.identityverifier?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0).\n"
+- uid: CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired(CoreWCF.Security.Tokens.SecurityTokenParameters,CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired(CoreWCF.Security.Tokens.SecurityTokenParameters,CoreWCF.Channels.BindingContext)
+  id: SetIssuerBindingContextIfRequired(CoreWCF.Security.Tokens.SecurityTokenParameters,CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SetIssuerBindingContextIfRequired(SecurityTokenParameters, BindingContext)
+  nameWithType: SecurityBindingElement.SetIssuerBindingContextIfRequired(SecurityTokenParameters, BindingContext)
+  fullName: CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired(CoreWCF.Security.Tokens.SecurityTokenParameters, CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected static void SetIssuerBindingContextIfRequired(SecurityTokenParameters parameters, BindingContext issuerBindingContext)
+    parameters:
+    - id: parameters
+      type: CoreWCF.Security.Tokens.SecurityTokenParameters
+    - id: issuerBindingContext
+      type: CoreWCF.Channels.BindingContext
+    content.vb: Protected Shared Sub SetIssuerBindingContextIfRequired(parameters As SecurityTokenParameters, issuerBindingContext As BindingContext)
+  overload: CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired*
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement
+  id: CreateUserNameOverTransportBindingElement
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateUserNameOverTransportBindingElement()
+  nameWithType: SecurityBindingElement.CreateUserNameOverTransportBindingElement()
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a security binding element that is configured for client authentication based on a user name and password sent as part of the SOAP message. The binding element requires the transport to provide server authentication and message protection (for example, HTTPS).
+  syntax:
+    content: public static TransportSecurityBindingElement CreateUserNameOverTransportBindingElement()
+    return:
+      type: CoreWCF.Channels.TransportSecurityBindingElement
+      description: "A <xref:CoreWCF.Channels.TransportSecurityBindingElement> object."
+    content.vb: Public Shared Function CreateUserNameOverTransportBindingElement As TransportSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThe created binding has <xref:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`. The [LocalClientSecuritySettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0) object returned from [LocalClientSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0) property set to `false`.\n \nThe <xref:CoreWCF.Channels.LocalServiceSecuritySettings> object returned from <xref:CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings> has its <xref:CoreWCF.Channels.LocalServiceSecuritySettings.DetectReplays> property set to `false`.\n"
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement)
+  id: CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateSecureConversationBindingElement(SecurityBindingElement)
+  nameWithType: SecurityBindingElement.CreateSecureConversationBindingElement(SecurityBindingElement)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a symmetric security binding element that is configured to establish a secure conversation between the client and service. The security context token issued at the end of the secure conversation handshake is used to secure the messages. The bootstrap security binding element specifies how the secure conversation handshake messages are secured.
+  syntax:
+    content: public static SecurityBindingElement CreateSecureConversationBindingElement(SecurityBindingElement bootstrapSecurity)
+    parameters:
+    - id: bootstrapSecurity
+      type: CoreWCF.Channels.SecurityBindingElement
+      description: "A <xref:CoreWCF.Channels.SecurityBindingElement> that contains specification on how the secure conversation handshake messages are secured."
+    return:
+      type: CoreWCF.Channels.SecurityBindingElement
+      description: "A <xref:CoreWCF.Channels.SecurityBindingElement> object."
+    content.vb: Public Shared Function CreateSecureConversationBindingElement(bootstrapSecurity As SecurityBindingElement) As SecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThe binding element is configured to use session-based security context tokens.\n \nThe `bootstrapSecurity` is used to indicate the security binding and policy used to request a secure conversation token from the service.\n \nIf `bootstrapSecurity` is a <xref:CoreWCF.Channels.TransportSecurityBindingElement>, the binding element returned by this method is also one, and <xref:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp> is set to `true`; and the [LocalClientSecuritySettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0) object returned from [LocalClientSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) property set to `false`; and the <xref:CoreWCF.Channels.LocalServiceSecuritySettings> object returned from <xref:CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings> has its <xref:CoreWCF.Channels.LocalServiceSecuritySettings.DetectReplays> property set to `false`.\n \nOtherwise, a <xref:CoreWCF.Channels.SymmetricSecurityBindingElement> is returned, with <xref:CoreWCF.Channels.SymmetricSecurityBindingElement.RequireSignatureConfirmation> set to false.\n"
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean)
+  id: CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateSecureConversationBindingElement(SecurityBindingElement, Boolean)
+  nameWithType: SecurityBindingElement.CreateSecureConversationBindingElement(SecurityBindingElement, Boolean)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement, System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static SecurityBindingElement CreateSecureConversationBindingElement(SecurityBindingElement bootstrapSecurity, bool requireCancellation)
+    parameters:
+    - id: bootstrapSecurity
+      type: CoreWCF.Channels.SecurityBindingElement
+    - id: requireCancellation
+      type: System.Boolean
+    return:
+      type: CoreWCF.Channels.SecurityBindingElement
+    content.vb: Public Shared Function CreateSecureConversationBindingElement(bootstrapSecurity As SecurityBindingElement, requireCancellation As Boolean) As SecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement
+  id: CreateCertificateOverTransportBindingElement
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateCertificateOverTransportBindingElement()
+  nameWithType: SecurityBindingElement.CreateCertificateOverTransportBindingElement()
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Creates a security binding element that expects clients to do certificate-based authentication using SOAP message security."
+  syntax:
+    content: public static TransportSecurityBindingElement CreateCertificateOverTransportBindingElement()
+    return:
+      type: CoreWCF.Channels.TransportSecurityBindingElement
+      description: "A <xref:CoreWCF.Channels.TransportSecurityBindingElement> object."
+    content.vb: Public Shared Function CreateCertificateOverTransportBindingElement As TransportSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThis binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS).\n \nThe binding element is configured to use the <xref:CoreWCF.MessageSecurityVersion.Default> property of the <xref:CoreWCF.MessageSecurityVersion> class.\n \nThe created binding has <xref:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`.\n \nThe [LocalClientSecuritySettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0) object returned from [LocalClientSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0) property set to `false`.\n \nThe <xref:CoreWCF.Channels.LocalServiceSecuritySettings> object returned from [LocalServiceSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localservicesettings?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) property set to `false`.\n"
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement(CoreWCF.MessageSecurityVersion)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement(CoreWCF.MessageSecurityVersion)
+  id: CreateCertificateOverTransportBindingElement(CoreWCF.MessageSecurityVersion)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateCertificateOverTransportBindingElement(MessageSecurityVersion)
+  nameWithType: SecurityBindingElement.CreateCertificateOverTransportBindingElement(MessageSecurityVersion)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement(CoreWCF.MessageSecurityVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a security binding element that expects clients to do certificate-based authentication using SOAP message security.
+  syntax:
+    content: public static TransportSecurityBindingElement CreateCertificateOverTransportBindingElement(MessageSecurityVersion version)
+    parameters:
+    - id: version
+      type: CoreWCF.MessageSecurityVersion
+      description: "The <xref:CoreWCF.MessageSecurityVersion> for the binding."
+    return:
+      type: CoreWCF.Channels.TransportSecurityBindingElement
+      description: "A <xref:CoreWCF.Channels.TransportSecurityBindingElement> object."
+    content.vb: Public Shared Function CreateCertificateOverTransportBindingElement(version As MessageSecurityVersion) As TransportSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: "\nThis binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS). The binding element is configured with the specified <xref:CoreWCF.MessageSecurityVersion>.\n \nThe created binding has <xref:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp> set to `true`.\n \nThe [LocalClientSecuritySettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0) object returned from [LocalClientSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0) property set to `false`.\n \nThe <xref:CoreWCF.Channels.LocalServiceSecuritySettings> object returned from [LocalServiceSettings](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localservicesettings?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) has its [DetectReplays](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) property set to `false`.\n"
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean,CoreWCF.Security.ChannelProtectionRequirements)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean,CoreWCF.Security.ChannelProtectionRequirements)
+  id: CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean,CoreWCF.Security.ChannelProtectionRequirements)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateSecureConversationBindingElement(SecurityBindingElement, Boolean, ChannelProtectionRequirements)
+  nameWithType: SecurityBindingElement.CreateSecureConversationBindingElement(SecurityBindingElement, Boolean, ChannelProtectionRequirements)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement, System.Boolean, CoreWCF.Security.ChannelProtectionRequirements)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static SecurityBindingElement CreateSecureConversationBindingElement(SecurityBindingElement bootstrapSecurity, bool requireCancellation, ChannelProtectionRequirements bootstrapProtectionRequirements)
+    parameters:
+    - id: bootstrapSecurity
+      type: CoreWCF.Channels.SecurityBindingElement
+    - id: requireCancellation
+      type: System.Boolean
+    - id: bootstrapProtectionRequirements
+      type: CoreWCF.Security.ChannelProtectionRequirements
+    return:
+      type: CoreWCF.Channels.SecurityBindingElement
+    content.vb: Public Shared Function CreateSecureConversationBindingElement(bootstrapSecurity As SecurityBindingElement, requireCancellation As Boolean, bootstrapProtectionRequirements As ChannelProtectionRequirements) As SecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(System.Boolean)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(System.Boolean)
+  id: CreateSspiNegotiationOverTransportBindingElement(System.Boolean)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateSspiNegotiationOverTransportBindingElement(Boolean)
+  nameWithType: SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(Boolean)
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static TransportSecurityBindingElement CreateSspiNegotiationOverTransportBindingElement(bool requireCancellation)
+    parameters:
+    - id: requireCancellation
+      type: System.Boolean
+    return:
+      type: CoreWCF.Channels.TransportSecurityBindingElement
+    content.vb: Public Shared Function CreateSspiNegotiationOverTransportBindingElement(requireCancellation As Boolean) As TransportSecurityBindingElement
+  overload: CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  id: ExportPolicyForTransportTokenAssertionProviders(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ExportPolicyForTransportTokenAssertionProviders(MetadataExporter, PolicyConversionContext)
+  nameWithType: SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static void ExportPolicyForTransportTokenAssertionProviders(MetadataExporter exporter, PolicyConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+    - id: context
+      type: CoreWCF.Description.PolicyConversionContext
+    content.vb: Public Shared Sub ExportPolicyForTransportTokenAssertionProviders(exporter As MetadataExporter, context As PolicyConversionContext)
+  overload: CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement(CoreWCF.Channels.TransportSecurityBindingElement,CoreWCF.Channels.ITransportTokenAssertionProvider,CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement(CoreWCF.Channels.TransportSecurityBindingElement,CoreWCF.Channels.ITransportTokenAssertionProvider,CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  id: ExportTransportSecurityBindingElement(CoreWCF.Channels.TransportSecurityBindingElement,CoreWCF.Channels.ITransportTokenAssertionProvider,CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ExportTransportSecurityBindingElement(TransportSecurityBindingElement, ITransportTokenAssertionProvider, MetadataExporter, PolicyConversionContext)
+  nameWithType: SecurityBindingElement.ExportTransportSecurityBindingElement(TransportSecurityBindingElement, ITransportTokenAssertionProvider, MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement(CoreWCF.Channels.TransportSecurityBindingElement, CoreWCF.Channels.ITransportTokenAssertionProvider, CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static void ExportTransportSecurityBindingElement(TransportSecurityBindingElement binding, ITransportTokenAssertionProvider transportTokenAssertionProvider, MetadataExporter exporter, PolicyConversionContext policyContext)
+    parameters:
+    - id: binding
+      type: CoreWCF.Channels.TransportSecurityBindingElement
+    - id: transportTokenAssertionProvider
+      type: CoreWCF.Channels.ITransportTokenAssertionProvider
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+    - id: policyContext
+      type: CoreWCF.Description.PolicyConversionContext
+    content.vb: Public Shared Sub ExportTransportSecurityBindingElement(binding As TransportSecurityBindingElement, transportTokenAssertionProvider As ITransportTokenAssertionProvider, exporter As MetadataExporter, policyContext As PolicyConversionContext)
+  overload: CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters
+  id: EndpointSupportingTokenParameters
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: EndpointSupportingTokenParameters
+  nameWithType: SecurityBindingElement.EndpointSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets the endpoint that supports token parameters."
+  syntax:
+    content: public SupportingTokenParameters EndpointSupportingTokenParameters { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.Tokens.SupportingTokenParameters
+      description: "The <xref:CoreWCF.Security.Tokens.SupportingTokenParameters> object that represents the endpoint that supports token parameters."
+    content.vb: Public ReadOnly Property EndpointSupportingTokenParameters As SupportingTokenParameters
+  overload: CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: "\nSupporting tokens provide additional claims beyond those contained in the primary tokens for the binding. The collection returned by the <xref:CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters> contains additional token parameters ([SecurityTokenParameters](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.tokens.securitytokenparameters?view=dotnet-plat-ext-7.0)) for all operations defined by an endpoint. The primary token parameters are found on either the <xref:CoreWCF.Channels.SymmetricSecurityBindingElement> or the [AsymmetricSecurityBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) (both inherit from the <xref:CoreWCF.Channels.SecurityBindingElement> class). In the case of the <xref:CoreWCF.Channels.SymmetricSecurityBindingElement>, the primary token parameters are returned by the <xref:CoreWCF.Channels.SymmetricSecurityBindingElement.ProtectionTokenParameters> property. On the [AsymmetricSecurityBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) element there are two parameter properties, the [InitiatorTokenParameters](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement.initiatortokenparameters?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) and [RecipientTokenParameters](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement.recipienttokenparameters?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) properties.\n \n> [!NOTE]\n> The properties are called parameters because they specify only the type of the security token, not the actual values.<br /><br /> Supporting tokens can be scoped at the endpoint level, in which case they are included in all secured messages sent by the client to the service. The service enforces that all secured messages from the client contain the supporting token types configured by this property.<br /><br /> To provide supporting tokens only for an operation (not all operations on an endpoint), use the <xref:CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters> property."
+- uid: CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  id: OptionalEndpointSupportingTokenParameters
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: OptionalEndpointSupportingTokenParameters
+  nameWithType: SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public SupportingTokenParameters OptionalEndpointSupportingTokenParameters { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.Tokens.SupportingTokenParameters
+    content.vb: Public ReadOnly Property OptionalEndpointSupportingTokenParameters As SupportingTokenParameters
+  overload: CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters
+  id: OperationSupportingTokenParameters
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: OperationSupportingTokenParameters
+  nameWithType: SecurityBindingElement.OperationSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public IDictionary<string, SupportingTokenParameters> OperationSupportingTokenParameters { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,CoreWCF.Security.Tokens.SupportingTokenParameters}
+    content.vb: Public ReadOnly Property OperationSupportingTokenParameters As IDictionary(Of String, SupportingTokenParameters)
+  overload: CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  id: OptionalOperationSupportingTokenParameters
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: OptionalOperationSupportingTokenParameters
+  nameWithType: SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public IDictionary<string, SupportingTokenParameters> OptionalOperationSupportingTokenParameters { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,CoreWCF.Security.Tokens.SupportingTokenParameters}
+    content.vb: Public ReadOnly Property OptionalOperationSupportingTokenParameters As IDictionary(Of String, SupportingTokenParameters)
+  overload: CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout
+  id: SecurityHeaderLayout
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SecurityHeaderLayout
+  nameWithType: SecurityBindingElement.SecurityHeaderLayout
+  fullName: CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets or sets the ordering of the elements in the security header for this binding."
+  syntax:
+    content: public SecurityHeaderLayout SecurityHeaderLayout { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.SecurityHeaderLayout
+      description: "The <xref:CoreWCF.Channels.SecurityHeaderLayout> that represents the ordering of the elements in the security header for this binding. The default is <xref:CoreWCF.Channels.SecurityHeaderLayout.Strict>."
+    content.vb: Public Property SecurityHeaderLayout As SecurityHeaderLayout
+  overload: CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "\nThe <xref:CoreWCF.Channels.SecurityHeaderLayout> enumeration contains the following members:\n \n* <xref:CoreWCF.Channels.SecurityHeaderLayout.Strict>: Items are added to the security header according to the general principle of \"declare before use \". \n* <xref:CoreWCF.Channels.SecurityHeaderLayout.Lax>: Items are added to the security header in any order that conforms to WSS: SOAP Message security.\n \n* <xref:CoreWCF.Channels.SecurityHeaderLayout.LaxTimestampFirst>: Items are added to the security header in any order that conforms to WSS: SOAP message security except that the first element in the security header must be a `wsse:Timestamp` element.\n \n* <xref:CoreWCF.Channels.SecurityHeaderLayout.LaxTimestampLast>: Items are added to the security header in any order that conforms to WSS: SOAP message security except that the last element in the security header must be a `wsse:Timestamp` element.\n"
+- uid: CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion
+  id: MessageSecurityVersion
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageSecurityVersion
+  nameWithType: SecurityBindingElement.MessageSecurityVersion
+  fullName: CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the message security version.
+  syntax:
+    content: public MessageSecurityVersion MessageSecurityVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.MessageSecurityVersion
+      description: "The <xref:CoreWCF.MessageSecurityVersion> object that represents the message security version."
+    content.vb: Public Property MessageSecurityVersion As MessageSecurityVersion
+  overload: CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "\nThe <xref:CoreWCF.MessageSecurityVersion> contains numerous properties that specify version numbers of different security specifications used when securing messages exchanged on the channel.\n \n> [!NOTE]\n> Once a <xref:CoreWCF.Channels.SecurityBindingElement> object is created, this property is immutable. Calling `set` on it does not change it."
+- uid: CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse
+  id: EnableUnsecuredResponse
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: EnableUnsecuredResponse
+  nameWithType: SecurityBindingElement.EnableUnsecuredResponse
+  fullName: CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool EnableUnsecuredResponse { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableUnsecuredResponse As Boolean
+  overload: CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp
+  id: IncludeTimestamp
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IncludeTimestamp
+  nameWithType: SecurityBindingElement.IncludeTimestamp
+  fullName: CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets a value that indicates whether time stamps are included in each message.
+  syntax:
+    content: public bool IncludeTimestamp { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "`true` if time stamps are included in each message; otherwise, `false`. The default is `true`."
+    content.vb: Public Property IncludeTimestamp As Boolean
+  overload: CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "If the <xref:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp> property is `true` and if `DetectReplays` is `true`, WCF detects a replay attack."
+- uid: CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport
+  id: AllowInsecureTransport
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: AllowInsecureTransport
+  nameWithType: SecurityBindingElement.AllowInsecureTransport
+  fullName: CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool AllowInsecureTransport { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property AllowInsecureTransport As Boolean
+  overload: CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite
+  id: DefaultAlgorithmSuite
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: DefaultAlgorithmSuite
+  nameWithType: SecurityBindingElement.DefaultAlgorithmSuite
+  fullName: CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the message encryption and key-wrap algorithms.
+  syntax:
+    content: public SecurityAlgorithmSuite DefaultAlgorithmSuite { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityAlgorithmSuite
+      description: "The <xref:CoreWCF.Security.SecurityAlgorithmSuite> object that represents the message encryption and key-wrap algorithms."
+    content.vb: Public Property DefaultAlgorithmSuite As SecurityAlgorithmSuite
+  overload: CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "The <xref:CoreWCF.Security.SecurityAlgorithmSuite> object that contains numerous properties that specify security algorithms that are to be used for signing, encryption, key derivation, and other cryptographic operations. It also controls the key sizes that are used for doing these cryptographic operations."
+- uid: CoreWCF.Channels.SecurityBindingElement.ProtectTokens
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.ProtectTokens
+  id: ProtectTokens
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ProtectTokens
+  nameWithType: SecurityBindingElement.ProtectTokens
+  fullName: CoreWCF.Channels.SecurityBindingElement.ProtectTokens
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool ProtectTokens { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ProtectTokens As Boolean
+  overload: CoreWCF.Channels.SecurityBindingElement.ProtectTokens*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings
+  id: LocalServiceSettings
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: LocalServiceSettings
+  nameWithType: SecurityBindingElement.LocalServiceSettings
+  fullName: CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public LocalServiceSecuritySettings LocalServiceSettings { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.LocalServiceSecuritySettings
+    content.vb: Public ReadOnly Property LocalServiceSettings As LocalServiceSecuritySettings
+  overload: CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode
+  commentId: P:CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode
+  id: KeyEntropyMode
+  parent: CoreWCF.Channels.SecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: KeyEntropyMode
+  nameWithType: SecurityBindingElement.KeyEntropyMode
+  fullName: CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets or sets the source of entropy used to create keys."
+  syntax:
+    content: public SecurityKeyEntropyMode KeyEntropyMode { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityKeyEntropyMode
+      description: "The [SecurityKeyEntropyMode](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.securitykeyentropymode?view=dotnet-plat-ext-7.0) used to create keys. The default value is [CombinedEntropy](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.securitykeyentropymode?view=dotnet-plat-ext-7.0#system-servicemodel-security-securitykeyentropymode-combinedentropy)."
+    content.vb: Public Property KeyEntropyMode As SecurityKeyEntropyMode
+  overload: CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "\nThe <xref:CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode> specifies how the key for tokens (such as <xref:CoreWCF.Security.Tokens.SecurityContextSecurityToken>) issued by the service is computed: whether it is computed based on the client key material only, on the service key material only, or on a combination of both.\n"
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: BindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement
+  isExternal: true
+  name: CreateIssuedTokenOverTransportBindingElement
+  nameWithType: SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement
+- uid: CoreWCF.Security.Tokens.IssuedSecurityTokenParameters
+  commentId: T:CoreWCF.Security.Tokens.IssuedSecurityTokenParameters
+  parent: CoreWCF.Security.Tokens
+  isExternal: true
+  name: IssuedSecurityTokenParameters
+  nameWithType: IssuedSecurityTokenParameters
+  fullName: CoreWCF.Security.Tokens.IssuedSecurityTokenParameters
+- uid: CoreWCF.Channels.TransportSecurityBindingElement
+  commentId: T:CoreWCF.Channels.TransportSecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: TransportSecurityBindingElement
+  nameWithType: TransportSecurityBindingElement
+  fullName: CoreWCF.Channels.TransportSecurityBindingElement
+- uid: CoreWCF.Security.Tokens
+  commentId: N:CoreWCF.Security.Tokens
+  isExternal: true
+  name: CoreWCF.Security.Tokens
+  nameWithType: CoreWCF.Security.Tokens
+  fullName: CoreWCF.Security.Tokens
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement
+  isExternal: true
+  name: CreateIssuedTokenForCertificateBindingElement
+  nameWithType: SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement
+- uid: CoreWCF.Channels.SymmetricSecurityBindingElement
+  commentId: T:CoreWCF.Channels.SymmetricSecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: SymmetricSecurityBindingElement
+  nameWithType: SymmetricSecurityBindingElement
+  fullName: CoreWCF.Channels.SymmetricSecurityBindingElement
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement
+  isExternal: true
+  name: CreateIssuedTokenForSslBindingElement
+  nameWithType: SecurityBindingElement.CreateIssuedTokenForSslBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher
+  isExternal: true
+  name: BuildServiceDispatcher
+  nameWithType: SecurityBindingElement.BuildServiceDispatcher
+  fullName: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: CoreWCF.Configuration.IServiceDispatcher
+  commentId: T:CoreWCF.Configuration.IServiceDispatcher
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IServiceDispatcher
+  nameWithType: IServiceDispatcher
+  fullName: CoreWCF.Configuration.IServiceDispatcher
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore
+  isExternal: true
+  name: BuildServiceDispatcherCore
+  nameWithType: SecurityBindingElement.BuildServiceDispatcherCore
+  fullName: CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher
+  isExternal: true
+  name: CanBuildServiceDispatcher
+  nameWithType: SecurityBindingElement.CanBuildServiceDispatcher
+  fullName: CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher
+- uid: CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation
+  isExternal: true
+  name: SetKeyDerivation
+  nameWithType: SecurityBindingElement.SetKeyDerivation
+  fullName: CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation
+- uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: BindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: BindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.BindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: BindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.BindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SecurityBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: SecurityBindingElement.GetProperty
+  fullName: CoreWCF.Channels.SecurityBindingElement.GetProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired
+  isExternal: true
+  name: SetIssuerBindingContextIfRequired
+  nameWithType: SecurityBindingElement.SetIssuerBindingContextIfRequired
+  fullName: CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired
+- uid: CoreWCF.Security.Tokens.SecurityTokenParameters
+  commentId: T:CoreWCF.Security.Tokens.SecurityTokenParameters
+  parent: CoreWCF.Security.Tokens
+  isExternal: true
+  name: SecurityTokenParameters
+  nameWithType: SecurityTokenParameters
+  fullName: CoreWCF.Security.Tokens.SecurityTokenParameters
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement
+  isExternal: true
+  name: CreateUserNameOverTransportBindingElement
+  nameWithType: SecurityBindingElement.CreateUserNameOverTransportBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement
+  isExternal: true
+  name: CreateSecureConversationBindingElement
+  nameWithType: SecurityBindingElement.CreateSecureConversationBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement
+- uid: CoreWCF.Channels.SecurityBindingElement
+  commentId: T:CoreWCF.Channels.SecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: SecurityBindingElement
+  nameWithType: SecurityBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement
+  isExternal: true
+  name: CreateCertificateOverTransportBindingElement
+  nameWithType: SecurityBindingElement.CreateCertificateOverTransportBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement
+- uid: CoreWCF.MessageSecurityVersion
+  commentId: T:CoreWCF.MessageSecurityVersion
+  parent: CoreWCF
+  isExternal: true
+  name: MessageSecurityVersion
+  nameWithType: MessageSecurityVersion
+  fullName: CoreWCF.MessageSecurityVersion
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Security.ChannelProtectionRequirements
+  commentId: T:CoreWCF.Security.ChannelProtectionRequirements
+  parent: CoreWCF.Security
+  isExternal: true
+  name: ChannelProtectionRequirements
+  nameWithType: ChannelProtectionRequirements
+  fullName: CoreWCF.Security.ChannelProtectionRequirements
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement
+  isExternal: true
+  name: CreateSspiNegotiationOverTransportBindingElement
+  nameWithType: SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement
+- uid: CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders
+  isExternal: true
+  name: ExportPolicyForTransportTokenAssertionProviders
+  nameWithType: SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders
+  fullName: CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement
+  isExternal: true
+  name: ExportTransportSecurityBindingElement
+  nameWithType: SecurityBindingElement.ExportTransportSecurityBindingElement
+  fullName: CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement
+- uid: CoreWCF.Channels.ITransportTokenAssertionProvider
+  commentId: T:CoreWCF.Channels.ITransportTokenAssertionProvider
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: ITransportTokenAssertionProvider
+  nameWithType: ITransportTokenAssertionProvider
+  fullName: CoreWCF.Channels.ITransportTokenAssertionProvider
+- uid: CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters
+  isExternal: true
+  name: EndpointSupportingTokenParameters
+  nameWithType: SecurityBindingElement.EndpointSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters
+- uid: CoreWCF.Security.Tokens.SupportingTokenParameters
+  commentId: T:CoreWCF.Security.Tokens.SupportingTokenParameters
+  parent: CoreWCF.Security.Tokens
+  isExternal: true
+  name: SupportingTokenParameters
+  nameWithType: SupportingTokenParameters
+  fullName: CoreWCF.Security.Tokens.SupportingTokenParameters
+- uid: CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  isExternal: true
+  name: OptionalEndpointSupportingTokenParameters
+  nameWithType: SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters
+- uid: CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters
+  isExternal: true
+  name: OperationSupportingTokenParameters
+  nameWithType: SecurityBindingElement.OperationSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters
+- uid: System.Collections.Generic.IDictionary{System.String,CoreWCF.Security.Tokens.SupportingTokenParameters}
+  commentId: '!:System.Collections.Generic.IDictionary{System.String,CoreWCF.Security.Tokens.SupportingTokenParameters}'
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<String, SupportingTokenParameters>
+  nameWithType: IDictionary<String, SupportingTokenParameters>
+  fullName: System.Collections.Generic.IDictionary<System.String, CoreWCF.Security.Tokens.SupportingTokenParameters>
+  nameWithType.vb: IDictionary(Of String, SupportingTokenParameters)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.String, CoreWCF.Security.Tokens.SupportingTokenParameters)
+  name.vb: IDictionary(Of String, SupportingTokenParameters)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Security.Tokens.SupportingTokenParameters
+    name: SupportingTokenParameters
+    nameWithType: SupportingTokenParameters
+    fullName: CoreWCF.Security.Tokens.SupportingTokenParameters
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Security.Tokens.SupportingTokenParameters
+    name: SupportingTokenParameters
+    nameWithType: SupportingTokenParameters
+    fullName: CoreWCF.Security.Tokens.SupportingTokenParameters
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<, >
+  nameWithType: IDictionary<, >
+  fullName: System.Collections.Generic.IDictionary<, >
+  nameWithType.vb: IDictionary(Of , )
+  fullName.vb: System.Collections.Generic.IDictionary(Of , )
+  name.vb: IDictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  isExternal: true
+  name: OptionalOperationSupportingTokenParameters
+  nameWithType: SecurityBindingElement.OptionalOperationSupportingTokenParameters
+  fullName: CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters
+- uid: CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout
+  isExternal: true
+  name: SecurityHeaderLayout
+  nameWithType: SecurityBindingElement.SecurityHeaderLayout
+  fullName: CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout
+- uid: CoreWCF.Channels.SecurityHeaderLayout
+  commentId: T:CoreWCF.Channels.SecurityHeaderLayout
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: SecurityHeaderLayout
+  nameWithType: SecurityHeaderLayout
+  fullName: CoreWCF.Channels.SecurityHeaderLayout
+- uid: CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion
+  isExternal: true
+  name: MessageSecurityVersion
+  nameWithType: SecurityBindingElement.MessageSecurityVersion
+  fullName: CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion
+- uid: CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse
+  isExternal: true
+  name: EnableUnsecuredResponse
+  nameWithType: SecurityBindingElement.EnableUnsecuredResponse
+  fullName: CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse
+- uid: CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp
+  isExternal: true
+  name: IncludeTimestamp
+  nameWithType: SecurityBindingElement.IncludeTimestamp
+  fullName: CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp
+- uid: CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport
+  isExternal: true
+  name: AllowInsecureTransport
+  nameWithType: SecurityBindingElement.AllowInsecureTransport
+  fullName: CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport
+- uid: CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite
+  isExternal: true
+  name: DefaultAlgorithmSuite
+  nameWithType: SecurityBindingElement.DefaultAlgorithmSuite
+  fullName: CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite
+- uid: CoreWCF.Security.SecurityAlgorithmSuite
+  commentId: T:CoreWCF.Security.SecurityAlgorithmSuite
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityAlgorithmSuite
+  nameWithType: SecurityAlgorithmSuite
+  fullName: CoreWCF.Security.SecurityAlgorithmSuite
+- uid: CoreWCF.Channels.SecurityBindingElement.ProtectTokens*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.ProtectTokens
+  isExternal: true
+  name: ProtectTokens
+  nameWithType: SecurityBindingElement.ProtectTokens
+  fullName: CoreWCF.Channels.SecurityBindingElement.ProtectTokens
+- uid: CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings
+  isExternal: true
+  name: LocalServiceSettings
+  nameWithType: SecurityBindingElement.LocalServiceSettings
+  fullName: CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings
+- uid: CoreWCF.Channels.LocalServiceSecuritySettings
+  commentId: T:CoreWCF.Channels.LocalServiceSecuritySettings
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: LocalServiceSecuritySettings
+  nameWithType: LocalServiceSecuritySettings
+  fullName: CoreWCF.Channels.LocalServiceSecuritySettings
+- uid: CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode*
+  commentId: Overload:CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode
+  isExternal: true
+  name: KeyEntropyMode
+  nameWithType: SecurityBindingElement.KeyEntropyMode
+  fullName: CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode
+- uid: CoreWCF.Security.SecurityKeyEntropyMode
+  commentId: T:CoreWCF.Security.SecurityKeyEntropyMode
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityKeyEntropyMode
+  nameWithType: SecurityKeyEntropyMode
+  fullName: CoreWCF.Security.SecurityKeyEntropyMode

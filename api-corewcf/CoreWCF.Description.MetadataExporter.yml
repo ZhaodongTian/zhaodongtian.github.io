@@ -1,0 +1,542 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  id: MetadataExporter
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.MetadataExporter.Errors
+  - CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  - CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  - CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  - CoreWCF.Description.MetadataExporter.PolicyVersion
+  - CoreWCF.Description.MetadataExporter.State
+  langs:
+  - csharp
+  - vb
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Exports service description information into metadata.
+  remarks: "Metadata export is the process of describing service endpoints and projecting them into a parallel, standardized representation (typically, but not necessarily XML) that applications can access to implement a client that uses the service. To export metadata from &lt;xref:CoreWCF.Description.ServiceEndpoint?displayProperty=nameWithType> objects, use an implementation of the &lt;xref:CoreWCF.Description.MetadataExporter> abstract class.  A &lt;xref:CoreWCF.Description.MetadataExporter> implementation generates metadata that is encapsulated in a &lt;xref:CoreWCF.Description.MetadataSet?displayProperty=nameWithType> instance.  \n\nThe &lt;xref:CoreWCF.Description.MetadataExporter> class provides a framework for generating policy expressions that describe the capabilities and requirements of an endpoint binding and its associated operations, messages and faults. These policy expressions are captured in a &lt;xref:CoreWCF.Description.PolicyConversionContext?displayProperty=nameWithType> instance. A &lt;xref:CoreWCF.Description.MetadataExporter> implementation can then attach these policy expressions to the metadata it generates.  \n\nThe &lt;xref:CoreWCF.Description.MetadataExporter> calls into each &lt;xref:CoreWCF.Channels.BindingElement?displayProperty=nameWithType> that implements the &lt;xref:CoreWCF.Description.IPolicyExportExtension?displayProperty=nameWithType> interface in the binding of a &lt;xref:CoreWCF.Description.ServiceEndpoint> when generating a &lt;xref:CoreWCF.Description.PolicyConversionContext> object for the &lt;xref:CoreWCF.Description.MetadataExporter> implementation to use. You can export new policy assertions by implementing the &lt;xref:CoreWCF.Description.IPolicyExportExtension> interface on your custom implementations of the &lt;xref:CoreWCF.Channels.BindingElement?displayProperty=nameWithType> type.  \n\nThe &lt;xref:CoreWCF.Description.WsdlExporter?displayProperty=nameWithType> type is the implementation of the &lt;xref:CoreWCF.Description.MetadataExporter> class included with Windows Communication Foundation (WCF). The &lt;xref:CoreWCF.Description.WsdlExporter> type generates WSDL metadata with attached policy expressions.  \n\nTo export custom WSDL metadata or WSDL extensions for endpoint behaviors, contract behaviors or binding elements in a service endpoint, you can implement the &lt;xref:CoreWCF.Description.IWsdlExportExtension?displayProperty=nameWithType> interface. The &lt;xref:CoreWCF.Description.WsdlExporter> type calls into parts of a service endpoint that implement this interface when generating the WSDL document from that endpoint.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class MetadataExporter : Object'
+    content.vb: >-
+      Public MustInherit Class MetadataExporter
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Description.WsdlExporter
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  commentId: M:CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  id: ExportContract(CoreWCF.Description.ContractDescription)
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportContract(ContractDescription)
+  nameWithType: MetadataExporter.ExportContract(ContractDescription)
+  fullName: CoreWCF.Description.MetadataExporter.ExportContract(CoreWCF.Description.ContractDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract void ExportContract(ContractDescription contract)
+    parameters:
+    - id: contract
+      type: CoreWCF.Description.ContractDescription
+    content.vb: Public MustOverride Sub ExportContract(contract As ContractDescription)
+  overload: CoreWCF.Description.MetadataExporter.ExportContract*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  id: ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportEndpoint(ServiceEndpoint)
+  nameWithType: MetadataExporter.ExportEndpoint(ServiceEndpoint)
+  fullName: CoreWCF.Description.MetadataExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract void ExportEndpoint(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public MustOverride Sub ExportEndpoint(endpoint As ServiceEndpoint)
+  overload: CoreWCF.Description.MetadataExporter.ExportEndpoint*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  commentId: M:CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  id: GetGeneratedMetadata
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: GetGeneratedMetadata()
+  nameWithType: MetadataExporter.GetGeneratedMetadata()
+  fullName: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public abstract MetadataSet GetGeneratedMetadata()
+    return:
+      type: CoreWCF.Description.MetadataSet
+    content.vb: Public MustOverride Function GetGeneratedMetadata As MetadataSet
+  overload: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  id: ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportPolicy(ServiceEndpoint)
+  nameWithType: MetadataExporter.ExportPolicy(ServiceEndpoint)
+  fullName: CoreWCF.Description.MetadataExporter.ExportPolicy(CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: protected PolicyConversionContext ExportPolicy(ServiceEndpoint endpoint)
+    parameters:
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    return:
+      type: CoreWCF.Description.PolicyConversionContext
+    content.vb: Protected Function ExportPolicy(endpoint As ServiceEndpoint) As PolicyConversionContext
+  overload: CoreWCF.Description.MetadataExporter.ExportPolicy*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Description.MetadataExporter.PolicyVersion
+  commentId: P:CoreWCF.Description.MetadataExporter.PolicyVersion
+  id: PolicyVersion
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: PolicyVersion
+  nameWithType: MetadataExporter.PolicyVersion
+  fullName: CoreWCF.Description.MetadataExporter.PolicyVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public PolicyVersion PolicyVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.PolicyVersion
+    content.vb: Public Property PolicyVersion As PolicyVersion
+  overload: CoreWCF.Description.MetadataExporter.PolicyVersion*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataExporter.Errors
+  commentId: P:CoreWCF.Description.MetadataExporter.Errors
+  id: Errors
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: MetadataExporter.Errors
+  fullName: CoreWCF.Description.MetadataExporter.Errors
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Collection<MetadataConversionError> Errors { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Description.MetadataConversionError}
+    content.vb: Public ReadOnly Property Errors As Collection(Of MetadataConversionError)
+  overload: CoreWCF.Description.MetadataExporter.Errors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.MetadataExporter.State
+  commentId: P:CoreWCF.Description.MetadataExporter.State
+  id: State
+  parent: CoreWCF.Description.MetadataExporter
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: MetadataExporter.State
+  fullName: CoreWCF.Description.MetadataExporter.State
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Dictionary<object, object> State { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Object,System.Object}
+    content.vb: Public ReadOnly Property State As Dictionary(Of Object, Object)
+  overload: CoreWCF.Description.MetadataExporter.State*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.MetadataExporter.ExportContract*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.ExportContract
+  isExternal: true
+  name: ExportContract
+  nameWithType: MetadataExporter.ExportContract
+  fullName: CoreWCF.Description.MetadataExporter.ExportContract
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription
+- uid: CoreWCF.Description.MetadataExporter.ExportEndpoint*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.ExportEndpoint
+  isExternal: true
+  name: ExportEndpoint
+  nameWithType: MetadataExporter.ExportEndpoint
+  fullName: CoreWCF.Description.MetadataExporter.ExportEndpoint
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+  isExternal: true
+  name: GetGeneratedMetadata
+  nameWithType: MetadataExporter.GetGeneratedMetadata
+  fullName: CoreWCF.Description.MetadataExporter.GetGeneratedMetadata
+- uid: CoreWCF.Description.MetadataSet
+  commentId: T:CoreWCF.Description.MetadataSet
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataSet
+  nameWithType: MetadataSet
+  fullName: CoreWCF.Description.MetadataSet
+- uid: CoreWCF.Description.MetadataExporter.ExportPolicy*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.ExportPolicy
+  isExternal: true
+  name: ExportPolicy
+  nameWithType: MetadataExporter.ExportPolicy
+  fullName: CoreWCF.Description.MetadataExporter.ExportPolicy
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+- uid: CoreWCF.Description.MetadataExporter.PolicyVersion*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.PolicyVersion
+  isExternal: true
+  name: PolicyVersion
+  nameWithType: MetadataExporter.PolicyVersion
+  fullName: CoreWCF.Description.MetadataExporter.PolicyVersion
+- uid: CoreWCF.Description.PolicyVersion
+  commentId: T:CoreWCF.Description.PolicyVersion
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyVersion
+  nameWithType: PolicyVersion
+  fullName: CoreWCF.Description.PolicyVersion
+- uid: CoreWCF.Description.MetadataExporter.Errors*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.Errors
+  isExternal: true
+  name: Errors
+  nameWithType: MetadataExporter.Errors
+  fullName: CoreWCF.Description.MetadataExporter.Errors
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.Description.MetadataConversionError}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.Description.MetadataConversionError}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<MetadataConversionError>
+  nameWithType: Collection<MetadataConversionError>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.Description.MetadataConversionError>
+  nameWithType.vb: Collection(Of MetadataConversionError)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.Description.MetadataConversionError)
+  name.vb: Collection(Of MetadataConversionError)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.MetadataConversionError
+    name: MetadataConversionError
+    nameWithType: MetadataConversionError
+    fullName: CoreWCF.Description.MetadataConversionError
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.MetadataConversionError
+    name: MetadataConversionError
+    nameWithType: MetadataConversionError
+    fullName: CoreWCF.Description.MetadataConversionError
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataExporter.State*
+  commentId: Overload:CoreWCF.Description.MetadataExporter.State
+  isExternal: true
+  name: State
+  nameWithType: MetadataExporter.State
+  fullName: CoreWCF.Description.MetadataExporter.State
+- uid: System.Collections.Generic.Dictionary{System.Object,System.Object}
+  commentId: '!:System.Collections.Generic.Dictionary{System.Object,System.Object}'
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<Object, Object>
+  nameWithType: Dictionary<Object, Object>
+  fullName: System.Collections.Generic.Dictionary<System.Object, System.Object>
+  nameWithType.vb: Dictionary(Of Object, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Object, System.Object)
+  name.vb: Dictionary(Of Object, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<, >
+  nameWithType: Dictionary<, >
+  fullName: System.Collections.Generic.Dictionary<, >
+  nameWithType.vb: Dictionary(Of , )
+  fullName.vb: System.Collections.Generic.Dictionary(Of , )
+  name.vb: Dictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

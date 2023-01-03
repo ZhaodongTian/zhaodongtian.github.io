@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ExceptionMapper
+  commentId: T:CoreWCF.ExceptionMapper
+  id: ExceptionMapper
+  parent: CoreWCF
+  children:
+  - CoreWCF.ExceptionMapper.#ctor
+  - CoreWCF.ExceptionMapper.FromException(System.Exception)
+  - CoreWCF.ExceptionMapper.FromException(System.Exception,System.String,System.String)
+  - CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException(System.Exception)
+  langs:
+  - csharp
+  - vb
+  name: ExceptionMapper
+  nameWithType: ExceptionMapper
+  fullName: CoreWCF.ExceptionMapper
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nDefines the mapping to be used for translating exceptions to faults.\n"
+  syntax:
+    content: 'public class ExceptionMapper : Object'
+    content.vb: >-
+      Public Class ExceptionMapper
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.ExceptionMapper.#ctor
+  commentId: M:CoreWCF.ExceptionMapper.#ctor
+  id: '#ctor'
+  parent: CoreWCF.ExceptionMapper
+  langs:
+  - csharp
+  - vb
+  name: ExceptionMapper()
+  nameWithType: ExceptionMapper.ExceptionMapper()
+  fullName: CoreWCF.ExceptionMapper.ExceptionMapper()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nExceptionMapper constructor.\n"
+  syntax:
+    content: public ExceptionMapper()
+    content.vb: Public Sub New
+  overload: CoreWCF.ExceptionMapper.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ExceptionMapper.FromException(System.Exception)
+  commentId: M:CoreWCF.ExceptionMapper.FromException(System.Exception)
+  id: FromException(System.Exception)
+  parent: CoreWCF.ExceptionMapper
+  langs:
+  - csharp
+  - vb
+  name: FromException(Exception)
+  nameWithType: ExceptionMapper.FromException(Exception)
+  fullName: CoreWCF.ExceptionMapper.FromException(System.Exception)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nTranslates the input exception to a fault using the mapping defined in ExceptionMap.\n"
+  syntax:
+    content: public virtual FaultException FromException(Exception ex)
+    parameters:
+    - id: ex
+      type: System.Exception
+      description: The exception to be mapped to a fault.
+    return:
+      type: CoreWCF.FaultException
+      description: The fault corresponding to the input exception.
+    content.vb: Public Overridable Function FromException(ex As Exception) As FaultException
+  overload: CoreWCF.ExceptionMapper.FromException*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.ExceptionMapper.FromException(System.Exception,System.String,System.String)
+  commentId: M:CoreWCF.ExceptionMapper.FromException(System.Exception,System.String,System.String)
+  id: FromException(System.Exception,System.String,System.String)
+  parent: CoreWCF.ExceptionMapper
+  langs:
+  - csharp
+  - vb
+  name: FromException(Exception, String, String)
+  nameWithType: ExceptionMapper.FromException(Exception, String, String)
+  fullName: CoreWCF.ExceptionMapper.FromException(System.Exception, System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nTranslates the input exception to a fault using the mapping defined in ExceptionMap.\n"
+  syntax:
+    content: public virtual FaultException FromException(Exception ex, string soapNamespace, string trustNamespace)
+    parameters:
+    - id: ex
+      type: System.Exception
+      description: The exception to be mapped to a fault.
+    - id: soapNamespace
+      type: System.String
+      description: The SOAP Namespace to be used when generating the mapped fault.
+    - id: trustNamespace
+      type: System.String
+      description: The WS-Trust Namespace to be used when generating the mapped fault.
+    return:
+      type: CoreWCF.FaultException
+      description: The fault corresponding to the input exception.
+    content.vb: Public Overridable Function FromException(ex As Exception, soapNamespace As String, trustNamespace As String) As FaultException
+  overload: CoreWCF.ExceptionMapper.FromException*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException(System.Exception)
+  commentId: M:CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException(System.Exception)
+  id: HandleSecurityTokenProcessingException(System.Exception)
+  parent: CoreWCF.ExceptionMapper
+  langs:
+  - csharp
+  - vb
+  name: HandleSecurityTokenProcessingException(Exception)
+  nameWithType: ExceptionMapper.HandleSecurityTokenProcessingException(Exception)
+  fullName: CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException(System.Exception)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: "\nDetermines whether an exception that occurred during the processing of a security token \nshould be handled using the defined ExceptionMap.\n"
+  syntax:
+    content: public virtual bool HandleSecurityTokenProcessingException(Exception ex)
+    parameters:
+    - id: ex
+      type: System.Exception
+      description: The input exception.
+    return:
+      type: System.Boolean
+      description: A boolean value indicating whether the exception should be handled using the defined ExceptionMap.
+    content.vb: Public Overridable Function HandleSecurityTokenProcessingException(ex As Exception) As Boolean
+  overload: CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.ExceptionMapper.#ctor*
+  commentId: Overload:CoreWCF.ExceptionMapper.#ctor
+  isExternal: true
+  name: ExceptionMapper
+  nameWithType: ExceptionMapper.ExceptionMapper
+  fullName: CoreWCF.ExceptionMapper.ExceptionMapper
+- uid: CoreWCF.ExceptionMapper.FromException*
+  commentId: Overload:CoreWCF.ExceptionMapper.FromException
+  isExternal: true
+  name: FromException
+  nameWithType: ExceptionMapper.FromException
+  fullName: CoreWCF.ExceptionMapper.FromException
+- uid: System.Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: CoreWCF.FaultException
+  commentId: T:CoreWCF.FaultException
+  parent: CoreWCF
+  isExternal: true
+  name: FaultException
+  nameWithType: FaultException
+  fullName: CoreWCF.FaultException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException*
+  commentId: Overload:CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException
+  isExternal: true
+  name: HandleSecurityTokenProcessingException
+  nameWithType: ExceptionMapper.HandleSecurityTokenProcessingException
+  fullName: CoreWCF.ExceptionMapper.HandleSecurityTokenProcessingException
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

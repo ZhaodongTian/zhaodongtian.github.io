@@ -1,0 +1,152 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.ICallContextInitializer
+  commentId: T:CoreWCF.Dispatcher.ICallContextInitializer
+  id: ICallContextInitializer
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke(System.Object)
+  - CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke(CoreWCF.InstanceContext,CoreWCF.IClientChannel,CoreWCF.Channels.Message)
+  langs:
+  - csharp
+  - vb
+  name: ICallContextInitializer
+  nameWithType: ICallContextInitializer
+  fullName: CoreWCF.Dispatcher.ICallContextInitializer
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Defines the methods that enable the initialization and recycling of thread-local storage with the thread that invokes user code.
+  remarks: "Implement the &lt;xref:CoreWCF.Dispatcher.ICallContextInitializer> interface and add it to the &lt;xref:CoreWCF.Dispatcher.DispatchOperation.CallContextInitializers%2A?displayProperty=nameWithType> property to initialize and clean up thread-local storage for the thread that invokes user code. Typical usage is to set some value, such as impersonation or changing the &lt;xref:System.Globalization.CultureInfo?displayProperty=nameWithType>. If you wanted to establish some custom context, this is the extension point to initialize the static context property, which is then available for developers in the course of the operation.  \n\n"
+  syntax:
+    content: public interface ICallContextInitializer
+    content.vb: Public Interface ICallContextInitializer
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke(CoreWCF.InstanceContext,CoreWCF.IClientChannel,CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke(CoreWCF.InstanceContext,CoreWCF.IClientChannel,CoreWCF.Channels.Message)
+  id: BeforeInvoke(CoreWCF.InstanceContext,CoreWCF.IClientChannel,CoreWCF.Channels.Message)
+  parent: CoreWCF.Dispatcher.ICallContextInitializer
+  langs:
+  - csharp
+  - vb
+  name: BeforeInvoke(InstanceContext, IClientChannel, Message)
+  nameWithType: ICallContextInitializer.BeforeInvoke(InstanceContext, IClientChannel, Message)
+  fullName: CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke(CoreWCF.InstanceContext, CoreWCF.IClientChannel, CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: object BeforeInvoke(InstanceContext instanceContext, IClientChannel channel, Message message)
+    parameters:
+    - id: instanceContext
+      type: CoreWCF.InstanceContext
+    - id: channel
+      type: CoreWCF.IClientChannel
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Object
+    content.vb: Function BeforeInvoke(instanceContext As InstanceContext, channel As IClientChannel, message As Message) As Object
+  overload: CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke*
+- uid: CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke(System.Object)
+  commentId: M:CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke(System.Object)
+  id: AfterInvoke(System.Object)
+  parent: CoreWCF.Dispatcher.ICallContextInitializer
+  langs:
+  - csharp
+  - vb
+  name: AfterInvoke(Object)
+  nameWithType: ICallContextInitializer.AfterInvoke(Object)
+  fullName: CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke(System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: void AfterInvoke(object correlationState)
+    parameters:
+    - id: correlationState
+      type: System.Object
+    content.vb: Sub AfterInvoke(correlationState As Object)
+  overload: CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke*
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke*
+  commentId: Overload:CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke
+  isExternal: true
+  name: BeforeInvoke
+  nameWithType: ICallContextInitializer.BeforeInvoke
+  fullName: CoreWCF.Dispatcher.ICallContextInitializer.BeforeInvoke
+- uid: CoreWCF.InstanceContext
+  commentId: T:CoreWCF.InstanceContext
+  parent: CoreWCF
+  isExternal: true
+  name: InstanceContext
+  nameWithType: InstanceContext
+  fullName: CoreWCF.InstanceContext
+- uid: CoreWCF.IClientChannel
+  commentId: T:CoreWCF.IClientChannel
+  parent: CoreWCF
+  isExternal: true
+  name: IClientChannel
+  nameWithType: IClientChannel
+  fullName: CoreWCF.IClientChannel
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke*
+  commentId: Overload:CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke
+  isExternal: true
+  name: AfterInvoke
+  nameWithType: ICallContextInitializer.AfterInvoke
+  fullName: CoreWCF.Dispatcher.ICallContextInitializer.AfterInvoke

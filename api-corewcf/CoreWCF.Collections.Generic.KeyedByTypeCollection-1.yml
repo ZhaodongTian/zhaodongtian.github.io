@@ -1,0 +1,634 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  commentId: T:CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  id: KeyedByTypeCollection`1
+  parent: CoreWCF.Collections.Generic
+  children:
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Find``1
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.FindAll``1
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.GetKeyForItem(`0)
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.InsertItem(System.Int32,`0)
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Remove``1
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.RemoveAll``1
+  - CoreWCF.Collections.Generic.KeyedByTypeCollection`1.SetItem(System.Int32,`0)
+  langs:
+  - csharp
+  - vb
+  name: KeyedByTypeCollection<TItem>
+  nameWithType: KeyedByTypeCollection<TItem>
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Provides a collection whose items are types that serve as keys.
+  remarks: "Only one object of each type is allowed in the collection because the type is the key and each key must be unique. But you can find objects of different types.  \n\n"
+  syntax:
+    content: 'public class KeyedByTypeCollection<TItem> : KeyedCollection<Type, TItem>'
+    typeParameters:
+    - id: TItem
+      description: The item types contained in the collection that also serve as the keys for the collection.
+    content.vb: >-
+      Public Class KeyedByTypeCollection(Of TItem)
+          Inherits KeyedCollection(Of Type, TItem)
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.BindingParameterCollection
+  nameWithType.vb: KeyedByTypeCollection(Of TItem)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem)
+  name.vb: KeyedByTypeCollection(Of TItem)
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: KeyedByTypeCollection()
+  nameWithType: KeyedByTypeCollection<TItem>.KeyedByTypeCollection()
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.KeyedByTypeCollection()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: "Initializes a new instance of the <xref:CoreWCF.Collections.Generic.KeyedByTypeCollection`1> class."
+  syntax:
+    content: public KeyedByTypeCollection()
+    content.vb: Public Sub New
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).KeyedByTypeCollection()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).KeyedByTypeCollection()
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor(System.Collections.Generic.IEnumerable{`0})
+  id: '#ctor(System.Collections.Generic.IEnumerable{`0})'
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: KeyedByTypeCollection(IEnumerable<TItem>)
+  nameWithType: KeyedByTypeCollection<TItem>.KeyedByTypeCollection(IEnumerable<TItem>)
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.KeyedByTypeCollection(System.Collections.Generic.IEnumerable<TItem>)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: "Initializes a new instance of the <xref:CoreWCF.Collections.Generic.KeyedByTypeCollection`1> class for a specified enumeration of objects."
+  syntax:
+    content: public KeyedByTypeCollection(IEnumerable<TItem> items)
+    parameters:
+    - id: items
+      type: System.Collections.Generic.IEnumerable{{TItem}}
+      description: "The [IEnumerable\\<T\\>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) of generic type [Object](https://learn.microsoft.com/en-us/dotnet/api/system.object?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) used to initialize the collection."
+    content.vb: Public Sub New(items As IEnumerable(Of TItem))
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).KeyedByTypeCollection(IEnumerable(Of TItem))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).KeyedByTypeCollection(System.Collections.Generic.IEnumerable(Of TItem))
+  name.vb: KeyedByTypeCollection(IEnumerable(Of TItem))
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Find``1
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Find``1
+  id: Find``1
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Find<T>()
+  nameWithType: KeyedByTypeCollection<TItem>.Find<T>()
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.Find<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Returns the first item in the collection of a specified type.
+  syntax:
+    content: public T Find<T>()
+    typeParameters:
+    - id: T
+      description: "The type of item in the collection to find."
+    return:
+      type: '{T}'
+      description: "The object of type `T` if it is a reference type and the value of type `T` if it is a value type. The default value of the type is returned if no object of type `T` is contained in the collection: `null` if it is a reference type and 0 if it is a value type."
+    content.vb: Public Function Find(Of T) As T
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Find*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).Find(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).Find(Of T)()
+  name.vb: Find(Of T)()
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Remove``1
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Remove``1
+  id: Remove``1
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: Remove<T>()
+  nameWithType: KeyedByTypeCollection<TItem>.Remove<T>()
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.Remove<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Removes an object of a specified type from the collection.
+  syntax:
+    content: public T Remove<T>()
+    typeParameters:
+    - id: T
+      description: "The type of item in the collection to remove."
+    return:
+      type: '{T}'
+      description: "The object removed from the collection."
+    content.vb: Public Function Remove(Of T) As T
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Remove*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).Remove(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).Remove(Of T)()
+  name.vb: Remove(Of T)()
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.FindAll``1
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.FindAll``1
+  id: FindAll``1
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: FindAll<T>()
+  nameWithType: KeyedByTypeCollection<TItem>.FindAll<T>()
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.FindAll<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: "Returns a collection of objects of type T that are contained in the <xref:CoreWCF.Collections.Generic.KeyedByTypeCollection`1>."
+  syntax:
+    content: public Collection<T> FindAll<T>()
+    typeParameters:
+    - id: T
+      description: "The type of item in the collection to find."
+    return:
+      type: System.Collections.ObjectModel.Collection{{T}}
+      description: "A [Collection\\<T\\>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.collection-1?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) of type T that contains the objects of type T from the original collection."
+    content.vb: Public Function FindAll(Of T) As Collection(Of T)
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.FindAll*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).FindAll(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).FindAll(Of T)()
+  name.vb: FindAll(Of T)()
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.RemoveAll``1
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.RemoveAll``1
+  id: RemoveAll``1
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAll<T>()
+  nameWithType: KeyedByTypeCollection<TItem>.RemoveAll<T>()
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.RemoveAll<T>()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Removes all of the elements of a specified type from the collection.
+  syntax:
+    content: public Collection<T> RemoveAll<T>()
+    typeParameters:
+    - id: T
+      description: "The type of item in the collection to remove."
+    return:
+      type: System.Collections.ObjectModel.Collection{{T}}
+      description: "The [Collection\\<T\\>](https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.collection-1?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that contains the objects of type T from the original collection."
+    content.vb: Public Function RemoveAll(Of T) As Collection(Of T)
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.RemoveAll*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).RemoveAll(Of T)()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).RemoveAll(Of T)()
+  name.vb: RemoveAll(Of T)()
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.GetKeyForItem(`0)
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.GetKeyForItem(`0)
+  id: GetKeyForItem(`0)
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: GetKeyForItem(TItem)
+  nameWithType: KeyedByTypeCollection<TItem>.GetKeyForItem(TItem)
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.GetKeyForItem(TItem)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Gets the type of an item contained in the collection.
+  syntax:
+    content: protected override Type GetKeyForItem(TItem item)
+    parameters:
+    - id: item
+      type: '{TItem}'
+      description: The item in the collection whose type is to be retrieved.
+    return:
+      type: System.Type
+      description: "The type of the specified `item` in the collection."
+    content.vb: Protected Overrides Function GetKeyForItem(item As TItem) As Type
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.GetKeyForItem*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).GetKeyForItem(TItem)
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).GetKeyForItem(TItem)
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.InsertItem(System.Int32,`0)
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.InsertItem(System.Int32,`0)
+  id: InsertItem(System.Int32,`0)
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: InsertItem(Int32, TItem)
+  nameWithType: KeyedByTypeCollection<TItem>.InsertItem(Int32, TItem)
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.InsertItem(System.Int32, TItem)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Inserts an element into the collection at a specific location.
+  syntax:
+    content: protected override void InsertItem(int index, TItem item)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: "The zero-based index at which `item` should be inserted."
+    - id: item
+      type: '{TItem}'
+      description: "The object to insert into the collection."
+    content.vb: Protected Overrides Sub InsertItem(index As Integer, item As TItem)
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.InsertItem*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).InsertItem(Int32, TItem)
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).InsertItem(System.Int32, TItem)
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.SetItem(System.Int32,`0)
+  commentId: M:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.SetItem(System.Int32,`0)
+  id: SetItem(System.Int32,`0)
+  parent: CoreWCF.Collections.Generic.KeyedByTypeCollection`1
+  langs:
+  - csharp
+  - vb
+  name: SetItem(Int32, TItem)
+  nameWithType: KeyedByTypeCollection<TItem>.SetItem(Int32, TItem)
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.SetItem(System.Int32, TItem)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Collections.Generic
+  summary: Replaces the item at the specified index with a new object.
+  syntax:
+    content: protected override void SetItem(int index, TItem item)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: "The zero-based index of the `item` to be replaced."
+    - id: item
+      type: '{TItem}'
+      description: "The object to add to the collection."
+    content.vb: Protected Overrides Sub SetItem(index As Integer, item As TItem)
+  overload: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.SetItem*
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).SetItem(Int32, TItem)
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).SetItem(System.Int32, TItem)
+references:
+- uid: CoreWCF.Collections.Generic
+  commentId: N:CoreWCF.Collections.Generic
+  isExternal: true
+  name: CoreWCF.Collections.Generic
+  nameWithType: CoreWCF.Collections.Generic
+  fullName: CoreWCF.Collections.Generic
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.#ctor
+  isExternal: true
+  name: KeyedByTypeCollection
+  nameWithType: KeyedByTypeCollection<TItem>.KeyedByTypeCollection
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.KeyedByTypeCollection
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).KeyedByTypeCollection
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).KeyedByTypeCollection
+- uid: System.Collections.Generic.IEnumerable{{TItem}}
+  commentId: '!:System.Collections.Generic.IEnumerable{`0}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<TItem>
+  nameWithType: IEnumerable<TItem>
+  fullName: System.Collections.Generic.IEnumerable<TItem>
+  nameWithType.vb: IEnumerable(Of TItem)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TItem)
+  name.vb: IEnumerable(Of TItem)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TItem
+    nameWithType: TItem
+    fullName: TItem
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TItem
+    nameWithType: TItem
+    fullName: TItem
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Find*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Find
+  isExternal: true
+  name: Find
+  nameWithType: KeyedByTypeCollection<TItem>.Find
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.Find
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).Find
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).Find
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Remove*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.Remove
+  isExternal: true
+  name: Remove
+  nameWithType: KeyedByTypeCollection<TItem>.Remove
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.Remove
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).Remove
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).Remove
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.FindAll*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.FindAll
+  isExternal: true
+  name: FindAll
+  nameWithType: KeyedByTypeCollection<TItem>.FindAll
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.FindAll
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).FindAll
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).FindAll
+- uid: System.Collections.ObjectModel.Collection{{T}}
+  commentId: '!:System.Collections.ObjectModel.Collection{``0}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<T>
+  nameWithType: Collection<T>
+  fullName: System.Collections.ObjectModel.Collection<T>
+  nameWithType.vb: Collection(Of T)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of T)
+  name.vb: Collection(Of T)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.RemoveAll*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.RemoveAll
+  isExternal: true
+  name: RemoveAll
+  nameWithType: KeyedByTypeCollection<TItem>.RemoveAll
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.RemoveAll
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).RemoveAll
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).RemoveAll
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.GetKeyForItem*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.GetKeyForItem
+  isExternal: true
+  name: GetKeyForItem
+  nameWithType: KeyedByTypeCollection<TItem>.GetKeyForItem
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.GetKeyForItem
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).GetKeyForItem
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).GetKeyForItem
+- uid: '{TItem}'
+  commentId: '!:TItem'
+  definition: TItem
+  name: TItem
+  nameWithType: TItem
+  fullName: TItem
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: TItem
+  name: TItem
+  nameWithType: TItem
+  fullName: TItem
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.InsertItem*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.InsertItem
+  isExternal: true
+  name: InsertItem
+  nameWithType: KeyedByTypeCollection<TItem>.InsertItem
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.InsertItem
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).InsertItem
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).InsertItem
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Collections.Generic.KeyedByTypeCollection`1.SetItem*
+  commentId: Overload:CoreWCF.Collections.Generic.KeyedByTypeCollection`1.SetItem
+  isExternal: true
+  name: SetItem
+  nameWithType: KeyedByTypeCollection<TItem>.SetItem
+  fullName: CoreWCF.Collections.Generic.KeyedByTypeCollection<TItem>.SetItem
+  nameWithType.vb: KeyedByTypeCollection(Of TItem).SetItem
+  fullName.vb: CoreWCF.Collections.Generic.KeyedByTypeCollection(Of TItem).SetItem

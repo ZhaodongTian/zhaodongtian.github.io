@@ -1,0 +1,187 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.MessageProtectionOrder
+  commentId: T:CoreWCF.Security.MessageProtectionOrder
+  id: MessageProtectionOrder
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.MessageProtectionOrder.EncryptBeforeSign
+  - CoreWCF.Security.MessageProtectionOrder.SignBeforeEncrypt
+  - CoreWCF.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature
+  - CoreWCF.Security.MessageProtectionOrder.value__
+  langs:
+  - csharp
+  - vb
+  name: MessageProtectionOrder
+  nameWithType: MessageProtectionOrder
+  fullName: CoreWCF.Security.MessageProtectionOrder
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: Specifies the order of operations that protect a message.
+  remarks: "This enumeration is used with the &lt;xref:CoreWCF.Channels.AsymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> property of the &lt;xref:CoreWCF.Channels.AsymmetricSecurityBindingElement> and the &lt;xref:CoreWCF.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A?displayProperty=nameWithType> property of the &lt;xref:CoreWCF.Channels.SymmetricSecurityBindingElement> classes.  \n\nIf a message is vulnerable to a digest attack (for example, if the message is short or the entropy is low), you should use the SignBeforeEncryptAndEncryptSignature or EncryptBeforeSign option. (*Entropy* is random data provided by a server, a client, or both, and is used to create a shared key for encrypting and decrypting data.)  \n\n## What Is Ordered?  \nWCF offers three different protection levels that determine how messages are secured using SOAP message security. The default is SignBeforeEncryptAndEncryptSignature. This setting first signs the message, encrypts the message body, and then encrypts the XML signature. This reduces the likelihood of a successful cryptographic guessing attack against the signature.  \n\nHowever, using the default has performance implications. In effect, there is a tradeoff of performance for increased security. Encrypting the signature can decrease performance between 10 percent and 40 percent. If the data content of the message is of low value, and performance throughput is more significant, use SignBeforeEncrypt. With this setting, the signature digest is sent in clear text, and thus the message is more vulnerable to guess-and-verify attacks on low entropy.  \n\n## Custom Bindings Only  \nTo change the `MessageProtectionOrder` property requires the creation of a custom security binding. For more information about creating custom bindings, see [Creating User-Defined Bindings](/dotnet/framework/wcf/extending/creating-user-defined-bindings). For more information about creating a custom binding for a specific authentication mode, see [How to: Create a SecurityBindingElement for a Specified Authentication Mode](/dotnet/framework/wcf/feature-details/how-to-create-a-securitybindingelement-for-a-specified-authentication-mode).  \n\n\n\n"
+  syntax:
+    content: 'public sealed class MessageProtectionOrder : Enum'
+    content.vb: >-
+      Public NotInheritable Class MessageProtectionOrder
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Security.MessageProtectionOrder.value__
+  commentId: F:CoreWCF.Security.MessageProtectionOrder.value__
+  id: value__
+  parent: CoreWCF.Security.MessageProtectionOrder
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: MessageProtectionOrder.value__
+  fullName: CoreWCF.Security.MessageProtectionOrder.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.MessageProtectionOrder.SignBeforeEncrypt
+  commentId: F:CoreWCF.Security.MessageProtectionOrder.SignBeforeEncrypt
+  id: SignBeforeEncrypt
+  parent: CoreWCF.Security.MessageProtectionOrder
+  langs:
+  - csharp
+  - vb
+  name: SignBeforeEncrypt
+  nameWithType: MessageProtectionOrder.SignBeforeEncrypt
+  fullName: CoreWCF.Security.MessageProtectionOrder.SignBeforeEncrypt
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public const MessageProtectionOrder SignBeforeEncrypt
+    return:
+      type: CoreWCF.Security.MessageProtectionOrder
+    content.vb: Public Const SignBeforeEncrypt As MessageProtectionOrder
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature
+  commentId: F:CoreWCF.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature
+  id: SignBeforeEncryptAndEncryptSignature
+  parent: CoreWCF.Security.MessageProtectionOrder
+  langs:
+  - csharp
+  - vb
+  name: SignBeforeEncryptAndEncryptSignature
+  nameWithType: MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature
+  fullName: CoreWCF.Security.MessageProtectionOrder.SignBeforeEncryptAndEncryptSignature
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public const MessageProtectionOrder SignBeforeEncryptAndEncryptSignature
+    return:
+      type: CoreWCF.Security.MessageProtectionOrder
+    content.vb: Public Const SignBeforeEncryptAndEncryptSignature As MessageProtectionOrder
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.Security.MessageProtectionOrder.EncryptBeforeSign
+  commentId: F:CoreWCF.Security.MessageProtectionOrder.EncryptBeforeSign
+  id: EncryptBeforeSign
+  parent: CoreWCF.Security.MessageProtectionOrder
+  langs:
+  - csharp
+  - vb
+  name: EncryptBeforeSign
+  nameWithType: MessageProtectionOrder.EncryptBeforeSign
+  fullName: CoreWCF.Security.MessageProtectionOrder.EncryptBeforeSign
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public const MessageProtectionOrder EncryptBeforeSign
+    return:
+      type: CoreWCF.Security.MessageProtectionOrder
+    content.vb: Public Const EncryptBeforeSign As MessageProtectionOrder
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Security.MessageProtectionOrder
+  commentId: T:CoreWCF.Security.MessageProtectionOrder
+  parent: CoreWCF.Security
+  isExternal: true
+  name: MessageProtectionOrder
+  nameWithType: MessageProtectionOrder
+  fullName: CoreWCF.Security.MessageProtectionOrder

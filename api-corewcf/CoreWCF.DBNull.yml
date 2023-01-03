@@ -1,0 +1,95 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.DBNull
+  commentId: T:CoreWCF.DBNull
+  id: DBNull
+  parent: CoreWCF
+  children:
+  - CoreWCF.DBNull.Value
+  langs:
+  - csharp
+  - vb
+  name: DBNull
+  nameWithType: DBNull
+  fullName: CoreWCF.DBNull
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Represents a nonexistent value. This class cannot be inherited.
+  remarks: "The &lt;xref:System.DBNull> class represents a nonexistent value. In a database, for example, a column in a row of a table might not contain any data whatsoever. That is, the column is considered to not exist at all instead of merely not having a value. A &lt;xref:System.DBNull> object represents the nonexistent column. Additionally, COM interop uses the &lt;xref:System.DBNull> class to distinguish between a VT_NULL variant, which indicates a nonexistent value, and a VT_EMPTY variant, which indicates an unspecified value.  \n\nThe &lt;xref:System.DBNull> type is a singleton class, which means only one &lt;xref:System.DBNull> object exists. The &lt;xref:System.DBNull.Value?displayProperty=nameWithType> member represents the sole &lt;xref:System.DBNull> object. &lt;xref:System.DBNull.Value?displayProperty=nameWithType> can be used to explicitly assign a nonexistent value to a database field, although most ADO.NET data providers automatically assign values of &lt;xref:System.DBNull> when a field does not have a valid value. You can determine whether a value retrieved from a database field is a &lt;xref:System.DBNull> value by passing the value of that field to the `DBNull.Value.Equals` method. However, some languages and database objects supply methods that make it easier to determine whether the value of a database field is &lt;xref:System.DBNull.Value?displayProperty=nameWithType>. These include the Visual Basic `IsDBNull` function, the &lt;xref:System.Convert.IsDBNull%2A?displayProperty=nameWithType> method, the &lt;xref:System.Data.DataTableReader.IsDBNull%2A?displayProperty=nameWithType> method, and the &lt;xref:System.Data.IDataRecord.IsDBNull%2A?displayProperty=nameWithType> method.  \n\nDo not confuse the notion of `null` in an object-oriented programming language with a &lt;xref:System.DBNull> object. In an object-oriented programming language, `null` means the absence of a reference to an object. &lt;xref:System.DBNull> represents an uninitialized variant or nonexistent database column.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class DBNull : Object'
+    content.vb: >-
+      Public NotInheritable Class DBNull
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.DBNull.Value
+  commentId: F:CoreWCF.DBNull.Value
+  id: Value
+  parent: CoreWCF.DBNull
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: DBNull.Value
+  fullName: CoreWCF.DBNull.Value
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static readonly DBNull Value
+    return:
+      type: CoreWCF.DBNull
+    content.vb: Public Shared ReadOnly Value As DBNull
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.DBNull
+  commentId: T:CoreWCF.DBNull
+  parent: CoreWCF
+  isExternal: true
+  name: DBNull
+  nameWithType: DBNull
+  fullName: CoreWCF.DBNull

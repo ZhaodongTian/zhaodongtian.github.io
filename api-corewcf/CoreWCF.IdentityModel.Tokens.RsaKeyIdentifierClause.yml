@@ -1,0 +1,656 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  id: RsaKeyIdentifierClause
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.#ctor(System.Security.Cryptography.RSA)
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(System.Security.Cryptography.RSA)
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64(System.Xml.XmlWriter)
+  - CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64(System.Xml.XmlWriter)
+  langs:
+  - csharp
+  - vb
+  name: RsaKeyIdentifierClause
+  nameWithType: RsaKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: Represents a key identifier clause that identifies a  security token.
+  remarks: "Typically, the &lt;xref:System.IdentityModel.Tokens.RsaKeyIdentifierClause> does not need to be used, other than when a custom security token service is created. When a security token service returns a security token, the issued security token contains references to attached and unattached security tokens. Attached references refer to security tokens that are contained within the security header of a SOAP message and unattached references are security tokens that are not included within the security header in the SOAP message. These references typically affirm the authenticity of the issued security token. Use the &lt;xref:System.IdentityModel.Tokens.RsaKeyIdentifierClause> class to reference a &lt;xref:System.IdentityModel.Tokens.RsaSecurityToken> security token and to access the RSA algorithm. To access the RSA algorithm, get the value of the &lt;xref:System.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa%2A> property.  \n\n"
+  syntax:
+    content: 'public class RsaKeyIdentifierClause : SecurityKeyIdentifierClause'
+    content.vb: >-
+      Public Class RsaKeyIdentifierClause
+          Inherits SecurityKeyIdentifierClause
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  inheritedMembers:
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  - CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.#ctor(System.Security.Cryptography.RSA)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.#ctor(System.Security.Cryptography.RSA)
+  id: '#ctor(System.Security.Cryptography.RSA)'
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: RsaKeyIdentifierClause(RSA)
+  nameWithType: RsaKeyIdentifierClause.RsaKeyIdentifierClause(RSA)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.RsaKeyIdentifierClause(System.Security.Cryptography.RSA)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public RsaKeyIdentifierClause(RSA rsa)
+    parameters:
+    - id: rsa
+      type: System.Security.Cryptography.RSA
+    content.vb: Public Sub New(rsa As RSA)
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey
+  id: CreateKey
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: CreateKey()
+  nameWithType: RsaKeyIdentifierClause.CreateKey()
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override SecurityKey CreateKey()
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKey
+    content.vb: Public Overrides Function CreateKey As SecurityKey
+  overridden: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent
+  id: GetExponent
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: GetExponent()
+  nameWithType: RsaKeyIdentifierClause.GetExponent()
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public byte[] GetExponent()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetExponent As Byte()
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus
+  id: GetModulus
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: GetModulus()
+  nameWithType: RsaKeyIdentifierClause.GetModulus()
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public byte[] GetModulus()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetModulus As Byte()
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  id: Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Matches(SecurityKeyIdentifierClause)
+  nameWithType: RsaKeyIdentifierClause.Matches(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override bool Matches(SecurityKeyIdentifierClause keyIdentifierClause)
+    parameters:
+    - id: keyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Matches(keyIdentifierClause As SecurityKeyIdentifierClause) As Boolean
+  overridden: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(System.Security.Cryptography.RSA)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(System.Security.Cryptography.RSA)
+  id: Matches(System.Security.Cryptography.RSA)
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Matches(RSA)
+  nameWithType: RsaKeyIdentifierClause.Matches(RSA)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches(System.Security.Cryptography.RSA)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public bool Matches(RSA rsa)
+    parameters:
+    - id: rsa
+      type: System.Security.Cryptography.RSA
+    return:
+      type: System.Boolean
+    content.vb: Public Function Matches(rsa As RSA) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString
+  id: ToString
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: RsaKeyIdentifierClause.ToString()
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64(System.Xml.XmlWriter)
+  id: WriteExponentAsBase64(System.Xml.XmlWriter)
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: WriteExponentAsBase64(XmlWriter)
+  nameWithType: RsaKeyIdentifierClause.WriteExponentAsBase64(XmlWriter)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public void WriteExponentAsBase64(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    content.vb: Public Sub WriteExponentAsBase64(writer As XmlWriter)
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64(System.Xml.XmlWriter)
+  commentId: M:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64(System.Xml.XmlWriter)
+  id: WriteModulusAsBase64(System.Xml.XmlWriter)
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: WriteModulusAsBase64(XmlWriter)
+  nameWithType: RsaKeyIdentifierClause.WriteModulusAsBase64(XmlWriter)
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64(System.Xml.XmlWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public void WriteModulusAsBase64(XmlWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    content.vb: Public Sub WriteModulusAsBase64(writer As XmlWriter)
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey
+  commentId: P:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey
+  id: CanCreateKey
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: CanCreateKey
+  nameWithType: RsaKeyIdentifierClause.CanCreateKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public override bool CanCreateKey { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides ReadOnly Property CanCreateKey As Boolean
+  overridden: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa
+  commentId: P:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa
+  id: Rsa
+  parent: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause
+  langs:
+  - csharp
+  - vb
+  name: Rsa
+  nameWithType: RsaKeyIdentifierClause.Rsa
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  syntax:
+    content: public RSA Rsa { get; }
+    parameters: []
+    return:
+      type: System.Security.Cryptography.RSA
+    content.vb: Public ReadOnly Property Rsa As RSA
+  overload: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: GetDerivationNonce()
+  nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce()
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    name: GetDerivationNonce
+    nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    name: GetDerivationNonce
+    nameWithType: SecurityKeyIdentifierClause.GetDerivationNonce
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.GetDerivationNonce
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: ClauseType
+  nameWithType: SecurityKeyIdentifierClause.ClauseType
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.ClauseType
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: Id
+  nameWithType: SecurityKeyIdentifierClause.Id
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Id
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: DerivationLength
+  nameWithType: SecurityKeyIdentifierClause.DerivationLength
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.DerivationLength
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.#ctor
+  isExternal: true
+  name: RsaKeyIdentifierClause
+  nameWithType: RsaKeyIdentifierClause.RsaKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.RsaKeyIdentifierClause
+- uid: System.Security.Cryptography.RSA
+  isExternal: true
+  name: RSA
+  nameWithType: RSA
+  fullName: System.Security.Cryptography.RSA
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: CreateKey()
+  nameWithType: SecurityKeyIdentifierClause.CreateKey()
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey()
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    name: CreateKey
+    nameWithType: SecurityKeyIdentifierClause.CreateKey
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    name: CreateKey
+    nameWithType: SecurityKeyIdentifierClause.CreateKey
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CreateKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey
+  isExternal: true
+  name: CreateKey
+  nameWithType: RsaKeyIdentifierClause.CreateKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CreateKey
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKey
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityKey
+  nameWithType: SecurityKey
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKey
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent
+  isExternal: true
+  name: GetExponent
+  nameWithType: RsaKeyIdentifierClause.GetExponent
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetExponent
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus
+  isExternal: true
+  name: GetModulus
+  nameWithType: RsaKeyIdentifierClause.GetModulus
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.GetModulus
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: Matches(SecurityKeyIdentifierClause)
+  nameWithType: SecurityKeyIdentifierClause.Matches(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: Matches
+    nameWithType: SecurityKeyIdentifierClause.Matches
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: Matches
+    nameWithType: SecurityKeyIdentifierClause.Matches
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.Matches
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches
+  isExternal: true
+  name: Matches
+  nameWithType: RsaKeyIdentifierClause.Matches
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Matches
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: RsaKeyIdentifierClause.ToString
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64
+  isExternal: true
+  name: WriteExponentAsBase64
+  nameWithType: RsaKeyIdentifierClause.WriteExponentAsBase64
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteExponentAsBase64
+- uid: System.Xml.XmlWriter
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64
+  isExternal: true
+  name: WriteModulusAsBase64
+  nameWithType: RsaKeyIdentifierClause.WriteModulusAsBase64
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.WriteModulusAsBase64
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  commentId: P:CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+  parent: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  isExternal: true
+  name: CanCreateKey
+  nameWithType: SecurityKeyIdentifierClause.CanCreateKey
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause.CanCreateKey
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey
+  isExternal: true
+  name: CanCreateKey
+  nameWithType: RsaKeyIdentifierClause.CanCreateKey
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.CanCreateKey
+- uid: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa
+  isExternal: true
+  name: Rsa
+  nameWithType: RsaKeyIdentifierClause.Rsa
+  fullName: CoreWCF.IdentityModel.Tokens.RsaKeyIdentifierClause.Rsa

@@ -1,0 +1,223 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.IContractBehavior
+  commentId: T:CoreWCF.Description.IContractBehavior
+  id: IContractBehavior
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.IContractBehavior.AddBindingParameters(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Description.IContractBehavior.ApplyClientBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  - CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.DispatchRuntime)
+  - CoreWCF.Description.IContractBehavior.Validate(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint)
+  langs:
+  - csharp
+  - vb
+  name: IContractBehavior
+  nameWithType: IContractBehavior
+  fullName: CoreWCF.Description.IContractBehavior
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Implements methods that can be used to extend run-time behavior for a contract in either a service or client application.
+  remarks: "Implement the &lt;xref:CoreWCF.Description.IContractBehavior> interface to modify, examine, or extend some aspect of contract-wide execution at the application level. Unlike &lt;xref:CoreWCF.Description.IServiceBehavior> and &lt;xref:CoreWCF.Description.IEndpointBehavior> objects, &lt;xref:CoreWCF.Description.IContractBehavior> objects cannot be added to the runtime using an application configuration file; they can only be added programmatically or using an attribute.  \n\nFor more information about choosing between service, endpoint, and contract behaviors, see [Configuring and Extending the Runtime with Behaviors](/dotnet/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors).  \n\n-   Use the &lt;xref:CoreWCF.Description.IContractBehavior.AddBindingParameters%2A> method to provide binding elements with custom data to support the behavior.  \n\n-   Use the &lt;xref:CoreWCF.Description.IContractBehavior.ApplyClientBehavior%2A> method to modify, examine, or insert extensions to a contract in a client application.  \n\n-   Use the &lt;xref:CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior%2A> method to modify, examine, or insert extensions to a contract in a service application.  \n\n-   Use the &lt;xref:CoreWCF.Description.IContractBehavior.Validate%2A> method to ensure that a contract can support a particular feature.  \n\n&lt;xref:CoreWCF.Description.IContractBehavior> objects can make use of any of these methods, but often only one is important; in such cases, the unused methods can return without any value.  \n\n> [!NOTE]\n>  All of the &lt;xref:CoreWCF.Description.IContractBehavior> methods pass &lt;xref:CoreWCF.Description.ContractDescription?displayProperty=nameWithType> and &lt;xref:CoreWCF.Description.ServiceEndpoint?displayProperty=nameWithType> as parameters. These parameters are for examination; if you modify the objects the execution behavior is undefined.  \n\n&lt;xref:CoreWCF.Description.IContractBehavior> types can be used on either the service or the client, or both. To perform a customization task on the service, the &lt;xref:CoreWCF.Description.IContractBehavior> object must be added to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A> property prior to the construction of the service runtime, which occurs when the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method is called on the &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType> object. There are two ways to do this.  \n\nThe first method is to programmatically add the custom contract behavior to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A> property prior to the point when the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType> method is called on the &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType> object. When applied this way, the behavior is applied for all messages flowing through that contract on any endpoint.  \n\n> [!NOTE]\n>  The behavior is applied to all contracts of the same type. For example, if you programmatically add the same contract type to more than one endpoint, the behavior modifies all endpoints that refer to the same contract object.  \n\nThe second method is to create a custom attribute that implements &lt;xref:CoreWCF.Description.IContractBehavior> and apply that to:  \n\n-   A contract interface. In this case, the behavior is applied to all contracts of that type in any endpoint.  \n\n-   A service class.  In this case, the behavior is applied to all endpoints regardless of contract.  \n\n-   A callback class.  In this case, the behavior is applied to the duplex client&apos;s endpoint.  \n\nThe behavior of the second approach varies slightly if the custom attribute also implements &lt;xref:CoreWCF.Description.IContractBehaviorAttribute?displayProperty=nameWithType>. In this case, the behavior is as follows:  \n\n-   A contract interface. In this case, the behavior is applied to all contracts of that type in any endpoint and Windows Communication Foundation (WCF) ignores the value of the &lt;xref:CoreWCF.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> property.  \n\n-   A service class.  In this case, the behavior is applied only to endpoints the contract of which is the value of the &lt;xref:CoreWCF.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> property.  \n\n-   A callback class.  In this case, the behavior is applied to the duplex client&apos;s endpoint and WCF ignores the value of the &lt;xref:CoreWCF.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType> property.  \n\nTo perform the customization task on the client for which it is intended, the &lt;xref:CoreWCF.Description.IContractBehavior> object must be added to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A> property prior to the construction of the client runtime, which occurs when &lt;xref:CoreWCF.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> is called. There are two ways to do this:  \n\n-   Programmatically add the custom contract behavior to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A> property prior to the point when the &lt;xref:CoreWCF.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> is called.  \n\n-   Create a custom attribute that also implements &lt;xref:CoreWCF.Description.IContractBehavior>.  \n\nFor more information on programmatically adding &lt;xref:CoreWCF.Description.IContractBehavior> types to either the client or service application, see [Configuring and Extending the Runtime with Behaviors](/dotnet/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors).  \n\n\n\n"
+  syntax:
+    content: public interface IContractBehavior
+    content.vb: Public Interface IContractBehavior
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Description.IContractBehavior.AddBindingParameters(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IContractBehavior.AddBindingParameters(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  id: AddBindingParameters(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IContractBehavior
+  langs:
+  - csharp
+  - vb
+  name: AddBindingParameters(ContractDescription, ServiceEndpoint, BindingParameterCollection)
+  nameWithType: IContractBehavior.AddBindingParameters(ContractDescription, ServiceEndpoint, BindingParameterCollection)
+  fullName: CoreWCF.Description.IContractBehavior.AddBindingParameters(CoreWCF.Description.ContractDescription, CoreWCF.Description.ServiceEndpoint, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void AddBindingParameters(ContractDescription contractDescription, ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: contractDescription
+      type: CoreWCF.Description.ContractDescription
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+    content.vb: Sub AddBindingParameters(contractDescription As ContractDescription, endpoint As ServiceEndpoint, bindingParameters As BindingParameterCollection)
+  overload: CoreWCF.Description.IContractBehavior.AddBindingParameters*
+- uid: CoreWCF.Description.IContractBehavior.ApplyClientBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  commentId: M:CoreWCF.Description.IContractBehavior.ApplyClientBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  id: ApplyClientBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)
+  parent: CoreWCF.Description.IContractBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyClientBehavior(ContractDescription, ServiceEndpoint, ClientRuntime)
+  nameWithType: IContractBehavior.ApplyClientBehavior(ContractDescription, ServiceEndpoint, ClientRuntime)
+  fullName: CoreWCF.Description.IContractBehavior.ApplyClientBehavior(CoreWCF.Description.ContractDescription, CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.ClientRuntime)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyClientBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, ClientRuntime clientRuntime)
+    parameters:
+    - id: contractDescription
+      type: CoreWCF.Description.ContractDescription
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: clientRuntime
+      type: CoreWCF.Dispatcher.ClientRuntime
+    content.vb: Sub ApplyClientBehavior(contractDescription As ContractDescription, endpoint As ServiceEndpoint, clientRuntime As ClientRuntime)
+  overload: CoreWCF.Description.IContractBehavior.ApplyClientBehavior*
+- uid: CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.DispatchRuntime)
+  commentId: M:CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.DispatchRuntime)
+  id: ApplyDispatchBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.DispatchRuntime)
+  parent: CoreWCF.Description.IContractBehavior
+  langs:
+  - csharp
+  - vb
+  name: ApplyDispatchBehavior(ContractDescription, ServiceEndpoint, DispatchRuntime)
+  nameWithType: IContractBehavior.ApplyDispatchBehavior(ContractDescription, ServiceEndpoint, DispatchRuntime)
+  fullName: CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior(CoreWCF.Description.ContractDescription, CoreWCF.Description.ServiceEndpoint, CoreWCF.Dispatcher.DispatchRuntime)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void ApplyDispatchBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, DispatchRuntime dispatchRuntime)
+    parameters:
+    - id: contractDescription
+      type: CoreWCF.Description.ContractDescription
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    - id: dispatchRuntime
+      type: CoreWCF.Dispatcher.DispatchRuntime
+    content.vb: Sub ApplyDispatchBehavior(contractDescription As ContractDescription, endpoint As ServiceEndpoint, dispatchRuntime As DispatchRuntime)
+  overload: CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior*
+- uid: CoreWCF.Description.IContractBehavior.Validate(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint)
+  commentId: M:CoreWCF.Description.IContractBehavior.Validate(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint)
+  id: Validate(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint)
+  parent: CoreWCF.Description.IContractBehavior
+  langs:
+  - csharp
+  - vb
+  name: Validate(ContractDescription, ServiceEndpoint)
+  nameWithType: IContractBehavior.Validate(ContractDescription, ServiceEndpoint)
+  fullName: CoreWCF.Description.IContractBehavior.Validate(CoreWCF.Description.ContractDescription, CoreWCF.Description.ServiceEndpoint)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: void Validate(ContractDescription contractDescription, ServiceEndpoint endpoint)
+    parameters:
+    - id: contractDescription
+      type: CoreWCF.Description.ContractDescription
+    - id: endpoint
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Sub Validate(contractDescription As ContractDescription, endpoint As ServiceEndpoint)
+  overload: CoreWCF.Description.IContractBehavior.Validate*
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Description.IContractBehavior.AddBindingParameters*
+  commentId: Overload:CoreWCF.Description.IContractBehavior.AddBindingParameters
+  isExternal: true
+  name: AddBindingParameters
+  nameWithType: IContractBehavior.AddBindingParameters
+  fullName: CoreWCF.Description.IContractBehavior.AddBindingParameters
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Description.IContractBehavior.ApplyClientBehavior*
+  commentId: Overload:CoreWCF.Description.IContractBehavior.ApplyClientBehavior
+  isExternal: true
+  name: ApplyClientBehavior
+  nameWithType: IContractBehavior.ApplyClientBehavior
+  fullName: CoreWCF.Description.IContractBehavior.ApplyClientBehavior
+- uid: CoreWCF.Dispatcher.ClientRuntime
+  commentId: T:CoreWCF.Dispatcher.ClientRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientRuntime
+  nameWithType: ClientRuntime
+  fullName: CoreWCF.Dispatcher.ClientRuntime
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior
+  nameWithType: IContractBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior
+- uid: CoreWCF.Dispatcher.DispatchRuntime
+  commentId: T:CoreWCF.Dispatcher.DispatchRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchRuntime
+  nameWithType: DispatchRuntime
+  fullName: CoreWCF.Dispatcher.DispatchRuntime
+- uid: CoreWCF.Description.IContractBehavior.Validate*
+  commentId: Overload:CoreWCF.Description.IContractBehavior.Validate
+  isExternal: true
+  name: Validate
+  nameWithType: IContractBehavior.Validate
+  fullName: CoreWCF.Description.IContractBehavior.Validate

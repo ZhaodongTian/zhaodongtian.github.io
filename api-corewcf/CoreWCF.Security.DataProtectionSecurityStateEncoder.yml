@@ -1,0 +1,491 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  commentId: T:CoreWCF.Security.DataProtectionSecurityStateEncoder
+  id: DataProtectionSecurityStateEncoder
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean)
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean,System.Byte[])
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  langs:
+  - csharp
+  - vb
+  name: DataProtectionSecurityStateEncoder
+  nameWithType: DataProtectionSecurityStateEncoder
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: Provides encoding and decoding mechanisms for the security state using the Windows  API functionality.
+  remarks: "This class is used for encoding the security state as represented by a *Stateful Security Context Token* when the message is sent, and for decoding the security context when the message arrives at a recipient.  \n\nThe encoding can either be in the current user scope (whereby only processes running as the user account can decode the security state) or it can be in the local machine scope (whereby all processes running on the machine can decode the security state). By default, the encoding is in the current user scope.  \n\nThis class is used by the server when sending the security state in the *Stateful Security Context Token* issued to the client.  \n\n`DataProtection` based on the `CurrentUser` scope requires the current user to have a user profile. If the user has a roaming profile, then the security state encoded by the user process running on one machine can be decoded by a user process running on a different machine.  \n\n"
+  syntax:
+    content: 'public class DataProtectionSecurityStateEncoder : SecurityStateEncoder'
+    content.vb: >-
+      Public Class DataProtectionSecurityStateEncoder
+          Inherits SecurityStateEncoder
+  inheritance:
+  - System.Object
+  - CoreWCF.Security.SecurityStateEncoder
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: DataProtectionSecurityStateEncoder()
+  nameWithType: DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder()
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public DataProtectionSecurityStateEncoder()
+    content.vb: Public Sub New
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean)
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean)
+  id: '#ctor(System.Boolean)'
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: DataProtectionSecurityStateEncoder(Boolean)
+  nameWithType: DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder(Boolean)
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder(System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public DataProtectionSecurityStateEncoder(bool useCurrentUserProtectionScope)
+    parameters:
+    - id: useCurrentUserProtectionScope
+      type: System.Boolean
+    content.vb: Public Sub New(useCurrentUserProtectionScope As Boolean)
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean,System.Byte[])
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor(System.Boolean,System.Byte[])
+  id: '#ctor(System.Boolean,System.Byte[])'
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: DataProtectionSecurityStateEncoder(Boolean, Byte[])
+  nameWithType: DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder(Boolean, Byte[])
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder(System.Boolean, System.Byte[])
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public DataProtectionSecurityStateEncoder(bool useCurrentUserProtectionScope, byte[] entropy)
+    parameters:
+    - id: useCurrentUserProtectionScope
+      type: System.Boolean
+    - id: entropy
+      type: System.Byte[]
+    content.vb: Public Sub New(useCurrentUserProtectionScope As Boolean, entropy As Byte())
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor*
+  nameWithType.vb: DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder(Boolean, Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder(System.Boolean, System.Byte())
+  name.vb: DataProtectionSecurityStateEncoder(Boolean, Byte())
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy
+  id: GetEntropy
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: GetEntropy()
+  nameWithType: DataProtectionSecurityStateEncoder.GetEntropy()
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public byte[] GetEntropy()
+    return:
+      type: System.Byte[]
+    content.vb: Public Function GetEntropy As Byte()
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString
+  id: ToString
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: DataProtectionSecurityStateEncoder.ToString()
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  id: DecodeSecurityState(System.Byte[])
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: DecodeSecurityState(Byte[])
+  nameWithType: DataProtectionSecurityStateEncoder.DecodeSecurityState(Byte[])
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override byte[] DecodeSecurityState(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Protected Overrides Function DecodeSecurityState(data As Byte()) As Byte()
+  overridden: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState*
+  nameWithType.vb: DataProtectionSecurityStateEncoder.DecodeSecurityState(Byte())
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState(System.Byte())
+  name.vb: DecodeSecurityState(Byte())
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  commentId: M:CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  id: EncodeSecurityState(System.Byte[])
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: EncodeSecurityState(Byte[])
+  nameWithType: DataProtectionSecurityStateEncoder.EncodeSecurityState(Byte[])
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override byte[] EncodeSecurityState(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Protected Overrides Function EncodeSecurityState(data As Byte()) As Byte()
+  overridden: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState*
+  nameWithType.vb: DataProtectionSecurityStateEncoder.EncodeSecurityState(Byte())
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+  fullName.vb: CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState(System.Byte())
+  name.vb: EncodeSecurityState(Byte())
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  commentId: P:CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  id: UseCurrentUserProtectionScope
+  parent: CoreWCF.Security.DataProtectionSecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: UseCurrentUserProtectionScope
+  nameWithType: DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public bool UseCurrentUserProtectionScope { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property UseCurrentUserProtectionScope As Boolean
+  overload: CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Security.SecurityStateEncoder
+  commentId: T:CoreWCF.Security.SecurityStateEncoder
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityStateEncoder
+  nameWithType: SecurityStateEncoder
+  fullName: CoreWCF.Security.SecurityStateEncoder
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor*
+  commentId: Overload:CoreWCF.Security.DataProtectionSecurityStateEncoder.#ctor
+  isExternal: true
+  name: DataProtectionSecurityStateEncoder
+  nameWithType: DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.DataProtectionSecurityStateEncoder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy*
+  commentId: Overload:CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy
+  isExternal: true
+  name: GetEntropy
+  nameWithType: DataProtectionSecurityStateEncoder.GetEntropy
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.GetEntropy
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString*
+  commentId: Overload:CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: DataProtectionSecurityStateEncoder.ToString
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  commentId: M:CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  parent: CoreWCF.Security.SecurityStateEncoder
+  isExternal: true
+  name: DecodeSecurityState(Byte[])
+  nameWithType: SecurityStateEncoder.DecodeSecurityState(Byte[])
+  fullName: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  nameWithType.vb: SecurityStateEncoder.DecodeSecurityState(Byte())
+  fullName.vb: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte())
+  name.vb: DecodeSecurityState(Byte())
+  spec.csharp:
+  - uid: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+    name: DecodeSecurityState
+    nameWithType: SecurityStateEncoder.DecodeSecurityState
+    fullName: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+    name: DecodeSecurityState
+    nameWithType: SecurityStateEncoder.DecodeSecurityState
+    fullName: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState*
+  commentId: Overload:CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState
+  isExternal: true
+  name: DecodeSecurityState
+  nameWithType: DataProtectionSecurityStateEncoder.DecodeSecurityState
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.DecodeSecurityState
+- uid: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  commentId: M:CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  parent: CoreWCF.Security.SecurityStateEncoder
+  isExternal: true
+  name: EncodeSecurityState(Byte[])
+  nameWithType: SecurityStateEncoder.EncodeSecurityState(Byte[])
+  fullName: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  nameWithType.vb: SecurityStateEncoder.EncodeSecurityState(Byte())
+  fullName.vb: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte())
+  name.vb: EncodeSecurityState(Byte())
+  spec.csharp:
+  - uid: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+    name: EncodeSecurityState
+    nameWithType: SecurityStateEncoder.EncodeSecurityState
+    fullName: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+    name: EncodeSecurityState
+    nameWithType: SecurityStateEncoder.EncodeSecurityState
+    fullName: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState*
+  commentId: Overload:CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState
+  isExternal: true
+  name: EncodeSecurityState
+  nameWithType: DataProtectionSecurityStateEncoder.EncodeSecurityState
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.EncodeSecurityState
+- uid: CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope*
+  commentId: Overload:CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  isExternal: true
+  name: UseCurrentUserProtectionScope
+  nameWithType: DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope
+  fullName: CoreWCF.Security.DataProtectionSecurityStateEncoder.UseCurrentUserProtectionScope

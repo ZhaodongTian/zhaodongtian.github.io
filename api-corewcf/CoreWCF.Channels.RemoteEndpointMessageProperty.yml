@@ -1,0 +1,265 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty
+  commentId: T:CoreWCF.Channels.RemoteEndpointMessageProperty
+  id: RemoteEndpointMessageProperty
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor(System.Net.IPEndPoint)
+  - CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor(System.String,System.Int32)
+  - CoreWCF.Channels.RemoteEndpointMessageProperty.Address
+  - CoreWCF.Channels.RemoteEndpointMessageProperty.Name
+  - CoreWCF.Channels.RemoteEndpointMessageProperty.Port
+  langs:
+  - csharp
+  - vb
+  name: RemoteEndpointMessageProperty
+  nameWithType: RemoteEndpointMessageProperty
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Makes available the client IP address and port number associated with the remote endpoint from which a message was sent.
+  remarks: "The property is added to each incoming message to a Windows Communication Foundation (WCF) service through both the HTTP and TCP transports.  \n\nThe property is not present on messages received through either a named pipes or MSMQ transport.  \n\nAvailability of the property when using HTTP hosted in IIS depends on having a currently active request.  Therefore, this property is not available after the request has completed, such as when performing a one-way receive.  \n\nThe IP address and port number are that of the node from which the message was received. If a message goes through a relay or proxy, the IP address and port number of the respective relay or proxy is the one attached to the message by this property.  \n\nBe aware that the IP address and port could be spoofed by an attacker and thus should not be relied upon for security sensitive authentication or authorization unless additional application specific logic is added.  \n\n"
+  syntax:
+    content: 'public sealed class RemoteEndpointMessageProperty : Object'
+    content.vb: >-
+      Public NotInheritable Class RemoteEndpointMessageProperty
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor(System.String,System.Int32)
+  commentId: M:CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor(System.String,System.Int32)
+  id: '#ctor(System.String,System.Int32)'
+  parent: CoreWCF.Channels.RemoteEndpointMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: RemoteEndpointMessageProperty(String, Int32)
+  summary: Initializes a new instance of the [RemoteEndpointMessageProperty](xref:CoreWCF.Channels.RemoteEndpointMessageProperty) class for a specified IP address and port that identify the client from which the message was sent.
+  nameWithType: RemoteEndpointMessageProperty.RemoteEndpointMessageProperty(String, Int32)
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.RemoteEndpointMessageProperty(System.String, System.Int32)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public RemoteEndpointMessageProperty(string address, int port)
+    parameters:
+    - id: address
+      type: System.String
+      description: The IP address of the remote endpoint associated with the message.
+    - id: port
+      type: System.Int32
+      description: The port number of the remote endpoint associated with the message.
+    content.vb: Public Sub New(address As String, port As Integer)
+  overload: CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: Be aware that the IP address and port could be spoofed by an attacker and thus should not be relied upon for security sensitive authentication or authorization unless additional application specific logic is added.
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor(System.Net.IPEndPoint)
+  commentId: M:CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor(System.Net.IPEndPoint)
+  id: '#ctor(System.Net.IPEndPoint)'
+  parent: CoreWCF.Channels.RemoteEndpointMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: RemoteEndpointMessageProperty(IPEndPoint)
+  nameWithType: RemoteEndpointMessageProperty.RemoteEndpointMessageProperty(IPEndPoint)
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.RemoteEndpointMessageProperty(System.Net.IPEndPoint)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public RemoteEndpointMessageProperty(IPEndPoint remoteEndPoint)
+    parameters:
+    - id: remoteEndPoint
+      type: System.Net.IPEndPoint
+    content.vb: Public Sub New(remoteEndPoint As IPEndPoint)
+  overload: CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.Name
+  commentId: P:CoreWCF.Channels.RemoteEndpointMessageProperty.Name
+  id: Name
+  parent: CoreWCF.Channels.RemoteEndpointMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Name
+  summary: Returns the string "System.ServiceModel.Channels.RemoteEndpointMessageProperty".
+  nameWithType: RemoteEndpointMessageProperty.Name
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: "System.ServiceModel.Channels.RemoteEndpointMessageProperty" 
+    content.vb: Public Shared ReadOnly Property Name As String
+  overload: CoreWCF.Channels.RemoteEndpointMessageProperty.Name*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.Address
+  commentId: P:CoreWCF.Channels.RemoteEndpointMessageProperty.Address
+  id: Address
+  parent: CoreWCF.Channels.RemoteEndpointMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Address
+  summary: Gets the IP address of the client from which the message was sent.
+  nameWithType: RemoteEndpointMessageProperty.Address
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.Address
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public string Address { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The IP address of the client from which the message was sent.
+    content.vb: Public ReadOnly Property Address As String
+  overload: CoreWCF.Channels.RemoteEndpointMessageProperty.Address*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.Port
+  commentId: P:CoreWCF.Channels.RemoteEndpointMessageProperty.Port
+  id: Port
+  parent: CoreWCF.Channels.RemoteEndpointMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Port
+  summary: Gets the port number of the client from which the message was sent.
+  nameWithType: RemoteEndpointMessageProperty.Port
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.Port
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public int Port { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The port number of the client from which the message was sent.
+    content.vb: Public ReadOnly Property Port As Integer
+  overload: CoreWCF.Channels.RemoteEndpointMessageProperty.Port*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor*
+  commentId: Overload:CoreWCF.Channels.RemoteEndpointMessageProperty.#ctor
+  isExternal: true
+  name: RemoteEndpointMessageProperty
+  nameWithType: RemoteEndpointMessageProperty.RemoteEndpointMessageProperty
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.RemoteEndpointMessageProperty
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Net.IPEndPoint
+  isExternal: true
+  name: IPEndPoint
+  nameWithType: IPEndPoint
+  fullName: System.Net.IPEndPoint
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.Name*
+  commentId: Overload:CoreWCF.Channels.RemoteEndpointMessageProperty.Name
+  isExternal: true
+  name: Name
+  nameWithType: RemoteEndpointMessageProperty.Name
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.Name
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.Address*
+  commentId: Overload:CoreWCF.Channels.RemoteEndpointMessageProperty.Address
+  isExternal: true
+  name: Address
+  nameWithType: RemoteEndpointMessageProperty.Address
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.Address
+- uid: CoreWCF.Channels.RemoteEndpointMessageProperty.Port*
+  commentId: Overload:CoreWCF.Channels.RemoteEndpointMessageProperty.Port
+  isExternal: true
+  name: Port
+  nameWithType: RemoteEndpointMessageProperty.Port
+  fullName: CoreWCF.Channels.RemoteEndpointMessageProperty.Port

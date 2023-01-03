@@ -1,0 +1,486 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.WsdlEndpointConversionContext
+  commentId: T:CoreWCF.Description.WsdlEndpointConversionContext
+  id: WsdlEndpointConversionContext
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext
+  - CoreWCF.Description.WsdlEndpointConversionContext.Endpoint
+  - CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding(CoreWCF.Description.FaultDescription)
+  - CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription(System.Web.Services.Description.FaultBinding)
+  - CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding(CoreWCF.Description.MessageDescription)
+  - CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription(System.Web.Services.Description.MessageBinding)
+  - CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding(CoreWCF.Description.OperationDescription)
+  - CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription(System.Web.Services.Description.OperationBinding)
+  - CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding
+  - CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort
+  langs:
+  - csharp
+  - vb
+  name: WsdlEndpointConversionContext
+  nameWithType: WsdlEndpointConversionContext
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Passed to custom WSDL exporters and importers to enable customization of the metadata export and import processes for a WSDL endpoint.
+  remarks: "The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext> class represents the context in which the custom WSDL for an endpoint is either exported using &lt;xref:CoreWCF.Description.IWsdlExportExtension?displayProperty=nameWithType> or imported using &lt;xref:CoreWCF.Description.IWsdlImportExtension?displayProperty=nameWithType>. \n\nThe following properties enable you to retrieve the WSDL document object model for the current WSDL:  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext%2A> property gets the &lt;xref:CoreWCF.Description.WsdlContractConversionContext?displayProperty=nameWithType> for the endpoint contract.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.Endpoint%2A> property gets the &lt;xref:CoreWCF.Description.ServiceEndpoint?displayProperty=nameWithType> for the current endpoint.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding%2A> property gets the binding for the current endpoint.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort%2A> property gets the port for the current endpoint.  \n\nThe following methods enable you to add or remove custom WSDL elements to the appropriate scopes in the exported or imported WSDL:  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding%2A> method returns the fault binding for the specified fault.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription%2A> method returns the fault for the specified fault binding.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding%2A> method returns the message binding for the specified message.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription%2A> method returns the message for the specified message binding.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding%2A> method returns the operation binding for the specified operation.  \n\n-   The &lt;xref:CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription%2A> method returns the operation for the specified operation binding.  \n\n"
+  syntax:
+    content: 'public class WsdlEndpointConversionContext : Object'
+    content.vb: >-
+      Public Class WsdlEndpointConversionContext
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding(CoreWCF.Description.OperationDescription)
+  id: GetOperationBinding(CoreWCF.Description.OperationDescription)
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetOperationBinding(OperationDescription)
+  nameWithType: WsdlEndpointConversionContext.GetOperationBinding(OperationDescription)
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding(CoreWCF.Description.OperationDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public OperationBinding GetOperationBinding(OperationDescription operation)
+    parameters:
+    - id: operation
+      type: CoreWCF.Description.OperationDescription
+    return:
+      type: System.Web.Services.Description.OperationBinding
+    content.vb: Public Function GetOperationBinding(operation As OperationDescription) As OperationBinding
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding(CoreWCF.Description.MessageDescription)
+  commentId: M:CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding(CoreWCF.Description.MessageDescription)
+  id: GetMessageBinding(CoreWCF.Description.MessageDescription)
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetMessageBinding(MessageDescription)
+  nameWithType: WsdlEndpointConversionContext.GetMessageBinding(MessageDescription)
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding(CoreWCF.Description.MessageDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MessageBinding GetMessageBinding(MessageDescription message)
+    parameters:
+    - id: message
+      type: CoreWCF.Description.MessageDescription
+    return:
+      type: System.Web.Services.Description.MessageBinding
+    content.vb: Public Function GetMessageBinding(message As MessageDescription) As MessageBinding
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding(CoreWCF.Description.FaultDescription)
+  commentId: M:CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding(CoreWCF.Description.FaultDescription)
+  id: GetFaultBinding(CoreWCF.Description.FaultDescription)
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetFaultBinding(FaultDescription)
+  nameWithType: WsdlEndpointConversionContext.GetFaultBinding(FaultDescription)
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding(CoreWCF.Description.FaultDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public FaultBinding GetFaultBinding(FaultDescription fault)
+    parameters:
+    - id: fault
+      type: CoreWCF.Description.FaultDescription
+    return:
+      type: System.Web.Services.Description.FaultBinding
+    content.vb: Public Function GetFaultBinding(fault As FaultDescription) As FaultBinding
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription(System.Web.Services.Description.OperationBinding)
+  commentId: M:CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription(System.Web.Services.Description.OperationBinding)
+  id: GetOperationDescription(System.Web.Services.Description.OperationBinding)
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetOperationDescription(OperationBinding)
+  nameWithType: WsdlEndpointConversionContext.GetOperationDescription(OperationBinding)
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription(System.Web.Services.Description.OperationBinding)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public OperationDescription GetOperationDescription(OperationBinding operationBinding)
+    parameters:
+    - id: operationBinding
+      type: System.Web.Services.Description.OperationBinding
+    return:
+      type: CoreWCF.Description.OperationDescription
+    content.vb: Public Function GetOperationDescription(operationBinding As OperationBinding) As OperationDescription
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription(System.Web.Services.Description.MessageBinding)
+  commentId: M:CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription(System.Web.Services.Description.MessageBinding)
+  id: GetMessageDescription(System.Web.Services.Description.MessageBinding)
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetMessageDescription(MessageBinding)
+  nameWithType: WsdlEndpointConversionContext.GetMessageDescription(MessageBinding)
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription(System.Web.Services.Description.MessageBinding)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MessageDescription GetMessageDescription(MessageBinding messageBinding)
+    parameters:
+    - id: messageBinding
+      type: System.Web.Services.Description.MessageBinding
+    return:
+      type: CoreWCF.Description.MessageDescription
+    content.vb: Public Function GetMessageDescription(messageBinding As MessageBinding) As MessageDescription
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription(System.Web.Services.Description.FaultBinding)
+  commentId: M:CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription(System.Web.Services.Description.FaultBinding)
+  id: GetFaultDescription(System.Web.Services.Description.FaultBinding)
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: GetFaultDescription(FaultBinding)
+  nameWithType: WsdlEndpointConversionContext.GetFaultDescription(FaultBinding)
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription(System.Web.Services.Description.FaultBinding)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public FaultDescription GetFaultDescription(FaultBinding faultBinding)
+    parameters:
+    - id: faultBinding
+      type: System.Web.Services.Description.FaultBinding
+    return:
+      type: CoreWCF.Description.FaultDescription
+    content.vb: Public Function GetFaultDescription(faultBinding As FaultBinding) As FaultDescription
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.Endpoint
+  commentId: P:CoreWCF.Description.WsdlEndpointConversionContext.Endpoint
+  id: Endpoint
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: Endpoint
+  nameWithType: WsdlEndpointConversionContext.Endpoint
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.Endpoint
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint Endpoint { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.ServiceEndpoint
+    content.vb: Public ReadOnly Property Endpoint As ServiceEndpoint
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.Endpoint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding
+  commentId: P:CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding
+  id: WsdlBinding
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: WsdlBinding
+  nameWithType: WsdlEndpointConversionContext.WsdlBinding
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Binding WsdlBinding { get; }
+    parameters: []
+    return:
+      type: System.Web.Services.Description.Binding
+    content.vb: Public ReadOnly Property WsdlBinding As Binding
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort
+  commentId: P:CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort
+  id: WsdlPort
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: WsdlPort
+  nameWithType: WsdlEndpointConversionContext.WsdlPort
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Port WsdlPort { get; }
+    parameters: []
+    return:
+      type: System.Web.Services.Description.Port
+    content.vb: Public ReadOnly Property WsdlPort As Port
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext
+  commentId: P:CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext
+  id: ContractConversionContext
+  parent: CoreWCF.Description.WsdlEndpointConversionContext
+  langs:
+  - csharp
+  - vb
+  name: ContractConversionContext
+  nameWithType: WsdlEndpointConversionContext.ContractConversionContext
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public WsdlContractConversionContext ContractConversionContext { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.WsdlContractConversionContext
+    content.vb: Public ReadOnly Property ContractConversionContext As WsdlContractConversionContext
+  overload: CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding
+  isExternal: true
+  name: GetOperationBinding
+  nameWithType: WsdlEndpointConversionContext.GetOperationBinding
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationBinding
+- uid: CoreWCF.Description.OperationDescription
+  commentId: T:CoreWCF.Description.OperationDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescription
+  nameWithType: OperationDescription
+  fullName: CoreWCF.Description.OperationDescription
+- uid: System.Web.Services.Description.OperationBinding
+  isExternal: true
+  name: OperationBinding
+  nameWithType: OperationBinding
+  fullName: System.Web.Services.Description.OperationBinding
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding
+  isExternal: true
+  name: GetMessageBinding
+  nameWithType: WsdlEndpointConversionContext.GetMessageBinding
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageBinding
+- uid: CoreWCF.Description.MessageDescription
+  commentId: T:CoreWCF.Description.MessageDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MessageDescription
+  nameWithType: MessageDescription
+  fullName: CoreWCF.Description.MessageDescription
+- uid: System.Web.Services.Description.MessageBinding
+  isExternal: true
+  name: MessageBinding
+  nameWithType: MessageBinding
+  fullName: System.Web.Services.Description.MessageBinding
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding
+  isExternal: true
+  name: GetFaultBinding
+  nameWithType: WsdlEndpointConversionContext.GetFaultBinding
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultBinding
+- uid: CoreWCF.Description.FaultDescription
+  commentId: T:CoreWCF.Description.FaultDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: FaultDescription
+  nameWithType: FaultDescription
+  fullName: CoreWCF.Description.FaultDescription
+- uid: System.Web.Services.Description.FaultBinding
+  isExternal: true
+  name: FaultBinding
+  nameWithType: FaultBinding
+  fullName: System.Web.Services.Description.FaultBinding
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription
+  isExternal: true
+  name: GetOperationDescription
+  nameWithType: WsdlEndpointConversionContext.GetOperationDescription
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetOperationDescription
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription
+  isExternal: true
+  name: GetMessageDescription
+  nameWithType: WsdlEndpointConversionContext.GetMessageDescription
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetMessageDescription
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription
+  isExternal: true
+  name: GetFaultDescription
+  nameWithType: WsdlEndpointConversionContext.GetFaultDescription
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.GetFaultDescription
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.Endpoint*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.Endpoint
+  isExternal: true
+  name: Endpoint
+  nameWithType: WsdlEndpointConversionContext.Endpoint
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.Endpoint
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding
+  isExternal: true
+  name: WsdlBinding
+  nameWithType: WsdlEndpointConversionContext.WsdlBinding
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.WsdlBinding
+- uid: System.Web.Services.Description.Binding
+  commentId: '!:System.Web.Services.Description.Binding'
+  isExternal: true
+  name: Binding
+  nameWithType: Binding
+  fullName: System.Web.Services.Description.Binding
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort
+  isExternal: true
+  name: WsdlPort
+  nameWithType: WsdlEndpointConversionContext.WsdlPort
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.WsdlPort
+- uid: System.Web.Services.Description.Port
+  isExternal: true
+  name: Port
+  nameWithType: Port
+  fullName: System.Web.Services.Description.Port
+- uid: CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext*
+  commentId: Overload:CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext
+  isExternal: true
+  name: ContractConversionContext
+  nameWithType: WsdlEndpointConversionContext.ContractConversionContext
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext.ContractConversionContext
+- uid: CoreWCF.Description.WsdlContractConversionContext
+  commentId: T:CoreWCF.Description.WsdlContractConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlContractConversionContext
+  nameWithType: WsdlContractConversionContext
+  fullName: CoreWCF.Description.WsdlContractConversionContext

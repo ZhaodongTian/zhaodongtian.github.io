@@ -1,0 +1,836 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  id: ContractDescription
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.ContractDescription.#ctor(System.String)
+  - CoreWCF.Description.ContractDescription.#ctor(System.String,System.String)
+  - CoreWCF.Description.ContractDescription.CallbackContractType
+  - CoreWCF.Description.ContractDescription.ConfigurationName
+  - CoreWCF.Description.ContractDescription.ContractBehaviors
+  - CoreWCF.Description.ContractDescription.ContractType
+  - CoreWCF.Description.ContractDescription.GetContract``1(System.Type)
+  - CoreWCF.Description.ContractDescription.GetContract``1(System.Type,System.Object)
+  - CoreWCF.Description.ContractDescription.GetInheritedContracts
+  - CoreWCF.Description.ContractDescription.IsDuplex
+  - CoreWCF.Description.ContractDescription.Name
+  - CoreWCF.Description.ContractDescription.Namespace
+  - CoreWCF.Description.ContractDescription.Operations
+  - CoreWCF.Description.ContractDescription.SessionMode
+  langs:
+  - csharp
+  - vb
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Describes a Windows Communication Foundation (WCF) contract that specifies what an endpoint communicates to the outside world.
+  remarks: "A WCF contract is a collection of operations that specifies what the endpoint communicates to the outside world. Each operation is a message exchange. For example, a request message and an associated reply message form a request/reply message exchange.  \nA <xref:CoreWCF.Description.ContractDescription> object is used to describe WCF contracts and their operations. Within a <xref:CoreWCF.Description.ContractDescription>, each contract operation has a corresponding <xref:CoreWCF.Description.OperationDescription> that describes aspects of the each operation that is part of the contract, such as whether the operation is one-way or request/reply. Each <xref:CoreWCF.Description.OperationDescription> also describes the messages that make up the operation using a <xref:CoreWCF.Description.MessageDescriptionCollection>. <xref:CoreWCF.Description.ContractDescription> contains a reference to an interface that defines the contract using the programming model. This interface is marked with <xref:CoreWCF.ServiceContractAttribute> and its methods that correspond to endpoint operations are marked with the <xref:CoreWCF.OperationContractAttribute>.  \n\nA *duplex* contract defines the following logical sets of operations:  \n\n-   A set that the service exposes for the client to call.  \n\n-   A set that the client exposes for the service to call.  \n\nThe programming model for defining a duplex contract is to split each set in a separate interface and apply attributes to each interface. In this case, <xref:CoreWCF.Description.ContractDescription> contains a reference to each of the interfaces that groups them into one duplex contract.  \n\nSimilar to bindings, each contract has a [Name](xref:CoreWCF.Description.ContractDescription.Name) and [Namespace](xref:CoreWCF.Description.ContractDescription.Namespace) that uniquely identify it in the metadata of the service.  \n\n\n\n"
+  syntax:
+    content: 'public class ContractDescription : Object'
+    content.vb: >-
+      Public Class ContractDescription
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.ContractDescription.#ctor(System.String)
+  commentId: M:CoreWCF.Description.ContractDescription.#ctor(System.String)
+  summary: Initializes a new instance of the <xref:CoreWCF.Description.ContractDescription> class with a specified name
+  id: '#ctor(System.String)'
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: ContractDescription(String)
+  nameWithType: ContractDescription.ContractDescription(String)
+  fullName: CoreWCF.Description.ContractDescription.ContractDescription(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ContractDescription(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the contract
+    content.vb: Public Sub New(name As String)
+  overload: CoreWCF.Description.ContractDescription.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.#ctor(System.String,System.String)
+  commentId: M:CoreWCF.Description.ContractDescription.#ctor(System.String,System.String)
+  summary: Initializes a new instance of the <xref:CoreWCF.Description.ContractDescription> class with a namespace-qualified name specified
+  id: '#ctor(System.String,System.String)'
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: ContractDescription(String, String)
+  nameWithType: ContractDescription.ContractDescription(String, String)
+  fullName: CoreWCF.Description.ContractDescription.ContractDescription(System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ContractDescription(string name, string ns)
+    parameters:
+    - id: name
+      type: System.String
+      description: The name of the contract
+    - id: ns
+      type: System.String
+      description: The namespace that contains the name of the contract
+    content.vb: Public Sub New(name As String, ns As String)
+  overload: CoreWCF.Description.ContractDescription.#ctor*
+  remarks: The namespace can be an empty string ("")
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.GetInheritedContracts
+  commentId: M:CoreWCF.Description.ContractDescription.GetInheritedContracts
+  id: GetInheritedContracts
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: GetInheritedContracts()
+  nameWithType: ContractDescription.GetInheritedContracts()
+  fullName: CoreWCF.Description.ContractDescription.GetInheritedContracts()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Collection<ContractDescription> GetInheritedContracts()
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Description.ContractDescription}
+    content.vb: Public Function GetInheritedContracts As Collection(Of ContractDescription)
+  overload: CoreWCF.Description.ContractDescription.GetInheritedContracts*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.GetContract``1(System.Type)
+  commentId: M:CoreWCF.Description.ContractDescription.GetContract``1(System.Type)
+  summary: Returns the contract description for a specified type of contract.
+  id: GetContract``1(System.Type)
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: GetContract<TService>(Type)
+  nameWithType: ContractDescription.GetContract<TService>(Type)
+  fullName: CoreWCF.Description.ContractDescription.GetContract<TService>(System.Type)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: >-
+      public static ContractDescription GetContract<TService>(Type contractType)
+          where TService : class
+    parameters:
+    - id: contractType
+      type: System.Type
+      description: The <xref:System.Type> of contract.
+    typeParameters:
+    - id: TService
+    return:
+      type: CoreWCF.Description.ContractDescription
+      description: The <xref:CoreWCF.Description.ContractDescription> for the specified type of contract
+    content.vb: Public Shared Function GetContract(Of TService As Class)(contractType As Type) As ContractDescription
+  overload: CoreWCF.Description.ContractDescription.GetContract*
+  remarks: The difference between the [GetContract](xref:CoreWCF.Description.ContractDescription) overloads is that the ones with two arguments allow you to find attributes from the service (for example, [OperationBehaviorAttribute](<xref:CoreWCF.Description.ContractDescription>)).
+  nameWithType.vb: ContractDescription.GetContract(Of TService)(Type)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.Description.ContractDescription.GetContract(Of TService)(System.Type)
+  name.vb: GetContract(Of TService)(Type)
+- uid: CoreWCF.Description.ContractDescription.GetContract``1(System.Type,System.Object)
+  commentId: M:CoreWCF.Description.ContractDescription.GetContract``1(System.Type,System.Object)
+  id: GetContract``1(System.Type,System.Object)
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: GetContract<TService>(Type, Object)
+  nameWithType: ContractDescription.GetContract<TService>(Type, Object)
+  fullName: CoreWCF.Description.ContractDescription.GetContract<TService>(System.Type, System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: >-
+      public static ContractDescription GetContract<TService>(Type contractType, object serviceImplementation)
+          where TService : class
+    parameters:
+    - id: contractType
+      type: System.Type
+    - id: serviceImplementation
+      type: System.Object
+    typeParameters:
+    - id: TService
+    return:
+      type: CoreWCF.Description.ContractDescription
+    content.vb: Public Shared Function GetContract(Of TService As Class)(contractType As Type, serviceImplementation As Object) As ContractDescription
+  overload: CoreWCF.Description.ContractDescription.GetContract*
+  nameWithType.vb: ContractDescription.GetContract(Of TService)(Type, Object)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.Description.ContractDescription.GetContract(Of TService)(System.Type, System.Object)
+  name.vb: GetContract(Of TService)(Type, Object)
+- uid: CoreWCF.Description.ContractDescription.IsDuplex
+  commentId: M:CoreWCF.Description.ContractDescription.IsDuplex
+  id: IsDuplex
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: IsDuplex()
+  nameWithType: ContractDescription.IsDuplex()
+  fullName: CoreWCF.Description.ContractDescription.IsDuplex()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public bool IsDuplex()
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsDuplex As Boolean
+  overload: CoreWCF.Description.ContractDescription.IsDuplex*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.ConfigurationName
+  commentId: P:CoreWCF.Description.ContractDescription.ConfigurationName
+  summary: Gets or sets the configuration name for the contract description
+  id: ConfigurationName
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationName
+  nameWithType: ContractDescription.ConfigurationName
+  fullName: CoreWCF.Description.ContractDescription.ConfigurationName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string ConfigurationName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The configuration name for the contract.
+    content.vb: Public Property ConfigurationName As String
+  overload: CoreWCF.Description.ContractDescription.ConfigurationName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.ContractType
+  commentId: P:CoreWCF.Description.ContractDescription.ContractType
+  summary: Gets or sets the contract type that the contract description specifies.
+  id: ContractType
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: ContractType
+  nameWithType: ContractDescription.ContractType
+  fullName: CoreWCF.Description.ContractDescription.ContractType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Type ContractType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+      description: The <xref:System.Type> of contract that the contract description specifies.
+    content.vb: Public Property ContractType As Type
+  overload: CoreWCF.Description.ContractDescription.ContractType*
+  remarks: The [ContractType](xref:CoreWCF.Description.ContractDescription.ContractType*) property is not serializable, so it is only available when the description is bound to runtime. It cannot be imported or exported as part of the metadata.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.CallbackContractType
+  commentId: P:CoreWCF.Description.ContractDescription.CallbackContractType
+  summary: Gets or sets the type of callback contract that the contract description specifies.
+  id: CallbackContractType
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: CallbackContractType
+  nameWithType: ContractDescription.CallbackContractType
+  fullName: CoreWCF.Description.ContractDescription.CallbackContractType
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Type CallbackContractType { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+      description: The <xref:System.Type> of callback contract that the contract description specifies
+    content.vb: Public Property CallbackContractType As Type
+  overload: CoreWCF.Description.ContractDescription.CallbackContractType*
+  remarks: The <xref:CoreWCF.Description.ContractDescription.CallbackContractType*> property is not serializable, so it is only available when the description is bound to runtime. It cannot be imported or exported as part of the metadata.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.Name
+  commentId: P:CoreWCF.Description.ContractDescription.Name
+  summary: Gets or sets the name of the contract
+  id: Name
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ContractDescription.Name
+  fullName: CoreWCF.Description.ContractDescription.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name of the contract description
+    content.vb: Public Property Name As String
+  overload: CoreWCF.Description.ContractDescription.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.Namespace
+  commentId: P:CoreWCF.Description.ContractDescription.Namespace
+  summary: Gets or sets the namespace for the contract
+  id: Namespace
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  nameWithType: ContractDescription.Namespace
+  fullName: CoreWCF.Description.ContractDescription.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Namespace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The namespace of the contract
+    content.vb: Public Property Namespace As String
+  overload: CoreWCF.Description.ContractDescription.Namespace*
+  remarks: The namespace can be an empty string ("").
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.Operations
+  commentId: P:CoreWCF.Description.ContractDescription.Operations
+  summary: Gets the collection of operation descriptions associated with the contract
+  id: Operations
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: Operations
+  nameWithType: ContractDescription.Operations
+  fullName: CoreWCF.Description.ContractDescription.Operations
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public OperationDescriptionCollection Operations { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.OperationDescriptionCollection
+      description: The <xref:CoreWCF.Description.OperationDescriptionCollection> that contains the operation descriptions associated with the contract description.
+    content.vb: Public ReadOnly Property Operations As OperationDescriptionCollection
+  overload: CoreWCF.Description.ContractDescription.Operations*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.ContractDescription.SessionMode
+  commentId: P:CoreWCF.Description.ContractDescription.SessionMode
+  id: SessionMode
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: SessionMode
+  nameWithType: ContractDescription.SessionMode
+  fullName: CoreWCF.Description.ContractDescription.SessionMode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public SessionMode SessionMode { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.SessionMode
+    content.vb: Public Property SessionMode As SessionMode
+  overload: CoreWCF.Description.ContractDescription.SessionMode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ContractDescription.ContractBehaviors
+  commentId: P:CoreWCF.Description.ContractDescription.ContractBehaviors
+  summary: Gets the collection of behavior for the contract.
+  id: ContractBehaviors
+  parent: CoreWCF.Description.ContractDescription
+  langs:
+  - csharp
+  - vb
+  name: ContractBehaviors
+  nameWithType: ContractDescription.ContractBehaviors
+  fullName: CoreWCF.Description.ContractDescription.ContractBehaviors
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public KeyedCollection<Type, IContractBehavior> ContractBehaviors { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.KeyedCollection{System.Type,CoreWCF.Description.IContractBehavior}
+      description: The collection of behavior for the contract
+    content.vb: Public ReadOnly Property ContractBehaviors As KeyedCollection(Of Type, IContractBehavior)
+  overload: CoreWCF.Description.ContractDescription.ContractBehaviors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.ContractDescription.#ctor*
+  commentId: Overload:CoreWCF.Description.ContractDescription.#ctor
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription.ContractDescription
+  fullName: CoreWCF.Description.ContractDescription.ContractDescription
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Description.ContractDescription.GetInheritedContracts*
+  commentId: Overload:CoreWCF.Description.ContractDescription.GetInheritedContracts
+  isExternal: true
+  name: GetInheritedContracts
+  nameWithType: ContractDescription.GetInheritedContracts
+  fullName: CoreWCF.Description.ContractDescription.GetInheritedContracts
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.Description.ContractDescription}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.Description.ContractDescription}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<ContractDescription>
+  nameWithType: Collection<ContractDescription>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.Description.ContractDescription>
+  nameWithType.vb: Collection(Of ContractDescription)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.Description.ContractDescription)
+  name.vb: Collection(Of ContractDescription)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Description.ContractDescription
+    name: ContractDescription
+    nameWithType: ContractDescription
+    fullName: CoreWCF.Description.ContractDescription
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Description.ContractDescription
+    name: ContractDescription
+    nameWithType: ContractDescription
+    fullName: CoreWCF.Description.ContractDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ContractDescription.GetContract*
+  commentId: Overload:CoreWCF.Description.ContractDescription.GetContract
+  isExternal: true
+  name: GetContract
+  nameWithType: ContractDescription.GetContract
+  fullName: CoreWCF.Description.ContractDescription.GetContract
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription
+- uid: CoreWCF.Description.ContractDescription.IsDuplex*
+  commentId: Overload:CoreWCF.Description.ContractDescription.IsDuplex
+  isExternal: true
+  name: IsDuplex
+  nameWithType: ContractDescription.IsDuplex
+  fullName: CoreWCF.Description.ContractDescription.IsDuplex
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Description.ContractDescription.ConfigurationName*
+  commentId: Overload:CoreWCF.Description.ContractDescription.ConfigurationName
+  isExternal: true
+  name: ConfigurationName
+  nameWithType: ContractDescription.ConfigurationName
+  fullName: CoreWCF.Description.ContractDescription.ConfigurationName
+- uid: CoreWCF.Description.ContractDescription.ContractType*
+  commentId: Overload:CoreWCF.Description.ContractDescription.ContractType
+  isExternal: true
+  name: ContractType
+  nameWithType: ContractDescription.ContractType
+  fullName: CoreWCF.Description.ContractDescription.ContractType
+- uid: CoreWCF.Description.ContractDescription.CallbackContractType*
+  commentId: Overload:CoreWCF.Description.ContractDescription.CallbackContractType
+  isExternal: true
+  name: CallbackContractType
+  nameWithType: ContractDescription.CallbackContractType
+  fullName: CoreWCF.Description.ContractDescription.CallbackContractType
+- uid: CoreWCF.Description.ContractDescription.Name*
+  commentId: Overload:CoreWCF.Description.ContractDescription.Name
+  isExternal: true
+  name: Name
+  nameWithType: ContractDescription.Name
+  fullName: CoreWCF.Description.ContractDescription.Name
+- uid: CoreWCF.Description.ContractDescription.Namespace*
+  commentId: Overload:CoreWCF.Description.ContractDescription.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: ContractDescription.Namespace
+  fullName: CoreWCF.Description.ContractDescription.Namespace
+- uid: CoreWCF.Description.ContractDescription.Operations*
+  commentId: Overload:CoreWCF.Description.ContractDescription.Operations
+  isExternal: true
+  name: Operations
+  nameWithType: ContractDescription.Operations
+  fullName: CoreWCF.Description.ContractDescription.Operations
+- uid: CoreWCF.Description.OperationDescriptionCollection
+  commentId: T:CoreWCF.Description.OperationDescriptionCollection
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescriptionCollection
+  nameWithType: OperationDescriptionCollection
+  fullName: CoreWCF.Description.OperationDescriptionCollection
+- uid: CoreWCF.Description.ContractDescription.SessionMode*
+  commentId: Overload:CoreWCF.Description.ContractDescription.SessionMode
+  isExternal: true
+  name: SessionMode
+  nameWithType: ContractDescription.SessionMode
+  fullName: CoreWCF.Description.ContractDescription.SessionMode
+- uid: CoreWCF.SessionMode
+  commentId: T:CoreWCF.SessionMode
+  parent: CoreWCF
+  isExternal: true
+  name: SessionMode
+  nameWithType: SessionMode
+  fullName: CoreWCF.SessionMode
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Description.ContractDescription.ContractBehaviors*
+  commentId: Overload:CoreWCF.Description.ContractDescription.ContractBehaviors
+  isExternal: true
+  name: ContractBehaviors
+  nameWithType: ContractDescription.ContractBehaviors
+  fullName: CoreWCF.Description.ContractDescription.ContractBehaviors
+- uid: System.Collections.ObjectModel.KeyedCollection{System.Type,CoreWCF.Description.IContractBehavior}
+  commentId: '!:System.Collections.ObjectModel.KeyedCollection{System.Type,CoreWCF.Description.IContractBehavior}'
+  definition: System.Collections.ObjectModel.KeyedCollection`2
+  name: KeyedCollection<Type, IContractBehavior>
+  nameWithType: KeyedCollection<Type, IContractBehavior>
+  fullName: System.Collections.ObjectModel.KeyedCollection<System.Type, CoreWCF.Description.IContractBehavior>
+  nameWithType.vb: KeyedCollection(Of Type, IContractBehavior)
+  fullName.vb: System.Collections.ObjectModel.KeyedCollection(Of System.Type, CoreWCF.Description.IContractBehavior)
+  name.vb: KeyedCollection(Of Type, IContractBehavior)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.IContractBehavior
+    name: IContractBehavior
+    nameWithType: IContractBehavior
+    fullName: CoreWCF.Description.IContractBehavior
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.IContractBehavior
+    name: IContractBehavior
+    nameWithType: IContractBehavior
+    fullName: CoreWCF.Description.IContractBehavior
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.KeyedCollection`2
+  isExternal: true
+  name: KeyedCollection<, >
+  nameWithType: KeyedCollection<, >
+  fullName: System.Collections.ObjectModel.KeyedCollection<, >
+  nameWithType.vb: KeyedCollection(Of , )
+  fullName.vb: System.Collections.ObjectModel.KeyedCollection(Of , )
+  name.vb: KeyedCollection(Of , )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

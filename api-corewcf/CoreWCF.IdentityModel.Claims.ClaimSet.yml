@@ -1,0 +1,732 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet
+  commentId: T:CoreWCF.IdentityModel.Claims.ClaimSet
+  id: ClaimSet
+  parent: CoreWCF.IdentityModel.Claims
+  children:
+  - CoreWCF.IdentityModel.Claims.ClaimSet.#ctor
+  - CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim)
+  - CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim,System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim})
+  - CoreWCF.IdentityModel.Claims.ClaimSet.Count
+  - CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims(System.String,System.String)
+  - CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator
+  - CoreWCF.IdentityModel.Claims.ClaimSet.Issuer
+  - CoreWCF.IdentityModel.Claims.ClaimSet.Item(System.Int32)
+  - CoreWCF.IdentityModel.Claims.ClaimSet.System
+  - CoreWCF.IdentityModel.Claims.ClaimSet.Windows
+  langs:
+  - csharp
+  - vb
+  name: ClaimSet
+  nameWithType: ClaimSet
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  summary: Represents the collection of claims that are associated with an entity.
+  remarks: "After the &lt;xref:System.IdentityModel.Claims.ClaimSet> class has been created, it cannot be changed.  \n\nExamining the content of a &lt;xref:System.IdentityModel.Claims.ClaimSet> for particular types of claims is a common task when using claim-based authorization. To examine a &lt;xref:System.IdentityModel.Claims.ClaimSet> for the presence of particular claims, use the &lt;xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> method. The method provides better performance than iterating directly over the &lt;xref:System.IdentityModel.Claims.ClaimSet>.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class ClaimSet : Object'
+    content.vb: >-
+      Public MustInherit Class ClaimSet
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.IdentityModel.Claims.DefaultClaimSet
+  - CoreWCF.IdentityModel.Claims.X509CertificateClaimSet
+  implements:
+  - System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Claims.Claim}
+  - System.Collections.IEnumerable
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim,System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim})
+  commentId: M:CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim,System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim})
+  id: ContainsClaim(CoreWCF.IdentityModel.Claims.Claim,System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim})
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: ContainsClaim(Claim, IEqualityComparer<Claim>)
+  nameWithType: ClaimSet.ContainsClaim(Claim, IEqualityComparer<Claim>)
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim, System.Collections.Generic.IEqualityComparer<CoreWCF.IdentityModel.Claims.Claim>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public virtual bool ContainsClaim(Claim claim, IEqualityComparer<Claim> comparer)
+    parameters:
+    - id: claim
+      type: CoreWCF.IdentityModel.Claims.Claim
+    - id: comparer
+      type: System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim}
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function ContainsClaim(claim As Claim, comparer As IEqualityComparer(Of Claim)) As Boolean
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim*
+  nameWithType.vb: ClaimSet.ContainsClaim(Claim, IEqualityComparer(Of Claim))
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim, System.Collections.Generic.IEqualityComparer(Of CoreWCF.IdentityModel.Claims.Claim))
+  name.vb: ContainsClaim(Claim, IEqualityComparer(Of Claim))
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim)
+  commentId: M:CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim)
+  id: ContainsClaim(CoreWCF.IdentityModel.Claims.Claim)
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: ContainsClaim(Claim)
+  nameWithType: ClaimSet.ContainsClaim(Claim)
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim(CoreWCF.IdentityModel.Claims.Claim)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public virtual bool ContainsClaim(Claim claim)
+    parameters:
+    - id: claim
+      type: CoreWCF.IdentityModel.Claims.Claim
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function ContainsClaim(claim As Claim) As Boolean
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims(System.String,System.String)
+  commentId: M:CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims(System.String,System.String)
+  id: FindClaims(System.String,System.String)
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: FindClaims(String, String)
+  nameWithType: ClaimSet.FindClaims(String, String)
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims(System.String, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public abstract IEnumerable<Claim> FindClaims(string claimType, string right)
+    parameters:
+    - id: claimType
+      type: System.String
+    - id: right
+      type: System.String
+    return:
+      type: System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Claims.Claim}
+    content.vb: Public MustOverride Function FindClaims(claimType As String, right As String) As IEnumerable(Of Claim)
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator
+  commentId: M:CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator
+  id: GetEnumerator
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: ClaimSet.GetEnumerator()
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public abstract IEnumerator<Claim> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{CoreWCF.IdentityModel.Claims.Claim}
+    content.vb: Public MustOverride Function GetEnumerator As IEnumerator(Of Claim)
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.#ctor
+  commentId: M:CoreWCF.IdentityModel.Claims.ClaimSet.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: ClaimSet()
+  nameWithType: ClaimSet.ClaimSet()
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.ClaimSet()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: protected ClaimSet()
+    content.vb: Protected Sub New
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.System
+  commentId: P:CoreWCF.IdentityModel.Claims.ClaimSet.System
+  id: System
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: System
+  nameWithType: ClaimSet.System
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.System
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static ClaimSet System { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Claims.ClaimSet
+    content.vb: Public Shared ReadOnly Property System As ClaimSet
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.System*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Windows
+  commentId: P:CoreWCF.IdentityModel.Claims.ClaimSet.Windows
+  id: Windows
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: Windows
+  nameWithType: ClaimSet.Windows
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Windows
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public static ClaimSet Windows { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Claims.ClaimSet
+    content.vb: Public Shared ReadOnly Property Windows As ClaimSet
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.Windows*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Item(System.Int32)
+  commentId: P:CoreWCF.IdentityModel.Claims.ClaimSet.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32]
+  nameWithType: ClaimSet.Item[Int32]
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Item[System.Int32]
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public abstract Claim this[int index] { get; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: CoreWCF.IdentityModel.Claims.Claim
+    content.vb: Public MustOverride ReadOnly Property Item(index As Integer) As Claim
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.Item*
+  nameWithType.vb: ClaimSet.Item(Int32)
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  fullName.vb: CoreWCF.IdentityModel.Claims.ClaimSet.Item(System.Int32)
+  name.vb: Item(Int32)
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Count
+  commentId: P:CoreWCF.IdentityModel.Claims.ClaimSet.Count
+  id: Count
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: ClaimSet.Count
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Count
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public abstract int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public MustOverride ReadOnly Property Count As Integer
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.Count*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Issuer
+  commentId: P:CoreWCF.IdentityModel.Claims.ClaimSet.Issuer
+  id: Issuer
+  parent: CoreWCF.IdentityModel.Claims.ClaimSet
+  langs:
+  - csharp
+  - vb
+  name: Issuer
+  nameWithType: ClaimSet.Issuer
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Issuer
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Claims
+  syntax:
+    content: public abstract ClaimSet Issuer { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IdentityModel.Claims.ClaimSet
+    content.vb: Public MustOverride ReadOnly Property Issuer As ClaimSet
+  overload: CoreWCF.IdentityModel.Claims.ClaimSet.Issuer*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Claims
+  commentId: N:CoreWCF.IdentityModel.Claims
+  isExternal: true
+  name: CoreWCF.IdentityModel.Claims
+  nameWithType: CoreWCF.IdentityModel.Claims
+  fullName: CoreWCF.IdentityModel.Claims
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Claims.Claim}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.IdentityModel.Claims.Claim}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Claim>
+  nameWithType: IEnumerable<Claim>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.IdentityModel.Claims.Claim>
+  nameWithType.vb: IEnumerable(Of Claim)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.IdentityModel.Claims.Claim)
+  name.vb: IEnumerable(Of Claim)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim
+  isExternal: true
+  name: ContainsClaim
+  nameWithType: ClaimSet.ContainsClaim
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.ContainsClaim
+- uid: CoreWCF.IdentityModel.Claims.Claim
+  commentId: T:CoreWCF.IdentityModel.Claims.Claim
+  parent: CoreWCF.IdentityModel.Claims
+  isExternal: true
+  name: Claim
+  nameWithType: Claim
+  fullName: CoreWCF.IdentityModel.Claims.Claim
+- uid: System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim}
+  commentId: '!:System.Collections.Generic.IEqualityComparer{CoreWCF.IdentityModel.Claims.Claim}'
+  definition: System.Collections.Generic.IEqualityComparer`1
+  name: IEqualityComparer<Claim>
+  nameWithType: IEqualityComparer<Claim>
+  fullName: System.Collections.Generic.IEqualityComparer<CoreWCF.IdentityModel.Claims.Claim>
+  nameWithType.vb: IEqualityComparer(Of Claim)
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of CoreWCF.IdentityModel.Claims.Claim)
+  name.vb: IEqualityComparer(Of Claim)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.IEqualityComparer`1
+  isExternal: true
+  name: IEqualityComparer<>
+  nameWithType: IEqualityComparer<>
+  fullName: System.Collections.Generic.IEqualityComparer<>
+  nameWithType.vb: IEqualityComparer(Of )
+  fullName.vb: System.Collections.Generic.IEqualityComparer(Of )
+  name.vb: IEqualityComparer(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEqualityComparer`1
+    name: IEqualityComparer
+    nameWithType: IEqualityComparer
+    fullName: System.Collections.Generic.IEqualityComparer
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims
+  isExternal: true
+  name: FindClaims
+  nameWithType: ClaimSet.FindClaims
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.FindClaims
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator
+  isExternal: true
+  name: GetEnumerator
+  nameWithType: ClaimSet.GetEnumerator
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.GetEnumerator
+- uid: System.Collections.Generic.IEnumerator{CoreWCF.IdentityModel.Claims.Claim}
+  commentId: '!:System.Collections.Generic.IEnumerator{CoreWCF.IdentityModel.Claims.Claim}'
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<Claim>
+  nameWithType: IEnumerator<Claim>
+  fullName: System.Collections.Generic.IEnumerator<CoreWCF.IdentityModel.Claims.Claim>
+  nameWithType.vb: IEnumerator(Of Claim)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of CoreWCF.IdentityModel.Claims.Claim)
+  name.vb: IEnumerator(Of Claim)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Claims.Claim
+    name: Claim
+    nameWithType: Claim
+    fullName: CoreWCF.IdentityModel.Claims.Claim
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<>
+  nameWithType: IEnumerator<>
+  fullName: System.Collections.Generic.IEnumerator<>
+  nameWithType.vb: IEnumerator(Of )
+  fullName.vb: System.Collections.Generic.IEnumerator(Of )
+  name.vb: IEnumerator(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.#ctor
+  isExternal: true
+  name: ClaimSet
+  nameWithType: ClaimSet.ClaimSet
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.ClaimSet
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.System*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.System
+  isExternal: true
+  name: System
+  nameWithType: ClaimSet.System
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.System
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet
+  commentId: T:CoreWCF.IdentityModel.Claims.ClaimSet
+  parent: CoreWCF.IdentityModel.Claims
+  isExternal: true
+  name: ClaimSet
+  nameWithType: ClaimSet
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Windows*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.Windows
+  isExternal: true
+  name: Windows
+  nameWithType: ClaimSet.Windows
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Windows
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Item*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.Item
+  isExternal: true
+  name: Item
+  nameWithType: ClaimSet.Item
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Item
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Count*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.Count
+  isExternal: true
+  name: Count
+  nameWithType: ClaimSet.Count
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Count
+- uid: CoreWCF.IdentityModel.Claims.ClaimSet.Issuer*
+  commentId: Overload:CoreWCF.IdentityModel.Claims.ClaimSet.Issuer
+  isExternal: true
+  name: Issuer
+  nameWithType: ClaimSet.Issuer
+  fullName: CoreWCF.IdentityModel.Claims.ClaimSet.Issuer

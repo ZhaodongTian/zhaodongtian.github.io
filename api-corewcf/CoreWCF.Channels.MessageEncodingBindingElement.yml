@@ -1,0 +1,628 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.MessageEncodingBindingElement
+  id: MessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageEncodingBindingElement.#ctor
+  - CoreWCF.Channels.MessageEncodingBindingElement.#ctor(CoreWCF.Channels.MessageEncodingBindingElement)
+  - CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  - CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  - CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  langs:
+  - csharp
+  - vb
+  name: MessageEncodingBindingElement
+  nameWithType: MessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: The binding element that specifies the message version used to encode messages.
+  remarks: "Encoding is the process of transforming a message into a sequence of bytes. Decoding is the reverse process. Windows Communication Foundation (WCF) includes three types of encoding for SOAP messages: Text, Binary and Message Transmission Optimization Mechanism (MTOM).  \n\nUse this class if you want to implement a custom message encoder. To implement your own custom message encoder, you must provide custom implementations of the following three abstract base classes:  \n\n-   <xref:CoreWCF.Channels.MessageEncodingBindingElement>  \n\n-   <xref:CoreWCF.Channels.MessageEncoderFactory>  \n\n-   <xref:CoreWCF.Channels.MessageEncoder>  \n\nOverride the <xref:CoreWCF.Channels.MessageEncoderFactory.Encoder> to return an instance of your custom <xref:CoreWCF.Channels.MessageEncoder>. Override the <xref:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory> method to return an instance of this factory.  \n\nAny type that derives from <xref:CoreWCF.Channels.MessageEncodingBindingElement> is responsible for updating the version of the SOAP binding in the WSDL document generated for the service. This is done by implementing the [ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)](xref:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)) method to modify the generated WSDL.  \n\nWindows Communication Foundation (WCF) provides three types of binding elements derived from the <xref:CoreWCF.Channels.MessageEncodingBindingElement> class that can provide for text, binary and Message Transmission Optimization Mechanism (MTOM) encoding.  \n\n-   <xref:CoreWCF.Channels.TextMessageEncodingBindingElement>: the most interoperable, but the least efficient encoder for XML messages. A Web service or Web service client can generally understand textual XML. However, transmitting large blocks of binary data as text is not efficient.  \n\n-   <xref:CoreWCF.Channels.BinaryMessageEncodingBindingElement>: represents the binding element that specifies the character encoding and message versioning used for binary-based XML messages. This is most efficient but least interoperable of the encoding options.  \n\n-   <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement>: represents the binding element that specifies the character encoding and message versioning used for a message using a Message Transmission Optimization Mechanism (MTOM) encoding. MTOM is an efficient technology for transmitting binary data in WCF messages. The MTOM encoder attempts to balance efficiency and interoperability. The MTOM encoding transmits most XML in textual form, but optimizes large blocks of binary data by transmitting them as-is, without conversion to text.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class MessageEncodingBindingElement : BindingElement'
+    content.vb: >-
+      Public MustInherit Class MessageEncodingBindingElement
+          Inherits BindingElement
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  derivedClasses:
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  - CoreWCF.Channels.ByteStreamMessageEncodingBindingElement
+  - CoreWCF.Channels.MtomMessageEncodingBindingElement
+  - CoreWCF.Channels.TextMessageEncodingBindingElement
+  - CoreWCF.Channels.WebMessageEncodingBindingElement
+  inheritedMembers:
+  - CoreWCF.Channels.BindingElement.Clone
+  - CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageEncodingBindingElement()
+  summary: Initializes a new instance of the [MessageEncodingBindingElement](xref:CoreWCF.Channels.MessageEncodingBindingElement) class.
+  nameWithType: MessageEncodingBindingElement.MessageEncodingBindingElement()
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageEncodingBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected MessageEncodingBindingElement()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.#ctor(CoreWCF.Channels.MessageEncodingBindingElement)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.#ctor(CoreWCF.Channels.MessageEncodingBindingElement)
+  id: '#ctor(CoreWCF.Channels.MessageEncodingBindingElement)'
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageEncodingBindingElement(MessageEncodingBindingElement)
+  summary: Initializes a new instance of the [MessageEncodingBindingElement](xref:CoreWCF.Channels.MessageEncodingBindingElement) class initialized from an existing element.
+  nameWithType: MessageEncodingBindingElement.MessageEncodingBindingElement(MessageEncodingBindingElement)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageEncodingBindingElement(CoreWCF.Channels.MessageEncodingBindingElement)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected MessageEncodingBindingElement(MessageEncodingBindingElement elementToBeCloned)
+    parameters:
+    - id: elementToBeCloned
+      type: CoreWCF.Channels.MessageEncodingBindingElement
+      description: The [MessageEncodingBindingElement](xref:CoreWCF.Channels.MessageEncodingBindingElement) to be cloned.
+    content.vb: Protected Sub New(elementToBeCloned As MessageEncodingBindingElement)
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  id: CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateMessageEncoderFactory()
+  summary: When overridden in a derived class, creates a factory for producing message encoders.
+  nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract MessageEncoderFactory CreateMessageEncoderFactory()
+    return:
+      type: CoreWCF.Channels.MessageEncoderFactory
+      description: The [MessageEncoderFactory](xref:CoreWCF.Channels.MessageEncoderFactory) used to produce message encoders.
+    content.vb: Public MustOverride Function CreateMessageEncoderFactory As MessageEncoderFactory
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  summary: Returns the typed object requested, if present, from the appropriate layer in the channel stack.
+  nameWithType: MessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: The [BindingContext](xref:CoreWCF.Channels.BindingContext) for the current binding element.
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not.
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty*
+  nameWithType.vb: MessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remars: Use this to request a typed object such as an interface for retrieving properties or getting status from the appropriate layer in the channel stack. If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no channel layer supported the requested object, then the method returns null.
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  id: CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CheckEncodingVersion(EnvelopeVersion)
+  nameWithType: MessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual bool CheckEncodingVersion(EnvelopeVersion version)
+    parameters:
+    - id: version
+      type: CoreWCF.EnvelopeVersion
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable Function CheckEncodingVersion(version As EnvelopeVersion) As Boolean
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  id: IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IsMatch(BindingElement)
+  nameWithType: MessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool IsMatch(BindingElement b)
+    parameters:
+    - id: b
+      type: CoreWCF.Channels.BindingElement
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function IsMatch(b As BindingElement) As Boolean
+  overridden: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  id: MessageVersion
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  summary: When overridden in a derived class, gets or sets the message version that can be handled by the message encoders produced by the message encoder factory.
+  nameWithType: MessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract MessageVersion MessageVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: The [MessageVersion](xref:CoreWCF.Channels.MessageVersion) used by the encoders produced by the message encoder factory.
+    content.vb: Public MustOverride Property MessageVersion As MessageVersion
+  overload: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: When binding elements are asked to process a message that has a [MessageVersion](xref:CoreWCF.Channels.MessageVersion) not returned by this property, it should throw an exception.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageEncodingBindingElement.#ctor
+  isExternal: true
+  name: MessageEncodingBindingElement
+  nameWithType: MessageEncodingBindingElement.MessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageEncodingBindingElement
+- uid: CoreWCF.Channels.MessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.MessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncodingBindingElement
+  nameWithType: MessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory*
+  commentId: Overload:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  isExternal: true
+  name: CreateMessageEncoderFactory
+  nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncoderFactory
+  commentId: T:CoreWCF.Channels.MessageEncoderFactory
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncoderFactory
+  nameWithType: MessageEncoderFactory
+  fullName: CoreWCF.Channels.MessageEncoderFactory
+- uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: BindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: BindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.BindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: BindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.BindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.MessageEncodingBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: MessageEncodingBindingElement.GetProperty
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion*
+  commentId: Overload:CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+  isExternal: true
+  name: CheckEncodingVersion
+  nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+- uid: CoreWCF.EnvelopeVersion
+  commentId: T:CoreWCF.EnvelopeVersion
+  parent: CoreWCF
+  isExternal: true
+  name: EnvelopeVersion
+  nameWithType: EnvelopeVersion
+  fullName: CoreWCF.EnvelopeVersion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: BindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch*
+  commentId: Overload:CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+  isExternal: true
+  name: IsMatch
+  nameWithType: MessageEncodingBindingElement.IsMatch
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion*
+  commentId: Overload:CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion

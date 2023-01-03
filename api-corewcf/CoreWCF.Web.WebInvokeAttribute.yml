@@ -1,0 +1,968 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Web.WebInvokeAttribute
+  commentId: T:CoreWCF.Web.WebInvokeAttribute
+  id: WebInvokeAttribute
+  parent: CoreWCF.Web
+  children:
+  - CoreWCF.Web.WebInvokeAttribute.#ctor
+  - CoreWCF.Web.WebInvokeAttribute.BodyStyle
+  - CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  - CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  - CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  - CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  - CoreWCF.Web.WebInvokeAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute
+  - CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly
+  - CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly
+  - CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly
+  - CoreWCF.Web.WebInvokeAttribute.Method
+  - CoreWCF.Web.WebInvokeAttribute.RequestFormat
+  - CoreWCF.Web.WebInvokeAttribute.ResponseFormat
+  - CoreWCF.Web.WebInvokeAttribute.UriTemplate
+  langs:
+  - csharp
+  - vb
+  name: WebInvokeAttribute
+  nameWithType: WebInvokeAttribute
+  fullName: CoreWCF.Web.WebInvokeAttribute
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  summary: Represents an attribute indicating that a service operation is logically an invoke operation and that it can be called by the WCF REST programming model.
+  remarks: "The <xref:CoreWCF.Web.WebInvokeAttribute> attribute is applied to a service operation in addition to the <xref:CoreWCF.OperationContractAttribute> and associates the operation with a `UriTemplate` as well as an underlying transport verb that represents an invocation (for example, HTTP POST, PUT, or DELETE). The <xref:CoreWCF.Web.WebInvokeAttribute> attribute is a *passive* operation behavior (the <xref:CoreWCF.Description.IOperationBehavior> methods do nothing) that adds metadata to the operation description. Applying the <xref:CoreWCF.Web.WebInvokeAttribute> attribute to a service operation has no effect unless a behavior that looks for this metadata in the operation description (such as <xref:CoreWCF.Description.WebHttpBehavior>) is added to the service&apos;s behavior collection. The <xref:CoreWCF.Web.WebInvokeAttribute> determines what HTTP method that a service operation responds to. By default, all methods that have the <xref:CoreWCF.Web.WebInvokeAttribute> applied respond to POST requests. The <xref:CoreWCF.Web.WebInvokeAttribute.Method*> property allows you to specify a different HTTP method. If you want a service operation to respond to GET, use the <xref:CoreWCF.Web.WebGetAttribute> instead.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class WebInvokeAttribute : Attribute, IOperationContractAttributeProvider, IOperationBehavior'
+    content.vb: >-
+      Public NotInheritable Class WebInvokeAttribute
+          Inherits Attribute
+          Implements IOperationContractAttributeProvider, IOperationBehavior
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.IOperationContractAttributeProvider
+  - CoreWCF.Description.IOperationBehavior
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Web.WebInvokeAttribute.#ctor
+  commentId: M:CoreWCF.Web.WebInvokeAttribute.#ctor
+  summary: Initializes a new instance of the <xref:CoreWCF.Web.WebInvokeAttribute> class
+  id: '#ctor'
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: WebInvokeAttribute()
+  nameWithType: WebInvokeAttribute.WebInvokeAttribute()
+  fullName: CoreWCF.Web.WebInvokeAttribute.WebInvokeAttribute()
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebInvokeAttribute()
+    content.vb: Public Sub New
+  overload: CoreWCF.Web.WebInvokeAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  summary: Implements the <xref:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters*> method
+  id: CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  isEii: true
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  nameWithType: WebInvokeAttribute.IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription, CoreWCF.Channels.BindingParameterCollection)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: void IOperationBehavior.AddBindingParameters(OperationDescription operationDescription, BindingParameterCollection bindingParameters)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+      description: The operation description
+    - id: bindingParameters
+      type: CoreWCF.Channels.BindingParameterCollection
+      description: A collection of binding parameters.
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.AddBindingParameters(operationDescription As OperationDescription, bindingParameters As BindingParameterCollection) Implements IOperationBehavior.AddBindingParameters
+  overload: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters*
+  remarks: This method does nothing because the <xref:CoreWCF.Web.WebInvokeAttribute> attribute is a passive operation behavior.
+  implements:
+  - CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  name.vb: CoreWCF.Description.IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  commentId: M:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  summary: Implements the <xref:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*> method.
+  id: CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  isEii: true
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  nameWithType: WebInvokeAttribute.IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.ClientOperation)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: void IOperationBehavior.ApplyClientBehavior(OperationDescription operationDescription, ClientOperation clientOperation)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+      description: The operation description.
+    - id: clientOperation
+      type: CoreWCF.Dispatcher.ClientOperation
+      description: The client operation.
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(operationDescription As OperationDescription, clientOperation As ClientOperation) Implements IOperationBehavior.ApplyClientBehavior
+  overload: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*
+  remarks: This method does nothing because the <xref:CoreWCF.Web.WebInvokeAttribute> attribute is a passive operation behavior.
+  implements:
+  - CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  commentId: M:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  summary: Implements the <xref:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*> method.
+  id: CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  isEii: true
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  nameWithType: WebInvokeAttribute.IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.DispatchOperation)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: void IOperationBehavior.ApplyDispatchBehavior(OperationDescription operationDescription, DispatchOperation dispatchOperation)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+      description: The operation description.
+    - id: dispatchOperation
+      type: CoreWCF.Dispatcher.DispatchOperation
+      description: The operation to dispatch to.
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(operationDescription As OperationDescription, dispatchOperation As DispatchOperation) Implements IOperationBehavior.ApplyDispatchBehavior
+  overload: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*
+  remarks: This method does nothing because the <xref:CoreWCF.Web.WebInvokeAttribute> attribute is a passive operation behavior.
+  implements:
+  - CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  summary: Implements the <xref:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate*> method.
+  id: CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)
+  isEii: true
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationBehavior.Validate(OperationDescription)
+  nameWithType: WebInvokeAttribute.IOperationBehavior.Validate(OperationDescription)
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: void IOperationBehavior.Validate(OperationDescription operationDescription)
+    parameters:
+    - id: operationDescription
+      type: CoreWCF.Description.OperationDescription
+      description: The operation description.
+    content.vb: Sub CoreWCF.Description.IOperationBehavior.Validate(operationDescription As OperationDescription) Implements IOperationBehavior.Validate
+  overload: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate*
+  remarks: This method does nothing because the <xref:CoreWCF.Web.WebInvokeAttribute> attribute is a passive operation behavior.
+  implements:
+  - CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.Validate(OperationDescription)
+  name.vb: CoreWCF.Description.IOperationBehavior.Validate(OperationDescription)
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute
+  commentId: M:CoreWCF.Web.WebInvokeAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute
+  id: CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute
+  isEii: true
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IOperationContractAttributeProvider.GetOperationContractAttribute()
+  nameWithType: WebInvokeAttribute.IOperationContractAttributeProvider.GetOperationContractAttribute()
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute()
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: OperationContractAttribute IOperationContractAttributeProvider.GetOperationContractAttribute()
+    return:
+      type: CoreWCF.OperationContractAttribute
+    content.vb: Function CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute As OperationContractAttribute Implements IOperationContractAttributeProvider.GetOperationContractAttribute
+  overload: CoreWCF.Web.WebInvokeAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute*
+  implements:
+  - CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute()
+  name.vb: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute()
+- uid: CoreWCF.Web.WebInvokeAttribute.BodyStyle
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.BodyStyle
+  summary: Gets or sets the body style of the messages that are sent to and from the service operation.
+  id: BodyStyle
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: BodyStyle
+  nameWithType: WebInvokeAttribute.BodyStyle
+  fullName: CoreWCF.Web.WebInvokeAttribute.BodyStyle
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebMessageBodyStyle BodyStyle { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebMessageBodyStyle
+      description: One of the <xref:CoreWCF.Web.WebMessageBodyStyle> enumeration values.
+    content.vb: Public Property BodyStyle As WebMessageBodyStyle
+  overload: CoreWCF.Web.WebInvokeAttribute.BodyStyle*
+  remarks: When set to [Bare](xref:CoreWCF.Web.WebInvokeAttribute.BodyStyle*), the result of the service operation is written directly to the body of the response message.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly
+  summary: Gets the <xref:CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly*> property
+  id: IsBodyStyleSetExplicitly
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsBodyStyleSetExplicitly
+  nameWithType: WebInvokeAttribute.IsBodyStyleSetExplicitly
+  fullName: CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public bool IsBodyStyleSetExplicitly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: A value that specifies whether the <xref:CoreWCF.Web.WebInvokeAttribute.BodyStyle*> property was set explicitly.
+    content.vb: Public ReadOnly Property IsBodyStyleSetExplicitly As Boolean
+  overload: CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly*
+  remarks: This property is designed to be used by the WCF infrastructure and should never be set from user code.
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly
+  summary: Gets the <xref:CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly*> property.
+  id: IsRequestFormatSetExplicitly
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsRequestFormatSetExplicitly
+  nameWithType: WebInvokeAttribute.IsRequestFormatSetExplicitly
+  fullName: CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public bool IsRequestFormatSetExplicitly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: A value that specifies whether the <xref:CoreWCF.Web.WebInvokeAttribute.RequestFormat*> property was set.
+    content.vb: Public ReadOnly Property IsRequestFormatSetExplicitly As Boolean
+  overload: CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly*
+  remarks: This property is designed to be used by the WCF infrastructure and should never be set from user code.
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly
+  summary: Gets the <xref:CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly*> property.
+  id: IsResponseFormatSetExplicitly
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsResponseFormatSetExplicitly
+  nameWithType: WebInvokeAttribute.IsResponseFormatSetExplicitly
+  fullName: CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public bool IsResponseFormatSetExplicitly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: A value that specifies whether the <xref:CoreWCF.Web.WebInvokeAttribute.ResponseFormat*> property was set.
+    content.vb: Public ReadOnly Property IsResponseFormatSetExplicitly As Boolean
+  overload: CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly*
+  remarks: This property is designed to be used by the WCF infrastructure and should never be set from user code.
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Web.WebInvokeAttribute.Method
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.Method
+  summary: Gets or sets the protocol (for example HTTP) method the service operation responds to.
+  id: Method
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: Method
+  nameWithType: WebInvokeAttribute.Method
+  fullName: CoreWCF.Web.WebInvokeAttribute.Method
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public string Method { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The protocol method associated with the operation
+    content.vb: Public Property Method As String
+  overload: CoreWCF.Web.WebInvokeAttribute.Method*
+  remarks: <xref:CoreWCF.Web.WebInvokeAttribute.Method*> defaults to POST.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebInvokeAttribute.RequestFormat
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.RequestFormat
+  summary: Gets or sets the <xref:CoreWCF.Web.WebInvokeAttribute.RequestFormat*> property.
+  id: RequestFormat
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: RequestFormat
+  nameWithType: WebInvokeAttribute.RequestFormat
+  fullName: CoreWCF.Web.WebInvokeAttribute.RequestFormat
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebMessageFormat RequestFormat { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebMessageFormat
+      description: One of the <xref:CoreWCF.Web.WebMessageFormat> enumeration values.
+    content.vb: Public Property RequestFormat As WebMessageFormat
+  overload: CoreWCF.Web.WebInvokeAttribute.RequestFormat*
+  remarks: This property determines the format of requests made to a service operation. The possible values are Xml and Json.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebInvokeAttribute.ResponseFormat
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.ResponseFormat
+  summary: Gets or sets the <xref:CoreWCF.Web.WebInvokeAttribute.ResponseFormat*> property.
+  id: ResponseFormat
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: ResponseFormat
+  nameWithType: WebInvokeAttribute.ResponseFormat
+  fullName: CoreWCF.Web.WebInvokeAttribute.ResponseFormat
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public WebMessageFormat ResponseFormat { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Web.WebMessageFormat
+      description: One of the <xref:CoreWCF.Web.WebMessageFormat> enumeration values.
+    content.vb: Public Property ResponseFormat As WebMessageFormat
+  overload: CoreWCF.Web.WebInvokeAttribute.ResponseFormat*
+  remarks: This property determines the format of responses sent from a service operation. The possible values are Xml and Json.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Web.WebInvokeAttribute.UriTemplate
+  commentId: P:CoreWCF.Web.WebInvokeAttribute.UriTemplate
+  summary: The Uniform Resource Identifier (URI) template for the service operation.
+  id: UriTemplate
+  parent: CoreWCF.Web.WebInvokeAttribute
+  langs:
+  - csharp
+  - vb
+  name: UriTemplate
+  nameWithType: WebInvokeAttribute.UriTemplate
+  fullName: CoreWCF.Web.WebInvokeAttribute.UriTemplate
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Web
+  syntax:
+    content: public string UriTemplate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: The URI template for the service operation.
+    content.vb: Public Property UriTemplate As String
+  overload: CoreWCF.Web.WebInvokeAttribute.UriTemplate*
+  remarks: URI templates are used to determine which requests get dispatched to which service operations. URI templates allow you to map a URI or a set of URIs to a service operation. For more information about URI templates, see [UriTemplate and UriTemplateTable](xref:CoreWCF.UriTemplateTable)
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Web
+  commentId: N:CoreWCF.Web
+  isExternal: true
+  name: CoreWCF.Web
+  nameWithType: CoreWCF.Web
+  fullName: CoreWCF.Web
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IOperationContractAttributeProvider
+  commentId: T:CoreWCF.IOperationContractAttributeProvider
+  parent: CoreWCF
+  isExternal: true
+  name: IOperationContractAttributeProvider
+  nameWithType: IOperationContractAttributeProvider
+  fullName: CoreWCF.IOperationContractAttributeProvider
+- uid: CoreWCF.Description.IOperationBehavior
+  commentId: T:CoreWCF.Description.IOperationBehavior
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IOperationBehavior
+  nameWithType: IOperationBehavior
+  fullName: CoreWCF.Description.IOperationBehavior
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Web.WebInvokeAttribute.#ctor*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.#ctor
+  isExternal: true
+  name: WebInvokeAttribute
+  nameWithType: WebInvokeAttribute.WebInvokeAttribute
+  fullName: CoreWCF.Web.WebInvokeAttribute.WebInvokeAttribute
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters
+  isExternal: true
+  name: IOperationBehavior.AddBindingParameters
+  nameWithType: WebInvokeAttribute.IOperationBehavior.AddBindingParameters
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.AddBindingParameters
+  name.vb: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+- uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  commentId: M:CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: AddBindingParameters(OperationDescription, BindingParameterCollection)
+  nameWithType: IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)
+  fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription, CoreWCF.Channels.BindingParameterCollection)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+    name: AddBindingParameters
+    nameWithType: IOperationBehavior.AddBindingParameters
+    fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)
+    name: AddBindingParameters
+    nameWithType: IOperationBehavior.AddBindingParameters
+    fullName: CoreWCF.Description.IOperationBehavior.AddBindingParameters
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.BindingParameterCollection
+    name: BindingParameterCollection
+    nameWithType: BindingParameterCollection
+    fullName: CoreWCF.Channels.BindingParameterCollection
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.OperationDescription
+  commentId: T:CoreWCF.Description.OperationDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: OperationDescription
+  nameWithType: OperationDescription
+  fullName: CoreWCF.Description.OperationDescription
+- uid: CoreWCF.Channels.BindingParameterCollection
+  commentId: T:CoreWCF.Channels.BindingParameterCollection
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingParameterCollection
+  nameWithType: BindingParameterCollection
+  fullName: CoreWCF.Channels.BindingParameterCollection
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior
+  isExternal: true
+  name: IOperationBehavior.ApplyClientBehavior
+  nameWithType: WebInvokeAttribute.IOperationBehavior.ApplyClientBehavior
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+- uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  commentId: M:CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: ApplyClientBehavior(OperationDescription, ClientOperation)
+  nameWithType: IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.ClientOperation)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+    name: ApplyClientBehavior
+    nameWithType: IOperationBehavior.ApplyClientBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.ClientOperation
+    name: ClientOperation
+    nameWithType: ClientOperation
+    fullName: CoreWCF.Dispatcher.ClientOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)
+    name: ApplyClientBehavior
+    nameWithType: IOperationBehavior.ApplyClientBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyClientBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.ClientOperation
+    name: ClientOperation
+    nameWithType: ClientOperation
+    fullName: CoreWCF.Dispatcher.ClientOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ClientOperation
+  commentId: T:CoreWCF.Dispatcher.ClientOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ClientOperation
+  nameWithType: ClientOperation
+  fullName: CoreWCF.Dispatcher.ClientOperation
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior
+  isExternal: true
+  name: IOperationBehavior.ApplyDispatchBehavior
+  nameWithType: WebInvokeAttribute.IOperationBehavior.ApplyDispatchBehavior
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+  name.vb: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+- uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  commentId: M:CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  nameWithType: IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)
+  fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription, CoreWCF.Dispatcher.DispatchOperation)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+    name: ApplyDispatchBehavior
+    nameWithType: IOperationBehavior.ApplyDispatchBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.DispatchOperation
+    name: DispatchOperation
+    nameWithType: DispatchOperation
+    fullName: CoreWCF.Dispatcher.DispatchOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)
+    name: ApplyDispatchBehavior
+    nameWithType: IOperationBehavior.ApplyDispatchBehavior
+    fullName: CoreWCF.Description.IOperationBehavior.ApplyDispatchBehavior
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Dispatcher.DispatchOperation
+    name: DispatchOperation
+    nameWithType: DispatchOperation
+    fullName: CoreWCF.Dispatcher.DispatchOperation
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.DispatchOperation
+  commentId: T:CoreWCF.Dispatcher.DispatchOperation
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchOperation
+  nameWithType: DispatchOperation
+  fullName: CoreWCF.Dispatcher.DispatchOperation
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.CoreWCF#Description#IOperationBehavior#Validate
+  isExternal: true
+  name: IOperationBehavior.Validate
+  nameWithType: WebInvokeAttribute.IOperationBehavior.Validate
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.Validate
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.Description.IOperationBehavior.Validate
+  name.vb: CoreWCF.Description.IOperationBehavior.Validate
+- uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  commentId: M:CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  parent: CoreWCF.Description.IOperationBehavior
+  isExternal: true
+  name: Validate(OperationDescription)
+  nameWithType: IOperationBehavior.Validate(OperationDescription)
+  fullName: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+  spec.csharp:
+  - uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+    name: Validate
+    nameWithType: IOperationBehavior.Validate
+    fullName: CoreWCF.Description.IOperationBehavior.Validate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IOperationBehavior.Validate(CoreWCF.Description.OperationDescription)
+    name: Validate
+    nameWithType: IOperationBehavior.Validate
+    fullName: CoreWCF.Description.IOperationBehavior.Validate
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.OperationDescription
+    name: OperationDescription
+    nameWithType: OperationDescription
+    fullName: CoreWCF.Description.OperationDescription
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Web.WebInvokeAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute
+  isExternal: true
+  name: IOperationContractAttributeProvider.GetOperationContractAttribute
+  nameWithType: WebInvokeAttribute.IOperationContractAttributeProvider.GetOperationContractAttribute
+  fullName: CoreWCF.Web.WebInvokeAttribute.CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+  nameWithType.vb: WebInvokeAttribute.CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+  name.vb: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+- uid: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+  commentId: M:CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+  parent: CoreWCF.IOperationContractAttributeProvider
+  isExternal: true
+  name: GetOperationContractAttribute()
+  nameWithType: IOperationContractAttributeProvider.GetOperationContractAttribute()
+  fullName: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute()
+  spec.csharp:
+  - uid: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+    name: GetOperationContractAttribute
+    nameWithType: IOperationContractAttributeProvider.GetOperationContractAttribute
+    fullName: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+    name: GetOperationContractAttribute
+    nameWithType: IOperationContractAttributeProvider.GetOperationContractAttribute
+    fullName: CoreWCF.IOperationContractAttributeProvider.GetOperationContractAttribute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.OperationContractAttribute
+  commentId: T:CoreWCF.OperationContractAttribute
+  parent: CoreWCF
+  isExternal: true
+  name: OperationContractAttribute
+  nameWithType: OperationContractAttribute
+  fullName: CoreWCF.OperationContractAttribute
+- uid: CoreWCF.Web.WebInvokeAttribute.BodyStyle*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.BodyStyle
+  isExternal: true
+  name: BodyStyle
+  nameWithType: WebInvokeAttribute.BodyStyle
+  fullName: CoreWCF.Web.WebInvokeAttribute.BodyStyle
+- uid: CoreWCF.Web.WebMessageBodyStyle
+  commentId: T:CoreWCF.Web.WebMessageBodyStyle
+  parent: CoreWCF.Web
+  isExternal: true
+  name: WebMessageBodyStyle
+  nameWithType: WebMessageBodyStyle
+  fullName: CoreWCF.Web.WebMessageBodyStyle
+- uid: CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly
+  isExternal: true
+  name: IsBodyStyleSetExplicitly
+  nameWithType: WebInvokeAttribute.IsBodyStyleSetExplicitly
+  fullName: CoreWCF.Web.WebInvokeAttribute.IsBodyStyleSetExplicitly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly
+  isExternal: true
+  name: IsRequestFormatSetExplicitly
+  nameWithType: WebInvokeAttribute.IsRequestFormatSetExplicitly
+  fullName: CoreWCF.Web.WebInvokeAttribute.IsRequestFormatSetExplicitly
+- uid: CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly
+  isExternal: true
+  name: IsResponseFormatSetExplicitly
+  nameWithType: WebInvokeAttribute.IsResponseFormatSetExplicitly
+  fullName: CoreWCF.Web.WebInvokeAttribute.IsResponseFormatSetExplicitly
+- uid: CoreWCF.Web.WebInvokeAttribute.Method*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.Method
+  isExternal: true
+  name: Method
+  nameWithType: WebInvokeAttribute.Method
+  fullName: CoreWCF.Web.WebInvokeAttribute.Method
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Web.WebInvokeAttribute.RequestFormat*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.RequestFormat
+  isExternal: true
+  name: RequestFormat
+  nameWithType: WebInvokeAttribute.RequestFormat
+  fullName: CoreWCF.Web.WebInvokeAttribute.RequestFormat
+- uid: CoreWCF.Web.WebMessageFormat
+  commentId: T:CoreWCF.Web.WebMessageFormat
+  parent: CoreWCF.Web
+  isExternal: true
+  name: WebMessageFormat
+  nameWithType: WebMessageFormat
+  fullName: CoreWCF.Web.WebMessageFormat
+- uid: CoreWCF.Web.WebInvokeAttribute.ResponseFormat*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.ResponseFormat
+  isExternal: true
+  name: ResponseFormat
+  nameWithType: WebInvokeAttribute.ResponseFormat
+  fullName: CoreWCF.Web.WebInvokeAttribute.ResponseFormat
+- uid: CoreWCF.Web.WebInvokeAttribute.UriTemplate*
+  commentId: Overload:CoreWCF.Web.WebInvokeAttribute.UriTemplate
+  isExternal: true
+  name: UriTemplate
+  nameWithType: WebInvokeAttribute.UriTemplate
+  fullName: CoreWCF.Web.WebInvokeAttribute.UriTemplate

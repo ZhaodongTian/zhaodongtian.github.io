@@ -1,0 +1,762 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.FaultException
+  commentId: T:CoreWCF.FaultException
+  id: FaultException
+  parent: CoreWCF
+  children:
+  - CoreWCF.FaultException.#ctor
+  - CoreWCF.FaultException.#ctor(CoreWCF.Channels.MessageFault)
+  - CoreWCF.FaultException.#ctor(CoreWCF.Channels.MessageFault,System.String)
+  - CoreWCF.FaultException.#ctor(CoreWCF.FaultReason)
+  - CoreWCF.FaultException.#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode)
+  - CoreWCF.FaultException.#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode,System.String)
+  - CoreWCF.FaultException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - CoreWCF.FaultException.#ctor(System.String)
+  - CoreWCF.FaultException.#ctor(System.String,CoreWCF.FaultCode)
+  - CoreWCF.FaultException.#ctor(System.String,CoreWCF.FaultCode,System.String)
+  - CoreWCF.FaultException.Action
+  - CoreWCF.FaultException.Code
+  - CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  - CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  - CoreWCF.FaultException.CreateMessageFault
+  - CoreWCF.FaultException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  - CoreWCF.FaultException.Message
+  - CoreWCF.FaultException.Reason
+  langs:
+  - csharp
+  - vb
+  name: FaultException
+  nameWithType: FaultException
+  fullName: CoreWCF.FaultException
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Represents a SOAP fault.
+  remarks: "In a service, use the &lt;xref:CoreWCF.FaultException> class to create an untyped fault to return to the client for debugging purposes.  \n\nIn a client, catch &lt;xref:CoreWCF.FaultException> objects to handle unknown or generic faults, such as those returned by a service with the &lt;xref:CoreWCF.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> property set to `true`. Because &lt;xref:CoreWCF.FaultException> extends &lt;xref:CoreWCF.CommunicationException>, remember to catch any &lt;xref:CoreWCF.FaultException> objects prior to catching &lt;xref:CoreWCF.CommunicationException> objects if you want to catch them separately.  \n\n> [!NOTE]\n>  Duplex services can also catch &lt;xref:CoreWCF.FaultException> objects returned from their interaction with a duplex client.  \n\nIn general, it is strongly recommended that you use the &lt;xref:CoreWCF.FaultContractAttribute> to design your services to return strongly-typed SOAP faults (and not managed exception objects) for all fault cases in which you decide the client requires fault information. However, use the &lt;xref:CoreWCF.FaultException> in the following situations:  \n\n-   To send SOAP faults from a service for debugging purposes.  \n\n-   To catch SOAP faults on a client when the faults are not part of the service contract.  \n\nThrow &lt;xref:CoreWCF.FaultException> objects when you want the string to be passed to the constructor and retrieved by the client by calling the &lt;xref:CoreWCF.FaultException%601.ToString%2A?displayProperty=nameWithType> method. If you specify a fault contract of type &lt;xref:CoreWCF.FaultException%601?displayProperty=nameWithType> where the type parameter is &lt;xref:System.String?displayProperty=nameWithType>, the string value is available as the &lt;xref:CoreWCF.FaultException%601.Detail%2A?displayProperty=nameWithType> property and not by calling &lt;xref:CoreWCF.FaultException%601.ToString%2A?displayProperty=nameWithType>.  \n\nFor details, see [Specifying and Handling Faults in Contracts and Services](/dotnet/framework/wcf/specifying-and-handling-faults-in-contracts-and-services).  \n\n\n\n"
+  syntax:
+    content: 'public class FaultException : CommunicationException'
+    content.vb: >-
+      Public Class FaultException
+          Inherits CommunicationException
+  inheritance:
+  - System.Object
+  - CoreWCF.CommunicationException
+  derivedClasses:
+  - CoreWCF.Dispatcher.NetDispatcherFaultException
+  - CoreWCF.FaultException`1
+  - CoreWCF.Web.WebFaultException
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.FaultException.#ctor
+  commentId: M:CoreWCF.FaultException.#ctor
+  id: '#ctor'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException()
+  nameWithType: FaultException.FaultException()
+  fullName: CoreWCF.FaultException.FaultException()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException()
+    content.vb: Public Sub New
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(System.String)
+  commentId: M:CoreWCF.FaultException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(String)
+  nameWithType: FaultException.FaultException(String)
+  fullName: CoreWCF.FaultException.FaultException(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(string reason)
+    parameters:
+    - id: reason
+      type: System.String
+    content.vb: Public Sub New(reason As String)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(CoreWCF.FaultReason)
+  commentId: M:CoreWCF.FaultException.#ctor(CoreWCF.FaultReason)
+  id: '#ctor(CoreWCF.FaultReason)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(FaultReason)
+  nameWithType: FaultException.FaultException(FaultReason)
+  fullName: CoreWCF.FaultException.FaultException(CoreWCF.FaultReason)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(FaultReason reason)
+    parameters:
+    - id: reason
+      type: CoreWCF.FaultReason
+    content.vb: Public Sub New(reason As FaultReason)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(System.String,CoreWCF.FaultCode)
+  commentId: M:CoreWCF.FaultException.#ctor(System.String,CoreWCF.FaultCode)
+  id: '#ctor(System.String,CoreWCF.FaultCode)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(String, FaultCode)
+  nameWithType: FaultException.FaultException(String, FaultCode)
+  fullName: CoreWCF.FaultException.FaultException(System.String, CoreWCF.FaultCode)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(string reason, FaultCode code)
+    parameters:
+    - id: reason
+      type: System.String
+    - id: code
+      type: CoreWCF.FaultCode
+    content.vb: Public Sub New(reason As String, code As FaultCode)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode)
+  commentId: M:CoreWCF.FaultException.#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode)
+  id: '#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(FaultReason, FaultCode)
+  nameWithType: FaultException.FaultException(FaultReason, FaultCode)
+  fullName: CoreWCF.FaultException.FaultException(CoreWCF.FaultReason, CoreWCF.FaultCode)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(FaultReason reason, FaultCode code)
+    parameters:
+    - id: reason
+      type: CoreWCF.FaultReason
+    - id: code
+      type: CoreWCF.FaultCode
+    content.vb: Public Sub New(reason As FaultReason, code As FaultCode)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(System.String,CoreWCF.FaultCode,System.String)
+  commentId: M:CoreWCF.FaultException.#ctor(System.String,CoreWCF.FaultCode,System.String)
+  id: '#ctor(System.String,CoreWCF.FaultCode,System.String)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(String, FaultCode, String)
+  nameWithType: FaultException.FaultException(String, FaultCode, String)
+  fullName: CoreWCF.FaultException.FaultException(System.String, CoreWCF.FaultCode, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(string reason, FaultCode code, string action)
+    parameters:
+    - id: reason
+      type: System.String
+    - id: code
+      type: CoreWCF.FaultCode
+    - id: action
+      type: System.String
+    content.vb: Public Sub New(reason As String, code As FaultCode, action As String)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode,System.String)
+  commentId: M:CoreWCF.FaultException.#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode,System.String)
+  id: '#ctor(CoreWCF.FaultReason,CoreWCF.FaultCode,System.String)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(FaultReason, FaultCode, String)
+  nameWithType: FaultException.FaultException(FaultReason, FaultCode, String)
+  fullName: CoreWCF.FaultException.FaultException(CoreWCF.FaultReason, CoreWCF.FaultCode, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(FaultReason reason, FaultCode code, string action)
+    parameters:
+    - id: reason
+      type: CoreWCF.FaultReason
+    - id: code
+      type: CoreWCF.FaultCode
+    - id: action
+      type: System.String
+    content.vb: Public Sub New(reason As FaultReason, code As FaultCode, action As String)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(CoreWCF.Channels.MessageFault)
+  commentId: M:CoreWCF.FaultException.#ctor(CoreWCF.Channels.MessageFault)
+  id: '#ctor(CoreWCF.Channels.MessageFault)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(MessageFault)
+  nameWithType: FaultException.FaultException(MessageFault)
+  fullName: CoreWCF.FaultException.FaultException(CoreWCF.Channels.MessageFault)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(MessageFault fault)
+    parameters:
+    - id: fault
+      type: CoreWCF.Channels.MessageFault
+    content.vb: Public Sub New(fault As MessageFault)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(CoreWCF.Channels.MessageFault,System.String)
+  commentId: M:CoreWCF.FaultException.#ctor(CoreWCF.Channels.MessageFault,System.String)
+  id: '#ctor(CoreWCF.Channels.MessageFault,System.String)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(MessageFault, String)
+  nameWithType: FaultException.FaultException(MessageFault, String)
+  fullName: CoreWCF.FaultException.FaultException(CoreWCF.Channels.MessageFault, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultException(MessageFault fault, string action)
+    parameters:
+    - id: fault
+      type: CoreWCF.Channels.MessageFault
+    - id: action
+      type: System.String
+    content.vb: Public Sub New(fault As MessageFault, action As String)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.FaultException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:CoreWCF.FaultException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  id: '#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)'
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: FaultException(SerializationInfo, StreamingContext)
+  nameWithType: FaultException.FaultException(SerializationInfo, StreamingContext)
+  fullName: CoreWCF.FaultException.FaultException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: protected FaultException(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: System.Runtime.Serialization.SerializationInfo
+    - id: context
+      type: System.Runtime.Serialization.StreamingContext
+    content.vb: Protected Sub New(info As SerializationInfo, context As StreamingContext)
+  overload: CoreWCF.FaultException.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  commentId: M:CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  id: CreateFault(CoreWCF.Channels.MessageFault,System.Type[])
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: CreateFault(MessageFault, Type[])
+  nameWithType: FaultException.CreateFault(MessageFault, Type[])
+  fullName: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.Type[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static FaultException CreateFault(MessageFault messageFault, params Type[] faultDetailTypes)
+    parameters:
+    - id: messageFault
+      type: CoreWCF.Channels.MessageFault
+    - id: faultDetailTypes
+      type: System.Type[]
+    return:
+      type: CoreWCF.FaultException
+    content.vb: Public Shared Function CreateFault(messageFault As MessageFault, ParamArray faultDetailTypes As Type()) As FaultException
+  overload: CoreWCF.FaultException.CreateFault*
+  nameWithType.vb: FaultException.CreateFault(MessageFault, Type())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.Type())
+  name.vb: CreateFault(MessageFault, Type())
+- uid: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  commentId: M:CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  id: CreateFault(CoreWCF.Channels.MessageFault,System.String,System.Type[])
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: CreateFault(MessageFault, String, Type[])
+  nameWithType: FaultException.CreateFault(MessageFault, String, Type[])
+  fullName: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.String, System.Type[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public static FaultException CreateFault(MessageFault messageFault, string action, params Type[] faultDetailTypes)
+    parameters:
+    - id: messageFault
+      type: CoreWCF.Channels.MessageFault
+    - id: action
+      type: System.String
+    - id: faultDetailTypes
+      type: System.Type[]
+    return:
+      type: CoreWCF.FaultException
+    content.vb: Public Shared Function CreateFault(messageFault As MessageFault, action As String, ParamArray faultDetailTypes As Type()) As FaultException
+  overload: CoreWCF.FaultException.CreateFault*
+  nameWithType.vb: FaultException.CreateFault(MessageFault, String, Type())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.FaultException.CreateFault(CoreWCF.Channels.MessageFault, System.String, System.Type())
+  name.vb: CreateFault(MessageFault, String, Type())
+- uid: CoreWCF.FaultException.CreateMessageFault
+  commentId: M:CoreWCF.FaultException.CreateMessageFault
+  id: CreateMessageFault
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: CreateMessageFault()
+  nameWithType: FaultException.CreateMessageFault()
+  fullName: CoreWCF.FaultException.CreateMessageFault()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public virtual MessageFault CreateMessageFault()
+    return:
+      type: CoreWCF.Channels.MessageFault
+    content.vb: Public Overridable Function CreateMessageFault As MessageFault
+  overload: CoreWCF.FaultException.CreateMessageFault*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.FaultException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  commentId: M:CoreWCF.FaultException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  id: GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  nameWithType: FaultException.GetObjectData(SerializationInfo, StreamingContext)
+  fullName: CoreWCF.FaultException.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public override void GetObjectData(SerializationInfo info, StreamingContext context)
+    parameters:
+    - id: info
+      type: System.Runtime.Serialization.SerializationInfo
+    - id: context
+      type: System.Runtime.Serialization.StreamingContext
+    content.vb: Public Overrides Sub GetObjectData(info As SerializationInfo, context As StreamingContext)
+  overload: CoreWCF.FaultException.GetObjectData*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.FaultException.Action
+  commentId: P:CoreWCF.FaultException.Action
+  id: Action
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: Action
+  nameWithType: FaultException.Action
+  fullName: CoreWCF.FaultException.Action
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Action { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Action As String
+  overload: CoreWCF.FaultException.Action*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultException.Code
+  commentId: P:CoreWCF.FaultException.Code
+  id: Code
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: FaultException.Code
+  fullName: CoreWCF.FaultException.Code
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultCode Code { get; }
+    parameters: []
+    return:
+      type: CoreWCF.FaultCode
+    content.vb: Public ReadOnly Property Code As FaultCode
+  overload: CoreWCF.FaultException.Code*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.FaultException.Message
+  commentId: P:CoreWCF.FaultException.Message
+  id: Message
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: FaultException.Message
+  fullName: CoreWCF.FaultException.Message
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public override string Message { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Message As String
+  overload: CoreWCF.FaultException.Message*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.FaultException.Reason
+  commentId: P:CoreWCF.FaultException.Reason
+  id: Reason
+  parent: CoreWCF.FaultException
+  langs:
+  - csharp
+  - vb
+  name: Reason
+  nameWithType: FaultException.Reason
+  fullName: CoreWCF.FaultException.Reason
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public FaultReason Reason { get; }
+    parameters: []
+    return:
+      type: CoreWCF.FaultReason
+    content.vb: Public ReadOnly Property Reason As FaultReason
+  overload: CoreWCF.FaultException.Reason*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.CommunicationException
+  commentId: T:CoreWCF.CommunicationException
+  parent: CoreWCF
+  isExternal: true
+  name: CommunicationException
+  nameWithType: CommunicationException
+  fullName: CoreWCF.CommunicationException
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.FaultException.#ctor*
+  commentId: Overload:CoreWCF.FaultException.#ctor
+  isExternal: true
+  name: FaultException
+  nameWithType: FaultException.FaultException
+  fullName: CoreWCF.FaultException.FaultException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.FaultReason
+  commentId: T:CoreWCF.FaultReason
+  parent: CoreWCF
+  isExternal: true
+  name: FaultReason
+  nameWithType: FaultReason
+  fullName: CoreWCF.FaultReason
+- uid: CoreWCF.FaultCode
+  commentId: T:CoreWCF.FaultCode
+  parent: CoreWCF
+  isExternal: true
+  name: FaultCode
+  nameWithType: FaultCode
+  fullName: CoreWCF.FaultCode
+- uid: CoreWCF.Channels.MessageFault
+  commentId: T:CoreWCF.Channels.MessageFault
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageFault
+  nameWithType: MessageFault
+  fullName: CoreWCF.Channels.MessageFault
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Runtime.Serialization.SerializationInfo
+  isExternal: true
+  name: SerializationInfo
+  nameWithType: SerializationInfo
+  fullName: System.Runtime.Serialization.SerializationInfo
+- uid: System.Runtime.Serialization.StreamingContext
+  isExternal: true
+  name: StreamingContext
+  nameWithType: StreamingContext
+  fullName: System.Runtime.Serialization.StreamingContext
+- uid: CoreWCF.FaultException.CreateFault*
+  commentId: Overload:CoreWCF.FaultException.CreateFault
+  isExternal: true
+  name: CreateFault
+  nameWithType: FaultException.CreateFault
+  fullName: CoreWCF.FaultException.CreateFault
+- uid: System.Type[]
+  isExternal: true
+  name: Type[]
+  nameWithType: Type[]
+  fullName: System.Type[]
+  nameWithType.vb: Type()
+  fullName.vb: System.Type()
+  name.vb: Type()
+  spec.csharp:
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.FaultException
+  commentId: T:CoreWCF.FaultException
+  parent: CoreWCF
+  isExternal: true
+  name: FaultException
+  nameWithType: FaultException
+  fullName: CoreWCF.FaultException
+- uid: CoreWCF.FaultException.CreateMessageFault*
+  commentId: Overload:CoreWCF.FaultException.CreateMessageFault
+  isExternal: true
+  name: CreateMessageFault
+  nameWithType: FaultException.CreateMessageFault
+  fullName: CoreWCF.FaultException.CreateMessageFault
+- uid: CoreWCF.FaultException.GetObjectData*
+  commentId: Overload:CoreWCF.FaultException.GetObjectData
+  isExternal: true
+  name: GetObjectData
+  nameWithType: FaultException.GetObjectData
+  fullName: CoreWCF.FaultException.GetObjectData
+- uid: CoreWCF.FaultException.Action*
+  commentId: Overload:CoreWCF.FaultException.Action
+  isExternal: true
+  name: Action
+  nameWithType: FaultException.Action
+  fullName: CoreWCF.FaultException.Action
+- uid: CoreWCF.FaultException.Code*
+  commentId: Overload:CoreWCF.FaultException.Code
+  isExternal: true
+  name: Code
+  nameWithType: FaultException.Code
+  fullName: CoreWCF.FaultException.Code
+- uid: CoreWCF.FaultException.Message*
+  commentId: Overload:CoreWCF.FaultException.Message
+  isExternal: true
+  name: Message
+  nameWithType: FaultException.Message
+  fullName: CoreWCF.FaultException.Message
+- uid: CoreWCF.FaultException.Reason*
+  commentId: Overload:CoreWCF.FaultException.Reason
+  isExternal: true
+  name: Reason
+  nameWithType: FaultException.Reason
+  fullName: CoreWCF.FaultException.Reason

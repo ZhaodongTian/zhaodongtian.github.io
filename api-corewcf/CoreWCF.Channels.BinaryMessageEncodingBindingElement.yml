@@ -1,0 +1,1363 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  id: BinaryMessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion
+  - CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas
+  langs:
+  - csharp
+  - vb
+  name: BinaryMessageEncodingBindingElement
+  nameWithType: BinaryMessageEncodingBindingElement
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: The binding element that specifies the .NET Binary Format for XML used to encode messages.
+  syntax:
+    content: 'public sealed class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement, IWsdlExportExtension, IPolicyExportExtension'
+    content.vb: >-
+      Public NotInheritable Class BinaryMessageEncodingBindingElement
+
+          Inherits MessageEncodingBindingElement
+
+          Implements IWsdlExportExtension, IPolicyExportExtension
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  - CoreWCF.Channels.MessageEncodingBindingElement
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension
+  - CoreWCF.Description.IPolicyExportExtension
+  inheritedMembers:
+  - CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  remarks: "Encoding is the process of transforming a message into a sequence of bytes. Decoding is the reverse process. Windows Communication Foundation (WCF) includes three types of encoding for SOAP messages: Text, Binary and Message Transmission Optimization Mechanism (MTOM).<br /><br /> <xref: CoreWCF.Channels.BinaryMessageEncodingBindingElement> is the binding element that specifies that the .NET Binary Format for XML should be used for encoding messages. It has options to specify the character encoding and the SOAP and WS-Addressing version to be used. Binary encoding is the most efficient but least interoperable of the encoding options.<br /><br /> For more information about the binding element that specifies messages are encoded using a textual representation of XML, see <xref:CoreWCF.Channels.TextMessageEncodingBindingElement>.<br /><br /> For more information about the binding element that specifies messages are encoded using the MTOM message encoding, see <xref:CoreWCF.Channels.MtomMessageEncodingBindingElement>.<br /><br />To implement a custom message encoder, use the <xref:CoreWCF.Channels.MessageEncodingBindingElement> class."
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BinaryMessageEncodingBindingElement()
+  nameWithType: BinaryMessageEncodingBindingElement.BinaryMessageEncodingBindingElement()
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BinaryMessageEncodingBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.BinaryMessageEncodingBindingElement> class."
+  syntax:
+    content: public BinaryMessageEncodingBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BinaryMessageEncodingBindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override IServiceDispatcher BuildServiceDispatcher<TChannel>(BindingContext context, IServiceDispatcher innerDispatcher)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    - id: innerDispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overrides Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(context As BindingContext, innerDispatcher As IServiceDispatcher) As IServiceDispatcher
+  overridden: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher*
+  nameWithType.vb: BinaryMessageEncodingBindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: BinaryMessageEncodingBindingElement.Clone()
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new <xref:CoreWCF.Channels.BinaryMessageEncodingBindingElement> object initialized from the current one.
+  syntax:
+    content: public override BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: "A <xref:CoreWCF.Channels.BinaryMessageEncodingBindingElement> object with property values equal to those of the current element."
+    content.vb: Public Overrides Function Clone As BindingElement
+  overridden: CoreWCF.Channels.BindingElement.Clone
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: "This creates a complete copy of the current binding element object tree, also called a deep clone. A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. (This can also be described as copying the entire object graph.) Returning a deep clone enables the runtime to support the case in which multiple custom bindings share a custom binding element. If a deep clone is not returned, the runtime behavior is undefined.<br /><br /> A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects."
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory
+  id: CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateMessageEncoderFactory()
+  nameWithType: BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a factory for binary message encoders that employ the SOAP and WS-Addressing versions and the character encoding specified by the current encoding binding element.
+  syntax:
+    content: public override MessageEncoderFactory CreateMessageEncoderFactory()
+    return:
+      type: CoreWCF.Channels.MessageEncoderFactory
+      description: "The <xref:CoreWCF.Channels.MessageEncoderFactory> that this binding element creates."
+    content.vb: Public Overrides Function CreateMessageEncoderFactory As MessageEncoderFactory
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: "The <xref:CoreWCF.Channels.MessageEncoder> objects that the factory produces can read and write messages using the binary message encoding."
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  nameWithType: BinaryMessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Returns a typed object requested, if present, from the appropriate layer in the binding element stack.
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "The <xref:CoreWCF.Channels.BindingContext> for the binding element."
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not.
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty*
+  nameWithType.vb: BinaryMessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: Use this to request a typed object for setting properties or getting status from the appropriate layer in the binding element stack. If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no binding element layer supported the requested object, then the method returns null.
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  id: CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: BinaryMessageEncodingBindingElement.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IPolicyExportExtension.ExportPolicy(MetadataExporter exporter, PolicyConversionContext policyContext)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.MetadataExporter
+    - id: policyContext
+      type: CoreWCF.Description.PolicyConversionContext
+    content.vb: Sub CoreWCF.Description.IPolicyExportExtension.ExportPolicy(exporter As MetadataExporter, policyContext As PolicyConversionContext) Implements IPolicyExportExtension.ExportPolicy
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*
+  implements:
+  - CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  nameWithType.vb: BinaryMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  id: CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  nameWithType: BinaryMessageEncodingBindingElement.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlContractConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IWsdlExportExtension.ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.WsdlExporter
+    - id: context
+      type: CoreWCF.Description.WsdlContractConversionContext
+    content.vb: Sub CoreWCF.Description.IWsdlExportExtension.ExportContract(exporter As WsdlExporter, context As WsdlContractConversionContext) Implements IWsdlExportExtension.ExportContract
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract*
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  nameWithType.vb: BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  id: CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  isEii: true
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  nameWithType: BinaryMessageEncodingBindingElement.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: void IWsdlExportExtension.ExportEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext context)
+    parameters:
+    - id: exporter
+      type: CoreWCF.Description.WsdlExporter
+    - id: context
+      type: CoreWCF.Description.WsdlEndpointConversionContext
+    content.vb: Sub CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(exporter As WsdlExporter, context As WsdlEndpointConversionContext) Implements IWsdlExportExtension.ExportEndpoint
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint*
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  nameWithType.vb: BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  id: IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IsMatch(BindingElement)
+  nameWithType: BinaryMessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool IsMatch(BindingElement b)
+    parameters:
+    - id: b
+      type: CoreWCF.Channels.BindingElement
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function IsMatch(b As BindingElement) As Boolean
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas
+  id: ShouldSerializeReaderQuotas
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ShouldSerializeReaderQuotas()
+  nameWithType: BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas()
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool ShouldSerializeReaderQuotas()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ShouldSerializeReaderQuotas As Boolean
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion
+  commentId: M:CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion
+  id: ShouldSerializeMessageVersion
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ShouldSerializeMessageVersion()
+  nameWithType: BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion()
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool ShouldSerializeMessageVersion()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ShouldSerializeMessageVersion As Boolean
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat
+  commentId: P:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat
+  id: CompressionFormat
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CompressionFormat
+  nameWithType: BinaryMessageEncodingBindingElement.CompressionFormat
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the compression format for the binding element.
+  syntax:
+    content: public CompressionFormat CompressionFormat { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.CompressionFormat
+      description: The compression format for the binding element.
+    content.vb: Public Property CompressionFormat As CompressionFormat
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion
+  id: MessageVersion
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  nameWithType: BinaryMessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the SOAP message and WS-Addressing versions that are used or expected.
+  syntax:
+    content: public override MessageVersion MessageVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: "The <xref:CoreWCF.Channels.MessageVersion> that is used or expected."
+    content.vb: Public Overrides Property MessageVersion As MessageVersion
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: Specifies the versions of SOAP and WS-Addressing associated with a message and its exchange.
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  commentId: P:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  id: MaxReadPoolSize
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxReadPoolSize
+  nameWithType: BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the maximum number of XML readers that are allocated to a pool and are ready for use to process incoming messages.
+  syntax:
+    content: public int MaxReadPoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum number of readers to be kept in the pool. The default value is 64 readers.
+    content.vb: Public Property MaxReadPoolSize As Integer
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of incoming messages because it is able to use readers from the pool are already created instead of having to create new ones.
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  commentId: P:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  id: MaxWritePoolSize
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxWritePoolSize
+  nameWithType: BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the maximum number of XML writers that are allocated to a pool and are ready for use to process outgoing messages.
+  syntax:
+    content: public int MaxWritePoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum number of writers to be kept in the pool. The default value is 16 writers.
+    content.vb: Public Property MaxWritePoolSize As Integer
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of outgoing messages because it is able to use writers from the pool that are already created instead of having to create new ones.
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas
+  commentId: P:CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas
+  id: ReaderQuotas
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ReaderQuotas
+  nameWithType: BinaryMessageEncodingBindingElement.ReaderQuotas
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets constraints on the complexity of XML messages that can be processed by endpoints configured with this binding element.
+  syntax:
+    content: public XmlDictionaryReaderQuotas ReaderQuotas { get; set; }
+    parameters: []
+    return:
+      type: System.Xml.XmlDictionaryReaderQuotas
+      description: "The [XmlDictionaryReaderQuotas](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that specifies the complexity constraints on SOAP messages exchanged. The default values for these constraints are provided in the following remarks section."
+    content.vb: Public Property ReaderQuotas As XmlDictionaryReaderQuotas
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "The complexity constraints protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources. The properties that express these constraints and their default values are as follows: \n* [MaxDepth](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxdepth?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 32\n <br /><br /> \n* [MaxStringContentLength](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxstringcontentlength?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 8192\n <br /><br />\n* [MaxArrayLength](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxarraylength?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 16384\n<br /><br /> \n* [MaxBytesPerRead](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxbytesperread?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 4096\n<br /><br /> \n* [MaxNameTableCharCount](https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxnametablecharcount?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) = 16384\n \nThis property has a public setter since .NET Framework 4.0.\n"
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize
+  commentId: P:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize
+  id: MaxSessionSize
+  parent: CoreWCF.Channels.BinaryMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxSessionSize
+  nameWithType: BinaryMessageEncodingBindingElement.MaxSessionSize
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the maximum amount of memory available within a session for optimizing transmission procedures.
+  syntax:
+    content: public int MaxSessionSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum size, in bytes, of a session. The default value is 2048 bytes.
+    content.vb: Public Property MaxSessionSize As Integer
+  overload: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: "The .NET Binary Format for XML can optimize the transmission of strings when they are used in multiple messages within a session. Once a string is sent in a message, additional messages that contain that string can refer to it using only the string's ID. This requires that the strings and their IDs be stored in memory. This allows the ID to be retransmitted in subsequent messages instead of the entire string. This lookup increases the efficiency of message transmission when using the binary format. The <xref:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize> gets and sets the maximum amount of memory that is allocated to store these strings."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.MessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.MessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncodingBindingElement
+  nameWithType: MessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement
+- uid: CoreWCF.Description.IWsdlExportExtension
+  commentId: T:CoreWCF.Description.IWsdlExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IWsdlExportExtension
+  nameWithType: IWsdlExportExtension
+  fullName: CoreWCF.Description.IWsdlExportExtension
+- uid: CoreWCF.Description.IPolicyExportExtension
+  commentId: T:CoreWCF.Description.IPolicyExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IPolicyExportExtension
+  nameWithType: IPolicyExportExtension
+  fullName: CoreWCF.Description.IPolicyExportExtension
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: CheckEncodingVersion(EnvelopeVersion)
+  nameWithType: MessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+    name: CheckEncodingVersion
+    nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.EnvelopeVersion
+    name: EnvelopeVersion
+    nameWithType: EnvelopeVersion
+    fullName: CoreWCF.EnvelopeVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+    name: CheckEncodingVersion
+    nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.EnvelopeVersion
+    name: EnvelopeVersion
+    nameWithType: EnvelopeVersion
+    fullName: CoreWCF.EnvelopeVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor
+  isExternal: true
+  name: BinaryMessageEncodingBindingElement
+  nameWithType: BinaryMessageEncodingBindingElement.BinaryMessageEncodingBindingElement
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BinaryMessageEncodingBindingElement
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher
+  isExternal: true
+  name: BuildServiceDispatcher
+  nameWithType: BinaryMessageEncodingBindingElement.BuildServiceDispatcher
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: CoreWCF.Configuration.IServiceDispatcher
+  commentId: T:CoreWCF.Configuration.IServiceDispatcher
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IServiceDispatcher
+  nameWithType: IServiceDispatcher
+  fullName: CoreWCF.Configuration.IServiceDispatcher
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: BinaryMessageEncodingBindingElement.Clone
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: CreateMessageEncoderFactory()
+  nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    name: CreateMessageEncoderFactory
+    nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    name: CreateMessageEncoderFactory
+    nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory
+  isExternal: true
+  name: CreateMessageEncoderFactory
+  nameWithType: BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncoderFactory
+  commentId: T:CoreWCF.Channels.MessageEncoderFactory
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncoderFactory
+  nameWithType: MessageEncoderFactory
+  fullName: CoreWCF.Channels.MessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: MessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: MessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: MessageEncodingBindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: MessageEncodingBindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: BinaryMessageEncodingBindingElement.GetProperty
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy
+  isExternal: true
+  name: IPolicyExportExtension.ExportPolicy
+  nameWithType: BinaryMessageEncodingBindingElement.IPolicyExportExtension.ExportPolicy
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  nameWithType.vb: BinaryMessageEncodingBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+- uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Description.IPolicyExportExtension
+  isExternal: true
+  name: ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: ExportPolicy
+    nameWithType: IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: ExportPolicy
+    nameWithType: IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataExporter
+  commentId: T:CoreWCF.Description.MetadataExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataExporter
+  nameWithType: MetadataExporter
+  fullName: CoreWCF.Description.MetadataExporter
+- uid: CoreWCF.Description.PolicyConversionContext
+  commentId: T:CoreWCF.Description.PolicyConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: PolicyConversionContext
+  nameWithType: PolicyConversionContext
+  fullName: CoreWCF.Description.PolicyConversionContext
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract
+  isExternal: true
+  name: IWsdlExportExtension.ExportContract
+  nameWithType: BinaryMessageEncodingBindingElement.IWsdlExportExtension.ExportContract
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+  nameWithType.vb: BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportContract
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  commentId: M:CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  parent: CoreWCF.Description.IWsdlExportExtension
+  isExternal: true
+  name: ExportContract(WsdlExporter, WsdlContractConversionContext)
+  nameWithType: IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlContractConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+    name: ExportContract
+    nameWithType: IWsdlExportExtension.ExportContract
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlContractConversionContext
+    name: WsdlContractConversionContext
+    nameWithType: WsdlContractConversionContext
+    fullName: CoreWCF.Description.WsdlContractConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+    name: ExportContract
+    nameWithType: IWsdlExportExtension.ExportContract
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlContractConversionContext
+    name: WsdlContractConversionContext
+    nameWithType: WsdlContractConversionContext
+    fullName: CoreWCF.Description.WsdlContractConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlExporter
+  commentId: T:CoreWCF.Description.WsdlExporter
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlExporter
+  nameWithType: WsdlExporter
+  fullName: CoreWCF.Description.WsdlExporter
+- uid: CoreWCF.Description.WsdlContractConversionContext
+  commentId: T:CoreWCF.Description.WsdlContractConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlContractConversionContext
+  nameWithType: WsdlContractConversionContext
+  fullName: CoreWCF.Description.WsdlContractConversionContext
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint
+  isExternal: true
+  name: IWsdlExportExtension.ExportEndpoint
+  nameWithType: BinaryMessageEncodingBindingElement.IWsdlExportExtension.ExportEndpoint
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+  nameWithType.vb: BinaryMessageEncodingBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+- uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  commentId: M:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  parent: CoreWCF.Description.IWsdlExportExtension
+  isExternal: true
+  name: ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  nameWithType: IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+    name: ExportEndpoint
+    nameWithType: IWsdlExportExtension.ExportEndpoint
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+    name: ExportEndpoint
+    nameWithType: IWsdlExportExtension.ExportEndpoint
+    fullName: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.WsdlEndpointConversionContext
+  commentId: T:CoreWCF.Description.WsdlEndpointConversionContext
+  parent: CoreWCF.Description
+  isExternal: true
+  name: WsdlEndpointConversionContext
+  nameWithType: WsdlEndpointConversionContext
+  fullName: CoreWCF.Description.WsdlEndpointConversionContext
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: MessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: MessageEncodingBindingElement.IsMatch
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: MessageEncodingBindingElement.IsMatch
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch
+  isExternal: true
+  name: IsMatch
+  nameWithType: BinaryMessageEncodingBindingElement.IsMatch
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas
+  isExternal: true
+  name: ShouldSerializeReaderQuotas
+  nameWithType: BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion
+  isExternal: true
+  name: ShouldSerializeMessageVersion
+  nameWithType: BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat
+  isExternal: true
+  name: CompressionFormat
+  nameWithType: BinaryMessageEncodingBindingElement.CompressionFormat
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat
+- uid: CoreWCF.Channels.CompressionFormat
+  commentId: T:CoreWCF.Channels.CompressionFormat
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: CompressionFormat
+  nameWithType: CompressionFormat
+  fullName: CoreWCF.Channels.CompressionFormat
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: BinaryMessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  isExternal: true
+  name: MaxReadPoolSize
+  nameWithType: BinaryMessageEncodingBindingElement.MaxReadPoolSize
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  isExternal: true
+  name: MaxWritePoolSize
+  nameWithType: BinaryMessageEncodingBindingElement.MaxWritePoolSize
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas
+  isExternal: true
+  name: ReaderQuotas
+  nameWithType: BinaryMessageEncodingBindingElement.ReaderQuotas
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas
+- uid: System.Xml.XmlDictionaryReaderQuotas
+  isExternal: true
+  name: XmlDictionaryReaderQuotas
+  nameWithType: XmlDictionaryReaderQuotas
+  fullName: System.Xml.XmlDictionaryReaderQuotas
+- uid: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize*
+  commentId: Overload:CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize
+  isExternal: true
+  name: MaxSessionSize
+  nameWithType: BinaryMessageEncodingBindingElement.MaxSessionSize
+  fullName: CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize

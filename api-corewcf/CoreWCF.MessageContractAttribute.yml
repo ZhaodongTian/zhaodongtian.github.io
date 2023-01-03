@@ -1,0 +1,214 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.MessageContractAttribute
+  commentId: T:CoreWCF.MessageContractAttribute
+  id: MessageContractAttribute
+  parent: CoreWCF
+  children:
+  - CoreWCF.MessageContractAttribute.#ctor
+  - CoreWCF.MessageContractAttribute.IsWrapped
+  - CoreWCF.MessageContractAttribute.WrapperName
+  - CoreWCF.MessageContractAttribute.WrapperNamespace
+  langs:
+  - csharp
+  - vb
+  name: MessageContractAttribute
+  nameWithType: MessageContractAttribute
+  fullName: CoreWCF.MessageContractAttribute
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Defines a strongly-typed class that corresponds to a SOAP message.
+  remarks: "Use the &lt;xref:CoreWCF.MessageContractAttribute> attribute to specify the structure of the SOAP envelope for a particular message. Your service can then use the message as a parameter or return type in service operations. For information about controlling the serialization of the contents of a SOAP body without modifying the default SOAP envelope itself, see &lt;xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>, [Specifying Data Transfer in Service Contracts](/dotnet/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts), and [Using Data Contracts](/dotnet/framework/wcf/feature-details/using-data-contracts).  \n\n> [!NOTE]\n>  You cannot use custom message types in your service operation with regular serializable parameters. Either use custom message types or serializable parameters that are not &lt;xref:CoreWCF.Channels.Message> objects. For details, see , [Specifying Data Transfer in Service Contracts](/dotnet/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts).  \n\nTo implement a message contract for a type, annotate it with &lt;xref:CoreWCF.MessageContractAttribute> and annotate one or more of the class&apos;s fields or properties with &lt;xref:CoreWCF.MessageBodyMemberAttribute>, &lt;xref:CoreWCF.MessageHeaderAttribute>, or &lt;xref:CoreWCF.MessageHeaderArrayAttribute>.  \n\n> [!NOTE]\n>  &lt;xref:CoreWCF.MessageParameterAttribute?displayProperty=nameWithType> is not a message contract attribute and cannot be used in conjunction with &lt;xref:CoreWCF.MessageContractAttribute>.  \n\nUse the &lt;xref:CoreWCF.OperationContractAttribute.Action%2A> and &lt;xref:CoreWCF.OperationContractAttribute.ReplyAction%2A> properties to specify the value of the `&lt;Action>` element in the SOAP message.  \n\n-   Use the &lt;xref:CoreWCF.MessageContractAttribute.HasProtectionLevel%2A> and &lt;xref:CoreWCF.MessageContractAttribute.ProtectionLevel%2A> properties to indicate whether the SOAP message type has a protection level, and if so, what it is.  \n\n-   Use the &lt;xref:CoreWCF.MessageContractAttribute.IsWrapped%2A> property to indicate whether the message body has a wrapper element, and if so, use the &lt;xref:CoreWCF.MessageContractAttribute.WrapperName%2A> and &lt;xref:CoreWCF.MessageContractAttribute.WrapperNamespace%2A> properties to specify the name and namespace, respectively, of the wrapping element.  \n\nFor more information, see [Using Message Contracts](/dotnet/framework/wcf/feature-details/using-message-contracts).  \n\n\n\n"
+  syntax:
+    content: 'public sealed class MessageContractAttribute : Attribute'
+    content.vb: >-
+      Public NotInheritable Class MessageContractAttribute
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.MessageContractAttribute.#ctor
+  commentId: M:CoreWCF.MessageContractAttribute.#ctor
+  id: '#ctor'
+  parent: CoreWCF.MessageContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: MessageContractAttribute()
+  nameWithType: MessageContractAttribute.MessageContractAttribute()
+  fullName: CoreWCF.MessageContractAttribute.MessageContractAttribute()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public MessageContractAttribute()
+    content.vb: Public Sub New
+  overload: CoreWCF.MessageContractAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageContractAttribute.IsWrapped
+  commentId: P:CoreWCF.MessageContractAttribute.IsWrapped
+  id: IsWrapped
+  parent: CoreWCF.MessageContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: IsWrapped
+  nameWithType: MessageContractAttribute.IsWrapped
+  fullName: CoreWCF.MessageContractAttribute.IsWrapped
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public bool IsWrapped { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsWrapped As Boolean
+  overload: CoreWCF.MessageContractAttribute.IsWrapped*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageContractAttribute.WrapperName
+  commentId: P:CoreWCF.MessageContractAttribute.WrapperName
+  id: WrapperName
+  parent: CoreWCF.MessageContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: WrapperName
+  nameWithType: MessageContractAttribute.WrapperName
+  fullName: CoreWCF.MessageContractAttribute.WrapperName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string WrapperName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property WrapperName As String
+  overload: CoreWCF.MessageContractAttribute.WrapperName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.MessageContractAttribute.WrapperNamespace
+  commentId: P:CoreWCF.MessageContractAttribute.WrapperNamespace
+  id: WrapperNamespace
+  parent: CoreWCF.MessageContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: WrapperNamespace
+  nameWithType: MessageContractAttribute.WrapperNamespace
+  fullName: CoreWCF.MessageContractAttribute.WrapperNamespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string WrapperNamespace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property WrapperNamespace As String
+  overload: CoreWCF.MessageContractAttribute.WrapperNamespace*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.MessageContractAttribute.#ctor*
+  commentId: Overload:CoreWCF.MessageContractAttribute.#ctor
+  isExternal: true
+  name: MessageContractAttribute
+  nameWithType: MessageContractAttribute.MessageContractAttribute
+  fullName: CoreWCF.MessageContractAttribute.MessageContractAttribute
+- uid: CoreWCF.MessageContractAttribute.IsWrapped*
+  commentId: Overload:CoreWCF.MessageContractAttribute.IsWrapped
+  isExternal: true
+  name: IsWrapped
+  nameWithType: MessageContractAttribute.IsWrapped
+  fullName: CoreWCF.MessageContractAttribute.IsWrapped
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.MessageContractAttribute.WrapperName*
+  commentId: Overload:CoreWCF.MessageContractAttribute.WrapperName
+  isExternal: true
+  name: WrapperName
+  nameWithType: MessageContractAttribute.WrapperName
+  fullName: CoreWCF.MessageContractAttribute.WrapperName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.MessageContractAttribute.WrapperNamespace*
+  commentId: Overload:CoreWCF.MessageContractAttribute.WrapperNamespace
+  isExternal: true
+  name: WrapperNamespace
+  nameWithType: MessageContractAttribute.WrapperNamespace
+  fullName: CoreWCF.MessageContractAttribute.WrapperNamespace

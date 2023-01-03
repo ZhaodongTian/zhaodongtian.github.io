@@ -1,0 +1,428 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.UnderstoodHeaders
+  commentId: T:CoreWCF.Channels.UnderstoodHeaders
+  id: UnderstoodHeaders
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.UnderstoodHeaders.Add(CoreWCF.Channels.MessageHeaderInfo)
+  - CoreWCF.Channels.UnderstoodHeaders.Contains(CoreWCF.Channels.MessageHeaderInfo)
+  - CoreWCF.Channels.UnderstoodHeaders.GetEnumerator
+  - CoreWCF.Channels.UnderstoodHeaders.Modified
+  - CoreWCF.Channels.UnderstoodHeaders.Remove(CoreWCF.Channels.MessageHeaderInfo)
+  langs:
+  - csharp
+  - vb
+  name: UnderstoodHeaders
+  nameWithType: UnderstoodHeaders
+  fullName: CoreWCF.Channels.UnderstoodHeaders
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents a collection of message headers that are understood. This class cannot be inherited.
+  remarks: "This class contains a collection of message headers that are understood. SOAP processors at various layers (Security, Reliability, Transaction and application dispatcher) must add their MustUnderstand headers to this collection after processing the headers. The dispatcher throws a `MessageHeader` fault if a header exists in the `Message.Headers` collection that must be understood, but is not found in this collection.  \n\n"
+  syntax:
+    content: 'public sealed class UnderstoodHeaders : Object'
+    content.vb: >-
+      Public NotInheritable Class UnderstoodHeaders
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEnumerable{CoreWCF.Channels.MessageHeaderInfo}
+  - System.Collections.IEnumerable
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Channels.UnderstoodHeaders.Add(CoreWCF.Channels.MessageHeaderInfo)
+  commentId: M:CoreWCF.Channels.UnderstoodHeaders.Add(CoreWCF.Channels.MessageHeaderInfo)
+  id: Add(CoreWCF.Channels.MessageHeaderInfo)
+  parent: CoreWCF.Channels.UnderstoodHeaders
+  langs:
+  - csharp
+  - vb
+  name: Add(MessageHeaderInfo)
+  summary: Adds the specified [MessageHeaderInfo](xref:CoreWCF.Channels.MessageHeaderInfo) to this collection. This implies that the specific header has been understood.
+  nameWithType: UnderstoodHeaders.Add(MessageHeaderInfo)
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Add(CoreWCF.Channels.MessageHeaderInfo)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void Add(MessageHeaderInfo headerInfo)
+    parameters:
+    - id: headerInfo
+      type: CoreWCF.Channels.MessageHeaderInfo
+      description: Contains additional information regarding a message header.
+    content.vb: Public Sub Add(headerInfo As MessageHeaderInfo)
+  overload: CoreWCF.Channels.UnderstoodHeaders.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.UnderstoodHeaders.Contains(CoreWCF.Channels.MessageHeaderInfo)
+  commentId: M:CoreWCF.Channels.UnderstoodHeaders.Contains(CoreWCF.Channels.MessageHeaderInfo)
+  id: Contains(CoreWCF.Channels.MessageHeaderInfo)
+  parent: CoreWCF.Channels.UnderstoodHeaders
+  langs:
+  - csharp
+  - vb
+  name: Contains(MessageHeaderInfo)
+  summary: Verifies whether the specified [MessageHeaderInfo](xref:CoreWCF.Channels.MessageHeaderInfo) is present in this collection.
+  nameWithType: UnderstoodHeaders.Contains(MessageHeaderInfo)
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Contains(CoreWCF.Channels.MessageHeaderInfo)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool Contains(MessageHeaderInfo headerInfo)
+    parameters:
+    - id: headerInfo
+      type: CoreWCF.Channels.MessageHeaderInfo
+      description: Contains additional information regarding a message header.
+    return:
+      type: System.Boolean
+      description: "`true` if the specified [MessageHeaderInfo](xref:CoreWCF.Channels.MessageHeaderInfo) is present in this collection; otherwise, `false`."
+    content.vb: Public Function Contains(headerInfo As MessageHeaderInfo) As Boolean
+  overload: CoreWCF.Channels.UnderstoodHeaders.Contains*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.UnderstoodHeaders.GetEnumerator
+  commentId: M:CoreWCF.Channels.UnderstoodHeaders.GetEnumerator
+  id: GetEnumerator
+  parent: CoreWCF.Channels.UnderstoodHeaders
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  summary: Returns an enumerator that iterates through the collection.
+  nameWithType: UnderstoodHeaders.GetEnumerator()
+  fullName: CoreWCF.Channels.UnderstoodHeaders.GetEnumerator()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public IEnumerator<MessageHeaderInfo> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{CoreWCF.Channels.MessageHeaderInfo}
+      description: An [IEnumerator](xref:System.Collections.IEnumerator) object that can be used to iterate through the collection.
+    content.vb: Public Function GetEnumerator As IEnumerator(Of MessageHeaderInfo)
+  overload: CoreWCF.Channels.UnderstoodHeaders.GetEnumerator*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.UnderstoodHeaders.Remove(CoreWCF.Channels.MessageHeaderInfo)
+  commentId: M:CoreWCF.Channels.UnderstoodHeaders.Remove(CoreWCF.Channels.MessageHeaderInfo)
+  id: Remove(CoreWCF.Channels.MessageHeaderInfo)
+  parent: CoreWCF.Channels.UnderstoodHeaders
+  langs:
+  - csharp
+  - vb
+  name: Remove(MessageHeaderInfo)
+  summary: Removes the specified[ MessageHeaderInfo](xref:CoreWCF.Channels.MessageHeaderInfo) from this collection.
+  nameWithType: UnderstoodHeaders.Remove(MessageHeaderInfo)
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Remove(CoreWCF.Channels.MessageHeaderInfo)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void Remove(MessageHeaderInfo headerInfo)
+    parameters:
+    - id: headerInfo
+      type: CoreWCF.Channels.MessageHeaderInfo
+      description: Contains additional information regarding a message header.
+    content.vb: Public Sub Remove(headerInfo As MessageHeaderInfo)
+  overload: CoreWCF.Channels.UnderstoodHeaders.Remove*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.UnderstoodHeaders.Modified
+  commentId: P:CoreWCF.Channels.UnderstoodHeaders.Modified
+  id: Modified
+  parent: CoreWCF.Channels.UnderstoodHeaders
+  langs:
+  - csharp
+  - vb
+  name: Modified
+  nameWithType: UnderstoodHeaders.Modified
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Modified
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool Modified { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Modified As Boolean
+  overload: CoreWCF.Channels.UnderstoodHeaders.Modified*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.Channels.MessageHeaderInfo}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.Channels.MessageHeaderInfo}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<MessageHeaderInfo>
+  nameWithType: IEnumerable<MessageHeaderInfo>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.Channels.MessageHeaderInfo>
+  nameWithType.vb: IEnumerable(Of MessageHeaderInfo)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.Channels.MessageHeaderInfo)
+  name.vb: IEnumerable(Of MessageHeaderInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Channels.MessageHeaderInfo
+    name: MessageHeaderInfo
+    nameWithType: MessageHeaderInfo
+    fullName: CoreWCF.Channels.MessageHeaderInfo
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Channels.MessageHeaderInfo
+    name: MessageHeaderInfo
+    nameWithType: MessageHeaderInfo
+    fullName: CoreWCF.Channels.MessageHeaderInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.UnderstoodHeaders.Add*
+  commentId: Overload:CoreWCF.Channels.UnderstoodHeaders.Add
+  isExternal: true
+  name: Add
+  nameWithType: UnderstoodHeaders.Add
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Add
+- uid: CoreWCF.Channels.MessageHeaderInfo
+  commentId: T:CoreWCF.Channels.MessageHeaderInfo
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageHeaderInfo
+  nameWithType: MessageHeaderInfo
+  fullName: CoreWCF.Channels.MessageHeaderInfo
+- uid: CoreWCF.Channels.UnderstoodHeaders.Contains*
+  commentId: Overload:CoreWCF.Channels.UnderstoodHeaders.Contains
+  isExternal: true
+  name: Contains
+  nameWithType: UnderstoodHeaders.Contains
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Contains
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.UnderstoodHeaders.GetEnumerator*
+  commentId: Overload:CoreWCF.Channels.UnderstoodHeaders.GetEnumerator
+  isExternal: true
+  name: GetEnumerator
+  nameWithType: UnderstoodHeaders.GetEnumerator
+  fullName: CoreWCF.Channels.UnderstoodHeaders.GetEnumerator
+- uid: System.Collections.Generic.IEnumerator{CoreWCF.Channels.MessageHeaderInfo}
+  commentId: '!:System.Collections.Generic.IEnumerator{CoreWCF.Channels.MessageHeaderInfo}'
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<MessageHeaderInfo>
+  nameWithType: IEnumerator<MessageHeaderInfo>
+  fullName: System.Collections.Generic.IEnumerator<CoreWCF.Channels.MessageHeaderInfo>
+  nameWithType.vb: IEnumerator(Of MessageHeaderInfo)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of CoreWCF.Channels.MessageHeaderInfo)
+  name.vb: IEnumerator(Of MessageHeaderInfo)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Channels.MessageHeaderInfo
+    name: MessageHeaderInfo
+    nameWithType: MessageHeaderInfo
+    fullName: CoreWCF.Channels.MessageHeaderInfo
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Channels.MessageHeaderInfo
+    name: MessageHeaderInfo
+    nameWithType: MessageHeaderInfo
+    fullName: CoreWCF.Channels.MessageHeaderInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<>
+  nameWithType: IEnumerator<>
+  fullName: System.Collections.Generic.IEnumerator<>
+  nameWithType.vb: IEnumerator(Of )
+  fullName.vb: System.Collections.Generic.IEnumerator(Of )
+  name.vb: IEnumerator(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.UnderstoodHeaders.Remove*
+  commentId: Overload:CoreWCF.Channels.UnderstoodHeaders.Remove
+  isExternal: true
+  name: Remove
+  nameWithType: UnderstoodHeaders.Remove
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Remove
+- uid: CoreWCF.Channels.UnderstoodHeaders.Modified*
+  commentId: Overload:CoreWCF.Channels.UnderstoodHeaders.Modified
+  isExternal: true
+  name: Modified
+  nameWithType: UnderstoodHeaders.Modified
+  fullName: CoreWCF.Channels.UnderstoodHeaders.Modified

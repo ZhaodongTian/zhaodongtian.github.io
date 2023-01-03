@@ -1,0 +1,358 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.HttpRequestMessageProperty
+  commentId: T:CoreWCF.Channels.HttpRequestMessageProperty
+  id: HttpRequestMessageProperty
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy
+  - CoreWCF.Channels.HttpRequestMessageProperty.Headers
+  - CoreWCF.Channels.HttpRequestMessageProperty.Method
+  - CoreWCF.Channels.HttpRequestMessageProperty.Name
+  - CoreWCF.Channels.HttpRequestMessageProperty.QueryString
+  - CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody
+  langs:
+  - csharp
+  - vb
+  name: HttpRequestMessageProperty
+  nameWithType: HttpRequestMessageProperty
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty
+  type: Class
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: Provides access to the HTTP request to access and respond to the additional information made available for requests over the HTTP protocol.
+  remarks: "This is a general-purpose class that gives the developer direct access to the HTTP request information, which can be used for encapsulating HTTP-specific information. One example of the use of this class is to support services implemented in accordance with the Representational State Transfer (REST) architecture.  \n\nThis class enables support for the following scenarios:  \n\n-   Varies the HTTP verb used for each request.  \n\n-   Allows HTTP header (key, value) pairs to be set and queried by request.  \n\n-   Allows the query string to be specified for an HTTP request.  \n\nThis class can be used by <xref:CoreWCF.Channels.HttpTransportBindingElement> and related classes.  \n\nFor incoming messages, this property is added to messages.  \n\nFor outgoing messages, this property causes the following to happen:  \n\n-   [Method](https://learn.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.method?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) is set to <xref:CoreWCF.Channels.HttpRequestMessageProperty.Method>.  \n\n-   <xref:CoreWCF.Channels.HttpRequestMessageProperty.QueryString> is appended to the [RequestUri](https://learn.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.requesturi?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0).  \n\n-   <xref:CoreWCF.Channels.HttpRequestMessageProperty.Headers> is added to the HTTP headers set to be transmitted.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class HttpRequestMessageProperty : Object, IMessageProperty'
+    content.vb: >-
+      Public NotInheritable Class HttpRequestMessageProperty
+          Inherits Object
+          Implements IMessageProperty
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.Channels.IMessageProperty
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy
+  commentId: M:CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy
+  id: CoreWCF#Channels#IMessageProperty#CreateCopy
+  isEii: true
+  parent: CoreWCF.Channels.HttpRequestMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: IMessageProperty.CreateCopy()
+  nameWithType: HttpRequestMessageProperty.IMessageProperty.CreateCopy()
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF.Channels.IMessageProperty.CreateCopy()
+  type: Method
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: Creates and returns a copy of the current object.
+  syntax:
+    content: IMessageProperty IMessageProperty.CreateCopy()
+    return:
+      type: CoreWCF.Channels.IMessageProperty
+      description: "A <xref:CoreWCF.Channels.IMessageProperty> object that represents a copy of the current object."
+    content.vb: Function CoreWCF.Channels.IMessageProperty.CreateCopy As IMessageProperty Implements IMessageProperty.CreateCopy
+  overload: CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy*
+  implements:
+  - CoreWCF.Channels.IMessageProperty.CreateCopy
+  nameWithType.vb: HttpRequestMessageProperty.CoreWCF.Channels.IMessageProperty.CreateCopy()
+  name.vb: CoreWCF.Channels.IMessageProperty.CreateCopy()
+  remarks: "This member is an explicit interface member implementation. It can be used only when the <xref:CoreWCF.Channels.HttpRequestMessageProperty> instance is cast to an <xref:CoreWCF.Channels.IMessageProperty> interface."
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.Name
+  commentId: P:CoreWCF.Channels.HttpRequestMessageProperty.Name
+  id: Name
+  parent: CoreWCF.Channels.HttpRequestMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: HttpRequestMessageProperty.Name
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.Name
+  type: Property
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: "Gets the name of the message property associated with the <xref:CoreWCF.Channels.HttpRequestMessageProperty> class."
+  syntax:
+    content: public static string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The value "httpRequest".
+    content.vb: Public Shared ReadOnly Property Name As String
+  overload: CoreWCF.Channels.HttpRequestMessageProperty.Name*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.Headers
+  commentId: P:CoreWCF.Channels.HttpRequestMessageProperty.Headers
+  id: Headers
+  parent: CoreWCF.Channels.HttpRequestMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Headers
+  nameWithType: HttpRequestMessageProperty.Headers
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.Headers
+  type: Property
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: "\nGets the headers from the underlying HTTP Request.\n"
+  syntax:
+    content: public WebHeaderCollection Headers { get; }
+    parameters: []
+    return:
+      type: System.Net.WebHeaderCollection
+      description: "Returns a [WebHeaderCollection](https://learn.microsoft.com/en-us/dotnet/api/system.net.webheadercollection?view=net-7.0&viewFallbackFrom=dotnet-plat-ext-7.0) that contains the HTTP headers in the HTTP request."
+    content.vb: Public ReadOnly Property Headers As WebHeaderCollection
+  overload: CoreWCF.Channels.HttpRequestMessageProperty.Headers*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: There are situations in which this property is not available and attempts to access it may cause an exception. This can happen when WCF is hosted in IIS, after the HTTP request is complete, especially in one-way scenarios where the reply is sent back before the message has become available.
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.Method
+  commentId: P:CoreWCF.Channels.HttpRequestMessageProperty.Method
+  id: Method
+  parent: CoreWCF.Channels.HttpRequestMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: Method
+  nameWithType: HttpRequestMessageProperty.Method
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.Method
+  type: Property
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: "\nGets or sets the HTTP verb for the HTTP request.\n"
+  syntax:
+    content: public string Method { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The HTTP verb for the HTTP request.
+    content.vb: Public ReadOnly Property Method As String
+  overload: CoreWCF.Channels.HttpRequestMessageProperty.Method*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: "By default, WCF uses the POST verb for HTTP messages. The GET verb is used by WCF to display help information when accessing a ServiceHost's base address. This is useful for checking whether a WCF service is active when using a Web browser. Other methods defined by the [HTTP RFC](https://www.w3.org/Protocols/rfc2616/rfc2616.html) are PUT, DELETE, HEAD, OPTIONS, TRACE, and CONNECT. These methods have special behaviors when interoperating with other services."
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.QueryString
+  commentId: P:CoreWCF.Channels.HttpRequestMessageProperty.QueryString
+  id: QueryString
+  parent: CoreWCF.Channels.HttpRequestMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: QueryString
+  nameWithType: HttpRequestMessageProperty.QueryString
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.QueryString
+  type: Property
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: "Gets or sets the query string for the HTTP request."
+  syntax:
+    content: public string QueryString { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The query string from the HTTP request.
+    content.vb: Public ReadOnly Property QueryString As String
+  overload: CoreWCF.Channels.HttpRequestMessageProperty.QueryString*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: There are many well-known security attacks based on an HTTP request's query string (for example, the SQL injection attack). Always rigorously validate the parameters contained in the query string. If you use the values without validation, a well-known security hole is open.
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody
+  commentId: P:CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody
+  id: SuppressEntityBody
+  parent: CoreWCF.Channels.HttpRequestMessageProperty
+  langs:
+  - csharp
+  - vb
+  name: SuppressEntityBody
+  nameWithType: HttpRequestMessageProperty.SuppressEntityBody
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody
+  type: Property
+  source:
+    path: CoreWCF.Http
+    isExternal: true
+  assemblies:
+  - CoreWCF.Http
+  namespace: CoreWCF.Channels
+  summary: "\nGets or sets a value that indicates whether the body of the message is ignored and only the headers are sent.\n"
+  syntax:
+    content: public bool SuppressEntityBody { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "\ntrue if the message body is suppressed; otherwise, false. The default is false."
+    content.vb: Public ReadOnly Property SuppressEntityBody As Boolean
+  overload: CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: "This property is used for empty message requests: for example, a service that accepts a GET request without a message body. In this case, when building the <xref:CoreWCF.Channels.HttpRequestMessageProperty> object for the response message, set the <xref:CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody> property to true.<br /><br />When interoperating with non-WCF services, it is important to note that certain verbs are expected to contain a message body according to the HTTP standard; these include PUT and POST. Other verbs are expected to suppress the message body; these include GET and HEAD."
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.IMessageProperty
+  commentId: T:CoreWCF.Channels.IMessageProperty
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: IMessageProperty
+  nameWithType: IMessageProperty
+  fullName: CoreWCF.Channels.IMessageProperty
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy*
+  commentId: Overload:CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy
+  isExternal: true
+  name: IMessageProperty.CreateCopy
+  nameWithType: HttpRequestMessageProperty.IMessageProperty.CreateCopy
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF.Channels.IMessageProperty.CreateCopy
+  nameWithType.vb: HttpRequestMessageProperty.CoreWCF.Channels.IMessageProperty.CreateCopy
+  name.vb: CoreWCF.Channels.IMessageProperty.CreateCopy
+- uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+  commentId: M:CoreWCF.Channels.IMessageProperty.CreateCopy
+  parent: CoreWCF.Channels.IMessageProperty
+  isExternal: true
+  name: CreateCopy()
+  nameWithType: IMessageProperty.CreateCopy()
+  fullName: CoreWCF.Channels.IMessageProperty.CreateCopy()
+  spec.csharp:
+  - uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+    name: CreateCopy
+    nameWithType: IMessageProperty.CreateCopy
+    fullName: CoreWCF.Channels.IMessageProperty.CreateCopy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.IMessageProperty.CreateCopy
+    name: CreateCopy
+    nameWithType: IMessageProperty.CreateCopy
+    fullName: CoreWCF.Channels.IMessageProperty.CreateCopy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.Name*
+  commentId: Overload:CoreWCF.Channels.HttpRequestMessageProperty.Name
+  isExternal: true
+  name: Name
+  nameWithType: HttpRequestMessageProperty.Name
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.Headers*
+  commentId: Overload:CoreWCF.Channels.HttpRequestMessageProperty.Headers
+  isExternal: true
+  name: Headers
+  nameWithType: HttpRequestMessageProperty.Headers
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.Headers
+- uid: System.Net.WebHeaderCollection
+  isExternal: true
+  name: WebHeaderCollection
+  nameWithType: WebHeaderCollection
+  fullName: System.Net.WebHeaderCollection
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.Method*
+  commentId: Overload:CoreWCF.Channels.HttpRequestMessageProperty.Method
+  isExternal: true
+  name: Method
+  nameWithType: HttpRequestMessageProperty.Method
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.Method
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.QueryString*
+  commentId: Overload:CoreWCF.Channels.HttpRequestMessageProperty.QueryString
+  isExternal: true
+  name: QueryString
+  nameWithType: HttpRequestMessageProperty.QueryString
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.QueryString
+- uid: CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody*
+  commentId: Overload:CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody
+  isExternal: true
+  name: SuppressEntityBody
+  nameWithType: HttpRequestMessageProperty.SuppressEntityBody
+  fullName: CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean

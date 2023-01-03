@@ -1,0 +1,1131 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.TcpTransportBindingElement
+  commentId: T:CoreWCF.Channels.TcpTransportBindingElement
+  id: TcpTransportBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.TcpTransportBindingElement.#ctor
+  - CoreWCF.Channels.TcpTransportBindingElement.#ctor(CoreWCF.Channels.TcpTransportBindingElement)
+  - CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.TcpTransportBindingElement.Clone
+  - CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings
+  - CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy
+  - CoreWCF.Channels.TcpTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog
+  - CoreWCF.Channels.TcpTransportBindingElement.Scheme
+  langs:
+  - csharp
+  - vb
+  name: TcpTransportBindingElement
+  nameWithType: TcpTransportBindingElement
+  fullName: CoreWCF.Channels.TcpTransportBindingElement
+  type: Class
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: Represents the binding element for the TCP transport.
+  remarks: "This transport uses URIs of the form &quot;`net.tcp`://`hostname`:`port`/`path`&quot;. Other URI components are optional.  \n\nThe <xref:CoreWCF.Channels.TcpTransportBindingElement> class is the starting point for creating a custom binding that implements the TCP transport protocol. This transport is optimized for WCF communication.  \n\nThe WCF service model uses this class to create factory objects that implement the [IChannelFactory](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannelfactory?view=dotnet-plat-ext-7.0) and [IChannelListener](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannellistener?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) interfaces. These factory objects, in turn, create and accept the channels that transmit SOAP messages using the TCP protocol.  \n\nYou configure the factories that this class creates by setting its properties, such as [PortSharingEnabled](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.tcptransportbindingelement.portsharingenabled?view=netframework-4.8.1&viewFallbackFrom=dotnet-plat-ext-7.0) and [LeaseTimeout](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.tcpconnectionpoolsettings.leasetimeout?view=dotnet-plat-ext-7.0).  \n\nYou can also set properties on the base class <xref:CoreWCF.Channels.ConnectionOrientedTransportBindingElement>, such as <xref:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize%2A>, <xref:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.TransferMode%2A>, and <xref:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize%2A>. For a complete list of properties, see <xref:CoreWCF.Channels.ConnectionOrientedTransportBindingElement>.  \n\nFinally, you can set properties on the base class <xref:CoreWCF.Channels.TransportBindingElement>, such as <xref:CoreWCF.Channels.TransportBindingElement.ManualAddressing%2A> and <xref:CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize%2A>. For a complete list of properties, see <xref:CoreWCF.Channels.TransportBindingElement>.  \n\n\n\n"
+  syntax:
+    content: 'public class TcpTransportBindingElement : ConnectionOrientedTransportBindingElement, IWsdlExportExtension, IPolicyExportExtension'
+    content.vb: >-
+      Public Class TcpTransportBindingElement
+          Inherits ConnectionOrientedTransportBindingElement
+          Implements IWsdlExportExtension, IPolicyExportExtension
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  - CoreWCF.Channels.TransportBindingElement
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  implements:
+  - CoreWCF.Description.IWsdlExportExtension
+  - CoreWCF.Description.IPolicyExportExtension
+  inheritedMembers:
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.HostNameComparisonMode
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxOutputDelay
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts
+  - CoreWCF.Channels.ConnectionOrientedTransportBindingElement.TransferMode
+  - CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext,System.String,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  - CoreWCF.Channels.TransportBindingElement.ManualAddressing
+  - CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize
+  - CoreWCF.Channels.TransportBindingElement.MaxReceivedMessageSize
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Channels.TcpTransportBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.TcpTransportBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: TcpTransportBindingElement()
+  nameWithType: TcpTransportBindingElement.TcpTransportBindingElement()
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.TcpTransportBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.TcpTransportBindingElement> class."
+  syntax:
+    content: public TcpTransportBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.TcpTransportBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.TcpTransportBindingElement.#ctor(CoreWCF.Channels.TcpTransportBindingElement)
+  commentId: M:CoreWCF.Channels.TcpTransportBindingElement.#ctor(CoreWCF.Channels.TcpTransportBindingElement)
+  id: '#ctor(CoreWCF.Channels.TcpTransportBindingElement)'
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: TcpTransportBindingElement(TcpTransportBindingElement)
+  nameWithType: TcpTransportBindingElement.TcpTransportBindingElement(TcpTransportBindingElement)
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.TcpTransportBindingElement(CoreWCF.Channels.TcpTransportBindingElement)
+  type: Constructor
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.TcpTransportBindingElement> class."
+  syntax:
+    content: protected TcpTransportBindingElement(TcpTransportBindingElement elementToBeCloned)
+    parameters:
+    - id: elementToBeCloned
+      type: CoreWCF.Channels.TcpTransportBindingElement
+      description: "An instance of the <xref:CoreWCF.Channels.TcpTransportBindingElement> class."
+    content.vb: Protected Sub New(elementToBeCloned As TcpTransportBindingElement)
+  overload: CoreWCF.Channels.TcpTransportBindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: "This method is a copy constructor used to clone the binding element, and is exposed so that derived classes can implement <xref:CoreWCF.Channels.TcpTransportBindingElement.Clone>."
+- uid: CoreWCF.Channels.TcpTransportBindingElement.Clone
+  commentId: M:CoreWCF.Channels.TcpTransportBindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: TcpTransportBindingElement.Clone()
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: Creates a copy of the current binding element.
+  syntax:
+    content: public override BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: "Returns a copy of the current binding element."
+    content.vb: Public Overrides Function Clone As BindingElement
+  overridden: CoreWCF.Channels.BindingElement.Clone
+  overload: CoreWCF.Channels.TcpTransportBindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.TcpTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.TcpTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  nameWithType: TcpTransportBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: "Gets a specified object from the <xref:CoreWCF.Channels.BindingContext>."
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "A <xref:CoreWCF.Channels.BindingContext>."
+    typeParameters:
+    - id: T
+      description: The object to get.
+    return:
+      type: '{T}'
+      description: "The specified object from the <xref:CoreWCF.Channels.BindingContext>, or `null` if the object is not found."
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.TcpTransportBindingElement.GetProperty*
+  nameWithType.vb: TcpTransportBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.TcpTransportBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: "This method gets the specified object from the base class, or from one of that class's ancestors. The object returned is usually a collection of properties, for example, an object that implements <xref:CoreWCF.Channels.ISecurityCapabilities>."
+- uid: CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: TcpTransportBindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override IServiceDispatcher BuildServiceDispatcher<TChannel>(BindingContext context, IServiceDispatcher innerDispatcher)
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    - id: innerDispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overrides Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(context As BindingContext, innerDispatcher As IServiceDispatcher) As IServiceDispatcher
+  overridden: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  overload: CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher*
+  nameWithType.vb: TcpTransportBindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+- uid: CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings
+  commentId: P:CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings
+  id: ConnectionPoolSettings
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ConnectionPoolSettings
+  nameWithType: TcpTransportBindingElement.ConnectionPoolSettings
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings
+  type: Property
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: Gets a collection of connection pool settings.
+  syntax:
+    content: public TcpConnectionPoolSettings ConnectionPoolSettings { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.TcpConnectionPoolSettings
+      description: "A <xref:CoreWCF.Channels.TcpConnectionPoolSettings> object that contains various properties related to connection pooling."
+    content.vb: Public ReadOnly Property ConnectionPoolSettings As TcpConnectionPoolSettings
+  overload: CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog
+  commentId: P:CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog
+  id: ListenBacklog
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ListenBacklog
+  nameWithType: TcpTransportBindingElement.ListenBacklog
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog
+  type: Property
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public int ListenBacklog { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ListenBacklog As Integer
+  overload: CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.TcpTransportBindingElement.Scheme
+  commentId: P:CoreWCF.Channels.TcpTransportBindingElement.Scheme
+  id: Scheme
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Scheme
+  nameWithType: TcpTransportBindingElement.Scheme
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.Scheme
+  type: Property
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  summary: Returns the URI scheme for the transport.
+  syntax:
+    content: public override string Scheme { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: "Returns the URI scheme for the transport, which is \"net.tcp\"."
+    content.vb: Public Overrides ReadOnly Property Scheme As String
+  overridden: CoreWCF.Channels.TransportBindingElement.Scheme
+  overload: CoreWCF.Channels.TcpTransportBindingElement.Scheme*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+  remarks: The property is provided for validating bindings against base addresses.
+- uid: CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy
+  commentId: P:CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy
+  id: ExtendedProtectionPolicy
+  parent: CoreWCF.Channels.TcpTransportBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ExtendedProtectionPolicy
+  nameWithType: TcpTransportBindingElement.ExtendedProtectionPolicy
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy
+  type: Property
+  source:
+    path: CoreWCF.NetTcp
+    isExternal: true
+  assemblies:
+  - CoreWCF.NetTcp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public ExtendedProtectionPolicy ExtendedProtectionPolicy { get; set; }
+    parameters: []
+    return:
+      type: System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy
+    content.vb: Public Property ExtendedProtectionPolicy As ExtendedProtectionPolicy
+  overload: CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.TransportBindingElement
+  commentId: T:CoreWCF.Channels.TransportBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: TransportBindingElement
+  nameWithType: TransportBindingElement
+  fullName: CoreWCF.Channels.TransportBindingElement
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  commentId: T:CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: ConnectionOrientedTransportBindingElement
+  nameWithType: ConnectionOrientedTransportBindingElement
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+- uid: CoreWCF.Description.IWsdlExportExtension
+  commentId: T:CoreWCF.Description.IWsdlExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IWsdlExportExtension
+  nameWithType: IWsdlExportExtension
+  fullName: CoreWCF.Description.IWsdlExportExtension
+- uid: CoreWCF.Description.IPolicyExportExtension
+  commentId: T:CoreWCF.Description.IPolicyExportExtension
+  parent: CoreWCF.Description
+  isExternal: true
+  name: IPolicyExportExtension
+  nameWithType: IPolicyExportExtension
+  fullName: CoreWCF.Description.IPolicyExportExtension
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  commentId: M:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  nameWithType: ConnectionOrientedTransportBindingElement.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter, CoreWCF.Description.PolicyConversionContext)
+  nameWithType.vb: ConnectionOrientedTransportBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  name.vb: CoreWCF.Description.IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: IPolicyExportExtension.ExportPolicy
+    nameWithType: ConnectionOrientedTransportBindingElement.IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)
+    name: CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    nameWithType: ConnectionOrientedTransportBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IPolicyExportExtension.ExportPolicy
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.MetadataExporter
+    name: MetadataExporter
+    nameWithType: MetadataExporter
+    fullName: CoreWCF.Description.MetadataExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.PolicyConversionContext
+    name: PolicyConversionContext
+    nameWithType: PolicyConversionContext
+    fullName: CoreWCF.Description.PolicyConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  commentId: M:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  nameWithType: ConnectionOrientedTransportBindingElement.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlContractConversionContext)
+  nameWithType.vb: ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+    name: IWsdlExportExtension.ExportContract
+    nameWithType: ConnectionOrientedTransportBindingElement.IWsdlExportExtension.ExportContract
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlContractConversionContext
+    name: WsdlContractConversionContext
+    nameWithType: WsdlContractConversionContext
+    fullName: CoreWCF.Description.WsdlContractConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)
+    name: CoreWCF.Description.IWsdlExportExtension.ExportContract
+    nameWithType: ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportContract
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlContractConversionContext
+    name: WsdlContractConversionContext
+    nameWithType: WsdlContractConversionContext
+    fullName: CoreWCF.Description.WsdlContractConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  commentId: M:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  nameWithType: ConnectionOrientedTransportBindingElement.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext)
+  nameWithType.vb: ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  name.vb: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+    name: IWsdlExportExtension.ExportEndpoint
+    nameWithType: ConnectionOrientedTransportBindingElement.IWsdlExportExtension.ExportEndpoint
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)
+    name: CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    nameWithType: ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.CoreWCF.Description.IWsdlExportExtension.ExportEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: ConnectionOrientedTransportBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: ConnectionOrientedTransportBindingElement.IsMatch
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: ConnectionOrientedTransportBindingElement.IsMatch
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: ConnectionBufferSize
+  nameWithType: ConnectionOrientedTransportBindingElement.ConnectionBufferSize
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.HostNameComparisonMode
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.HostNameComparisonMode
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: HostNameComparisonMode
+  nameWithType: ConnectionOrientedTransportBindingElement.HostNameComparisonMode
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.HostNameComparisonMode
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: MaxBufferSize
+  nameWithType: ConnectionOrientedTransportBindingElement.MaxBufferSize
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: MaxPendingConnections
+  nameWithType: ConnectionOrientedTransportBindingElement.MaxPendingConnections
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: ChannelInitializationTimeout
+  nameWithType: ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxOutputDelay
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxOutputDelay
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: MaxOutputDelay
+  nameWithType: ConnectionOrientedTransportBindingElement.MaxOutputDelay
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxOutputDelay
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: MaxPendingAccepts
+  nameWithType: ConnectionOrientedTransportBindingElement.MaxPendingAccepts
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.TransferMode
+  commentId: P:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.TransferMode
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: TransferMode
+  nameWithType: ConnectionOrientedTransportBindingElement.TransferMode
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.TransferMode
+- uid: CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext,System.String,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  commentId: M:CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext,System.String,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+  parent: CoreWCF.Channels.TransportBindingElement
+  isExternal: true
+  name: ExportWsdlEndpoint(WsdlExporter, WsdlEndpointConversionContext, String, EndpointAddress, AddressingVersion)
+  nameWithType: TransportBindingElement.ExportWsdlEndpoint(WsdlExporter, WsdlEndpointConversionContext, String, EndpointAddress, AddressingVersion)
+  fullName: CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter, CoreWCF.Description.WsdlEndpointConversionContext, System.String, CoreWCF.EndpointAddress, CoreWCF.Channels.AddressingVersion)
+  spec.csharp:
+  - uid: CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext,System.String,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+    name: ExportWsdlEndpoint
+    nameWithType: TransportBindingElement.ExportWsdlEndpoint
+    fullName: CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.EndpointAddress
+    name: EndpointAddress
+    nameWithType: EndpointAddress
+    fullName: CoreWCF.EndpointAddress
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.AddressingVersion
+    name: AddressingVersion
+    nameWithType: AddressingVersion
+    fullName: CoreWCF.Channels.AddressingVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext,System.String,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)
+    name: ExportWsdlEndpoint
+    nameWithType: TransportBindingElement.ExportWsdlEndpoint
+    fullName: CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Description.WsdlExporter
+    name: WsdlExporter
+    nameWithType: WsdlExporter
+    fullName: CoreWCF.Description.WsdlExporter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.WsdlEndpointConversionContext
+    name: WsdlEndpointConversionContext
+    nameWithType: WsdlEndpointConversionContext
+    fullName: CoreWCF.Description.WsdlEndpointConversionContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.EndpointAddress
+    name: EndpointAddress
+    nameWithType: EndpointAddress
+    fullName: CoreWCF.EndpointAddress
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Channels.AddressingVersion
+    name: AddressingVersion
+    nameWithType: AddressingVersion
+    fullName: CoreWCF.Channels.AddressingVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.TransportBindingElement.ManualAddressing
+  commentId: P:CoreWCF.Channels.TransportBindingElement.ManualAddressing
+  parent: CoreWCF.Channels.TransportBindingElement
+  isExternal: true
+  name: ManualAddressing
+  nameWithType: TransportBindingElement.ManualAddressing
+  fullName: CoreWCF.Channels.TransportBindingElement.ManualAddressing
+- uid: CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize
+  commentId: P:CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize
+  parent: CoreWCF.Channels.TransportBindingElement
+  isExternal: true
+  name: MaxBufferPoolSize
+  nameWithType: TransportBindingElement.MaxBufferPoolSize
+  fullName: CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize
+- uid: CoreWCF.Channels.TransportBindingElement.MaxReceivedMessageSize
+  commentId: P:CoreWCF.Channels.TransportBindingElement.MaxReceivedMessageSize
+  parent: CoreWCF.Channels.TransportBindingElement
+  isExternal: true
+  name: MaxReceivedMessageSize
+  nameWithType: TransportBindingElement.MaxReceivedMessageSize
+  fullName: CoreWCF.Channels.TransportBindingElement.MaxReceivedMessageSize
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: CoreWCF.Channels.TcpTransportBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.#ctor
+  isExternal: true
+  name: TcpTransportBindingElement
+  nameWithType: TcpTransportBindingElement.TcpTransportBindingElement
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.TcpTransportBindingElement
+- uid: CoreWCF.Channels.TcpTransportBindingElement
+  commentId: T:CoreWCF.Channels.TcpTransportBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: TcpTransportBindingElement
+  nameWithType: TcpTransportBindingElement
+  fullName: CoreWCF.Channels.TcpTransportBindingElement
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.TcpTransportBindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: TcpTransportBindingElement.Clone
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.Clone
+- uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.ConnectionOrientedTransportBindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: ConnectionOrientedTransportBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: ConnectionOrientedTransportBindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: ConnectionOrientedTransportBindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: ConnectionOrientedTransportBindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.ConnectionOrientedTransportBindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.TcpTransportBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: TcpTransportBindingElement.GetProperty
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.GetProperty
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher
+  isExternal: true
+  name: BuildServiceDispatcher
+  nameWithType: TcpTransportBindingElement.BuildServiceDispatcher
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.BuildServiceDispatcher
+- uid: CoreWCF.Configuration.IServiceDispatcher
+  commentId: T:CoreWCF.Configuration.IServiceDispatcher
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IServiceDispatcher
+  nameWithType: IServiceDispatcher
+  fullName: CoreWCF.Configuration.IServiceDispatcher
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings
+  isExternal: true
+  name: ConnectionPoolSettings
+  nameWithType: TcpTransportBindingElement.ConnectionPoolSettings
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.ConnectionPoolSettings
+- uid: CoreWCF.Channels.TcpConnectionPoolSettings
+  commentId: T:CoreWCF.Channels.TcpConnectionPoolSettings
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: TcpConnectionPoolSettings
+  nameWithType: TcpConnectionPoolSettings
+  fullName: CoreWCF.Channels.TcpConnectionPoolSettings
+- uid: CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog
+  isExternal: true
+  name: ListenBacklog
+  nameWithType: TcpTransportBindingElement.ListenBacklog
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.ListenBacklog
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.TransportBindingElement.Scheme
+  commentId: P:CoreWCF.Channels.TransportBindingElement.Scheme
+  parent: CoreWCF.Channels.TransportBindingElement
+  isExternal: true
+  name: Scheme
+  nameWithType: TransportBindingElement.Scheme
+  fullName: CoreWCF.Channels.TransportBindingElement.Scheme
+- uid: CoreWCF.Channels.TcpTransportBindingElement.Scheme*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.Scheme
+  isExternal: true
+  name: Scheme
+  nameWithType: TcpTransportBindingElement.Scheme
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.Scheme
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy*
+  commentId: Overload:CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy
+  isExternal: true
+  name: ExtendedProtectionPolicy
+  nameWithType: TcpTransportBindingElement.ExtendedProtectionPolicy
+  fullName: CoreWCF.Channels.TcpTransportBindingElement.ExtendedProtectionPolicy
+- uid: System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy
+  isExternal: true
+  name: ExtendedProtectionPolicy
+  nameWithType: ExtendedProtectionPolicy
+  fullName: System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy

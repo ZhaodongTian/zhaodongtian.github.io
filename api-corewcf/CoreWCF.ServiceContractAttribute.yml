@@ -1,0 +1,293 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ServiceContractAttribute
+  commentId: T:CoreWCF.ServiceContractAttribute
+  id: ServiceContractAttribute
+  parent: CoreWCF
+  children:
+  - CoreWCF.ServiceContractAttribute.#ctor
+  - CoreWCF.ServiceContractAttribute.CallbackContract
+  - CoreWCF.ServiceContractAttribute.ConfigurationName
+  - CoreWCF.ServiceContractAttribute.Name
+  - CoreWCF.ServiceContractAttribute.Namespace
+  - CoreWCF.ServiceContractAttribute.SessionMode
+  langs:
+  - csharp
+  - vb
+  name: ServiceContractAttribute
+  nameWithType: ServiceContractAttribute
+  fullName: CoreWCF.ServiceContractAttribute
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Indicates that an interface or a class defines a service contract in a Windows Communication Foundation (WCF) application.
+  remarks: "Use the &lt;xref:CoreWCF.ServiceContractAttribute> attribute on an interface (or class) to define a service contract. Then use the &lt;xref:CoreWCF.OperationContractAttribute> attribute on one or more of the class (or interface) methods to define the contract&apos;s service operations. When the service contract is implemented and combined with a [Bindings](/dotnet/framework/wcf/bindings) and an &lt;xref:CoreWCF.EndpointAddress> object, the service contract is exposed for use by clients. For an overview of the process using simple examples, see [Getting Started Tutorial](/dotnet/framework/wcf/getting-started-tutorial). For more information about creating service contracts, see [Designing and Implementing Services](/dotnet/framework/wcf/designing-and-implementing-services).  \n\nThe information expressed by a &lt;xref:CoreWCF.ServiceContractAttribute> and its interface is loosely related to the Web Services Description Language (WSDL) `&lt;portType>` element. A service contract is used on the service side to specify what the service&apos;s endpoint exposes to callers. It is also used on the client side to specify the contract of the endpoint with which the client communicates and, in the case of duplex contracts, to specify the callback contract (using the &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A> property) that the client must implement in order to participate in a duplex conversation.  \n\n> [!NOTE]\n>  An interface or class that is decorated with &lt;xref:CoreWCF.ServiceContractAttribute> must also have at least one method marked with the &lt;xref:CoreWCF.OperationContractAttribute> attribute to expose any functionality. See the Examples section for a code example of the simplest use of the two attributes to define and implement a service.  \n\nUse the &lt;xref:CoreWCF.ServiceContractAttribute> properties to modify the service contract.  \n\n-   The &lt;xref:CoreWCF.ServiceContractAttribute.ConfigurationName%2A> property specifies the name of the service element in the configuration file to use.  \n\n-   The &lt;xref:CoreWCF.ServiceContractAttribute.Name%2A> and &lt;xref:CoreWCF.ServiceContractAttribute.Namespace%2A> properties control the name and namespace of the contract in the WSDL `&lt;portType>` element.  \n\n-   The &lt;xref:CoreWCF.ServiceContractAttribute.SessionMode%2A> property specifies whether the contract requires a binding that supports sessions.  \n\n-   The &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A> property specifies the return contract in a two-way (duplex) conversation.  \n\n-   The &lt;xref:CoreWCF.ServiceContractAttribute.HasProtectionLevel%2A> and &lt;xref:CoreWCF.ServiceContractAttribute.ProtectionLevel%2A> properties indicate whether all messages supporting the contract have a explicit &lt;xref:CoreWCF.ServiceContractAttribute.ProtectionLevel%2A> value, and if so, what that level is.  \n\nServices implement service contracts, which represent the data exchange that a service type supports. A service class can implement a service contract (by implementing an interface marked with &lt;xref:CoreWCF.ServiceContractAttribute> that has methods marked with &lt;xref:CoreWCF.OperationContractAttribute>) or it can be marked with the &lt;xref:CoreWCF.ServiceContractAttribute> and apply the &lt;xref:CoreWCF.OperationContractAttribute> attribute to its own methods. (If a class implements an interface marked with &lt;xref:CoreWCF.ServiceContractAttribute>, it cannot be itself marked with &lt;xref:CoreWCF.ServiceContractAttribute>.) Methods on service types that are marked with the &lt;xref:CoreWCF.OperationContractAttribute> are treated as part of a default service contract specified by the service type itself. For details about service operations, see &lt;xref:CoreWCF.OperationContractAttribute>.  \n\nBy default, the &lt;xref:CoreWCF.ServiceContractAttribute.Name%2A> and &lt;xref:CoreWCF.ServiceContractAttribute.Namespace%2A> properties are the name of the contract type and `http://tempuri.org`, respectively, and &lt;xref:CoreWCF.ServiceContractAttribute.ProtectionLevel%2A> is &lt;xref:System.Net.Security.ProtectionLevel.None?displayProperty=nameWithType>. It is recommended that service contracts explicitly set their names, namespaces, and protection levels using these properties. Doing so accomplishes two goals. First, it builds a contract that is not directly connected to the managed type information, enabling you to refactor your managed code and namespaces without breaking the contract as it is expressed in WSDL. Second, explicitly requiring a certain level of protection on the contract itself enables the runtime to validate whether the binding configuration supports that level of security, preventing poor configuration from exposing sensitive information. For more information about protection levels, see [Understanding Protection Level](/dotnet/framework/wcf/understanding-protection-level).  \n\nTo expose a service for use by client applications, create a host application to register your service endpoint with Windows Communication Foundation (WCF). You can host WCF services using Windows Activation Services (WAS), in console applications, Windows Service applications, ASP.NET applications, Windows Forms applications, or any other kind of application domain.  \n\nHosting in the WAS is very similar to creating an ASP.NET application. For details, see [How to: Host a WCF Service in IIS](/dotnet/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis).  \n\nClients either use the service contract interface (the interface marked with &lt;xref:CoreWCF.ServiceContractAttribute>) to create a channel to the service or they use the client objects (which combine the type information of the service contract interface with the &lt;xref:CoreWCF.ClientBase%601> class) to communicate with your service. For details on client channels to services, see the &lt;xref:CoreWCF.ChannelFactory%601> class and [WCF Client Overview](/dotnet/framework/wcf/wcf-client-overview).  \n\nUsing a &lt;xref:CoreWCF.ServiceContractAttribute> class or interface to inherit from another &lt;xref:CoreWCF.ServiceContractAttribute> class or interface extends the parent contract. For example, if an `IChildContract` interface is marked with &lt;xref:CoreWCF.ServiceContractAttribute> and inherited from another service contract interface, `IParentContract`, the `IChildContract` service contract contains the methods of both `IParentContract` and `IChildContract`. Extending contracts (whether on classes or interfaces) is very similar to extending managed classes and interfaces.  \n\nThe most flexible approach to creating services is to define service contract interfaces first and then have your service class implement that interface. (This is also the simplest way to build your services if you must implement service contracts that have been defined by others.) Building services directly by marking a class with &lt;xref:CoreWCF.ServiceContractAttribute> and its methods with &lt;xref:CoreWCF.OperationContractAttribute> works when the service exposes only one contract (but that contract can be exposed by more than one endpoint).  \n\nUse the &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A> property to indicate another service contract that, when bound together with the original service contract, define a message exchange that can flow in two ways independently. For details, see &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A>.  \n\n\n\n"
+  syntax:
+    content: 'public sealed class ServiceContractAttribute : Attribute'
+    content.vb: >-
+      Public NotInheritable Class ServiceContractAttribute
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.ServiceContractAttribute.#ctor
+  commentId: M:CoreWCF.ServiceContractAttribute.#ctor
+  id: '#ctor'
+  parent: CoreWCF.ServiceContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: ServiceContractAttribute()
+  nameWithType: ServiceContractAttribute.ServiceContractAttribute()
+  fullName: CoreWCF.ServiceContractAttribute.ServiceContractAttribute()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public ServiceContractAttribute()
+    content.vb: Public Sub New
+  overload: CoreWCF.ServiceContractAttribute.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceContractAttribute.ConfigurationName
+  commentId: P:CoreWCF.ServiceContractAttribute.ConfigurationName
+  id: ConfigurationName
+  parent: CoreWCF.ServiceContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: ConfigurationName
+  nameWithType: ServiceContractAttribute.ConfigurationName
+  fullName: CoreWCF.ServiceContractAttribute.ConfigurationName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string ConfigurationName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ConfigurationName As String
+  overload: CoreWCF.ServiceContractAttribute.ConfigurationName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceContractAttribute.Name
+  commentId: P:CoreWCF.ServiceContractAttribute.Name
+  id: Name
+  parent: CoreWCF.ServiceContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ServiceContractAttribute.Name
+  fullName: CoreWCF.ServiceContractAttribute.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CoreWCF.ServiceContractAttribute.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceContractAttribute.Namespace
+  commentId: P:CoreWCF.ServiceContractAttribute.Namespace
+  id: Namespace
+  parent: CoreWCF.ServiceContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  nameWithType: ServiceContractAttribute.Namespace
+  fullName: CoreWCF.ServiceContractAttribute.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public string Namespace { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Namespace As String
+  overload: CoreWCF.ServiceContractAttribute.Namespace*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceContractAttribute.SessionMode
+  commentId: P:CoreWCF.ServiceContractAttribute.SessionMode
+  id: SessionMode
+  parent: CoreWCF.ServiceContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: SessionMode
+  nameWithType: ServiceContractAttribute.SessionMode
+  fullName: CoreWCF.ServiceContractAttribute.SessionMode
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public SessionMode SessionMode { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.SessionMode
+    content.vb: Public Property SessionMode As SessionMode
+  overload: CoreWCF.ServiceContractAttribute.SessionMode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ServiceContractAttribute.CallbackContract
+  commentId: P:CoreWCF.ServiceContractAttribute.CallbackContract
+  id: CallbackContract
+  parent: CoreWCF.ServiceContractAttribute
+  langs:
+  - csharp
+  - vb
+  name: CallbackContract
+  nameWithType: ServiceContractAttribute.CallbackContract
+  fullName: CoreWCF.ServiceContractAttribute.CallbackContract
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public Type CallbackContract { get; set; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public Property CallbackContract As Type
+  overload: CoreWCF.ServiceContractAttribute.CallbackContract*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.ServiceContractAttribute.#ctor*
+  commentId: Overload:CoreWCF.ServiceContractAttribute.#ctor
+  isExternal: true
+  name: ServiceContractAttribute
+  nameWithType: ServiceContractAttribute.ServiceContractAttribute
+  fullName: CoreWCF.ServiceContractAttribute.ServiceContractAttribute
+- uid: CoreWCF.ServiceContractAttribute.ConfigurationName*
+  commentId: Overload:CoreWCF.ServiceContractAttribute.ConfigurationName
+  isExternal: true
+  name: ConfigurationName
+  nameWithType: ServiceContractAttribute.ConfigurationName
+  fullName: CoreWCF.ServiceContractAttribute.ConfigurationName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.ServiceContractAttribute.Name*
+  commentId: Overload:CoreWCF.ServiceContractAttribute.Name
+  isExternal: true
+  name: Name
+  nameWithType: ServiceContractAttribute.Name
+  fullName: CoreWCF.ServiceContractAttribute.Name
+- uid: CoreWCF.ServiceContractAttribute.Namespace*
+  commentId: Overload:CoreWCF.ServiceContractAttribute.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: ServiceContractAttribute.Namespace
+  fullName: CoreWCF.ServiceContractAttribute.Namespace
+- uid: CoreWCF.ServiceContractAttribute.SessionMode*
+  commentId: Overload:CoreWCF.ServiceContractAttribute.SessionMode
+  isExternal: true
+  name: SessionMode
+  nameWithType: ServiceContractAttribute.SessionMode
+  fullName: CoreWCF.ServiceContractAttribute.SessionMode
+- uid: CoreWCF.SessionMode
+  commentId: T:CoreWCF.SessionMode
+  parent: CoreWCF
+  isExternal: true
+  name: SessionMode
+  nameWithType: SessionMode
+  fullName: CoreWCF.SessionMode
+- uid: CoreWCF.ServiceContractAttribute.CallbackContract*
+  commentId: Overload:CoreWCF.ServiceContractAttribute.CallbackContract
+  isExternal: true
+  name: CallbackContract
+  nameWithType: ServiceContractAttribute.CallbackContract
+  fullName: CoreWCF.ServiceContractAttribute.CallbackContract
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

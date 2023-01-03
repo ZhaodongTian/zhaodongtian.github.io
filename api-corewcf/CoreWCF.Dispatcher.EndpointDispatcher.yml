@@ -1,0 +1,554 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.EndpointDispatcher
+  commentId: T:CoreWCF.Dispatcher.EndpointDispatcher
+  id: EndpointDispatcher
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String)
+  - CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String,System.Boolean)
+  - CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter
+  - CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher
+  - CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter
+  - CoreWCF.Dispatcher.EndpointDispatcher.ContractName
+  - CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace
+  - CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime
+  - CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress
+  - CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority
+  - CoreWCF.Dispatcher.EndpointDispatcher.Id
+  - CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint
+  langs:
+  - csharp
+  - vb
+  name: EndpointDispatcher
+  nameWithType: EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Represents the run-time object that exposes properties that enable the insertion of run-time extensions or modifications for messages in service applications.
+  remarks: "The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> and the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime?displayProperty=nameWithType> classes expose the runtime customization points for endpoints in a service. The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> can be used to control which messages it can process and some endpoint-related information. The &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> has a large number of properties used to insert custom extensions into the endpoint-wide runtime.  \n\nThe &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> object is responsible for processing messages from a &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher?displayProperty=nameWithType> when the destination address of a message matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter%2A> property and the message action matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter%2A> property. If two &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> objects can accept a message, the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority%2A> property value determines the higher priority endpoint.  \n\nUse the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> object to configure or extend the process of receiving messages from the associated &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher>, converting from message objects to objects used as parameters, and invoking an endpoint operation as well as the reverse process.  \n\nTypically, the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> for an endpoint is obtained by implementing the &lt;xref:CoreWCF.Description.IEndpointBehavior> interface, but you can access the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> from the other behavior interfaces.  \n\nYou can use the following &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> properties:  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter%2A> property allows you to get or set a &lt;xref:CoreWCF.Dispatcher.MessageFilter> object that the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A> uses to identify whether the endpoint can process a particular message.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A> property gets the associated &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher> object, which sends and receives messages to and from the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> and which can be used to inspect or modify other channel-related values and behaviors.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter%2A> gets the &lt;xref:CoreWCF.Dispatcher.MessageFilter> object that is used to identify whether a message is destined for this contract.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractName%2A> and &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace%2A> properties return the name and namespace of the endpoint contract.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime%2A> property returns the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime> object that you can use to modify run-time values or insert custom run-time extensions for the entire endpoint.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress%2A> property gets the address of the endpoint.  \n\n-   The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority%2A> property returns the priority of the composite filter that the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A> uses to establish which endpoint is to handle the message.  \n\n\n\n"
+  syntax:
+    content: 'public class EndpointDispatcher : Object'
+    content.vb: >-
+      Public Class EndpointDispatcher
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String)
+  commentId: M:CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String)
+  id: '#ctor(CoreWCF.EndpointAddress,System.String,System.String)'
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: EndpointDispatcher(EndpointAddress, String, String)
+  nameWithType: EndpointDispatcher.EndpointDispatcher(EndpointAddress, String, String)
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.EndpointDispatcher(CoreWCF.EndpointAddress, System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public EndpointDispatcher(EndpointAddress address, string contractName, string contractNamespace)
+    parameters:
+    - id: address
+      type: CoreWCF.EndpointAddress
+    - id: contractName
+      type: System.String
+    - id: contractNamespace
+      type: System.String
+    content.vb: Public Sub New(address As EndpointAddress, contractName As String, contractNamespace As String)
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String,System.Boolean)
+  commentId: M:CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String,System.Boolean)
+  id: '#ctor(CoreWCF.EndpointAddress,System.String,System.String,System.Boolean)'
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: EndpointDispatcher(EndpointAddress, String, String, Boolean)
+  nameWithType: EndpointDispatcher.EndpointDispatcher(EndpointAddress, String, String, Boolean)
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.EndpointDispatcher(CoreWCF.EndpointAddress, System.String, System.String, System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public EndpointDispatcher(EndpointAddress address, string contractName, string contractNamespace, bool isSystemEndpoint)
+    parameters:
+    - id: address
+      type: CoreWCF.EndpointAddress
+    - id: contractName
+      type: System.String
+    - id: contractNamespace
+      type: System.String
+    - id: isSystemEndpoint
+      type: System.Boolean
+    content.vb: Public Sub New(address As EndpointAddress, contractName As String, contractNamespace As String, isSystemEndpoint As Boolean)
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter
+  id: AddressFilter
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: AddressFilter
+  nameWithType: EndpointDispatcher.AddressFilter
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public MessageFilter AddressFilter { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.MessageFilter
+    content.vb: Public Property AddressFilter As MessageFilter
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher
+  id: ChannelDispatcher
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ChannelDispatcher
+  nameWithType: EndpointDispatcher.ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public ChannelDispatcher ChannelDispatcher { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.ChannelDispatcher
+    content.vb: Public ReadOnly Property ChannelDispatcher As ChannelDispatcher
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter
+  id: ContractFilter
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ContractFilter
+  nameWithType: EndpointDispatcher.ContractFilter
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public MessageFilter ContractFilter { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.MessageFilter
+    content.vb: Public Property ContractFilter As MessageFilter
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ContractName
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.ContractName
+  id: ContractName
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ContractName
+  nameWithType: EndpointDispatcher.ContractName
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ContractName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public string ContractName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ContractName As String
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.ContractName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace
+  id: ContractNamespace
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ContractNamespace
+  nameWithType: EndpointDispatcher.ContractNamespace
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public string ContractNamespace { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ContractNamespace As String
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime
+  id: DispatchRuntime
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: DispatchRuntime
+  nameWithType: EndpointDispatcher.DispatchRuntime
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public DispatchRuntime DispatchRuntime { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Dispatcher.DispatchRuntime
+    content.vb: Public ReadOnly Property DispatchRuntime As DispatchRuntime
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress
+  id: EndpointAddress
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: EndpointAddress
+  nameWithType: EndpointDispatcher.EndpointAddress
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public EndpointAddress EndpointAddress { get; }
+    parameters: []
+    return:
+      type: CoreWCF.EndpointAddress
+    content.vb: Public ReadOnly Property EndpointAddress As EndpointAddress
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint
+  id: IsSystemEndpoint
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: IsSystemEndpoint
+  nameWithType: EndpointDispatcher.IsSystemEndpoint
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool IsSystemEndpoint { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsSystemEndpoint As Boolean
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority
+  id: FilterPriority
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: FilterPriority
+  nameWithType: EndpointDispatcher.FilterPriority
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public int FilterPriority { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property FilterPriority As Integer
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.Id
+  commentId: P:CoreWCF.Dispatcher.EndpointDispatcher.Id
+  id: Id
+  parent: CoreWCF.Dispatcher.EndpointDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: EndpointDispatcher.Id
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.Id
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public string Id { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Id As String
+  overload: CoreWCF.Dispatcher.EndpointDispatcher.Id*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.#ctor*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.#ctor
+  isExternal: true
+  name: EndpointDispatcher
+  nameWithType: EndpointDispatcher.EndpointDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.EndpointDispatcher
+- uid: CoreWCF.EndpointAddress
+  commentId: T:CoreWCF.EndpointAddress
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointAddress
+  fullName: CoreWCF.EndpointAddress
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter
+  isExternal: true
+  name: AddressFilter
+  nameWithType: EndpointDispatcher.AddressFilter
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter
+- uid: CoreWCF.Dispatcher.MessageFilter
+  commentId: T:CoreWCF.Dispatcher.MessageFilter
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: MessageFilter
+  nameWithType: MessageFilter
+  fullName: CoreWCF.Dispatcher.MessageFilter
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher
+  isExternal: true
+  name: ChannelDispatcher
+  nameWithType: EndpointDispatcher.ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher
+- uid: CoreWCF.Dispatcher.ChannelDispatcher
+  commentId: T:CoreWCF.Dispatcher.ChannelDispatcher
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ChannelDispatcher
+  nameWithType: ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter
+  isExternal: true
+  name: ContractFilter
+  nameWithType: EndpointDispatcher.ContractFilter
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ContractName*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.ContractName
+  isExternal: true
+  name: ContractName
+  nameWithType: EndpointDispatcher.ContractName
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ContractName
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace
+  isExternal: true
+  name: ContractNamespace
+  nameWithType: EndpointDispatcher.ContractNamespace
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime
+  isExternal: true
+  name: DispatchRuntime
+  nameWithType: EndpointDispatcher.DispatchRuntime
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime
+- uid: CoreWCF.Dispatcher.DispatchRuntime
+  commentId: T:CoreWCF.Dispatcher.DispatchRuntime
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: DispatchRuntime
+  nameWithType: DispatchRuntime
+  fullName: CoreWCF.Dispatcher.DispatchRuntime
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointDispatcher.EndpointAddress
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint
+  isExternal: true
+  name: IsSystemEndpoint
+  nameWithType: EndpointDispatcher.IsSystemEndpoint
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority
+  isExternal: true
+  name: FilterPriority
+  nameWithType: EndpointDispatcher.FilterPriority
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Dispatcher.EndpointDispatcher.Id*
+  commentId: Overload:CoreWCF.Dispatcher.EndpointDispatcher.Id
+  isExternal: true
+  name: Id
+  nameWithType: EndpointDispatcher.Id
+  fullName: CoreWCF.Dispatcher.EndpointDispatcher.Id

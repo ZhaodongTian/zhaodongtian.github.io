@@ -1,0 +1,413 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.RequestContext
+  commentId: T:CoreWCF.Channels.RequestContext
+  id: RequestContext
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.RequestContext.#ctor
+  - CoreWCF.Channels.RequestContext.Abort
+  - CoreWCF.Channels.RequestContext.CloseAsync
+  - CoreWCF.Channels.RequestContext.CloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.RequestContext.Dispose(System.Boolean)
+  - CoreWCF.Channels.RequestContext.OnOperationInvoke
+  - CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message)
+  - CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message,System.Threading.CancellationToken)
+  - CoreWCF.Channels.RequestContext.RequestMessage
+  langs:
+  - csharp
+  - vb
+  name: RequestContext
+  nameWithType: RequestContext
+  fullName: CoreWCF.Channels.RequestContext
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Provides a reply that is correlated to an incoming request.
+  remarks: "You get a request context from an <xref:CoreWCF.Channels.IReplyChannel>. Each <xref:CoreWCF.Channels.RequestContext> encapsulates the information required to reply to the request, so that you do not have to block on the channel when waiting for each request message to receive a reply.  \n\nIn the request/reply model, the <xref:CoreWCF.Channels.RequestContext> object is the link between the request that comes in and the reply that goes out. When the server receives a request, it provides a <xref:CoreWCF.Channels.RequestContext> instance that represents the request to the channel. The request context contains the original request message among other useful properties. This request context is then stashed inside the <xref:CoreWCF.OperationContext> for retrieval by your service. You typically use the <xref:CoreWCF.OperationContext.Current> property to access the request of the current operation.  \n\nThe value of the <xref:CoreWCF.Channels.RequestContext> can be `null`. Because the role of the request context is to link requests to replies, it does not make sense to have a request context when you do not have a reply, and so in this case the context is set to `null`. For a one-way operation on top of the request/reply model, the server receives requests but does not send back a response to the client. So if the <xref:CoreWCF.Channels.RequestContext> is `null` unexpectedly, check first whether the operation contract is IsOneWay.  \n\nSpecial note for Managed C++ users deriving from this class:  \n\n-   Put your cleanup code in (On)(Begin)Close (and/or OnAbort), not in a destructor.  \n\n-   Avoid destructors: they cause the compiler to auto-generate <xref:System.IDisposable>.  \n\n-   Avoid non-reference members: they can cause the compiler to auto-generate <xref:System.IDisposable>.  \n\n-   Avoid finalizers; but if you include one, you should suppress the build warning and call <xref:System.GC.SuppressFinalize(System.Object)> and the finalizer itself from (On)(Begin)Close (and/or OnAbort) to emulate what would have been the auto-generated <xref:System.IDisposable> behavior.  \n\n"
+  syntax:
+    content: 'public abstract class RequestContext : Object'
+    content.vb: >-
+      Public MustInherit Class RequestContext
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.RequestContext.Abort
+  commentId: M:CoreWCF.Channels.RequestContext.Abort
+  id: Abort
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: Abort()
+  summary: When overridden in a derived class, aborts processing the request associated with the context.
+  nameWithType: RequestContext.Abort()
+  fullName: CoreWCF.Channels.RequestContext.Abort()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract void Abort()
+    content.vb: Public MustOverride Sub Abort
+  overload: CoreWCF.Channels.RequestContext.Abort*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message)
+  commentId: M:CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message)
+  id: ReplyAsync(CoreWCF.Channels.Message)
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: ReplyAsync(Message)
+  nameWithType: RequestContext.ReplyAsync(Message)
+  fullName: CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task ReplyAsync(Message message)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public MustOverride Function ReplyAsync(message As Message) As Task
+  overload: CoreWCF.Channels.RequestContext.ReplyAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message,System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message,System.Threading.CancellationToken)
+  id: ReplyAsync(CoreWCF.Channels.Message,System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: ReplyAsync(Message, CancellationToken)
+  nameWithType: RequestContext.ReplyAsync(Message, CancellationToken)
+  fullName: CoreWCF.Channels.RequestContext.ReplyAsync(CoreWCF.Channels.Message, System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task ReplyAsync(Message message, CancellationToken token)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public MustOverride Function ReplyAsync(message As Message, token As CancellationToken) As Task
+  overload: CoreWCF.Channels.RequestContext.ReplyAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.RequestContext.CloseAsync
+  commentId: M:CoreWCF.Channels.RequestContext.CloseAsync
+  id: CloseAsync
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: CloseAsync()
+  nameWithType: RequestContext.CloseAsync()
+  fullName: CoreWCF.Channels.RequestContext.CloseAsync()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task CloseAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public MustOverride Function CloseAsync As Task
+  overload: CoreWCF.Channels.RequestContext.CloseAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.RequestContext.CloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.RequestContext.CloseAsync(System.Threading.CancellationToken)
+  id: CloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: CloseAsync(CancellationToken)
+  nameWithType: RequestContext.CloseAsync(CancellationToken)
+  fullName: CoreWCF.Channels.RequestContext.CloseAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Task CloseAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public MustOverride Function CloseAsync(token As CancellationToken) As Task
+  overload: CoreWCF.Channels.RequestContext.CloseAsync*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.RequestContext.Dispose(System.Boolean)
+  commentId: M:CoreWCF.Channels.RequestContext.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: Dispose(Boolean)
+  summary: Releases resources associated with the context.
+  nameWithType: RequestContext.Dispose(Boolean)
+  fullName: CoreWCF.Channels.RequestContext.Dispose(System.Boolean)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual void Dispose(bool disposing)
+    parameters:
+    - id: disposing
+      type: System.Boolean
+      description: true to release both managed and unmanaged resources; false to release only unmanaged resources.
+    content.vb: Protected Overridable Sub Dispose(disposing As Boolean)
+  overload: CoreWCF.Channels.RequestContext.Dispose*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.RequestContext.OnOperationInvoke
+  commentId: M:CoreWCF.Channels.RequestContext.OnOperationInvoke
+  id: OnOperationInvoke
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: OnOperationInvoke()
+  nameWithType: RequestContext.OnOperationInvoke()
+  fullName: CoreWCF.Channels.RequestContext.OnOperationInvoke()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public virtual void OnOperationInvoke()
+    content.vb: Public Overridable Sub OnOperationInvoke
+  overload: CoreWCF.Channels.RequestContext.OnOperationInvoke*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Channels.RequestContext.#ctor
+  commentId: M:CoreWCF.Channels.RequestContext.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: RequestContext()
+  summary: Initializes a new instance of the [RequestContext](xref:CoreWCF.Channels.RequestContext) class.
+  nameWithType: RequestContext.RequestContext()
+  fullName: CoreWCF.Channels.RequestContext.RequestContext()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected RequestContext()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.RequestContext.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.RequestContext.RequestMessage
+  commentId: P:CoreWCF.Channels.RequestContext.RequestMessage
+  id: RequestMessage
+  parent: CoreWCF.Channels.RequestContext
+  langs:
+  - csharp
+  - vb
+  name: RequestMessage
+  summary: When overridden in a derived class, gets the message that contains the request.
+  nameWithType: RequestContext.RequestMessage
+  fullName: CoreWCF.Channels.RequestContext.RequestMessage
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract Message RequestMessage { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.Message
+      description: The [Message](xref:CoreWCF.Channels.Message) that contains the request.
+    content.vb: Public MustOverride ReadOnly Property RequestMessage As Message
+  overload: CoreWCF.Channels.RequestContext.RequestMessage*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.RequestContext.Abort*
+  commentId: Overload:CoreWCF.Channels.RequestContext.Abort
+  isExternal: true
+  name: Abort
+  nameWithType: RequestContext.Abort
+  fullName: CoreWCF.Channels.RequestContext.Abort
+- uid: CoreWCF.Channels.RequestContext.ReplyAsync*
+  commentId: Overload:CoreWCF.Channels.RequestContext.ReplyAsync
+  isExternal: true
+  name: ReplyAsync
+  nameWithType: RequestContext.ReplyAsync
+  fullName: CoreWCF.Channels.RequestContext.ReplyAsync
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: CoreWCF.Channels.RequestContext.CloseAsync*
+  commentId: Overload:CoreWCF.Channels.RequestContext.CloseAsync
+  isExternal: true
+  name: CloseAsync
+  nameWithType: RequestContext.CloseAsync
+  fullName: CoreWCF.Channels.RequestContext.CloseAsync
+- uid: CoreWCF.Channels.RequestContext.Dispose*
+  commentId: Overload:CoreWCF.Channels.RequestContext.Dispose
+  isExternal: true
+  name: Dispose
+  nameWithType: RequestContext.Dispose
+  fullName: CoreWCF.Channels.RequestContext.Dispose
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.RequestContext.OnOperationInvoke*
+  commentId: Overload:CoreWCF.Channels.RequestContext.OnOperationInvoke
+  isExternal: true
+  name: OnOperationInvoke
+  nameWithType: RequestContext.OnOperationInvoke
+  fullName: CoreWCF.Channels.RequestContext.OnOperationInvoke
+- uid: CoreWCF.Channels.RequestContext.#ctor*
+  commentId: Overload:CoreWCF.Channels.RequestContext.#ctor
+  isExternal: true
+  name: RequestContext
+  nameWithType: RequestContext.RequestContext
+  fullName: CoreWCF.Channels.RequestContext.RequestContext
+- uid: CoreWCF.Channels.RequestContext.RequestMessage*
+  commentId: Overload:CoreWCF.Channels.RequestContext.RequestMessage
+  isExternal: true
+  name: RequestMessage
+  nameWithType: RequestContext.RequestMessage
+  fullName: CoreWCF.Channels.RequestContext.RequestMessage

@@ -1,0 +1,201 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.SecurityStateEncoder
+  commentId: T:CoreWCF.Security.SecurityStateEncoder
+  id: SecurityStateEncoder
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.SecurityStateEncoder.#ctor
+  - CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  - CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  langs:
+  - csharp
+  - vb
+  name: SecurityStateEncoder
+  nameWithType: SecurityStateEncoder
+  fullName: CoreWCF.Security.SecurityStateEncoder
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: An abstract class that can be implemented to encode the security state.
+  remarks: "This class is used to encode and decode the content of the security context token when a binding with message security that uses a stateful security context token is used. For more information about stateful security context tokens, see [How to: Create a Security Context Token for a Secure Session](/dotnet/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session) topic.  \n\nMicrosoft&apos;s version of &lt;xref:CoreWCF.Security.SecurityStateEncoder> is &lt;xref:CoreWCF.Security.DataProtectionSecurityStateEncoder>. It uses Microsoft&apos;s [Windows Data Protection (DPAPI)](/windows/win32/seccng/cng-dpapi) technology to encrypt/decrypt the cookie. You can plug in a different mechanism for encrypting and decrypting cookies by implementing this class.  \n\nThe encoding of the security state must ensure that the state is signed and encrypted for the service.  \n\nThis class is used by the server when sending the security state as a cookie in the `SecurityContextToken` issued to the client.  \n\nAn example implementation of this class is an `X509CertificateSecurityStateEncoder` that uses the service&apos;s certificate to sign and encrypt the security state.  \n\n"
+  syntax:
+    content: 'public abstract class SecurityStateEncoder : Object'
+    content.vb: >-
+      Public MustInherit Class SecurityStateEncoder
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Security.DataProtectionSecurityStateEncoder
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Security.SecurityStateEncoder.#ctor
+  commentId: M:CoreWCF.Security.SecurityStateEncoder.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Security.SecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: SecurityStateEncoder()
+  nameWithType: SecurityStateEncoder.SecurityStateEncoder()
+  fullName: CoreWCF.Security.SecurityStateEncoder.SecurityStateEncoder()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected SecurityStateEncoder()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Security.SecurityStateEncoder.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  commentId: M:CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  id: DecodeSecurityState(System.Byte[])
+  parent: CoreWCF.Security.SecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: DecodeSecurityState(Byte[])
+  nameWithType: SecurityStateEncoder.DecodeSecurityState(Byte[])
+  fullName: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected abstract byte[] DecodeSecurityState(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Protected MustOverride Function DecodeSecurityState(data As Byte()) As Byte()
+  overload: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState*
+  nameWithType.vb: SecurityStateEncoder.DecodeSecurityState(Byte())
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState(System.Byte())
+  name.vb: DecodeSecurityState(Byte())
+- uid: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  commentId: M:CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  id: EncodeSecurityState(System.Byte[])
+  parent: CoreWCF.Security.SecurityStateEncoder
+  langs:
+  - csharp
+  - vb
+  name: EncodeSecurityState(Byte[])
+  nameWithType: SecurityStateEncoder.EncodeSecurityState(Byte[])
+  fullName: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected abstract byte[] EncodeSecurityState(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Protected MustOverride Function EncodeSecurityState(data As Byte()) As Byte()
+  overload: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState*
+  nameWithType.vb: SecurityStateEncoder.EncodeSecurityState(Byte())
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState(System.Byte())
+  name.vb: EncodeSecurityState(Byte())
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Security.SecurityStateEncoder.#ctor*
+  commentId: Overload:CoreWCF.Security.SecurityStateEncoder.#ctor
+  isExternal: true
+  name: SecurityStateEncoder
+  nameWithType: SecurityStateEncoder.SecurityStateEncoder
+  fullName: CoreWCF.Security.SecurityStateEncoder.SecurityStateEncoder
+- uid: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState*
+  commentId: Overload:CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState
+  isExternal: true
+  name: DecodeSecurityState
+  nameWithType: SecurityStateEncoder.DecodeSecurityState
+  fullName: CoreWCF.Security.SecurityStateEncoder.DecodeSecurityState
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState*
+  commentId: Overload:CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState
+  isExternal: true
+  name: EncodeSecurityState
+  nameWithType: SecurityStateEncoder.EncodeSecurityState
+  fullName: CoreWCF.Security.SecurityStateEncoder.EncodeSecurityState

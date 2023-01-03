@@ -1,0 +1,407 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.BodyWriter
+  commentId: T:CoreWCF.Channels.BodyWriter
+  id: BodyWriter
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.BodyWriter.#ctor(System.Boolean)
+  - CoreWCF.Channels.BodyWriter.CreateBufferedCopy(System.Int32)
+  - CoreWCF.Channels.BodyWriter.IsBuffered
+  - CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)
+  - CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  - CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  langs:
+  - csharp
+  - vb
+  name: BodyWriter
+  nameWithType: BodyWriter
+  fullName: CoreWCF.Channels.BodyWriter
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents the writer of the message body.
+  remarks: "A message consists of headers and a body. The headers are buffered and the body is streamed. Because the body is streamed, the user cannot pass the actual content of the body to a message. Instead the user must pass a class that knows how to write the body when asked to do so. This is done by passing a class derived from <xref:CoreWCF.Channels.BodyWriter> to the <xref:CoreWCF.Channels.Message>. A message calls the class derived from <xref:CoreWCF.Channels.BodyWriter> whenever it requires the body to be written using an <xref:System.Xml.XmlWriter>.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class BodyWriter : Object'
+    content.vb: >-
+      Public MustInherit Class BodyWriter
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.StreamBodyWriter
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.BodyWriter.#ctor(System.Boolean)
+  commentId: M:CoreWCF.Channels.BodyWriter.#ctor(System.Boolean)
+  id: '#ctor(System.Boolean)'
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: BodyWriter(Boolean)
+  summary: Initializes a new instance of the <xref:CoreWCF.Channels.BodyWriter> class that explicitly indicates whether to buffer.
+  nameWithType: BodyWriter.BodyWriter(Boolean)
+  fullName: CoreWCF.Channels.BodyWriter.BodyWriter(System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected BodyWriter(bool isBuffered)
+    parameters:
+    - id: isBuffered
+      type: System.Boolean
+      description: true if the body writer can be called multiple times; otherwise false.
+    content.vb: Protected Sub New(isBuffered As Boolean)
+  overload: CoreWCF.Channels.BodyWriter.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: If isBuffered is false then the message calls the write method once and buffers the contents.
+- uid: CoreWCF.Channels.BodyWriter.CreateBufferedCopy(System.Int32)
+  commentId: M:CoreWCF.Channels.BodyWriter.CreateBufferedCopy(System.Int32)
+  id: CreateBufferedCopy(System.Int32)
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: CreateBufferedCopy(Int32)
+  summary: Creates a buffered copy of the body.
+  nameWithType: BodyWriter.CreateBufferedCopy(Int32)
+  fullName: CoreWCF.Channels.BodyWriter.CreateBufferedCopy(System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public BodyWriter CreateBufferedCopy(int maxBufferSize)
+    parameters:
+    - id: maxBufferSize
+      type: System.Int32
+      description: The maximum size of the buffer for the body.
+    return:
+      type: CoreWCF.Channels.BodyWriter
+      description: A <xref:CoreWCF.Channels.BodyWriter> that contains a copy of this object.
+    content.vb: Public Function CreateBufferedCopy(maxBufferSize As Integer) As BodyWriter
+  overload: CoreWCF.Channels.BodyWriter.CreateBufferedCopy*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: If <xref:CoreWCF.Channels.BodyWriter.IsBuffered> is true then the <xref:CoreWCF.Channels.BodyWriter> object is returned. If <xref:CoreWCF.Channels.BodyWriter.IsBuffered> is false then the contents of the <xref:CoreWCF.Channels.BodyWriter> up to maxBufferSize is returned. This also calls [OnCreateBufferedCopy(Int32)](xref:CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)) as an extensibility point.
+- uid: CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)
+  commentId: M:CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)
+  id: OnCreateBufferedCopy(System.Int32)
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: OnCreateBufferedCopy(Int32)
+  summary: Provides an extensibility point when the body contents are written.
+  nameWithType: BodyWriter.OnCreateBufferedCopy(Int32)
+  fullName: CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual BodyWriter OnCreateBufferedCopy(int maxBufferSize)
+    parameters:
+    - id: maxBufferSize
+      type: System.Int32
+      description: The maximum size of the buffer for the body.
+    return:
+      type: CoreWCF.Channels.BodyWriter
+      description: The <xref:CoreWCF.Channels.BodyWriter> with the specified maximum buffer size.
+    content.vb: Protected Overridable Function OnCreateBufferedCopy(maxBufferSize As Integer) As BodyWriter
+  overload: CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  remarks: A class derived from <xref:CoreWCF.Channels.BodyWriter> can override this method to create a buffered copy of the <xref:CoreWCF.Channels.BodyWriter>. But the default implementation of [WriteBodyContents(XmlDictionaryWriter)](xref:CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)) calls [OnWriteBodyContents(XmlDictionaryWriter)](xref:CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)), so overriding just [OnWriteBodyContents(XmlDictionaryWriter)](xref:CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)) should be easier and work for most scenarios.<br/><br/>
+           Note that the [BodyWriter](xref:CoreWCF.Channels.BodyWriter) returned must be buffered, that is IsBuffered must be true.
+- uid: CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  id: OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: OnWriteBodyContents(XmlDictionaryWriter)
+  summary: When implemented, provides an extensibility point when the body contents are written.
+  nameWithType: BodyWriter.OnWriteBodyContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected abstract void OnWriteBodyContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write out the message body.
+    content.vb: Protected MustOverride Sub OnWriteBodyContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.BodyWriter.OnWriteBodyContents*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  remarks: This method must be implemented by classes derived from [BodyWriter](xref:CoreWCF.Channels.BodyWriter). This is the key method that writes the body. If the [BodyWriter](xref:CoreWCF.Channels.BodyWriter) is buffered then this method is called only once.
+- uid: CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  id: OnWriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: OnWriteBodyContentsAsync(XmlDictionaryWriter)
+  nameWithType: BodyWriter.OnWriteBodyContentsAsync(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual Task OnWriteBodyContentsAsync(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected Overridable Function OnWriteBodyContentsAsync(writer As XmlDictionaryWriter) As Task
+  overload: CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  id: WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteBodyContents(XmlDictionaryWriter)
+  summary: Writes out the contents of the message body.
+  nameWithType: BodyWriter.WriteBodyContents(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public void WriteBodyContents(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+      description: The [XmlDictionaryWriter](xref:System.Xml.XmlDictionaryWriter) used to write out the message body.
+    content.vb: Public Sub WriteBodyContents(writer As XmlDictionaryWriter)
+  overload: CoreWCF.Channels.BodyWriter.WriteBodyContents*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: The default implementation of [WriteBodyContents(XmlDictionaryWriter)](xref:CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)) calls [OnWriteBodyContents(XmlDictionaryWriter)](xref:CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)), so overriding [OnWriteBodyContents(XmlDictionaryWriter](xref:CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)) provides the best point of extension.
+- uid: CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  commentId: M:CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  id: WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: WriteBodyContentsAsync(XmlDictionaryWriter)
+  nameWithType: BodyWriter.WriteBodyContentsAsync(XmlDictionaryWriter)
+  fullName: CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Task WriteBodyContentsAsync(XmlDictionaryWriter writer)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlDictionaryWriter
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function WriteBodyContentsAsync(writer As XmlDictionaryWriter) As Task
+  overload: CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.BodyWriter.IsBuffered
+  commentId: P:CoreWCF.Channels.BodyWriter.IsBuffered
+  id: IsBuffered
+  parent: CoreWCF.Channels.BodyWriter
+  langs:
+  - csharp
+  - vb
+  name: IsBuffered
+  summary: Gets a value that indicates whether the write method can be called multiple times.
+  nameWithType: BodyWriter.IsBuffered
+  fullName: CoreWCF.Channels.BodyWriter.IsBuffered
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool IsBuffered { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the body writer can be called multiple times; otherwise false.
+    content.vb: Public ReadOnly Property IsBuffered As Boolean
+  overload: CoreWCF.Channels.BodyWriter.IsBuffered*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: If isBuffered is false then the message calls the write method once and buffers the contents.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.BodyWriter.#ctor*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.#ctor
+  isExternal: true
+  name: BodyWriter
+  nameWithType: BodyWriter.BodyWriter
+  fullName: CoreWCF.Channels.BodyWriter.BodyWriter
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.BodyWriter.CreateBufferedCopy*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.CreateBufferedCopy
+  isExternal: true
+  name: CreateBufferedCopy
+  nameWithType: BodyWriter.CreateBufferedCopy
+  fullName: CoreWCF.Channels.BodyWriter.CreateBufferedCopy
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.BodyWriter
+  commentId: T:CoreWCF.Channels.BodyWriter
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BodyWriter
+  nameWithType: BodyWriter
+  fullName: CoreWCF.Channels.BodyWriter
+- uid: CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy
+  isExternal: true
+  name: OnCreateBufferedCopy
+  nameWithType: BodyWriter.OnCreateBufferedCopy
+  fullName: CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy
+- uid: CoreWCF.Channels.BodyWriter.OnWriteBodyContents*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.OnWriteBodyContents
+  isExternal: true
+  name: OnWriteBodyContents
+  nameWithType: BodyWriter.OnWriteBodyContents
+  fullName: CoreWCF.Channels.BodyWriter.OnWriteBodyContents
+- uid: System.Xml.XmlDictionaryWriter
+  isExternal: true
+  name: XmlDictionaryWriter
+  nameWithType: XmlDictionaryWriter
+  fullName: System.Xml.XmlDictionaryWriter
+- uid: CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync
+  isExternal: true
+  name: OnWriteBodyContentsAsync
+  nameWithType: BodyWriter.OnWriteBodyContentsAsync
+  fullName: CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CoreWCF.Channels.BodyWriter.WriteBodyContents*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.WriteBodyContents
+  isExternal: true
+  name: WriteBodyContents
+  nameWithType: BodyWriter.WriteBodyContents
+  fullName: CoreWCF.Channels.BodyWriter.WriteBodyContents
+- uid: CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync
+  isExternal: true
+  name: WriteBodyContentsAsync
+  nameWithType: BodyWriter.WriteBodyContentsAsync
+  fullName: CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync
+- uid: CoreWCF.Channels.BodyWriter.IsBuffered*
+  commentId: Overload:CoreWCF.Channels.BodyWriter.IsBuffered
+  isExternal: true
+  name: IsBuffered
+  nameWithType: BodyWriter.IsBuffered
+  fullName: CoreWCF.Channels.BodyWriter.IsBuffered

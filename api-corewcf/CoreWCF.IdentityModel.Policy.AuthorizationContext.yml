@@ -1,0 +1,596 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  commentId: T:CoreWCF.IdentityModel.Policy.AuthorizationContext
+  id: AuthorizationContext
+  parent: CoreWCF.IdentityModel.Policy
+  children:
+  - CoreWCF.IdentityModel.Policy.AuthorizationContext.#ctor
+  - CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets
+  - CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy})
+  - CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime
+  - CoreWCF.IdentityModel.Policy.AuthorizationContext.Id
+  - CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationContext
+  nameWithType: AuthorizationContext
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  summary: The result of evaluating all authorization policies available from the tokens in the sent message and by calling the  method.
+  remarks: "Evaluating all of the authorization policies in an authorization manager results in a set of &lt;xref:System.IdentityModel.Claims.ClaimSet> objects. These objects make up an authorization context.  \n\nAn authorization context contains a set of claim set objects, an expiration time that specifies the span of time during which the authorization context is valid, and a unique identifier.  \n\nThe &lt;xref:System.IdentityModel.Policy.AuthorizationContext> for the current operation can be accessed via the &lt;xref:CoreWCF.ServiceSecurityContext.AuthorizationContext%2A> property.  \n\n\n\n"
+  syntax:
+    content: 'public abstract class AuthorizationContext : Object, IAuthorizationComponent'
+    content.vb: >-
+      Public MustInherit Class AuthorizationContext
+          Inherits Object
+          Implements IAuthorizationComponent
+  inheritance:
+  - System.Object
+  implements:
+  - CoreWCF.IdentityModel.Policy.IAuthorizationComponent
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy})
+  commentId: M:CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy})
+  id: CreateDefaultAuthorizationContext(System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy})
+  parent: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  langs:
+  - csharp
+  - vb
+  name: CreateDefaultAuthorizationContext(IList<IAuthorizationPolicy>)
+  nameWithType: AuthorizationContext.CreateDefaultAuthorizationContext(IList<IAuthorizationPolicy>)
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList<CoreWCF.IdentityModel.Policy.IAuthorizationPolicy>)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  syntax:
+    content: public static AuthorizationContext CreateDefaultAuthorizationContext(IList<IAuthorizationPolicy> authorizationPolicies)
+    parameters:
+    - id: authorizationPolicies
+      type: System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}
+    return:
+      type: CoreWCF.IdentityModel.Policy.AuthorizationContext
+    content.vb: Public Shared Function CreateDefaultAuthorizationContext(authorizationPolicies As IList(Of IAuthorizationPolicy)) As AuthorizationContext
+  overload: CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext*
+  nameWithType.vb: AuthorizationContext.CreateDefaultAuthorizationContext(IList(Of IAuthorizationPolicy))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList(Of CoreWCF.IdentityModel.Policy.IAuthorizationPolicy))
+  name.vb: CreateDefaultAuthorizationContext(IList(Of IAuthorizationPolicy))
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.#ctor
+  commentId: M:CoreWCF.IdentityModel.Policy.AuthorizationContext.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  langs:
+  - csharp
+  - vb
+  name: AuthorizationContext()
+  nameWithType: AuthorizationContext.AuthorizationContext()
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.AuthorizationContext()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  syntax:
+    content: protected AuthorizationContext()
+    content.vb: Protected Sub New
+  overload: CoreWCF.IdentityModel.Policy.AuthorizationContext.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.Id
+  commentId: P:CoreWCF.IdentityModel.Policy.AuthorizationContext.Id
+  id: Id
+  parent: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: AuthorizationContext.Id
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.Id
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  syntax:
+    content: public abstract string Id { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public MustOverride ReadOnly Property Id As String
+  overload: CoreWCF.IdentityModel.Policy.AuthorizationContext.Id*
+  implements:
+  - CoreWCF.IdentityModel.Policy.IAuthorizationComponent.Id
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets
+  commentId: P:CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets
+  id: ClaimSets
+  parent: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  langs:
+  - csharp
+  - vb
+  name: ClaimSets
+  nameWithType: AuthorizationContext.ClaimSets
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  syntax:
+    content: public abstract ReadOnlyCollection<ClaimSet> ClaimSets { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Claims.ClaimSet}
+    content.vb: Public MustOverride ReadOnly Property ClaimSets As ReadOnlyCollection(Of ClaimSet)
+  overload: CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime
+  commentId: P:CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime
+  id: ExpirationTime
+  parent: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  langs:
+  - csharp
+  - vb
+  name: ExpirationTime
+  nameWithType: AuthorizationContext.ExpirationTime
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  syntax:
+    content: public abstract DateTime ExpirationTime { get; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public MustOverride ReadOnly Property ExpirationTime As DateTime
+  overload: CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties
+  commentId: P:CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties
+  id: Properties
+  parent: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  langs:
+  - csharp
+  - vb
+  name: Properties
+  nameWithType: AuthorizationContext.Properties
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Policy
+  syntax:
+    content: public abstract IDictionary<string, object> Properties { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IDictionary{System.String,System.Object}
+    content.vb: Public MustOverride ReadOnly Property Properties As IDictionary(Of String, Object)
+  overload: CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Policy
+  commentId: N:CoreWCF.IdentityModel.Policy
+  isExternal: true
+  name: CoreWCF.IdentityModel.Policy
+  nameWithType: CoreWCF.IdentityModel.Policy
+  fullName: CoreWCF.IdentityModel.Policy
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.Policy.IAuthorizationComponent
+  commentId: T:CoreWCF.IdentityModel.Policy.IAuthorizationComponent
+  parent: CoreWCF.IdentityModel.Policy
+  isExternal: true
+  name: IAuthorizationComponent
+  nameWithType: IAuthorizationComponent
+  fullName: CoreWCF.IdentityModel.Policy.IAuthorizationComponent
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext*
+  commentId: Overload:CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext
+  isExternal: true
+  name: CreateDefaultAuthorizationContext
+  nameWithType: AuthorizationContext.CreateDefaultAuthorizationContext
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext
+- uid: System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}
+  commentId: '!:System.Collections.Generic.IList{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy}'
+  definition: System.Collections.Generic.IList`1
+  name: IList<IAuthorizationPolicy>
+  nameWithType: IList<IAuthorizationPolicy>
+  fullName: System.Collections.Generic.IList<CoreWCF.IdentityModel.Policy.IAuthorizationPolicy>
+  nameWithType.vb: IList(Of IAuthorizationPolicy)
+  fullName.vb: System.Collections.Generic.IList(Of CoreWCF.IdentityModel.Policy.IAuthorizationPolicy)
+  name.vb: IList(Of IAuthorizationPolicy)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    name: IAuthorizationPolicy
+    nameWithType: IAuthorizationPolicy
+    fullName: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    name: IAuthorizationPolicy
+    nameWithType: IAuthorizationPolicy
+    fullName: CoreWCF.IdentityModel.Policy.IAuthorizationPolicy
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext
+  commentId: T:CoreWCF.IdentityModel.Policy.AuthorizationContext
+  parent: CoreWCF.IdentityModel.Policy
+  isExternal: true
+  name: AuthorizationContext
+  nameWithType: AuthorizationContext
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext
+- uid: System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: System.Collections.Generic.IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: System.Collections.Generic.IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Policy.AuthorizationContext.#ctor
+  isExternal: true
+  name: AuthorizationContext
+  nameWithType: AuthorizationContext.AuthorizationContext
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.AuthorizationContext
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.Id*
+  commentId: Overload:CoreWCF.IdentityModel.Policy.AuthorizationContext.Id
+  isExternal: true
+  name: Id
+  nameWithType: AuthorizationContext.Id
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.Id
+- uid: CoreWCF.IdentityModel.Policy.IAuthorizationComponent.Id
+  commentId: P:CoreWCF.IdentityModel.Policy.IAuthorizationComponent.Id
+  parent: CoreWCF.IdentityModel.Policy.IAuthorizationComponent
+  isExternal: true
+  name: Id
+  nameWithType: IAuthorizationComponent.Id
+  fullName: CoreWCF.IdentityModel.Policy.IAuthorizationComponent.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets*
+  commentId: Overload:CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets
+  isExternal: true
+  name: ClaimSets
+  nameWithType: AuthorizationContext.ClaimSets
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.ClaimSets
+- uid: System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Claims.ClaimSet}
+  commentId: '!:System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Claims.ClaimSet}'
+  definition: System.Collections.ObjectModel.ReadOnlyCollection`1
+  name: ReadOnlyCollection<ClaimSet>
+  nameWithType: ReadOnlyCollection<ClaimSet>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<CoreWCF.IdentityModel.Claims.ClaimSet>
+  nameWithType.vb: ReadOnlyCollection(Of ClaimSet)
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of CoreWCF.IdentityModel.Claims.ClaimSet)
+  name.vb: ReadOnlyCollection(Of ClaimSet)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Claims.ClaimSet
+    name: ClaimSet
+    nameWithType: ClaimSet
+    fullName: CoreWCF.IdentityModel.Claims.ClaimSet
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Claims.ClaimSet
+    name: ClaimSet
+    nameWithType: ClaimSet
+    fullName: CoreWCF.IdentityModel.Claims.ClaimSet
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+  isExternal: true
+  name: ReadOnlyCollection<>
+  nameWithType: ReadOnlyCollection<>
+  fullName: System.Collections.ObjectModel.ReadOnlyCollection<>
+  nameWithType.vb: ReadOnlyCollection(Of )
+  fullName.vb: System.Collections.ObjectModel.ReadOnlyCollection(Of )
+  name.vb: ReadOnlyCollection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.ReadOnlyCollection`1
+    name: ReadOnlyCollection
+    nameWithType: ReadOnlyCollection
+    fullName: System.Collections.ObjectModel.ReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime*
+  commentId: Overload:CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime
+  isExternal: true
+  name: ExpirationTime
+  nameWithType: AuthorizationContext.ExpirationTime
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.ExpirationTime
+- uid: System.DateTime
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties*
+  commentId: Overload:CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties
+  isExternal: true
+  name: Properties
+  nameWithType: AuthorizationContext.Properties
+  fullName: CoreWCF.IdentityModel.Policy.AuthorizationContext.Properties
+- uid: System.Collections.Generic.IDictionary{System.String,System.Object}
+  commentId: '!:System.Collections.Generic.IDictionary{System.String,System.Object}'
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<String, Object>
+  nameWithType: IDictionary<String, Object>
+  fullName: System.Collections.Generic.IDictionary<System.String, System.Object>
+  nameWithType.vb: IDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IDictionary(Of System.String, System.Object)
+  name.vb: IDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<, >
+  nameWithType: IDictionary<, >
+  fullName: System.Collections.Generic.IDictionary<, >
+  nameWithType.vb: IDictionary(Of , )
+  fullName.vb: System.Collections.Generic.IDictionary(Of , )
+  name.vb: IDictionary(Of , )
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

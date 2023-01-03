@@ -1,0 +1,190 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.ConcurrencyMode
+  commentId: T:CoreWCF.ConcurrencyMode
+  id: ConcurrencyMode
+  parent: CoreWCF
+  children:
+  - CoreWCF.ConcurrencyMode.Multiple
+  - CoreWCF.ConcurrencyMode.Reentrant
+  - CoreWCF.ConcurrencyMode.Single
+  - CoreWCF.ConcurrencyMode.value__
+  langs:
+  - csharp
+  - vb
+  name: ConcurrencyMode
+  nameWithType: ConcurrencyMode
+  fullName: CoreWCF.ConcurrencyMode
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Specifies the concurrency options for the properties in a conceptual model.
+  remarks: "\n<xref:CoreWCF.ConcurrencyMode> is used in conjunction with the <xref:CoreWCF.ServiceBehaviorAttribute.ConcurrencyMode> property to specify whether a service class supports single-threaded or multi-threaded modes of operation. A single-threaded operation can be either reentrant or non-reentrant.\n \nThe following table shows when Windows Communication Foundation (WCF) permits an operation to be invoked while another one is in progress, depending upon the <xref:CoreWCF.ConcurrencyMode>.\n \n\n|ConcurrencyMode Value|ConcurrencyMode Value|\n |-----------------|-----------------|\n |Single|Never.|\n |Reentrant|Only while invoking another service or a callback.|\n |Multiple|Always.|\n\n"
+  syntax:
+    content: 'public sealed class ConcurrencyMode : Enum'
+    content.vb: >-
+      Public NotInheritable Class ConcurrencyMode
+          Inherits
+
+           Enum
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.ConcurrencyMode.value__
+  commentId: F:CoreWCF.ConcurrencyMode.value__
+  id: value__
+  parent: CoreWCF.ConcurrencyMode
+  langs:
+  - csharp
+  - vb
+  name: value__
+  nameWithType: ConcurrencyMode.value__
+  fullName: CoreWCF.ConcurrencyMode.value__
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public int value__
+    return:
+      type: System.Int32
+    content.vb: Public value__ As Integer
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.ConcurrencyMode.Single
+  commentId: F:CoreWCF.ConcurrencyMode.Single
+  id: Single
+  parent: CoreWCF.ConcurrencyMode
+  langs:
+  - csharp
+  - vb
+  name: Single
+  nameWithType: ConcurrencyMode.Single
+  fullName: CoreWCF.ConcurrencyMode.Single
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const ConcurrencyMode Single
+    return:
+      type: CoreWCF.ConcurrencyMode
+      description: "The service instance is single-threaded and does not accept reentrant calls. If the <xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode> property is <xref:CoreWCF.InstanceContextMode.Single>, and additional messages arrive while the instance services a call, these messages must wait until the service is available or until the messages time out."
+    content.vb: Public Const Single As ConcurrencyMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.ConcurrencyMode.Reentrant
+  commentId: F:CoreWCF.ConcurrencyMode.Reentrant
+  id: Reentrant
+  parent: CoreWCF.ConcurrencyMode
+  langs:
+  - csharp
+  - vb
+  name: Reentrant
+  nameWithType: ConcurrencyMode.Reentrant
+  fullName: CoreWCF.ConcurrencyMode.Reentrant
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const ConcurrencyMode Reentrant
+    return:
+      type: CoreWCF.ConcurrencyMode
+      description: "The service instance is single-threaded and accepts reentrant calls. The reentrant service accepts calls when you call another service; it is therefore your responsibility to leave your object state consistent before callouts and you must confirm that operation-local data is valid after callouts. Note that the service instance is unlocked only by calling another service over a WCF channel. In this case, the called service can reenter the first service via a callback. If the first service is not reentrant, the sequence of calls results in a deadlock. For details, see <xref:CoreWCF.ServiceBehaviorAttribute.ConcurrencyMode>."
+    content.vb: Public Const Reentrant As ConcurrencyMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: CoreWCF.ConcurrencyMode.Multiple
+  commentId: F:CoreWCF.ConcurrencyMode.Multiple
+  id: Multiple
+  parent: CoreWCF.ConcurrencyMode
+  langs:
+  - csharp
+  - vb
+  name: Multiple
+  nameWithType: ConcurrencyMode.Multiple
+  fullName: CoreWCF.ConcurrencyMode.Multiple
+  type: Field
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: public const ConcurrencyMode Multiple
+    return:
+      type: CoreWCF.ConcurrencyMode
+      description: "The service instance is multi-threaded. No synchronization guarantees are made. Because other threads can change your service object at any time, you must handle synchronization and state consistency at all times."
+    content.vb: Public Const Multiple As ConcurrencyMode
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.ConcurrencyMode
+  commentId: T:CoreWCF.ConcurrencyMode
+  parent: CoreWCF
+  isExternal: true
+  name: ConcurrencyMode
+  nameWithType: ConcurrencyMode
+  fullName: CoreWCF.ConcurrencyMode

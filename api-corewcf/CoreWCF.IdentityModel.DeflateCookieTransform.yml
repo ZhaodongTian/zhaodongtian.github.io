@@ -1,0 +1,378 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform
+  commentId: T:CoreWCF.IdentityModel.DeflateCookieTransform
+  id: DeflateCookieTransform
+  parent: CoreWCF.IdentityModel
+  children:
+  - CoreWCF.IdentityModel.DeflateCookieTransform.#ctor
+  - CoreWCF.IdentityModel.DeflateCookieTransform.Decode(System.Byte[])
+  - CoreWCF.IdentityModel.DeflateCookieTransform.Encode(System.Byte[])
+  - CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize
+  langs:
+  - csharp
+  - vb
+  name: DeflateCookieTransform
+  nameWithType: DeflateCookieTransform
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  summary: "\nProvides cookie compression using <xref href=\"System.IO.Compression.DeflateStream\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  syntax:
+    content: 'public sealed class DeflateCookieTransform : CookieTransform'
+    content.vb: >-
+      Public NotInheritable Class DeflateCookieTransform
+          Inherits CookieTransform
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.CookieTransform
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.#ctor
+  commentId: M:CoreWCF.IdentityModel.DeflateCookieTransform.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.DeflateCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: DeflateCookieTransform()
+  nameWithType: DeflateCookieTransform.DeflateCookieTransform()
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.DeflateCookieTransform()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  summary: "\nInitializes a new instance of the <xref href=\"CoreWCF.IdentityModel.DeflateCookieTransform\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  syntax:
+    content: public DeflateCookieTransform()
+    content.vb: Public Sub New
+  overload: CoreWCF.IdentityModel.DeflateCookieTransform.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.Decode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.DeflateCookieTransform.Decode(System.Byte[])
+  id: Decode(System.Byte[])
+  parent: CoreWCF.IdentityModel.DeflateCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: Decode(Byte[])
+  nameWithType: DeflateCookieTransform.Decode(Byte[])
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.Decode(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  summary: "\nInflates data.\n"
+  syntax:
+    content: public override byte[] Decode(byte[] encoded)
+    parameters:
+    - id: encoded
+      type: System.Byte[]
+      description: Data previously returned from <xref href="CoreWCF.IdentityModel.DeflateCookieTransform.Encode(System.Byte%5b%5d)" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Byte[]
+      description: The decoded data.
+    content.vb: Public Overrides Function Decode(encoded As Byte()) As Byte()
+  overridden: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  overload: CoreWCF.IdentityModel.DeflateCookieTransform.Decode*
+  exceptions:
+  - type: CoreWCF.IdentityModel.Tokens.SecurityTokenException
+    commentId: T:CoreWCF.IdentityModel.Tokens.SecurityTokenException
+    description: The decompressed length is larger than MaxDecompressedSize.
+  nameWithType.vb: DeflateCookieTransform.Decode(Byte())
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.IdentityModel.DeflateCookieTransform.Decode(System.Byte())
+  name.vb: Decode(Byte())
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.Encode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.DeflateCookieTransform.Encode(System.Byte[])
+  summary: Deflates data.
+  id: Encode(System.Byte[])
+  parent: CoreWCF.IdentityModel.DeflateCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: Encode(Byte[])
+  nameWithType: DeflateCookieTransform.Encode(Byte[])
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.Encode(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public override byte[] Encode(byte[] value)
+    parameters:
+    - id: value
+      type: System.Byte[]
+      description: The data to be compressed.
+    return:
+      type: System.Byte[]
+      description: The compressed data.
+    content.vb: Public Overrides Function Encode(value As Byte()) As Byte()
+  overridden: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  overload: CoreWCF.IdentityModel.DeflateCookieTransform.Encode*
+  nameWithType.vb: DeflateCookieTransform.Encode(Byte())
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.IdentityModel.DeflateCookieTransform.Encode(System.Byte())
+  name.vb: Encode(Byte())
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize
+  commentId: P:CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize
+  id: MaxDecompressedSize
+  parent: CoreWCF.IdentityModel.DeflateCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: MaxDecompressedSize
+  nameWithType: DeflateCookieTransform.MaxDecompressedSize
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  summary: "\nGets or sets the maximum size, in bytes, of a decompressed cookie.\n"
+  syntax:
+    content: public int MaxDecompressedSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum size, in bytes, of a decompressed cookie.
+    content.vb: Public Property MaxDecompressedSize As Integer
+  overload: CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.CookieTransform
+  commentId: T:CoreWCF.IdentityModel.CookieTransform
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: CookieTransform
+  nameWithType: CookieTransform
+  fullName: CoreWCF.IdentityModel.CookieTransform
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.DeflateCookieTransform.#ctor
+  isExternal: true
+  name: DeflateCookieTransform
+  nameWithType: DeflateCookieTransform.DeflateCookieTransform
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.DeflateCookieTransform
+- uid: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  parent: CoreWCF.IdentityModel.CookieTransform
+  isExternal: true
+  name: Decode(Byte[])
+  nameWithType: CookieTransform.Decode(Byte[])
+  fullName: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  nameWithType.vb: CookieTransform.Decode(Byte())
+  fullName.vb: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte())
+  name.vb: Decode(Byte())
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+    name: Decode
+    nameWithType: CookieTransform.Decode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Decode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+    name: Decode
+    nameWithType: CookieTransform.Decode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Decode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.Decode*
+  commentId: Overload:CoreWCF.IdentityModel.DeflateCookieTransform.Decode
+  isExternal: true
+  name: Decode
+  nameWithType: DeflateCookieTransform.Decode
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.Decode
+- uid: CoreWCF.IdentityModel.Tokens.SecurityTokenException
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityTokenException
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityTokenException
+  nameWithType: SecurityTokenException
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityTokenException
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  parent: CoreWCF.IdentityModel.CookieTransform
+  isExternal: true
+  name: Encode(Byte[])
+  nameWithType: CookieTransform.Encode(Byte[])
+  fullName: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  nameWithType.vb: CookieTransform.Encode(Byte())
+  fullName.vb: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte())
+  name.vb: Encode(Byte())
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+    name: Encode
+    nameWithType: CookieTransform.Encode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Encode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+    name: Encode
+    nameWithType: CookieTransform.Encode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Encode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.Encode*
+  commentId: Overload:CoreWCF.IdentityModel.DeflateCookieTransform.Encode
+  isExternal: true
+  name: Encode
+  nameWithType: DeflateCookieTransform.Encode
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.Encode
+- uid: CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize*
+  commentId: Overload:CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize
+  isExternal: true
+  name: MaxDecompressedSize
+  nameWithType: DeflateCookieTransform.MaxDecompressedSize
+  fullName: CoreWCF.IdentityModel.DeflateCookieTransform.MaxDecompressedSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

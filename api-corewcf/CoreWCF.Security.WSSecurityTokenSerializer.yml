@@ -1,0 +1,2577 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.WSSecurityTokenSerializer
+  commentId: T:CoreWCF.Security.WSSecurityTokenSerializer
+  id: WSSecurityTokenSerializer
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion)
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean)
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer)
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)
+  - CoreWCF.Security.WSSecurityTokenSerializer.#ctor(System.Boolean)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)
+  - CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance
+  - CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  - CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri(System.Type)
+  - CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  - CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  - CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  - CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  - CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  - CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  - CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion
+  - CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle,CoreWCF.IdentityModel.SecurityKeyIdentifierClause@)
+  - CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  - CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  - CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer
+  nameWithType: WSSecurityTokenSerializer
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: The class used for serializing and deserializing security tokens, security key identifiers, and security key identifier clauses defined in the WS-Security, WS-Trust, and WS-SecureConversation security specifications.
+  remarks: "\n"
+  syntax:
+    content: 'public class WSSecurityTokenSerializer : SecurityTokenSerializer'
+    content.vb: >-
+      Public Class WSSecurityTokenSerializer
+          Inherits SecurityTokenSerializer
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  inheritedMembers:
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken(System.Xml.XmlReader)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier(System.Xml.XmlReader)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause(System.Xml.XmlReader)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier(System.Xml.XmlReader)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause(System.Xml.XmlReader)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer()
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer()
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer()
+    content.vb: Public Sub New
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(System.Boolean)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(System.Boolean)
+  id: '#ctor(System.Boolean)'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(Boolean)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(Boolean)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(bool emitBspRequiredAttributes)
+    parameters:
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    content.vb: Public Sub New(emitBspRequiredAttributes As Boolean)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion)
+  id: '#ctor(CoreWCF.Security.SecurityVersion)'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    content.vb: Public Sub New(securityVersion As SecurityVersion)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean)
+  id: '#ctor(CoreWCF.Security.SecurityVersion,System.Boolean)'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion, Boolean)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, Boolean)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, System.Boolean)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion, bool emitBspRequiredAttributes)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    content.vb: Public Sub New(securityVersion As SecurityVersion, emitBspRequiredAttributes As Boolean)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer)
+  id: '#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer)'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, System.Boolean, CoreWCF.Security.SamlSerializer)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion, bool emitBspRequiredAttributes, SamlSerializer samlSerializer)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    - id: samlSerializer
+      type: CoreWCF.Security.SamlSerializer
+    content.vb: Public Sub New(securityVersion As SecurityVersion, emitBspRequiredAttributes As Boolean, samlSerializer As SamlSerializer)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})
+  id: '#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable<System.Type>)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion, bool emitBspRequiredAttributes, SamlSerializer samlSerializer, SecurityStateEncoder securityStateEncoder, IEnumerable<Type> knownTypes)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    - id: samlSerializer
+      type: CoreWCF.Security.SamlSerializer
+    - id: securityStateEncoder
+      type: CoreWCF.Security.SecurityStateEncoder
+    - id: knownTypes
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    content.vb: Public Sub New(securityVersion As SecurityVersion, emitBspRequiredAttributes As Boolean, samlSerializer As SamlSerializer, securityStateEncoder As SecurityStateEncoder, knownTypes As IEnumerable(Of Type))
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  nameWithType.vb: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable(Of System.Type))
+  name.vb: WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type))
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})
+  id: '#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type})'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, CoreWCF.Security.TrustVersion, CoreWCF.Security.SecureConversationVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable<System.Type>)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion, TrustVersion trustVersion, SecureConversationVersion secureConversationVersion, bool emitBspRequiredAttributes, SamlSerializer samlSerializer, SecurityStateEncoder securityStateEncoder, IEnumerable<Type> knownTypes)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    - id: trustVersion
+      type: CoreWCF.Security.TrustVersion
+    - id: secureConversationVersion
+      type: CoreWCF.Security.SecureConversationVersion
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    - id: samlSerializer
+      type: CoreWCF.Security.SamlSerializer
+    - id: securityStateEncoder
+      type: CoreWCF.Security.SecurityStateEncoder
+    - id: knownTypes
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    content.vb: Public Sub New(securityVersion As SecurityVersion, trustVersion As TrustVersion, secureConversationVersion As SecureConversationVersion, emitBspRequiredAttributes As Boolean, samlSerializer As SamlSerializer, securityStateEncoder As SecurityStateEncoder, knownTypes As IEnumerable(Of Type))
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  nameWithType.vb: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, CoreWCF.Security.TrustVersion, CoreWCF.Security.SecureConversationVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable(Of System.Type))
+  name.vb: WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type))
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)
+  id: '#ctor(CoreWCF.Security.SecurityVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>, Int32, Int32, Int32)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>, Int32, Int32, Int32)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable<System.Type>, System.Int32, System.Int32, System.Int32)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion, bool emitBspRequiredAttributes, SamlSerializer samlSerializer, SecurityStateEncoder securityStateEncoder, IEnumerable<Type> knownTypes, int maximumKeyDerivationOffset, int maximumKeyDerivationLabelLength, int maximumKeyDerivationNonceLength)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    - id: samlSerializer
+      type: CoreWCF.Security.SamlSerializer
+    - id: securityStateEncoder
+      type: CoreWCF.Security.SecurityStateEncoder
+    - id: knownTypes
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    - id: maximumKeyDerivationOffset
+      type: System.Int32
+    - id: maximumKeyDerivationLabelLength
+      type: System.Int32
+    - id: maximumKeyDerivationNonceLength
+      type: System.Int32
+    content.vb: Public Sub New(securityVersion As SecurityVersion, emitBspRequiredAttributes As Boolean, samlSerializer As SamlSerializer, securityStateEncoder As SecurityStateEncoder, knownTypes As IEnumerable(Of Type), maximumKeyDerivationOffset As Integer, maximumKeyDerivationLabelLength As Integer, maximumKeyDerivationNonceLength As Integer)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  nameWithType.vb: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type), Int32, Int32, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable(Of System.Type), System.Int32, System.Int32, System.Int32)
+  name.vb: WSSecurityTokenSerializer(SecurityVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type), Int32, Int32, Int32)
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)
+  id: '#ctor(CoreWCF.Security.SecurityVersion,CoreWCF.Security.TrustVersion,CoreWCF.Security.SecureConversationVersion,System.Boolean,CoreWCF.Security.SamlSerializer,CoreWCF.Security.SecurityStateEncoder,System.Collections.Generic.IEnumerable{System.Type},System.Int32,System.Int32,System.Int32)'
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>, Int32, Int32, Int32)
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable<Type>, Int32, Int32, Int32)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, CoreWCF.Security.TrustVersion, CoreWCF.Security.SecureConversationVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable<System.Type>, System.Int32, System.Int32, System.Int32)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public WSSecurityTokenSerializer(SecurityVersion securityVersion, TrustVersion trustVersion, SecureConversationVersion secureConversationVersion, bool emitBspRequiredAttributes, SamlSerializer samlSerializer, SecurityStateEncoder securityStateEncoder, IEnumerable<Type> knownTypes, int maximumKeyDerivationOffset, int maximumKeyDerivationLabelLength, int maximumKeyDerivationNonceLength)
+    parameters:
+    - id: securityVersion
+      type: CoreWCF.Security.SecurityVersion
+    - id: trustVersion
+      type: CoreWCF.Security.TrustVersion
+    - id: secureConversationVersion
+      type: CoreWCF.Security.SecureConversationVersion
+    - id: emitBspRequiredAttributes
+      type: System.Boolean
+    - id: samlSerializer
+      type: CoreWCF.Security.SamlSerializer
+    - id: securityStateEncoder
+      type: CoreWCF.Security.SecurityStateEncoder
+    - id: knownTypes
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    - id: maximumKeyDerivationOffset
+      type: System.Int32
+    - id: maximumKeyDerivationLabelLength
+      type: System.Int32
+    - id: maximumKeyDerivationNonceLength
+      type: System.Int32
+    content.vb: Public Sub New(securityVersion As SecurityVersion, trustVersion As TrustVersion, secureConversationVersion As SecureConversationVersion, emitBspRequiredAttributes As Boolean, samlSerializer As SamlSerializer, securityStateEncoder As SecurityStateEncoder, knownTypes As IEnumerable(Of Type), maximumKeyDerivationOffset As Integer, maximumKeyDerivationLabelLength As Integer, maximumKeyDerivationNonceLength As Integer)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  nameWithType.vb: WSSecurityTokenSerializer.WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type), Int32, Int32, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer(CoreWCF.Security.SecurityVersion, CoreWCF.Security.TrustVersion, CoreWCF.Security.SecureConversationVersion, System.Boolean, CoreWCF.Security.SamlSerializer, CoreWCF.Security.SecurityStateEncoder, System.Collections.Generic.IEnumerable(Of System.Type), System.Int32, System.Int32, System.Int32)
+  name.vb: WSSecurityTokenSerializer(SecurityVersion, TrustVersion, SecureConversationVersion, Boolean, SamlSerializer, SecurityStateEncoder, IEnumerable(Of Type), Int32, Int32, Int32)
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  id: CanReadTokenCore(System.Xml.XmlReader)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CanReadTokenCore(XmlReader)
+  nameWithType: WSSecurityTokenSerializer.CanReadTokenCore(XmlReader)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override bool CanReadTokenCore(XmlReader reader)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlReader
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CanReadTokenCore(reader As XmlReader) As Boolean
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  id: ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: ReadTokenCore(XmlReader, SecurityTokenResolver)
+  nameWithType: WSSecurityTokenSerializer.ReadTokenCore(XmlReader, SecurityTokenResolver)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader, CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override SecurityToken ReadTokenCore(XmlReader reader, SecurityTokenResolver tokenResolver)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlReader
+    - id: tokenResolver
+      type: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Protected Overrides Function ReadTokenCore(reader As XmlReader, tokenResolver As SecurityTokenResolver) As SecurityToken
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CanWriteTokenCore(SecurityToken)
+  nameWithType: WSSecurityTokenSerializer.CanWriteTokenCore(SecurityToken)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override bool CanWriteTokenCore(SecurityToken token)
+    parameters:
+    - id: token
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CanWriteTokenCore(token As SecurityToken) As Boolean
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WriteTokenCore(XmlWriter, SecurityToken)
+  nameWithType: WSSecurityTokenSerializer.WriteTokenCore(XmlWriter, SecurityToken)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override void WriteTokenCore(XmlWriter writer, SecurityToken token)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    - id: token
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Protected Overrides Sub WriteTokenCore(writer As XmlWriter, token As SecurityToken)
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  id: CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CanReadKeyIdentifierCore(XmlReader)
+  nameWithType: WSSecurityTokenSerializer.CanReadKeyIdentifierCore(XmlReader)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override bool CanReadKeyIdentifierCore(XmlReader reader)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlReader
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CanReadKeyIdentifierCore(reader As XmlReader) As Boolean
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  id: ReadKeyIdentifierCore(System.Xml.XmlReader)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: ReadKeyIdentifierCore(XmlReader)
+  nameWithType: WSSecurityTokenSerializer.ReadKeyIdentifierCore(XmlReader)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override SecurityKeyIdentifier ReadKeyIdentifierCore(XmlReader reader)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlReader
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    content.vb: Protected Overrides Function ReadKeyIdentifierCore(reader As XmlReader) As SecurityKeyIdentifier
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  id: CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CanWriteKeyIdentifierCore(SecurityKeyIdentifier)
+  nameWithType: WSSecurityTokenSerializer.CanWriteKeyIdentifierCore(SecurityKeyIdentifier)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override bool CanWriteKeyIdentifierCore(SecurityKeyIdentifier keyIdentifier)
+    parameters:
+    - id: keyIdentifier
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CanWriteKeyIdentifierCore(keyIdentifier As SecurityKeyIdentifier) As Boolean
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  id: WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WriteKeyIdentifierCore(XmlWriter, SecurityKeyIdentifier)
+  nameWithType: WSSecurityTokenSerializer.WriteKeyIdentifierCore(XmlWriter, SecurityKeyIdentifier)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter, CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override void WriteKeyIdentifierCore(XmlWriter writer, SecurityKeyIdentifier keyIdentifier)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    - id: keyIdentifier
+      type: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    content.vb: Protected Overrides Sub WriteKeyIdentifierCore(writer As XmlWriter, keyIdentifier As SecurityKeyIdentifier)
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  id: CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CanReadKeyIdentifierClauseCore(XmlReader)
+  nameWithType: WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore(XmlReader)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override bool CanReadKeyIdentifierClauseCore(XmlReader reader)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlReader
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CanReadKeyIdentifierClauseCore(reader As XmlReader) As Boolean
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  id: ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: ReadKeyIdentifierClauseCore(XmlReader)
+  nameWithType: WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore(XmlReader)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override SecurityKeyIdentifierClause ReadKeyIdentifierClauseCore(XmlReader reader)
+    parameters:
+    - id: reader
+      type: System.Xml.XmlReader
+    return:
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    content.vb: Protected Overrides Function ReadKeyIdentifierClauseCore(reader As XmlReader) As SecurityKeyIdentifierClause
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  id: CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CanWriteKeyIdentifierClauseCore(SecurityKeyIdentifierClause)
+  nameWithType: WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override bool CanWriteKeyIdentifierClauseCore(SecurityKeyIdentifierClause keyIdentifierClause)
+    parameters:
+    - id: keyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CanWriteKeyIdentifierClauseCore(keyIdentifierClause As SecurityKeyIdentifierClause) As Boolean
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  id: WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: WriteKeyIdentifierClauseCore(XmlWriter, SecurityKeyIdentifierClause)
+  nameWithType: WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore(XmlWriter, SecurityKeyIdentifierClause)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter, CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected override void WriteKeyIdentifierClauseCore(XmlWriter writer, SecurityKeyIdentifierClause keyIdentifierClause)
+    parameters:
+    - id: writer
+      type: System.Xml.XmlWriter
+    - id: keyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    content.vb: Protected Overrides Sub WriteKeyIdentifierClauseCore(writer As XmlWriter, keyIdentifierClause As SecurityKeyIdentifierClause)
+  overridden: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri(System.Type)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri(System.Type)
+  id: GetTokenTypeUri(System.Type)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: GetTokenTypeUri(Type)
+  nameWithType: WSSecurityTokenSerializer.GetTokenTypeUri(Type)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri(System.Type)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: protected virtual string GetTokenTypeUri(Type tokenType)
+    parameters:
+    - id: tokenType
+      type: System.Type
+    return:
+      type: System.String
+    content.vb: Protected Overridable Function GetTokenTypeUri(tokenType As Type) As String
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle,CoreWCF.IdentityModel.SecurityKeyIdentifierClause@)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle,CoreWCF.IdentityModel.SecurityKeyIdentifierClause@)
+  id: TryCreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle,CoreWCF.IdentityModel.SecurityKeyIdentifierClause@)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: TryCreateKeyIdentifierClauseFromTokenXml(XmlElement, SecurityTokenReferenceStyle, out SecurityKeyIdentifierClause)
+  nameWithType: WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(XmlElement, SecurityTokenReferenceStyle, out SecurityKeyIdentifierClause)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement, CoreWCF.Security.Tokens.SecurityTokenReferenceStyle, out CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public virtual bool TryCreateKeyIdentifierClauseFromTokenXml(XmlElement element, SecurityTokenReferenceStyle tokenReferenceStyle, out SecurityKeyIdentifierClause securityKeyIdentifierClause)
+    parameters:
+    - id: element
+      type: System.Xml.XmlElement
+    - id: tokenReferenceStyle
+      type: CoreWCF.Security.Tokens.SecurityTokenReferenceStyle
+    - id: securityKeyIdentifierClause
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function TryCreateKeyIdentifierClauseFromTokenXml(element As XmlElement, tokenReferenceStyle As SecurityTokenReferenceStyle, ByRef securityKeyIdentifierClause As SecurityKeyIdentifierClause) As Boolean
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml*
+  nameWithType.vb: WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(XmlElement, SecurityTokenReferenceStyle, ByRef SecurityKeyIdentifierClause)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement, CoreWCF.Security.Tokens.SecurityTokenReferenceStyle, ByRef CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  name.vb: TryCreateKeyIdentifierClauseFromTokenXml(XmlElement, SecurityTokenReferenceStyle, ByRef SecurityKeyIdentifierClause)
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)
+  commentId: M:CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)
+  id: CreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: CreateKeyIdentifierClauseFromTokenXml(XmlElement, SecurityTokenReferenceStyle)
+  nameWithType: WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml(XmlElement, SecurityTokenReferenceStyle)
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml(System.Xml.XmlElement, CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public virtual SecurityKeyIdentifierClause CreateKeyIdentifierClauseFromTokenXml(XmlElement element, SecurityTokenReferenceStyle tokenReferenceStyle)
+    parameters:
+    - id: element
+      type: System.Xml.XmlElement
+    - id: tokenReferenceStyle
+      type: CoreWCF.Security.Tokens.SecurityTokenReferenceStyle
+    return:
+      type: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    content.vb: Public Overridable Function CreateKeyIdentifierClauseFromTokenXml(element As XmlElement, tokenReferenceStyle As SecurityTokenReferenceStyle) As SecurityKeyIdentifierClause
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance
+  commentId: P:CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance
+  id: DefaultInstance
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: DefaultInstance
+  nameWithType: WSSecurityTokenSerializer.DefaultInstance
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public static WSSecurityTokenSerializer DefaultInstance { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.WSSecurityTokenSerializer
+    content.vb: Public Shared ReadOnly Property DefaultInstance As WSSecurityTokenSerializer
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  commentId: P:CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  id: EmitBspRequiredAttributes
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: EmitBspRequiredAttributes
+  nameWithType: WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public bool EmitBspRequiredAttributes { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property EmitBspRequiredAttributes As Boolean
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion
+  commentId: P:CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion
+  id: SecurityVersion
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: SecurityVersion
+  nameWithType: WSSecurityTokenSerializer.SecurityVersion
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public SecurityVersion SecurityVersion { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Security.SecurityVersion
+    content.vb: Public ReadOnly Property SecurityVersion As SecurityVersion
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  commentId: P:CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  id: MaximumKeyDerivationOffset
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: MaximumKeyDerivationOffset
+  nameWithType: WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public int MaximumKeyDerivationOffset { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property MaximumKeyDerivationOffset As Integer
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  commentId: P:CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  id: MaximumKeyDerivationLabelLength
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: MaximumKeyDerivationLabelLength
+  nameWithType: WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public int MaximumKeyDerivationLabelLength { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property MaximumKeyDerivationLabelLength As Integer
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  commentId: P:CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  id: MaximumKeyDerivationNonceLength
+  parent: CoreWCF.Security.WSSecurityTokenSerializer
+  langs:
+  - csharp
+  - vb
+  name: MaximumKeyDerivationNonceLength
+  nameWithType: WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: public int MaximumKeyDerivationNonceLength { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property MaximumKeyDerivationNonceLength As Integer
+  overload: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenSerializer
+  nameWithType: SecurityTokenSerializer
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanReadToken(XmlReader)
+  nameWithType: SecurityTokenSerializer.CanReadToken(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken(System.Xml.XmlReader)
+    name: CanReadToken
+    nameWithType: SecurityTokenSerializer.CanReadToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken(System.Xml.XmlReader)
+    name: CanReadToken
+    nameWithType: SecurityTokenSerializer.CanReadToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanWriteToken(SecurityToken)
+  nameWithType: SecurityTokenSerializer.CanWriteToken(SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken(CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: CanWriteToken
+    nameWithType: SecurityTokenSerializer.CanWriteToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken(CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: CanWriteToken
+    nameWithType: SecurityTokenSerializer.CanWriteToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanReadKeyIdentifier(XmlReader)
+  nameWithType: SecurityTokenSerializer.CanReadKeyIdentifier(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier(System.Xml.XmlReader)
+    name: CanReadKeyIdentifier
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier(System.Xml.XmlReader)
+    name: CanReadKeyIdentifier
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanWriteKeyIdentifier(SecurityKeyIdentifier)
+  nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifier(SecurityKeyIdentifier)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: CanWriteKeyIdentifier
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: CanWriteKeyIdentifier
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanReadKeyIdentifierClause(XmlReader)
+  nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierClause(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause(System.Xml.XmlReader)
+    name: CanReadKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause(System.Xml.XmlReader)
+    name: CanReadKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanWriteKeyIdentifierClause(SecurityKeyIdentifierClause)
+  nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierClause(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: CanWriteKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: CanWriteKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: ReadToken(XmlReader, SecurityTokenResolver)
+  nameWithType: SecurityTokenSerializer.ReadToken(XmlReader, SecurityTokenResolver)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken(System.Xml.XmlReader, CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+    name: ReadToken
+    nameWithType: SecurityTokenSerializer.ReadToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    name: SecurityTokenResolver
+    nameWithType: SecurityTokenResolver
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+    name: ReadToken
+    nameWithType: SecurityTokenSerializer.ReadToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    name: SecurityTokenResolver
+    nameWithType: SecurityTokenResolver
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: WriteToken(XmlWriter, SecurityToken)
+  nameWithType: SecurityTokenSerializer.WriteToken(XmlWriter, SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken(System.Xml.XmlWriter, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: WriteToken
+    nameWithType: SecurityTokenSerializer.WriteToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: WriteToken
+    nameWithType: SecurityTokenSerializer.WriteToken
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteToken
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: ReadKeyIdentifier(XmlReader)
+  nameWithType: SecurityTokenSerializer.ReadKeyIdentifier(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier(System.Xml.XmlReader)
+    name: ReadKeyIdentifier
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier(System.Xml.XmlReader)
+    name: ReadKeyIdentifier
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: WriteKeyIdentifier(XmlWriter, SecurityKeyIdentifier)
+  nameWithType: SecurityTokenSerializer.WriteKeyIdentifier(XmlWriter, SecurityKeyIdentifier)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier(System.Xml.XmlWriter, CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: WriteKeyIdentifier
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: WriteKeyIdentifier
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifier
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: ReadKeyIdentifierClause(XmlReader)
+  nameWithType: SecurityTokenSerializer.ReadKeyIdentifierClause(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause(System.Xml.XmlReader)
+    name: ReadKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause(System.Xml.XmlReader)
+    name: ReadKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: WriteKeyIdentifierClause(XmlWriter, SecurityKeyIdentifierClause)
+  nameWithType: SecurityTokenSerializer.WriteKeyIdentifierClause(XmlWriter, SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause(System.Xml.XmlWriter, CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: WriteKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: WriteKeyIdentifierClause
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClause
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Selectors
+  commentId: N:CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: CoreWCF.IdentityModel.Selectors
+  nameWithType: CoreWCF.IdentityModel.Selectors
+  fullName: CoreWCF.IdentityModel.Selectors
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.#ctor*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.#ctor
+  isExternal: true
+  name: WSSecurityTokenSerializer
+  nameWithType: WSSecurityTokenSerializer.WSSecurityTokenSerializer
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WSSecurityTokenSerializer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Security.SecurityVersion
+  commentId: T:CoreWCF.Security.SecurityVersion
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityVersion
+  nameWithType: SecurityVersion
+  fullName: CoreWCF.Security.SecurityVersion
+- uid: CoreWCF.Security.SamlSerializer
+  commentId: T:CoreWCF.Security.SamlSerializer
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SamlSerializer
+  nameWithType: SamlSerializer
+  fullName: CoreWCF.Security.SamlSerializer
+- uid: CoreWCF.Security.SecurityStateEncoder
+  commentId: T:CoreWCF.Security.SecurityStateEncoder
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecurityStateEncoder
+  nameWithType: SecurityStateEncoder
+  fullName: CoreWCF.Security.SecurityStateEncoder
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: '!:System.Collections.Generic.IEnumerable{System.Type}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.TrustVersion
+  commentId: T:CoreWCF.Security.TrustVersion
+  parent: CoreWCF.Security
+  isExternal: true
+  name: TrustVersion
+  nameWithType: TrustVersion
+  fullName: CoreWCF.Security.TrustVersion
+- uid: CoreWCF.Security.SecureConversationVersion
+  commentId: T:CoreWCF.Security.SecureConversationVersion
+  parent: CoreWCF.Security
+  isExternal: true
+  name: SecureConversationVersion
+  nameWithType: SecureConversationVersion
+  fullName: CoreWCF.Security.SecureConversationVersion
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanReadTokenCore(XmlReader)
+  nameWithType: SecurityTokenSerializer.CanReadTokenCore(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+    name: CanReadTokenCore
+    nameWithType: SecurityTokenSerializer.CanReadTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore(System.Xml.XmlReader)
+    name: CanReadTokenCore
+    nameWithType: SecurityTokenSerializer.CanReadTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore
+  isExternal: true
+  name: CanReadTokenCore
+  nameWithType: WSSecurityTokenSerializer.CanReadTokenCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanReadTokenCore
+- uid: System.Xml.XmlReader
+  isExternal: true
+  name: XmlReader
+  nameWithType: XmlReader
+  fullName: System.Xml.XmlReader
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: ReadTokenCore(XmlReader, SecurityTokenResolver)
+  nameWithType: SecurityTokenSerializer.ReadTokenCore(XmlReader, SecurityTokenResolver)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader, CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+    name: ReadTokenCore
+    nameWithType: SecurityTokenSerializer.ReadTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    name: SecurityTokenResolver
+    nameWithType: SecurityTokenResolver
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore(System.Xml.XmlReader,CoreWCF.IdentityModel.Selectors.SecurityTokenResolver)
+    name: ReadTokenCore
+    nameWithType: SecurityTokenSerializer.ReadTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    name: SecurityTokenResolver
+    nameWithType: SecurityTokenResolver
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore
+  isExternal: true
+  name: ReadTokenCore
+  nameWithType: WSSecurityTokenSerializer.ReadTokenCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.ReadTokenCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+  parent: CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: SecurityTokenResolver
+  nameWithType: SecurityTokenResolver
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenResolver
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityToken
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityToken
+  nameWithType: SecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanWriteTokenCore(SecurityToken)
+  nameWithType: SecurityTokenSerializer.CanWriteTokenCore(SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: CanWriteTokenCore
+    nameWithType: SecurityTokenSerializer.CanWriteTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore(CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: CanWriteTokenCore
+    nameWithType: SecurityTokenSerializer.CanWriteTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore
+  isExternal: true
+  name: CanWriteTokenCore
+  nameWithType: WSSecurityTokenSerializer.CanWriteTokenCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteTokenCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: WriteTokenCore(XmlWriter, SecurityToken)
+  nameWithType: SecurityTokenSerializer.WriteTokenCore(XmlWriter, SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: WriteTokenCore
+    nameWithType: SecurityTokenSerializer.WriteTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)
+    name: WriteTokenCore
+    nameWithType: SecurityTokenSerializer.WriteTokenCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteTokenCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore
+  isExternal: true
+  name: WriteTokenCore
+  nameWithType: WSSecurityTokenSerializer.WriteTokenCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WriteTokenCore
+- uid: System.Xml.XmlWriter
+  isExternal: true
+  name: XmlWriter
+  nameWithType: XmlWriter
+  fullName: System.Xml.XmlWriter
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanReadKeyIdentifierCore(XmlReader)
+  nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierCore(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+    name: CanReadKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore(System.Xml.XmlReader)
+    name: CanReadKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore
+  isExternal: true
+  name: CanReadKeyIdentifierCore
+  nameWithType: WSSecurityTokenSerializer.CanReadKeyIdentifierCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: ReadKeyIdentifierCore(XmlReader)
+  nameWithType: SecurityTokenSerializer.ReadKeyIdentifierCore(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+    name: ReadKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore(System.Xml.XmlReader)
+    name: ReadKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore
+  isExternal: true
+  name: ReadKeyIdentifierCore
+  nameWithType: WSSecurityTokenSerializer.ReadKeyIdentifierCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierCore
+- uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityKeyIdentifier
+  nameWithType: SecurityKeyIdentifier
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanWriteKeyIdentifierCore(SecurityKeyIdentifier)
+  nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierCore(SecurityKeyIdentifier)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: CanWriteKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore(CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: CanWriteKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore
+  isExternal: true
+  name: CanWriteKeyIdentifierCore
+  nameWithType: WSSecurityTokenSerializer.CanWriteKeyIdentifierCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: WriteKeyIdentifierCore(XmlWriter, SecurityKeyIdentifier)
+  nameWithType: SecurityTokenSerializer.WriteKeyIdentifierCore(XmlWriter, SecurityKeyIdentifier)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter, CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: WriteKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier)
+    name: WriteKeyIdentifierCore
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifierCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    name: SecurityKeyIdentifier
+    nameWithType: SecurityKeyIdentifier
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore
+  isExternal: true
+  name: WriteKeyIdentifierCore
+  nameWithType: WSSecurityTokenSerializer.WriteKeyIdentifierCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanReadKeyIdentifierClauseCore(XmlReader)
+  nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+    name: CanReadKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+    name: CanReadKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+  isExternal: true
+  name: CanReadKeyIdentifierClauseCore
+  nameWithType: WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanReadKeyIdentifierClauseCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: ReadKeyIdentifierClauseCore(XmlReader)
+  nameWithType: SecurityTokenSerializer.ReadKeyIdentifierClauseCore(XmlReader)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+    name: ReadKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore(System.Xml.XmlReader)
+    name: ReadKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.ReadKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.ReadKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore
+  isExternal: true
+  name: ReadKeyIdentifierClauseCore
+  nameWithType: WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.ReadKeyIdentifierClauseCore
+- uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  commentId: T:CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: SecurityKeyIdentifierClause
+  nameWithType: SecurityKeyIdentifierClause
+  fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: CanWriteKeyIdentifierClauseCore(SecurityKeyIdentifierClause)
+  nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: CanWriteKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: CanWriteKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+  isExternal: true
+  name: CanWriteKeyIdentifierClauseCore
+  nameWithType: WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CanWriteKeyIdentifierClauseCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer
+  isExternal: true
+  name: WriteKeyIdentifierClauseCore(XmlWriter, SecurityKeyIdentifierClause)
+  nameWithType: SecurityTokenSerializer.WriteKeyIdentifierClauseCore(XmlWriter, SecurityKeyIdentifierClause)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter, CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: WriteKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)
+    name: WriteKeyIdentifierClauseCore
+    nameWithType: SecurityTokenSerializer.WriteKeyIdentifierClauseCore
+    fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenSerializer.WriteKeyIdentifierClauseCore
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlWriter
+    name: XmlWriter
+    nameWithType: XmlWriter
+    fullName: System.Xml.XmlWriter
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    name: SecurityKeyIdentifierClause
+    nameWithType: SecurityKeyIdentifierClause
+    fullName: CoreWCF.IdentityModel.SecurityKeyIdentifierClause
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore
+  isExternal: true
+  name: WriteKeyIdentifierClauseCore
+  nameWithType: WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.WriteKeyIdentifierClauseCore
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri
+  isExternal: true
+  name: GetTokenTypeUri
+  nameWithType: WSSecurityTokenSerializer.GetTokenTypeUri
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.GetTokenTypeUri
+- uid: System.Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml
+  isExternal: true
+  name: TryCreateKeyIdentifierClauseFromTokenXml
+  nameWithType: WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.TryCreateKeyIdentifierClauseFromTokenXml
+- uid: System.Xml.XmlElement
+  isExternal: true
+  name: XmlElement
+  nameWithType: XmlElement
+  fullName: System.Xml.XmlElement
+- uid: CoreWCF.Security.Tokens.SecurityTokenReferenceStyle
+  commentId: T:CoreWCF.Security.Tokens.SecurityTokenReferenceStyle
+  parent: CoreWCF.Security.Tokens
+  isExternal: true
+  name: SecurityTokenReferenceStyle
+  nameWithType: SecurityTokenReferenceStyle
+  fullName: CoreWCF.Security.Tokens.SecurityTokenReferenceStyle
+- uid: CoreWCF.Security.Tokens
+  commentId: N:CoreWCF.Security.Tokens
+  isExternal: true
+  name: CoreWCF.Security.Tokens
+  nameWithType: CoreWCF.Security.Tokens
+  fullName: CoreWCF.Security.Tokens
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml
+  isExternal: true
+  name: CreateKeyIdentifierClauseFromTokenXml
+  nameWithType: WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.CreateKeyIdentifierClauseFromTokenXml
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance
+  isExternal: true
+  name: DefaultInstance
+  nameWithType: WSSecurityTokenSerializer.DefaultInstance
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.DefaultInstance
+- uid: CoreWCF.Security.WSSecurityTokenSerializer
+  commentId: T:CoreWCF.Security.WSSecurityTokenSerializer
+  parent: CoreWCF.Security
+  isExternal: true
+  name: WSSecurityTokenSerializer
+  nameWithType: WSSecurityTokenSerializer
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  isExternal: true
+  name: EmitBspRequiredAttributes
+  nameWithType: WSSecurityTokenSerializer.EmitBspRequiredAttributes
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.EmitBspRequiredAttributes
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion
+  isExternal: true
+  name: SecurityVersion
+  nameWithType: WSSecurityTokenSerializer.SecurityVersion
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.SecurityVersion
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  isExternal: true
+  name: MaximumKeyDerivationOffset
+  nameWithType: WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationOffset
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  isExternal: true
+  name: MaximumKeyDerivationLabelLength
+  nameWithType: WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationLabelLength
+- uid: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength*
+  commentId: Overload:CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  isExternal: true
+  name: MaximumKeyDerivationNonceLength
+  nameWithType: WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength
+  fullName: CoreWCF.Security.WSSecurityTokenSerializer.MaximumKeyDerivationNonceLength

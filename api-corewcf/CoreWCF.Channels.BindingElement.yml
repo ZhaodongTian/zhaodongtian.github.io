@@ -1,0 +1,398 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  id: BindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.BindingElement.#ctor
+  - CoreWCF.Channels.BindingElement.#ctor(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.BindingElement.Clone
+  - CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  langs:
+  - csharp
+  - vb
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: The elements of the bindings that build the channel factories and channel listeners for various types of channels that are used to process outgoing and incoming messages.
+  syntax:
+    content: 'public abstract class BindingElement : Object'
+    content.vb: >-
+      Public MustInherit Class BindingElement
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.MessageEncodingBindingElement
+  - CoreWCF.Channels.PrivacyNoticeBindingElement
+  - CoreWCF.Channels.SecurityBindingElement
+  - CoreWCF.Channels.StreamUpgradeBindingElement
+  - CoreWCF.Channels.TransportBindingElement
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  remarks: "A binding consists of an ordered set of binding elements that inherit from this abstract base class. The <xref:CoreWCF.Channels.TransportBindingElement> class inherits from the <xref:CoreWCF.Channels.BindingElement> class.<br /><br />Creating a binding and binding element for your transport is optional if you are just using the channel model. It is possible to do everything you need through the channel factory and listener as long as they are made public.<br /><br />The Windows Communication Foundation (WCF) service model uses a factory pattern where the binding is used to create the channel stack. If you want to use the WCF service model, then using a transport binding element is required. Placing this binding element into a binding is a good practice because it removes the requirement for users to create their own custom binding for your transport. It is best to create both a binding and binding element, and hide the channel factory and listener inside the assembly.<br /><br />On the sending side, a binding is used to build a [IChannelFactory](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannelfactory?view=dotnet-plat-ext-7.0), which in turn builds a channel stack and returns a reference to the top channel in the stack. The application can then use this channel to send messages.<br /><br />Similarly, on the receiving side a binding is used to build a [IChannelListener](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannellistener?view=netframework-4.8&viewFallbackFrom=dotnet-plat-ext-7.0), which listens for incoming messages. The [IChannelListener](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannellistener?view=netframework-4.8&viewFallbackFrom=dotnet-plat-ext-7.00) provides messages to the listening application by creating channel stacks and handing the application a reference to the top channel. The application then uses this channel to receive incoming messages."
+- uid: CoreWCF.Channels.BindingElement.#ctor
+  commentId: M:CoreWCF.Channels.BindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: BindingElement()
+  nameWithType: BindingElement.BindingElement()
+  fullName: CoreWCF.Channels.BindingElement.BindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.BindingElement> class."
+  syntax:
+    content: protected BindingElement()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.BindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.BindingElement.#ctor(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BindingElement.#ctor(CoreWCF.Channels.BindingElement)
+  id: '#ctor(CoreWCF.Channels.BindingElement)'
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: BindingElement(BindingElement)
+  nameWithType: BindingElement.BindingElement(BindingElement)
+  fullName: CoreWCF.Channels.BindingElement.BindingElement(CoreWCF.Channels.BindingElement)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.BindingElement> class from a specified binding element."
+  syntax:
+    content: protected BindingElement(BindingElement elementToBeCloned)
+    parameters:
+    - id: elementToBeCloned
+      type: CoreWCF.Channels.BindingElement
+      description: "The <xref:CoreWCF.Channels.BindingElement> to be cloned."
+    content.vb: Protected Sub New(elementToBeCloned As BindingElement)
+  overload: CoreWCF.Channels.BindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, returns a copy of the binding element object.
+  syntax:
+    content: public abstract BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: "A <xref:CoreWCF.Channels.BindingElement> object that is a deep clone of the original."
+    content.vb: Public MustOverride Function Clone As BindingElement
+  overload: CoreWCF.Channels.BindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: "Implement the <xref:CoreWCF.Channels.BindingElement.Clone> method to return a deep clone of your binding element. Returning a clone enables the runtime to support the case in which multiple custom bindings share a custom binding element. If a clone is not returned, the run-time behavior is undefined.<br /><br />A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. (This is also called copying the entire object graph.) A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects."
+- uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  nameWithType: BindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: When overridden in a derived class, returns a typed object requested, if present, from the appropriate layer in the binding stack.
+  syntax:
+    content: >-
+      public abstract T GetProperty<T>(BindingContext context)
+
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "The <xref:CoreWCF.Channels.BindingContext> for the binding element."
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object T requested if it is present or null if it is not present.
+    content.vb: Public MustOverride Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overload: CoreWCF.Channels.BindingElement.GetProperty*
+  nameWithType.vb: BindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.Channels.BindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: Use this to retrieve capabilities, requirements and parameters from the binding element stack. If a binding element supports returning the requested object, it returns it. If not, it delegates the call down to the next binding element in the stack. If it gets to the bottom of the stack and no binding element supported the requested object, then the method returns null.
+- uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  id: IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: IsMatch(BindingElement)
+  nameWithType: BindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected virtual bool IsMatch(BindingElement b)
+    parameters:
+    - id: b
+      type: CoreWCF.Channels.BindingElement
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable Function IsMatch(b As BindingElement) As Boolean
+  overload: CoreWCF.Channels.BindingElement.IsMatch*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  id: BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual IServiceDispatcher BuildServiceDispatcher<TChannel>(BindingContext context, IServiceDispatcher innerDispatcher)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    - id: innerDispatcher
+      type: CoreWCF.Configuration.IServiceDispatcher
+    typeParameters:
+    - id: TChannel
+    return:
+      type: CoreWCF.Configuration.IServiceDispatcher
+    content.vb: Public Overridable Function BuildServiceDispatcher(Of TChannel As {Class, IChannel})(context As BindingContext, innerDispatcher As IServiceDispatcher) As IServiceDispatcher
+  overload: CoreWCF.Channels.BindingElement.BuildServiceDispatcher*
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  id: CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  langs:
+  - csharp
+  - vb
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public virtual bool CanBuildServiceDispatcher<TChannel>(BindingContext context)
+
+          where TChannel : class, IChannel
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+    typeParameters:
+    - id: TChannel
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function CanBuildServiceDispatcher(Of TChannel As {Class, IChannel})(context As BindingContext) As Boolean
+  overload: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher*
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.BindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.BindingElement.#ctor
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement.BindingElement
+  fullName: CoreWCF.Channels.BindingElement.BindingElement
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.BindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.BindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: BindingElement.Clone
+  fullName: CoreWCF.Channels.BindingElement.Clone
+- uid: CoreWCF.Channels.BindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.BindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: BindingElement.GetProperty
+  fullName: CoreWCF.Channels.BindingElement.GetProperty
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.BindingElement.IsMatch*
+  commentId: Overload:CoreWCF.Channels.BindingElement.IsMatch
+  isExternal: true
+  name: IsMatch
+  nameWithType: BindingElement.IsMatch
+  fullName: CoreWCF.Channels.BindingElement.IsMatch
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.BindingElement.BuildServiceDispatcher
+  isExternal: true
+  name: BuildServiceDispatcher
+  nameWithType: BindingElement.BuildServiceDispatcher
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher
+- uid: CoreWCF.Configuration.IServiceDispatcher
+  commentId: T:CoreWCF.Configuration.IServiceDispatcher
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IServiceDispatcher
+  nameWithType: IServiceDispatcher
+  fullName: CoreWCF.Configuration.IServiceDispatcher
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher*
+  commentId: Overload:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher
+  isExternal: true
+  name: CanBuildServiceDispatcher
+  nameWithType: BindingElement.CanBuildServiceDispatcher
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher

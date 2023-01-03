@@ -1,0 +1,2728 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Configuration.CustomBindingElement
+  commentId: T:CoreWCF.Configuration.CustomBindingElement
+  id: CustomBindingElement
+  parent: CoreWCF.Configuration
+  children:
+  - CoreWCF.Configuration.CustomBindingElement.#ctor
+  - CoreWCF.Configuration.CustomBindingElement.#ctor(System.String)
+  - CoreWCF.Configuration.CustomBindingElement.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  - CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration(CoreWCF.Channels.Binding)
+  - CoreWCF.Configuration.CustomBindingElement.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  - CoreWCF.Configuration.CustomBindingElement.CloseTimeout
+  - CoreWCF.Configuration.CustomBindingElement.CreateBinding
+  - CoreWCF.Configuration.CustomBindingElement.OpenTimeout
+  - CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout
+  - CoreWCF.Configuration.CustomBindingElement.SendTimeout
+  langs:
+  - csharp
+  - vb
+  name: CustomBindingElement
+  nameWithType: CustomBindingElement
+  fullName: CoreWCF.Configuration.CustomBindingElement
+  type: Class
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  summary: Represents the configuration section that provides full control over the messaging stack for the user.
+  remarks: "Custom bindings provide full control over the Windows Communication Foundation (WCF) messaging stack. An individual binding defines the message stack by specifying the configuration elements for the stack elements in the order they appear on the stack. Each element defines and configures the one element of the stack. There must be one and only one transport element in each custom binding. Without this element, the messaging stack is incomplete.  \n\nThe order in which elements appear in the stack matters, because it is the order in which operations are applied to the message. The recommended order of stack elements is the following:  \n\n1.  Transactions (optional)  \n\n2.  Reliable Messaging (optional)  \n\n3.  Security (optional)  \n\n4.  Transport  \n\n5.  Encoder (optional)  \n\n"
+  syntax:
+    content: 'public sealed class CustomBindingElement : NamedServiceModelExtensionCollectionElement<BindingElementExtensionElement>, IDefaultCommunicationTimeouts, IStandardBindingElement'
+    content.vb: >-
+      Public NotInheritable Class CustomBindingElement
+          Inherits NamedServiceModelExtensionCollectionElement(Of BindingElementExtensionElement)
+          Implements IDefaultCommunicationTimeouts, IStandardBindingElement
+  inheritance:
+  - System.Object
+  - CoreWCF.Configuration.ServiceModelConfigurationElement
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  - CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  implements:
+  - System.Collections.Generic.ICollection{CoreWCF.Configuration.BindingElementExtensionElement}
+  - System.Collections.Generic.IEnumerable{CoreWCF.Configuration.BindingElementExtensionElement}
+  - System.Collections.IEnumerable
+  - CoreWCF.IDefaultCommunicationTimeouts
+  - CoreWCF.Configuration.IStandardBindingElement
+  inheritedMembers:
+  - CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Name
+  - CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Properties
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Clear
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Contains(CoreWCF.Configuration.BindingElementExtensionElement)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ContainsKey(System.Type)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ContainsKey(System.String)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.CopyTo(CoreWCF.Configuration.BindingElementExtensionElement[],System.Int32)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.GetEnumerator
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.IsModified
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Remove(CoreWCF.Configuration.BindingElementExtensionElement)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Reset(System.Configuration.ConfigurationElement)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ResetModified
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.SetIsModified
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.SetReadOnly
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Item(System.Int32)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Item(System.Type)
+  - CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Count
+  - CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,{T})
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Configuration.CustomBindingElement.#ctor
+  commentId: M:CoreWCF.Configuration.CustomBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CustomBindingElement()
+  nameWithType: CustomBindingElement.CustomBindingElement()
+  fullName: CoreWCF.Configuration.CustomBindingElement.CustomBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public CustomBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Configuration.CustomBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.#ctor(System.String)
+  commentId: M:CoreWCF.Configuration.CustomBindingElement.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CustomBindingElement(String)
+  nameWithType: CustomBindingElement.CustomBindingElement(String)
+  fullName: CoreWCF.Configuration.CustomBindingElement.CustomBindingElement(System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public CustomBindingElement(string name)
+    parameters:
+    - id: name
+      type: System.String
+    content.vb: Public Sub New(name As String)
+  overload: CoreWCF.Configuration.CustomBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  commentId: M:CoreWCF.Configuration.CustomBindingElement.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  id: Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Add(BindingElementExtensionElement)
+  nameWithType: CustomBindingElement.Add(BindingElementExtensionElement)
+  fullName: CoreWCF.Configuration.CustomBindingElement.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public override void Add(BindingElementExtensionElement element)
+    parameters:
+    - id: element
+      type: CoreWCF.Configuration.BindingElementExtensionElement
+    content.vb: Public Overrides Sub Add(element As BindingElementExtensionElement)
+  overridden: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  overload: CoreWCF.Configuration.CustomBindingElement.Add*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration(CoreWCF.Channels.Binding)
+  commentId: M:CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration(CoreWCF.Channels.Binding)
+  id: ApplyConfiguration(CoreWCF.Channels.Binding)
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ApplyConfiguration(Binding)
+  nameWithType: CustomBindingElement.ApplyConfiguration(Binding)
+  fullName: CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration(CoreWCF.Channels.Binding)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public void ApplyConfiguration(Binding binding)
+    parameters:
+    - id: binding
+      type: CoreWCF.Channels.Binding
+    content.vb: Public Sub ApplyConfiguration(binding As Binding)
+  overload: CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  commentId: M:CoreWCF.Configuration.CustomBindingElement.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  id: CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CanAdd(BindingElementExtensionElement)
+  nameWithType: CustomBindingElement.CanAdd(BindingElementExtensionElement)
+  fullName: CoreWCF.Configuration.CustomBindingElement.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public override bool CanAdd(BindingElementExtensionElement element)
+    parameters:
+    - id: element
+      type: CoreWCF.Configuration.BindingElementExtensionElement
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function CanAdd(element As BindingElementExtensionElement) As Boolean
+  overridden: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  overload: CoreWCF.Configuration.CustomBindingElement.CanAdd*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Configuration.CustomBindingElement.CreateBinding
+  commentId: M:CoreWCF.Configuration.CustomBindingElement.CreateBinding
+  id: CreateBinding
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateBinding()
+  nameWithType: CustomBindingElement.CreateBinding()
+  fullName: CoreWCF.Configuration.CustomBindingElement.CreateBinding()
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public Binding CreateBinding()
+    return:
+      type: CoreWCF.Channels.Binding
+    content.vb: Public Function CreateBinding As Binding
+  overload: CoreWCF.Configuration.CustomBindingElement.CreateBinding*
+  implements:
+  - CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.CloseTimeout
+  commentId: P:CoreWCF.Configuration.CustomBindingElement.CloseTimeout
+  id: CloseTimeout
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CloseTimeout
+  nameWithType: CustomBindingElement.CloseTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.CloseTimeout
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public TimeSpan CloseTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property CloseTimeout As TimeSpan
+  overload: CoreWCF.Configuration.CustomBindingElement.CloseTimeout*
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.OpenTimeout
+  commentId: P:CoreWCF.Configuration.CustomBindingElement.OpenTimeout
+  id: OpenTimeout
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: OpenTimeout
+  nameWithType: CustomBindingElement.OpenTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.OpenTimeout
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public TimeSpan OpenTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property OpenTimeout As TimeSpan
+  overload: CoreWCF.Configuration.CustomBindingElement.OpenTimeout*
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout
+  commentId: P:CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout
+  id: ReceiveTimeout
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ReceiveTimeout
+  nameWithType: CustomBindingElement.ReceiveTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public TimeSpan ReceiveTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property ReceiveTimeout As TimeSpan
+  overload: CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout*
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.CustomBindingElement.SendTimeout
+  commentId: P:CoreWCF.Configuration.CustomBindingElement.SendTimeout
+  id: SendTimeout
+  parent: CoreWCF.Configuration.CustomBindingElement
+  langs:
+  - csharp
+  - vb
+  name: SendTimeout
+  nameWithType: CustomBindingElement.SendTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.SendTimeout
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public TimeSpan SendTimeout { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property SendTimeout As TimeSpan
+  overload: CoreWCF.Configuration.CustomBindingElement.SendTimeout*
+  implements:
+  - CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement
+  commentId: T:CoreWCF.Configuration.ServiceModelConfigurationElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: ServiceModelConfigurationElement
+  nameWithType: ServiceModelConfigurationElement
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  commentId: T:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  parent: CoreWCF.Configuration
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+  name: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement)
+  name.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+    name: ServiceModelExtensionCollectionElement
+    nameWithType: ServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+    name: ServiceModelExtensionCollectionElement
+    nameWithType: ServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  commentId: T:CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  parent: CoreWCF.Configuration
+  definition: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+  name: NamedServiceModelExtensionCollectionElement<BindingElementExtensionElement>
+  nameWithType: NamedServiceModelExtensionCollectionElement<BindingElementExtensionElement>
+  fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>
+  nameWithType.vb: NamedServiceModelExtensionCollectionElement(Of BindingElementExtensionElement)
+  fullName.vb: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement)
+  name.vb: NamedServiceModelExtensionCollectionElement(Of BindingElementExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+    name: NamedServiceModelExtensionCollectionElement
+    nameWithType: NamedServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+    name: NamedServiceModelExtensionCollectionElement
+    nameWithType: NamedServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{CoreWCF.Configuration.BindingElementExtensionElement}
+  commentId: '!:System.Collections.Generic.ICollection{CoreWCF.Configuration.BindingElementExtensionElement}'
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<BindingElementExtensionElement>
+  nameWithType: ICollection<BindingElementExtensionElement>
+  fullName: System.Collections.Generic.ICollection<CoreWCF.Configuration.BindingElementExtensionElement>
+  nameWithType.vb: ICollection(Of BindingElementExtensionElement)
+  fullName.vb: System.Collections.Generic.ICollection(Of CoreWCF.Configuration.BindingElementExtensionElement)
+  name.vb: ICollection(Of BindingElementExtensionElement)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{CoreWCF.Configuration.BindingElementExtensionElement}
+  commentId: '!:System.Collections.Generic.IEnumerable{CoreWCF.Configuration.BindingElementExtensionElement}'
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<BindingElementExtensionElement>
+  nameWithType: IEnumerable<BindingElementExtensionElement>
+  fullName: System.Collections.Generic.IEnumerable<CoreWCF.Configuration.BindingElementExtensionElement>
+  nameWithType.vb: IEnumerable(Of BindingElementExtensionElement)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of CoreWCF.Configuration.BindingElementExtensionElement)
+  name.vb: IEnumerable(Of BindingElementExtensionElement)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: CoreWCF.IDefaultCommunicationTimeouts
+  commentId: T:CoreWCF.IDefaultCommunicationTimeouts
+  parent: CoreWCF
+  isExternal: true
+  name: IDefaultCommunicationTimeouts
+  nameWithType: IDefaultCommunicationTimeouts
+  fullName: CoreWCF.IDefaultCommunicationTimeouts
+- uid: CoreWCF.Configuration.IStandardBindingElement
+  commentId: T:CoreWCF.Configuration.IStandardBindingElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: IStandardBindingElement
+  nameWithType: IStandardBindingElement
+  fullName: CoreWCF.Configuration.IStandardBindingElement
+- uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Name
+  commentId: P:CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Name
+  parent: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1.Name
+  name: Name
+  nameWithType: NamedServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Name
+  fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Name
+  nameWithType.vb: NamedServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Name
+  fullName.vb: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Name
+- uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Properties
+  commentId: P:CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Properties
+  parent: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1.Properties
+  name: Properties
+  nameWithType: NamedServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Properties
+  fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Properties
+  nameWithType.vb: NamedServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Properties
+  fullName.vb: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Properties
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Clear
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Clear
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+  name: Clear()
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Clear()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Clear()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Clear()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Clear()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+    name: Clear
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Clear
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+    name: Clear
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Clear
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Contains(CoreWCF.Configuration.BindingElementExtensionElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Contains(CoreWCF.Configuration.BindingElementExtensionElement)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+  name: Contains(BindingElementExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Contains(BindingElementExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Contains(CoreWCF.Configuration.BindingElementExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Contains(BindingElementExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Contains(CoreWCF.Configuration.BindingElementExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+    name: Contains
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Contains
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+    name: Contains
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Contains
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ContainsKey(System.Type)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ContainsKey(System.Type)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+  name: ContainsKey(Type)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.ContainsKey(Type)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.ContainsKey(System.Type)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).ContainsKey(Type)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).ContainsKey(System.Type)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ContainsKey(System.String)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ContainsKey(System.String)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+  name: ContainsKey(String)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.ContainsKey(String)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.ContainsKey(System.String)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).ContainsKey(String)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).ContainsKey(System.String)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.CopyTo(CoreWCF.Configuration.BindingElementExtensionElement[],System.Int32)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.CopyTo(CoreWCF.Configuration.BindingElementExtensionElement[],System.Int32)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(BindingElementExtensionElement[], Int32)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.CopyTo(BindingElementExtensionElement[], Int32)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.CopyTo(CoreWCF.Configuration.BindingElementExtensionElement[], System.Int32)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).CopyTo(BindingElementExtensionElement(), Int32)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).CopyTo(CoreWCF.Configuration.BindingElementExtensionElement(), System.Int32)
+  name.vb: CopyTo(BindingElementExtensionElement(), Int32)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.CopyTo
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).CopyTo
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+  name: DeserializeElement(XmlReader, Boolean)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.DeserializeElement(XmlReader, Boolean)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.DeserializeElement(System.Xml.XmlReader, System.Boolean)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).DeserializeElement(XmlReader, Boolean)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).DeserializeElement(System.Xml.XmlReader, System.Boolean)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+    name: DeserializeElement
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.DeserializeElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.DeserializeElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+    name: DeserializeElement
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).DeserializeElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).DeserializeElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.GetEnumerator
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.GetEnumerator
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.GetEnumerator()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.GetEnumerator()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).GetEnumerator()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).GetEnumerator()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.GetEnumerator
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).GetEnumerator
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.IsModified
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.IsModified
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+  name: IsModified()
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.IsModified()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.IsModified()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).IsModified()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).IsModified()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+    name: IsModified
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.IsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.IsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+    name: IsModified
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).IsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).IsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+  name: OnDeserializeUnrecognizedElement(String, XmlReader)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.OnDeserializeUnrecognizedElement(String, XmlReader)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.OnDeserializeUnrecognizedElement(System.String, System.Xml.XmlReader)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).OnDeserializeUnrecognizedElement(String, XmlReader)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).OnDeserializeUnrecognizedElement(System.String, System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+    name: OnDeserializeUnrecognizedElement
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.OnDeserializeUnrecognizedElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.OnDeserializeUnrecognizedElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+    name: OnDeserializeUnrecognizedElement
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).OnDeserializeUnrecognizedElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).OnDeserializeUnrecognizedElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Remove(CoreWCF.Configuration.BindingElementExtensionElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Remove(CoreWCF.Configuration.BindingElementExtensionElement)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+  name: Remove(BindingElementExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Remove(BindingElementExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Remove(CoreWCF.Configuration.BindingElementExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Remove(BindingElementExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Remove(CoreWCF.Configuration.BindingElementExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+    name: Remove
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Remove
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+    name: Remove
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Remove
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Reset(System.Configuration.ConfigurationElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Reset(System.Configuration.ConfigurationElement)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+  name: Reset(ConfigurationElement)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Reset(ConfigurationElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Reset(System.Configuration.ConfigurationElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Reset(ConfigurationElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Reset(System.Configuration.ConfigurationElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+    name: Reset
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Reset
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Reset
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+    name: Reset
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Reset
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Reset
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ResetModified
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.ResetModified
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+  name: ResetModified()
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.ResetModified()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.ResetModified()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).ResetModified()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).ResetModified()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+    name: ResetModified
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.ResetModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.ResetModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+    name: ResetModified
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).ResetModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).ResetModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.SetIsModified
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.SetIsModified
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+  name: SetIsModified()
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.SetIsModified()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.SetIsModified()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).SetIsModified()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).SetIsModified()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+    name: SetIsModified
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.SetIsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.SetIsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+    name: SetIsModified
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).SetIsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).SetIsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.SetReadOnly
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.SetReadOnly
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+  name: SetReadOnly()
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.SetReadOnly()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.SetReadOnly()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).SetReadOnly()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).SetReadOnly()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+    name: SetReadOnly
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.SetReadOnly
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.SetReadOnly
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+    name: SetReadOnly
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).SetReadOnly
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).SetReadOnly
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  name: Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Unmerge(System.Configuration.ConfigurationElement, System.Configuration.ConfigurationElement, System.Configuration.ConfigurationSaveMode)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Unmerge(System.Configuration.ConfigurationElement, System.Configuration.ConfigurationElement, System.Configuration.ConfigurationSaveMode)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+    name: Unmerge
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Unmerge
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Unmerge
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationSaveMode
+    name: ConfigurationSaveMode
+    nameWithType: ConfigurationSaveMode
+    fullName: System.Configuration.ConfigurationSaveMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+    name: Unmerge
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Unmerge
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Unmerge
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationSaveMode
+    name: ConfigurationSaveMode
+    nameWithType: ConfigurationSaveMode
+    fullName: System.Configuration.ConfigurationSaveMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Item(System.Int32)
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Item(System.Int32)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+  name: Item[Int32]
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Item[Int32]
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Item[System.Int32]
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Item(Int32)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Item(System.Type)
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Item(System.Type)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+  name: Item[Type]
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Item[Type]
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Item[System.Type]
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Item(Type)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Item(System.Type)
+  name.vb: Item(Type)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Count
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Count
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Count
+  name: Count
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Count
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Count
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Count
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Count
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,{T})
+  commentId: M:CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  parent: CoreWCF.Configuration.ServiceModelConfigurationElement
+  definition: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  name: SetPropertyValueIfNotDefaultValue<T>(String, T)
+  nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(String, T)
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(System.String, T)
+  nameWithType.vb: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  fullName.vb: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(System.String, T)
+  name.vb: SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue<T>
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue(Of T)
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+  commentId: T:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+  isExternal: true
+  name: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement)
+  name.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+    name: ServiceModelExtensionCollectionElement
+    nameWithType: ServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1
+    name: ServiceModelExtensionCollectionElement
+    nameWithType: ServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+  commentId: T:CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+  isExternal: true
+  name: NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>
+  nameWithType: NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>
+  fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>
+  nameWithType.vb: NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement)
+  fullName.vb: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement)
+  name.vb: NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+    name: NamedServiceModelExtensionCollectionElement
+    nameWithType: NamedServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1
+    name: NamedServiceModelExtensionCollectionElement
+    nameWithType: NamedServiceModelExtensionCollectionElement
+    fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<>
+  nameWithType: ICollection<>
+  fullName: System.Collections.Generic.ICollection<>
+  nameWithType.vb: ICollection(Of )
+  fullName.vb: System.Collections.Generic.ICollection(Of )
+  name.vb: ICollection(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: System.Collections.Generic.IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: System.Collections.Generic.IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1.Name
+  commentId: P:CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1.Name
+  isExternal: true
+  name: Name
+  nameWithType: NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Name
+  fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Name
+  nameWithType.vb: NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Name
+  fullName.vb: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Name
+- uid: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1.Properties
+  commentId: P:CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement`1.Properties
+  isExternal: true
+  name: Properties
+  nameWithType: NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Properties
+  fullName: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Properties
+  nameWithType.vb: NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Properties
+  fullName.vb: CoreWCF.Configuration.NamedServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Properties
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Clear()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Clear()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Clear()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Clear()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+    name: Clear
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Clear
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Clear
+    name: Clear
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Clear
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+  isExternal: true
+  name: Contains(TServiceModelExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Contains(TServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Contains(TServiceModelExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Contains(TServiceModelExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Contains(TServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+    name: Contains
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Contains
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Contains(`0)
+    name: Contains
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Contains
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+  isExternal: true
+  name: ContainsKey(Type)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey(Type)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey(System.Type)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey(Type)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey(System.Type)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.Type)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+  isExternal: true
+  name: ContainsKey(String)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey(String)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey(System.String)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey(String)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey(System.String)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ContainsKey(System.String)
+    name: ContainsKey
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(TServiceModelExtensionElement[], Int32)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CopyTo(TServiceModelExtensionElement[], Int32)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CopyTo(TServiceModelExtensionElement[], System.Int32)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CopyTo(TServiceModelExtensionElement(), Int32)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CopyTo(TServiceModelExtensionElement(), System.Int32)
+  name.vb: CopyTo(TServiceModelExtensionElement(), Int32)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CopyTo
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CopyTo
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+  isExternal: true
+  name: DeserializeElement(XmlReader, Boolean)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.DeserializeElement(XmlReader, Boolean)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.DeserializeElement(System.Xml.XmlReader, System.Boolean)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).DeserializeElement(XmlReader, Boolean)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).DeserializeElement(System.Xml.XmlReader, System.Boolean)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+    name: DeserializeElement
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.DeserializeElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.DeserializeElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.DeserializeElement(System.Xml.XmlReader,System.Boolean)
+    name: DeserializeElement
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).DeserializeElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).DeserializeElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.GetEnumerator()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.GetEnumerator()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).GetEnumerator()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).GetEnumerator()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.GetEnumerator
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).GetEnumerator
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+  isExternal: true
+  name: IsModified()
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.IsModified()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.IsModified()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).IsModified()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).IsModified()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+    name: IsModified
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.IsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.IsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.IsModified
+    name: IsModified
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).IsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).IsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+  isExternal: true
+  name: OnDeserializeUnrecognizedElement(String, XmlReader)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.OnDeserializeUnrecognizedElement(String, XmlReader)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.OnDeserializeUnrecognizedElement(System.String, System.Xml.XmlReader)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).OnDeserializeUnrecognizedElement(String, XmlReader)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).OnDeserializeUnrecognizedElement(System.String, System.Xml.XmlReader)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+    name: OnDeserializeUnrecognizedElement
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.OnDeserializeUnrecognizedElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.OnDeserializeUnrecognizedElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.OnDeserializeUnrecognizedElement(System.String,System.Xml.XmlReader)
+    name: OnDeserializeUnrecognizedElement
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).OnDeserializeUnrecognizedElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).OnDeserializeUnrecognizedElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Xml.XmlReader
+    name: XmlReader
+    nameWithType: XmlReader
+    fullName: System.Xml.XmlReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+  isExternal: true
+  name: Remove(TServiceModelExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Remove(TServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Remove(TServiceModelExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Remove(TServiceModelExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Remove(TServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+    name: Remove
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Remove
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Remove(`0)
+    name: Remove
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Remove
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+  isExternal: true
+  name: Reset(ConfigurationElement)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Reset(ConfigurationElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Reset(System.Configuration.ConfigurationElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Reset(ConfigurationElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Reset(System.Configuration.ConfigurationElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+    name: Reset
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Reset
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Reset
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Reset(System.Configuration.ConfigurationElement)
+    name: Reset
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Reset
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Reset
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+  isExternal: true
+  name: ResetModified()
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ResetModified()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ResetModified()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ResetModified()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ResetModified()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+    name: ResetModified
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ResetModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.ResetModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.ResetModified
+    name: ResetModified
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ResetModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).ResetModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+  isExternal: true
+  name: SetIsModified()
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetIsModified()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetIsModified()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetIsModified()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetIsModified()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+    name: SetIsModified
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetIsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetIsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetIsModified
+    name: SetIsModified
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetIsModified
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetIsModified
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+  isExternal: true
+  name: SetReadOnly()
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetReadOnly()
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetReadOnly()
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetReadOnly()
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetReadOnly()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+    name: SetReadOnly
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetReadOnly
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.SetReadOnly
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.SetReadOnly
+    name: SetReadOnly
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetReadOnly
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).SetReadOnly
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+  isExternal: true
+  name: Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Unmerge(System.Configuration.ConfigurationElement, System.Configuration.ConfigurationElement, System.Configuration.ConfigurationSaveMode)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Unmerge(ConfigurationElement, ConfigurationElement, ConfigurationSaveMode)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Unmerge(System.Configuration.ConfigurationElement, System.Configuration.ConfigurationElement, System.Configuration.ConfigurationSaveMode)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+    name: Unmerge
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Unmerge
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Unmerge
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationSaveMode
+    name: ConfigurationSaveMode
+    nameWithType: ConfigurationSaveMode
+    fullName: System.Configuration.ConfigurationSaveMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)
+    name: Unmerge
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Unmerge
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Unmerge
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationElement
+    name: ConfigurationElement
+    nameWithType: ConfigurationElement
+    fullName: System.Configuration.ConfigurationElement
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Configuration.ConfigurationSaveMode
+    name: ConfigurationSaveMode
+    nameWithType: ConfigurationSaveMode
+    fullName: System.Configuration.ConfigurationSaveMode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+  isExternal: true
+  name: Item[Int32]
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item[Int32]
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item[System.Int32]
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item(Int32)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Int32)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+  isExternal: true
+  name: Item[Type]
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item[Type]
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item[System.Type]
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item(Type)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item(System.Type)
+  name.vb: Item(Type)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Item(System.Type)
+    name: Item
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Count
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Count
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Count
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Count
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Count
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  commentId: M:CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  isExternal: true
+  name: SetPropertyValueIfNotDefaultValue<T>(String, T)
+  nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(String, T)
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(System.String, T)
+  nameWithType.vb: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  fullName.vb: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(System.String, T)
+  name.vb: SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue<T>
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue(Of T)
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.CustomBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.#ctor
+  isExternal: true
+  name: CustomBindingElement
+  nameWithType: CustomBindingElement.CustomBindingElement
+  fullName: CoreWCF.Configuration.CustomBindingElement.CustomBindingElement
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+  name: Add(BindingElementExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Add(BindingElementExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Add(BindingElementExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Add(CoreWCF.Configuration.BindingElementExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+    name: Add
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.Add
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+    name: Add
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).Add
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.CustomBindingElement.Add*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.Add
+  isExternal: true
+  name: Add
+  nameWithType: CustomBindingElement.Add
+  fullName: CoreWCF.Configuration.CustomBindingElement.Add
+- uid: CoreWCF.Configuration.BindingElementExtensionElement
+  commentId: T:CoreWCF.Configuration.BindingElementExtensionElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: BindingElementExtensionElement
+  nameWithType: BindingElementExtensionElement
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+  isExternal: true
+  name: Add(TServiceModelExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Add(TServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Add(TServiceModelExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Add(TServiceModelExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Add(TServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+    name: Add
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Add
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.Add(`0)
+    name: Add
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Add
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration
+  isExternal: true
+  name: ApplyConfiguration
+  nameWithType: CustomBindingElement.ApplyConfiguration
+  fullName: CoreWCF.Configuration.CustomBindingElement.ApplyConfiguration
+- uid: CoreWCF.Channels.Binding
+  commentId: T:CoreWCF.Channels.Binding
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Binding
+  nameWithType: Binding
+  fullName: CoreWCF.Channels.Binding
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  parent: CoreWCF.Configuration.ServiceModelExtensionCollectionElement{CoreWCF.Configuration.BindingElementExtensionElement}
+  definition: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+  name: CanAdd(BindingElementExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.CanAdd(BindingElementExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).CanAdd(BindingElementExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).CanAdd(CoreWCF.Configuration.BindingElementExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+    name: CanAdd
+    nameWithType: ServiceModelExtensionCollectionElement<BindingElementExtensionElement>.CanAdd
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<CoreWCF.Configuration.BindingElementExtensionElement>.CanAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+    name: CanAdd
+    nameWithType: ServiceModelExtensionCollectionElement(Of BindingElementExtensionElement).CanAdd
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of CoreWCF.Configuration.BindingElementExtensionElement).CanAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement
+    name: BindingElementExtensionElement
+    nameWithType: BindingElementExtensionElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.CustomBindingElement.CanAdd*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.CanAdd
+  isExternal: true
+  name: CanAdd
+  nameWithType: CustomBindingElement.CanAdd
+  fullName: CoreWCF.Configuration.CustomBindingElement.CanAdd
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+  isExternal: true
+  name: CanAdd(TServiceModelExtensionElement)
+  nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CanAdd(TServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CanAdd(TServiceModelExtensionElement)
+  nameWithType.vb: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CanAdd(TServiceModelExtensionElement)
+  fullName.vb: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CanAdd(TServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+    name: CanAdd
+    nameWithType: ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CanAdd
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement<TServiceModelExtensionElement>.CanAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionCollectionElement`1.CanAdd(`0)
+    name: CanAdd
+    nameWithType: ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CanAdd
+    fullName: CoreWCF.Configuration.ServiceModelExtensionCollectionElement(Of TServiceModelExtensionElement).CanAdd
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TServiceModelExtensionElement
+    nameWithType: TServiceModelExtensionElement
+    fullName: TServiceModelExtensionElement
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.CustomBindingElement.CreateBinding*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.CreateBinding
+  isExternal: true
+  name: CreateBinding
+  nameWithType: CustomBindingElement.CreateBinding
+  fullName: CoreWCF.Configuration.CustomBindingElement.CreateBinding
+- uid: CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+  commentId: M:CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+  parent: CoreWCF.Configuration.IStandardBindingElement
+  isExternal: true
+  name: CreateBinding()
+  nameWithType: IStandardBindingElement.CreateBinding()
+  fullName: CoreWCF.Configuration.IStandardBindingElement.CreateBinding()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+    name: CreateBinding
+    nameWithType: IStandardBindingElement.CreateBinding
+    fullName: CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+    name: CreateBinding
+    nameWithType: IStandardBindingElement.CreateBinding
+    fullName: CoreWCF.Configuration.IStandardBindingElement.CreateBinding
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.CustomBindingElement.CloseTimeout*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.CloseTimeout
+  isExternal: true
+  name: CloseTimeout
+  nameWithType: CustomBindingElement.CloseTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.CloseTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: CloseTimeout
+  nameWithType: IDefaultCommunicationTimeouts.CloseTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.Configuration.CustomBindingElement.OpenTimeout*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.OpenTimeout
+  isExternal: true
+  name: OpenTimeout
+  nameWithType: CustomBindingElement.OpenTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.OpenTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: OpenTimeout
+  nameWithType: IDefaultCommunicationTimeouts.OpenTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout
+- uid: CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout
+  isExternal: true
+  name: ReceiveTimeout
+  nameWithType: CustomBindingElement.ReceiveTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.ReceiveTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: ReceiveTimeout
+  nameWithType: IDefaultCommunicationTimeouts.ReceiveTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout
+- uid: CoreWCF.Configuration.CustomBindingElement.SendTimeout*
+  commentId: Overload:CoreWCF.Configuration.CustomBindingElement.SendTimeout
+  isExternal: true
+  name: SendTimeout
+  nameWithType: CustomBindingElement.SendTimeout
+  fullName: CoreWCF.Configuration.CustomBindingElement.SendTimeout
+- uid: CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+  commentId: P:CoreWCF.IDefaultCommunicationTimeouts.SendTimeout
+  parent: CoreWCF.IDefaultCommunicationTimeouts
+  isExternal: true
+  name: SendTimeout
+  nameWithType: IDefaultCommunicationTimeouts.SendTimeout
+  fullName: CoreWCF.IDefaultCommunicationTimeouts.SendTimeout

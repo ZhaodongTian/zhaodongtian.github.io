@@ -1,0 +1,305 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.BufferManager
+  commentId: T:CoreWCF.Channels.BufferManager
+  id: BufferManager
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.BufferManager.#ctor
+  - CoreWCF.Channels.BufferManager.Clear
+  - CoreWCF.Channels.BufferManager.CreateBufferManager(System.Int64,System.Int32)
+  - CoreWCF.Channels.BufferManager.ReturnBuffer(System.Byte[])
+  - CoreWCF.Channels.BufferManager.TakeBuffer(System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: BufferManager
+  nameWithType: BufferManager
+  fullName: CoreWCF.Channels.BufferManager
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Many Windows Communication Foundation (WCF) features require the use of buffers, which are expensive to create and destroy. You can use the <xref:CoreWCF.Channels.BufferManager> class to manage a buffer pool. The pool and its buffers are created when you instantiate this class and destroyed when the buffer pool is reclaimed by garbage collection. Every time you need to use a buffer, you take one from the pool, use it, and return it to the pool when done. This process is much faster than creating and destroying a buffer every time you need to use one.
+  remarks: "This class is commonly used while implementing custom encoders or custom transport channels.  \n\n"
+  syntax:
+    content: 'public abstract class BufferManager : Object'
+    content.vb: >-
+      Public MustInherit Class BufferManager
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.BufferManager.ReturnBuffer(System.Byte[])
+  commentId: M:CoreWCF.Channels.BufferManager.ReturnBuffer(System.Byte[])
+  id: ReturnBuffer(System.Byte[])
+  parent: CoreWCF.Channels.BufferManager
+  langs:
+  - csharp
+  - vb
+  name: ReturnBuffer(Byte[])
+  summary: Returns a buffer to the pool.
+  nameWithType: BufferManager.ReturnBuffer(Byte[])
+  fullName: CoreWCF.Channels.BufferManager.ReturnBuffer(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract void ReturnBuffer(byte[] buffer)
+    parameters:
+    - id: buffer
+      type: System.Byte[]
+      description: A reference to the buffer being returned.
+    content.vb: Public MustOverride Sub ReturnBuffer(buffer As Byte())
+  overload: CoreWCF.Channels.BufferManager.ReturnBuffer*
+  nameWithType.vb: BufferManager.ReturnBuffer(Byte())
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  fullName.vb: CoreWCF.Channels.BufferManager.ReturnBuffer(System.Byte())
+  name.vb: ReturnBuffer(Byte())
+  remark: The buffer is returned to the pool and is available for re-use.
+- uid: CoreWCF.Channels.BufferManager.TakeBuffer(System.Int32)
+  commentId: M:CoreWCF.Channels.BufferManager.TakeBuffer(System.Int32)
+  id: TakeBuffer(System.Int32)
+  parent: CoreWCF.Channels.BufferManager
+  langs:
+  - csharp
+  - vb
+  name: TakeBuffer(Int32)
+  summary: Gets a buffer of at least the specified size from the pool.
+  nameWithType: BufferManager.TakeBuffer(Int32)
+  fullName: CoreWCF.Channels.BufferManager.TakeBuffer(System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract byte[] TakeBuffer(int bufferSize)
+    parameters:
+    - id: bufferSize
+      type: System.Int32
+      description: The size, in bytes, of the requested buffer.
+    return:
+      type: System.Byte[]
+      description: A byte array that is the requested size of the buffer.
+    content.vb: Public MustOverride Function TakeBuffer(bufferSize As Integer) As Byte()
+  overload: CoreWCF.Channels.BufferManager.TakeBuffer*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+  remarks: If successful, the system returns a byte array buffer of at least the requested size.
+- uid: CoreWCF.Channels.BufferManager.Clear
+  commentId: M:CoreWCF.Channels.BufferManager.Clear
+  id: Clear
+  parent: CoreWCF.Channels.BufferManager
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  summary: Releases the buffers currently cached in the manager.
+  nameWithType: BufferManager.Clear()
+  fullName: CoreWCF.Channels.BufferManager.Clear()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract void Clear()
+    content.vb: Public MustOverride Sub Clear
+  overload: CoreWCF.Channels.BufferManager.Clear*
+  modifiers.csharp:
+  - public
+  - abstract
+  modifiers.vb:
+  - Public
+  - MustOverride
+- uid: CoreWCF.Channels.BufferManager.CreateBufferManager(System.Int64,System.Int32)
+  commentId: M:CoreWCF.Channels.BufferManager.CreateBufferManager(System.Int64,System.Int32)
+  id: CreateBufferManager(System.Int64,System.Int32)
+  parent: CoreWCF.Channels.BufferManager
+  langs:
+  - csharp
+  - vb
+  name: CreateBufferManager(Int64, Int32)
+  summary: Creates a new BufferManager with a specified maximum buffer pool size and a maximum size for each individual buffer in the pool.
+  nameWithType: BufferManager.CreateBufferManager(Int64, Int32)
+  fullName: CoreWCF.Channels.BufferManager.CreateBufferManager(System.Int64, System.Int32)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public static BufferManager CreateBufferManager(long maxBufferPoolSize, int maxBufferSize)
+    parameters:
+    - id: maxBufferPoolSize
+      type: System.Int64
+      description: The maximum size of the pool.
+    - id: maxBufferSize
+      type: System.Int32
+      description: The maximum size of an individual buffer.
+    return:
+      type: CoreWCF.Channels.BufferManager
+      description: Returns a [BufferManager](xref:CoreWCF.Channels.BufferManager) object with the specified parameters.
+    content.vb: Public Shared Function CreateBufferManager(maxBufferPoolSize As Long, maxBufferSize As Integer) As BufferManager
+  overload: CoreWCF.Channels.BufferManager.CreateBufferManager*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: This method creates a new buffer pool with as many buffers as can be created.
+- uid: CoreWCF.Channels.BufferManager.#ctor
+  commentId: M:CoreWCF.Channels.BufferManager.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.BufferManager
+  langs:
+  - csharp
+  - vb
+  name: BufferManager()
+  summary: Initializes a new instance of the [BufferManager](xref:CoreWCF.Channels.BufferManager) class.
+  nameWithType: BufferManager.BufferManager()
+  fullName: CoreWCF.Channels.BufferManager.BufferManager()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected BufferManager()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.BufferManager.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  remarks: Because this constructor is protected, you can only call it from a derived class.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.BufferManager.ReturnBuffer*
+  commentId: Overload:CoreWCF.Channels.BufferManager.ReturnBuffer
+  isExternal: true
+  name: ReturnBuffer
+  nameWithType: BufferManager.ReturnBuffer
+  fullName: CoreWCF.Channels.BufferManager.ReturnBuffer
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.Channels.BufferManager.TakeBuffer*
+  commentId: Overload:CoreWCF.Channels.BufferManager.TakeBuffer
+  isExternal: true
+  name: TakeBuffer
+  nameWithType: BufferManager.TakeBuffer
+  fullName: CoreWCF.Channels.BufferManager.TakeBuffer
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.BufferManager.Clear*
+  commentId: Overload:CoreWCF.Channels.BufferManager.Clear
+  isExternal: true
+  name: Clear
+  nameWithType: BufferManager.Clear
+  fullName: CoreWCF.Channels.BufferManager.Clear
+- uid: CoreWCF.Channels.BufferManager.CreateBufferManager*
+  commentId: Overload:CoreWCF.Channels.BufferManager.CreateBufferManager
+  isExternal: true
+  name: CreateBufferManager
+  nameWithType: BufferManager.CreateBufferManager
+  fullName: CoreWCF.Channels.BufferManager.CreateBufferManager
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: CoreWCF.Channels.BufferManager
+  commentId: T:CoreWCF.Channels.BufferManager
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BufferManager
+  nameWithType: BufferManager
+  fullName: CoreWCF.Channels.BufferManager
+- uid: CoreWCF.Channels.BufferManager.#ctor*
+  commentId: Overload:CoreWCF.Channels.BufferManager.#ctor
+  isExternal: true
+  name: BufferManager
+  nameWithType: BufferManager.BufferManager
+  fullName: CoreWCF.Channels.BufferManager.BufferManager

@@ -1,0 +1,318 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform
+  commentId: T:CoreWCF.IdentityModel.ProtectedDataCookieTransform
+  id: ProtectedDataCookieTransform
+  parent: CoreWCF.IdentityModel
+  children:
+  - CoreWCF.IdentityModel.ProtectedDataCookieTransform.#ctor(Microsoft.AspNetCore.DataProtection.IDataProtectionProvider)
+  - CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode(System.Byte[])
+  - CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode(System.Byte[])
+  langs:
+  - csharp
+  - vb
+  name: ProtectedDataCookieTransform
+  nameWithType: ProtectedDataCookieTransform
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  summary: "\nProvides cookie integrity and confidentiality using <xref href=\"System.Security.Cryptography.ProtectedData\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nDue to the nature of <xref href=\"System.Security.Cryptography.ProtectedData\" data-throw-if-not-resolved=\"false\"></xref>, cookies\nwhich use this tranform can only be read by the same machine \nwhich wrote them. As such, this transform is not appropriate\nfor use in applications that run on a web server farm.\n"
+  syntax:
+    content: 'public sealed class ProtectedDataCookieTransform : CookieTransform'
+    content.vb: >-
+      Public NotInheritable Class ProtectedDataCookieTransform
+          Inherits CookieTransform
+  inheritance:
+  - System.Object
+  - CoreWCF.IdentityModel.CookieTransform
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform.#ctor(Microsoft.AspNetCore.DataProtection.IDataProtectionProvider)
+  commentId: M:CoreWCF.IdentityModel.ProtectedDataCookieTransform.#ctor(Microsoft.AspNetCore.DataProtection.IDataProtectionProvider)
+  id: '#ctor(Microsoft.AspNetCore.DataProtection.IDataProtectionProvider)'
+  parent: CoreWCF.IdentityModel.ProtectedDataCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: ProtectedDataCookieTransform(IDataProtectionProvider)
+  nameWithType: ProtectedDataCookieTransform.ProtectedDataCookieTransform(IDataProtectionProvider)
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform.ProtectedDataCookieTransform(Microsoft.AspNetCore.DataProtection.IDataProtectionProvider)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public ProtectedDataCookieTransform(IDataProtectionProvider provider)
+    parameters:
+    - id: provider
+      type: Microsoft.AspNetCore.DataProtection.IDataProtectionProvider
+    content.vb: Public Sub New(provider As IDataProtectionProvider)
+  overload: CoreWCF.IdentityModel.ProtectedDataCookieTransform.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode(System.Byte[])
+  id: Decode(System.Byte[])
+  parent: CoreWCF.IdentityModel.ProtectedDataCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: Decode(Byte[])
+  nameWithType: ProtectedDataCookieTransform.Decode(Byte[])
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public override byte[] Decode(byte[] encoded)
+    parameters:
+    - id: encoded
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Overrides Function Decode(encoded As Byte()) As Byte()
+  overridden: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  overload: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode*
+  nameWithType.vb: ProtectedDataCookieTransform.Decode(Byte())
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode(System.Byte())
+  name.vb: Decode(Byte())
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode(System.Byte[])
+  id: Encode(System.Byte[])
+  parent: CoreWCF.IdentityModel.ProtectedDataCookieTransform
+  langs:
+  - csharp
+  - vb
+  name: Encode(Byte[])
+  nameWithType: ProtectedDataCookieTransform.Encode(Byte[])
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode(System.Byte[])
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel
+  syntax:
+    content: public override byte[] Encode(byte[] value)
+    parameters:
+    - id: value
+      type: System.Byte[]
+    return:
+      type: System.Byte[]
+    content.vb: Public Overrides Function Encode(value As Byte()) As Byte()
+  overridden: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  overload: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode*
+  nameWithType.vb: ProtectedDataCookieTransform.Encode(Byte())
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode(System.Byte())
+  name.vb: Encode(Byte())
+references:
+- uid: CoreWCF.IdentityModel
+  commentId: N:CoreWCF.IdentityModel
+  isExternal: true
+  name: CoreWCF.IdentityModel
+  nameWithType: CoreWCF.IdentityModel
+  fullName: CoreWCF.IdentityModel
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.IdentityModel.CookieTransform
+  commentId: T:CoreWCF.IdentityModel.CookieTransform
+  parent: CoreWCF.IdentityModel
+  isExternal: true
+  name: CookieTransform
+  nameWithType: CookieTransform
+  fullName: CoreWCF.IdentityModel.CookieTransform
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.ProtectedDataCookieTransform.#ctor
+  isExternal: true
+  name: ProtectedDataCookieTransform
+  nameWithType: ProtectedDataCookieTransform.ProtectedDataCookieTransform
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform.ProtectedDataCookieTransform
+- uid: Microsoft.AspNetCore.DataProtection.IDataProtectionProvider
+  commentId: '!:Microsoft.AspNetCore.DataProtection.IDataProtectionProvider'
+  isExternal: true
+  name: IDataProtectionProvider
+  nameWithType: IDataProtectionProvider
+  fullName: Microsoft.AspNetCore.DataProtection.IDataProtectionProvider
+- uid: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  parent: CoreWCF.IdentityModel.CookieTransform
+  isExternal: true
+  name: Decode(Byte[])
+  nameWithType: CookieTransform.Decode(Byte[])
+  fullName: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+  nameWithType.vb: CookieTransform.Decode(Byte())
+  fullName.vb: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte())
+  name.vb: Decode(Byte())
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+    name: Decode
+    nameWithType: CookieTransform.Decode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Decode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Decode(System.Byte[])
+    name: Decode
+    nameWithType: CookieTransform.Decode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Decode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode*
+  commentId: Overload:CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode
+  isExternal: true
+  name: Decode
+  nameWithType: ProtectedDataCookieTransform.Decode
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Decode
+- uid: System.Byte[]
+  isExternal: true
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  commentId: M:CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  parent: CoreWCF.IdentityModel.CookieTransform
+  isExternal: true
+  name: Encode(Byte[])
+  nameWithType: CookieTransform.Encode(Byte[])
+  fullName: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+  nameWithType.vb: CookieTransform.Encode(Byte())
+  fullName.vb: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte())
+  name.vb: Encode(Byte())
+  spec.csharp:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+    name: Encode
+    nameWithType: CookieTransform.Encode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Encode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.IdentityModel.CookieTransform.Encode(System.Byte[])
+    name: Encode
+    nameWithType: CookieTransform.Encode
+    fullName: CoreWCF.IdentityModel.CookieTransform.Encode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode*
+  commentId: Overload:CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode
+  isExternal: true
+  name: Encode
+  nameWithType: ProtectedDataCookieTransform.Encode
+  fullName: CoreWCF.IdentityModel.ProtectedDataCookieTransform.Encode

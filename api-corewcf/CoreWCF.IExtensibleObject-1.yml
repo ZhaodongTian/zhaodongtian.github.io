@@ -1,0 +1,163 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IExtensibleObject`1
+  commentId: T:CoreWCF.IExtensibleObject`1
+  id: IExtensibleObject`1
+  parent: CoreWCF
+  children:
+  - CoreWCF.IExtensibleObject`1.Extensions
+  langs:
+  - csharp
+  - vb
+  name: IExtensibleObject<T>
+  nameWithType: IExtensibleObject<T>
+  fullName: CoreWCF.IExtensibleObject<T>
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  summary: Enable an object to participate in custom behavior, such as registering for events, or watching state transitions.
+  remarks: "Implement &lt;xref:CoreWCF.IExtensibleObject%601> to enable aggregation of extensions.  \n\nFor example, if you are implementing a `TreeNode` class and want to allow external code to add annotations and methods to some instances of `TreeNode`, you can have `TreeNode` implement `IExtensibleObject&lt;TreeNode>`. This enables code that uses `TreeNode` to add objects that implement `IExtensibleObject&lt;TreeNode>` to the &lt;xref:CoreWCF.IExtensibleObject%601.Extensions%2A> collection.  \n\nThere are four extensible objects in Windows Communication Foundation (WCF):  \n\n-   &lt;xref:CoreWCF.ServiceHostBase?displayProperty=nameWithType>  \n\n-   &lt;xref:CoreWCF.InstanceContext?displayProperty=nameWithType>  \n\n-   &lt;xref:CoreWCF.IContextChannel?displayProperty=nameWithType>  \n\n-   &lt;xref:CoreWCF.OperationContext?displayProperty=nameWithType>  \n\nFor a discussion about how to create extension to work with these objects, see [Extensible Objects](/dotnet/framework/wcf/extending/extensible-objects).  \n\n"
+  syntax:
+    content: >-
+      public interface IExtensibleObject<T>
+          where T : IExtensibleObject<T>
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IExtensibleObject(Of T As IExtensibleObject(Of T))
+  nameWithType.vb: IExtensibleObject(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: CoreWCF.IExtensibleObject(Of T)
+  name.vb: IExtensibleObject(Of T)
+- uid: CoreWCF.IExtensibleObject`1.Extensions
+  commentId: P:CoreWCF.IExtensibleObject`1.Extensions
+  id: Extensions
+  parent: CoreWCF.IExtensibleObject`1
+  langs:
+  - csharp
+  - vb
+  name: Extensions
+  nameWithType: IExtensibleObject<T>.Extensions
+  fullName: CoreWCF.IExtensibleObject<T>.Extensions
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF
+  syntax:
+    content: IExtensionCollection<T> Extensions { get; }
+    parameters: []
+    return:
+      type: CoreWCF.IExtensionCollection{{T}}
+    content.vb: ReadOnly Property Extensions As IExtensionCollection(Of T)
+  overload: CoreWCF.IExtensibleObject`1.Extensions*
+  nameWithType.vb: IExtensibleObject(Of T).Extensions
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: CoreWCF.IExtensibleObject(Of T).Extensions
+references:
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.IExtensibleObject`1.Extensions*
+  commentId: Overload:CoreWCF.IExtensibleObject`1.Extensions
+  isExternal: true
+  name: Extensions
+  nameWithType: IExtensibleObject<T>.Extensions
+  fullName: CoreWCF.IExtensibleObject<T>.Extensions
+  nameWithType.vb: IExtensibleObject(Of T).Extensions
+  fullName.vb: CoreWCF.IExtensibleObject(Of T).Extensions
+- uid: CoreWCF.IExtensionCollection{{T}}
+  commentId: T:CoreWCF.IExtensionCollection{`0}
+  parent: CoreWCF
+  definition: CoreWCF.IExtensionCollection`1
+  name: IExtensionCollection<T>
+  nameWithType: IExtensionCollection<T>
+  fullName: CoreWCF.IExtensionCollection<T>
+  nameWithType.vb: IExtensionCollection(Of T)
+  fullName.vb: CoreWCF.IExtensionCollection(Of T)
+  name.vb: IExtensionCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IExtensionCollection`1
+  commentId: T:CoreWCF.IExtensionCollection`1
+  isExternal: true
+  name: IExtensionCollection<T>
+  nameWithType: IExtensionCollection<T>
+  fullName: CoreWCF.IExtensionCollection<T>
+  nameWithType.vb: IExtensionCollection(Of T)
+  fullName.vb: CoreWCF.IExtensionCollection(Of T)
+  name.vb: IExtensionCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.IExtensionCollection`1
+    name: IExtensionCollection
+    nameWithType: IExtensionCollection
+    fullName: CoreWCF.IExtensionCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

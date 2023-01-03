@@ -1,0 +1,379 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.IReplyChannel
+  commentId: T:CoreWCF.Channels.IReplyChannel
+  id: IReplyChannel
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.IReplyChannel.LocalAddress
+  langs:
+  - csharp
+  - vb
+  name: IReplyChannel
+  nameWithType: IReplyChannel
+  fullName: CoreWCF.Channels.IReplyChannel
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Defines the interface that a channel must implement to be on the receiving side of a request-reply communication between messaging endpoints.
+  remarks: "The [IReplyChannel](xref:CoreWCF.Channels.IReplyChannel) interface includes synchronous and asynchronous variants of a [ReceiveRequest](xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest) method return an [RequestContext](xref:CoreWCF.Channels.RequestContext) that can be used to construct replies to received requests.\n\n
+            The contract includes synchronous and asynchronous variants of receive, try-to-receive and wait-for-a-message functionality.\n\n
+            An [IReplyChannel](xref:CoreWCF.Channels.IReplyChannel) is not necessarily bound to a single sender. Other channels and channel interfaces provide correlation between the sender and the reply channel, but the base contract makes no such restriction.\n\n
+            The pull model is used with an [IReplyChannel](xref:CoreWCF.Channels.IReplyChannel) to receive messages. This model consists of calling [ReceiveRequest](xref:System.ServiceModel.Channels.IReplyChannel.ReceiveRequest) (or one of its variants) and then waiting for a message to arrive."
+  syntax:
+    content: 'public interface IReplyChannel : IChannel, ICommunicationObject'
+    content.vb: >-
+      Public Interface IReplyChannel
+          Inherits IChannel, ICommunicationObject
+  inheritedMembers:
+  - CoreWCF.Channels.IChannel.GetProperty``1
+  - CoreWCF.Channels.IChannel.ChannelDispatcher
+  - CoreWCF.ICommunicationObject.Abort
+  - CoreWCF.ICommunicationObject.CloseAsync
+  - CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.ICommunicationObject.OpenAsync
+  - CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  - CoreWCF.ICommunicationObject.State
+  - CoreWCF.ICommunicationObject.Closed
+  - CoreWCF.ICommunicationObject.Closing
+  - CoreWCF.ICommunicationObject.Faulted
+  - CoreWCF.ICommunicationObject.Opened
+  - CoreWCF.ICommunicationObject.Opening
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Channels.IReplyChannel.LocalAddress
+  commentId: P:CoreWCF.Channels.IReplyChannel.LocalAddress
+  id: LocalAddress
+  parent: CoreWCF.Channels.IReplyChannel
+  langs:
+  - csharp
+  - vb
+  name: LocalAddress
+  summary: Gets the address on which this reply channel receives messages.
+  nameWithType: IReplyChannel.LocalAddress
+  fullName: CoreWCF.Channels.IReplyChannel.LocalAddress
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: EndpointAddress LocalAddress { get; }
+    parameters: []
+    return:
+      type: CoreWCF.EndpointAddress
+      description: The [EndpointAddress](xref:CoreWCF.EndpointAddress) on which this reply channel receives messages.
+    content.vb: ReadOnly Property LocalAddress As EndpointAddress
+  overload: CoreWCF.Channels.IReplyChannel.LocalAddress*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Channels.IChannel.GetProperty``1
+  commentId: M:CoreWCF.Channels.IChannel.GetProperty``1
+  parent: CoreWCF.Channels.IChannel
+  isExternal: true
+  name: GetProperty<T>()
+  nameWithType: IChannel.GetProperty<T>()
+  fullName: CoreWCF.Channels.IChannel.GetProperty<T>()
+  nameWithType.vb: IChannel.GetProperty(Of T)()
+  fullName.vb: CoreWCF.Channels.IChannel.GetProperty(Of T)()
+  name.vb: GetProperty(Of T)()
+  spec.csharp:
+  - uid: CoreWCF.Channels.IChannel.GetProperty``1
+    name: GetProperty<T>
+    nameWithType: IChannel.GetProperty<T>
+    fullName: CoreWCF.Channels.IChannel.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.IChannel.GetProperty``1
+    name: GetProperty(Of T)
+    nameWithType: IChannel.GetProperty(Of T)
+    fullName: CoreWCF.Channels.IChannel.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.IChannel.ChannelDispatcher
+  commentId: P:CoreWCF.Channels.IChannel.ChannelDispatcher
+  parent: CoreWCF.Channels.IChannel
+  isExternal: true
+  name: ChannelDispatcher
+  nameWithType: IChannel.ChannelDispatcher
+  fullName: CoreWCF.Channels.IChannel.ChannelDispatcher
+- uid: CoreWCF.ICommunicationObject.Abort
+  commentId: M:CoreWCF.ICommunicationObject.Abort
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Abort()
+  nameWithType: ICommunicationObject.Abort()
+  fullName: CoreWCF.ICommunicationObject.Abort()
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.Abort
+    name: Abort
+    nameWithType: ICommunicationObject.Abort
+    fullName: CoreWCF.ICommunicationObject.Abort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.Abort
+    name: Abort
+    nameWithType: ICommunicationObject.Abort
+    fullName: CoreWCF.ICommunicationObject.Abort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ICommunicationObject.CloseAsync
+  commentId: M:CoreWCF.ICommunicationObject.CloseAsync
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: CloseAsync()
+  nameWithType: ICommunicationObject.CloseAsync()
+  fullName: CoreWCF.ICommunicationObject.CloseAsync()
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: CloseAsync(CancellationToken)
+  nameWithType: ICommunicationObject.CloseAsync(CancellationToken)
+  fullName: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.CloseAsync(System.Threading.CancellationToken)
+    name: CloseAsync
+    nameWithType: ICommunicationObject.CloseAsync
+    fullName: CoreWCF.ICommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ICommunicationObject.OpenAsync
+  commentId: M:CoreWCF.ICommunicationObject.OpenAsync
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: OpenAsync()
+  nameWithType: ICommunicationObject.OpenAsync()
+  fullName: CoreWCF.ICommunicationObject.OpenAsync()
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: OpenAsync(CancellationToken)
+  nameWithType: ICommunicationObject.OpenAsync(CancellationToken)
+  fullName: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.ICommunicationObject.OpenAsync(System.Threading.CancellationToken)
+    name: OpenAsync
+    nameWithType: ICommunicationObject.OpenAsync
+    fullName: CoreWCF.ICommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.ICommunicationObject.State
+  commentId: P:CoreWCF.ICommunicationObject.State
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: State
+  nameWithType: ICommunicationObject.State
+  fullName: CoreWCF.ICommunicationObject.State
+- uid: CoreWCF.ICommunicationObject.Closed
+  commentId: E:CoreWCF.ICommunicationObject.Closed
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Closed
+  nameWithType: ICommunicationObject.Closed
+  fullName: CoreWCF.ICommunicationObject.Closed
+- uid: CoreWCF.ICommunicationObject.Closing
+  commentId: E:CoreWCF.ICommunicationObject.Closing
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Closing
+  nameWithType: ICommunicationObject.Closing
+  fullName: CoreWCF.ICommunicationObject.Closing
+- uid: CoreWCF.ICommunicationObject.Faulted
+  commentId: E:CoreWCF.ICommunicationObject.Faulted
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Faulted
+  nameWithType: ICommunicationObject.Faulted
+  fullName: CoreWCF.ICommunicationObject.Faulted
+- uid: CoreWCF.ICommunicationObject.Opened
+  commentId: E:CoreWCF.ICommunicationObject.Opened
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Opened
+  nameWithType: ICommunicationObject.Opened
+  fullName: CoreWCF.ICommunicationObject.Opened
+- uid: CoreWCF.ICommunicationObject.Opening
+  commentId: E:CoreWCF.ICommunicationObject.Opening
+  parent: CoreWCF.ICommunicationObject
+  isExternal: true
+  name: Opening
+  nameWithType: ICommunicationObject.Opening
+  fullName: CoreWCF.ICommunicationObject.Opening
+- uid: CoreWCF.Channels.IChannel
+  commentId: T:CoreWCF.Channels.IChannel
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: IChannel
+  nameWithType: IChannel
+  fullName: CoreWCF.Channels.IChannel
+- uid: CoreWCF.ICommunicationObject
+  commentId: T:CoreWCF.ICommunicationObject
+  parent: CoreWCF
+  isExternal: true
+  name: ICommunicationObject
+  nameWithType: ICommunicationObject
+  fullName: CoreWCF.ICommunicationObject
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.IReplyChannel.LocalAddress*
+  commentId: Overload:CoreWCF.Channels.IReplyChannel.LocalAddress
+  isExternal: true
+  name: LocalAddress
+  nameWithType: IReplyChannel.LocalAddress
+  fullName: CoreWCF.Channels.IReplyChannel.LocalAddress
+- uid: CoreWCF.EndpointAddress
+  commentId: T:CoreWCF.EndpointAddress
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointAddress
+  fullName: CoreWCF.EndpointAddress

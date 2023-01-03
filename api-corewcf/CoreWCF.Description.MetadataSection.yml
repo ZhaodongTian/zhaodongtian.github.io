@@ -1,0 +1,654 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.MetadataSection
+  commentId: T:CoreWCF.Description.MetadataSection
+  id: MetadataSection
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.MetadataSection.#ctor
+  - CoreWCF.Description.MetadataSection.#ctor(System.String,System.String,System.Object)
+  - CoreWCF.Description.MetadataSection.Attributes
+  - CoreWCF.Description.MetadataSection.CreateFromPolicy(System.Xml.XmlElement,System.String)
+  - CoreWCF.Description.MetadataSection.CreateFromSchema(System.Xml.Schema.XmlSchema)
+  - CoreWCF.Description.MetadataSection.CreateFromServiceDescription(System.Web.Services.Description.ServiceDescription)
+  - CoreWCF.Description.MetadataSection.Dialect
+  - CoreWCF.Description.MetadataSection.Identifier
+  - CoreWCF.Description.MetadataSection.Metadata
+  - CoreWCF.Description.MetadataSection.MetadataExchangeDialect
+  - CoreWCF.Description.MetadataSection.PolicyDialect
+  - CoreWCF.Description.MetadataSection.ServiceDescriptionDialect
+  - CoreWCF.Description.MetadataSection.XmlSchemaDialect
+  langs:
+  - csharp
+  - vb
+  name: MetadataSection
+  nameWithType: MetadataSection
+  fullName: CoreWCF.Description.MetadataSection
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Represents XML metadata or references to XML metadata.
+  remarks: "The &lt;xref:CoreWCF.Description.MetadataSection> class conforms to the definition of the `wsx:Metadata/wsx:MetadataSection` element in the WS-Metadata Exchange specification and contains XML metadata or references to XML metadata.  \n\nA &lt;xref:CoreWCF.Description.MetadataSection> object contains one dialect of metadata in XML form (such as a Web Services Description Language or WSDL file). You can add a &lt;xref:CoreWCF.Description.MetadataSection> to a collection of XML metadata represented by a &lt;xref:CoreWCF.Description.MetadataSet> object. Much of the Windows Communication Foundation (WCF) metadata system, such as the &lt;xref:CoreWCF.Description.MetadataExchangeClient> class, use the &lt;xref:CoreWCF.Description.MetadataSet> class to import or export service metadata in XML form.  \n\nFor example, to export WCF contract or endpoint objects to a &lt;xref:CoreWCF.Description.MetadataSet> object that contains the equivalent metadata in XML form, call the appropriate Export methods on the &lt;xref:CoreWCF.Description.WsdlExporter> class, passing either &lt;xref:CoreWCF.Description.ContractDescription> or &lt;xref:CoreWCF.Description.ServiceEndpoint> objects, and then call the &lt;xref:CoreWCF.Description.WsdlExporter.GetGeneratedMetadata%2A> method.  \n\nTo import XML-based metadata from a &lt;xref:CoreWCF.Description.MetadataSet> object into WCF&lt;xref:CoreWCF.Description.ContractDescription>, &lt;xref:CoreWCF.Description.ServiceEndpoint>, and &lt;xref:CoreWCF.Channels.Binding> objects, pass a &lt;xref:CoreWCF.Description.MetadataSet> object to the constructor of the &lt;xref:CoreWCF.Description.WsdlImporter> class and call one of the import methods.  \n\n\n\n"
+  syntax:
+    content: 'public class MetadataSection : Object'
+    content.vb: >-
+      Public Class MetadataSection
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.MetadataSection.#ctor
+  commentId: M:CoreWCF.Description.MetadataSection.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: MetadataSection()
+  nameWithType: MetadataSection.MetadataSection()
+  fullName: CoreWCF.Description.MetadataSection.MetadataSection()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MetadataSection()
+    content.vb: Public Sub New
+  overload: CoreWCF.Description.MetadataSection.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataSection.#ctor(System.String,System.String,System.Object)
+  commentId: M:CoreWCF.Description.MetadataSection.#ctor(System.String,System.String,System.Object)
+  id: '#ctor(System.String,System.String,System.Object)'
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: MetadataSection(String, String, Object)
+  nameWithType: MetadataSection.MetadataSection(String, String, Object)
+  fullName: CoreWCF.Description.MetadataSection.MetadataSection(System.String, System.String, System.Object)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public MetadataSection(string dialect, string identifier, object metadata)
+    parameters:
+    - id: dialect
+      type: System.String
+    - id: identifier
+      type: System.String
+    - id: metadata
+      type: System.Object
+    content.vb: Public Sub New(dialect As String, identifier As String, metadata As Object)
+  overload: CoreWCF.Description.MetadataSection.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataSection.CreateFromPolicy(System.Xml.XmlElement,System.String)
+  commentId: M:CoreWCF.Description.MetadataSection.CreateFromPolicy(System.Xml.XmlElement,System.String)
+  id: CreateFromPolicy(System.Xml.XmlElement,System.String)
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: CreateFromPolicy(XmlElement, String)
+  nameWithType: MetadataSection.CreateFromPolicy(XmlElement, String)
+  fullName: CoreWCF.Description.MetadataSection.CreateFromPolicy(System.Xml.XmlElement, System.String)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static MetadataSection CreateFromPolicy(XmlElement policy, string identifier)
+    parameters:
+    - id: policy
+      type: System.Xml.XmlElement
+    - id: identifier
+      type: System.String
+    return:
+      type: CoreWCF.Description.MetadataSection
+    content.vb: Public Shared Function CreateFromPolicy(policy As XmlElement, identifier As String) As MetadataSection
+  overload: CoreWCF.Description.MetadataSection.CreateFromPolicy*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.MetadataSection.CreateFromSchema(System.Xml.Schema.XmlSchema)
+  commentId: M:CoreWCF.Description.MetadataSection.CreateFromSchema(System.Xml.Schema.XmlSchema)
+  id: CreateFromSchema(System.Xml.Schema.XmlSchema)
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: CreateFromSchema(XmlSchema)
+  nameWithType: MetadataSection.CreateFromSchema(XmlSchema)
+  fullName: CoreWCF.Description.MetadataSection.CreateFromSchema(System.Xml.Schema.XmlSchema)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static MetadataSection CreateFromSchema(XmlSchema schema)
+    parameters:
+    - id: schema
+      type: System.Xml.Schema.XmlSchema
+    return:
+      type: CoreWCF.Description.MetadataSection
+    content.vb: Public Shared Function CreateFromSchema(schema As XmlSchema) As MetadataSection
+  overload: CoreWCF.Description.MetadataSection.CreateFromSchema*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.MetadataSection.CreateFromServiceDescription(System.Web.Services.Description.ServiceDescription)
+  commentId: M:CoreWCF.Description.MetadataSection.CreateFromServiceDescription(System.Web.Services.Description.ServiceDescription)
+  id: CreateFromServiceDescription(System.Web.Services.Description.ServiceDescription)
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: CreateFromServiceDescription(ServiceDescription)
+  nameWithType: MetadataSection.CreateFromServiceDescription(ServiceDescription)
+  fullName: CoreWCF.Description.MetadataSection.CreateFromServiceDescription(System.Web.Services.Description.ServiceDescription)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static MetadataSection CreateFromServiceDescription(ServiceDescription serviceDescription)
+    parameters:
+    - id: serviceDescription
+      type: System.Web.Services.Description.ServiceDescription
+    return:
+      type: CoreWCF.Description.MetadataSection
+    content.vb: Public Shared Function CreateFromServiceDescription(serviceDescription As ServiceDescription) As MetadataSection
+  overload: CoreWCF.Description.MetadataSection.CreateFromServiceDescription*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.Description.MetadataSection.ServiceDescriptionDialect
+  commentId: P:CoreWCF.Description.MetadataSection.ServiceDescriptionDialect
+  id: ServiceDescriptionDialect
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: ServiceDescriptionDialect
+  nameWithType: MetadataSection.ServiceDescriptionDialect
+  fullName: CoreWCF.Description.MetadataSection.ServiceDescriptionDialect
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static string ServiceDescriptionDialect { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ServiceDescriptionDialect As String
+  overload: CoreWCF.Description.MetadataSection.ServiceDescriptionDialect*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Description.MetadataSection.XmlSchemaDialect
+  commentId: P:CoreWCF.Description.MetadataSection.XmlSchemaDialect
+  id: XmlSchemaDialect
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: XmlSchemaDialect
+  nameWithType: MetadataSection.XmlSchemaDialect
+  fullName: CoreWCF.Description.MetadataSection.XmlSchemaDialect
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static string XmlSchemaDialect { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XmlSchemaDialect As String
+  overload: CoreWCF.Description.MetadataSection.XmlSchemaDialect*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Description.MetadataSection.PolicyDialect
+  commentId: P:CoreWCF.Description.MetadataSection.PolicyDialect
+  id: PolicyDialect
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: PolicyDialect
+  nameWithType: MetadataSection.PolicyDialect
+  fullName: CoreWCF.Description.MetadataSection.PolicyDialect
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static string PolicyDialect { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property PolicyDialect As String
+  overload: CoreWCF.Description.MetadataSection.PolicyDialect*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Description.MetadataSection.MetadataExchangeDialect
+  commentId: P:CoreWCF.Description.MetadataSection.MetadataExchangeDialect
+  id: MetadataExchangeDialect
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: MetadataExchangeDialect
+  nameWithType: MetadataSection.MetadataExchangeDialect
+  fullName: CoreWCF.Description.MetadataSection.MetadataExchangeDialect
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public static string MetadataExchangeDialect { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property MetadataExchangeDialect As String
+  overload: CoreWCF.Description.MetadataSection.MetadataExchangeDialect*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: CoreWCF.Description.MetadataSection.Attributes
+  commentId: P:CoreWCF.Description.MetadataSection.Attributes
+  id: Attributes
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: Attributes
+  nameWithType: MetadataSection.Attributes
+  fullName: CoreWCF.Description.MetadataSection.Attributes
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Collection<XmlAttribute> Attributes { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{System.Xml.XmlAttribute}
+    content.vb: Public ReadOnly Property Attributes As Collection(Of XmlAttribute)
+  overload: CoreWCF.Description.MetadataSection.Attributes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.MetadataSection.Dialect
+  commentId: P:CoreWCF.Description.MetadataSection.Dialect
+  id: Dialect
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: Dialect
+  nameWithType: MetadataSection.Dialect
+  fullName: CoreWCF.Description.MetadataSection.Dialect
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Dialect { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Dialect As String
+  overload: CoreWCF.Description.MetadataSection.Dialect*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataSection.Identifier
+  commentId: P:CoreWCF.Description.MetadataSection.Identifier
+  id: Identifier
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: Identifier
+  nameWithType: MetadataSection.Identifier
+  fullName: CoreWCF.Description.MetadataSection.Identifier
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Identifier { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Identifier As String
+  overload: CoreWCF.Description.MetadataSection.Identifier*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.MetadataSection.Metadata
+  commentId: P:CoreWCF.Description.MetadataSection.Metadata
+  id: Metadata
+  parent: CoreWCF.Description.MetadataSection
+  langs:
+  - csharp
+  - vb
+  name: Metadata
+  nameWithType: MetadataSection.Metadata
+  fullName: CoreWCF.Description.MetadataSection.Metadata
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public object Metadata { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Property Metadata As Object
+  overload: CoreWCF.Description.MetadataSection.Metadata*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.MetadataSection.#ctor*
+  commentId: Overload:CoreWCF.Description.MetadataSection.#ctor
+  isExternal: true
+  name: MetadataSection
+  nameWithType: MetadataSection.MetadataSection
+  fullName: CoreWCF.Description.MetadataSection.MetadataSection
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Description.MetadataSection.CreateFromPolicy*
+  commentId: Overload:CoreWCF.Description.MetadataSection.CreateFromPolicy
+  isExternal: true
+  name: CreateFromPolicy
+  nameWithType: MetadataSection.CreateFromPolicy
+  fullName: CoreWCF.Description.MetadataSection.CreateFromPolicy
+- uid: System.Xml.XmlElement
+  isExternal: true
+  name: XmlElement
+  nameWithType: XmlElement
+  fullName: System.Xml.XmlElement
+- uid: CoreWCF.Description.MetadataSection
+  commentId: T:CoreWCF.Description.MetadataSection
+  parent: CoreWCF.Description
+  isExternal: true
+  name: MetadataSection
+  nameWithType: MetadataSection
+  fullName: CoreWCF.Description.MetadataSection
+- uid: CoreWCF.Description.MetadataSection.CreateFromSchema*
+  commentId: Overload:CoreWCF.Description.MetadataSection.CreateFromSchema
+  isExternal: true
+  name: CreateFromSchema
+  nameWithType: MetadataSection.CreateFromSchema
+  fullName: CoreWCF.Description.MetadataSection.CreateFromSchema
+- uid: System.Xml.Schema.XmlSchema
+  commentId: '!:System.Xml.Schema.XmlSchema'
+  isExternal: true
+  name: XmlSchema
+  nameWithType: XmlSchema
+  fullName: System.Xml.Schema.XmlSchema
+- uid: CoreWCF.Description.MetadataSection.CreateFromServiceDescription*
+  commentId: Overload:CoreWCF.Description.MetadataSection.CreateFromServiceDescription
+  isExternal: true
+  name: CreateFromServiceDescription
+  nameWithType: MetadataSection.CreateFromServiceDescription
+  fullName: CoreWCF.Description.MetadataSection.CreateFromServiceDescription
+- uid: System.Web.Services.Description.ServiceDescription
+  isExternal: true
+  name: ServiceDescription
+  nameWithType: ServiceDescription
+  fullName: System.Web.Services.Description.ServiceDescription
+- uid: CoreWCF.Description.MetadataSection.ServiceDescriptionDialect*
+  commentId: Overload:CoreWCF.Description.MetadataSection.ServiceDescriptionDialect
+  isExternal: true
+  name: ServiceDescriptionDialect
+  nameWithType: MetadataSection.ServiceDescriptionDialect
+  fullName: CoreWCF.Description.MetadataSection.ServiceDescriptionDialect
+- uid: CoreWCF.Description.MetadataSection.XmlSchemaDialect*
+  commentId: Overload:CoreWCF.Description.MetadataSection.XmlSchemaDialect
+  isExternal: true
+  name: XmlSchemaDialect
+  nameWithType: MetadataSection.XmlSchemaDialect
+  fullName: CoreWCF.Description.MetadataSection.XmlSchemaDialect
+- uid: CoreWCF.Description.MetadataSection.PolicyDialect*
+  commentId: Overload:CoreWCF.Description.MetadataSection.PolicyDialect
+  isExternal: true
+  name: PolicyDialect
+  nameWithType: MetadataSection.PolicyDialect
+  fullName: CoreWCF.Description.MetadataSection.PolicyDialect
+- uid: CoreWCF.Description.MetadataSection.MetadataExchangeDialect*
+  commentId: Overload:CoreWCF.Description.MetadataSection.MetadataExchangeDialect
+  isExternal: true
+  name: MetadataExchangeDialect
+  nameWithType: MetadataSection.MetadataExchangeDialect
+  fullName: CoreWCF.Description.MetadataSection.MetadataExchangeDialect
+- uid: CoreWCF.Description.MetadataSection.Attributes*
+  commentId: Overload:CoreWCF.Description.MetadataSection.Attributes
+  isExternal: true
+  name: Attributes
+  nameWithType: MetadataSection.Attributes
+  fullName: CoreWCF.Description.MetadataSection.Attributes
+- uid: System.Collections.ObjectModel.Collection{System.Xml.XmlAttribute}
+  commentId: '!:System.Collections.ObjectModel.Collection{System.Xml.XmlAttribute}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<XmlAttribute>
+  nameWithType: Collection<XmlAttribute>
+  fullName: System.Collections.ObjectModel.Collection<System.Xml.XmlAttribute>
+  nameWithType.vb: Collection(Of XmlAttribute)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of System.Xml.XmlAttribute)
+  name.vb: Collection(Of XmlAttribute)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Xml.XmlAttribute
+    name: XmlAttribute
+    nameWithType: XmlAttribute
+    fullName: System.Xml.XmlAttribute
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Xml.XmlAttribute
+    name: XmlAttribute
+    nameWithType: XmlAttribute
+    fullName: System.Xml.XmlAttribute
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.MetadataSection.Dialect*
+  commentId: Overload:CoreWCF.Description.MetadataSection.Dialect
+  isExternal: true
+  name: Dialect
+  nameWithType: MetadataSection.Dialect
+  fullName: CoreWCF.Description.MetadataSection.Dialect
+- uid: CoreWCF.Description.MetadataSection.Identifier*
+  commentId: Overload:CoreWCF.Description.MetadataSection.Identifier
+  isExternal: true
+  name: Identifier
+  nameWithType: MetadataSection.Identifier
+  fullName: CoreWCF.Description.MetadataSection.Identifier
+- uid: CoreWCF.Description.MetadataSection.Metadata*
+  commentId: Overload:CoreWCF.Description.MetadataSection.Metadata
+  isExternal: true
+  name: Metadata
+  nameWithType: MetadataSection.Metadata
+  fullName: CoreWCF.Description.MetadataSection.Metadata

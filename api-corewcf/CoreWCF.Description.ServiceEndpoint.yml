@@ -1,0 +1,580 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Description.ServiceEndpoint
+  commentId: T:CoreWCF.Description.ServiceEndpoint
+  id: ServiceEndpoint
+  parent: CoreWCF.Description
+  children:
+  - CoreWCF.Description.ServiceEndpoint.#ctor(CoreWCF.Description.ContractDescription)
+  - CoreWCF.Description.ServiceEndpoint.#ctor(CoreWCF.Description.ContractDescription,CoreWCF.Channels.Binding,CoreWCF.EndpointAddress)
+  - CoreWCF.Description.ServiceEndpoint.Address
+  - CoreWCF.Description.ServiceEndpoint.Binding
+  - CoreWCF.Description.ServiceEndpoint.Contract
+  - CoreWCF.Description.ServiceEndpoint.EndpointBehaviors
+  - CoreWCF.Description.ServiceEndpoint.Id
+  - CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint
+  - CoreWCF.Description.ServiceEndpoint.ListenUri
+  - CoreWCF.Description.ServiceEndpoint.Name
+  langs:
+  - csharp
+  - vb
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  summary: Represents the endpoint for a service that allows clients of the service to find and communicate with the service.
+  remarks: "The service endpoint contains the information about the address, binding, contract, and behavior required by a client to find and interact with the service at this endpoint.  \n\n\n\n"
+  syntax:
+    content: 'public class ServiceEndpoint : Object'
+    content.vb: >-
+      Public Class ServiceEndpoint
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Description.ServiceEndpoint.#ctor(CoreWCF.Description.ContractDescription)
+  commentId: M:CoreWCF.Description.ServiceEndpoint.#ctor(CoreWCF.Description.ContractDescription)
+  id: '#ctor(CoreWCF.Description.ContractDescription)'
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: ServiceEndpoint(ContractDescription)
+  nameWithType: ServiceEndpoint.ServiceEndpoint(ContractDescription)
+  fullName: CoreWCF.Description.ServiceEndpoint.ServiceEndpoint(CoreWCF.Description.ContractDescription)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint(ContractDescription contract)
+    parameters:
+    - id: contract
+      type: CoreWCF.Description.ContractDescription
+    content.vb: Public Sub New(contract As ContractDescription)
+  overload: CoreWCF.Description.ServiceEndpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.#ctor(CoreWCF.Description.ContractDescription,CoreWCF.Channels.Binding,CoreWCF.EndpointAddress)
+  commentId: M:CoreWCF.Description.ServiceEndpoint.#ctor(CoreWCF.Description.ContractDescription,CoreWCF.Channels.Binding,CoreWCF.EndpointAddress)
+  id: '#ctor(CoreWCF.Description.ContractDescription,CoreWCF.Channels.Binding,CoreWCF.EndpointAddress)'
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: ServiceEndpoint(ContractDescription, Binding, EndpointAddress)
+  nameWithType: ServiceEndpoint.ServiceEndpoint(ContractDescription, Binding, EndpointAddress)
+  fullName: CoreWCF.Description.ServiceEndpoint.ServiceEndpoint(CoreWCF.Description.ContractDescription, CoreWCF.Channels.Binding, CoreWCF.EndpointAddress)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ServiceEndpoint(ContractDescription contract, Binding binding, EndpointAddress address)
+    parameters:
+    - id: contract
+      type: CoreWCF.Description.ContractDescription
+    - id: binding
+      type: CoreWCF.Channels.Binding
+    - id: address
+      type: CoreWCF.EndpointAddress
+    content.vb: Public Sub New(contract As ContractDescription, binding As Binding, address As EndpointAddress)
+  overload: CoreWCF.Description.ServiceEndpoint.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.Address
+  commentId: P:CoreWCF.Description.ServiceEndpoint.Address
+  id: Address
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: Address
+  nameWithType: ServiceEndpoint.Address
+  fullName: CoreWCF.Description.ServiceEndpoint.Address
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public EndpointAddress Address { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.EndpointAddress
+    content.vb: Public Property Address As EndpointAddress
+  overload: CoreWCF.Description.ServiceEndpoint.Address*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.EndpointBehaviors
+  commentId: P:CoreWCF.Description.ServiceEndpoint.EndpointBehaviors
+  id: EndpointBehaviors
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: EndpointBehaviors
+  nameWithType: ServiceEndpoint.EndpointBehaviors
+  fullName: CoreWCF.Description.ServiceEndpoint.EndpointBehaviors
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public KeyedCollection<Type, IEndpointBehavior> EndpointBehaviors { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.KeyedCollection{System.Type,CoreWCF.Description.IEndpointBehavior}
+    content.vb: Public ReadOnly Property EndpointBehaviors As KeyedCollection(Of Type, IEndpointBehavior)
+  overload: CoreWCF.Description.ServiceEndpoint.EndpointBehaviors*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Description.ServiceEndpoint.Binding
+  commentId: P:CoreWCF.Description.ServiceEndpoint.Binding
+  id: Binding
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: Binding
+  nameWithType: ServiceEndpoint.Binding
+  fullName: CoreWCF.Description.ServiceEndpoint.Binding
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Binding Binding { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.Binding
+    content.vb: Public Property Binding As Binding
+  overload: CoreWCF.Description.ServiceEndpoint.Binding*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.Contract
+  commentId: P:CoreWCF.Description.ServiceEndpoint.Contract
+  id: Contract
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: Contract
+  nameWithType: ServiceEndpoint.Contract
+  fullName: CoreWCF.Description.ServiceEndpoint.Contract
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public ContractDescription Contract { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Description.ContractDescription
+    content.vb: Public Property Contract As ContractDescription
+  overload: CoreWCF.Description.ServiceEndpoint.Contract*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint
+  commentId: P:CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint
+  id: IsSystemEndpoint
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: IsSystemEndpoint
+  nameWithType: ServiceEndpoint.IsSystemEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public bool IsSystemEndpoint { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSystemEndpoint As Boolean
+  overload: CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.Name
+  commentId: P:CoreWCF.Description.ServiceEndpoint.Name
+  id: Name
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ServiceEndpoint.Name
+  fullName: CoreWCF.Description.ServiceEndpoint.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: CoreWCF.Description.ServiceEndpoint.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.ListenUri
+  commentId: P:CoreWCF.Description.ServiceEndpoint.ListenUri
+  id: ListenUri
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: ListenUri
+  nameWithType: ServiceEndpoint.ListenUri
+  fullName: CoreWCF.Description.ServiceEndpoint.ListenUri
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public Uri ListenUri { get; set; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public Property ListenUri As Uri
+  overload: CoreWCF.Description.ServiceEndpoint.ListenUri*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Description.ServiceEndpoint.Id
+  commentId: P:CoreWCF.Description.ServiceEndpoint.Id
+  id: Id
+  parent: CoreWCF.Description.ServiceEndpoint
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ServiceEndpoint.Id
+  fullName: CoreWCF.Description.ServiceEndpoint.Id
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Description
+  syntax:
+    content: public string Id { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Id As String
+  overload: CoreWCF.Description.ServiceEndpoint.Id*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.Description
+  commentId: N:CoreWCF.Description
+  isExternal: true
+  name: CoreWCF.Description
+  nameWithType: CoreWCF.Description
+  fullName: CoreWCF.Description
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Description.ServiceEndpoint.#ctor*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.#ctor
+  isExternal: true
+  name: ServiceEndpoint
+  nameWithType: ServiceEndpoint.ServiceEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint.ServiceEndpoint
+- uid: CoreWCF.Description.ContractDescription
+  commentId: T:CoreWCF.Description.ContractDescription
+  parent: CoreWCF.Description
+  isExternal: true
+  name: ContractDescription
+  nameWithType: ContractDescription
+  fullName: CoreWCF.Description.ContractDescription
+- uid: CoreWCF.Channels.Binding
+  commentId: T:CoreWCF.Channels.Binding
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Binding
+  nameWithType: Binding
+  fullName: CoreWCF.Channels.Binding
+- uid: CoreWCF.EndpointAddress
+  commentId: T:CoreWCF.EndpointAddress
+  parent: CoreWCF
+  isExternal: true
+  name: EndpointAddress
+  nameWithType: EndpointAddress
+  fullName: CoreWCF.EndpointAddress
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Description.ServiceEndpoint.Address*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.Address
+  isExternal: true
+  name: Address
+  nameWithType: ServiceEndpoint.Address
+  fullName: CoreWCF.Description.ServiceEndpoint.Address
+- uid: CoreWCF.Description.ServiceEndpoint.EndpointBehaviors*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.EndpointBehaviors
+  isExternal: true
+  name: EndpointBehaviors
+  nameWithType: ServiceEndpoint.EndpointBehaviors
+  fullName: CoreWCF.Description.ServiceEndpoint.EndpointBehaviors
+- uid: System.Collections.ObjectModel.KeyedCollection{System.Type,CoreWCF.Description.IEndpointBehavior}
+  commentId: '!:System.Collections.ObjectModel.KeyedCollection{System.Type,CoreWCF.Description.IEndpointBehavior}'
+  definition: System.Collections.ObjectModel.KeyedCollection`2
+  name: KeyedCollection<Type, IEndpointBehavior>
+  nameWithType: KeyedCollection<Type, IEndpointBehavior>
+  fullName: System.Collections.ObjectModel.KeyedCollection<System.Type, CoreWCF.Description.IEndpointBehavior>
+  nameWithType.vb: KeyedCollection(Of Type, IEndpointBehavior)
+  fullName.vb: System.Collections.ObjectModel.KeyedCollection(Of System.Type, CoreWCF.Description.IEndpointBehavior)
+  name.vb: KeyedCollection(Of Type, IEndpointBehavior)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.IEndpointBehavior
+    name: IEndpointBehavior
+    nameWithType: IEndpointBehavior
+    fullName: CoreWCF.Description.IEndpointBehavior
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Type
+    name: Type
+    nameWithType: Type
+    fullName: System.Type
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Description.IEndpointBehavior
+    name: IEndpointBehavior
+    nameWithType: IEndpointBehavior
+    fullName: CoreWCF.Description.IEndpointBehavior
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.KeyedCollection`2
+  isExternal: true
+  name: KeyedCollection<, >
+  nameWithType: KeyedCollection<, >
+  fullName: System.Collections.ObjectModel.KeyedCollection<, >
+  nameWithType.vb: KeyedCollection(Of , )
+  fullName.vb: System.Collections.ObjectModel.KeyedCollection(Of , )
+  name.vb: KeyedCollection(Of , )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.KeyedCollection`2
+    name: KeyedCollection
+    nameWithType: KeyedCollection
+    fullName: System.Collections.ObjectModel.KeyedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Description.ServiceEndpoint.Binding*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.Binding
+  isExternal: true
+  name: Binding
+  nameWithType: ServiceEndpoint.Binding
+  fullName: CoreWCF.Description.ServiceEndpoint.Binding
+- uid: CoreWCF.Description.ServiceEndpoint.Contract*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.Contract
+  isExternal: true
+  name: Contract
+  nameWithType: ServiceEndpoint.Contract
+  fullName: CoreWCF.Description.ServiceEndpoint.Contract
+- uid: CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint
+  isExternal: true
+  name: IsSystemEndpoint
+  nameWithType: ServiceEndpoint.IsSystemEndpoint
+  fullName: CoreWCF.Description.ServiceEndpoint.IsSystemEndpoint
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Description.ServiceEndpoint.Name*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.Name
+  isExternal: true
+  name: Name
+  nameWithType: ServiceEndpoint.Name
+  fullName: CoreWCF.Description.ServiceEndpoint.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Description.ServiceEndpoint.ListenUri*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.ListenUri
+  isExternal: true
+  name: ListenUri
+  nameWithType: ServiceEndpoint.ListenUri
+  fullName: CoreWCF.Description.ServiceEndpoint.ListenUri
+- uid: System.Uri
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: CoreWCF.Description.ServiceEndpoint.Id*
+  commentId: Overload:CoreWCF.Description.ServiceEndpoint.Id
+  isExternal: true
+  name: Id
+  nameWithType: ServiceEndpoint.Id
+  fullName: CoreWCF.Description.ServiceEndpoint.Id

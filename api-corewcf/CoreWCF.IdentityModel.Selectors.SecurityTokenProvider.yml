@@ -1,0 +1,753 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  commentId: T:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  id: SecurityTokenProvider
+  parent: CoreWCF.IdentityModel.Selectors
+  children:
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.#ctor
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken(System.TimeSpan)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync(System.Threading.CancellationToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore(System.TimeSpan)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync(System.Threading.CancellationToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation
+  - CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenProvider
+  nameWithType: SecurityTokenProvider
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  summary: Represents a security token provider that handles security tokens for a SOAP message sender.
+  remarks: "Use the &lt;xref:System.IdentityModel.Selectors.SecurityTokenProvider> class when custom security tokens are required. The role of a security token provider is to get a security token when a SOAP message is sent by a client and a security token is used to authenticate the client or to protect the SOAP message. Specifically, the &lt;xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> method is called to get a security token. The security token provider can also be called to cancel and renew a security using the &lt;xref:System.IdentityModel.Selectors.SecurityTokenProvider.CancelToken%2A> and &lt;xref:System.IdentityModel.Selectors.SecurityTokenProvider.RenewToken%2A> methods.  \n\nClasses that derive from the &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager> class implement the &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager.CreateSecurityTokenProvider%2A> method to determine which security token provider is required for a given security token.  \n\nThe &lt;xref:CoreWCF.ClientCredentialsSecurityTokenManager> and &lt;xref:CoreWCF.Security.ServiceCredentialsSecurityTokenManager> classes provide the default implementations for built-in security token types. For custom security token scenarios, you must derive a class from one of the &lt;xref:System.IdentityModel.Selectors.SecurityTokenManager>, &lt;xref:CoreWCF.ClientCredentialsSecurityTokenManager>, or &lt;xref:CoreWCF.Security.ServiceCredentialsSecurityTokenManager> classes and provide the functionality to create the security token provider, security token authenticator, and security token serializer for the custom security token. For more information about creating a custom token, see [How to: Create a Custom Token](/dotnet/framework/wcf/extending/how-to-create-a-custom-token).  \n\n\n\n"
+  syntax:
+    content: 'public abstract class SecurityTokenProvider : Object'
+    content.vb: >-
+      Public MustInherit Class SecurityTokenProvider
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Security.SspiSecurityTokenProvider
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.#ctor
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.#ctor
+  id: '#ctor'
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: SecurityTokenProvider()
+  nameWithType: SecurityTokenProvider.SecurityTokenProvider()
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SecurityTokenProvider()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected SecurityTokenProvider()
+    content.vb: Protected Sub New
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken(System.TimeSpan)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken(System.TimeSpan)
+  id: GetToken(System.TimeSpan)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: GetToken(TimeSpan)
+  nameWithType: SecurityTokenProvider.GetToken(TimeSpan)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken(System.TimeSpan)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public SecurityToken GetToken(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Public Function GetToken(timeout As TimeSpan) As SecurityToken
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync(System.Threading.CancellationToken)
+  id: GetTokenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: GetTokenAsync(CancellationToken)
+  nameWithType: SecurityTokenProvider.GetTokenAsync(CancellationToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public Task<SecurityToken> GetTokenAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.IdentityModel.Tokens.SecurityToken}
+    content.vb: Public Function GetTokenAsync(token As CancellationToken) As Task(Of SecurityToken)
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: RenewToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: RenewToken(TimeSpan, SecurityToken)
+  nameWithType: SecurityTokenProvider.RenewToken(TimeSpan, SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken(System.TimeSpan, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public SecurityToken RenewToken(TimeSpan timeout, SecurityToken tokenToBeRenewed)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+    - id: tokenToBeRenewed
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Public Function RenewToken(timeout As TimeSpan, tokenToBeRenewed As SecurityToken) As SecurityToken
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  id: RenewTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: RenewTokenAsync(SecurityToken, TimeSpan)
+  nameWithType: SecurityTokenProvider.RenewTokenAsync(SecurityToken, TimeSpan)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken, System.TimeSpan)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public Task<SecurityToken> RenewTokenAsync(SecurityToken tokenToBeRenewed, TimeSpan timeout)
+    parameters:
+    - id: tokenToBeRenewed
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    - id: timeout
+      type: System.TimeSpan
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.IdentityModel.Tokens.SecurityToken}
+    content.vb: Public Function RenewTokenAsync(tokenToBeRenewed As SecurityToken, timeout As TimeSpan) As Task(Of SecurityToken)
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: CancelToken(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: CancelToken(TimeSpan, SecurityToken)
+  nameWithType: SecurityTokenProvider.CancelToken(TimeSpan, SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken(System.TimeSpan, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public void CancelToken(TimeSpan timeout, SecurityToken token)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+    - id: token
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Public Sub CancelToken(timeout As TimeSpan, token As SecurityToken)
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  id: CancelTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: CancelTokenAsync(SecurityToken, TimeSpan)
+  nameWithType: SecurityTokenProvider.CancelTokenAsync(SecurityToken, TimeSpan)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync(CoreWCF.IdentityModel.Tokens.SecurityToken, System.TimeSpan)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public Task CancelTokenAsync(SecurityToken token, TimeSpan timeout)
+    parameters:
+    - id: token
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    - id: timeout
+      type: System.TimeSpan
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function CancelTokenAsync(token As SecurityToken, timeout As TimeSpan) As Task
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore(System.TimeSpan)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore(System.TimeSpan)
+  id: GetTokenCore(System.TimeSpan)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: GetTokenCore(TimeSpan)
+  nameWithType: SecurityTokenProvider.GetTokenCore(TimeSpan)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore(System.TimeSpan)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected abstract SecurityToken GetTokenCore(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Protected MustOverride Function GetTokenCore(timeout As TimeSpan) As SecurityToken
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: RenewTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: RenewTokenCore(TimeSpan, SecurityToken)
+  nameWithType: SecurityTokenProvider.RenewTokenCore(TimeSpan, SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore(System.TimeSpan, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected virtual SecurityToken RenewTokenCore(TimeSpan timeout, SecurityToken tokenToBeRenewed)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+    - id: tokenToBeRenewed
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    return:
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Protected Overridable Function RenewTokenCore(timeout As TimeSpan, tokenToBeRenewed As SecurityToken) As SecurityToken
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  id: CancelTokenCore(System.TimeSpan,CoreWCF.IdentityModel.Tokens.SecurityToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: CancelTokenCore(TimeSpan, SecurityToken)
+  nameWithType: SecurityTokenProvider.CancelTokenCore(TimeSpan, SecurityToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore(System.TimeSpan, CoreWCF.IdentityModel.Tokens.SecurityToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected virtual void CancelTokenCore(TimeSpan timeout, SecurityToken token)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+    - id: token
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    content.vb: Protected Overridable Sub CancelTokenCore(timeout As TimeSpan, token As SecurityToken)
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync(System.Threading.CancellationToken)
+  id: GetTokenCoreAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: GetTokenCoreAsync(CancellationToken)
+  nameWithType: SecurityTokenProvider.GetTokenCoreAsync(CancellationToken)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected virtual Task<SecurityToken> GetTokenCoreAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.IdentityModel.Tokens.SecurityToken}
+    content.vb: Protected Overridable Function GetTokenCoreAsync(cancellationToken As CancellationToken) As Task(Of SecurityToken)
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  id: RenewTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: RenewTokenCoreAsync(SecurityToken, TimeSpan)
+  nameWithType: SecurityTokenProvider.RenewTokenCoreAsync(SecurityToken, TimeSpan)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken, System.TimeSpan)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected virtual Task<SecurityToken> RenewTokenCoreAsync(SecurityToken tokenToBeRenewed, TimeSpan timeout)
+    parameters:
+    - id: tokenToBeRenewed
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    - id: timeout
+      type: System.TimeSpan
+    return:
+      type: System.Threading.Tasks.Task{CoreWCF.IdentityModel.Tokens.SecurityToken}
+    content.vb: Protected Overridable Function RenewTokenCoreAsync(tokenToBeRenewed As SecurityToken, timeout As TimeSpan) As Task(Of SecurityToken)
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  commentId: M:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  id: CancelTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken,System.TimeSpan)
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: CancelTokenCoreAsync(SecurityToken, TimeSpan)
+  nameWithType: SecurityTokenProvider.CancelTokenCoreAsync(SecurityToken, TimeSpan)
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync(CoreWCF.IdentityModel.Tokens.SecurityToken, System.TimeSpan)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: protected virtual Task CancelTokenCoreAsync(SecurityToken token, TimeSpan timeout)
+    parameters:
+    - id: token
+      type: CoreWCF.IdentityModel.Tokens.SecurityToken
+    - id: timeout
+      type: System.TimeSpan
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected Overridable Function CancelTokenCoreAsync(token As SecurityToken, timeout As TimeSpan) As Task
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync*
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal
+  commentId: P:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal
+  id: SupportsTokenRenewal
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: SupportsTokenRenewal
+  nameWithType: SecurityTokenProvider.SupportsTokenRenewal
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public virtual bool SupportsTokenRenewal { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable ReadOnly Property SupportsTokenRenewal As Boolean
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation
+  commentId: P:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation
+  id: SupportsTokenCancellation
+  parent: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: SupportsTokenCancellation
+  nameWithType: SecurityTokenProvider.SupportsTokenCancellation
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Selectors
+  syntax:
+    content: public virtual bool SupportsTokenCancellation { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable ReadOnly Property SupportsTokenCancellation As Boolean
+  overload: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  modifiers.vb:
+  - Public
+  - Overridable
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Selectors
+  commentId: N:CoreWCF.IdentityModel.Selectors
+  isExternal: true
+  name: CoreWCF.IdentityModel.Selectors
+  nameWithType: CoreWCF.IdentityModel.Selectors
+  fullName: CoreWCF.IdentityModel.Selectors
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.#ctor
+  isExternal: true
+  name: SecurityTokenProvider
+  nameWithType: SecurityTokenProvider.SecurityTokenProvider
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SecurityTokenProvider
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken
+  isExternal: true
+  name: GetToken
+  nameWithType: SecurityTokenProvider.GetToken
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetToken
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+  commentId: T:CoreWCF.IdentityModel.Tokens.SecurityToken
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SecurityToken
+  nameWithType: SecurityToken
+  fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync
+  isExternal: true
+  name: GetTokenAsync
+  nameWithType: SecurityTokenProvider.GetTokenAsync
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenAsync
+- uid: System.Threading.CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{CoreWCF.IdentityModel.Tokens.SecurityToken}
+  commentId: '!:System.Threading.Tasks.Task{CoreWCF.IdentityModel.Tokens.SecurityToken}'
+  definition: System.Threading.Tasks.Task`1
+  name: Task<SecurityToken>
+  nameWithType: Task<SecurityToken>
+  fullName: System.Threading.Tasks.Task<CoreWCF.IdentityModel.Tokens.SecurityToken>
+  nameWithType.vb: Task(Of SecurityToken)
+  fullName.vb: System.Threading.Tasks.Task(Of CoreWCF.IdentityModel.Tokens.SecurityToken)
+  name.vb: Task(Of SecurityToken)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.IdentityModel.Tokens.SecurityToken
+    name: SecurityToken
+    nameWithType: SecurityToken
+    fullName: CoreWCF.IdentityModel.Tokens.SecurityToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: System.Threading.Tasks.Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: System.Threading.Tasks.Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken
+  isExternal: true
+  name: RenewToken
+  nameWithType: SecurityTokenProvider.RenewToken
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewToken
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync
+  isExternal: true
+  name: RenewTokenAsync
+  nameWithType: SecurityTokenProvider.RenewTokenAsync
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenAsync
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken
+  isExternal: true
+  name: CancelToken
+  nameWithType: SecurityTokenProvider.CancelToken
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelToken
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync
+  isExternal: true
+  name: CancelTokenAsync
+  nameWithType: SecurityTokenProvider.CancelTokenAsync
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenAsync
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore
+  isExternal: true
+  name: GetTokenCore
+  nameWithType: SecurityTokenProvider.GetTokenCore
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore
+  isExternal: true
+  name: RenewTokenCore
+  nameWithType: SecurityTokenProvider.RenewTokenCore
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore
+  isExternal: true
+  name: CancelTokenCore
+  nameWithType: SecurityTokenProvider.CancelTokenCore
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCore
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync
+  isExternal: true
+  name: GetTokenCoreAsync
+  nameWithType: SecurityTokenProvider.GetTokenCoreAsync
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.GetTokenCoreAsync
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync
+  isExternal: true
+  name: RenewTokenCoreAsync
+  nameWithType: SecurityTokenProvider.RenewTokenCoreAsync
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.RenewTokenCoreAsync
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync
+  isExternal: true
+  name: CancelTokenCoreAsync
+  nameWithType: SecurityTokenProvider.CancelTokenCoreAsync
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.CancelTokenCoreAsync
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal
+  isExternal: true
+  name: SupportsTokenRenewal
+  nameWithType: SecurityTokenProvider.SupportsTokenRenewal
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenRenewal
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation*
+  commentId: Overload:CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation
+  isExternal: true
+  name: SupportsTokenCancellation
+  nameWithType: SecurityTokenProvider.SupportsTokenCancellation
+  fullName: CoreWCF.IdentityModel.Selectors.SecurityTokenProvider.SupportsTokenCancellation

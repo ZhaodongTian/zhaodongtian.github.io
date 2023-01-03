@@ -1,0 +1,492 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  id: SessionSecurityTokenCacheKey
+  parent: CoreWCF.IdentityModel.Tokens
+  children:
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor(System.String,System.Xml.UniqueId,System.Xml.UniqueId)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals(System.Object)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  - CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString
+  langs:
+  - csharp
+  - vb
+  name: SessionSecurityTokenCacheKey
+  nameWithType: SessionSecurityTokenCacheKey
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nWhen caching an <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> there are two indexes required. One is the ContextId\nthat is unique across all <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> and the next is KeyGeneration which is \nunique within a session. When an <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> is issued it has only a ContextId. When\nthe <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> is renewed the KeyGeneration is added as an second index to the\n<xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref>. Now the renewed <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> is uniquely identifiable via the ContextId and \nKeyGeneration. \nThe class <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey\" data-throw-if-not-resolved=\"false\"></xref> is used as the index\nto the <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref> cache. This index will always have a valid ContextId specified \nbut the KeyGeneration may be null. There is also an optional EndpointId\nwhich gives the endpoint to which the token is scoped.\n"
+  syntax:
+    content: 'public class SessionSecurityTokenCacheKey : Object'
+    content.vb: >-
+      Public Class SessionSecurityTokenCacheKey
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor(System.String,System.Xml.UniqueId,System.Xml.UniqueId)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor(System.String,System.Xml.UniqueId,System.Xml.UniqueId)
+  id: '#ctor(System.String,System.Xml.UniqueId,System.Xml.UniqueId)'
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: SessionSecurityTokenCacheKey(String, UniqueId, UniqueId)
+  nameWithType: SessionSecurityTokenCacheKey.SessionSecurityTokenCacheKey(String, UniqueId, UniqueId)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.SessionSecurityTokenCacheKey(System.String, System.Xml.UniqueId, System.Xml.UniqueId)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nCreates an instance of <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey\" data-throw-if-not-resolved=\"false\"></xref> which\nis used as an index while caching <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  syntax:
+    content: public SessionSecurityTokenCacheKey(string endpointId, UniqueId contextId, UniqueId keyGeneration)
+    parameters:
+    - id: endpointId
+      type: System.String
+      description: The endpoint Id to which the <xref href="CoreWCF.IdentityModel.Tokens.SessionSecurityToken" data-throw-if-not-resolved="false"></xref> is scoped.
+    - id: contextId
+      type: System.Xml.UniqueId
+      description: UniqueId of the <xref href="CoreWCF.IdentityModel.Tokens.SessionSecurityToken" data-throw-if-not-resolved="false"></xref>.
+    - id: keyGeneration
+      type: System.Xml.UniqueId
+      description: >-
+        UniqueId which is available when the <xref href="CoreWCF.IdentityModel.Tokens.SessionSecurityToken" data-throw-if-not-resolved="false"></xref> is renewed. Will be
+              null when caching a new <xref href="CoreWCF.IdentityModel.Tokens.SessionSecurityToken" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(endpointId As String, contextId As UniqueId, keyGeneration As UniqueId)
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  id: op_Equality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: Equality(SessionSecurityTokenCacheKey, SessionSecurityTokenCacheKey)
+  nameWithType: SessionSecurityTokenCacheKey.Equality(SessionSecurityTokenCacheKey, SessionSecurityTokenCacheKey)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey, CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  type: Operator
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nImplements the equality operator for <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  syntax:
+    content: public static bool operator ==(SessionSecurityTokenCacheKey first, SessionSecurityTokenCacheKey second)
+    parameters:
+    - id: first
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: First object to compare.
+    - id: second
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: Second object to compare.
+    return:
+      type: System.Boolean
+      description: '&apos;true&apos; if both objects are equal.'
+    content.vb: Public Shared Operator =(first As SessionSecurityTokenCacheKey, second As SessionSecurityTokenCacheKey) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  id: op_Inequality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey,CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: Inequality(SessionSecurityTokenCacheKey, SessionSecurityTokenCacheKey)
+  nameWithType: SessionSecurityTokenCacheKey.Inequality(SessionSecurityTokenCacheKey, SessionSecurityTokenCacheKey)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Inequality(CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey, CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey)
+  type: Operator
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nImplements the inequality operator for <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  syntax:
+    content: public static bool operator !=(SessionSecurityTokenCacheKey first, SessionSecurityTokenCacheKey second)
+    parameters:
+    - id: first
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: First object to compare.
+    - id: second
+      type: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+      description: Second object to compare.
+    return:
+      type: System.Boolean
+      description: '&apos;true&apos; if both the objects are different.'
+    content.vb: Public Shared Operator <>(first As SessionSecurityTokenCacheKey, second As SessionSecurityTokenCacheKey) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals(System.Object)
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: SessionSecurityTokenCacheKey.Equals(Object)
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals(System.Object)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nChecks if the given object is the same as the current object.\n"
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to be compared.
+    return:
+      type: System.Boolean
+      description: '&apos;true&apos; if both are the same object else false.'
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode
+  id: GetHashCode
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: SessionSecurityTokenCacheKey.GetHashCode()
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nReturns a Hash code for this object.\n"
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: Hash code for the object as a Integer.
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString
+  commentId: M:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString
+  id: ToString
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: SessionSecurityTokenCacheKey.ToString()
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nImplements ToString() to provide a unique identifier.\n"
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: This key, in string form.
+    content.vb: Public Overrides Function ToString As String
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  commentId: P:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  id: IgnoreKeyGeneration
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: IgnoreKeyGeneration
+  nameWithType: SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets or sets a value indicating whether KeyGeneration can be ignored\nwhile doing index comparison.\n"
+  syntax:
+    content: public bool IgnoreKeyGeneration { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IgnoreKeyGeneration As Boolean
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId
+  commentId: P:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId
+  id: ContextId
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: ContextId
+  nameWithType: SessionSecurityTokenCacheKey.ContextId
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the ContextId of the <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref>"
+  syntax:
+    content: public UniqueId ContextId { get; }
+    parameters: []
+    return:
+      type: System.Xml.UniqueId
+    content.vb: Public ReadOnly Property ContextId As UniqueId
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId
+  commentId: P:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId
+  id: EndpointId
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: EndpointId
+  nameWithType: SessionSecurityTokenCacheKey.EndpointId
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the EndpointId to which this cache entry is scoped.\n"
+  syntax:
+    content: public string EndpointId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property EndpointId As String
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration
+  commentId: P:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration
+  id: KeyGeneration
+  parent: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  langs:
+  - csharp
+  - vb
+  name: KeyGeneration
+  nameWithType: SessionSecurityTokenCacheKey.KeyGeneration
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.IdentityModel.Tokens
+  summary: "\nGets the KeyGeneration of the <xref href=\"CoreWCF.IdentityModel.Tokens.SessionSecurityToken\" data-throw-if-not-resolved=\"false\"></xref>"
+  syntax:
+    content: public UniqueId KeyGeneration { get; }
+    parameters: []
+    return:
+      type: System.Xml.UniqueId
+    content.vb: Public ReadOnly Property KeyGeneration As UniqueId
+  overload: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: CoreWCF.IdentityModel.Tokens
+  commentId: N:CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: CoreWCF.IdentityModel.Tokens
+  nameWithType: CoreWCF.IdentityModel.Tokens
+  fullName: CoreWCF.IdentityModel.Tokens
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.#ctor
+  isExternal: true
+  name: SessionSecurityTokenCacheKey
+  nameWithType: SessionSecurityTokenCacheKey.SessionSecurityTokenCacheKey
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.SessionSecurityTokenCacheKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Xml.UniqueId
+  isExternal: true
+  name: UniqueId
+  nameWithType: UniqueId
+  fullName: System.Xml.UniqueId
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Equality
+  isExternal: true
+  name: Equality
+  nameWithType: SessionSecurityTokenCacheKey.Equality
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equality
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  commentId: T:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+  parent: CoreWCF.IdentityModel.Tokens
+  isExternal: true
+  name: SessionSecurityTokenCacheKey
+  nameWithType: SessionSecurityTokenCacheKey
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.op_Inequality
+  isExternal: true
+  name: Inequality
+  nameWithType: SessionSecurityTokenCacheKey.Inequality
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Inequality
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals
+  isExternal: true
+  name: Equals
+  nameWithType: SessionSecurityTokenCacheKey.Equals
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.Equals
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode
+  isExternal: true
+  name: GetHashCode
+  nameWithType: SessionSecurityTokenCacheKey.GetHashCode
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString
+  isExternal: true
+  name: ToString
+  nameWithType: SessionSecurityTokenCacheKey.ToString
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ToString
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  isExternal: true
+  name: IgnoreKeyGeneration
+  nameWithType: SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.IgnoreKeyGeneration
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId
+  isExternal: true
+  name: ContextId
+  nameWithType: SessionSecurityTokenCacheKey.ContextId
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.ContextId
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId
+  isExternal: true
+  name: EndpointId
+  nameWithType: SessionSecurityTokenCacheKey.EndpointId
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.EndpointId
+- uid: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration*
+  commentId: Overload:CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration
+  isExternal: true
+  name: KeyGeneration
+  nameWithType: SessionSecurityTokenCacheKey.KeyGeneration
+  fullName: CoreWCF.IdentityModel.Tokens.SessionSecurityTokenCacheKey.KeyGeneration

@@ -1,0 +1,739 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Configuration.TransportElement
+  commentId: T:CoreWCF.Configuration.TransportElement
+  id: TransportElement
+  parent: CoreWCF.Configuration
+  children:
+  - CoreWCF.Configuration.TransportElement.#ctor
+  - CoreWCF.Configuration.TransportElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Configuration.TransportElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  - CoreWCF.Configuration.TransportElement.CreateBindingElement
+  - CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement
+  - CoreWCF.Configuration.TransportElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Configuration.TransportElement.ManualAddressing
+  - CoreWCF.Configuration.TransportElement.MaxBufferPoolSize
+  - CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize
+  langs:
+  - csharp
+  - vb
+  name: TransportElement
+  nameWithType: TransportElement
+  fullName: CoreWCF.Configuration.TransportElement
+  type: Class
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  summary: Provides a base class to represent a transport binding configuration element.
+  remarks: "This class contains properties that are common to all of the transport binding configuration elements provided by Windows Communication Foundation (WCF). It handles the translation of the message encoder settings and base transport settings into their run-time manifestations. It delegates the translation of transport-specific settings (for example, HttpProxySettings for HTTP) logic in its concrete derived class transport bindings.  \n\n"
+  syntax:
+    content: 'public abstract class TransportElement : BindingElementExtensionElement'
+    content.vb: >-
+      Public MustInherit Class TransportElement
+          Inherits BindingElementExtensionElement
+  inheritance:
+  - System.Object
+  - CoreWCF.Configuration.ServiceModelConfigurationElement
+  - CoreWCF.Configuration.ServiceModelExtensionElement
+  - CoreWCF.Configuration.BindingElementExtensionElement
+  derivedClasses:
+  - CoreWCF.Configuration.ConnectionOrientedTransportElement
+  - CoreWCF.Configuration.HttpTransportElement
+  inheritedMembers:
+  - CoreWCF.Configuration.BindingElementExtensionElement.BindingElementType
+  - CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+  - CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+  - CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,{T})
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Configuration.TransportElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Configuration.TransportElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  id: ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: ApplyConfiguration(BindingElement)
+  nameWithType: TransportElement.ApplyConfiguration(BindingElement)
+  fullName: CoreWCF.Configuration.TransportElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public override void ApplyConfiguration(BindingElement bindingElement)
+    parameters:
+    - id: bindingElement
+      type: CoreWCF.Channels.BindingElement
+    content.vb: Public Overrides Sub ApplyConfiguration(bindingElement As BindingElement)
+  overridden: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Configuration.TransportElement.ApplyConfiguration*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Configuration.TransportElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  commentId: M:CoreWCF.Configuration.TransportElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  id: CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: CopyFrom(ServiceModelExtensionElement)
+  nameWithType: TransportElement.CopyFrom(ServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.TransportElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public override void CopyFrom(ServiceModelExtensionElement from)
+    parameters:
+    - id: from
+      type: CoreWCF.Configuration.ServiceModelExtensionElement
+    content.vb: Public Overrides Sub CopyFrom(from As ServiceModelExtensionElement)
+  overridden: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  overload: CoreWCF.Configuration.TransportElement.CopyFrom*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Configuration.TransportElement.CreateBindingElement
+  commentId: M:CoreWCF.Configuration.TransportElement.CreateBindingElement
+  id: CreateBindingElement
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: CreateBindingElement()
+  nameWithType: TransportElement.CreateBindingElement()
+  fullName: CoreWCF.Configuration.TransportElement.CreateBindingElement()
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected override BindingElement CreateBindingElement()
+    return:
+      type: CoreWCF.Channels.BindingElement
+    content.vb: Protected Overrides Function CreateBindingElement As BindingElement
+  overridden: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+  overload: CoreWCF.Configuration.TransportElement.CreateBindingElement*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement
+  commentId: M:CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement
+  id: CreateDefaultBindingElement
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: CreateDefaultBindingElement()
+  nameWithType: TransportElement.CreateDefaultBindingElement()
+  fullName: CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement()
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected abstract TransportBindingElement CreateDefaultBindingElement()
+    return:
+      type: CoreWCF.Channels.TransportBindingElement
+    content.vb: Protected MustOverride Function CreateDefaultBindingElement As TransportBindingElement
+  overload: CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: CoreWCF.Configuration.TransportElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Configuration.TransportElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  id: InitializeFrom(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: InitializeFrom(BindingElement)
+  nameWithType: TransportElement.InitializeFrom(BindingElement)
+  fullName: CoreWCF.Configuration.TransportElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected override void InitializeFrom(BindingElement bindingElement)
+    parameters:
+    - id: bindingElement
+      type: CoreWCF.Channels.BindingElement
+    content.vb: Protected Overrides Sub InitializeFrom(bindingElement As BindingElement)
+  overridden: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Configuration.TransportElement.InitializeFrom*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Configuration.TransportElement.#ctor
+  commentId: M:CoreWCF.Configuration.TransportElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: TransportElement()
+  nameWithType: TransportElement.TransportElement()
+  fullName: CoreWCF.Configuration.TransportElement.TransportElement()
+  type: Constructor
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: protected TransportElement()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Configuration.TransportElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Configuration.TransportElement.ManualAddressing
+  commentId: P:CoreWCF.Configuration.TransportElement.ManualAddressing
+  id: ManualAddressing
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: ManualAddressing
+  nameWithType: TransportElement.ManualAddressing
+  fullName: CoreWCF.Configuration.TransportElement.ManualAddressing
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public bool ManualAddressing { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualAddressing As Boolean
+  overload: CoreWCF.Configuration.TransportElement.ManualAddressing*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.TransportElement.MaxBufferPoolSize
+  commentId: P:CoreWCF.Configuration.TransportElement.MaxBufferPoolSize
+  id: MaxBufferPoolSize
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: MaxBufferPoolSize
+  nameWithType: TransportElement.MaxBufferPoolSize
+  fullName: CoreWCF.Configuration.TransportElement.MaxBufferPoolSize
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public long MaxBufferPoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property MaxBufferPoolSize As Long
+  overload: CoreWCF.Configuration.TransportElement.MaxBufferPoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize
+  commentId: P:CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize
+  id: MaxReceivedMessageSize
+  parent: CoreWCF.Configuration.TransportElement
+  langs:
+  - csharp
+  - vb
+  name: MaxReceivedMessageSize
+  nameWithType: TransportElement.MaxReceivedMessageSize
+  fullName: CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize
+  type: Property
+  source:
+    path: CoreWCF.ConfigurationManager
+    isExternal: true
+  assemblies:
+  - CoreWCF.ConfigurationManager
+  namespace: CoreWCF.Configuration
+  syntax:
+    content: public long MaxReceivedMessageSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property MaxReceivedMessageSize As Long
+  overload: CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Configuration
+  commentId: N:CoreWCF.Configuration
+  isExternal: true
+  name: CoreWCF.Configuration
+  nameWithType: CoreWCF.Configuration
+  fullName: CoreWCF.Configuration
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement
+  commentId: T:CoreWCF.Configuration.ServiceModelConfigurationElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: ServiceModelConfigurationElement
+  nameWithType: ServiceModelConfigurationElement
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement
+  commentId: T:CoreWCF.Configuration.ServiceModelExtensionElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: ServiceModelExtensionElement
+  nameWithType: ServiceModelExtensionElement
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement
+- uid: CoreWCF.Configuration.BindingElementExtensionElement
+  commentId: T:CoreWCF.Configuration.BindingElementExtensionElement
+  parent: CoreWCF.Configuration
+  isExternal: true
+  name: BindingElementExtensionElement
+  nameWithType: BindingElementExtensionElement
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement
+- uid: CoreWCF.Configuration.BindingElementExtensionElement.BindingElementType
+  commentId: P:CoreWCF.Configuration.BindingElementExtensionElement.BindingElementType
+  parent: CoreWCF.Configuration.BindingElementExtensionElement
+  isExternal: true
+  name: BindingElementType
+  nameWithType: BindingElementExtensionElement.BindingElementType
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement.BindingElementType
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+  parent: CoreWCF.Configuration.ServiceModelExtensionElement
+  isExternal: true
+  name: ExtensionCollectionName
+  nameWithType: ServiceModelExtensionElement.ExtensionCollectionName
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement.ExtensionCollectionName
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+  commentId: P:CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+  parent: CoreWCF.Configuration.ServiceModelExtensionElement
+  isExternal: true
+  name: ConfigurationElementName
+  nameWithType: ServiceModelExtensionElement.ConfigurationElementName
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement.ConfigurationElementName
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,{T})
+  commentId: M:CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  parent: CoreWCF.Configuration.ServiceModelConfigurationElement
+  definition: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  name: SetPropertyValueIfNotDefaultValue<T>(String, T)
+  nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(String, T)
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(System.String, T)
+  nameWithType.vb: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  fullName.vb: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(System.String, T)
+  name.vb: SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue<T>
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue(Of T)
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  commentId: M:CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+  isExternal: true
+  name: SetPropertyValueIfNotDefaultValue<T>(String, T)
+  nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(String, T)
+  fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>(System.String, T)
+  nameWithType.vb: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  fullName.vb: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)(System.String, T)
+  name.vb: SetPropertyValueIfNotDefaultValue(Of T)(String, T)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue<T>
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue``1(System.String,``0)
+    name: SetPropertyValueIfNotDefaultValue(Of T)
+    nameWithType: ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    fullName: CoreWCF.Configuration.ServiceModelConfigurationElement.SetPropertyValueIfNotDefaultValue(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Configuration.BindingElementExtensionElement
+  isExternal: true
+  name: ApplyConfiguration(BindingElement)
+  nameWithType: BindingElementExtensionElement.ApplyConfiguration(BindingElement)
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+    name: ApplyConfiguration
+    nameWithType: BindingElementExtensionElement.ApplyConfiguration
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration(CoreWCF.Channels.BindingElement)
+    name: ApplyConfiguration
+    nameWithType: BindingElementExtensionElement.ApplyConfiguration
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement.ApplyConfiguration
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.TransportElement.ApplyConfiguration*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.ApplyConfiguration
+  isExternal: true
+  name: ApplyConfiguration
+  nameWithType: TransportElement.ApplyConfiguration
+  fullName: CoreWCF.Configuration.TransportElement.ApplyConfiguration
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  commentId: M:CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  parent: CoreWCF.Configuration.ServiceModelExtensionElement
+  isExternal: true
+  name: CopyFrom(ServiceModelExtensionElement)
+  nameWithType: ServiceModelExtensionElement.CopyFrom(ServiceModelExtensionElement)
+  fullName: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+    name: CopyFrom
+    nameWithType: ServiceModelExtensionElement.CopyFrom
+    fullName: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.ServiceModelExtensionElement
+    name: ServiceModelExtensionElement
+    nameWithType: ServiceModelExtensionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom(CoreWCF.Configuration.ServiceModelExtensionElement)
+    name: CopyFrom
+    nameWithType: ServiceModelExtensionElement.CopyFrom
+    fullName: CoreWCF.Configuration.ServiceModelExtensionElement.CopyFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Configuration.ServiceModelExtensionElement
+    name: ServiceModelExtensionElement
+    nameWithType: ServiceModelExtensionElement
+    fullName: CoreWCF.Configuration.ServiceModelExtensionElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.TransportElement.CopyFrom*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.CopyFrom
+  isExternal: true
+  name: CopyFrom
+  nameWithType: TransportElement.CopyFrom
+  fullName: CoreWCF.Configuration.TransportElement.CopyFrom
+- uid: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+  commentId: M:CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+  parent: CoreWCF.Configuration.BindingElementExtensionElement
+  isExternal: true
+  name: CreateBindingElement()
+  nameWithType: BindingElementExtensionElement.CreateBindingElement()
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement()
+  spec.csharp:
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+    name: CreateBindingElement
+    nameWithType: BindingElementExtensionElement.CreateBindingElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+    name: CreateBindingElement
+    nameWithType: BindingElementExtensionElement.CreateBindingElement
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement.CreateBindingElement
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.TransportElement.CreateBindingElement*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.CreateBindingElement
+  isExternal: true
+  name: CreateBindingElement
+  nameWithType: TransportElement.CreateBindingElement
+  fullName: CoreWCF.Configuration.TransportElement.CreateBindingElement
+- uid: CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement
+  isExternal: true
+  name: CreateDefaultBindingElement
+  nameWithType: TransportElement.CreateDefaultBindingElement
+  fullName: CoreWCF.Configuration.TransportElement.CreateDefaultBindingElement
+- uid: CoreWCF.Channels.TransportBindingElement
+  commentId: T:CoreWCF.Channels.TransportBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: TransportBindingElement
+  nameWithType: TransportBindingElement
+  fullName: CoreWCF.Channels.TransportBindingElement
+- uid: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Configuration.BindingElementExtensionElement
+  isExternal: true
+  name: InitializeFrom(BindingElement)
+  nameWithType: BindingElementExtensionElement.InitializeFrom(BindingElement)
+  fullName: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+    name: InitializeFrom
+    nameWithType: BindingElementExtensionElement.InitializeFrom
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom(CoreWCF.Channels.BindingElement)
+    name: InitializeFrom
+    nameWithType: BindingElementExtensionElement.InitializeFrom
+    fullName: CoreWCF.Configuration.BindingElementExtensionElement.InitializeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Configuration.TransportElement.InitializeFrom*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.InitializeFrom
+  isExternal: true
+  name: InitializeFrom
+  nameWithType: TransportElement.InitializeFrom
+  fullName: CoreWCF.Configuration.TransportElement.InitializeFrom
+- uid: CoreWCF.Configuration.TransportElement.#ctor*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.#ctor
+  isExternal: true
+  name: TransportElement
+  nameWithType: TransportElement.TransportElement
+  fullName: CoreWCF.Configuration.TransportElement.TransportElement
+- uid: CoreWCF.Configuration.TransportElement.ManualAddressing*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.ManualAddressing
+  isExternal: true
+  name: ManualAddressing
+  nameWithType: TransportElement.ManualAddressing
+  fullName: CoreWCF.Configuration.TransportElement.ManualAddressing
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Configuration.TransportElement.MaxBufferPoolSize*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.MaxBufferPoolSize
+  isExternal: true
+  name: MaxBufferPoolSize
+  nameWithType: TransportElement.MaxBufferPoolSize
+  fullName: CoreWCF.Configuration.TransportElement.MaxBufferPoolSize
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize*
+  commentId: Overload:CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize
+  isExternal: true
+  name: MaxReceivedMessageSize
+  nameWithType: TransportElement.MaxReceivedMessageSize
+  fullName: CoreWCF.Configuration.TransportElement.MaxReceivedMessageSize

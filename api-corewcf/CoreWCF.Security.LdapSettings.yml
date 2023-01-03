@@ -1,0 +1,690 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Security.LdapSettings
+  commentId: T:CoreWCF.Security.LdapSettings
+  id: LdapSettings
+  parent: CoreWCF.Security
+  children:
+  - CoreWCF.Security.LdapSettings.#ctor(System.String,System.String,System.String)
+  - CoreWCF.Security.LdapSettings.#ctor(System.String,System.String,System.String,System.String,System.String)
+  - CoreWCF.Security.LdapSettings.#ctor(System.String[],System.String,System.String)
+  - CoreWCF.Security.LdapSettings.#ctor(System.String[],System.String,System.String,System.String,System.String)
+  - CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration
+  - CoreWCF.Security.LdapSettings.ClaimsCacheSize
+  - CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration
+  - CoreWCF.Security.LdapSettings.Domain
+  - CoreWCF.Security.LdapSettings.EnableLdapClaimResolution
+  - CoreWCF.Security.LdapSettings.IgnoreNestedGroups
+  - CoreWCF.Security.LdapSettings.MachineAccountName
+  - CoreWCF.Security.LdapSettings.MachineAccountPassword
+  - CoreWCF.Security.LdapSettings.OrgUnit
+  - CoreWCF.Security.LdapSettings.Servers
+  - CoreWCF.Security.LdapSettings.Validate
+  langs:
+  - csharp
+  - vb
+  name: LdapSettings
+  nameWithType: LdapSettings
+  fullName: CoreWCF.Security.LdapSettings
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  syntax:
+    content: 'public class LdapSettings : Object'
+    content.vb: >-
+      Public Class LdapSettings
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Security.LdapSettings.#ctor(System.String,System.String,System.String)
+  commentId: M:CoreWCF.Security.LdapSettings.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: LdapSettings(String, String, String)
+  nameWithType: LdapSettings.LdapSettings(String, String, String)
+  fullName: CoreWCF.Security.LdapSettings.LdapSettings(System.String, System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nDefault constructor. \n"
+  syntax:
+    content: public LdapSettings(string server, string domain, string orgUnit)
+    parameters:
+    - id: server
+      type: System.String
+    - id: domain
+      type: System.String
+      description: domain name to search for
+    - id: orgUnit
+      type: System.String
+      description: 'org unit to search for. This is required per the issue https://github.com/dotnet/runtime/issues/44826 for CoreWCF to work cross platform, once upgraded to .NET6, this is not required anymore. '
+    content.vb: Public Sub New(server As String, domain As String, orgUnit As String)
+  overload: CoreWCF.Security.LdapSettings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.#ctor(System.String,System.String,System.String,System.String,System.String)
+  commentId: M:CoreWCF.Security.LdapSettings.#ctor(System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String,System.String)'
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: LdapSettings(String, String, String, String, String)
+  nameWithType: LdapSettings.LdapSettings(String, String, String, String, String)
+  fullName: CoreWCF.Security.LdapSettings.LdapSettings(System.String, System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nConstructor.\n"
+  syntax:
+    content: public LdapSettings(string server, string domain, string machineAccountName, string machineAccountPassword, string orgUnit)
+    parameters:
+    - id: server
+      type: System.String
+      description: "\n"
+    - id: domain
+      type: System.String
+      description: "\n"
+    - id: machineAccountName
+      type: System.String
+      description: "\n"
+    - id: machineAccountPassword
+      type: System.String
+      description: "\n"
+    - id: orgUnit
+      type: System.String
+      description: "\n"
+    content.vb: Public Sub New(server As String, domain As String, machineAccountName As String, machineAccountPassword As String, orgUnit As String)
+  overload: CoreWCF.Security.LdapSettings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.#ctor(System.String[],System.String,System.String)
+  commentId: M:CoreWCF.Security.LdapSettings.#ctor(System.String[],System.String,System.String)
+  id: '#ctor(System.String[],System.String,System.String)'
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: LdapSettings(String[], String, String)
+  nameWithType: LdapSettings.LdapSettings(String[], String, String)
+  fullName: CoreWCF.Security.LdapSettings.LdapSettings(System.String[], System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nDefault constructor. \n"
+  syntax:
+    content: public LdapSettings(string[] servers, string domain, string orgUnit)
+    parameters:
+    - id: servers
+      type: System.String[]
+      description: List of ldap servers
+    - id: domain
+      type: System.String
+      description: domain name to search for
+    - id: orgUnit
+      type: System.String
+      description: 'This is required '
+    content.vb: Public Sub New(servers As String(), domain As String, orgUnit As String)
+  overload: CoreWCF.Security.LdapSettings.#ctor*
+  nameWithType.vb: LdapSettings.LdapSettings(String(), String, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.LdapSettings.LdapSettings(System.String(), System.String, System.String)
+  name.vb: LdapSettings(String(), String, String)
+- uid: CoreWCF.Security.LdapSettings.#ctor(System.String[],System.String,System.String,System.String,System.String)
+  commentId: M:CoreWCF.Security.LdapSettings.#ctor(System.String[],System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String[],System.String,System.String,System.String,System.String)'
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: LdapSettings(String[], String, String, String, String)
+  nameWithType: LdapSettings.LdapSettings(String[], String, String, String, String)
+  fullName: CoreWCF.Security.LdapSettings.LdapSettings(System.String[], System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nConstructor to pass machine account name and machine account password.\n"
+  syntax:
+    content: public LdapSettings(string[] servers, string domain, string machineAccountName, string machineAccountPassword, string orgUnit)
+    parameters:
+    - id: servers
+      type: System.String[]
+      description: "\n"
+    - id: domain
+      type: System.String
+      description: "\n"
+    - id: machineAccountName
+      type: System.String
+      description: "\n"
+    - id: machineAccountPassword
+      type: System.String
+      description: "\n"
+    - id: orgUnit
+      type: System.String
+    content.vb: Public Sub New(servers As String(), domain As String, machineAccountName As String, machineAccountPassword As String, orgUnit As String)
+  overload: CoreWCF.Security.LdapSettings.#ctor*
+  nameWithType.vb: LdapSettings.LdapSettings(String(), String, String, String, String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Security.LdapSettings.LdapSettings(System.String(), System.String, System.String, System.String, System.String)
+  name.vb: LdapSettings(String(), String, String, String, String)
+- uid: CoreWCF.Security.LdapSettings.Validate
+  commentId: M:CoreWCF.Security.LdapSettings.Validate
+  id: Validate
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: LdapSettings.Validate()
+  fullName: CoreWCF.Security.LdapSettings.Validate()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nValidates the <xref href=\"CoreWCF.Security.LdapSettings\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  syntax:
+    content: public void Validate()
+    content.vb: Public Sub Validate
+  overload: CoreWCF.Security.LdapSettings.Validate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.Servers
+  commentId: P:CoreWCF.Security.LdapSettings.Servers
+  id: Servers
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: Servers
+  nameWithType: LdapSettings.Servers
+  fullName: CoreWCF.Security.LdapSettings.Servers
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nlist of servers for ldap search\n"
+  syntax:
+    content: public string[] Servers { get; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public ReadOnly Property Servers As String()
+  overload: CoreWCF.Security.LdapSettings.Servers*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.LdapSettings.EnableLdapClaimResolution
+  commentId: P:CoreWCF.Security.LdapSettings.EnableLdapClaimResolution
+  id: EnableLdapClaimResolution
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: EnableLdapClaimResolution
+  nameWithType: LdapSettings.EnableLdapClaimResolution
+  fullName: CoreWCF.Security.LdapSettings.EnableLdapClaimResolution
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nConfigure whether LDAP connection should be used to resolve claims.\nThis is mainly used on Linux.\n"
+  syntax:
+    content: public bool EnableLdapClaimResolution { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableLdapClaimResolution As Boolean
+  overload: CoreWCF.Security.LdapSettings.EnableLdapClaimResolution*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.Domain
+  commentId: P:CoreWCF.Security.LdapSettings.Domain
+  id: Domain
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: Domain
+  nameWithType: LdapSettings.Domain
+  fullName: CoreWCF.Security.LdapSettings.Domain
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe domain to use for the LDAP connection. This is a mandatory setting.\n"
+  example:
+  - "\nDOMAIN.com\n"
+  syntax:
+    content: public string Domain { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Domain As String
+  overload: CoreWCF.Security.LdapSettings.Domain*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.LdapSettings.OrgUnit
+  commentId: P:CoreWCF.Security.LdapSettings.OrgUnit
+  id: OrgUnit
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: OrgUnit
+  nameWithType: LdapSettings.OrgUnit
+  fullName: CoreWCF.Security.LdapSettings.OrgUnit
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nOrganization unit to start with. If not provided, it will search from top domain.\n"
+  syntax:
+    content: public string OrgUnit { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property OrgUnit As String
+  overload: CoreWCF.Security.LdapSettings.OrgUnit*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.LdapSettings.MachineAccountName
+  commentId: P:CoreWCF.Security.LdapSettings.MachineAccountName
+  id: MachineAccountName
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: MachineAccountName
+  nameWithType: LdapSettings.MachineAccountName
+  fullName: CoreWCF.Security.LdapSettings.MachineAccountName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe machine account name to use when opening the LDAP connection.\nIf this is not provided, the machine wide credentials of the\ndomain joined machine will be used.\n"
+  syntax:
+    content: public string MachineAccountName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MachineAccountName As String
+  overload: CoreWCF.Security.LdapSettings.MachineAccountName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.LdapSettings.MachineAccountPassword
+  commentId: P:CoreWCF.Security.LdapSettings.MachineAccountPassword
+  id: MachineAccountPassword
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: MachineAccountPassword
+  nameWithType: LdapSettings.MachineAccountPassword
+  fullName: CoreWCF.Security.LdapSettings.MachineAccountPassword
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe machine account password to use when opening the LDAP connection.\nThis must be provided if a <xref href=\"CoreWCF.Security.LdapSettings.MachineAccountName\" data-throw-if-not-resolved=\"false\"></xref> is provided.\n"
+  syntax:
+    content: public string MachineAccountPassword { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MachineAccountPassword As String
+  overload: CoreWCF.Security.LdapSettings.MachineAccountPassword*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Security.LdapSettings.IgnoreNestedGroups
+  commentId: P:CoreWCF.Security.LdapSettings.IgnoreNestedGroups
+  id: IgnoreNestedGroups
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: IgnoreNestedGroups
+  nameWithType: LdapSettings.IgnoreNestedGroups
+  fullName: CoreWCF.Security.LdapSettings.IgnoreNestedGroups
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThis option indicates whether nested groups should be ignored when\nresolving Roles. The default is false.\n"
+  syntax:
+    content: public bool IgnoreNestedGroups { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IgnoreNestedGroups As Boolean
+  overload: CoreWCF.Security.LdapSettings.IgnoreNestedGroups*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration
+  commentId: P:CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration
+  id: ClaimsCacheSlidingExpiration
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: ClaimsCacheSlidingExpiration
+  nameWithType: LdapSettings.ClaimsCacheSlidingExpiration
+  fullName: CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe sliding expiration that should be used for entries in the cache for user claims, defaults to 10 minutes.\nThis is a sliding expiration that will extend each time claims for a user is retrieved.\n"
+  syntax:
+    content: public TimeSpan ClaimsCacheSlidingExpiration { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property ClaimsCacheSlidingExpiration As TimeSpan
+  overload: CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration
+  commentId: P:CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration
+  id: ClaimsCacheAbsoluteExpiration
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: ClaimsCacheAbsoluteExpiration
+  nameWithType: LdapSettings.ClaimsCacheAbsoluteExpiration
+  fullName: CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe absolute expiration that should be used for entries in the cache for user claims, defaults to 60 minutes.\nThis is an absolute expiration that starts when a claims for a user is retrieved for the first time.\n"
+  syntax:
+    content: public TimeSpan ClaimsCacheAbsoluteExpiration { get; set; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public Property ClaimsCacheAbsoluteExpiration As TimeSpan
+  overload: CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Security.LdapSettings.ClaimsCacheSize
+  commentId: P:CoreWCF.Security.LdapSettings.ClaimsCacheSize
+  id: ClaimsCacheSize
+  parent: CoreWCF.Security.LdapSettings
+  langs:
+  - csharp
+  - vb
+  name: ClaimsCacheSize
+  nameWithType: LdapSettings.ClaimsCacheSize
+  fullName: CoreWCF.Security.LdapSettings.ClaimsCacheSize
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Security
+  summary: "\nThe maximum size of the claim results cache, defaults to 100 MB.\n"
+  syntax:
+    content: public int ClaimsCacheSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property ClaimsCacheSize As Integer
+  overload: CoreWCF.Security.LdapSettings.ClaimsCacheSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Security
+  commentId: N:CoreWCF.Security
+  isExternal: true
+  name: CoreWCF.Security
+  nameWithType: CoreWCF.Security
+  fullName: CoreWCF.Security
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Security.LdapSettings.#ctor*
+  commentId: Overload:CoreWCF.Security.LdapSettings.#ctor
+  isExternal: true
+  name: LdapSettings
+  nameWithType: LdapSettings.LdapSettings
+  fullName: CoreWCF.Security.LdapSettings.LdapSettings
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: CoreWCF.Security.LdapSettings.Validate*
+  commentId: Overload:CoreWCF.Security.LdapSettings.Validate
+  isExternal: true
+  name: Validate
+  nameWithType: LdapSettings.Validate
+  fullName: CoreWCF.Security.LdapSettings.Validate
+- uid: CoreWCF.Security.LdapSettings.Servers*
+  commentId: Overload:CoreWCF.Security.LdapSettings.Servers
+  isExternal: true
+  name: Servers
+  nameWithType: LdapSettings.Servers
+  fullName: CoreWCF.Security.LdapSettings.Servers
+- uid: CoreWCF.Security.LdapSettings.EnableLdapClaimResolution*
+  commentId: Overload:CoreWCF.Security.LdapSettings.EnableLdapClaimResolution
+  isExternal: true
+  name: EnableLdapClaimResolution
+  nameWithType: LdapSettings.EnableLdapClaimResolution
+  fullName: CoreWCF.Security.LdapSettings.EnableLdapClaimResolution
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Security.LdapSettings.Domain*
+  commentId: Overload:CoreWCF.Security.LdapSettings.Domain
+  isExternal: true
+  name: Domain
+  nameWithType: LdapSettings.Domain
+  fullName: CoreWCF.Security.LdapSettings.Domain
+- uid: CoreWCF.Security.LdapSettings.OrgUnit*
+  commentId: Overload:CoreWCF.Security.LdapSettings.OrgUnit
+  isExternal: true
+  name: OrgUnit
+  nameWithType: LdapSettings.OrgUnit
+  fullName: CoreWCF.Security.LdapSettings.OrgUnit
+- uid: CoreWCF.Security.LdapSettings.MachineAccountName*
+  commentId: Overload:CoreWCF.Security.LdapSettings.MachineAccountName
+  isExternal: true
+  name: MachineAccountName
+  nameWithType: LdapSettings.MachineAccountName
+  fullName: CoreWCF.Security.LdapSettings.MachineAccountName
+- uid: CoreWCF.Security.LdapSettings.MachineAccountPassword*
+  commentId: Overload:CoreWCF.Security.LdapSettings.MachineAccountPassword
+  isExternal: true
+  name: MachineAccountPassword
+  nameWithType: LdapSettings.MachineAccountPassword
+  fullName: CoreWCF.Security.LdapSettings.MachineAccountPassword
+- uid: CoreWCF.Security.LdapSettings.IgnoreNestedGroups*
+  commentId: Overload:CoreWCF.Security.LdapSettings.IgnoreNestedGroups
+  isExternal: true
+  name: IgnoreNestedGroups
+  nameWithType: LdapSettings.IgnoreNestedGroups
+  fullName: CoreWCF.Security.LdapSettings.IgnoreNestedGroups
+- uid: CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration*
+  commentId: Overload:CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration
+  isExternal: true
+  name: ClaimsCacheSlidingExpiration
+  nameWithType: LdapSettings.ClaimsCacheSlidingExpiration
+  fullName: CoreWCF.Security.LdapSettings.ClaimsCacheSlidingExpiration
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration*
+  commentId: Overload:CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration
+  isExternal: true
+  name: ClaimsCacheAbsoluteExpiration
+  nameWithType: LdapSettings.ClaimsCacheAbsoluteExpiration
+  fullName: CoreWCF.Security.LdapSettings.ClaimsCacheAbsoluteExpiration
+- uid: CoreWCF.Security.LdapSettings.ClaimsCacheSize*
+  commentId: Overload:CoreWCF.Security.LdapSettings.ClaimsCacheSize
+  isExternal: true
+  name: ClaimsCacheSize
+  nameWithType: LdapSettings.ClaimsCacheSize
+  fullName: CoreWCF.Security.LdapSettings.ClaimsCacheSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

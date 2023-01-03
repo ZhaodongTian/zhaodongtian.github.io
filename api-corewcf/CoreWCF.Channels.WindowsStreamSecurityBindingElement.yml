@@ -1,0 +1,610 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  commentId: T:CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  id: WindowsStreamSecurityBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor
+  - CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor(CoreWCF.Channels.WindowsStreamSecurityBindingElement)
+  - CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone
+  - CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel
+  langs:
+  - csharp
+  - vb
+  name: WindowsStreamSecurityBindingElement
+  nameWithType: WindowsStreamSecurityBindingElement
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents the binding element used to specify Windows stream security settings.
+  remarks: "Transports that use a stream-oriented protocol such as TCP and named pipes support stream-based transport upgrades. Specifically, WCF provides security upgrades. The configuration of this transport security is encapsulated by this class as well as by <xref:CoreWCF.Channels.SslStreamSecurityBindingElement>, which can be configured and added to a custom binding. In addition, a third party can write its own custom `StreamSecurityBindingElement`. These binding elements extend the <xref:CoreWCF.Channels.StreamUpgradeBindingElement> class that is called to build the client and server stream upgrade providers.  \n\nA custom binding contains a collection of binding elements arranged in a specific order: the element representing the top of the binding stack is added first, the next element down in the binding stack is added second, and so on.  \n\n### To add this class to a binding  \n\n1.  Create a <xref:CoreWCF.Channels.BindingElementCollection>.  \n\n2.  Create any required custom binding elements that are above this binding element in the binding stack, such as the optional [TransactionFlowBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.transactionflowbindingelement?view=netframework-4.8.1) and [ReliableSessionBindingElement](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.reliablesessionbindingelement?view=netframework-4.8.1).  \n\n3.  Add the created elements in the order described previously to the <xref:CoreWCF.Channels.BindingElementCollection> using the <xref:CoreWCF.Channels.BindingElementCollection.InsertItem%2A> method.  \n\n4.  Create an instance of <xref:CoreWCF.Channels.WindowsStreamSecurityBindingElement> and add it to the collection.  \n\n5.  Add any additional custom binding elements to the collection, such as <xref:CoreWCF.Channels.TcpTransportBindingElement>.  \n\n"
+  syntax:
+    content: 'public class WindowsStreamSecurityBindingElement : StreamUpgradeBindingElement'
+    content.vb: >-
+      Public Class WindowsStreamSecurityBindingElement
+          Inherits StreamUpgradeBindingElement
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  - CoreWCF.Channels.StreamUpgradeBindingElement
+  inheritedMembers:
+  - CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: WindowsStreamSecurityBindingElement()
+  nameWithType: WindowsStreamSecurityBindingElement.WindowsStreamSecurityBindingElement()
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.WindowsStreamSecurityBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.WindowsStreamSecurityBindingElement> class."
+  syntax:
+    content: public WindowsStreamSecurityBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor(CoreWCF.Channels.WindowsStreamSecurityBindingElement)
+  commentId: M:CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor(CoreWCF.Channels.WindowsStreamSecurityBindingElement)
+  id: '#ctor(CoreWCF.Channels.WindowsStreamSecurityBindingElement)'
+  parent: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: WindowsStreamSecurityBindingElement(WindowsStreamSecurityBindingElement)
+  nameWithType: WindowsStreamSecurityBindingElement.WindowsStreamSecurityBindingElement(WindowsStreamSecurityBindingElement)
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.WindowsStreamSecurityBindingElement(CoreWCF.Channels.WindowsStreamSecurityBindingElement)
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.WindowsStreamSecurityBindingElement> class from an existing instance."
+  syntax:
+    content: protected WindowsStreamSecurityBindingElement(WindowsStreamSecurityBindingElement elementToBeCloned)
+    parameters:
+    - id: elementToBeCloned
+      type: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+      description: Instance of this class to clone.
+    content.vb: Protected Sub New(elementToBeCloned As WindowsStreamSecurityBindingElement)
+  overload: CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone
+  commentId: M:CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: WindowsStreamSecurityBindingElement.Clone()
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Creates a new binding element from this instance of the class.
+  syntax:
+    content: public override BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: "<xref:CoreWCF.Channels.BindingElement>."
+    content.vb: Public Overrides Function Clone As BindingElement
+  overridden: CoreWCF.Channels.BindingElement.Clone
+  overload: CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  id: BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: BuildServerStreamUpgradeProvider(BindingContext)
+  nameWithType: WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(BindingContext)
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Creates an instance on the server of the <xref:CoreWCF.Channels.StreamUpgradeProvider> based on the channel context provided."
+  syntax:
+    content: public override StreamUpgradeProvider BuildServerStreamUpgradeProvider(BindingContext context)
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "The <xref:CoreWCF.Channels.BindingContext> for the entire channel stack."
+    return:
+      type: CoreWCF.Channels.StreamUpgradeProvider
+      description: "An instance of the <xref:CoreWCF.Channels.StreamUpgradeProvider>."
+    content.vb: Public Overrides Function BuildServerStreamUpgradeProvider(context As BindingContext) As StreamUpgradeProvider
+  overridden: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: "\nThis method is called when building the provider channel listener and provides a custom implementation of the <xref:CoreWCF.Channels.StreamUpgradeProvider> abstract class.\n \nThe <xref:CoreWCF.Channels.BindingContext> parameter enables reacting to other elements in the channel stack.\n "
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  nameWithType: WindowsStreamSecurityBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Gets a specified object from the BindingContext."
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: "A <xref:CoreWCF.Channels.BindingContext>."
+    typeParameters:
+    - id: T
+      description: The object to get.
+    return:
+      type: '{T}'
+      description: "The specified object from the <xref:CoreWCF.Channels.BindingContext> or `null` if the object is not found."
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty*
+  nameWithType.vb: WindowsStreamSecurityBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: "\nThis method receives a binding context as an input parameter, which represents the stack of binding elements. This method gets the specified object directly, delegates the inquiry to the next-lower binding element in the stack, or a combination of the two. It can modify the context if it delegates the inquiry. Each binding element in the stack can repeat this process, if it has been delegated to, until the bottom of the stack is reached. The object returned is usually a collection of properties.\n \nIf the type of `T` is <xref:CoreWCF.Channels.ISecurityCapabilities>, then an instance of this class is returned with <xref:CoreWCF.Channels.ISecurityCapabilities.SupportsClientAuthentication>, <xref:CoreWCF.Channels.ISecurityCapabilities.SupportsClientWindowsIdentity>, and <xref:CoreWCF.Channels.ISecurityCapabilities.SupportsServerAuthentication> all set to `true`, and <xref:CoreWCF.Channels.ISecurityCapabilities.SupportedRequestProtectionLevel> and <xref:CoreWCF.Channels.ISecurityCapabilities.SupportedResponseProtectionLevel> set to the current value in this binding.\n \nIf the type of `T` is [IdentityVerifier](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.identityverifier?view=netframework-4.8.1), then a default instance of this class is returned.\n \nThis method is implemented by binding elements as well as by the run-time objects such as [IChannelFactory](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannelfactory?view=netframework-4.8.1), [IChannelListener](https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannellistener?view=netframework-4.8.1), and <xref:CoreWCF.Channels.IChannel>.\n"
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel
+  commentId: P:CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel
+  id: ProtectionLevel
+  parent: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ProtectionLevel
+  nameWithType: WindowsStreamSecurityBindingElement.ProtectionLevel
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets or sets the protection level.
+  syntax:
+    content: public ProtectionLevel ProtectionLevel { get; set; }
+    parameters: []
+    return:
+      type: System.Net.Security.ProtectionLevel
+      description: "The [ProtectionLevel](https://learn.microsoft.com/en-us/dotnet/api/system.net.security.protectionlevel?view=netframework-4.8.1). The default value is [EncryptAndSign](https://learn.microsoft.com/en-us/dotnet/api/system.net.security.protectionlevel?view=netframework-4.8.1#system-net-security-protectionlevel-encryptandsign)."
+    content.vb: Public Property ProtectionLevel As ProtectionLevel
+  overload: CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.StreamUpgradeBindingElement
+  commentId: T:CoreWCF.Channels.StreamUpgradeBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: StreamUpgradeBindingElement
+  nameWithType: StreamUpgradeBindingElement
+  fullName: CoreWCF.Channels.StreamUpgradeBindingElement
+- uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: BindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: BindingElement.IsMatch
+    fullName: CoreWCF.Channels.BindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.WindowsStreamSecurityBindingElement.#ctor
+  isExternal: true
+  name: WindowsStreamSecurityBindingElement
+  nameWithType: WindowsStreamSecurityBindingElement.WindowsStreamSecurityBindingElement
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.WindowsStreamSecurityBindingElement
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  commentId: T:CoreWCF.Channels.WindowsStreamSecurityBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: WindowsStreamSecurityBindingElement
+  nameWithType: WindowsStreamSecurityBindingElement
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: WindowsStreamSecurityBindingElement.Clone
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.Clone
+- uid: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.StreamUpgradeBindingElement
+  isExternal: true
+  name: BuildServerStreamUpgradeProvider(BindingContext)
+  nameWithType: StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(BindingContext)
+  fullName: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+    name: BuildServerStreamUpgradeProvider
+    nameWithType: StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    fullName: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider(CoreWCF.Channels.BindingContext)
+    name: BuildServerStreamUpgradeProvider
+    nameWithType: StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    fullName: CoreWCF.Channels.StreamUpgradeBindingElement.BuildServerStreamUpgradeProvider
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider*
+  commentId: Overload:CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider
+  isExternal: true
+  name: BuildServerStreamUpgradeProvider
+  nameWithType: WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.BuildServerStreamUpgradeProvider
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: CoreWCF.Channels.StreamUpgradeProvider
+  commentId: T:CoreWCF.Channels.StreamUpgradeProvider
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: StreamUpgradeProvider
+  nameWithType: StreamUpgradeProvider
+  fullName: CoreWCF.Channels.StreamUpgradeProvider
+- uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: BindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: BindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.BindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: BindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.BindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: WindowsStreamSecurityBindingElement.GetProperty
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.GetProperty
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel*
+  commentId: Overload:CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel
+  isExternal: true
+  name: ProtectionLevel
+  nameWithType: WindowsStreamSecurityBindingElement.ProtectionLevel
+  fullName: CoreWCF.Channels.WindowsStreamSecurityBindingElement.ProtectionLevel
+- uid: System.Net.Security.ProtectionLevel
+  isExternal: true
+  name: ProtectionLevel
+  nameWithType: ProtectionLevel
+  fullName: System.Net.Security.ProtectionLevel

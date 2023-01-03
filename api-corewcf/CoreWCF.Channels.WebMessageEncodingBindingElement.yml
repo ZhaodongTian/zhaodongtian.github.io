@@ -1,0 +1,1029 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.WebMessageEncodingBindingElement
+  id: WebMessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor(System.Text.Encoding)
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.Clone
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas
+  - CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding
+  langs:
+  - csharp
+  - vb
+  name: WebMessageEncodingBindingElement
+  nameWithType: WebMessageEncodingBindingElement
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement
+  type: Class
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  summary: Enables plain-text XML, JavaScript Object Notation (JSON) message encodings and &quot;raw&quot; binary content to be read and written when used in a Windows Communication Foundation (WCF) binding.
+  remarks: "Encoding is the process of transforming a message into a sequence of bytes. Decoding is the reverse process. These processes require the specification of a character encoding. The <xref:CoreWCF.Channels.WebMessageEncodingBindingElement> works by delegating to a series of inner encoders to handle the plain-text XML and JSON encodings, and &quot;raw&quot; binary data. This delegation is done by a composite message encoder.  \n\nThis binding element and its composite encoder are used to control the encoding in scenarios that do not use SOAP messaging used by the <xref:CoreWCF.WebHttpBinding>. These scenarios include &quot;Plain Old XML&quot; (POX), Representational State Transfer (REST), Really Simple Syndication (RSS) and Atom syndication, and Asynchronous JavaScript and XML (AJAX). The composite message encoder does not support SOAP or WS-Addressing, and so <xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion> always returns <xref:CoreWCF.Channels.MessageVersion.None>.  \n\nThe binding element can be configured with a write character encoding at construction time using the [WebMessageEncodingBindingElement(Encoding)](#CoreWCF_Channels_WebMessageEncodingBindingElement__ctor_System_Text_Encoding_) constructor. The <xref:System.Text.Encoding) value specifies the behavior on write for the JSON and Textual XML cases. On read, any valid message encoding and text encoding is understood.  \n\nThis constructor sets default values on the maximum number of readers and writers that are allocated to pools and that are respectively available to process incoming and outgoing messages without allocating new readers or writers. The properties <xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize> and <xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize> can also be used to set the maximum number of readers and writers to be allocated respectively. By default 64 readers and 16 writers are allocated.  \n\nDefault complexity constraints are also set by this constructor on the <xref:System.Xml.XmlDictionaryReaderQuotas> associated with this encoding by the <xref:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas> property to protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources.  \n\nThe <xref:CoreWCF.Channels.WebMessageEncodingBindingElement> has a <xref:CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory> method that creates a message encoder factory that produces JSON, XML or Raw message decoders and encoders as appropriate depending on the content type specified.  \n\nThe <xref:CoreWCF.Channels.WebMessageEncodingBindingElement> also provides the methods to build the factories and listeners for the channels through which the HTTP requests flow.  \n\nThe composite encoder and its associated classes and configuration components are usable in partial trust and this use does not require any special permissions.  \n\n"
+  syntax:
+    content: 'public sealed class WebMessageEncodingBindingElement : MessageEncodingBindingElement'
+    content.vb: >-
+      Public NotInheritable Class WebMessageEncodingBindingElement
+          Inherits MessageEncodingBindingElement
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.BindingElement
+  - CoreWCF.Channels.MessageEncodingBindingElement
+  inheritedMembers:
+  - CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  - CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: WebMessageEncodingBindingElement()
+  summary: Initializes a new instance of the [WebMessageEncodingBindingElement](xref:CoreWCF.Channels.WebMessageEncodingBindingElement) class.
+  nameWithType: WebMessageEncodingBindingElement.WebMessageEncodingBindingElement()
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.WebMessageEncodingBindingElement()
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public WebMessageEncodingBindingElement()
+    content.vb: Public Sub New
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "This constructor uses [UTF8Encoding](xref:System.Text.UTF8Encoding) as the default character encoding. So use this constructor when you want this character encoding. If you want another character encoding, use the [WebMessageEncodingBindingElement(Encoding)](#CoreWCF_Channels_WebMessageEncodingBindingElement__ctor_System_Text_Encoding_) constructor.\n\n
+            This constructor sets default values on the maximum number of readers and writers that are allocated to pools and that are respectively available to process incoming and outgoing messages without allocating new readers or writers. There are 64 readers allocated by default for the [MaxReadPoolSize](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize) property and there are 16 writers allocated by default for the [MaxWritePoolSize](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize) property.\n\n
+            Default complexity constraints are also set by this constructor on the [XmlDictionaryReaderQuotas](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement) associated with this message encoding by the [ReaderQuotas](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas) property to protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources. The properties that express these constraints and their default values (in bytes) are as follows:\n\n
+            - [MaxDepth](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth) = 32\n\n
+            - [MaxStringContentLength](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxStringContentLength) = 8192\n\n
+            - [MaxArrayLength](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxArrayLength) = 16384\n\n
+            - [MaxBytesPerRead](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxBytesPerRead) = 4096 \n\n
+            - [MaxNameTableCharCount](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxNameTableCharCount) = 16384\n\n"
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor(System.Text.Encoding)
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor(System.Text.Encoding)
+  id: '#ctor(System.Text.Encoding)'
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: WebMessageEncodingBindingElement(Encoding)
+  summary: Initializes a new instance of the [WebMessageEncodingBindingElement](xref:CoreWCF.Channels.WebMessageEncodingBindingElement) class with a specified write character encoding.
+  nameWithType: WebMessageEncodingBindingElement.WebMessageEncodingBindingElement(Encoding)
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.WebMessageEncodingBindingElement(System.Text.Encoding)
+  type: Constructor
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public WebMessageEncodingBindingElement(Encoding writeEncoding)
+    parameters:
+    - id: writeEncoding
+      type: System.Text.Encoding
+      description: The [Encoding](xref:System.Text.Encoding) to be used to write characters in a message.
+    content.vb: Public Sub New(writeEncoding As Encoding)
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  remarks: "The message text encodings supported are UTF-8, Unicode, and Big-Endian Unicode. If another text encoding is specified, an [ArgumentException](xref:System.ArgumentException) is thrown.\n\n
+            This constructor sets default values on the maximum number of readers and writers that are allocated to pools and that are respectively available to process incoming and outgoing messages without allocating new readers or writers. There are 64 readers allocated by default for the [MaxReadPoolSize](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize) property and there are 16 writers allocated by default for the [MaxWritePoolSize](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize) property.\n\n
+            Default complexity constraints are also set by this constructor on the [XmlDictionaryReaderQuotas](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement) associated with this message encoding by the [ReaderQuotas](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas) property to protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources. The properties that express these constraints and their default values (in bytes) are as follows:\n\n
+            - [MaxDepth](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth) = 32\n\n
+            - [MaxStringContentLength](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxStringContentLength) = 8192\n\n
+            - [MaxArrayLength](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxArrayLength) = 16384\n\n
+            - [MaxBytesPerRead](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxBytesPerRead) = 4096 \n\n
+            - [MaxNameTableCharCount](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxNameTableCharCount) = 16384\n\n"
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.Clone
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.Clone
+  id: Clone
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  summary: Creates a new [WebMessageEncodingBindingElement](xref:CoreWCF.Channels.WebMessageEncodingBindingElement) object initialized from the current one.
+  nameWithType: WebMessageEncodingBindingElement.Clone()
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.Clone()
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override BindingElement Clone()
+    return:
+      type: CoreWCF.Channels.BindingElement
+      description: A [WebMessageEncodingBindingElement](xref:CoreWCF.Channels.WebMessageEncodingBindingElement) object with property values equal to those of the current element.
+    content.vb: Public Overrides Function Clone As BindingElement
+  overridden: CoreWCF.Channels.BindingElement.Clone
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.Clone*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: This creates a complete copy of the current binding element object tree, also called a deep clone. A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. This is called copying the entire object graph. Returning a deep clone enables the runtime to support the case in which multiple custom bindings share a custom binding element. If a deep clone is not returned, the run-time behavior is undefined. A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects.
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory
+  id: CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CreateMessageEncoderFactory()
+  summary: Creates a message encoder factory that produces message encoders that can write either JavaScript Object Notation (JSON) or XML messages.
+  nameWithType: WebMessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory()
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override MessageEncoderFactory CreateMessageEncoderFactory()
+    return:
+      type: CoreWCF.Channels.MessageEncoderFactory
+      description: The [MessageEncoderFactory](xref:CoreWCF.Channels.MessageEncoderFactory) that encodes JSON, XML or "raw" binary messages.
+    content.vb: Public Overrides Function CreateMessageEncoderFactory As MessageEncoderFactory
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: The value of the [WriteEncoding](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding) property determines the character encoding used to write the message.<br/><br/>
+           The maximum number of readers and writers that are allocated to pools and that is respectively available to process incoming and outgoing messages without allocating new readers are specified by the [MaxReadPoolSize](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize) and [MaxWritePoolSize](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize) properties.<br/><br/>
+           The default complexity constraints that are used by the message encoders produced by the [MessageEncoderFactory](xref:CoreWCF.Channels.MessageEncoderFactory) can be obtained from the [XmlDictionaryReaderQuotas](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement) associated with this encoding by the [ReaderQuotas](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas) property to protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources.
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  id: GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: GetProperty<T>(BindingContext)
+  summary: Returns the object of the type requested, if present, from the appropriate layer in the channel stack, or `null` if it is not present.
+  nameWithType: WebMessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: >-
+      public override T GetProperty<T>(BindingContext context)
+          where T : class
+    parameters:
+    - id: context
+      type: CoreWCF.Channels.BindingContext
+      description: The [BindingContext](xref:CoreWCF.Channels.BindingContext) for the current binding element.
+    typeParameters:
+    - id: T
+      description: The typed object for which the method is querying.
+    return:
+      type: '{T}'
+      description: The typed object `T` requested if it is present or `null` if it is not.
+    content.vb: Public Overrides Function GetProperty(Of T As Class)(context As BindingContext) As T
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty*
+  nameWithType.vb: WebMessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  remarks: "This override adds one property to the base [GetProperty<T>(BindingContext)](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)) implementation: when T is [XmlDictionaryReaderQuotas](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement), the [ReaderQuotas](xref:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas) property is returned."
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  id: CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CheckEncodingVersion(EnvelopeVersion)
+  nameWithType: WebMessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool CheckEncodingVersion(EnvelopeVersion version)
+    parameters:
+    - id: version
+      type: CoreWCF.EnvelopeVersion
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function CheckEncodingVersion(version As EnvelopeVersion) As Boolean
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  id: IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: IsMatch(BindingElement)
+  nameWithType: WebMessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  type: Method
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected override bool IsMatch(BindingElement b)
+    parameters:
+    - id: b
+      type: CoreWCF.Channels.BindingElement
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function IsMatch(b As BindingElement) As Boolean
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper
+  id: ContentTypeMapper
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ContentTypeMapper
+  summary: Gets or sets how the content type of an incoming message is mapped to a format.
+  nameWithType: WebMessageEncodingBindingElement.ContentTypeMapper
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public WebContentTypeMapper ContentTypeMapper { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.WebContentTypeMapper
+      description: The [WebContentTypeMapper](xref:CoreWCF.Channels.WebContentTypeMapper) that indicates the format for the content type of the incoming message.
+    content.vb: Public Property ContentTypeMapper As WebContentTypeMapper
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize
+  id: MaxReadPoolSize
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxReadPoolSize
+  summary: Gets or sets a value that specifies the maximum number of readers that is allocated to a pool and that is available to process incoming messages without allocating new readers.
+  nameWithType: WebMessageEncodingBindingElement.MaxReadPoolSize
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public int MaxReadPoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum number of readers available to process incoming messages. The default value is 64 readers of each type.
+    content.vb: Public Property MaxReadPoolSize As Integer
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of incoming messages because it is able to use readers from the pool that are already created instead of creating new ones.
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize
+  id: MaxWritePoolSize
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MaxWritePoolSize
+  summary: Gets or sets a value that specifies the maximum number of writers that is allocated to a pool and that is available to process outgoing messages without allocating new writers.
+  nameWithType: WebMessageEncodingBindingElement.MaxWritePoolSize
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public int MaxWritePoolSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: The maximum number of writers available to process outgoing messages. The default is 16 writers of each type.
+    content.vb: Public Property MaxWritePoolSize As Integer
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  remarks: Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of outgoing messages because it is able to use writers from the pool that are already created instead of creating new ones.
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion
+  id: MessageVersion
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  summary: Gets or sets the message version that indicates that the binding element does not use SOAP or WS-Addressing.
+  nameWithType: WebMessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public override MessageVersion MessageVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+      description: "[None](xref:CoreWCF.Channels.MessageVersion.None)"
+    content.vb: Public Overrides Property MessageVersion As MessageVersion
+  overridden: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overrides
+  remarks: The JSON message encoding does not support either SOAP or WS-Addressing. The [None](xref:CoreWCF.Channels.MessageVersion.None) contains [None](xref:CoreWCF.Channels.AddressingVersion.None) and [None](xref:CoreWCF.Channels.AddressingVersion.None), which respectively specifies this non-support.
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas
+  id: ReaderQuotas
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: ReaderQuotas
+  summary: Gets constraints on the complexity of SOAP messages that can be processed by endpoints configured with this binding.
+  nameWithType: WebMessageEncodingBindingElement.ReaderQuotas
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public XmlDictionaryReaderQuotas ReaderQuotas { get; }
+    parameters: []
+    return:
+      type: System.Xml.XmlDictionaryReaderQuotas
+      description: The [XmlDictionaryReaderQuotas](xref:System.Xml.XmlDictionaryReaderQuotas) that specifies the complexity constraints on SOAP messages that are exchanged. The default values for these constraints are provided in the following Remarks section.
+    content.vb: Public ReadOnly Property ReaderQuotas As XmlDictionaryReaderQuotas
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  remarks: "The complexity constraints protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources. The properties that express these constraints and their default values (in bytes) are as follows:\n\n
+            - [MaxDepth](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth) = 32\n\n
+            - [MaxStringContentLength](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxStringContentLength) = 8192\n\n
+            - [MaxArrayLength](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxArrayLength) = 16384\n\n
+            - [MaxBytesPerRead](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxBytesPerRead) = 4096 \n\n
+            - [MaxNameTableCharCount](xref:CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.MaxNameTableCharCount) = 16384\n\n"
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding
+  id: WriteEncoding
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: WriteEncoding
+  summary: Gets or sets the character encoding that is used to write the message text.
+  nameWithType: WebMessageEncodingBindingElement.WriteEncoding
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public Encoding WriteEncoding { get; set; }
+    parameters: []
+    return:
+      type: System.Text.Encoding
+      description: The [Encoding](xref:System.Text.Encoding) that indicates the character encoding that is used to write the message text. The default is [UTF8Encoding](xref:System.Text.UTF8Encoding).
+    content.vb: Public Property WriteEncoding As Encoding
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  commentId: P:CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  id: CrossDomainScriptAccessEnabled
+  parent: CoreWCF.Channels.WebMessageEncodingBindingElement
+  langs:
+  - csharp
+  - vb
+  name: CrossDomainScriptAccessEnabled
+  summary: Gets or sets a value that determines if cross domain script access is enabled.
+  nameWithType: WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  type: Property
+  source:
+    path: CoreWCF.WebHttp
+    isExternal: true
+  assemblies:
+  - CoreWCF.WebHttp
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool CrossDomainScriptAccessEnabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "`true` if cross domain script access is enabled; otherwise, `false`."
+    content.vb: Public Property CrossDomainScriptAccessEnabled As Boolean
+  overload: CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.BindingElement
+  commentId: T:CoreWCF.Channels.BindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingElement
+  nameWithType: BindingElement
+  fullName: CoreWCF.Channels.BindingElement
+- uid: CoreWCF.Channels.MessageEncodingBindingElement
+  commentId: T:CoreWCF.Channels.MessageEncodingBindingElement
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncodingBindingElement
+  nameWithType: MessageEncodingBindingElement
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement
+- uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  commentId: M:CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  nameWithType: BindingElement.BuildServiceDispatcher<TChannel>(BindingContext, IServiceDispatcher)
+  fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  nameWithType.vb: BindingElement.BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  fullName.vb: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext, CoreWCF.Configuration.IServiceDispatcher)
+  name.vb: BuildServiceDispatcher(Of TChannel)(BindingContext, IServiceDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.BuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)
+    name: BuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.BuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.BuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: CoreWCF.Configuration.IServiceDispatcher
+    name: IServiceDispatcher
+    nameWithType: IServiceDispatcher
+    fullName: CoreWCF.Configuration.IServiceDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: CanBuildServiceDispatcher<TChannel>(BindingContext)
+  nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>(BindingContext)
+  fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: BindingElement.CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  fullName.vb: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)(CoreWCF.Channels.BindingContext)
+  name.vb: CanBuildServiceDispatcher(Of TChannel)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher<TChannel>
+    nameWithType: BindingElement.CanBuildServiceDispatcher<TChannel>
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher<TChannel>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)
+    name: CanBuildServiceDispatcher(Of TChannel)
+    nameWithType: BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    fullName: CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher(Of TChannel)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.#ctor
+  isExternal: true
+  name: WebMessageEncodingBindingElement
+  nameWithType: WebMessageEncodingBindingElement.WebMessageEncodingBindingElement
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.WebMessageEncodingBindingElement
+- uid: System.Text.Encoding
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: CoreWCF.Channels.BindingElement.Clone
+  commentId: M:CoreWCF.Channels.BindingElement.Clone
+  parent: CoreWCF.Channels.BindingElement
+  isExternal: true
+  name: Clone()
+  nameWithType: BindingElement.Clone()
+  fullName: CoreWCF.Channels.BindingElement.Clone()
+  spec.csharp:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.BindingElement.Clone
+    name: Clone
+    nameWithType: BindingElement.Clone
+    fullName: CoreWCF.Channels.BindingElement.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.Clone*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.Clone
+  isExternal: true
+  name: Clone
+  nameWithType: WebMessageEncodingBindingElement.Clone
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.Clone
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: CreateMessageEncoderFactory()
+  nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory()
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    name: CreateMessageEncoderFactory
+    nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    name: CreateMessageEncoderFactory
+    nameWithType: MessageEncodingBindingElement.CreateMessageEncoderFactory
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CreateMessageEncoderFactory
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory
+  isExternal: true
+  name: CreateMessageEncoderFactory
+  nameWithType: WebMessageEncodingBindingElement.CreateMessageEncoderFactory
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.CreateMessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncoderFactory
+  commentId: T:CoreWCF.Channels.MessageEncoderFactory
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageEncoderFactory
+  nameWithType: MessageEncoderFactory
+  fullName: CoreWCF.Channels.MessageEncoderFactory
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: GetProperty<T>(BindingContext)
+  nameWithType: MessageEncodingBindingElement.GetProperty<T>(BindingContext)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>(CoreWCF.Channels.BindingContext)
+  nameWithType.vb: MessageEncodingBindingElement.GetProperty(Of T)(BindingContext)
+  fullName.vb: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)(CoreWCF.Channels.BindingContext)
+  name.vb: GetProperty(Of T)(BindingContext)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty<T>
+    nameWithType: MessageEncodingBindingElement.GetProperty<T>
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty<T>
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)
+    name: GetProperty(Of T)
+    nameWithType: MessageEncodingBindingElement.GetProperty(Of T)
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.GetProperty(Of T)
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingContext
+    name: BindingContext
+    nameWithType: BindingContext
+    fullName: CoreWCF.Channels.BindingContext
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty
+  isExternal: true
+  name: GetProperty
+  nameWithType: WebMessageEncodingBindingElement.GetProperty
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.GetProperty
+- uid: CoreWCF.Channels.BindingContext
+  commentId: T:CoreWCF.Channels.BindingContext
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: BindingContext
+  nameWithType: BindingContext
+  fullName: CoreWCF.Channels.BindingContext
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: CheckEncodingVersion(EnvelopeVersion)
+  nameWithType: MessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+    name: CheckEncodingVersion
+    nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.EnvelopeVersion
+    name: EnvelopeVersion
+    nameWithType: EnvelopeVersion
+    fullName: CoreWCF.EnvelopeVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion(CoreWCF.EnvelopeVersion)
+    name: CheckEncodingVersion
+    nameWithType: MessageEncodingBindingElement.CheckEncodingVersion
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.CheckEncodingVersion
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.EnvelopeVersion
+    name: EnvelopeVersion
+    nameWithType: EnvelopeVersion
+    fullName: CoreWCF.EnvelopeVersion
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion
+  isExternal: true
+  name: CheckEncodingVersion
+  nameWithType: WebMessageEncodingBindingElement.CheckEncodingVersion
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.CheckEncodingVersion
+- uid: CoreWCF.EnvelopeVersion
+  commentId: T:CoreWCF.EnvelopeVersion
+  parent: CoreWCF
+  isExternal: true
+  name: EnvelopeVersion
+  nameWithType: EnvelopeVersion
+  fullName: CoreWCF.EnvelopeVersion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  commentId: M:CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: IsMatch(BindingElement)
+  nameWithType: MessageEncodingBindingElement.IsMatch(BindingElement)
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+  spec.csharp:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: MessageEncodingBindingElement.IsMatch
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)
+    name: IsMatch
+    nameWithType: MessageEncodingBindingElement.IsMatch
+    fullName: CoreWCF.Channels.MessageEncodingBindingElement.IsMatch
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.Channels.BindingElement
+    name: BindingElement
+    nameWithType: BindingElement
+    fullName: CoreWCF.Channels.BindingElement
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch
+  isExternal: true
+  name: IsMatch
+  nameWithType: WebMessageEncodingBindingElement.IsMatch
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.IsMatch
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper
+  isExternal: true
+  name: ContentTypeMapper
+  nameWithType: WebMessageEncodingBindingElement.ContentTypeMapper
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.ContentTypeMapper
+- uid: CoreWCF.Channels.WebContentTypeMapper
+  commentId: T:CoreWCF.Channels.WebContentTypeMapper
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: WebContentTypeMapper
+  nameWithType: WebContentTypeMapper
+  fullName: CoreWCF.Channels.WebContentTypeMapper
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize
+  isExternal: true
+  name: MaxReadPoolSize
+  nameWithType: WebMessageEncodingBindingElement.MaxReadPoolSize
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxReadPoolSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize
+  isExternal: true
+  name: MaxWritePoolSize
+  nameWithType: WebMessageEncodingBindingElement.MaxWritePoolSize
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.MaxWritePoolSize
+- uid: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  commentId: P:CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+  parent: CoreWCF.Channels.MessageEncodingBindingElement
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.MessageEncodingBindingElement.MessageVersion
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: WebMessageEncodingBindingElement.MessageVersion
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.MessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas
+  isExternal: true
+  name: ReaderQuotas
+  nameWithType: WebMessageEncodingBindingElement.ReaderQuotas
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.ReaderQuotas
+- uid: System.Xml.XmlDictionaryReaderQuotas
+  isExternal: true
+  name: XmlDictionaryReaderQuotas
+  nameWithType: XmlDictionaryReaderQuotas
+  fullName: System.Xml.XmlDictionaryReaderQuotas
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding
+  isExternal: true
+  name: WriteEncoding
+  nameWithType: WebMessageEncodingBindingElement.WriteEncoding
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.WriteEncoding
+- uid: CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled*
+  commentId: Overload:CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  isExternal: true
+  name: CrossDomainScriptAccessEnabled
+  nameWithType: WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled
+  fullName: CoreWCF.Channels.WebMessageEncodingBindingElement.CrossDomainScriptAccessEnabled

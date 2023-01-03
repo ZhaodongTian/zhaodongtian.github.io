@@ -1,0 +1,100 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.IDispatchOperationSelector
+  commentId: T:CoreWCF.Dispatcher.IDispatchOperationSelector
+  id: IDispatchOperationSelector
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation(CoreWCF.Channels.Message@)
+  langs:
+  - csharp
+  - vb
+  name: IDispatchOperationSelector
+  nameWithType: IDispatchOperationSelector
+  fullName: CoreWCF.Dispatcher.IDispatchOperationSelector
+  type: Interface
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: Defines the contract that associates incoming messages with a local operation to customize service execution behavior.
+  remarks: "Implement and insert a custom operation selector to customize the selection of the operation to which an incoming message is dispatched in a service application. Assign the &lt;xref:CoreWCF.Dispatcher.IDispatchOperationSelector> object to the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.OperationSelector%2A> property to insert the custom selector.  \n\n\n\n"
+  syntax:
+    content: public interface IDispatchOperationSelector
+    content.vb: Public Interface IDispatchOperationSelector
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation(CoreWCF.Channels.Message@)
+  commentId: M:CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation(CoreWCF.Channels.Message@)
+  id: SelectOperation(CoreWCF.Channels.Message@)
+  parent: CoreWCF.Dispatcher.IDispatchOperationSelector
+  langs:
+  - csharp
+  - vb
+  name: SelectOperation(ref Message)
+  nameWithType: IDispatchOperationSelector.SelectOperation(ref Message)
+  fullName: CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation(ref CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: string SelectOperation(ref Message message)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.String
+    content.vb: Function SelectOperation(ByRef message As Message) As String
+  overload: CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation*
+  nameWithType.vb: IDispatchOperationSelector.SelectOperation(ByRef Message)
+  fullName.vb: CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation(ByRef CoreWCF.Channels.Message)
+  name.vb: SelectOperation(ByRef Message)
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation*
+  commentId: Overload:CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation
+  isExternal: true
+  name: SelectOperation
+  nameWithType: IDispatchOperationSelector.SelectOperation
+  fullName: CoreWCF.Dispatcher.IDispatchOperationSelector.SelectOperation
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

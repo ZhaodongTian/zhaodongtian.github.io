@@ -1,0 +1,1957 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Dispatcher.ChannelDispatcher
+  commentId: T:CoreWCF.Dispatcher.ChannelDispatcher
+  id: ChannelDispatcher
+  parent: CoreWCF.Dispatcher
+  children:
+  - CoreWCF.Dispatcher.ChannelDispatcher.Attach(CoreWCF.ServiceHostBase)
+  - CoreWCF.Dispatcher.ChannelDispatcher.BindingName
+  - CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers
+  - CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout
+  - CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout
+  - CoreWCF.Dispatcher.ChannelDispatcher.Detach(CoreWCF.ServiceHostBase)
+  - CoreWCF.Dispatcher.ChannelDispatcher.Endpoints
+  - CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers
+  - CoreWCF.Dispatcher.ChannelDispatcher.Host
+  - CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults
+  - CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing
+  - CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives
+  - CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion
+  - CoreWCF.Dispatcher.ChannelDispatcher.OnAbort
+  - CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync(System.Threading.CancellationToken)
+  - CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously
+  - CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously
+  langs:
+  - csharp
+  - vb
+  name: ChannelDispatcher
+  nameWithType: ChannelDispatcher
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  summary: A component that accepts channels and associates them with a service.
+  remarks: "A &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher> object associates an &lt;xref:CoreWCF.Channels.IChannelListener> at a particular URI (called a listen URI) with an instance of a service. Each &lt;xref:CoreWCF.ServiceHost> object can have many &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher> objects, each associated with a different listener and listen URI for that service.  \n\nWhen a message arrives, the &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher> queries each of the associated &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> objects whether the endpoint can accept the message, and passes the message to the one that can. The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher> object is responsible for processing messages from a &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher> when the destination address of a message matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter%2A> property and the message action matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter%2A> property.  \n\nAll properties that control the lifetime and behavior of a channel session are available for inspection or modification on the &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher> object. In addition to the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher>, these include custom &lt;xref:CoreWCF.Dispatcher.IChannelInitializer> objects, the &lt;xref:CoreWCF.Channels.IChannelListener>, the &lt;xref:CoreWCF.ServiceHost>, the associated and &lt;xref:CoreWCF.InstanceContext>.  \n\n\n\n"
+  syntax:
+    content: 'public class ChannelDispatcher : ChannelDispatcherBase, ICommunicationObject'
+    content.vb: >-
+      Public Class ChannelDispatcher
+          Inherits ChannelDispatcherBase
+          Implements ICommunicationObject
+  inheritance:
+  - System.Object
+  - CoreWCF.Channels.CommunicationObject
+  - CoreWCF.Dispatcher.ChannelDispatcherBase
+  implements:
+  - CoreWCF.ICommunicationObject
+  inheritedMembers:
+  - CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+  - CoreWCF.Channels.CommunicationObject.Abort
+  - CoreWCF.Channels.CommunicationObject.CloseAsync
+  - CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.CommunicationObject.OpenAsync
+  - CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  - CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  - CoreWCF.Channels.CommunicationObject.Fault
+  - CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  - CoreWCF.Channels.CommunicationObject.OnClosed
+  - CoreWCF.Channels.CommunicationObject.OnClosing
+  - CoreWCF.Channels.CommunicationObject.OnFaulted
+  - CoreWCF.Channels.CommunicationObject.OnOpened
+  - CoreWCF.Channels.CommunicationObject.OnOpening
+  - CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  - CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  - CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  - CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  - CoreWCF.Channels.CommunicationObject.ThrowPending
+  - CoreWCF.Channels.CommunicationObject.IsDisposed
+  - CoreWCF.Channels.CommunicationObject.State
+  - CoreWCF.Channels.CommunicationObject.ThisLock
+  - CoreWCF.Channels.CommunicationObject.Closed
+  - CoreWCF.Channels.CommunicationObject.Closing
+  - CoreWCF.Channels.CommunicationObject.Faulted
+  - CoreWCF.Channels.CommunicationObject.Opened
+  - CoreWCF.Channels.CommunicationObject.Opening
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.OnAbort
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcher.OnAbort
+  id: OnAbort
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: OnAbort()
+  nameWithType: ChannelDispatcher.OnAbort()
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.OnAbort()
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override void OnAbort()
+    content.vb: Protected Overrides Sub OnAbort
+  overridden: CoreWCF.Channels.CommunicationObject.OnAbort
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.OnAbort*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync(System.Threading.CancellationToken)
+  id: OnCloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: OnCloseAsync(CancellationToken)
+  nameWithType: ChannelDispatcher.OnCloseAsync(CancellationToken)
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override Task OnCloseAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected Overrides Function OnCloseAsync(token As CancellationToken) As Task
+  overridden: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync(System.Threading.CancellationToken)
+  id: OnOpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: OnOpenAsync(CancellationToken)
+  nameWithType: ChannelDispatcher.OnOpenAsync(CancellationToken)
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override Task OnOpenAsync(CancellationToken token)
+    parameters:
+    - id: token
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Protected Overrides Function OnOpenAsync(token As CancellationToken) As Task
+  overridden: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Attach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcher.Attach(CoreWCF.ServiceHostBase)
+  id: Attach(CoreWCF.ServiceHostBase)
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Attach(ServiceHostBase)
+  nameWithType: ChannelDispatcher.Attach(ServiceHostBase)
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Attach(CoreWCF.ServiceHostBase)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override void Attach(ServiceHostBase host)
+    parameters:
+    - id: host
+      type: CoreWCF.ServiceHostBase
+    content.vb: Protected Overrides Sub Attach(host As ServiceHostBase)
+  overridden: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach(CoreWCF.ServiceHostBase)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.Attach*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Detach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcher.Detach(CoreWCF.ServiceHostBase)
+  id: Detach(CoreWCF.ServiceHostBase)
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Detach(ServiceHostBase)
+  nameWithType: ChannelDispatcher.Detach(ServiceHostBase)
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Detach(CoreWCF.ServiceHostBase)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override void Detach(ServiceHostBase host)
+    parameters:
+    - id: host
+      type: CoreWCF.ServiceHostBase
+    content.vb: Protected Overrides Sub Detach(host As ServiceHostBase)
+  overridden: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach(CoreWCF.ServiceHostBase)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.Detach*
+  modifiers.csharp:
+  - protected
+  - override
+  modifiers.vb:
+  - Protected
+  - Overrides
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.BindingName
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.BindingName
+  id: BindingName
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: BindingName
+  nameWithType: ChannelDispatcher.BindingName
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.BindingName
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public string BindingName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property BindingName As String
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.BindingName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers
+  id: ChannelInitializers
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ChannelInitializers
+  nameWithType: ChannelDispatcher.ChannelInitializers
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public SynchronizedCollection<IChannelInitializer> ChannelInitializers { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IChannelInitializer}
+    content.vb: Public ReadOnly Property ChannelInitializers As SynchronizedCollection(Of IChannelInitializer)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout
+  id: DefaultCloseTimeout
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: DefaultCloseTimeout
+  nameWithType: ChannelDispatcher.DefaultCloseTimeout
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override TimeSpan DefaultCloseTimeout { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Protected Overrides ReadOnly Property DefaultCloseTimeout As TimeSpan
+  overridden: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout*
+  modifiers.csharp:
+  - protected
+  - override
+  - get
+  modifiers.vb:
+  - Protected
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout
+  id: DefaultOpenTimeout
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: DefaultOpenTimeout
+  nameWithType: ChannelDispatcher.DefaultOpenTimeout
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: protected override TimeSpan DefaultOpenTimeout { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Protected Overrides ReadOnly Property DefaultOpenTimeout As TimeSpan
+  overridden: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout*
+  modifiers.csharp:
+  - protected
+  - override
+  - get
+  modifiers.vb:
+  - Protected
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Endpoints
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.Endpoints
+  id: Endpoints
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Endpoints
+  nameWithType: ChannelDispatcher.Endpoints
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Endpoints
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public SynchronizedCollection<EndpointDispatcher> Endpoints { get; }
+    parameters: []
+    return:
+      type: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.EndpointDispatcher}
+    content.vb: Public ReadOnly Property Endpoints As SynchronizedCollection(Of EndpointDispatcher)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.Endpoints*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers
+  id: ErrorHandlers
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ErrorHandlers
+  nameWithType: ChannelDispatcher.ErrorHandlers
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public Collection<IErrorHandler> ErrorHandlers { get; }
+    parameters: []
+    return:
+      type: System.Collections.ObjectModel.Collection{CoreWCF.Dispatcher.IErrorHandler}
+    content.vb: Public ReadOnly Property ErrorHandlers As Collection(Of IErrorHandler)
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion
+  id: MessageVersion
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: MessageVersion
+  nameWithType: ChannelDispatcher.MessageVersion
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public MessageVersion MessageVersion { get; set; }
+    parameters: []
+    return:
+      type: CoreWCF.Channels.MessageVersion
+    content.vb: Public Property MessageVersion As MessageVersion
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Host
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.Host
+  id: Host
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: Host
+  nameWithType: ChannelDispatcher.Host
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Host
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public override ServiceHostBase Host { get; }
+    parameters: []
+    return:
+      type: CoreWCF.ServiceHostBase
+    content.vb: Public Overrides ReadOnly Property Host As ServiceHostBase
+  overridden: CoreWCF.Dispatcher.ChannelDispatcherBase.Host
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.Host*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing
+  id: ManualAddressing
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ManualAddressing
+  nameWithType: ChannelDispatcher.ManualAddressing
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ManualAddressing { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ManualAddressing As Boolean
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously
+  id: ReceiveSynchronously
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: ReceiveSynchronously
+  nameWithType: ChannelDispatcher.ReceiveSynchronously
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool ReceiveSynchronously { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ReceiveSynchronously As Boolean
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously
+  id: SendAsynchronously
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: SendAsynchronously
+  nameWithType: ChannelDispatcher.SendAsynchronously
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool SendAsynchronously { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property SendAsynchronously As Boolean
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives
+  id: MaxPendingReceives
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: MaxPendingReceives
+  nameWithType: ChannelDispatcher.MaxPendingReceives
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public int MaxPendingReceives { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MaxPendingReceives As Integer
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults
+  id: IncludeExceptionDetailInFaults
+  parent: CoreWCF.Dispatcher.ChannelDispatcher
+  langs:
+  - csharp
+  - vb
+  name: IncludeExceptionDetailInFaults
+  nameWithType: ChannelDispatcher.IncludeExceptionDetailInFaults
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Dispatcher
+  syntax:
+    content: public bool IncludeExceptionDetailInFaults { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IncludeExceptionDetailInFaults As Boolean
+  overload: CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: CoreWCF.Dispatcher
+  commentId: N:CoreWCF.Dispatcher
+  isExternal: true
+  name: CoreWCF.Dispatcher
+  nameWithType: CoreWCF.Dispatcher
+  fullName: CoreWCF.Dispatcher
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: CoreWCF.Channels.CommunicationObject
+  commentId: T:CoreWCF.Channels.CommunicationObject
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: CommunicationObject
+  nameWithType: CommunicationObject
+  fullName: CoreWCF.Channels.CommunicationObject
+- uid: CoreWCF.Dispatcher.ChannelDispatcherBase
+  commentId: T:CoreWCF.Dispatcher.ChannelDispatcherBase
+  parent: CoreWCF.Dispatcher
+  isExternal: true
+  name: ChannelDispatcherBase
+  nameWithType: ChannelDispatcherBase
+  fullName: CoreWCF.Dispatcher.ChannelDispatcherBase
+- uid: CoreWCF.ICommunicationObject
+  commentId: T:CoreWCF.ICommunicationObject
+  parent: CoreWCF
+  isExternal: true
+  name: ICommunicationObject
+  nameWithType: ICommunicationObject
+  fullName: CoreWCF.ICommunicationObject
+- uid: CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+  parent: CoreWCF.Dispatcher.ChannelDispatcherBase
+  isExternal: true
+  name: CloseInputAsync()
+  nameWithType: ChannelDispatcherBase.CloseInputAsync()
+  fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync()
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+    name: CloseInputAsync
+    nameWithType: ChannelDispatcherBase.CloseInputAsync
+    fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+    name: CloseInputAsync
+    nameWithType: ChannelDispatcherBase.CloseInputAsync
+    fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.CloseInputAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.Abort
+  commentId: M:CoreWCF.Channels.CommunicationObject.Abort
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Abort()
+  nameWithType: CommunicationObject.Abort()
+  fullName: CoreWCF.Channels.CommunicationObject.Abort()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.Abort
+    name: Abort
+    nameWithType: CommunicationObject.Abort
+    fullName: CoreWCF.Channels.CommunicationObject.Abort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.Abort
+    name: Abort
+    nameWithType: CommunicationObject.Abort
+    fullName: CoreWCF.Channels.CommunicationObject.Abort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.CloseAsync
+  commentId: M:CoreWCF.Channels.CommunicationObject.CloseAsync
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: CloseAsync()
+  nameWithType: CommunicationObject.CloseAsync()
+  fullName: CoreWCF.Channels.CommunicationObject.CloseAsync()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.CloseAsync
+    name: CloseAsync
+    nameWithType: CommunicationObject.CloseAsync
+    fullName: CoreWCF.Channels.CommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.CloseAsync
+    name: CloseAsync
+    nameWithType: CommunicationObject.CloseAsync
+    fullName: CoreWCF.Channels.CommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: CloseAsync(CancellationToken)
+  nameWithType: CommunicationObject.CloseAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+    name: CloseAsync
+    nameWithType: CommunicationObject.CloseAsync
+    fullName: CoreWCF.Channels.CommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)
+    name: CloseAsync
+    nameWithType: CommunicationObject.CloseAsync
+    fullName: CoreWCF.Channels.CommunicationObject.CloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OpenAsync
+  commentId: M:CoreWCF.Channels.CommunicationObject.OpenAsync
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OpenAsync()
+  nameWithType: CommunicationObject.OpenAsync()
+  fullName: CoreWCF.Channels.CommunicationObject.OpenAsync()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OpenAsync
+    name: OpenAsync
+    nameWithType: CommunicationObject.OpenAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OpenAsync
+    name: OpenAsync
+    nameWithType: CommunicationObject.OpenAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OpenAsync(CancellationToken)
+  nameWithType: CommunicationObject.OpenAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+    name: OpenAsync
+    nameWithType: CommunicationObject.OpenAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)
+    name: OpenAsync
+    nameWithType: CommunicationObject.OpenAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  commentId: M:CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Fault(Exception)
+  nameWithType: CommunicationObject.Fault(Exception)
+  fullName: CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+    name: Fault
+    nameWithType: CommunicationObject.Fault
+    fullName: CoreWCF.Channels.CommunicationObject.Fault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.Fault(System.Exception)
+    name: Fault
+    nameWithType: CommunicationObject.Fault
+    fullName: CoreWCF.Channels.CommunicationObject.Fault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.Fault
+  commentId: M:CoreWCF.Channels.CommunicationObject.Fault
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Fault()
+  nameWithType: CommunicationObject.Fault()
+  fullName: CoreWCF.Channels.CommunicationObject.Fault()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.Fault
+    name: Fault
+    nameWithType: CommunicationObject.Fault
+    fullName: CoreWCF.Channels.CommunicationObject.Fault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.Fault
+    name: Fault
+    nameWithType: CommunicationObject.Fault
+    fullName: CoreWCF.Channels.CommunicationObject.Fault
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  commentId: M:CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: GetCommunicationObjectType()
+  nameWithType: CommunicationObject.GetCommunicationObjectType()
+  fullName: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+    name: GetCommunicationObjectType
+    nameWithType: CommunicationObject.GetCommunicationObjectType
+    fullName: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+    name: GetCommunicationObjectType
+    nameWithType: CommunicationObject.GetCommunicationObjectType
+    fullName: CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OnClosed
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnClosed
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnClosed()
+  nameWithType: CommunicationObject.OnClosed()
+  fullName: CoreWCF.Channels.CommunicationObject.OnClosed()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnClosed
+    name: OnClosed
+    nameWithType: CommunicationObject.OnClosed
+    fullName: CoreWCF.Channels.CommunicationObject.OnClosed
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnClosed
+    name: OnClosed
+    nameWithType: CommunicationObject.OnClosed
+    fullName: CoreWCF.Channels.CommunicationObject.OnClosed
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OnClosing
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnClosing
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnClosing()
+  nameWithType: CommunicationObject.OnClosing()
+  fullName: CoreWCF.Channels.CommunicationObject.OnClosing()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnClosing
+    name: OnClosing
+    nameWithType: CommunicationObject.OnClosing
+    fullName: CoreWCF.Channels.CommunicationObject.OnClosing
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnClosing
+    name: OnClosing
+    nameWithType: CommunicationObject.OnClosing
+    fullName: CoreWCF.Channels.CommunicationObject.OnClosing
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OnFaulted
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnFaulted
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnFaulted()
+  nameWithType: CommunicationObject.OnFaulted()
+  fullName: CoreWCF.Channels.CommunicationObject.OnFaulted()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnFaulted
+    name: OnFaulted
+    nameWithType: CommunicationObject.OnFaulted
+    fullName: CoreWCF.Channels.CommunicationObject.OnFaulted
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnFaulted
+    name: OnFaulted
+    nameWithType: CommunicationObject.OnFaulted
+    fullName: CoreWCF.Channels.CommunicationObject.OnFaulted
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OnOpened
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnOpened
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnOpened()
+  nameWithType: CommunicationObject.OnOpened()
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpened()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnOpened
+    name: OnOpened
+    nameWithType: CommunicationObject.OnOpened
+    fullName: CoreWCF.Channels.CommunicationObject.OnOpened
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnOpened
+    name: OnOpened
+    nameWithType: CommunicationObject.OnOpened
+    fullName: CoreWCF.Channels.CommunicationObject.OnOpened
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.OnOpening
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnOpening
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnOpening()
+  nameWithType: CommunicationObject.OnOpening()
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpening()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnOpening
+    name: OnOpening
+    nameWithType: CommunicationObject.OnOpening
+    fullName: CoreWCF.Channels.CommunicationObject.OnOpening
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnOpening
+    name: OnOpening
+    nameWithType: CommunicationObject.OnOpening
+    fullName: CoreWCF.Channels.CommunicationObject.OnOpening
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: ThrowIfDisposed()
+  nameWithType: CommunicationObject.ThrowIfDisposed()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+    name: ThrowIfDisposed
+    nameWithType: CommunicationObject.ThrowIfDisposed
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+    name: ThrowIfDisposed
+    nameWithType: CommunicationObject.ThrowIfDisposed
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposed
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: ThrowIfDisposedOrImmutable()
+  nameWithType: CommunicationObject.ThrowIfDisposedOrImmutable()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+    name: ThrowIfDisposedOrImmutable
+    nameWithType: CommunicationObject.ThrowIfDisposedOrImmutable
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+    name: ThrowIfDisposedOrImmutable
+    nameWithType: CommunicationObject.ThrowIfDisposedOrImmutable
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: ThrowIfDisposedOrNotOpen()
+  nameWithType: CommunicationObject.ThrowIfDisposedOrNotOpen()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+    name: ThrowIfDisposedOrNotOpen
+    nameWithType: CommunicationObject.ThrowIfDisposedOrNotOpen
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+    name: ThrowIfDisposedOrNotOpen
+    nameWithType: CommunicationObject.ThrowIfDisposedOrNotOpen
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: ThrowIfNotOpened()
+  nameWithType: CommunicationObject.ThrowIfNotOpened()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+    name: ThrowIfNotOpened
+    nameWithType: CommunicationObject.ThrowIfNotOpened
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+    name: ThrowIfNotOpened
+    nameWithType: CommunicationObject.ThrowIfNotOpened
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.ThrowPending
+  commentId: M:CoreWCF.Channels.CommunicationObject.ThrowPending
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: ThrowPending()
+  nameWithType: CommunicationObject.ThrowPending()
+  fullName: CoreWCF.Channels.CommunicationObject.ThrowPending()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowPending
+    name: ThrowPending
+    nameWithType: CommunicationObject.ThrowPending
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowPending
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.ThrowPending
+    name: ThrowPending
+    nameWithType: CommunicationObject.ThrowPending
+    fullName: CoreWCF.Channels.CommunicationObject.ThrowPending
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Channels.CommunicationObject.IsDisposed
+  commentId: P:CoreWCF.Channels.CommunicationObject.IsDisposed
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: IsDisposed
+  nameWithType: CommunicationObject.IsDisposed
+  fullName: CoreWCF.Channels.CommunicationObject.IsDisposed
+- uid: CoreWCF.Channels.CommunicationObject.State
+  commentId: P:CoreWCF.Channels.CommunicationObject.State
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: State
+  nameWithType: CommunicationObject.State
+  fullName: CoreWCF.Channels.CommunicationObject.State
+- uid: CoreWCF.Channels.CommunicationObject.ThisLock
+  commentId: P:CoreWCF.Channels.CommunicationObject.ThisLock
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: ThisLock
+  nameWithType: CommunicationObject.ThisLock
+  fullName: CoreWCF.Channels.CommunicationObject.ThisLock
+- uid: CoreWCF.Channels.CommunicationObject.Closed
+  commentId: E:CoreWCF.Channels.CommunicationObject.Closed
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Closed
+  nameWithType: CommunicationObject.Closed
+  fullName: CoreWCF.Channels.CommunicationObject.Closed
+- uid: CoreWCF.Channels.CommunicationObject.Closing
+  commentId: E:CoreWCF.Channels.CommunicationObject.Closing
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Closing
+  nameWithType: CommunicationObject.Closing
+  fullName: CoreWCF.Channels.CommunicationObject.Closing
+- uid: CoreWCF.Channels.CommunicationObject.Faulted
+  commentId: E:CoreWCF.Channels.CommunicationObject.Faulted
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Faulted
+  nameWithType: CommunicationObject.Faulted
+  fullName: CoreWCF.Channels.CommunicationObject.Faulted
+- uid: CoreWCF.Channels.CommunicationObject.Opened
+  commentId: E:CoreWCF.Channels.CommunicationObject.Opened
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Opened
+  nameWithType: CommunicationObject.Opened
+  fullName: CoreWCF.Channels.CommunicationObject.Opened
+- uid: CoreWCF.Channels.CommunicationObject.Opening
+  commentId: E:CoreWCF.Channels.CommunicationObject.Opening
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: Opening
+  nameWithType: CommunicationObject.Opening
+  fullName: CoreWCF.Channels.CommunicationObject.Opening
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: CoreWCF
+  commentId: N:CoreWCF
+  isExternal: true
+  name: CoreWCF
+  nameWithType: CoreWCF
+  fullName: CoreWCF
+- uid: CoreWCF.Channels.CommunicationObject.OnAbort
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnAbort
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnAbort()
+  nameWithType: CommunicationObject.OnAbort()
+  fullName: CoreWCF.Channels.CommunicationObject.OnAbort()
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnAbort
+    name: OnAbort
+    nameWithType: CommunicationObject.OnAbort
+    fullName: CoreWCF.Channels.CommunicationObject.OnAbort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnAbort
+    name: OnAbort
+    nameWithType: CommunicationObject.OnAbort
+    fullName: CoreWCF.Channels.CommunicationObject.OnAbort
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.OnAbort*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.OnAbort
+  isExternal: true
+  name: OnAbort
+  nameWithType: ChannelDispatcher.OnAbort
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.OnAbort
+- uid: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnCloseAsync(CancellationToken)
+  nameWithType: CommunicationObject.OnCloseAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+    name: OnCloseAsync
+    nameWithType: CommunicationObject.OnCloseAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OnCloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)
+    name: OnCloseAsync
+    nameWithType: CommunicationObject.OnCloseAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OnCloseAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync
+  isExternal: true
+  name: OnCloseAsync
+  nameWithType: ChannelDispatcher.OnCloseAsync
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync
+- uid: System.Threading.CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  commentId: M:CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: OnOpenAsync(CancellationToken)
+  nameWithType: CommunicationObject.OnOpenAsync(CancellationToken)
+  fullName: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+    name: OnOpenAsync
+    nameWithType: CommunicationObject.OnOpenAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OnOpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)
+    name: OnOpenAsync
+    nameWithType: CommunicationObject.OnOpenAsync
+    fullName: CoreWCF.Channels.CommunicationObject.OnOpenAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync
+  isExternal: true
+  name: OnOpenAsync
+  nameWithType: ChannelDispatcher.OnOpenAsync
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync
+- uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcherBase.Attach(CoreWCF.ServiceHostBase)
+  parent: CoreWCF.Dispatcher.ChannelDispatcherBase
+  isExternal: true
+  name: Attach(ServiceHostBase)
+  nameWithType: ChannelDispatcherBase.Attach(ServiceHostBase)
+  fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach(CoreWCF.ServiceHostBase)
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach(CoreWCF.ServiceHostBase)
+    name: Attach
+    nameWithType: ChannelDispatcherBase.Attach
+    fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach(CoreWCF.ServiceHostBase)
+    name: Attach
+    nameWithType: ChannelDispatcherBase.Attach
+    fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Attach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Attach*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.Attach
+  isExternal: true
+  name: Attach
+  nameWithType: ChannelDispatcher.Attach
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Attach
+- uid: CoreWCF.ServiceHostBase
+  commentId: T:CoreWCF.ServiceHostBase
+  parent: CoreWCF
+  isExternal: true
+  name: ServiceHostBase
+  nameWithType: ServiceHostBase
+  fullName: CoreWCF.ServiceHostBase
+- uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach(CoreWCF.ServiceHostBase)
+  commentId: M:CoreWCF.Dispatcher.ChannelDispatcherBase.Detach(CoreWCF.ServiceHostBase)
+  parent: CoreWCF.Dispatcher.ChannelDispatcherBase
+  isExternal: true
+  name: Detach(ServiceHostBase)
+  nameWithType: ChannelDispatcherBase.Detach(ServiceHostBase)
+  fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach(CoreWCF.ServiceHostBase)
+  spec.csharp:
+  - uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach(CoreWCF.ServiceHostBase)
+    name: Detach
+    nameWithType: ChannelDispatcherBase.Detach
+    fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach(CoreWCF.ServiceHostBase)
+    name: Detach
+    nameWithType: ChannelDispatcherBase.Detach
+    fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Detach
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: CoreWCF.ServiceHostBase
+    name: ServiceHostBase
+    nameWithType: ServiceHostBase
+    fullName: CoreWCF.ServiceHostBase
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Detach*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.Detach
+  isExternal: true
+  name: Detach
+  nameWithType: ChannelDispatcher.Detach
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Detach
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.BindingName*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.BindingName
+  isExternal: true
+  name: BindingName
+  nameWithType: ChannelDispatcher.BindingName
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.BindingName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers
+  isExternal: true
+  name: ChannelInitializers
+  nameWithType: ChannelDispatcher.ChannelInitializers
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IChannelInitializer}
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.IChannelInitializer}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  name: SynchronizedCollection<IChannelInitializer>
+  nameWithType: SynchronizedCollection<IChannelInitializer>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.Dispatcher.IChannelInitializer>
+  nameWithType.vb: SynchronizedCollection(Of IChannelInitializer)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.Dispatcher.IChannelInitializer)
+  name.vb: SynchronizedCollection(Of IChannelInitializer)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.IChannelInitializer
+    name: IChannelInitializer
+    nameWithType: IChannelInitializer
+    fullName: CoreWCF.Dispatcher.IChannelInitializer
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.IChannelInitializer
+    name: IChannelInitializer
+    nameWithType: IChannelInitializer
+    fullName: CoreWCF.Dispatcher.IChannelInitializer
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection`1
+  isExternal: true
+  name: SynchronizedCollection<T>
+  nameWithType: SynchronizedCollection<T>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<T>
+  nameWithType.vb: SynchronizedCollection(Of T)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of T)
+  name.vb: SynchronizedCollection(Of T)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Collections.Generic
+  commentId: N:CoreWCF.Collections.Generic
+  isExternal: true
+  name: CoreWCF.Collections.Generic
+  nameWithType: CoreWCF.Collections.Generic
+  fullName: CoreWCF.Collections.Generic
+- uid: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  commentId: P:CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: DefaultCloseTimeout
+  nameWithType: CommunicationObject.DefaultCloseTimeout
+  fullName: CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout
+  isExternal: true
+  name: DefaultCloseTimeout
+  nameWithType: ChannelDispatcher.DefaultCloseTimeout
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout
+- uid: System.TimeSpan
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  commentId: P:CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+  parent: CoreWCF.Channels.CommunicationObject
+  isExternal: true
+  name: DefaultOpenTimeout
+  nameWithType: CommunicationObject.DefaultOpenTimeout
+  fullName: CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout
+  isExternal: true
+  name: DefaultOpenTimeout
+  nameWithType: ChannelDispatcher.DefaultOpenTimeout
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Endpoints*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.Endpoints
+  isExternal: true
+  name: Endpoints
+  nameWithType: ChannelDispatcher.Endpoints
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Endpoints
+- uid: CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.EndpointDispatcher}
+  commentId: T:CoreWCF.Collections.Generic.SynchronizedCollection{CoreWCF.Dispatcher.EndpointDispatcher}
+  parent: CoreWCF.Collections.Generic
+  definition: CoreWCF.Collections.Generic.SynchronizedCollection`1
+  name: SynchronizedCollection<EndpointDispatcher>
+  nameWithType: SynchronizedCollection<EndpointDispatcher>
+  fullName: CoreWCF.Collections.Generic.SynchronizedCollection<CoreWCF.Dispatcher.EndpointDispatcher>
+  nameWithType.vb: SynchronizedCollection(Of EndpointDispatcher)
+  fullName.vb: CoreWCF.Collections.Generic.SynchronizedCollection(Of CoreWCF.Dispatcher.EndpointDispatcher)
+  name.vb: SynchronizedCollection(Of EndpointDispatcher)
+  spec.csharp:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.EndpointDispatcher
+    name: EndpointDispatcher
+    nameWithType: EndpointDispatcher
+    fullName: CoreWCF.Dispatcher.EndpointDispatcher
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: CoreWCF.Collections.Generic.SynchronizedCollection`1
+    name: SynchronizedCollection
+    nameWithType: SynchronizedCollection
+    fullName: CoreWCF.Collections.Generic.SynchronizedCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.EndpointDispatcher
+    name: EndpointDispatcher
+    nameWithType: EndpointDispatcher
+    fullName: CoreWCF.Dispatcher.EndpointDispatcher
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers
+  isExternal: true
+  name: ErrorHandlers
+  nameWithType: ChannelDispatcher.ErrorHandlers
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers
+- uid: System.Collections.ObjectModel.Collection{CoreWCF.Dispatcher.IErrorHandler}
+  commentId: '!:System.Collections.ObjectModel.Collection{CoreWCF.Dispatcher.IErrorHandler}'
+  definition: System.Collections.ObjectModel.Collection`1
+  name: Collection<IErrorHandler>
+  nameWithType: Collection<IErrorHandler>
+  fullName: System.Collections.ObjectModel.Collection<CoreWCF.Dispatcher.IErrorHandler>
+  nameWithType.vb: Collection(Of IErrorHandler)
+  fullName.vb: System.Collections.ObjectModel.Collection(Of CoreWCF.Dispatcher.IErrorHandler)
+  name.vb: Collection(Of IErrorHandler)
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: CoreWCF.Dispatcher.IErrorHandler
+    name: IErrorHandler
+    nameWithType: IErrorHandler
+    fullName: CoreWCF.Dispatcher.IErrorHandler
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: CoreWCF.Dispatcher.IErrorHandler
+    name: IErrorHandler
+    nameWithType: IErrorHandler
+    fullName: CoreWCF.Dispatcher.IErrorHandler
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.ObjectModel.Collection`1
+  isExternal: true
+  name: Collection<>
+  nameWithType: Collection<>
+  fullName: System.Collections.ObjectModel.Collection<>
+  nameWithType.vb: Collection(Of )
+  fullName.vb: System.Collections.ObjectModel.Collection(Of )
+  name.vb: Collection(Of )
+  spec.csharp:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.ObjectModel.Collection`1
+    name: Collection
+    nameWithType: Collection
+    fullName: System.Collections.ObjectModel.Collection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion
+  isExternal: true
+  name: MessageVersion
+  nameWithType: ChannelDispatcher.MessageVersion
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.Dispatcher.ChannelDispatcherBase.Host
+  commentId: P:CoreWCF.Dispatcher.ChannelDispatcherBase.Host
+  parent: CoreWCF.Dispatcher.ChannelDispatcherBase
+  isExternal: true
+  name: Host
+  nameWithType: ChannelDispatcherBase.Host
+  fullName: CoreWCF.Dispatcher.ChannelDispatcherBase.Host
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.Host*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.Host
+  isExternal: true
+  name: Host
+  nameWithType: ChannelDispatcher.Host
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.Host
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing
+  isExternal: true
+  name: ManualAddressing
+  nameWithType: ChannelDispatcher.ManualAddressing
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously
+  isExternal: true
+  name: ReceiveSynchronously
+  nameWithType: ChannelDispatcher.ReceiveSynchronously
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously
+  isExternal: true
+  name: SendAsynchronously
+  nameWithType: ChannelDispatcher.SendAsynchronously
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives
+  isExternal: true
+  name: MaxPendingReceives
+  nameWithType: ChannelDispatcher.MaxPendingReceives
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults*
+  commentId: Overload:CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults
+  isExternal: true
+  name: IncludeExceptionDetailInFaults
+  nameWithType: ChannelDispatcher.IncludeExceptionDetailInFaults
+  fullName: CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults

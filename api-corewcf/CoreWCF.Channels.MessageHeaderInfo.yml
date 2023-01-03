@@ -1,0 +1,356 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.MessageHeaderInfo
+  commentId: T:CoreWCF.Channels.MessageHeaderInfo
+  id: MessageHeaderInfo
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.MessageHeaderInfo.#ctor
+  - CoreWCF.Channels.MessageHeaderInfo.Actor
+  - CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  - CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  - CoreWCF.Channels.MessageHeaderInfo.Name
+  - CoreWCF.Channels.MessageHeaderInfo.Namespace
+  - CoreWCF.Channels.MessageHeaderInfo.Relay
+  langs:
+  - csharp
+  - vb
+  name: MessageHeaderInfo
+  nameWithType: MessageHeaderInfo
+  fullName: CoreWCF.Channels.MessageHeaderInfo
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Represents system information regarding a SOAP message header.
+  syntax:
+    content: 'public abstract class MessageHeaderInfo : Object'
+    content.vb: >-
+      Public MustInherit Class MessageHeaderInfo
+          Inherits Object
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - CoreWCF.Channels.HeaderInfoCache.HeaderInfo
+  - CoreWCF.Channels.MessageHeader
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.MessageHeaderInfo.#ctor
+  commentId: M:CoreWCF.Channels.MessageHeaderInfo.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: MessageHeaderInfo()
+  summary: Initializes a new instance of the [MessageHeaderInfo](xref:CoreWCF.Channels.MessageHeaderInfo) class.
+  nameWithType: MessageHeaderInfo.MessageHeaderInfo()
+  fullName: CoreWCF.Channels.MessageHeaderInfo.MessageHeaderInfo()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: protected MessageHeaderInfo()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.MessageHeaderInfo.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+- uid: CoreWCF.Channels.MessageHeaderInfo.Actor
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Actor
+  id: Actor
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: Actor
+  summary: Gets or sets the intended recipient of the message header.
+  nameWithType: MessageHeaderInfo.Actor
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Actor
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string Actor { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: A URI that indicates the intended recipient of the message header.
+    content.vb: Public MustOverride ReadOnly Property Actor As String
+  overload: CoreWCF.Channels.MessageHeaderInfo.Actor*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: If this property is empty, the header is interpreted as targeted for the ultimate recipient of the message.
+- uid: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  id: IsReferenceParameter
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: IsReferenceParameter
+  summary: Gets a value that specifies whether the message header represents reference parameters of an endpoint reference.
+  nameWithType: MessageHeaderInfo.IsReferenceParameter
+  fullName: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract bool IsReferenceParameter { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the message header represents reference parameters of an endpoint reference; otherwise, false.
+    content.vb: Public MustOverride ReadOnly Property IsReferenceParameter As Boolean
+  overload: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: A reference parameter corresponds to the <ReferenceParameters> element described in the [WS-Addressing specification](https://www.w3.org/Submission/ws-addressing/).
+- uid: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  id: MustUnderstand
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: MustUnderstand
+  summary: Gets or sets a value that indicates whether processing the message header is mandatory or optional.
+  nameWithType: MessageHeaderInfo.MustUnderstand
+  fullName: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract bool MustUnderstand { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if processing the message header is mandatory; otherwise, false.
+    content.vb: Public MustOverride ReadOnly Property MustUnderstand As Boolean
+  overload: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: If this property is true and the message receiver cannot interpret the message header, the message is not processed and an exception is thrown. If this property is false, the receiver can ignore the message header and continue processing.
+- uid: CoreWCF.Channels.MessageHeaderInfo.Name
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Name
+  id: Name
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: Name
+  summary: Gets the name of the message header.
+  nameWithType: MessageHeaderInfo.Name
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Name
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The name of the message header.
+    content.vb: Public MustOverride ReadOnly Property Name As String
+  overload: CoreWCF.Channels.MessageHeaderInfo.Name*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageHeaderInfo.Namespace
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Namespace
+  id: Namespace
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: Namespace
+  summary: Gets the namespace of the message header.
+  nameWithType: MessageHeaderInfo.Namespace
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Namespace
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract string Namespace { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: The namespace of the message header.
+    content.vb: Public MustOverride ReadOnly Property Namespace As String
+  overload: CoreWCF.Channels.MessageHeaderInfo.Namespace*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: CoreWCF.Channels.MessageHeaderInfo.Relay
+  commentId: P:CoreWCF.Channels.MessageHeaderInfo.Relay
+  id: Relay
+  parent: CoreWCF.Channels.MessageHeaderInfo
+  langs:
+  - csharp
+  - vb
+  name: Relay
+  summary: Gets or sets a value that indicates whether the message header can be relayed.
+  nameWithType: MessageHeaderInfo.Relay
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Relay
+  type: Property
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public abstract bool Relay { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: true if the message header can be relayed; otherwise, false.
+    content.vb: Public MustOverride ReadOnly Property Relay As Boolean
+  overload: CoreWCF.Channels.MessageHeaderInfo.Relay*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+  remarks: The SOAP specification defines a header block as one that can be relayed in the forwarded message if the header block is targeted at a role acted on by the SOAP intermediary, but not otherwise processed by the intermediary.
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.MessageHeaderInfo.#ctor*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.#ctor
+  isExternal: true
+  name: MessageHeaderInfo
+  nameWithType: MessageHeaderInfo.MessageHeaderInfo
+  fullName: CoreWCF.Channels.MessageHeaderInfo.MessageHeaderInfo
+- uid: CoreWCF.Channels.MessageHeaderInfo.Actor*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.Actor
+  isExternal: true
+  name: Actor
+  nameWithType: MessageHeaderInfo.Actor
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Actor
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+  isExternal: true
+  name: IsReferenceParameter
+  nameWithType: MessageHeaderInfo.IsReferenceParameter
+  fullName: CoreWCF.Channels.MessageHeaderInfo.IsReferenceParameter
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+  isExternal: true
+  name: MustUnderstand
+  nameWithType: MessageHeaderInfo.MustUnderstand
+  fullName: CoreWCF.Channels.MessageHeaderInfo.MustUnderstand
+- uid: CoreWCF.Channels.MessageHeaderInfo.Name*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.Name
+  isExternal: true
+  name: Name
+  nameWithType: MessageHeaderInfo.Name
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Name
+- uid: CoreWCF.Channels.MessageHeaderInfo.Namespace*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.Namespace
+  isExternal: true
+  name: Namespace
+  nameWithType: MessageHeaderInfo.Namespace
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Namespace
+- uid: CoreWCF.Channels.MessageHeaderInfo.Relay*
+  commentId: Overload:CoreWCF.Channels.MessageHeaderInfo.Relay
+  isExternal: true
+  name: Relay
+  nameWithType: MessageHeaderInfo.Relay
+  fullName: CoreWCF.Channels.MessageHeaderInfo.Relay

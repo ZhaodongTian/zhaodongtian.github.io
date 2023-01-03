@@ -1,0 +1,366 @@
+### YamlMime:ManagedReference
+items:
+- uid: CoreWCF.Channels.FaultConverter
+  commentId: T:CoreWCF.Channels.FaultConverter
+  id: FaultConverter
+  parent: CoreWCF.Channels
+  children:
+  - CoreWCF.Channels.FaultConverter.#ctor
+  - CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)
+  - CoreWCF.Channels.FaultConverter.OnTryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  - CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  - CoreWCF.Channels.FaultConverter.TryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  - CoreWCF.Channels.FaultConverter.TryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  langs:
+  - csharp
+  - vb
+  name: FaultConverter
+  nameWithType: FaultConverter
+  fullName: CoreWCF.Channels.FaultConverter
+  type: Class
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Converts exceptions thrown by a channel into SOAP fault messages that conform to the channel&apos;s protocol.
+  remarks: To be added.
+  syntax:
+    content: 'public abstract class FaultConverter : Object'
+    content.vb: >-
+      Public MustInherit Class FaultConverter
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)
+  commentId: M:CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)
+  id: GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)
+  parent: CoreWCF.Channels.FaultConverter
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultFaultConverter(MessageVersion)
+  nameWithType: FaultConverter.GetDefaultFaultConverter(MessageVersion)
+  fullName: CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Gets the default fault converter.
+  syntax:
+    content: public static FaultConverter GetDefaultFaultConverter(MessageVersion version)
+    parameters:
+    - id: version
+      type: CoreWCF.Channels.MessageVersion
+      description: The message version.
+    return:
+      type: CoreWCF.Channels.FaultConverter
+      description: "An instance of <xref:CoreWCF.Channels.FaultConverter>."
+    content.vb: Public Shared Function GetDefaultFaultConverter(version As MessageVersion) As FaultConverter
+  overload: CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  remarks: Transport channels should delegate to this method to get the default SOAP WS-Addressing fault converter.
+- uid: CoreWCF.Channels.FaultConverter.OnTryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  commentId: M:CoreWCF.Channels.FaultConverter.OnTryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  id: OnTryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  parent: CoreWCF.Channels.FaultConverter
+  langs:
+  - csharp
+  - vb
+  name: OnTryCreateException(Message, MessageFault, out Exception)
+  nameWithType: FaultConverter.OnTryCreateException(Message, MessageFault, out Exception)
+  fullName: CoreWCF.Channels.FaultConverter.OnTryCreateException(CoreWCF.Channels.Message, CoreWCF.Channels.MessageFault, out System.Exception)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Tries to create the exception.
+  syntax:
+    content: protected abstract bool OnTryCreateException(Message message, MessageFault fault, out Exception exception)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The fault message.
+    - id: fault
+      type: CoreWCF.Channels.MessageFault
+      description: The fault.
+    - id: exception
+      type: System.Exception
+      description: If conversion is successful, the SOAP exception, returned as an out parameter.
+    return:
+      type: System.Boolean
+      description: true if fault was successfully converted; otherwise, false. The default is false.
+    content.vb: Protected MustOverride Function OnTryCreateException(message As Message, fault As MessageFault, ByRef exception As Exception) As Boolean
+  overload: CoreWCF.Channels.FaultConverter.OnTryCreateException*
+  nameWithType.vb: FaultConverter.OnTryCreateException(Message, MessageFault, ByRef Exception)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: CoreWCF.Channels.FaultConverter.OnTryCreateException(CoreWCF.Channels.Message, CoreWCF.Channels.MessageFault, ByRef System.Exception)
+  name.vb: OnTryCreateException(Message, MessageFault, ByRef Exception)
+  remarks: "For a channel layer to implement GetProperty<FaultConverter> to support converting fault messages to SOAP exceptions, override this method to create an exception by doing the following steps:<br /> \n* Inspect the fault message.\n \n* If recognized, do the appropriate conversion.\n \n* If not recognized, convert it by a call to GetProperty<FaultConverter> on the inner channel.\n \n Transport channels should delegate to <xref:CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)> to get the default SOAP/WS-Addressing fault converter.\n"
+- uid: CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  commentId: M:CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  id: OnTryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  parent: CoreWCF.Channels.FaultConverter
+  langs:
+  - csharp
+  - vb
+  name: OnTryCreateFaultMessage(Exception, out Message)
+  nameWithType: FaultConverter.OnTryCreateFaultMessage(Exception, out Message)
+  fullName: CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception, out CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: Tries to create the fault message once the fault has been converted to a SOAP exception.
+  syntax:
+    content: protected abstract bool OnTryCreateFaultMessage(Exception exception, out Message message)
+    parameters:
+    - id: exception
+      type: System.Exception
+      description: The SOAP exception.
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The fault message returned as an out parameter.
+    return:
+      type: System.Boolean
+      description: true if fault message was successfully created; otherwise, false. The default is false.
+    content.vb: Protected MustOverride Function OnTryCreateFaultMessage(exception As Exception, ByRef message As Message) As Boolean
+  overload: CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage*
+  nameWithType.vb: FaultConverter.OnTryCreateFaultMessage(Exception, ByRef Message)
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+  fullName.vb: CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception, ByRef CoreWCF.Channels.Message)
+  name.vb: OnTryCreateFaultMessage(Exception, ByRef Message)
+  remarks: "Channels that support fault conversion implement GetProperty<FaultConverter> and override this method to do the following. If a layer can convert the exception it does; otherwise it calls GetProperty<FaultConverter> on its inner channel. Transport channels should delegate to <xref:CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter(CoreWCF.Channels.MessageVersion)> to get the default SOAP/WS-Addressing fault converter."
+- uid: CoreWCF.Channels.FaultConverter.TryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  commentId: M:CoreWCF.Channels.FaultConverter.TryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  id: TryCreateException(CoreWCF.Channels.Message,CoreWCF.Channels.MessageFault,System.Exception@)
+  parent: CoreWCF.Channels.FaultConverter
+  langs:
+  - csharp
+  - vb
+  name: TryCreateException(Message, MessageFault, out Exception)
+  nameWithType: FaultConverter.TryCreateException(Message, MessageFault, out Exception)
+  fullName: CoreWCF.Channels.FaultConverter.TryCreateException(CoreWCF.Channels.Message, CoreWCF.Channels.MessageFault, out System.Exception)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Wraps <xref:CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)> with error checking."
+  syntax:
+    content: public bool TryCreateException(Message message, MessageFault fault, out Exception exception)
+    parameters:
+    - id: message
+      type: CoreWCF.Channels.Message
+      description: The fault message.
+    - id: fault
+      type: CoreWCF.Channels.MessageFault
+      description: The fault
+    - id: exception
+      type: System.Exception
+      description: If conversion is successful, the SOAP exception, returned as an out parameter.
+    return:
+      type: System.Boolean
+      description: true if fault was successfully converted; otherwise, false. The default is false.
+    content.vb: Public Function TryCreateException(message As Message, fault As MessageFault, ByRef exception As Exception) As Boolean
+  overload: CoreWCF.Channels.FaultConverter.TryCreateException*
+  nameWithType.vb: FaultConverter.TryCreateException(Message, MessageFault, ByRef Exception)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.FaultConverter.TryCreateException(CoreWCF.Channels.Message, CoreWCF.Channels.MessageFault, ByRef System.Exception)
+  name.vb: TryCreateException(Message, MessageFault, ByRef Exception)
+  remarks: "<xref:CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)> is an abstract class that you must implement. The current method wraps several parameter error tests around a call to that method."
+- uid: CoreWCF.Channels.FaultConverter.TryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  commentId: M:CoreWCF.Channels.FaultConverter.TryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  id: TryCreateFaultMessage(System.Exception,CoreWCF.Channels.Message@)
+  parent: CoreWCF.Channels.FaultConverter
+  langs:
+  - csharp
+  - vb
+  name: TryCreateFaultMessage(Exception, out Message)
+  nameWithType: FaultConverter.TryCreateFaultMessage(Exception, out Message)
+  fullName: CoreWCF.Channels.FaultConverter.TryCreateFaultMessage(System.Exception, out CoreWCF.Channels.Message)
+  type: Method
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  syntax:
+    content: public bool TryCreateFaultMessage(Exception exception, out Message message)
+    parameters:
+    - id: exception
+      type: System.Exception
+    - id: message
+      type: CoreWCF.Channels.Message
+    return:
+      type: System.Boolean
+    content.vb: Public Function TryCreateFaultMessage(exception As Exception, ByRef message As Message) As Boolean
+  overload: CoreWCF.Channels.FaultConverter.TryCreateFaultMessage*
+  nameWithType.vb: FaultConverter.TryCreateFaultMessage(Exception, ByRef Message)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: CoreWCF.Channels.FaultConverter.TryCreateFaultMessage(System.Exception, ByRef CoreWCF.Channels.Message)
+  name.vb: TryCreateFaultMessage(Exception, ByRef Message)
+- uid: CoreWCF.Channels.FaultConverter.#ctor
+  commentId: M:CoreWCF.Channels.FaultConverter.#ctor
+  id: '#ctor'
+  parent: CoreWCF.Channels.FaultConverter
+  langs:
+  - csharp
+  - vb
+  name: FaultConverter()
+  nameWithType: FaultConverter.FaultConverter()
+  fullName: CoreWCF.Channels.FaultConverter.FaultConverter()
+  type: Constructor
+  source:
+    path: CoreWCF.Primitives
+    isExternal: true
+  assemblies:
+  - CoreWCF.Primitives
+  namespace: CoreWCF.Channels
+  summary: "Initializes a new instance of the <xref:CoreWCF.Channels.FaultConverter> class."
+  syntax:
+    content: protected FaultConverter()
+    content.vb: Protected Sub New
+  overload: CoreWCF.Channels.FaultConverter.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: CoreWCF.Channels
+  commentId: N:CoreWCF.Channels
+  isExternal: true
+  name: CoreWCF.Channels
+  nameWithType: CoreWCF.Channels
+  fullName: CoreWCF.Channels
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter*
+  commentId: Overload:CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter
+  isExternal: true
+  name: GetDefaultFaultConverter
+  nameWithType: FaultConverter.GetDefaultFaultConverter
+  fullName: CoreWCF.Channels.FaultConverter.GetDefaultFaultConverter
+- uid: CoreWCF.Channels.MessageVersion
+  commentId: T:CoreWCF.Channels.MessageVersion
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageVersion
+  nameWithType: MessageVersion
+  fullName: CoreWCF.Channels.MessageVersion
+- uid: CoreWCF.Channels.FaultConverter
+  commentId: T:CoreWCF.Channels.FaultConverter
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: FaultConverter
+  nameWithType: FaultConverter
+  fullName: CoreWCF.Channels.FaultConverter
+- uid: CoreWCF.Channels.FaultConverter.OnTryCreateException*
+  commentId: Overload:CoreWCF.Channels.FaultConverter.OnTryCreateException
+  isExternal: true
+  name: OnTryCreateException
+  nameWithType: FaultConverter.OnTryCreateException
+  fullName: CoreWCF.Channels.FaultConverter.OnTryCreateException
+- uid: CoreWCF.Channels.Message
+  commentId: T:CoreWCF.Channels.Message
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: Message
+  nameWithType: Message
+  fullName: CoreWCF.Channels.Message
+- uid: CoreWCF.Channels.MessageFault
+  commentId: T:CoreWCF.Channels.MessageFault
+  parent: CoreWCF.Channels
+  isExternal: true
+  name: MessageFault
+  nameWithType: MessageFault
+  fullName: CoreWCF.Channels.MessageFault
+- uid: System.Exception
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage*
+  commentId: Overload:CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage
+  isExternal: true
+  name: OnTryCreateFaultMessage
+  nameWithType: FaultConverter.OnTryCreateFaultMessage
+  fullName: CoreWCF.Channels.FaultConverter.OnTryCreateFaultMessage
+- uid: CoreWCF.Channels.FaultConverter.TryCreateException*
+  commentId: Overload:CoreWCF.Channels.FaultConverter.TryCreateException
+  isExternal: true
+  name: TryCreateException
+  nameWithType: FaultConverter.TryCreateException
+  fullName: CoreWCF.Channels.FaultConverter.TryCreateException
+- uid: CoreWCF.Channels.FaultConverter.TryCreateFaultMessage*
+  commentId: Overload:CoreWCF.Channels.FaultConverter.TryCreateFaultMessage
+  isExternal: true
+  name: TryCreateFaultMessage
+  nameWithType: FaultConverter.TryCreateFaultMessage
+  fullName: CoreWCF.Channels.FaultConverter.TryCreateFaultMessage
+- uid: CoreWCF.Channels.FaultConverter.#ctor*
+  commentId: Overload:CoreWCF.Channels.FaultConverter.#ctor
+  isExternal: true
+  name: FaultConverter
+  nameWithType: FaultConverter.FaultConverter
+  fullName: CoreWCF.Channels.FaultConverter.FaultConverter
