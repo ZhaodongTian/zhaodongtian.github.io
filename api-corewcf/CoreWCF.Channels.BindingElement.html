@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BindingElement
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BindingElement
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.BindingElement">
+  
+  
+  <h1 id="CoreWCF_Channels_BindingElement" data-uid="CoreWCF.Channels.BindingElement" class="text-break">Class BindingElement
+  </h1>
+  <div class="markdown level0 summary"><p>The elements of the bindings that build the channel factories and channel listeners for various types of channels that are used to process outgoing and incoming messages.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">BindingElement</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html">MessageEncodingBindingElement</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.PrivacyNoticeBindingElement.html">PrivacyNoticeBindingElement</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.StreamUpgradeBindingElement.html">StreamUpgradeBindingElement</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.TransportBindingElement.html">TransportBindingElement</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_BindingElement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BindingElement : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_BindingElement_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A binding consists of an ordered set of binding elements that inherit from this abstract base class. The <a class="xref" href="CoreWCF.Channels.TransportBindingElement.html">TransportBindingElement</a> class inherits from the <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> class.<br><br>Creating a binding and binding element for your transport is optional if you are just using the channel model. It is possible to do everything you need through the channel factory and listener as long as they are made public.<br><br>The Windows Communication Foundation (WCF) service model uses a factory pattern where the binding is used to create the channel stack. If you want to use the WCF service model, then using a transport binding element is required. Placing this binding element into a binding is a good practice because it removes the requirement for users to create their own custom binding for your transport. It is best to create both a binding and binding element, and hide the channel factory and listener inside the assembly.<br><br>On the sending side, a binding is used to build a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannelfactory?view=dotnet-plat-ext-7.0">IChannelFactory</a>, which in turn builds a channel stack and returns a reference to the top channel in the stack. The application can then use this channel to send messages.<br><br>Similarly, on the receiving side a binding is used to build a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannellistener?view=netframework-4.8&amp;viewFallbackFrom=dotnet-plat-ext-7.0">IChannelListener</a>, which listens for incoming messages. The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.ichannellistener?view=netframework-4.8&amp;viewFallbackFrom=dotnet-plat-ext-7.00">IChannelListener</a> provides messages to the listening application by creating channel stacks and handing the application a reference to the top channel. The application then uses this channel to receive incoming messages.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement__ctor_" data-uid="CoreWCF.Channels.BindingElement.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement__ctor" data-uid="CoreWCF.Channels.BindingElement.#ctor">BindingElement()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BindingElement()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement__ctor_" data-uid="CoreWCF.Channels.BindingElement.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement__ctor_CoreWCF_Channels_BindingElement_" data-uid="CoreWCF.Channels.BindingElement.#ctor(CoreWCF.Channels.BindingElement)">BindingElement(BindingElement)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> class from a specified binding element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BindingElement(BindingElement elementToBeCloned)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></td>
+        <td><span class="parametername">elementToBeCloned</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> to be cloned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement_BuildServiceDispatcher_" data-uid="CoreWCF.Channels.BindingElement.BuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement_BuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.BindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcher&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IServiceDispatcher BuildServiceDispatcher&lt;TChannel&gt;(BindingContext context, IServiceDispatcher innerDispatcher)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">innerDispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement_CanBuildServiceDispatcher_" data-uid="CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement_CanBuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.BindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)">CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext context)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement_Clone_" data-uid="CoreWCF.Channels.BindingElement.Clone*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement_Clone" data-uid="CoreWCF.Channels.BindingElement.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, returns a copy of the binding element object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract BindingElement Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> object that is a deep clone of the original.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BindingElement_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Implement the <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_Clone">Clone()</a> method to return a deep clone of your binding element. Returning a clone enables the runtime to support the case in which multiple custom bindings share a custom binding element. If a clone is not returned, the run-time behavior is undefined.<br><br>A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. (This is also called copying the entire object graph.) A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement_GetProperty_" data-uid="CoreWCF.Channels.BindingElement.GetProperty*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.BindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)">GetProperty&lt;T&gt;(BindingContext)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, returns a typed object requested, if present, from the appropriate layer in the binding stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract T GetProperty&lt;T&gt;(BindingContext context)
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a> for the binding element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The typed object T requested if it is present or null if it is not present.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The typed object for which the method is querying.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BindingElement_GetProperty__1_CoreWCF_Channels_BindingContext__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Use this to retrieve capabilities, requirements and parameters from the binding element stack. If a binding element supports returning the requested object, it returns it. If not, it delegates the call down to the next binding element in the stack. If it gets to the bottom of the stack and no binding element supported the requested object, then the method returns null.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BindingElement_IsMatch_" data-uid="CoreWCF.Channels.BindingElement.IsMatch*"></a>
+  <h4 id="CoreWCF_Channels_BindingElement_IsMatch_CoreWCF_Channels_BindingElement_" data-uid="CoreWCF.Channels.BindingElement.IsMatch(CoreWCF.Channels.BindingElement)">IsMatch(BindingElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool IsMatch(BindingElement b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></td>
+        <td><span class="parametername">b</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

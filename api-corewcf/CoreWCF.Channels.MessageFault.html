@@ -1,0 +1,681 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageFault
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageFault
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.MessageFault">
+  
+  
+  <h1 id="CoreWCF_Channels_MessageFault" data-uid="CoreWCF.Channels.MessageFault" class="text-break">Class MessageFault
+  </h1>
+  <div class="markdown level0 summary"><p>Represents an in-memory representation of a SOAP fault that can be passed to <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_CreateBufferedCopy_System_Int32_">CreateMessage</a> to create a message that contains a fault.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">MessageFault</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_MessageFault_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MessageFault : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageFault_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Use the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> class any time you need an in-memory SOAP fault that can be modified and used to create a SOAP message that contains the fault information.</p>
+<p>Typically, the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> class is used when implementing the <a class="xref" href="CoreWCF.Dispatcher.IErrorHandler.html">IErrorHandler</a> interface. In this case, Windows Communication Foundation (WCF) passes the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> object and you use it for your specific needs (for example, you can customize the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> or to log fault information). However, <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> can be used anywhere custom SOAP fault message handling is required.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault__ctor_" data-uid="CoreWCF.Channels.MessageFault.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault__ctor" data-uid="CoreWCF.Channels.MessageFault.#ctor">MessageFault()</h4>
+  <div class="markdown level1 summary"><p>When called in a derived class, initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MessageFault()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_Actor_" data-uid="CoreWCF.Channels.MessageFault.Actor*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_Actor" data-uid="CoreWCF.Channels.MessageFault.Actor">Actor</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value of the actor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Actor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The value of the actor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_Code_" data-uid="CoreWCF.Channels.MessageFault.Code*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_Code" data-uid="CoreWCF.Channels.MessageFault.Code">Code</h4>
+  <div class="markdown level1 summary"><p>Gets the SOAP fault code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract FaultCode Code { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.FaultCode.html">FaultCode</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.FaultCode.html">FaultCode</a> that contains the SOAP fault code.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_HasDetail_" data-uid="CoreWCF.Channels.MessageFault.HasDetail*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_HasDetail" data-uid="CoreWCF.Channels.MessageFault.HasDetail">HasDetail</h4>
+  <div class="markdown level1 summary"><p>Gets a value that indicates whether the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> has a detail object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool HasDetail { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> has a detail object; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_Node_" data-uid="CoreWCF.Channels.MessageFault.Node*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_Node" data-uid="CoreWCF.Channels.MessageFault.Node">Node</h4>
+  <div class="markdown level1 summary"><p>Gets the SOAP node containing information about which SOAP node on a message path cause the fault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string Node { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The SOAP node containing information about which SOAP node on a message path cause the fault.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_Reason_" data-uid="CoreWCF.Channels.MessageFault.Reason*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_Reason" data-uid="CoreWCF.Channels.MessageFault.Reason">Reason</h4>
+  <div class="markdown level1 summary"><p>Gets a textual description of a SOAP fault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract FaultReason Reason { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.FaultReason.html">FaultReason</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.FaultReason.html">FaultReason</a> that contains a textual description of a SOAP fault.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_CreateFault_" data-uid="CoreWCF.Channels.MessageFault.CreateFault*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_CreateFault_CoreWCF_Channels_Message_System_Int32_" data-uid="CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.Channels.Message,System.Int32)">CreateFault(Message, Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns a new <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> object that uses the specified <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> and the specified maximum buffer size for the message buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageFault CreateFault(Message message, int maxBufferSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The specified <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> to be used to create the<a class="xref" href="CoreWCF.Channels.MessageFault.html"> MessageFault</a> object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxBufferSize</span></td>
+        <td><p>The specified maximum buffer size for the message buffer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> object with initial values from the passed in parameters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_CreateFault_" data-uid="CoreWCF.Channels.MessageFault.CreateFault*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_CreateFault_CoreWCF_FaultCode_CoreWCF_FaultReason_System_Object_System_Runtime_Serialization_XmlObjectSerializer_System_String_System_String_" data-uid="CoreWCF.Channels.MessageFault.CreateFault(CoreWCF.FaultCode,CoreWCF.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String,System.String)">CreateFault(FaultCode, FaultReason, Object, XmlObjectSerializer, String, String)</h4>
+  <div class="markdown level1 summary"><p>Returns a new <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> object that uses the specified <a class="xref" href="CoreWCF.FaultCode.html">FaultCode</a>, <a class="xref" href="CoreWCF.FaultReason.html">FaultReason</a>, detail object, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a>, and actor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageFault CreateFault(FaultCode code, FaultReason reason, object detail, XmlObjectSerializer serializer, string actor, string node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.FaultCode.html">FaultCode</a></td>
+        <td><span class="parametername">code</span></td>
+        <td><p>The fault code for the fault message.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.FaultReason.html">FaultReason</a></td>
+        <td><span class="parametername">reason</span></td>
+        <td><p>The reason for the fault.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">detail</span></td>
+        <td><p>The fault detail object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>The serializer to use when serializing the detail object.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">actor</span></td>
+        <td><p>The value of the actor.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The value of the node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a> object with initial values from the passed in parameters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_GetDetail_" data-uid="CoreWCF.Channels.MessageFault.GetDetail*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_GetDetail__1" data-uid="CoreWCF.Channels.MessageFault.GetDetail``1">GetDetail&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Returns the detail object of the message fault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetDetail&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The detail object of the message fault.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the detail object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_GetDetail_" data-uid="CoreWCF.Channels.MessageFault.GetDetail*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_GetDetail__1_System_Runtime_Serialization_XmlObjectSerializer_" data-uid="CoreWCF.Channels.MessageFault.GetDetail``1(System.Runtime.Serialization.XmlObjectSerializer)">GetDetail&lt;T&gt;(XmlObjectSerializer)</h4>
+  <div class="markdown level1 summary"><p>Returns the detail object that uses the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetDetail&lt;T&gt;(XmlObjectSerializer serializer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a> to use when deserializing the detail object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The detail object contained in the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the detail object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_GetReaderAtDetailContents_" data-uid="CoreWCF.Channels.MessageFault.GetReaderAtDetailContents*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_GetReaderAtDetailContents" data-uid="CoreWCF.Channels.MessageFault.GetReaderAtDetailContents">GetReaderAtDetailContents()</h4>
+  <div class="markdown level1 summary"><p>Returns an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreader">XmlDictionaryReader</a> object that is positioned on the detail object of the MessageFault.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XmlDictionaryReader GetReaderAtDetailContents()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreader">XmlDictionaryReader</a></td>
+        <td><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreader">XmlDictionaryReader</a> object that is positioned on the detail object of the<a class="xref" href="CoreWCF.Channels.MessageFault.html"> MessageFault</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_OnGetReaderAtDetailContents_" data-uid="CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_OnGetReaderAtDetailContents" data-uid="CoreWCF.Channels.MessageFault.OnGetReaderAtDetailContents">OnGetReaderAtDetailContents()</h4>
+  <div class="markdown level1 summary"><p>When called in a derived class, returns an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreader">XmlDictionaryReader</a> object that is positioned on the detail object of the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual XmlDictionaryReader OnGetReaderAtDetailContents()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreader">XmlDictionaryReader</a></td>
+        <td><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreader">XmlDictionaryReader</a> object that is positioned on the detail object of the <a class="xref" href="CoreWCF.Channels.MessageFault.html">MessageFault</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_OnWriteDetail_" data-uid="CoreWCF.Channels.MessageFault.OnWriteDetail*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_OnWriteDetail_System_Xml_XmlDictionaryWriter_CoreWCF_EnvelopeVersion_" data-uid="CoreWCF.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)">OnWriteDetail(XmlDictionaryWriter, EnvelopeVersion)</h4>
+  <div class="markdown level1 summary"><p>Invoked prior to writing the detail contents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnWriteDetail(XmlDictionaryWriter writer, EnvelopeVersion version)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a> used to write the detail element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EnvelopeVersion.html">EnvelopeVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td><p>The version of the SOAP envelope to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageFault_OnWriteDetail_System_Xml_XmlDictionaryWriter_CoreWCF_EnvelopeVersion__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override the <a class="xref" href="CoreWCF.Channels.MessageFault.html#CoreWCF_Channels_MessageFault_OnWriteDetail_System_Xml_XmlDictionaryWriter_CoreWCF_EnvelopeVersion_">OnWriteDetail</a> method to participate in the detail writing process. The default behavior is to call <a class="xref" href="CoreWCF.Channels.MessageFault.html#CoreWCF_Channels_MessageFault_OnWriteStartDetail_System_Xml_XmlDictionaryWriter_CoreWCF_EnvelopeVersion_">OnWriteStartDetail</a> followed by <a class="xref" href="CoreWCF.Channels.MessageFault.html#CoreWCF_Channels_MessageFault_OnWriteDetailContents_System_Xml_XmlDictionaryWriter_">OnWriteDetailContents</a>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_OnWriteDetailContents_" data-uid="CoreWCF.Channels.MessageFault.OnWriteDetailContents*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_OnWriteDetailContents_System_Xml_XmlDictionaryWriter_" data-uid="CoreWCF.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)">OnWriteDetailContents(XmlDictionaryWriter)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a non-abstract derived class, writes the contents of the detail element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void OnWriteDetailContents(XmlDictionaryWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a> used to write the detail element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageFault_OnWriteDetailContents_System_Xml_XmlDictionaryWriter__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.MessageFault.html#CoreWCF_Channels_MessageFault_OnWriteDetailContents_System_Xml_XmlDictionaryWriter_">OnWriteDetailContents</a> method is called subsequent to <a class="xref" href="CoreWCF.Channels.MessageFault.html#CoreWCF_Channels_MessageFault_OnWriteStartDetail_System_Xml_XmlDictionaryWriter_CoreWCF_EnvelopeVersion_">OnWriteStartDetail</a> and prior to writing the end element.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageFault_OnWriteStartDetail_" data-uid="CoreWCF.Channels.MessageFault.OnWriteStartDetail*"></a>
+  <h4 id="CoreWCF_Channels_MessageFault_OnWriteStartDetail_System_Xml_XmlDictionaryWriter_CoreWCF_EnvelopeVersion_" data-uid="CoreWCF.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,CoreWCF.EnvelopeVersion)">OnWriteStartDetail(XmlDictionaryWriter, EnvelopeVersion)</h4>
+  <div class="markdown level1 summary"><p>Writes the start element using the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a> and SOAP envelope version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnWriteStartDetail(XmlDictionaryWriter writer, EnvelopeVersion version)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a> used to write the detail element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EnvelopeVersion.html">EnvelopeVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td><p>The version of the SOAP envelope to write.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

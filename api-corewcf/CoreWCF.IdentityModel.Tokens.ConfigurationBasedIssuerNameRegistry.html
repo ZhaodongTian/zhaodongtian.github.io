@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ConfigurationBasedIssuerNameRegistry
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ConfigurationBasedIssuerNameRegistry
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry">
+  
+  
+  <h1 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry" class="text-break">Class ConfigurationBasedIssuerNameRegistry
+  </h1>
+  <div class="markdown level0 summary"><p>Represents an issuer name registry that maintains a list of trusted issuers loaded from elements in the application configuration file that associate each issuer name to the X.509 certificate that is needed to verify the signature of tokens produced by the issuer.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.html">IssuerNameRegistry</a></div>
+    <div class="level2"><span class="xref">ConfigurationBasedIssuerNameRegistry</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.html#CoreWCF_IdentityModel_Tokens_IssuerNameRegistry_GetIssuerName_CoreWCF_IdentityModel_Tokens_SecurityToken_System_String_">IssuerNameRegistry.GetIssuerName(SecurityToken, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.html#CoreWCF_IdentityModel_Tokens_IssuerNameRegistry_GetWindowsIssuerName">IssuerNameRegistry.GetWindowsIssuerName()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.IdentityModel.Tokens.html">CoreWCF.IdentityModel.Tokens</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ConfigurationBasedIssuerNameRegistry : IssuerNameRegistry</code></pre>
+  </div>
+  <h5 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry&gt; class maintains a dictionary of trusted issuers by mapping the certificate of each trusted issuer to a name that refers to that issuer. The certificates are specified using the ASN.1 encoded form of the thumbprint. The issuer name can be any string, as long as it is unique within the scope of the application. This dictionary can be accessed through the &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers%2A&gt; property. The class can only resolve X.509 certificates.</p>
+<p>The map of trusted issuers is specified in a configuration file by adding entries under the <a href="/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/trustedissuers">&amp;lt;trustedIssuers&amp;gt;</a> element. The <code>&amp;lt;trustedIssuers&gt;</code> element is a child element of the <a href="/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/issuernameregistry">&amp;lt;issuerNameRegistry&amp;gt;</a> element and it is valid when the &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry&gt; class is specified in the <code>type</code> attribute of that element. For more information, see the documentation for each of these elements in the <a href="/dotnet/framework/configure-apps/file-schema/windows-identity-foundation/">WIF Configuration Schema</a>. For more information about issuer name registries, see the &lt;xref:System.IdentityModel.Tokens.IssuerNameRegistry&gt; class.</p>
+<p>You can derive from &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry&gt; to implement your own configuration based issuer name registry. Which methods you override will depend upon your implementation. For example, you can override the &lt;xref:System.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.LoadCustomConfiguration%2A&gt; method to load configuration from a custom configuration schema.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry__ctor_" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry__ctor" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.#ctor">ConfigurationBasedIssuerNameRegistry()</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.html">ConfigurationBasedIssuerNameRegistry</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConfigurationBasedIssuerNameRegistry()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_ConfiguredTrustedIssuers_" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_ConfiguredTrustedIssuers" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.ConfiguredTrustedIssuers">ConfiguredTrustedIssuers</h4>
+  <div class="markdown level1 summary"><p>Gets the Dictionary of Configured Trusted Issuers. The key
+to the dictionary is the ASN.1 encoded form of the Thumbprint
+of the trusted issuer's certificate and the value is the issuer name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDictionary&lt;string, string&gt; ConfiguredTrustedIssuers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_AddTrustedIssuer_" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_AddTrustedIssuer_System_String_System_String_" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.AddTrustedIssuer(System.String,System.String)">AddTrustedIssuer(String, String)</h4>
+  <div class="markdown level1 summary"><p>Adds a trusted issuer to the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddTrustedIssuer(string certificateThumbprint, string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">certificateThumbprint</span></td>
+        <td><p>ASN.1 encoded form of the trusted issuer's certificate Thumbprint.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name of the trusted issuer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The argument 'certificateThumbprint' or 'name' is either null or Empty.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>The issuer specified by 'certificateThumbprint' argument has already been configured.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_GetIssuerName_" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_ConfigurationBasedIssuerNameRegistry_GetIssuerName_CoreWCF_IdentityModel_Tokens_SecurityToken_" data-uid="CoreWCF.IdentityModel.Tokens.ConfigurationBasedIssuerNameRegistry.GetIssuerName(CoreWCF.IdentityModel.Tokens.SecurityToken)">GetIssuerName(SecurityToken)</h4>
+  <div class="markdown level1 summary"><p>Returns the issuer name of the given X509SecurityToken mapping the Certificate Thumbprint to
+a name in the configured map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetIssuerName(SecurityToken securityToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td><span class="parametername">securityToken</span></td>
+        <td><p>SecurityToken for which the issuer name is requested.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>Issuer name if the token was registered, null otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.IssuerNameRegistry.html#CoreWCF_IdentityModel_Tokens_IssuerNameRegistry_GetIssuerName_CoreWCF_IdentityModel_Tokens_SecurityToken_">IssuerNameRegistry.GetIssuerName(SecurityToken)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>The input parameter 'securityToken' is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

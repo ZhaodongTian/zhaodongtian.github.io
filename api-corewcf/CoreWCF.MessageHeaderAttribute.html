@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageHeaderAttribute
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageHeaderAttribute
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.MessageHeaderAttribute">
+  
+  
+  <h1 id="CoreWCF_MessageHeaderAttribute" data-uid="CoreWCF.MessageHeaderAttribute" class="text-break">Class MessageHeaderAttribute
+  </h1>
+  <div class="markdown level0 summary"><p>Specifies that a data member is a SOAP message header.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.MessageContractMemberAttribute.html">MessageContractMemberAttribute</a></div>
+    <div class="level2"><span class="xref">MessageHeaderAttribute</span></div>
+      <div class="level3"><a class="xref" href="CoreWCF.MessageHeaderArrayAttribute.html">MessageHeaderArrayAttribute</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.MessageContractMemberAttribute.html#CoreWCF_MessageContractMemberAttribute_Namespace">MessageContractMemberAttribute.Namespace</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.MessageContractMemberAttribute.html#CoreWCF_MessageContractMemberAttribute_Name">MessageContractMemberAttribute.Name</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_MessageHeaderAttribute_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MessageHeaderAttribute : MessageContractMemberAttribute</code></pre>
+  </div>
+  <h5 id="CoreWCF_MessageHeaderAttribute_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The &lt;xref:CoreWCF.MessageHeaderAttribute&gt; attribute allows you to map fields and properties of a type marked with the &lt;xref:CoreWCF.MessageContractAttribute&gt; attribute to SOAP message headers. The field or property can be of a simple type or a composite type that can be serialized.</p>
+<p>For information on controlling the serialization of the contents of a SOAP body without modifying the default SOAP envelope itself, see &lt;xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType&gt;, <a href="/dotnet/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts">Specifying Data Transfer in Service Contracts</a>, and <a href="/dotnet/framework/wcf/feature-details/using-data-contracts">Using Data Contracts</a>.</p>
+<p>For more information about creating message contracts, see <a href="/dotnet/framework/wcf/feature-details/using-message-contracts">Using Message Contracts</a>.</p>
+<p>The SOAP standard defines the following attributes that can exist on a header:</p>
+<ul>
+<li><p><code>Actor</code> or <code>Role</code> (<code>Actor</code> in SOAP 1.1, <code>Role</code> in SOAP 1.2)</p>
+</li>
+<li><p><code>MustUnderstand</code></p>
+</li>
+<li><p><code>Relay</code></p>
+</li>
+</ul>
+<p>The <code>Actor</code> or <code>Role</code> attribute specifies the URI of the node for which a given header is intended. The <code>MustUnderstand</code> attribute specifies whether the header understands the node processing. The <code>Relay</code> attribute specifies whether the header is to be relayed to downstream nodes. Windows Communication Foundation (WCF) does not perform any processing of these attributes on incoming messages, except for the <code>MustUnderstand</code> attribute.</p>
+<p>You can, however, read and write these attributes, even though they are not sent by default. You can set the attribute values in two ways. First, you can change the &lt;xref:CoreWCF.MessageHeaderAttribute.Actor%2A&gt;, &lt;xref:CoreWCF.MessageHeaderAttribute.MustUnderstand%2A&gt; and &lt;xref:CoreWCF.MessageHeaderAttribute.Relay%2A&gt; properties on the &lt;xref:CoreWCF.MessageHeaderAttribute&gt;. (There is no <code>Role</code> property - set the &lt;xref:CoreWCF.MessageHeaderAttribute.Actor%2A&gt; property and <code>Role</code> is passed if SOAP 1.2 is used). For example:</p>
+<p>The second way to control these attributes is by making the desired header type the type parameter of the &lt;xref:CoreWCF.MessageHeader%601&gt; class and using the resulting type together with the &lt;xref:CoreWCF.MessageHeaderAttribute&gt;. Then use the &lt;xref:CoreWCF.MessageHeader%601&gt; properties programmatically to set the SOAP attributes. For example:</p>
+<p>If both the dynamic and the static control mechanisms are used, the static settings are the default but can be overridden using the dynamic mechanism. For example:</p>
+<p>Creating repeated headers with dynamic attribute control is allowed. For example:</p>
+<pre><code>[MessageHeaderArray] public MessageHeader&amp;lt;Person&gt; documentApprovers[];  
+</code></pre>
+<p>On the receiving side, reading these SOAP attributes can only be done if the generic &lt;xref:CoreWCF.MessageHeader%601&gt; class is used. Examine the &lt;xref:CoreWCF.MessageHeader%601.Actor%2A&gt;, &lt;xref:CoreWCF.MessageHeader%601.Relay%2A&gt; or &lt;xref:CoreWCF.MessageHeader%601.MustUnderstand%2A&gt; properties of a header of the &lt;xref:CoreWCF.MessageHeader%601&gt; type to discover the attribute settings on the received message.</p>
+<p>When a message is received and then sent back, the SOAP attribute settings only roundtrip for headers of the &lt;xref:CoreWCF.MessageHeader%601&gt; type.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_MessageHeaderAttribute__ctor_" data-uid="CoreWCF.MessageHeaderAttribute.#ctor*"></a>
+  <h4 id="CoreWCF_MessageHeaderAttribute__ctor" data-uid="CoreWCF.MessageHeaderAttribute.#ctor">MessageHeaderAttribute()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageHeaderAttribute()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_MessageHeaderAttribute_Actor_" data-uid="CoreWCF.MessageHeaderAttribute.Actor*"></a>
+  <h4 id="CoreWCF_MessageHeaderAttribute_Actor" data-uid="CoreWCF.MessageHeaderAttribute.Actor">Actor</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Actor { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_MessageHeaderAttribute_MustUnderstand_" data-uid="CoreWCF.MessageHeaderAttribute.MustUnderstand*"></a>
+  <h4 id="CoreWCF_MessageHeaderAttribute_MustUnderstand" data-uid="CoreWCF.MessageHeaderAttribute.MustUnderstand">MustUnderstand</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MustUnderstand { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_MessageHeaderAttribute_Relay_" data-uid="CoreWCF.MessageHeaderAttribute.Relay*"></a>
+  <h4 id="CoreWCF_MessageHeaderAttribute_Relay" data-uid="CoreWCF.MessageHeaderAttribute.Relay">Relay</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Relay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

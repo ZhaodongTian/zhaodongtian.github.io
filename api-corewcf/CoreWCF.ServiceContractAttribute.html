@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ServiceContractAttribute
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ServiceContractAttribute
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.ServiceContractAttribute">
+  
+  
+  <h1 id="CoreWCF_ServiceContractAttribute" data-uid="CoreWCF.ServiceContractAttribute" class="text-break">Class ServiceContractAttribute
+  </h1>
+  <div class="markdown level0 summary"><p>Indicates that an interface or a class defines a service contract in a Windows Communication Foundation (WCF) application.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ServiceContractAttribute</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_ServiceContractAttribute_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ServiceContractAttribute : Attribute</code></pre>
+  </div>
+  <h5 id="CoreWCF_ServiceContractAttribute_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Use the &lt;xref:CoreWCF.ServiceContractAttribute&gt; attribute on an interface (or class) to define a service contract. Then use the &lt;xref:CoreWCF.OperationContractAttribute&gt; attribute on one or more of the class (or interface) methods to define the contract's service operations. When the service contract is implemented and combined with a <a href="/dotnet/framework/wcf/bindings">Bindings</a> and an &lt;xref:CoreWCF.EndpointAddress&gt; object, the service contract is exposed for use by clients. For an overview of the process using simple examples, see <a href="/dotnet/framework/wcf/getting-started-tutorial">Getting Started Tutorial</a>. For more information about creating service contracts, see <a href="/dotnet/framework/wcf/designing-and-implementing-services">Designing and Implementing Services</a>.</p>
+<p>The information expressed by a &lt;xref:CoreWCF.ServiceContractAttribute&gt; and its interface is loosely related to the Web Services Description Language (WSDL) <code>&amp;lt;portType&gt;</code> element. A service contract is used on the service side to specify what the service's endpoint exposes to callers. It is also used on the client side to specify the contract of the endpoint with which the client communicates and, in the case of duplex contracts, to specify the callback contract (using the &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A&gt; property) that the client must implement in order to participate in a duplex conversation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>An interface or class that is decorated with &lt;xref:CoreWCF.ServiceContractAttribute&gt; must also have at least one method marked with the &lt;xref:CoreWCF.OperationContractAttribute&gt; attribute to expose any functionality. See the Examples section for a code example of the simplest use of the two attributes to define and implement a service.</p>
+</div>
+<p>Use the &lt;xref:CoreWCF.ServiceContractAttribute&gt; properties to modify the service contract.</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.ServiceContractAttribute.ConfigurationName%2A&gt; property specifies the name of the service element in the configuration file to use.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceContractAttribute.Name%2A&gt; and &lt;xref:CoreWCF.ServiceContractAttribute.Namespace%2A&gt; properties control the name and namespace of the contract in the WSDL <code>&amp;lt;portType&gt;</code> element.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceContractAttribute.SessionMode%2A&gt; property specifies whether the contract requires a binding that supports sessions.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A&gt; property specifies the return contract in a two-way (duplex) conversation.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceContractAttribute.HasProtectionLevel%2A&gt; and &lt;xref:CoreWCF.ServiceContractAttribute.ProtectionLevel%2A&gt; properties indicate whether all messages supporting the contract have a explicit &lt;xref:CoreWCF.ServiceContractAttribute.ProtectionLevel%2A&gt; value, and if so, what that level is.</p>
+</li>
+</ul>
+<p>Services implement service contracts, which represent the data exchange that a service type supports. A service class can implement a service contract (by implementing an interface marked with &lt;xref:CoreWCF.ServiceContractAttribute&gt; that has methods marked with &lt;xref:CoreWCF.OperationContractAttribute&gt;) or it can be marked with the &lt;xref:CoreWCF.ServiceContractAttribute&gt; and apply the &lt;xref:CoreWCF.OperationContractAttribute&gt; attribute to its own methods. (If a class implements an interface marked with &lt;xref:CoreWCF.ServiceContractAttribute&gt;, it cannot be itself marked with &lt;xref:CoreWCF.ServiceContractAttribute&gt;.) Methods on service types that are marked with the &lt;xref:CoreWCF.OperationContractAttribute&gt; are treated as part of a default service contract specified by the service type itself. For details about service operations, see &lt;xref:CoreWCF.OperationContractAttribute&gt;.</p>
+<p>By default, the &lt;xref:CoreWCF.ServiceContractAttribute.Name%2A&gt; and &lt;xref:CoreWCF.ServiceContractAttribute.Namespace%2A&gt; properties are the name of the contract type and <code>http://tempuri.org</code>, respectively, and &lt;xref:CoreWCF.ServiceContractAttribute.ProtectionLevel%2A&gt; is &lt;xref:System.Net.Security.ProtectionLevel.None?displayProperty=nameWithType&gt;. It is recommended that service contracts explicitly set their names, namespaces, and protection levels using these properties. Doing so accomplishes two goals. First, it builds a contract that is not directly connected to the managed type information, enabling you to refactor your managed code and namespaces without breaking the contract as it is expressed in WSDL. Second, explicitly requiring a certain level of protection on the contract itself enables the runtime to validate whether the binding configuration supports that level of security, preventing poor configuration from exposing sensitive information. For more information about protection levels, see <a href="/dotnet/framework/wcf/understanding-protection-level">Understanding Protection Level</a>.</p>
+<p>To expose a service for use by client applications, create a host application to register your service endpoint with Windows Communication Foundation (WCF). You can host WCF services using Windows Activation Services (WAS), in console applications, Windows Service applications, ASP.NET applications, Windows Forms applications, or any other kind of application domain.</p>
+<p>Hosting in the WAS is very similar to creating an ASP.NET application. For details, see <a href="/dotnet/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis">How to: Host a WCF Service in IIS</a>.</p>
+<p>Clients either use the service contract interface (the interface marked with &lt;xref:CoreWCF.ServiceContractAttribute&gt;) to create a channel to the service or they use the client objects (which combine the type information of the service contract interface with the &lt;xref:CoreWCF.ClientBase%601&gt; class) to communicate with your service. For details on client channels to services, see the &lt;xref:CoreWCF.ChannelFactory%601&gt; class and <a href="/dotnet/framework/wcf/wcf-client-overview">WCF Client Overview</a>.</p>
+<p>Using a &lt;xref:CoreWCF.ServiceContractAttribute&gt; class or interface to inherit from another &lt;xref:CoreWCF.ServiceContractAttribute&gt; class or interface extends the parent contract. For example, if an <code>IChildContract</code> interface is marked with &lt;xref:CoreWCF.ServiceContractAttribute&gt; and inherited from another service contract interface, <code>IParentContract</code>, the <code>IChildContract</code> service contract contains the methods of both <code>IParentContract</code> and <code>IChildContract</code>. Extending contracts (whether on classes or interfaces) is very similar to extending managed classes and interfaces.</p>
+<p>The most flexible approach to creating services is to define service contract interfaces first and then have your service class implement that interface. (This is also the simplest way to build your services if you must implement service contracts that have been defined by others.) Building services directly by marking a class with &lt;xref:CoreWCF.ServiceContractAttribute&gt; and its methods with &lt;xref:CoreWCF.OperationContractAttribute&gt; works when the service exposes only one contract (but that contract can be exposed by more than one endpoint).</p>
+<p>Use the &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A&gt; property to indicate another service contract that, when bound together with the original service contract, define a message exchange that can flow in two ways independently. For details, see &lt;xref:CoreWCF.ServiceContractAttribute.CallbackContract%2A&gt;.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceContractAttribute__ctor_" data-uid="CoreWCF.ServiceContractAttribute.#ctor*"></a>
+  <h4 id="CoreWCF_ServiceContractAttribute__ctor" data-uid="CoreWCF.ServiceContractAttribute.#ctor">ServiceContractAttribute()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceContractAttribute()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceContractAttribute_CallbackContract_" data-uid="CoreWCF.ServiceContractAttribute.CallbackContract*"></a>
+  <h4 id="CoreWCF_ServiceContractAttribute_CallbackContract" data-uid="CoreWCF.ServiceContractAttribute.CallbackContract">CallbackContract</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type CallbackContract { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceContractAttribute_ConfigurationName_" data-uid="CoreWCF.ServiceContractAttribute.ConfigurationName*"></a>
+  <h4 id="CoreWCF_ServiceContractAttribute_ConfigurationName" data-uid="CoreWCF.ServiceContractAttribute.ConfigurationName">ConfigurationName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigurationName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceContractAttribute_Name_" data-uid="CoreWCF.ServiceContractAttribute.Name*"></a>
+  <h4 id="CoreWCF_ServiceContractAttribute_Name" data-uid="CoreWCF.ServiceContractAttribute.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceContractAttribute_Namespace_" data-uid="CoreWCF.ServiceContractAttribute.Namespace*"></a>
+  <h4 id="CoreWCF_ServiceContractAttribute_Namespace" data-uid="CoreWCF.ServiceContractAttribute.Namespace">Namespace</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Namespace { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceContractAttribute_SessionMode_" data-uid="CoreWCF.ServiceContractAttribute.SessionMode*"></a>
+  <h4 id="CoreWCF_ServiceContractAttribute_SessionMode" data-uid="CoreWCF.ServiceContractAttribute.SessionMode">SessionMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionMode SessionMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.SessionMode.html">SessionMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

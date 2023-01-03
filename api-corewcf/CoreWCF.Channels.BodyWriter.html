@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BodyWriter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BodyWriter
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.BodyWriter">
+  
+  
+  <h1 id="CoreWCF_Channels_BodyWriter" data-uid="CoreWCF.Channels.BodyWriter" class="text-break">Class BodyWriter
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the writer of the message body.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">BodyWriter</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.StreamBodyWriter.html">StreamBodyWriter</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_BodyWriter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BodyWriter : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_BodyWriter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A message consists of headers and a body. The headers are buffered and the body is streamed. Because the body is streamed, the user cannot pass the actual content of the body to a message. Instead the user must pass a class that knows how to write the body when asked to do so. This is done by passing a class derived from <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> to the <a class="xref" href="CoreWCF.Channels.Message.html">Message</a>. A message calls the class derived from <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> whenever it requires the body to be written using an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a>.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter__ctor_" data-uid="CoreWCF.Channels.BodyWriter.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter__ctor_System_Boolean_" data-uid="CoreWCF.Channels.BodyWriter.#ctor(System.Boolean)">BodyWriter(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> class that explicitly indicates whether to buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BodyWriter(bool isBuffered)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isBuffered</span></td>
+        <td><p>true if the body writer can be called multiple times; otherwise false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BodyWriter__ctor_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If isBuffered is false then the message calls the write method once and buffers the contents.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_IsBuffered_" data-uid="CoreWCF.Channels.BodyWriter.IsBuffered*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_IsBuffered" data-uid="CoreWCF.Channels.BodyWriter.IsBuffered">IsBuffered</h4>
+  <div class="markdown level1 summary"><p>Gets a value that indicates whether the write method can be called multiple times.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBuffered { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the body writer can be called multiple times; otherwise false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BodyWriter_IsBuffered_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If isBuffered is false then the message calls the write method once and buffers the contents.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_CreateBufferedCopy_" data-uid="CoreWCF.Channels.BodyWriter.CreateBufferedCopy*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_CreateBufferedCopy_System_Int32_" data-uid="CoreWCF.Channels.BodyWriter.CreateBufferedCopy(System.Int32)">CreateBufferedCopy(Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates a buffered copy of the body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BodyWriter CreateBufferedCopy(int maxBufferSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxBufferSize</span></td>
+        <td><p>The maximum size of the buffer for the body.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> that contains a copy of this object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BodyWriter_CreateBufferedCopy_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_IsBuffered">IsBuffered</a> is true then the <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> object is returned. If <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_IsBuffered">IsBuffered</a> is false then the contents of the <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> up to maxBufferSize is returned. This also calls <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_OnCreateBufferedCopy_System_Int32_">OnCreateBufferedCopy(Int32)</a> as an extensibility point.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_OnCreateBufferedCopy_" data-uid="CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_OnCreateBufferedCopy_System_Int32_" data-uid="CoreWCF.Channels.BodyWriter.OnCreateBufferedCopy(System.Int32)">OnCreateBufferedCopy(Int32)</h4>
+  <div class="markdown level1 summary"><p>Provides an extensibility point when the body contents are written.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual BodyWriter OnCreateBufferedCopy(int maxBufferSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxBufferSize</span></td>
+        <td><p>The maximum size of the buffer for the body.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> with the specified maximum buffer size.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BodyWriter_OnCreateBufferedCopy_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A class derived from <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> can override this method to create a buffered copy of the <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a>. But the default implementation of <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_WriteBodyContents_System_Xml_XmlDictionaryWriter_">WriteBodyContents(XmlDictionaryWriter)</a> calls <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_OnWriteBodyContents_System_Xml_XmlDictionaryWriter_">OnWriteBodyContents(XmlDictionaryWriter)</a>, so overriding just <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_OnWriteBodyContents_System_Xml_XmlDictionaryWriter_">OnWriteBodyContents(XmlDictionaryWriter)</a> should be easier and work for most scenarios.<br><br> Note that the <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> returned must be buffered, that is IsBuffered must be true.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_OnWriteBodyContents_" data-uid="CoreWCF.Channels.BodyWriter.OnWriteBodyContents*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_OnWriteBodyContents_System_Xml_XmlDictionaryWriter_" data-uid="CoreWCF.Channels.BodyWriter.OnWriteBodyContents(System.Xml.XmlDictionaryWriter)">OnWriteBodyContents(XmlDictionaryWriter)</h4>
+  <div class="markdown level1 summary"><p>When implemented, provides an extensibility point when the body contents are written.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void OnWriteBodyContents(XmlDictionaryWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a> used to write out the message body.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BodyWriter_OnWriteBodyContents_System_Xml_XmlDictionaryWriter__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method must be implemented by classes derived from <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a>. This is the key method that writes the body. If the <a class="xref" href="CoreWCF.Channels.BodyWriter.html">BodyWriter</a> is buffered then this method is called only once.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_OnWriteBodyContentsAsync_" data-uid="CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_OnWriteBodyContentsAsync_System_Xml_XmlDictionaryWriter_" data-uid="CoreWCF.Channels.BodyWriter.OnWriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)">OnWriteBodyContentsAsync(XmlDictionaryWriter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task OnWriteBodyContentsAsync(XmlDictionaryWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_WriteBodyContents_" data-uid="CoreWCF.Channels.BodyWriter.WriteBodyContents*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_WriteBodyContents_System_Xml_XmlDictionaryWriter_" data-uid="CoreWCF.Channels.BodyWriter.WriteBodyContents(System.Xml.XmlDictionaryWriter)">WriteBodyContents(XmlDictionaryWriter)</h4>
+  <div class="markdown level1 summary"><p>Writes out the contents of the message body.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteBodyContents(XmlDictionaryWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a> used to write out the message body.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BodyWriter_WriteBodyContents_System_Xml_XmlDictionaryWriter__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The default implementation of <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_WriteBodyContents_System_Xml_XmlDictionaryWriter_">WriteBodyContents(XmlDictionaryWriter)</a> calls <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_OnWriteBodyContents_System_Xml_XmlDictionaryWriter_">OnWriteBodyContents(XmlDictionaryWriter)</a>, so overriding <a class="xref" href="CoreWCF.Channels.BodyWriter.html#CoreWCF_Channels_BodyWriter_OnWriteBodyContents_System_Xml_XmlDictionaryWriter_">OnWriteBodyContents(XmlDictionaryWriter</a> provides the best point of extension.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BodyWriter_WriteBodyContentsAsync_" data-uid="CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync*"></a>
+  <h4 id="CoreWCF_Channels_BodyWriter_WriteBodyContentsAsync_System_Xml_XmlDictionaryWriter_" data-uid="CoreWCF.Channels.BodyWriter.WriteBodyContentsAsync(System.Xml.XmlDictionaryWriter)">WriteBodyContentsAsync(XmlDictionaryWriter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task WriteBodyContentsAsync(XmlDictionaryWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,728 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ChannelDispatcher
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ChannelDispatcher
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.ChannelDispatcher">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_ChannelDispatcher" data-uid="CoreWCF.Dispatcher.ChannelDispatcher" class="text-break">Class ChannelDispatcher
+  </h1>
+  <div class="markdown level0 summary"><p>A component that accepts channels and associates them with a service.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.Channels.CommunicationObject.html">CommunicationObject</a></div>
+    <div class="level2"><a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcherBase.html">ChannelDispatcherBase</a></div>
+    <div class="level3"><span class="xref">ChannelDispatcher</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.ICommunicationObject.html">ICommunicationObject</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcherBase.html#CoreWCF_Dispatcher_ChannelDispatcherBase_CloseInputAsync">ChannelDispatcherBase.CloseInputAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Abort">CommunicationObject.Abort()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_CloseAsync">CommunicationObject.CloseAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_CloseAsync_System_Threading_CancellationToken_">CommunicationObject.CloseAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OpenAsync">CommunicationObject.OpenAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OpenAsync_System_Threading_CancellationToken_">CommunicationObject.OpenAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Fault_System_Exception_">CommunicationObject.Fault(Exception)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Fault">CommunicationObject.Fault()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_GetCommunicationObjectType">CommunicationObject.GetCommunicationObjectType()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosed">CommunicationObject.OnClosed()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosing">CommunicationObject.OnClosing()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnFaulted">CommunicationObject.OnFaulted()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnOpened">CommunicationObject.OnOpened()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnOpening">CommunicationObject.OnOpening()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_ThrowIfDisposed">CommunicationObject.ThrowIfDisposed()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrImmutable">CommunicationObject.ThrowIfDisposedOrImmutable()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrNotOpen">CommunicationObject.ThrowIfDisposedOrNotOpen()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_ThrowIfNotOpened">CommunicationObject.ThrowIfNotOpened()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_ThrowPending">CommunicationObject.ThrowPending()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_IsDisposed">CommunicationObject.IsDisposed</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_State">CommunicationObject.State</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_ThisLock">CommunicationObject.ThisLock</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Closed">CommunicationObject.Closed</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Closing">CommunicationObject.Closing</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Faulted">CommunicationObject.Faulted</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Opened">CommunicationObject.Opened</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Opening">CommunicationObject.Opening</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_ChannelDispatcher_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ChannelDispatcher : ChannelDispatcherBase, ICommunicationObject</code></pre>
+  </div>
+  <h5 id="CoreWCF_Dispatcher_ChannelDispatcher_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt; object associates an &lt;xref:CoreWCF.Channels.IChannelListener&gt; at a particular URI (called a listen URI) with an instance of a service. Each &lt;xref:CoreWCF.ServiceHost&gt; object can have many &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt; objects, each associated with a different listener and listen URI for that service.</p>
+<p>When a message arrives, the &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt; queries each of the associated &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; objects whether the endpoint can accept the message, and passes the message to the one that can. The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; object is responsible for processing messages from a &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt; when the destination address of a message matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter%2A&gt; property and the message action matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter%2A&gt; property.</p>
+<p>All properties that control the lifetime and behavior of a channel session are available for inspection or modification on the &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt; object. In addition to the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt;, these include custom &lt;xref:CoreWCF.Dispatcher.IChannelInitializer&gt; objects, the &lt;xref:CoreWCF.Channels.IChannelListener&gt;, the &lt;xref:CoreWCF.ServiceHost&gt;, the associated and &lt;xref:CoreWCF.InstanceContext&gt;.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_BindingName_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.BindingName*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_BindingName" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.BindingName">BindingName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string BindingName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_ChannelInitializers_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_ChannelInitializers" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ChannelInitializers">ChannelInitializers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SynchronizedCollection&lt;IChannelInitializer&gt; ChannelInitializers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Collections.Generic.SynchronizedCollection-1.html">SynchronizedCollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.IChannelInitializer.html">IChannelInitializer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_DefaultCloseTimeout_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_DefaultCloseTimeout" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.DefaultCloseTimeout">DefaultCloseTimeout</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override TimeSpan DefaultCloseTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_DefaultCloseTimeout">CommunicationObject.DefaultCloseTimeout</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_DefaultOpenTimeout_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_DefaultOpenTimeout" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.DefaultOpenTimeout">DefaultOpenTimeout</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override TimeSpan DefaultOpenTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_DefaultOpenTimeout">CommunicationObject.DefaultOpenTimeout</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_Endpoints_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Endpoints*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_Endpoints" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Endpoints">Endpoints</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SynchronizedCollection&lt;EndpointDispatcher&gt; Endpoints { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Collections.Generic.SynchronizedCollection-1.html">SynchronizedCollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.EndpointDispatcher.html">EndpointDispatcher</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_ErrorHandlers_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_ErrorHandlers" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ErrorHandlers">ErrorHandlers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collection&lt;IErrorHandler&gt; ErrorHandlers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.IErrorHandler.html">IErrorHandler</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_Host_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Host*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_Host" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Host">Host</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ServiceHostBase Host { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcherBase.html#CoreWCF_Dispatcher_ChannelDispatcherBase_Host">ChannelDispatcherBase.Host</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_IncludeExceptionDetailInFaults_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_IncludeExceptionDetailInFaults" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.IncludeExceptionDetailInFaults">IncludeExceptionDetailInFaults</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeExceptionDetailInFaults { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_ManualAddressing_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_ManualAddressing" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ManualAddressing">ManualAddressing</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ManualAddressing { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_MaxPendingReceives_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_MaxPendingReceives" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.MaxPendingReceives">MaxPendingReceives</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxPendingReceives { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_MessageVersion_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_MessageVersion" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.MessageVersion">MessageVersion</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageVersion MessageVersion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_ReceiveSynchronously_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_ReceiveSynchronously" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.ReceiveSynchronously">ReceiveSynchronously</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ReceiveSynchronously { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_SendAsynchronously_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_SendAsynchronously" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.SendAsynchronously">SendAsynchronously</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SendAsynchronously { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_Attach_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Attach*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_Attach_CoreWCF_ServiceHostBase_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Attach(CoreWCF.ServiceHostBase)">Attach(ServiceHostBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Attach(ServiceHostBase host)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">host</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcherBase.html#CoreWCF_Dispatcher_ChannelDispatcherBase_Attach_CoreWCF_ServiceHostBase_">ChannelDispatcherBase.Attach(ServiceHostBase)</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_Detach_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Detach*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_Detach_CoreWCF_ServiceHostBase_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.Detach(CoreWCF.ServiceHostBase)">Detach(ServiceHostBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Detach(ServiceHostBase host)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">host</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcherBase.html#CoreWCF_Dispatcher_ChannelDispatcherBase_Detach_CoreWCF_ServiceHostBase_">ChannelDispatcherBase.Detach(ServiceHostBase)</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_OnAbort_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.OnAbort*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_OnAbort" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.OnAbort">OnAbort()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnAbort()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnAbort">CommunicationObject.OnAbort()</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_OnCloseAsync_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_OnCloseAsync_System_Threading_CancellationToken_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.OnCloseAsync(System.Threading.CancellationToken)">OnCloseAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Task OnCloseAsync(CancellationToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnCloseAsync_System_Threading_CancellationToken_">CommunicationObject.OnCloseAsync(CancellationToken)</a></div>
+  
+  
+  <a id="CoreWCF_Dispatcher_ChannelDispatcher_OnOpenAsync_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync*"></a>
+  <h4 id="CoreWCF_Dispatcher_ChannelDispatcher_OnOpenAsync_System_Threading_CancellationToken_" data-uid="CoreWCF.Dispatcher.ChannelDispatcher.OnOpenAsync(System.Threading.CancellationToken)">OnOpenAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Task OnOpenAsync(CancellationToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnOpenAsync_System_Threading_CancellationToken_">CommunicationObject.OnOpenAsync(CancellationToken)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.ICommunicationObject.html">ICommunicationObject</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

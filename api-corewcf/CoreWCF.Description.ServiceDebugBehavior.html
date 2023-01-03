@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ServiceDebugBehavior
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ServiceDebugBehavior
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.ServiceDebugBehavior">
+  
+  
+  <h1 id="CoreWCF_Description_ServiceDebugBehavior" data-uid="CoreWCF.Description.ServiceDebugBehavior" class="text-break">Class ServiceDebugBehavior
+  </h1>
+  <div class="markdown level0 summary"><p>Enables debugging and help information features for a Windows Communication Foundation (WCF) service.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ServiceDebugBehavior</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.Description.IServiceBehavior.html">IServiceBehavior</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_ServiceDebugBehavior_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ServiceDebugBehavior : Object, IServiceBehavior</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_ServiceDebugBehavior_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Use the &lt;xref:CoreWCF.Description.ServiceDebugBehavior&gt; properties from a configuration file or programmatically to enable the flow of managed exception information to the client for debugging purposes as well as the publication of HTML information files for users browsing the service in Web browsers.</p>
+<p>Set the &lt;xref:CoreWCF.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A&gt; property to <code>true</code> to instruct WCF to return managed exception information in SOAP faults to clients for debugging purposes.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Returning managed exception information to clients can be a security risk because exception details expose information about the internal service implementation that could be used by unauthorized clients. In addition, although the &lt;xref:CoreWCF.Description.ServiceDebugBehavior&gt; properties can also be set programmatically, it can be easy to forget to disable &lt;xref:CoreWCF.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A&gt; when deploying.</p>
+</div>
+<p>Because of the security issues involved, it is strongly recommended that:</p>
+<ul>
+<li><p>You use an application configuration file to set the value of the &lt;xref:CoreWCF.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A&gt; property to <code>true</code>.</p>
+</li>
+<li><p>You only do so only in controlled debugging scenarios.</p>
+</li>
+</ul>
+<p>For more information about the security issues related to managed exception information, see <a href="/dotnet/framework/wcf/specifying-and-handling-faults-in-contracts-and-services">Specifying and Handling Faults in Contracts and Services</a>.</p>
+<p>The &lt;xref:CoreWCF.Description.ServiceDebugBehavior.HttpHelpPageEnabled%2A&gt; and &lt;xref:CoreWCF.Description.ServiceDebugBehavior.HttpsHelpPageEnabled%2A&gt; properties instruct the service to publish HTML help files when the service is viewed using an HTML browser.</p>
+<p>The &lt;xref:CoreWCF.Description.ServiceDebugBehavior.HttpHelpPageUrl%2A&gt; and &lt;xref:CoreWCF.Description.ServiceDebugBehavior.HttpsHelpPageUrl%2A&gt; properties control the location of the HTML help page that is viewed.</p>
+<p>To enable or disable one of the &lt;xref:CoreWCF.Description.ServiceDebugBehavior&gt; features using a configuration file:</p>
+<ol>
+<li><p>Add a <code>behaviorConfiguration</code> attribute to the <a href="/dotnet/framework/configure-apps/file-schema/wcf/service">&amp;lt;service&amp;gt;</a> element for your WCF service. Endpoint behaviors are configured on <a href="https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017">&amp;lt;endpoint&gt;</a> elements; service behaviors on <a href="/dotnet/framework/configure-apps/file-schema/wcf/service">&amp;lt;service&amp;gt;</a> elements.</p>
+</li>
+<li><p>Add to or create a <a href="/dotnet/framework/configure-apps/file-schema/wcf/servicebehaviors">&amp;lt;serviceBehaviors&amp;gt;</a> section and add a <a href="/dotnet/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors">&amp;lt;behavior&amp;gt;</a> element to that with the name that matches the <code>behaviorConfiguration</code> attribute value from step 1. Endpoint behaviors are configured using an <a href="/dotnet/framework/configure-apps/file-schema/wcf/endpointbehaviors">&amp;lt;endpointBehaviors&amp;gt;</a> element; service behaviors are configured using a <a href="/dotnet/framework/configure-apps/file-schema/wcf/servicebehaviors">&amp;lt;serviceBehaviors&amp;gt;</a> element.</p>
+</li>
+<li><p>Add a <a href="/dotnet/framework/configure-apps/file-schema/wcf/servicedebug">&amp;lt;serviceDebug&amp;gt;</a> element to the <a href="/dotnet/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors">&amp;lt;behavior&amp;gt;</a> element from step 2 and enable or disable the various properties appropriate to your scenario.</p>
+</li>
+</ol>
+<p>For a specific example, see the Example section.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior__ctor_" data-uid="CoreWCF.Description.ServiceDebugBehavior.#ctor*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior__ctor" data-uid="CoreWCF.Description.ServiceDebugBehavior.#ctor">ServiceDebugBehavior()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceDebugBehavior()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_HttpHelpPageEnabled_" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpHelpPageEnabled*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_HttpHelpPageEnabled" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpHelpPageEnabled">HttpHelpPageEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HttpHelpPageEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_HttpHelpPageUrl_" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpHelpPageUrl*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_HttpHelpPageUrl" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpHelpPageUrl">HttpHelpPageUrl</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri HttpHelpPageUrl { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_HttpsHelpPageEnabled_" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpsHelpPageEnabled*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_HttpsHelpPageEnabled" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpsHelpPageEnabled">HttpsHelpPageEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HttpsHelpPageEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_HttpsHelpPageUrl_" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpsHelpPageUrl*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_HttpsHelpPageUrl" data-uid="CoreWCF.Description.ServiceDebugBehavior.HttpsHelpPageUrl">HttpsHelpPageUrl</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri HttpsHelpPageUrl { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_IncludeExceptionDetailInFaults_" data-uid="CoreWCF.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_IncludeExceptionDetailInFaults" data-uid="CoreWCF.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults">IncludeExceptionDetailInFaults</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeExceptionDetailInFaults { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_CoreWCF_Description_IServiceBehavior_AddBindingParameters_" data-uid="CoreWCF.Description.ServiceDebugBehavior.CoreWCF#Description#IServiceBehavior#AddBindingParameters*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_CoreWCF_Description_IServiceBehavior_AddBindingParameters_CoreWCF_Description_ServiceDescription_CoreWCF_ServiceHostBase_System_Collections_ObjectModel_Collection_CoreWCF_Description_ServiceEndpoint__CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.Description.ServiceDebugBehavior.CoreWCF#Description#IServiceBehavior#AddBindingParameters(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase,System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint},CoreWCF.Channels.BindingParameterCollection)">IServiceBehavior.AddBindingParameters(ServiceDescription, ServiceHostBase, Collection&lt;ServiceEndpoint&gt;, BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IServiceBehavior.AddBindingParameters(ServiceDescription description, ServiceHostBase serviceHostBase, Collection&lt;ServiceEndpoint&gt; endpoints, BindingParameterCollection parameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceDescription.html">ServiceDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">serviceHostBase</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection</a>&lt;<a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a>&gt;</td>
+        <td><span class="parametername">endpoints</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_CoreWCF_Description_IServiceBehavior_ApplyDispatchBehavior_" data-uid="CoreWCF.Description.ServiceDebugBehavior.CoreWCF#Description#IServiceBehavior#ApplyDispatchBehavior*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_CoreWCF_Description_IServiceBehavior_ApplyDispatchBehavior_CoreWCF_Description_ServiceDescription_CoreWCF_ServiceHostBase_" data-uid="CoreWCF.Description.ServiceDebugBehavior.CoreWCF#Description#IServiceBehavior#ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)">IServiceBehavior.ApplyDispatchBehavior(ServiceDescription, ServiceHostBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IServiceBehavior.ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceDescription.html">ServiceDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">serviceHostBase</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ServiceDebugBehavior_CoreWCF_Description_IServiceBehavior_Validate_" data-uid="CoreWCF.Description.ServiceDebugBehavior.CoreWCF#Description#IServiceBehavior#Validate*"></a>
+  <h4 id="CoreWCF_Description_ServiceDebugBehavior_CoreWCF_Description_IServiceBehavior_Validate_CoreWCF_Description_ServiceDescription_CoreWCF_ServiceHostBase_" data-uid="CoreWCF.Description.ServiceDebugBehavior.CoreWCF#Description#IServiceBehavior#Validate(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)">IServiceBehavior.Validate(ServiceDescription, ServiceHostBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IServiceBehavior.Validate(ServiceDescription description, ServiceHostBase serviceHostBase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceDescription.html">ServiceDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">serviceHostBase</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IServiceBehavior.html">IServiceBehavior</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDefaultCommunicationTimeouts
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDefaultCommunicationTimeouts
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.IDefaultCommunicationTimeouts">
+  
+  
+  <h1 id="CoreWCF_IDefaultCommunicationTimeouts" data-uid="CoreWCF.IDefaultCommunicationTimeouts" class="text-break">Interface IDefaultCommunicationTimeouts
+  </h1>
+  <div class="markdown level0 summary"><p>Defines the interface for specifying communication timeouts used by channels, channel managers such as channel listeners and channel factories, and service hosts</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_IDefaultCommunicationTimeouts_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDefaultCommunicationTimeouts</code></pre>
+  </div>
+  <h5 id="CoreWCF_IDefaultCommunicationTimeouts_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This interface has four read-only properties that provide default timeout values for the open, send, receive, and close methods that can be called on a communication object. Each implementation is responsible for obtaining the default values in whatever manner is appropriate for the implementation. This interface is implemented by <strong>ChannelBase</strong>, the base implementation for writing custom channels, and the <a class="xref" href="CoreWCF.Channels.ChannelManagerBase.html">ChannelManagerBase</a>, the base implementation for writing custom channel managers which derive from <strong>ChannelFactoryBase</strong> and <strong>ChannelListenerBase</strong>. The interface is also implemented by the <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> class and then inherited from there by <a class="xref" href="CoreWCF.Channels.CustomBinding.html">CustomBinding</a> and the system-provided bindings, such as <a class="xref" href="CoreWCF.BasicHttpBinding.html">BasicHttpBinding</a>.</p>
+<p>When you use channels directly, you have the ability to explicitly specify timeouts on a per-channel or per-operation-basis, or on any other custom basis. When using the channel model, timeouts are quite accessible when you want to control them.</p>
+<p>When using the service model, on the other hand, you program against services and contracts, and timeouts are more in the background. They are controlled by the infrastructure machinery which flows timeouts from place to place on your behalf. <strong>IDefaultCommunicationTimeouts</strong> is one mechanism for providing that flow</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_IDefaultCommunicationTimeouts_CloseTimeout_" data-uid="CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout*"></a>
+  <h4 id="CoreWCF_IDefaultCommunicationTimeouts_CloseTimeout" data-uid="CoreWCF.IDefaultCommunicationTimeouts.CloseTimeout">CloseTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets the interval of time after which the close method, invoked by a communication object, times out</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan CloseTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> that specifies the interval of time to wait for the close method to time out.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_IDefaultCommunicationTimeouts_CloseTimeout_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>All operations that are potentially lengthy must have a timeout. Methods that don't take explicit timeouts, must delegate to those that do with default timeouts or must not do any work that blocks. Timeouts are the total limit for high-level operations for which they are to complete, so any retries must be limited to the time not already consumed by earlier tries.</p>
+</div>
+  
+  
+  <a id="CoreWCF_IDefaultCommunicationTimeouts_OpenTimeout_" data-uid="CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout*"></a>
+  <h4 id="CoreWCF_IDefaultCommunicationTimeouts_OpenTimeout" data-uid="CoreWCF.IDefaultCommunicationTimeouts.OpenTimeout">OpenTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets the interval of time after which the open method, invoked by a communication object, times out.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan OpenTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> that specifies the interval of time to wait for the open method to time out.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IDefaultCommunicationTimeouts_ReceiveTimeout_" data-uid="CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout*"></a>
+  <h4 id="CoreWCF_IDefaultCommunicationTimeouts_ReceiveTimeout" data-uid="CoreWCF.IDefaultCommunicationTimeouts.ReceiveTimeout">ReceiveTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets the interval of time after which the receive method, invoked by a communication object, times out</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan ReceiveTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> that specifies the interval of time to wait for the receive method to time out</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IDefaultCommunicationTimeouts_SendTimeout_" data-uid="CoreWCF.IDefaultCommunicationTimeouts.SendTimeout*"></a>
+  <h4 id="CoreWCF_IDefaultCommunicationTimeouts_SendTimeout" data-uid="CoreWCF.IDefaultCommunicationTimeouts.SendTimeout">SendTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets the interval of time after which the send method, invoked by a communication object, times out</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan SendTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> that specifies the interval of time to wait for the send method to time out.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

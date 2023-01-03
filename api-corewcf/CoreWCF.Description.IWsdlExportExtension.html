@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IWsdlExportExtension
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IWsdlExportExtension
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.IWsdlExportExtension">
+  
+  
+  <h1 id="CoreWCF_Description_IWsdlExportExtension" data-uid="CoreWCF.Description.IWsdlExportExtension" class="text-break">Interface IWsdlExportExtension
+  </h1>
+  <div class="markdown level0 summary"><p>Defines endpoint or contract behaviors that can export custom metadata.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_IWsdlExportExtension_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IWsdlExportExtension</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_IWsdlExportExtension_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>To modify and extend the Web Services Description Language (WSDL) exported by &lt;xref:CoreWCF.Description.WsdlExporter&gt; objects, implement the &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; interface on an endpoint, contract, or operation behavior (an object that implements either &lt;xref:CoreWCF.Description.IContractBehavior&gt;, &lt;xref:CoreWCF.Description.IEndpointBehavior&gt;, or &lt;xref:CoreWCF.Description.IOperationBehavior&gt;) and add the behavior to the &lt;xref:CoreWCF.Description.ServiceEndpoint.Behaviors%2A&gt;, &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A&gt;, or &lt;xref:CoreWCF.Description.OperationDescription.Behaviors%2A&gt; property. In addition, you can also implement &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; on a &lt;xref:CoreWCF.Channels.BindingElement&gt;.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>&lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; implementations are never invoked if they are implemented as an &lt;xref:CoreWCF.Description.IServiceBehavior&gt;.</p>
+</div>
+<p>&lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; does not export custom policy assertions even though Windows Communication Foundation (WCF) exports custom binding policy assertions to the appropriate element inside WSDL. If you want to export custom policy assertions, implement the &lt;xref:CoreWCF.Description.IPolicyExportExtension&gt; interface.</p>
+<p>The metadata publication process begins by calling &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoints%2A?displayProperty=nameWithType&gt; which in turn calls &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoint%2A?displayProperty=nameWithType&gt; for each endpoint.</p>
+<p>The endpoint is exported by first exporting its contract.When exporting a contract the &lt;xref:CoreWCF.Description.WsdlExporter?displayProperty=nameWithType&gt; calls the &lt;xref:CoreWCF.Description.IWsdlExportExtension.ExportContract%2A?displayProperty=nameWithType&gt; method on all &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; implementations on the contract, and operation behaviors for that contract. Operations that use wildcard actions are not exported in metadata, so &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; implementations on operation behaviors for these operations are not exported.</p>
+<p>After exporting the contract, the port and binding are exported and exported policy expressions are attached.</p>
+<p>Both the &lt;xref:CoreWCF.Description.IWsdlExportExtension.ExportContract%2A&gt; and the &lt;xref:CoreWCF.Description.IWsdlExportExtension.ExportEndpoint%2A&gt; methods provide access to the &lt;xref:CoreWCF.Description.WsdlExporter&gt; so that &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; implementations can report recoverable errors and warnings through the &lt;xref:CoreWCF.Description.MetadataExporter.Errors%2A&gt; property. The context objects passed into both methods provide convenient mappings from exported WSDL elements to properties of &lt;xref:CoreWCF.Description.ContractDescription&gt; and &lt;xref:CoreWCF.Description.ServiceEndpoint&gt; objects.</p>
+<p>If an &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; implementation throws an exception on export, the generated metadata is in an inconsistent state and the &lt;xref:CoreWCF.Description.WsdlExporter&gt; object should be discarded.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Custom export extension must run after the built-in serializer populates the service description.</p>
+</div>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_IWsdlExportExtension_ExportContract_" data-uid="CoreWCF.Description.IWsdlExportExtension.ExportContract*"></a>
+  <h4 id="CoreWCF_Description_IWsdlExportExtension_ExportContract_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlContractConversionContext_" data-uid="CoreWCF.Description.IWsdlExportExtension.ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)">ExportContract(WsdlExporter, WsdlContractConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlContractConversionContext.html">WsdlContractConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_IWsdlExportExtension_ExportEndpoint_" data-uid="CoreWCF.Description.IWsdlExportExtension.ExportEndpoint*"></a>
+  <h4 id="CoreWCF_Description_IWsdlExportExtension_ExportEndpoint_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlEndpointConversionContext_" data-uid="CoreWCF.Description.IWsdlExportExtension.ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)">ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ExportEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlEndpointConversionContext.html">WsdlEndpointConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

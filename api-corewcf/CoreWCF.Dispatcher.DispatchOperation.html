@@ -1,0 +1,644 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DispatchOperation
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DispatchOperation
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.DispatchOperation">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_DispatchOperation" data-uid="CoreWCF.Dispatcher.DispatchOperation" class="text-break">Class DispatchOperation
+  </h1>
+  <div class="markdown level0 summary"><p>Used to modify or extend the execution behavior of a specific service operation in a service endpoint. This class cannot be inherited.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">DispatchOperation</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_DispatchOperation_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class DispatchOperation : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Dispatcher_DispatchOperation_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation&gt; class is the location for run-time modifications and insertion point for custom extensions that are scoped to only one service operation. (To modify service run-time behavior for all messages in a contract, use the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime&gt; class.)</p>
+<p>Install &lt;xref:CoreWCF.Dispatcher.DispatchOperation&gt; modifications using a custom operation behavior object or a behavior at a larger scope in order to modify operations across a contract.</p>
+<p>Use the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.Operations%2A&gt; property to locate the &lt;xref:CoreWCF.Dispatcher.DispatchOperation&gt; object that represents a particular service operation.</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.Action%2A&gt;, &lt;xref:CoreWCF.Dispatcher.DispatchOperation.ReplyAction%2A&gt;, &lt;xref:CoreWCF.Dispatcher.DispatchOperation.FaultContractInfos%2A&gt;, &lt;xref:CoreWCF.Dispatcher.DispatchOperation.IsOneWay%2A&gt;, &lt;xref:CoreWCF.Dispatcher.DispatchOperation.IsTerminating%2A&gt;, and &lt;xref:CoreWCF.Dispatcher.DispatchOperation.Name%2A&gt; properties obtain the respective values for the operation.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.TransactionAutoComplete%2A&gt; and &lt;xref:CoreWCF.Dispatcher.DispatchOperation.TransactionRequired%2A&gt; properties specify transaction behavior.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.ReleaseInstanceBeforeCall%2A&gt; and &lt;xref:CoreWCF.Dispatcher.DispatchOperation.ReleaseInstanceAfterCall%2A&gt; properties control the lifetime of the user-defined service object relative to the &lt;xref:CoreWCF.InstanceContext&gt;.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.DeserializeRequest%2A&gt;, &lt;xref:CoreWCF.Dispatcher.DispatchOperation.SerializeReply%2A&gt;, and the &lt;xref:CoreWCF.Dispatcher.DispatchOperation.Formatter%2A&gt; properties enable explicit control over the conversion from messages to objects and vice versa.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.Impersonation%2A&gt; property specifies the operation impersonation level.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.CallContextInitializers%2A&gt; property inserts custom call context extensions for the operation. For more information, see &lt;xref:CoreWCF.Dispatcher.ICallContextInitializer&gt;.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.AutoDisposeParameters%2A&gt; property controls whether parameter objects are disposed when the service operation is completed.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.Invoker%2A&gt; property to insert a custom invoker object.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.DispatchOperation.ParameterInspectors%2A&gt; property enables you to insert a custom parameter inspector that you can use to inspect or modify parameters and return values.</p>
+</li>
+</ul>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation__ctor_" data-uid="CoreWCF.Dispatcher.DispatchOperation.#ctor*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation__ctor_CoreWCF_Dispatcher_DispatchRuntime_System_String_System_String_" data-uid="CoreWCF.Dispatcher.DispatchOperation.#ctor(CoreWCF.Dispatcher.DispatchRuntime,System.String,System.String)">DispatchOperation(DispatchRuntime, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DispatchOperation(DispatchRuntime parent, string name, string action)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchRuntime.html">DispatchRuntime</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation__ctor_" data-uid="CoreWCF.Dispatcher.DispatchOperation.#ctor*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation__ctor_CoreWCF_Dispatcher_DispatchRuntime_System_String_System_String_System_String_" data-uid="CoreWCF.Dispatcher.DispatchOperation.#ctor(CoreWCF.Dispatcher.DispatchRuntime,System.String,System.String,System.String)">DispatchOperation(DispatchRuntime, String, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DispatchOperation(DispatchRuntime parent, string name, string action, string replyAction)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchRuntime.html">DispatchRuntime</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">action</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">replyAction</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_Action_" data-uid="CoreWCF.Dispatcher.DispatchOperation.Action*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_Action" data-uid="CoreWCF.Dispatcher.DispatchOperation.Action">Action</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Action { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_AuthorizeClaims_" data-uid="CoreWCF.Dispatcher.DispatchOperation.AuthorizeClaims*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_AuthorizeClaims" data-uid="CoreWCF.Dispatcher.DispatchOperation.AuthorizeClaims">AuthorizeClaims</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrentDictionary&lt;string, List&lt;Claim&gt;&gt; AuthorizeClaims { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="CoreWCF.IdentityModel.Claims.Claim.html">Claim</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_AutoDisposeParameters_" data-uid="CoreWCF.Dispatcher.DispatchOperation.AutoDisposeParameters*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_AutoDisposeParameters" data-uid="CoreWCF.Dispatcher.DispatchOperation.AutoDisposeParameters">AutoDisposeParameters</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoDisposeParameters { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_CallContextInitializers_" data-uid="CoreWCF.Dispatcher.DispatchOperation.CallContextInitializers*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_CallContextInitializers" data-uid="CoreWCF.Dispatcher.DispatchOperation.CallContextInitializers">CallContextInitializers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SynchronizedCollection&lt;ICallContextInitializer&gt; CallContextInitializers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Collections.Generic.SynchronizedCollection-1.html">SynchronizedCollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.ICallContextInitializer.html">ICallContextInitializer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_DeserializeRequest_" data-uid="CoreWCF.Dispatcher.DispatchOperation.DeserializeRequest*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_DeserializeRequest" data-uid="CoreWCF.Dispatcher.DispatchOperation.DeserializeRequest">DeserializeRequest</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool DeserializeRequest { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_FaultContractInfos_" data-uid="CoreWCF.Dispatcher.DispatchOperation.FaultContractInfos*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_FaultContractInfos" data-uid="CoreWCF.Dispatcher.DispatchOperation.FaultContractInfos">FaultContractInfos</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SynchronizedCollection&lt;FaultContractInfo&gt; FaultContractInfos { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Collections.Generic.SynchronizedCollection-1.html">SynchronizedCollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.FaultContractInfo.html">FaultContractInfo</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_FaultFormatter_" data-uid="CoreWCF.Dispatcher.DispatchOperation.FaultFormatter*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_FaultFormatter" data-uid="CoreWCF.Dispatcher.DispatchOperation.FaultFormatter">FaultFormatter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDispatchFaultFormatter FaultFormatter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.IDispatchFaultFormatter.html">IDispatchFaultFormatter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_Formatter_" data-uid="CoreWCF.Dispatcher.DispatchOperation.Formatter*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_Formatter" data-uid="CoreWCF.Dispatcher.DispatchOperation.Formatter">Formatter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDispatchMessageFormatter Formatter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.IDispatchMessageFormatter.html">IDispatchMessageFormatter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_Impersonation_" data-uid="CoreWCF.Dispatcher.DispatchOperation.Impersonation*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_Impersonation" data-uid="CoreWCF.Dispatcher.DispatchOperation.Impersonation">Impersonation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ImpersonationOption Impersonation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ImpersonationOption.html">ImpersonationOption</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_Invoker_" data-uid="CoreWCF.Dispatcher.DispatchOperation.Invoker*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_Invoker" data-uid="CoreWCF.Dispatcher.DispatchOperation.Invoker">Invoker</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IOperationInvoker Invoker { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.IOperationInvoker.html">IOperationInvoker</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_IsOneWay_" data-uid="CoreWCF.Dispatcher.DispatchOperation.IsOneWay*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_IsOneWay" data-uid="CoreWCF.Dispatcher.DispatchOperation.IsOneWay">IsOneWay</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOneWay { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_Name_" data-uid="CoreWCF.Dispatcher.DispatchOperation.Name*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_Name" data-uid="CoreWCF.Dispatcher.DispatchOperation.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_ParameterInspectors_" data-uid="CoreWCF.Dispatcher.DispatchOperation.ParameterInspectors*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_ParameterInspectors" data-uid="CoreWCF.Dispatcher.DispatchOperation.ParameterInspectors">ParameterInspectors</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;IParameterInspector&gt; ParameterInspectors { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.IParameterInspector.html">IParameterInspector</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_Parent_" data-uid="CoreWCF.Dispatcher.DispatchOperation.Parent*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_Parent" data-uid="CoreWCF.Dispatcher.DispatchOperation.Parent">Parent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DispatchRuntime Parent { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchRuntime.html">DispatchRuntime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_ReplyAction_" data-uid="CoreWCF.Dispatcher.DispatchOperation.ReplyAction*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_ReplyAction" data-uid="CoreWCF.Dispatcher.DispatchOperation.ReplyAction">ReplyAction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReplyAction { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_DispatchOperation_SerializeReply_" data-uid="CoreWCF.Dispatcher.DispatchOperation.SerializeReply*"></a>
+  <h4 id="CoreWCF_Dispatcher_DispatchOperation_SerializeReply" data-uid="CoreWCF.Dispatcher.DispatchOperation.SerializeReply">SerializeReply</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SerializeReply { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

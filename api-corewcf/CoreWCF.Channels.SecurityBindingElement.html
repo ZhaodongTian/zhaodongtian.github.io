@@ -1,0 +1,1389 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SecurityBindingElement
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SecurityBindingElement
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.SecurityBindingElement">
+  
+  
+  <h1 id="CoreWCF_Channels_SecurityBindingElement" data-uid="CoreWCF.Channels.SecurityBindingElement" class="text-break">Class SecurityBindingElement
+  </h1>
+  <div class="markdown level0 summary"><p>An abstract class that, when implemented, represents a binding element that supports channel SOAP message security.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></div>
+    <div class="level2"><span class="xref">SecurityBindingElement</span></div>
+      <div class="level3"><a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a></div>
+      <div class="level3"><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_Clone">BindingElement.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_IsMatch_CoreWCF_Channels_BindingElement_">BindingElement.IsMatch(BindingElement)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SecurityBindingElement : BindingElement</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class is the base class for the SOAP message security binding elements in WCF. There are three implementations of this abstract class: <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a>, <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">AsymmetricSecurityBindingElement</a>, and <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a>. These implementations model the bindings defined in the WS-Security Policy specification.</p>
+<p>A custom binding contains a collection of binding elements arranged in a specific order: the element that represents the top of the binding stack is added first, the next element down in the binding stack is added second, and so on.</p>
+<p>To add this class to a binding, do the following:</p>
+<ol>
+<li><p>Create a <a class="xref" href="CoreWCF.Channels.BindingElementCollection.html">BindingElementCollection</a>.</p>
+</li>
+<li><p>Create a custom binding element that is above this binding element in the binding stack, such as the optional <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.transactionflowbindingelement?view=netframework-4.8.1">TransactionFlowBindingElement</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.reliablesessionbindingelement?view=netframework-4.8.1">ReliableSessionBindingElement</a>.</p>
+</li>
+<li><p>Add these elements in the order previously described to the <a class="xref" href="CoreWCF.Channels.BindingElementCollection.html">BindingElementCollection</a> using the <a class="xref" href="CoreWCF.Channels.BindingElementCollection.html#CoreWCF_Channels_BindingElementCollection_InsertItem_">InsertItem</a> method.</p>
+</li>
+<li><p>Create an instance of a security binding element derived from <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a>, such as <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">AsymmetricSecurityBindingElement</a>, <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a>, or <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a>.</p>
+</li>
+<li><p>Add the derived security binding element to the collection.</p>
+</li>
+<li><p>Add any additional custom binding elements to the collection, such as <a class="xref" href="CoreWCF.Channels.TcpTransportBindingElement.html">TcpTransportBindingElement</a>.</p>
+</li>
+</ol>
+<p>For more information about using a <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a>, see <a href="/dotnet/framework/wcf/feature-details/securitybindingelement-authentication-modes">SecurityBindingElement Authentication Modes</a> and <a href="/dotnet/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement">How to: Create a Custom Binding Using the SecurityBindingElement</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Once a <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a> object is created, you should treat its properties as immutable. Calling <code>set</code> on some properties may have unpredictable effects: the binding may behave as if the property retained its old value, with a runtime failure being the only indication of an issue. Two properties known to behave this way are <a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html#CoreWCF_Security_Tokens_IssuedSecurityTokenParameters_KeyType_">KeyType</a> and <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_MessageSecurityVersion_">MessageSecurityVersion</a>. There may be other properties of which this is also true.</p>
+</div>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_AllowInsecureTransport_" data-uid="CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_AllowInsecureTransport" data-uid="CoreWCF.Channels.SecurityBindingElement.AllowInsecureTransport">AllowInsecureTransport</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowInsecureTransport { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_DefaultAlgorithmSuite_" data-uid="CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_DefaultAlgorithmSuite" data-uid="CoreWCF.Channels.SecurityBindingElement.DefaultAlgorithmSuite">DefaultAlgorithmSuite</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the message encryption and key-wrap algorithms.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityAlgorithmSuite DefaultAlgorithmSuite { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.SecurityAlgorithmSuite.html">SecurityAlgorithmSuite</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Security.SecurityAlgorithmSuite.html">SecurityAlgorithmSuite</a> object that represents the message encryption and key-wrap algorithms.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_DefaultAlgorithmSuite_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Security.SecurityAlgorithmSuite.html">SecurityAlgorithmSuite</a> object that contains numerous properties that specify security algorithms that are to be used for signing, encryption, key derivation, and other cryptographic operations. It also controls the key sizes that are used for doing these cryptographic operations.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_EnableUnsecuredResponse_" data-uid="CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_EnableUnsecuredResponse" data-uid="CoreWCF.Channels.SecurityBindingElement.EnableUnsecuredResponse">EnableUnsecuredResponse</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EnableUnsecuredResponse { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_EndpointSupportingTokenParameters_" data-uid="CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_EndpointSupportingTokenParameters" data-uid="CoreWCF.Channels.SecurityBindingElement.EndpointSupportingTokenParameters">EndpointSupportingTokenParameters</h4>
+  <div class="markdown level1 summary"><p>Gets the endpoint that supports token parameters.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SupportingTokenParameters EndpointSupportingTokenParameters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SupportingTokenParameters.html">SupportingTokenParameters</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Security.Tokens.SupportingTokenParameters.html">SupportingTokenParameters</a> object that represents the endpoint that supports token parameters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_EndpointSupportingTokenParameters_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Supporting tokens provide additional claims beyond those contained in the primary tokens for the binding. The collection returned by the <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_EndpointSupportingTokenParameters">EndpointSupportingTokenParameters</a> contains additional token parameters (<a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.tokens.securitytokenparameters?view=dotnet-plat-ext-7.0">SecurityTokenParameters</a>) for all operations defined by an endpoint. The primary token parameters are found on either the <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a> or the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">AsymmetricSecurityBindingElement</a> (both inherit from the <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a> class). In the case of the <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a>, the primary token parameters are returned by the <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html#CoreWCF_Channels_SymmetricSecurityBindingElement_ProtectionTokenParameters">ProtectionTokenParameters</a> property. On the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">AsymmetricSecurityBindingElement</a> element there are two parameter properties, the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement.initiatortokenparameters?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">InitiatorTokenParameters</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.asymmetricsecuritybindingelement.recipienttokenparameters?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">RecipientTokenParameters</a> properties.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The properties are called parameters because they specify only the type of the security token, not the actual values.<br><br> Supporting tokens can be scoped at the endpoint level, in which case they are included in all secured messages sent by the client to the service. The service enforces that all secured messages from the client contain the supporting token types configured by this property.<br><br> To provide supporting tokens only for an operation (not all operations on an endpoint), use the <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_OptionalOperationSupportingTokenParameters">OptionalOperationSupportingTokenParameters</a> property.</p>
+</div>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp_" data-uid="CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp" data-uid="CoreWCF.Channels.SecurityBindingElement.IncludeTimestamp">IncludeTimestamp</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that indicates whether time stamps are included in each message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeTimestamp { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if time stamps are included in each message; otherwise, <code>false</code>. The default is <code>true</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp">IncludeTimestamp</a> property is <code>true</code> and if <code>DetectReplays</code> is <code>true</code>, WCF detects a replay attack.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_KeyEntropyMode_" data-uid="CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_KeyEntropyMode" data-uid="CoreWCF.Channels.SecurityBindingElement.KeyEntropyMode">KeyEntropyMode</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the source of entropy used to create keys.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityKeyEntropyMode KeyEntropyMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.SecurityKeyEntropyMode.html">SecurityKeyEntropyMode</a></td>
+        <td><p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.securitykeyentropymode?view=dotnet-plat-ext-7.0">SecurityKeyEntropyMode</a> used to create keys. The default value is <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.securitykeyentropymode?view=dotnet-plat-ext-7.0#system-servicemodel-security-securitykeyentropymode-combinedentropy">CombinedEntropy</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_KeyEntropyMode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_KeyEntropyMode">KeyEntropyMode</a> specifies how the key for tokens (such as <a class="xref" href="CoreWCF.Security.Tokens.SecurityContextSecurityToken.html">SecurityContextSecurityToken</a>) issued by the service is computed: whether it is computed based on the client key material only, on the service key material only, or on a combination of both.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_LocalServiceSettings_" data-uid="CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_LocalServiceSettings" data-uid="CoreWCF.Channels.SecurityBindingElement.LocalServiceSettings">LocalServiceSettings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalServiceSecuritySettings LocalServiceSettings { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html">LocalServiceSecuritySettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_MessageSecurityVersion_" data-uid="CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_MessageSecurityVersion" data-uid="CoreWCF.Channels.SecurityBindingElement.MessageSecurityVersion">MessageSecurityVersion</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the message security version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageSecurityVersion MessageSecurityVersion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a> object that represents the message security version.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_MessageSecurityVersion_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a> contains numerous properties that specify version numbers of different security specifications used when securing messages exchanged on the channel.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Once a <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a> object is created, this property is immutable. Calling <code>set</code> on it does not change it.</p>
+</div>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_OperationSupportingTokenParameters_" data-uid="CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_OperationSupportingTokenParameters" data-uid="CoreWCF.Channels.SecurityBindingElement.OperationSupportingTokenParameters">OperationSupportingTokenParameters</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDictionary&lt;string, SupportingTokenParameters&gt; OperationSupportingTokenParameters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="CoreWCF.Security.Tokens.SupportingTokenParameters.html">SupportingTokenParameters</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_OptionalEndpointSupportingTokenParameters_" data-uid="CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_OptionalEndpointSupportingTokenParameters" data-uid="CoreWCF.Channels.SecurityBindingElement.OptionalEndpointSupportingTokenParameters">OptionalEndpointSupportingTokenParameters</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SupportingTokenParameters OptionalEndpointSupportingTokenParameters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SupportingTokenParameters.html">SupportingTokenParameters</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_OptionalOperationSupportingTokenParameters_" data-uid="CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_OptionalOperationSupportingTokenParameters" data-uid="CoreWCF.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters">OptionalOperationSupportingTokenParameters</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDictionary&lt;string, SupportingTokenParameters&gt; OptionalOperationSupportingTokenParameters { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="CoreWCF.Security.Tokens.SupportingTokenParameters.html">SupportingTokenParameters</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_ProtectTokens_" data-uid="CoreWCF.Channels.SecurityBindingElement.ProtectTokens*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_ProtectTokens" data-uid="CoreWCF.Channels.SecurityBindingElement.ProtectTokens">ProtectTokens</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ProtectTokens { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_SecurityHeaderLayout_" data-uid="CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_SecurityHeaderLayout" data-uid="CoreWCF.Channels.SecurityBindingElement.SecurityHeaderLayout">SecurityHeaderLayout</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the ordering of the elements in the security header for this binding.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityHeaderLayout SecurityHeaderLayout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html">SecurityHeaderLayout</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html">SecurityHeaderLayout</a> that represents the ordering of the elements in the security header for this binding. The default is <a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html#CoreWCF_Channels_SecurityHeaderLayout_Strict">Strict</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_SecurityHeaderLayout_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html">SecurityHeaderLayout</a> enumeration contains the following members:</p>
+<ul>
+<li><p><a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html#CoreWCF_Channels_SecurityHeaderLayout_Strict">Strict</a>: Items are added to the security header according to the general principle of &quot;declare before use &quot;.</p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html#CoreWCF_Channels_SecurityHeaderLayout_Lax">Lax</a>: Items are added to the security header in any order that conforms to WSS: SOAP Message security.</p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html#CoreWCF_Channels_SecurityHeaderLayout_LaxTimestampFirst">LaxTimestampFirst</a>: Items are added to the security header in any order that conforms to WSS: SOAP message security except that the first element in the security header must be a <code>wsse:Timestamp</code> element.</p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.SecurityHeaderLayout.html#CoreWCF_Channels_SecurityHeaderLayout_LaxTimestampLast">LaxTimestampLast</a>: Items are added to the security header in any order that conforms to WSS: SOAP message security except that the last element in the security header must be a <code>wsse:Timestamp</code> element.</p>
+</li>
+</ul>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_BuildServiceDispatcher_" data-uid="CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_BuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcher&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IServiceDispatcher BuildServiceDispatcher&lt;TChannel&gt;(BindingContext context, IServiceDispatcher innerDispatcher)
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">innerDispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_BuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_">BindingElement.BuildServiceDispatcher&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</a></div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_BuildServiceDispatcherCore_" data-uid="CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_BuildServiceDispatcherCore__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.SecurityBindingElement.BuildServiceDispatcherCore``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcherCore&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract IServiceDispatcher BuildServiceDispatcherCore&lt;TChannel&gt;(BindingContext context, IServiceDispatcher serviceDispatcher)
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">serviceDispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CanBuildServiceDispatcher_" data-uid="CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CanBuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.SecurityBindingElement.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingContext)">CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext context)
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_CanBuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_">BindingElement.CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext)</a></div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateCertificateOverTransportBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateCertificateOverTransportBindingElement" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement">CreateCertificateOverTransportBindingElement()</h4>
+  <div class="markdown level1 summary"><p>Creates a security binding element that expects clients to do certificate-based authentication using SOAP message security.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TransportSecurityBindingElement CreateCertificateOverTransportBindingElement()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_CreateCertificateOverTransportBindingElement_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS).</p>
+<p>The binding element is configured to use the <a class="xref" href="CoreWCF.MessageSecurityVersion.html#CoreWCF_MessageSecurityVersion_Default">Default</a> property of the <a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a> class.</p>
+<p>The created binding has <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp">IncludeTimestamp</a> set to <code>true</code>.</p>
+<p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0">LocalClientSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0">LocalClientSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+<p>The <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html">LocalServiceSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localservicesettings?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">LocalServiceSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateCertificateOverTransportBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateCertificateOverTransportBindingElement_CoreWCF_MessageSecurityVersion_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateCertificateOverTransportBindingElement(CoreWCF.MessageSecurityVersion)">CreateCertificateOverTransportBindingElement(MessageSecurityVersion)</h4>
+  <div class="markdown level1 summary"><p>Creates a security binding element that expects clients to do certificate-based authentication using SOAP message security.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TransportSecurityBindingElement CreateCertificateOverTransportBindingElement(MessageSecurityVersion version)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a></td>
+        <td><span class="parametername">version</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a> for the binding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_CreateCertificateOverTransportBindingElement_CoreWCF_MessageSecurityVersion__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This binding element expects the transport to provide server authentication as well as message protection (for example, HTTPS). The binding element is configured with the specified <a class="xref" href="CoreWCF.MessageSecurityVersion.html">MessageSecurityVersion</a>.</p>
+<p>The created binding has <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp">IncludeTimestamp</a> set to <code>true</code>.</p>
+<p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0">LocalClientSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0">LocalClientSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+<p>The <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html">LocalServiceSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localservicesettings?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">LocalServiceSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenForCertificateBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenForCertificateBindingElement_CoreWCF_Security_Tokens_IssuedSecurityTokenParameters_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForCertificateBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)">CreateIssuedTokenForCertificateBindingElement(IssuedSecurityTokenParameters)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SymmetricSecurityBindingElement CreateIssuedTokenForCertificateBindingElement(IssuedSecurityTokenParameters issuedTokenParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html">IssuedSecurityTokenParameters</a></td>
+        <td><span class="parametername">issuedTokenParameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenForSslBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenForSslBindingElement_CoreWCF_Security_Tokens_IssuedSecurityTokenParameters_System_Boolean_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenForSslBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters,System.Boolean)">CreateIssuedTokenForSslBindingElement(IssuedSecurityTokenParameters, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SymmetricSecurityBindingElement CreateIssuedTokenForSslBindingElement(IssuedSecurityTokenParameters issuedTokenParameters, bool requireCancellation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html">IssuedSecurityTokenParameters</a></td>
+        <td><span class="parametername">issuedTokenParameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">requireCancellation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenOverTransportBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenOverTransportBindingElement_CoreWCF_Security_Tokens_IssuedSecurityTokenParameters_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateIssuedTokenOverTransportBindingElement(CoreWCF.Security.Tokens.IssuedSecurityTokenParameters)">CreateIssuedTokenOverTransportBindingElement(IssuedSecurityTokenParameters)</h4>
+  <div class="markdown level1 summary"><p>Creates a security binding element configured to require SOAP security based client authentication using an issued token. This binding element requires the transport to provide server authentication and message protection (for example, HTTPS).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TransportSecurityBindingElement CreateIssuedTokenOverTransportBindingElement(IssuedSecurityTokenParameters issuedTokenParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html">IssuedSecurityTokenParameters</a></td>
+        <td><span class="parametername">issuedTokenParameters</span></td>
+        <td><p>An <a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html">IssuedSecurityTokenParameters</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_CreateIssuedTokenOverTransportBindingElement_CoreWCF_Security_Tokens_IssuedSecurityTokenParameters__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The created binding has <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp">IncludeTimestamp</a> set to <code>true</code>.</p>
+<p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0">LocalClientSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0">LocalClientSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+<p>The <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html">LocalServiceSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localservicesettings?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">LocalServiceSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Once a <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a> object is created by calling this method, the <a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html#CoreWCF_Security_Tokens_IssuedSecurityTokenParameters_KeyType">KeyType</a> property should be treated as immutable. Inconsistent binding behavior may occur if this value is modified.</p>
+</div>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_CoreWCF_Channels_SecurityBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement)">CreateSecureConversationBindingElement(SecurityBindingElement)</h4>
+  <div class="markdown level1 summary"><p>Creates a symmetric security binding element that is configured to establish a secure conversation between the client and service. The security context token issued at the end of the secure conversation handshake is used to secure the messages. The bootstrap security binding element specifies how the secure conversation handshake messages are secured.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SecurityBindingElement CreateSecureConversationBindingElement(SecurityBindingElement bootstrapSecurity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></td>
+        <td><span class="parametername">bootstrapSecurity</span></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a> that contains specification on how the secure conversation handshake messages are secured.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_CoreWCF_Channels_SecurityBindingElement__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The binding element is configured to use session-based security context tokens.</p>
+<p>The <code>bootstrapSecurity</code> is used to indicate the security binding and policy used to request a secure conversation token from the service.</p>
+<p>If <code>bootstrapSecurity</code> is a <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a>, the binding element returned by this method is also one, and <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp">IncludeTimestamp</a> is set to <code>true</code>; and the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0">LocalClientSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0">LocalClientSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localservicesecuritysettings.detectreplays?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>; and the <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html">LocalServiceSecuritySettings</a> object returned from <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_LocalServiceSettings">LocalServiceSettings</a> has its <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html#CoreWCF_Channels_LocalServiceSecuritySettings_DetectReplays">DetectReplays</a> property set to <code>false</code>.</p>
+<p>Otherwise, a <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html">SymmetricSecurityBindingElement</a> is returned, with <a class="xref" href="CoreWCF.Channels.SymmetricSecurityBindingElement.html#CoreWCF_Channels_SymmetricSecurityBindingElement_RequireSignatureConfirmation">RequireSignatureConfirmation</a> set to false.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_CoreWCF_Channels_SecurityBindingElement_System_Boolean_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean)">CreateSecureConversationBindingElement(SecurityBindingElement, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SecurityBindingElement CreateSecureConversationBindingElement(SecurityBindingElement bootstrapSecurity, bool requireCancellation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></td>
+        <td><span class="parametername">bootstrapSecurity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">requireCancellation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateSecureConversationBindingElement_CoreWCF_Channels_SecurityBindingElement_System_Boolean_CoreWCF_Security_ChannelProtectionRequirements_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(CoreWCF.Channels.SecurityBindingElement,System.Boolean,CoreWCF.Security.ChannelProtectionRequirements)">CreateSecureConversationBindingElement(SecurityBindingElement, Boolean, ChannelProtectionRequirements)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SecurityBindingElement CreateSecureConversationBindingElement(SecurityBindingElement bootstrapSecurity, bool requireCancellation, ChannelProtectionRequirements bootstrapProtectionRequirements)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></td>
+        <td><span class="parametername">bootstrapSecurity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">requireCancellation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.ChannelProtectionRequirements.html">ChannelProtectionRequirements</a></td>
+        <td><span class="parametername">bootstrapProtectionRequirements</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html">SecurityBindingElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateSspiNegotiationOverTransportBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateSspiNegotiationOverTransportBindingElement_System_Boolean_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateSspiNegotiationOverTransportBindingElement(System.Boolean)">CreateSspiNegotiationOverTransportBindingElement(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TransportSecurityBindingElement CreateSspiNegotiationOverTransportBindingElement(bool requireCancellation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">requireCancellation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_CreateUserNameOverTransportBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_CreateUserNameOverTransportBindingElement" data-uid="CoreWCF.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement">CreateUserNameOverTransportBindingElement()</h4>
+  <div class="markdown level1 summary"><p>Creates a security binding element that is configured for client authentication based on a user name and password sent as part of the SOAP message. The binding element requires the transport to provide server authentication and message protection (for example, HTTPS).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TransportSecurityBindingElement CreateUserNameOverTransportBindingElement()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_CreateUserNameOverTransportBindingElement_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The created binding has <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_IncludeTimestamp">IncludeTimestamp</a> set to <code>true</code>. The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings?view=dotnet-plat-ext-7.0">LocalClientSecuritySettings</a> object returned from <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.securitybindingelement.localclientsettings?view=dotnet-plat-ext-7.0">LocalClientSettings</a> has its <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.localclientsecuritysettings.detectreplays?view=dotnet-plat-ext-7.0">DetectReplays</a> property set to <code>false</code>.</p>
+<p>The <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html">LocalServiceSecuritySettings</a> object returned from <a class="xref" href="CoreWCF.Channels.SecurityBindingElement.html#CoreWCF_Channels_SecurityBindingElement_LocalServiceSettings">LocalServiceSettings</a> has its <a class="xref" href="CoreWCF.Channels.LocalServiceSecuritySettings.html#CoreWCF_Channels_LocalServiceSecuritySettings_DetectReplays">DetectReplays</a> property set to <code>false</code>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_ExportPolicyForTransportTokenAssertionProviders_" data-uid="CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_ExportPolicyForTransportTokenAssertionProviders_CoreWCF_Description_MetadataExporter_CoreWCF_Description_PolicyConversionContext_" data-uid="CoreWCF.Channels.SecurityBindingElement.ExportPolicyForTransportTokenAssertionProviders(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)">ExportPolicyForTransportTokenAssertionProviders(MetadataExporter, PolicyConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ExportPolicyForTransportTokenAssertionProviders(MetadataExporter exporter, PolicyConversionContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.MetadataExporter.html">MetadataExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.PolicyConversionContext.html">PolicyConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_ExportTransportSecurityBindingElement_" data-uid="CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_ExportTransportSecurityBindingElement_CoreWCF_Channels_TransportSecurityBindingElement_CoreWCF_Channels_ITransportTokenAssertionProvider_CoreWCF_Description_MetadataExporter_CoreWCF_Description_PolicyConversionContext_" data-uid="CoreWCF.Channels.SecurityBindingElement.ExportTransportSecurityBindingElement(CoreWCF.Channels.TransportSecurityBindingElement,CoreWCF.Channels.ITransportTokenAssertionProvider,CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)">ExportTransportSecurityBindingElement(TransportSecurityBindingElement, ITransportTokenAssertionProvider, MetadataExporter, PolicyConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ExportTransportSecurityBindingElement(TransportSecurityBindingElement binding, ITransportTokenAssertionProvider transportTokenAssertionProvider, MetadataExporter exporter, PolicyConversionContext policyContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportSecurityBindingElement.html">TransportSecurityBindingElement</a></td>
+        <td><span class="parametername">binding</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.ITransportTokenAssertionProvider.html">ITransportTokenAssertionProvider</a></td>
+        <td><span class="parametername">transportTokenAssertionProvider</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.MetadataExporter.html">MetadataExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.PolicyConversionContext.html">PolicyConversionContext</a></td>
+        <td><span class="parametername">policyContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_GetProperty_" data-uid="CoreWCF.Channels.SecurityBindingElement.GetProperty*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.SecurityBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)">GetProperty&lt;T&gt;(BindingContext)</h4>
+  <div class="markdown level1 summary"><p>Gets a specified object using the specified <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override T GetProperty&lt;T&gt;(BindingContext context)
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The specified object from the <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a> or null if the object is not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The property to get.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_">BindingElement.GetProperty&lt;T&gt;(BindingContext)</a></div>
+  <h5 id="CoreWCF_Channels_SecurityBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method gets the specified object from the base class, or from one of that class's ancestors. The object returned is usually a collection of properties, for example, an object that implements <a class="xref" href="CoreWCF.Channels.ISecurityCapabilities.html">ISecurityCapabilities</a>.</p>
+<p>If the <code>SecurityBindingElement</code> does not recognize the type of property requested, it delegates the call to the binding element stack below it, passing the binding context parameter. The types of properties that the <code>SecurityBindingElement</code> can provide are <a class="xref" href="CoreWCF.Channels.ISecurityCapabilities.html">ISecurityCapabilities</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.security.identityverifier?view=netframework-4.8.1&amp;viewFallbackFrom=dotnet-plat-ext-7.0">IdentityVerifier</a>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_SetIssuerBindingContextIfRequired_" data-uid="CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_SetIssuerBindingContextIfRequired_CoreWCF_Security_Tokens_SecurityTokenParameters_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.SecurityBindingElement.SetIssuerBindingContextIfRequired(CoreWCF.Security.Tokens.SecurityTokenParameters,CoreWCF.Channels.BindingContext)">SetIssuerBindingContextIfRequired(SecurityTokenParameters, BindingContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void SetIssuerBindingContextIfRequired(SecurityTokenParameters parameters, BindingContext issuerBindingContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenParameters.html">SecurityTokenParameters</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">issuerBindingContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_SecurityBindingElement_SetKeyDerivation_" data-uid="CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation*"></a>
+  <h4 id="CoreWCF_Channels_SecurityBindingElement_SetKeyDerivation_System_Boolean_" data-uid="CoreWCF.Channels.SecurityBindingElement.SetKeyDerivation(System.Boolean)">SetKeyDerivation(Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetKeyDerivation(bool requireDerivedKeys)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">requireDerivedKeys</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

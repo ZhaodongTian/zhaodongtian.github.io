@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IMessageFilterTable&lt;TFilterData&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IMessageFilterTable&lt;TFilterData&gt;
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_IMessageFilterTable_1" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1" class="text-break">Interface IMessageFilterTable&lt;TFilterData&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>An  that defines the contract that a filter table must implement to inspect messages with query criteria derived from one or more filters.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_IMessageFilterTable_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IMessageFilterTable&lt;TFilterData&gt;</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TFilterData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Dispatcher_IMessageFilterTable_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The filter table is a core component of the filter engine. The primary use of the filter engine in Windows Communication Foundation (WCF) is to match application logic to messages by finding all the filters that match a message.</p>
+<p>A filter table allows multiple filters to be matched against a single message more efficiently than they can be matched separately. A filter table associates filter data with filters. The table is a collection of key-value pairs, where the key is the &lt;xref:CoreWCF.Dispatcher.MessageFilter&gt;, and the value is the associated filter data. Filter data can be any data of the type specified in the generic parameter and can be used to specify what actions to take if a message is matched by a filter in the table.</p>
+<p>Filter table entries can be accessed using the &lt;xref:System.Collections.Generic.IDictionary%602&gt; functionality that &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601&gt; inherits.</p>
+<p>Note that a filter instance can only be added to a given &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601&gt; once. To add multiple instances of this filter to the same filter table, use a filter constructor to create additional instances.</p>
+<p>A filter matches a message when the message satisfies the query criteria of the filter. There are four overloaded matching methods. The data returned is either the filter data or the &lt;xref:CoreWCF.Dispatcher.MessageFilter&gt; objects themselves. This data is returned whether multiple matches are allowed or only a single match. The following table shows this information for each overload.</p>
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th>Matches</th>
+<th>Data Returned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingValue%2A&gt;</td>
+<td>Single</td>
+<td><code>FilterData</code></td>
+</tr>
+<tr>
+<td>&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingFilter%2A&gt;</td>
+<td>Single</td>
+<td>&lt;xref:CoreWCF.Dispatcher.MessageFilter&gt;</td>
+</tr>
+<tr>
+<td>&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingValues%2A&gt;</td>
+<td>Multiple</td>
+<td><code>FilterData</code></td>
+</tr>
+<tr>
+<td>&lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601.GetMatchingFilters%2A&gt;</td>
+<td>Multiple</td>
+<td>&lt;xref:CoreWCF.Dispatcher.MessageFilter&gt; objects</td>
+</tr>
+</tbody>
+</table>
+<p>Each method contains two overloads. The difference between the two overloads is that one takes a &lt;xref:CoreWCF.Channels.Message&gt; parameter and is not permitted to examine the contents of the body; the other takes a &lt;xref:CoreWCF.Channels.MessageBuffer&gt; parameter and can examine any part of the message. If you call a method with the message parameter, and the filter table contains a filter that examines the content of the message body, an exception is thrown. If you are unsure about the filters in a table, call the overload that takes a message buffer.</p>
+<p>Message headers are automatically buffered and can be inspected by a filter without being consumed. But if the body is to be inspected by a filter, then the entire message must be buffered because an unbuffered message body is consumed by a query and its contents destroyed.</p>
+<p>The following classes implement &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601&gt;:</p>
+<ul>
+<li><p>&lt;xref:CoreWCF.Dispatcher.MessageFilterTable%601&gt;</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.XPathMessageFilterTable%601&gt;</p>
+</li>
+</ul>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilter_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilter_CoreWCF_Channels_Message_CoreWCF_Dispatcher_MessageFilter__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.Message,CoreWCF.Dispatcher.MessageFilter@)">GetMatchingFilter(Message, out MessageFilter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingFilter(Message message, out MessageFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.MessageFilter.html">MessageFilter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilter_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilter_CoreWCF_Channels_MessageBuffer_CoreWCF_Dispatcher_MessageFilter__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilter(CoreWCF.Channels.MessageBuffer,CoreWCF.Dispatcher.MessageFilter@)">GetMatchingFilter(MessageBuffer, out MessageFilter)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingFilter(MessageBuffer messageBuffer, out MessageFilter filter)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a></td>
+        <td><span class="parametername">messageBuffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.MessageFilter.html">MessageFilter</a></td>
+        <td><span class="parametername">filter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilters_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilters_CoreWCF_Channels_Message_System_Collections_Generic_ICollection_CoreWCF_Dispatcher_MessageFilter__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})">GetMatchingFilters(Message, ICollection&lt;MessageFilter&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingFilters(Message message, ICollection&lt;MessageFilter&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.MessageFilter.html">MessageFilter</a>&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilters_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingFilters_CoreWCF_Channels_MessageBuffer_System_Collections_Generic_ICollection_CoreWCF_Dispatcher_MessageFilter__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingFilters(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{CoreWCF.Dispatcher.MessageFilter})">GetMatchingFilters(MessageBuffer, ICollection&lt;MessageFilter&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingFilters(MessageBuffer messageBuffer, ICollection&lt;MessageFilter&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a></td>
+        <td><span class="parametername">messageBuffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.MessageFilter.html">MessageFilter</a>&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValue_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValue_CoreWCF_Channels_Message__0__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.Message,`0@)">GetMatchingValue(Message, out TFilterData)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingValue(Message message, out TFilterData value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TFilterData</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValue_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValue_CoreWCF_Channels_MessageBuffer__0__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValue(CoreWCF.Channels.MessageBuffer,`0@)">GetMatchingValue(MessageBuffer, out TFilterData)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingValue(MessageBuffer messageBuffer, out TFilterData value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a></td>
+        <td><span class="parametername">messageBuffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TFilterData</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValues_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValues_CoreWCF_Channels_Message_System_Collections_Generic_ICollection__0__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.Message,System.Collections.Generic.ICollection{`0})">GetMatchingValues(Message, ICollection&lt;TFilterData&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingValues(Message message, ICollection&lt;TFilterData&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;TFilterData&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValues_" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues*"></a>
+  <h4 id="CoreWCF_Dispatcher_IMessageFilterTable_1_GetMatchingValues_CoreWCF_Channels_MessageBuffer_System_Collections_Generic_ICollection__0__" data-uid="CoreWCF.Dispatcher.IMessageFilterTable`1.GetMatchingValues(CoreWCF.Channels.MessageBuffer,System.Collections.Generic.ICollection{`0})">GetMatchingValues(MessageBuffer, ICollection&lt;TFilterData&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool GetMatchingValues(MessageBuffer messageBuffer, ICollection&lt;TFilterData&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a></td>
+        <td><span class="parametername">messageBuffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;TFilterData&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

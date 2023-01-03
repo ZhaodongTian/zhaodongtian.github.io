@@ -1,0 +1,657 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DataContractSerializerOperationBehavior
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DataContractSerializerOperationBehavior
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior">
+  
+  
+  <h1 id="CoreWCF_Description_DataContractSerializerOperationBehavior" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior" class="text-break">Class DataContractSerializerOperationBehavior
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the run-time behavior of the .</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">DataContractSerializerOperationBehavior</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.Description.IOperationBehavior.html">IOperationBehavior</a></div>
+    <div><a class="xref" href="CoreWCF.Description.IWsdlExportExtension.html">IWsdlExportExtension</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_DataContractSerializerOperationBehavior_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DataContractSerializerOperationBehavior : Object, IOperationBehavior, IWsdlExportExtension</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_DataContractSerializerOperationBehavior_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The &lt;xref:CoreWCF.Description.DataContractSerializerOperationBehavior&gt; enables the control of &lt;xref:System.Runtime.Serialization.DataContractSerializer&gt; options, such as the &lt;xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A&gt; and &lt;xref:System.Runtime.Serialization.DataContractSerializer.IgnoreExtensionDataObject%2A&gt; properties. Some of these properties can be set only using the constructor of the class.  In that case, the &lt;xref:System.Runtime.Serialization.DataContractSerializer&gt; can be replaced using the &lt;xref:CoreWCF.Description.DataContractSerializerOperationBehavior.CreateSerializer%2A&gt; method. For more information about data contracts, see <a href="/dotnet/framework/wcf/feature-details/using-data-contracts">Using Data Contracts</a>.</p>
+<p>For more information about using the &lt;xref:CoreWCF.Description.DataContractSerializerOperationBehavior&gt; to replace the &lt;xref:System.Runtime.Serialization.IDataContractSurrogate&gt; returned by the &lt;xref:CoreWCF.Description.DataContractSerializerOperationBehavior.DataContractSurrogate%2A&gt; property, see <a href="/dotnet/framework/wcf/extending/data-contract-surrogates">Data Contract Surrogates</a>.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior__ctor_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.#ctor*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior__ctor_CoreWCF_Description_OperationDescription_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.#ctor(CoreWCF.Description.OperationDescription)">DataContractSerializerOperationBehavior(OperationDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataContractSerializerOperationBehavior(OperationDescription operation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior__ctor_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.#ctor*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior__ctor_CoreWCF_Description_OperationDescription_CoreWCF_DataContractFormatAttribute_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.#ctor(CoreWCF.Description.OperationDescription,CoreWCF.DataContractFormatAttribute)">DataContractSerializerOperationBehavior(OperationDescription, DataContractFormatAttribute)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataContractSerializerOperationBehavior(OperationDescription operation, DataContractFormatAttribute dataContractFormatAttribute)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.DataContractFormatAttribute.html">DataContractFormatAttribute</a></td>
+        <td><span class="parametername">dataContractFormatAttribute</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior__ctor_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.#ctor*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior__ctor_CoreWCF_Description_OperationDescription_CoreWCF_DataContractFormatAttribute_System_Boolean_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.#ctor(CoreWCF.Description.OperationDescription,CoreWCF.DataContractFormatAttribute,System.Boolean)">DataContractSerializerOperationBehavior(OperationDescription, DataContractFormatAttribute, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataContractSerializerOperationBehavior(OperationDescription operation, DataContractFormatAttribute dataContractFormatAttribute, bool builtInOperationBehavior)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.DataContractFormatAttribute.html">DataContractFormatAttribute</a></td>
+        <td><span class="parametername">dataContractFormatAttribute</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">builtInOperationBehavior</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_DataContractFormatAttribute_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.DataContractFormatAttribute*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_DataContractFormatAttribute" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.DataContractFormatAttribute">DataContractFormatAttribute</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataContractFormatAttribute DataContractFormatAttribute { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.DataContractFormatAttribute.html">DataContractFormatAttribute</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_DataContractResolver_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.DataContractResolver*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_DataContractResolver" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.DataContractResolver">DataContractResolver</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataContractResolver DataContractResolver { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.datacontractresolver">DataContractResolver</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_IgnoreExtensionDataObject_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.IgnoreExtensionDataObject*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_IgnoreExtensionDataObject" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.IgnoreExtensionDataObject">IgnoreExtensionDataObject</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IgnoreExtensionDataObject { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_MaxItemsInObjectGraph_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.MaxItemsInObjectGraph*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_MaxItemsInObjectGraph" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.MaxItemsInObjectGraph">MaxItemsInObjectGraph</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxItemsInObjectGraph { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CreateSerializer_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CreateSerializer*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CreateSerializer_System_Type_System_String_System_String_System_Collections_Generic_IList_System_Type__" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CreateSerializer(System.Type,System.String,System.String,System.Collections.Generic.IList{System.Type})">CreateSerializer(Type, String, String, IList&lt;Type&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual XmlObjectSerializer CreateSerializer(Type type, string name, string ns, IList&lt;Type&gt; knownTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td><span class="parametername">knownTypes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CreateSerializer_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CreateSerializer*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CreateSerializer_System_Type_System_Xml_XmlDictionaryString_System_Xml_XmlDictionaryString_System_Collections_Generic_IList_System_Type__" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CreateSerializer(System.Type,System.Xml.XmlDictionaryString,System.Xml.XmlDictionaryString,System.Collections.Generic.IList{System.Type})">CreateSerializer(Type, XmlDictionaryString, XmlDictionaryString, IList&lt;Type&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual XmlObjectSerializer CreateSerializer(Type type, XmlDictionaryString name, XmlDictionaryString ns, IList&lt;Type&gt; knownTypes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">type</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarystring">XmlDictionaryString</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarystring">XmlDictionaryString</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</td>
+        <td><span class="parametername">knownTypes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_AddBindingParameters_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#AddBindingParameters*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_AddBindingParameters_CoreWCF_Description_OperationDescription_CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)">IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.AddBindingParameters(OperationDescription description, BindingParameterCollection parameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_ApplyClientBehavior_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_ApplyClientBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_ClientOperation_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)">IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.ApplyClientBehavior(OperationDescription description, ClientOperation proxy)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.ClientOperation.html">ClientOperation</a></td>
+        <td><span class="parametername">proxy</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_ApplyDispatchBehavior_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_ApplyDispatchBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_DispatchOperation_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)">IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.ApplyDispatchBehavior(OperationDescription description, DispatchOperation dispatch)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchOperation.html">DispatchOperation</a></td>
+        <td><span class="parametername">dispatch</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_Validate_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#Validate*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IOperationBehavior_Validate_CoreWCF_Description_OperationDescription_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)">IOperationBehavior.Validate(OperationDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.Validate(OperationDescription description)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IWsdlExportExtension_ExportContract_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IWsdlExportExtension#ExportContract*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IWsdlExportExtension_ExportContract_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlContractConversionContext_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)">IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IWsdlExportExtension.ExportContract(WsdlExporter exporter, WsdlContractConversionContext contractContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlContractConversionContext.html">WsdlContractConversionContext</a></td>
+        <td><span class="parametername">contractContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IWsdlExportExtension_ExportEndpoint_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint*"></a>
+  <h4 id="CoreWCF_Description_DataContractSerializerOperationBehavior_CoreWCF_Description_IWsdlExportExtension_ExportEndpoint_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlEndpointConversionContext_" data-uid="CoreWCF.Description.DataContractSerializerOperationBehavior.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)">IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IWsdlExportExtension.ExportEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext endpointContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlEndpointConversionContext.html">WsdlEndpointConversionContext</a></td>
+        <td><span class="parametername">endpointContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IOperationBehavior.html">IOperationBehavior</a>
+  </div>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IWsdlExportExtension.html">IWsdlExportExtension</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IInstanceProvider
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IInstanceProvider
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.IInstanceProvider">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_IInstanceProvider" data-uid="CoreWCF.Dispatcher.IInstanceProvider" class="text-break">Interface IInstanceProvider
+  </h1>
+  <div class="markdown level0 summary"><p>Declares methods that provide a service object or recycle a service object for a Windows Communication Foundation (WCF) service.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_IInstanceProvider_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IInstanceProvider</code></pre>
+  </div>
+  <h5 id="CoreWCF_Dispatcher_IInstanceProvider_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Implement the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider&gt; interface to control the creation and recycling of service objects when one is requested or disposed by an &lt;xref:CoreWCF.InstanceContext&gt; object.</p>
+<p>Once the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider&gt; interface is implemented, you must assign your custom instance provider object to the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.InstanceProvider%2A&gt; property using either an endpoint behavior (a &lt;xref:CoreWCF.Description.IEndpointBehavior&gt; object) or a contract behavior (a &lt;xref:CoreWCF.Description.IContractBehavior&gt; object).</p>
+<p>If the insertion mechanism is an endpoint behavior you can also implement a &lt;xref:CoreWCF.Configuration.BehaviorExtensionElement&gt; object that can insert your custom behavior using a configuration file. If the insertion mechanism is a contract behavior, you can insert the behavior programmatically prior to the opening of the service host or you can implement a custom attribute. (For an example of the contract behavior approach, see the Example section.)</p>
+<p>&lt;xref:CoreWCF.Dispatcher.IInstanceProvider&gt; has two methods, &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A&gt; and &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A&gt;. These methods are typically implemented to create service objects using a non-parameterless constructor or to initialize or dispose of some state related to the lifetime of the object. Service object pooling is one example of custom &lt;xref:CoreWCF.Dispatcher.IInstanceProvider&gt; functionality.</p>
+<p>Typically, the &lt;xref:CoreWCF.InstanceContext&gt; invokes the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A&gt; when the &lt;xref:CoreWCF.InstanceContext&gt; is first created and invokes the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A&gt; method when the &lt;xref:CoreWCF.InstanceContext&gt; is closed.</p>
+<p>There are two ways to cause an &lt;xref:CoreWCF.InstanceContext&gt; object to release a service object before the &lt;xref:CoreWCF.InstanceContext&gt; is closed. The first method is to set the &lt;xref:CoreWCF.OperationBehaviorAttribute.ReleaseInstanceMode%2A&gt; to &lt;xref:CoreWCF.ReleaseInstanceMode.AfterCall&gt; or &lt;xref:CoreWCF.ReleaseInstanceMode.BeforeAndAfterCall&gt;. The second method is to call the &lt;xref:CoreWCF.InstanceContext.ReleaseServiceInstance%2A&gt; method. If this is done, the &lt;xref:CoreWCF.InstanceContext&gt; calls the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A&gt; method on the dispatcher's instance provider. If a new message arrives after the instance has been released, WCF creates a new instance using the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A&gt; method.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the &lt;xref:CoreWCF.InstanceContextMode&gt; of the service is &lt;xref:CoreWCF.InstanceContextMode.Single&gt;, the system does not call the &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.GetInstance%2A&gt; or &lt;xref:CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance%2A&gt; methods even when the user did not provide a well-known service object unless the user directly calls &lt;xref:CoreWCF.InstanceContext.ReleaseServiceInstance%2A&gt; and then calls &lt;xref:CoreWCF.InstanceContext.GetServiceInstance%2A&gt;.</p>
+</div>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_IInstanceProvider_GetInstance_" data-uid="CoreWCF.Dispatcher.IInstanceProvider.GetInstance*"></a>
+  <h4 id="CoreWCF_Dispatcher_IInstanceProvider_GetInstance_CoreWCF_InstanceContext_" data-uid="CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext)">GetInstance(InstanceContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object GetInstance(InstanceContext instanceContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.InstanceContext.html">InstanceContext</a></td>
+        <td><span class="parametername">instanceContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IInstanceProvider_GetInstance_" data-uid="CoreWCF.Dispatcher.IInstanceProvider.GetInstance*"></a>
+  <h4 id="CoreWCF_Dispatcher_IInstanceProvider_GetInstance_CoreWCF_InstanceContext_CoreWCF_Channels_Message_" data-uid="CoreWCF.Dispatcher.IInstanceProvider.GetInstance(CoreWCF.InstanceContext,CoreWCF.Channels.Message)">GetInstance(InstanceContext, Message)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object GetInstance(InstanceContext instanceContext, Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.InstanceContext.html">InstanceContext</a></td>
+        <td><span class="parametername">instanceContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_IInstanceProvider_ReleaseInstance_" data-uid="CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance*"></a>
+  <h4 id="CoreWCF_Dispatcher_IInstanceProvider_ReleaseInstance_CoreWCF_InstanceContext_System_Object_" data-uid="CoreWCF.Dispatcher.IInstanceProvider.ReleaseInstance(CoreWCF.InstanceContext,System.Object)">ReleaseInstance(InstanceContext, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ReleaseInstance(InstanceContext instanceContext, object instance)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.InstanceContext.html">InstanceContext</a></td>
+        <td><span class="parametername">instanceContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">instance</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

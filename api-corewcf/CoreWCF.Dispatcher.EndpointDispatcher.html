@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class EndpointDispatcher
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class EndpointDispatcher
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.EndpointDispatcher">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_EndpointDispatcher" data-uid="CoreWCF.Dispatcher.EndpointDispatcher" class="text-break">Class EndpointDispatcher
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the run-time object that exposes properties that enable the insertion of run-time extensions or modifications for messages in service applications.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">EndpointDispatcher</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_EndpointDispatcher_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class EndpointDispatcher : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Dispatcher_EndpointDispatcher_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; and the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime?displayProperty=nameWithType&gt; classes expose the runtime customization points for endpoints in a service. The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; can be used to control which messages it can process and some endpoint-related information. The &lt;xref:CoreWCF.Dispatcher.DispatchRuntime&gt; has a large number of properties used to insert custom extensions into the endpoint-wide runtime.</p>
+<p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; object is responsible for processing messages from a &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher?displayProperty=nameWithType&gt; when the destination address of a message matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter%2A&gt; property and the message action matches the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter%2A&gt; property. If two &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; objects can accept a message, the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority%2A&gt; property value determines the higher priority endpoint.</p>
+<p>Use the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; object to configure or extend the process of receiving messages from the associated &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt;, converting from message objects to objects used as parameters, and invoking an endpoint operation as well as the reverse process.</p>
+<p>Typically, the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; for an endpoint is obtained by implementing the &lt;xref:CoreWCF.Description.IEndpointBehavior&gt; interface, but you can access the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; from the other behavior interfaces.</p>
+<p>You can use the following &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; properties:</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter%2A&gt; property allows you to get or set a &lt;xref:CoreWCF.Dispatcher.MessageFilter&gt; object that the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A&gt; uses to identify whether the endpoint can process a particular message.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A&gt; property gets the associated &lt;xref:CoreWCF.Dispatcher.ChannelDispatcher&gt; object, which sends and receives messages to and from the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher&gt; and which can be used to inspect or modify other channel-related values and behaviors.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter%2A&gt; gets the &lt;xref:CoreWCF.Dispatcher.MessageFilter&gt; object that is used to identify whether a message is destined for this contract.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractName%2A&gt; and &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace%2A&gt; properties return the name and namespace of the endpoint contract.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime%2A&gt; property returns the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime&gt; object that you can use to modify run-time values or insert custom run-time extensions for the entire endpoint.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress%2A&gt; property gets the address of the endpoint.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority%2A&gt; property returns the priority of the composite filter that the &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher%2A&gt; uses to establish which endpoint is to handle the message.</p>
+</li>
+</ul>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher__ctor_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.#ctor*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher__ctor_CoreWCF_EndpointAddress_System_String_System_String_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String)">EndpointDispatcher(EndpointAddress, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EndpointDispatcher(EndpointAddress address, string contractName, string contractNamespace)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EndpointAddress.html">EndpointAddress</a></td>
+        <td><span class="parametername">address</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contractName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contractNamespace</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher__ctor_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.#ctor*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher__ctor_CoreWCF_EndpointAddress_System_String_System_String_System_Boolean_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.#ctor(CoreWCF.EndpointAddress,System.String,System.String,System.Boolean)">EndpointDispatcher(EndpointAddress, String, String, Boolean)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EndpointDispatcher(EndpointAddress address, string contractName, string contractNamespace, bool isSystemEndpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EndpointAddress.html">EndpointAddress</a></td>
+        <td><span class="parametername">address</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contractName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contractNamespace</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">isSystemEndpoint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_AddressFilter_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_AddressFilter" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.AddressFilter">AddressFilter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageFilter AddressFilter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.MessageFilter.html">MessageFilter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_ChannelDispatcher_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_ChannelDispatcher" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ChannelDispatcher">ChannelDispatcher</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChannelDispatcher ChannelDispatcher { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcher.html">ChannelDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_ContractFilter_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_ContractFilter" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ContractFilter">ContractFilter</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageFilter ContractFilter { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.MessageFilter.html">MessageFilter</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_ContractName_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ContractName*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_ContractName" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ContractName">ContractName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContractName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_ContractNamespace_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_ContractNamespace" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.ContractNamespace">ContractNamespace</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContractNamespace { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_DispatchRuntime_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_DispatchRuntime" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.DispatchRuntime">DispatchRuntime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DispatchRuntime DispatchRuntime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchRuntime.html">DispatchRuntime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_EndpointAddress_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_EndpointAddress" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.EndpointAddress">EndpointAddress</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EndpointAddress EndpointAddress { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EndpointAddress.html">EndpointAddress</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_FilterPriority_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_FilterPriority" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.FilterPriority">FilterPriority</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FilterPriority { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_Id_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.Id*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_Id" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.Id">Id</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_EndpointDispatcher_IsSystemEndpoint_" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint*"></a>
+  <h4 id="CoreWCF_Dispatcher_EndpointDispatcher_IsSystemEndpoint" data-uid="CoreWCF.Dispatcher.EndpointDispatcher.IsSystemEndpoint">IsSystemEndpoint</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSystemEndpoint { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

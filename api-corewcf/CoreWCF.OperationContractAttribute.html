@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class OperationContractAttribute
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class OperationContractAttribute
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.OperationContractAttribute">
+  
+  
+  <h1 id="CoreWCF_OperationContractAttribute" data-uid="CoreWCF.OperationContractAttribute" class="text-break">Class OperationContractAttribute
+  </h1>
+  <div class="markdown level0 summary"><p>Indicates that a method defines an operation that is part of a service contract in a Windows Communication Foundation (WCF) application.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">OperationContractAttribute</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_OperationContractAttribute_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class OperationContractAttribute : Attribute</code></pre>
+  </div>
+  <h5 id="CoreWCF_OperationContractAttribute_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Apply the &lt;xref:CoreWCF.OperationContractAttribute&gt; to a method to indicate that the method implements a service operation as part of a service contract (specified by a &lt;xref:CoreWCF.ServiceContractAttribute&gt; attribute).</p>
+<p>Use the &lt;xref:CoreWCF.OperationContractAttribute&gt; properties to control the structure of the operation and the values expressed in metadata:</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.Action%2A&gt; property specifies the action that uniquely identifies this operation. WCF dispatches request messages to methods based on their action.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.AsyncPattern%2A&gt; property indicates that the operation is implemented or can be called asynchronously using a Begin/End method pair.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.HasProtectionLevel%2A&gt; property indicates whether the &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A&gt; property has been explicitly set.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A&gt; property indicates that the operation only consists of a single input message. The operation has no associated output message.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.IsInitiating%2A&gt; property specifies whether this operation can be the initial operation in a session.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.IsTerminating%2A&gt; property specifies whether WCF attempts to terminate the current session after the operation completes.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A&gt; property specifies the message-level security that an operation requires at run time.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContractAttribute.ReplyAction%2A&gt; property specifies the action of the reply message for the operation.</p>
+</li>
+</ul>
+<p>The &lt;xref:CoreWCF.OperationContractAttribute&gt; attribute declares that a method is an operation in a service contract. Only methods attributed with the &lt;xref:CoreWCF.OperationContractAttribute&gt; are exposed as service operations. A service contract without any methods marked with the &lt;xref:CoreWCF.OperationContractAttribute&gt; exposes no operations.</p>
+<p>The &lt;xref:CoreWCF.OperationContractAttribute.AsyncPattern%2A&gt; property indicates that a pair of <code>Begin</code>&amp;lt;<em>methodName</em>&gt; and <code>End</code>&amp;lt;<em>methodName</em>&gt; methods form a single operation implemented asynchronously (whether on the client or the service). The ability of a service to implement operations asynchronously is a service implementation detail and is not exposed in metadata (such as Web Services Description Language (WSDL)).</p>
+<p>Similarly, clients can choose to invoke operations asynchronously independent of how the service method is implemented. Calling service operations asynchronously in the client is recommended when a service method takes some time but must return information directly to the client. For details, see &lt;xref:CoreWCF.OperationContractAttribute.AsyncPattern%2A&gt;.</p>
+<p>The &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A&gt; property indicates that a method does not return any value at all, including an empty underlying response message. This type of method is useful for notifications or event-style communication. Methods of this kind cannot return a reply message so the method's declaration must return <code>void</code>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When programmatically retrieving the information store in this attribute, use the &lt;xref:CoreWCF.Description.ContractDescription&gt; class instead of reflection.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A&gt; property is set to <code>false</code>, (the default), even methods that return <code>void</code> are two-way methods at the underlying message level. In this case, the infrastructure creates and sends an empty message to indicate to the caller that the method has returned. Using this approach enables the application and the infrastructure to send error information (such as a SOAP fault) back to the client. Setting &lt;xref:CoreWCF.OperationContractAttribute.IsOneWay%2A&gt; to <code>true</code> is the only way to prevent the creation and dispatch of a reply message. For more information, see <a href="/dotnet/framework/wcf/feature-details/one-way-services">One-Way Services</a>.</p>
+</div>
+<p>The &lt;xref:CoreWCF.OperationContractAttribute.Action%2A&gt; and &lt;xref:CoreWCF.OperationContractAttribute.ReplyAction%2A&gt; properties can be used not only to modify the default action of SOAP messages but also to create handlers for unrecognized messages or to disable adding actions for direct message programming. Use the &lt;xref:CoreWCF.OperationContractAttribute.IsInitiating%2A&gt; property to prevent clients from calling a particular service operation prior to other operations. Use the &lt;xref:CoreWCF.OperationContractAttribute.IsTerminating%2A&gt; property to have WCF close the channel after clients call a particular service operation. For more information, see <a href="/dotnet/framework/wcf/using-sessions">Using Sessions</a>.</p>
+<p>The &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A&gt; property enables you to specify on the operation contract whether the operation messages are signed, encrypted, or signed and encrypted. If a binding cannot provide the security level required by the contract, an exception is thrown at run time. For more information, see &lt;xref:CoreWCF.OperationContractAttribute.ProtectionLevel%2A&gt; and <a href="/dotnet/framework/wcf/understanding-protection-level">Understanding Protection Level</a>.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_OperationContractAttribute__ctor_" data-uid="CoreWCF.OperationContractAttribute.#ctor*"></a>
+  <h4 id="CoreWCF_OperationContractAttribute__ctor" data-uid="CoreWCF.OperationContractAttribute.#ctor">OperationContractAttribute()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OperationContractAttribute()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_OperationContractAttribute_Action_" data-uid="CoreWCF.OperationContractAttribute.Action*"></a>
+  <h4 id="CoreWCF_OperationContractAttribute_Action" data-uid="CoreWCF.OperationContractAttribute.Action">Action</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Action { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContractAttribute_AsyncPattern_" data-uid="CoreWCF.OperationContractAttribute.AsyncPattern*"></a>
+  <h4 id="CoreWCF_OperationContractAttribute_AsyncPattern" data-uid="CoreWCF.OperationContractAttribute.AsyncPattern">AsyncPattern</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AsyncPattern { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContractAttribute_IsOneWay_" data-uid="CoreWCF.OperationContractAttribute.IsOneWay*"></a>
+  <h4 id="CoreWCF_OperationContractAttribute_IsOneWay" data-uid="CoreWCF.OperationContractAttribute.IsOneWay">IsOneWay</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOneWay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContractAttribute_Name_" data-uid="CoreWCF.OperationContractAttribute.Name*"></a>
+  <h4 id="CoreWCF_OperationContractAttribute_Name" data-uid="CoreWCF.OperationContractAttribute.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContractAttribute_ReplyAction_" data-uid="CoreWCF.OperationContractAttribute.ReplyAction*"></a>
+  <h4 id="CoreWCF_OperationContractAttribute_ReplyAction" data-uid="CoreWCF.OperationContractAttribute.ReplyAction">ReplyAction</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ReplyAction { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

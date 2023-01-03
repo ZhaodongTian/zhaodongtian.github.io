@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageEncoderFactory
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageEncoderFactory
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.MessageEncoderFactory">
+  
+  
+  <h1 id="CoreWCF_Channels_MessageEncoderFactory" data-uid="CoreWCF.Channels.MessageEncoderFactory" class="text-break">Class MessageEncoderFactory
+  </h1>
+  <div class="markdown level0 summary"><p>An abstract base class that represents the factory for producing message encoders that can read messages from a stream and write them to a stream for various types of message encoding.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">MessageEncoderFactory</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.WebMessageEncoderFactory.html">WebMessageEncoderFactory</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_MessageEncoderFactory_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MessageEncoderFactory : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageEncoderFactory_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Encoding is the process of transforming a message into a sequence of bytes. Decoding is the reverse process.</p>
+<p>Use this class if you want to implement a custom message encoder. To implement your own custom message encoder, you must provide custom implementations of the following three abstract base classes:</p>
+<ul>
+<li><p><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html">MessageEncodingBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a></p>
+</li>
+</ul>
+<p>Override the <a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html#CoreWCF_Channels_MessageEncoderFactory_Encoder">Encoder</a> to return an instance of your custom <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a>. Then wire up your custom <a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a> to the binding element stack used to configure the service or client by overriding the <a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_CreateMessageEncoderFactory">CreateMessageEncoderFactory()</a> method to return an instance of this factory. For more information about custom encoders, see <a href="https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/data-transfer-and-serialization">Data Transfer and Serialization</a>.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoderFactory__ctor_" data-uid="CoreWCF.Channels.MessageEncoderFactory.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoderFactory__ctor" data-uid="CoreWCF.Channels.MessageEncoderFactory.#ctor">MessageEncoderFactory()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MessageEncoderFactory()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoderFactory_Encoder_" data-uid="CoreWCF.Channels.MessageEncoderFactory.Encoder*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoderFactory_Encoder" data-uid="CoreWCF.Channels.MessageEncoderFactory.Encoder">Encoder</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the message encoder that is produced by the factory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract MessageEncoder Encoder { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> used by the factory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoderFactory_MessageVersion_" data-uid="CoreWCF.Channels.MessageEncoderFactory.MessageVersion*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoderFactory_MessageVersion" data-uid="CoreWCF.Channels.MessageEncoderFactory.MessageVersion">MessageVersion</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the message version that is used by the encoders produced by the factory to encode messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract MessageVersion MessageVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a> used by the factory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoderFactory_MessageVersion_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The message version can be set using the <a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_MessageVersion">MessageVersion</a> property. <a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a> is limited to using certain versions of SOAP and WS-Addressing and is not extensible. So if these versions are not to be used, this property should be overridden to return <a class="xref" href="CoreWCF.Channels.MessageVersion.html#CoreWCF_Channels_MessageVersion_None">MessageVersion.None</a>.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoderFactory_CreateSessionEncoder_" data-uid="CoreWCF.Channels.MessageEncoderFactory.CreateSessionEncoder*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoderFactory_CreateSessionEncoder" data-uid="CoreWCF.Channels.MessageEncoderFactory.CreateSessionEncoder">CreateSessionEncoder()</h4>
+  <div class="markdown level1 summary"><p>Returns a message encoder that can be used to correlate messages in session-based exchanges.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual MessageEncoder CreateSessionEncoder()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> that is used in session-based exchanges of messages.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoderFactory_CreateSessionEncoder_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A session-based message encoder can keep track the individual messages that form part of a conversation that consists of all the messages exchanged between two endpoints that are part of a session.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

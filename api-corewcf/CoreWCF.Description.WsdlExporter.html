@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class WsdlExporter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class WsdlExporter
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.WsdlExporter">
+  
+  
+  <h1 id="CoreWCF_Description_WsdlExporter" data-uid="CoreWCF.Description.WsdlExporter" class="text-break">Class WsdlExporter
+  </h1>
+  <div class="markdown level0 summary"><p>Converts service, contract, and endpoint information into metadata documents.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.Description.MetadataExporter.html">MetadataExporter</a></div>
+    <div class="level2"><span class="xref">WsdlExporter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_ExportPolicy_CoreWCF_Description_ServiceEndpoint_">MetadataExporter.ExportPolicy(ServiceEndpoint)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_PolicyVersion">MetadataExporter.PolicyVersion</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_Errors">MetadataExporter.Errors</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_State">MetadataExporter.State</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_WsdlExporter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class WsdlExporter : MetadataExporter</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_WsdlExporter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Use the &lt;xref:CoreWCF.Description.WsdlExporter&gt; class to transform &lt;xref:CoreWCF.Description.ContractDescription&gt; or &lt;xref:CoreWCF.Description.ServiceEndpoint&gt; objects into metadata represented by &lt;xref:CoreWCF.Description.MetadataSection&gt; objects.</p>
+<p>The &lt;xref:CoreWCF.Description.WsdlExporter&gt; is used in a three-step process.</p>
+<ol>
+<li><p>Call the &lt;xref:CoreWCF.Description.WsdlExporter.ExportContract%2A&gt;, &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoint%2A&gt;, or &lt;xref:CoreWCF.Description.WsdlExporter.ExportEndpoints%2A&gt; method, passing the appropriate parameters.</p>
+</li>
+<li><p>Determine whether there are any export errors by checking the base &lt;xref:CoreWCF.Description.MetadataExporter.Errors%2A&gt; property.</p>
+</li>
+<li><p>If there are no errors, use the &lt;xref:CoreWCF.Description.WsdlExporter.GetGeneratedMetadata%2A&gt; to get a collection of &lt;xref:CoreWCF.Description.MetadataSection&gt; objects or get more specific versions of the metadata using the &lt;xref:CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments%2A&gt; or &lt;xref:CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas%2A&gt; properties.</p>
+</li>
+</ol>
+<p>You can support exporting custom WSDL extensions by implementing the &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; interface and custom policy assertions by implementing the &lt;xref:CoreWCF.Description.IPolicyExportExtension&gt; interface. For details, see the documentation for those interfaces.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>WsdlExporter</code> can only be used to export metadata from <code>ContractDescription</code> instances that contain Common Language Runtime (CLR) type information, such as a <code>ContractDescription</code> instance created using the <code>ContractDescription.GetContract</code> method or created as part of the <code>ServiceDescription</code> for a <code>ServiceHost</code> instance. You cannot use the <code>WsdlExporter</code> to export metadata from <code>ContractDescription</code> instances imported from service metadata or constructed without type information.</p>
+</div>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter__ctor_" data-uid="CoreWCF.Description.WsdlExporter.#ctor*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter__ctor" data-uid="CoreWCF.Description.WsdlExporter.#ctor">WsdlExporter()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WsdlExporter()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_GeneratedWsdlDocuments_" data-uid="CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_GeneratedWsdlDocuments" data-uid="CoreWCF.Description.WsdlExporter.GeneratedWsdlDocuments">GeneratedWsdlDocuments</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceDescriptionCollection GeneratedWsdlDocuments { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.services.description.servicedescriptioncollection">ServiceDescriptionCollection</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_GeneratedXmlSchemas_" data-uid="CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_GeneratedXmlSchemas" data-uid="CoreWCF.Description.WsdlExporter.GeneratedXmlSchemas">GeneratedXmlSchemas</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XmlSchemaSet GeneratedXmlSchemas { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.schema.xmlschemaset">XmlSchemaSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_AddAddressToWsdlPort_" data-uid="CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_AddAddressToWsdlPort_System_Web_Services_Description_Port_CoreWCF_EndpointAddress_CoreWCF_Channels_AddressingVersion_" data-uid="CoreWCF.Description.WsdlExporter.AddAddressToWsdlPort(System.Web.Services.Description.Port,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)">AddAddressToWsdlPort(Port, EndpointAddress, AddressingVersion)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddAddressToWsdlPort(Port wsdlPort, EndpointAddress address, AddressingVersion addressingVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.web.services.description.port">Port</a></td>
+        <td><span class="parametername">wsdlPort</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EndpointAddress.html">EndpointAddress</a></td>
+        <td><span class="parametername">address</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.AddressingVersion.html">AddressingVersion</a></td>
+        <td><span class="parametername">addressingVersion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_AddWSAddressingAssertion_" data-uid="CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_AddWSAddressingAssertion_CoreWCF_Description_MetadataExporter_CoreWCF_Description_PolicyConversionContext_CoreWCF_Channels_AddressingVersion_" data-uid="CoreWCF.Description.WsdlExporter.AddWSAddressingAssertion(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext,CoreWCF.Channels.AddressingVersion)">AddWSAddressingAssertion(MetadataExporter, PolicyConversionContext, AddressingVersion)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void AddWSAddressingAssertion(MetadataExporter exporter, PolicyConversionContext context, AddressingVersion addressing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.MetadataExporter.html">MetadataExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.PolicyConversionContext.html">PolicyConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.AddressingVersion.html">AddressingVersion</a></td>
+        <td><span class="parametername">addressing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_ExportContract_" data-uid="CoreWCF.Description.WsdlExporter.ExportContract*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_ExportContract_CoreWCF_Description_ContractDescription_" data-uid="CoreWCF.Description.WsdlExporter.ExportContract(CoreWCF.Description.ContractDescription)">ExportContract(ContractDescription)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ExportContract(ContractDescription contract)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td><span class="parametername">contract</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_ExportContract_CoreWCF_Description_ContractDescription_">MetadataExporter.ExportContract(ContractDescription)</a></div>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_ExportEndpoint_" data-uid="CoreWCF.Description.WsdlExporter.ExportEndpoint*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_ExportEndpoint_CoreWCF_Description_ServiceEndpoint_" data-uid="CoreWCF.Description.WsdlExporter.ExportEndpoint(CoreWCF.Description.ServiceEndpoint)">ExportEndpoint(ServiceEndpoint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void ExportEndpoint(ServiceEndpoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_ExportEndpoint_CoreWCF_Description_ServiceEndpoint_">MetadataExporter.ExportEndpoint(ServiceEndpoint)</a></div>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_ExportEndpoints_" data-uid="CoreWCF.Description.WsdlExporter.ExportEndpoints*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_ExportEndpoints_System_Collections_Generic_IEnumerable_CoreWCF_Description_ServiceEndpoint__System_Xml_XmlQualifiedName_" data-uid="CoreWCF.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable{CoreWCF.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)">ExportEndpoints(IEnumerable&lt;ServiceEndpoint&gt;, XmlQualifiedName)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ExportEndpoints(IEnumerable&lt;ServiceEndpoint&gt; endpoints, XmlQualifiedName wsdlServiceQName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a>&gt;</td>
+        <td><span class="parametername">endpoints</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlqualifiedname">XmlQualifiedName</a></td>
+        <td><span class="parametername">wsdlServiceQName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_WsdlExporter_GetGeneratedMetadata_" data-uid="CoreWCF.Description.WsdlExporter.GetGeneratedMetadata*"></a>
+  <h4 id="CoreWCF_Description_WsdlExporter_GetGeneratedMetadata" data-uid="CoreWCF.Description.WsdlExporter.GetGeneratedMetadata">GetGeneratedMetadata()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MetadataSet GetGeneratedMetadata()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.MetadataSet.html">MetadataSet</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Description.MetadataExporter.html#CoreWCF_Description_MetadataExporter_GetGeneratedMetadata">MetadataExporter.GetGeneratedMetadata()</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

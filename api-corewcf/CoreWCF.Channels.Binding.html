@@ -1,0 +1,846 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Binding
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Binding
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.Binding">
+  
+  
+  <h1 id="CoreWCF_Channels_Binding" data-uid="CoreWCF.Channels.Binding" class="text-break">Class Binding
+  </h1>
+  <div class="markdown level0 summary"><p>Contains the binding elements that specify the protocols, transports, and message encoders used for communication between clients and services</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">Binding</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.CustomBinding.html">CustomBinding</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.HttpBindingBase.html">HttpBindingBase</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.NetTcpBinding.html">NetTcpBinding</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.WebHttpBinding.html">WebHttpBinding</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.WSHttpBindingBase.html">WSHttpBindingBase</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.IDefaultCommunicationTimeouts.html">IDefaultCommunicationTimeouts</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_Binding_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Binding : Object, IDefaultCommunicationTimeouts</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_Binding_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Represents a collection of binding elements, each of which describes an aspect of how an endpoint communicates with other endpoints and that are built, consistently, into a channel factory on the client and into a channel listener on the service. A binding contains a collection of binding elements that correspond to protocol channels, transport channels, and message encoders. There can be any number of binding elements for protocol channels but one and only one binding element for each the transport and message encoder. There are commonly six layers of binding elements in a binding. Only the transport and encoding binding elements at the bottom of the stack are required. Because an encoding is required for each binding, if an encoding is not specified, Windows Communication Foundation (WCF) adds a default encoding for you. The default is Text/XML for the HTTP and HTTPS transports, and Binary for other transports.</p>
+<p>The following table summarizes the options for each layer.</p>
+ <table> <tr> <th>Layer</th> <th>Options</th> <th>Required</th> </tr> <tr> <td>Transaction Flow</td> <td>**TransactionFlowBindingElement**</td> <td>No</td> </tr> <tr> <td>Reliability</td> <td>**ReliableSessionBindingElement**</td> <td>No</td> </tr> <tr> <td>Security</td> <td>Symmetric, Asymmetric, Transport-Level</td> <td>No</td> </tr> <tr> <td>Shape Change</td> <td>**CompositeDuplexBindingElement**</td> <td>No</td> </tr> <tr> <td>Transport Upgrades</td> <td>SSL stream, Windows stream, Peer Resolver</td> <td>No</td> </tr> <tr> <td>Encoding</td> <td>Text, Binary, MTOM, Custom</td> <td>Yes</td> </tr> <tr> <td>Transport</td> <td>TCP, Named Pipes, HTTP, HTTPS, MSMQ, Custom</td> <td>Yes</td> </tr> </table>
+Each binding element provides the specification for building a channel factory on the client and a channel listener on the service. When the channel factory stack is constructed, for example, there is one channel factory in the stack for each binding element in the binding. The same sort of mapping applies to the channel listeners in the stack on the service. Consistency on the client and service is critical for establishing the channel-based connection between these endpoints. Each factory and listener, in turn, processes the sending and accepting of the corresponding channels in the channel stack that connects them, and these channels can then send and receive the messages used to communicate.
+<p>Each instance of a <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> has a <a class="xref" href="CoreWCF.Channels.Binding.html">Name</a> and <a class="xref" href="CoreWCF.Channels.Binding.html">Namespace</a> that together uniquely identify it in the metadata of the service. If no name or namespace is specified, WCF adds a default values for you. The default name is null and the default namespace is <strong><a href="http://tempuri.org/">http://tempuri.org/</a></strong>. This user name for the binding is distinct from the specification of the protocol name, which is specified by the <a class="xref" href="CoreWCF.Channels.Binding.html">Scheme</a> property. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the Scheme. So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name.</p>
+<p>The <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> class implements the <a class="xref" href="CoreWCF.IDefaultCommunicationTimeouts.html">IDefaultCommunicationTimeouts</a> interface to mitigate Denial of Service (DOS) attacks that rely on tying up resources for extended intervals of time. The implementation specifies the communication timeouts values for opening and closing connections and for the reading and writing operations associated with receiving and sending messages. The properties used to get and set these timeouts and their default values operations are summarized in the following table.</p>
+ <table> <tr> <th>**Timeout Property**</th> <th>**Default Value**</th> </tr> <tr> <td>[OpenTimeout](xref:CoreWCF.Channels.Binding)</td> <td>1 minute</td> </tr> <tr> <td>[CloseTimeout](xref:CoreWCF.Channels.Binding)</td> <td>1 minute</td> </tr> <tr> <td>[SendTimeout](xref:CoreWCF.Channels.Binding)</td> <td>1 minute</td> </tr> <tr> <td>[ReceiveTimeout](xref:CoreWCF.Channels.Binding)</td> <td>10 minutes</td> </tr> </table> 
+ When you create a binding by inheriting from <xref:corewcf.channels.binding>, you must override [CreateBindingElements](xref:CoreWCF.Channels.Binding). 
+ In addition, you can define your own binding elements and insert them between any of the defined layers in the preceding table. For more information, see the CustomBinding class.
+</xref:corewcf.channels.binding></div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_Binding__ctor_" data-uid="CoreWCF.Channels.Binding.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_Binding__ctor" data-uid="CoreWCF.Channels.Binding.#ctor">Binding()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Binding()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_Binding__ctor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The default name is <strong>null</strong> and the default namespace is http:\tempuri.org</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding__ctor_" data-uid="CoreWCF.Channels.Binding.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_Binding__ctor_System_String_System_String_" data-uid="CoreWCF.Channels.Binding.#ctor(System.String,System.String)">Binding(String, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> class from a specified binding of the service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Binding(string name, string ns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.Binding.html">Name</a> of the binding.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.Binding.html">Namespace</a> of the binding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding__ctor_System_String_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.Binding.html">Name</a> and <a class="xref" href="CoreWCF.Channels.Binding.html">Namespace</a> together uniquely identify an instance of a <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> in the metadata of the service.</p>
+</div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Argumentexception</span></td>
+        <td><p>name is null or an empty string</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Argumentnullexception</span></td>
+        <td><p>ns is null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_Binding_CloseTimeout_" data-uid="CoreWCF.Channels.Binding.CloseTimeout*"></a>
+  <h4 id="CoreWCF_Channels_Binding_CloseTimeout" data-uid="CoreWCF.Channels.Binding.CloseTimeout">CloseTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the interval of time provided for a connection to close before the transport raises an exception.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan CloseTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a href="xref:System.Timespan">TimeSpan</a> that specifies how long the close operation has to complete before timing out. The default value is 1 minute.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_CloseTimeout_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The value of this property is used by the channels and listeners produced by the factories of the binding.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_MessageVersion_" data-uid="CoreWCF.Channels.Binding.MessageVersion*"></a>
+  <h4 id="CoreWCF_Channels_Binding_MessageVersion" data-uid="CoreWCF.Channels.Binding.MessageVersion">MessageVersion</h4>
+  <div class="markdown level1 summary"><p>Gets the message version used by clients and services configured with the binding</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageVersion MessageVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a> used by clients and services configured with the binding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_Binding_Name_" data-uid="CoreWCF.Channels.Binding.Name*"></a>
+  <h4 id="CoreWCF_Channels_Binding_Name" data-uid="CoreWCF.Channels.Binding.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the binding</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The name of the binding. The default name is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_Name_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each instance of a <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> has a <a class="xref" href="CoreWCF.Channels.Binding.html">Name</a> and <a class="xref" href="CoreWCF.Channels.Binding.html">Namespace</a> that together uniquely identify the user name for the binding in the metadata of the service.
+This user name for the binding is distinct from the specification of the protocol name, which is specified by the <a class="xref" href="CoreWCF.Channels.Binding.html">Scheme</a> property. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the <a class="xref" href="CoreWCF.Channels.Binding.html">Scheme</a>. So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_Namespace_" data-uid="CoreWCF.Channels.Binding.Namespace*"></a>
+  <h4 id="CoreWCF_Channels_Binding_Namespace" data-uid="CoreWCF.Channels.Binding.Namespace">Namespace</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the XML namespace of the binding</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Namespace { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The XML namespace of the binding. The default value is &quot;http:\tempuri.org&quot;</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_Namespace_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each instance of a <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> has a <a class="xref" href="CoreWCF.Channels.Binding.html">Name</a> and <a class="xref" href="CoreWCF.Channels.Binding.html">Namespace</a> that together uniquely identify the user name for the binding in the metadata of the service.
+This user name for the binding is distinct from the specification of the protocol name, which is specified by the Scheme property. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the <a class="xref" href="CoreWCF.Channels.Binding.html">Scheme</a>. So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_OpenTimeout_" data-uid="CoreWCF.Channels.Binding.OpenTimeout*"></a>
+  <h4 id="CoreWCF_Channels_Binding_OpenTimeout" data-uid="CoreWCF.Channels.Binding.OpenTimeout">OpenTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the interval of time provided for a connection to open before the transport raises an exception</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan OpenTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_OpenTimeout_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The value of this property is used by the channels and listeners produced by the factories of the binding</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_ReceiveTimeout_" data-uid="CoreWCF.Channels.Binding.ReceiveTimeout*"></a>
+  <h4 id="CoreWCF_Channels_Binding_ReceiveTimeout" data-uid="CoreWCF.Channels.Binding.ReceiveTimeout">ReceiveTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the interval of time that a connection can remain inactive, during which no application messages are received, before it is dropped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan ReceiveTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a href="xref:System.Timespan">TimeSpan</a> that specifies how long the application has to receive a message before timing out. The default value is 10 minutes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_ReceiveTimeout_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When using a reliable session, there are two different inactivity timers that must be satisfied to keep the connection alive. If either of these inactivity timers goes off, then the connection is dropped.</p>
+<pre><code> The first inactivity timer is on the reliable session and is called the **InactivityTimeout**. This inactivity timer fires if no messages, either application or infrastructure, are received within the timeout period. An infrastructure message is a message that is generated for the purpose of one of the protocols in the channel stack, such as a keep alive or an acknowledgment, rather than containing application data.
+
+ The second inactivity timer is on the service and uses the [ReceiveTimeout](xref:CoreWCF.Channels.Binding) setting of the binding. This inactivity timer fires if no application messages are received within the timeout period. This specifies, for example, the maximum time a client may take to send at least one message to the server before the server will close the channel used by a session. This behavior ensures that clients cannot hold on to server resources for arbitrary long periods.
+</code></pre>
+<p>Since the connection is dropped if either inactivity timer fires, increasing <strong>InactivityTimeout</strong> once it is greater than <a class="xref" href="CoreWCF.Channels.Binding.html">ReceiveTimeout</a> has no effect. The default for both of these timeouts is 10 minutes, so you always have to increase both of them to make a difference when using a reliable session.</p>
+<p>If transaction flow is enabled on the binding or the channel, the operation may take longer to execute than the specified timeout. In these circumstances the operation fails due to the expired timeout and the transaction aborts appropriately.</p>
+<p>When security is used with sessions, the <a class="xref" href="CoreWCF.Channels.Binding.html">ReceiveTimeout</a> value set on the binding is also used as the session timeout.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_Scheme_" data-uid="CoreWCF.Channels.Binding.Scheme*"></a>
+  <h4 id="CoreWCF_Channels_Binding_Scheme" data-uid="CoreWCF.Channels.Binding.Scheme">Scheme</h4>
+  <div class="markdown level1 summary"><p>When implemented in a derived class, sets the URI scheme that specifies the transport used by the channel and listener factories that are built by the bindings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string Scheme { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The URI scheme that is used by the channels or listeners that are created by the factories built by the current binding.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_Scheme_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This user name for the binding is distinct from the specification of the protocol name, which is specified by the <a class="xref" href="CoreWCF.Channels.Binding.html">Scheme</a> property. Each instance of a <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> has a <a class="xref" href="CoreWCF.Channels.Binding.html">Name</a> and <a class="xref" href="CoreWCF.Channels.Binding.html">Namespace</a> that together uniquely identify the user name for the binding in the metadata of the service. If you want to add more HTTP bindings, for example, you can name them whatever you want and set all of their schemes to 'http'. There is no inherent application or machine dispatch based on the <a class="xref" href="CoreWCF.Channels.Binding.html">Scheme</a>. So you avoid the common problem of being unable to register additional handlers for well-known protocols. You can also easily work with multiple versions of a binding side-by-side by giving each version a different name.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_SendTimeout_" data-uid="CoreWCF.Channels.Binding.SendTimeout*"></a>
+  <h4 id="CoreWCF_Channels_Binding_SendTimeout" data-uid="CoreWCF.Channels.Binding.SendTimeout">SendTimeout</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the interval of time provided for a write operation to complete before the transport raises an exception.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeSpan SendTimeout { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The <a href="xref:System.Timespan">TimeSpan</a> that specifies how long the write operation has to complete before timing out. The default value is 1 minute.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_SendTimeout_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If transaction flow is enabled on the binding or the channel, the operation may take longer to execute than the specified timeout. In these circumstances the operation fails due to the expired timeout and the transaction aborts appropriately.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_Binding_BuildServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.BuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_Binding_BuildServiceDispatcher__1_CoreWCF_Channels_BindingParameterCollection_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.BuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcher&lt;TChannel&gt;(BindingParameterCollection, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IServiceDispatcher BuildServiceDispatcher&lt;TChannel&gt;(BindingParameterCollection parameters, IServiceDispatcher dispatcher)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">dispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_Binding_BuildServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.BuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_Binding_BuildServiceDispatcher__1_System_Uri_CoreWCF_Channels_BindingParameterCollection_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcher&lt;TChannel&gt;(Uri, BindingParameterCollection, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IServiceDispatcher BuildServiceDispatcher&lt;TChannel&gt;(Uri listenUriBaseAddress, BindingParameterCollection parameters, IServiceDispatcher dispatcher)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">listenUriBaseAddress</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">dispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_Binding_BuildServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.BuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_Binding_BuildServiceDispatcher__1_System_Uri_System_String_CoreWCF_Channels_BindingParameterCollection_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.BuildServiceDispatcher``1(System.Uri,System.String,CoreWCF.Channels.BindingParameterCollection,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcher&lt;TChannel&gt;(Uri, String, BindingParameterCollection, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IServiceDispatcher BuildServiceDispatcher&lt;TChannel&gt;(Uri listenUriBaseAddress, string listenUriRelativeAddress, BindingParameterCollection parameters, IServiceDispatcher dispatcher)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><span class="parametername">listenUriBaseAddress</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">listenUriRelativeAddress</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">dispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_Binding_CanBuildServiceDispatcher_" data-uid="CoreWCF.Channels.Binding.CanBuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_Binding_CanBuildServiceDispatcher__1_CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.Channels.Binding.CanBuildServiceDispatcher``1(CoreWCF.Channels.BindingParameterCollection)">CanBuildServiceDispatcher&lt;TChannel&gt;(BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CanBuildServiceDispatcher&lt;TChannel&gt;(BindingParameterCollection parameters)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_Binding_CreateBindingElements_" data-uid="CoreWCF.Channels.Binding.CreateBindingElements*"></a>
+  <h4 id="CoreWCF_Channels_Binding_CreateBindingElements" data-uid="CoreWCF.Channels.Binding.CreateBindingElements">CreateBindingElements()</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, creates a collection that contains the binding elements that are part of the current binding.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract BindingElementCollection CreateBindingElements()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElementCollection.html">BindingElementCollection</a></td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic">ICollection<t></t></a> object of type <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> that contains the binding elements from the current binding object in the correct order.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_CreateBindingElements_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The elements should not reference any internal elements that the <a class="xref" href="CoreWCF.Channels.Binding.html">Binding</a> object uses.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_Binding_GetProperty_" data-uid="CoreWCF.Channels.Binding.GetProperty*"></a>
+  <h4 id="CoreWCF_Channels_Binding_GetProperty__1_CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.Channels.Binding.GetProperty``1(CoreWCF.Channels.BindingParameterCollection)">GetProperty&lt;T&gt;(BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>Returns a typed object requested, if present, from the appropriate layer in the binding stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetProperty&lt;T&gt;(BindingParameterCollection parameters)
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">parameters</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a> that specifies requirements for the channel listener that is built.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The typed object T requested if it is present or null if it is not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The typed object for which the method is querying</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_Binding_GetProperty__1_CoreWCF_Channels_BindingParameterCollection__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no layer supported the requested object, then the method returns null.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.IDefaultCommunicationTimeouts.html">IDefaultCommunicationTimeouts</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

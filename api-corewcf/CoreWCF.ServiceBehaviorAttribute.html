@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ServiceBehaviorAttribute
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ServiceBehaviorAttribute
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.ServiceBehaviorAttribute">
+  
+  
+  <h1 id="CoreWCF_ServiceBehaviorAttribute" data-uid="CoreWCF.ServiceBehaviorAttribute" class="text-break">Class ServiceBehaviorAttribute
+  </h1>
+  <div class="markdown level0 summary"><p>Specifies the internal execution behavior of a service contract implementation.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ServiceBehaviorAttribute</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.Description.IServiceBehavior.html">IServiceBehavior</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_ServiceBehaviorAttribute_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ServiceBehaviorAttribute : Attribute, IServiceBehavior</code></pre>
+  </div>
+  <h5 id="CoreWCF_ServiceBehaviorAttribute_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Apply the &lt;xref:CoreWCF.ServiceBehaviorAttribute&gt; attribute to a service implementation to specify service-wide execution behavior. (To specify execution behavior at the method level, use the &lt;xref:CoreWCF.OperationBehaviorAttribute&gt; attribute.) This attribute can be applied only to service implementations. For working examples, see the <a href="https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751453(v=vs.90)">Service: Behaviors Samples</a>.</p>
+<p>&lt;xref:CoreWCF.ServiceBehaviorAttribute&gt; properties are a Windows Communication Foundation (WCF) programming model feature that enables common features that developers otherwise have to implement. For more information about these and other behaviors, see <a href="/dotnet/framework/wcf/specifying-service-run-time-behavior">Specifying Service Run-Time Behavior</a>. For more information about the underlying runtime properties that some of the following properties set, see <a href="/dotnet/framework/wcf/extending/extending-servicehost-and-the-service-model-layer">Extending ServiceHost and the Service Model Layer</a>.</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.AddressFilterMode%2A&gt; property specifies the type of filter that the dispatcher system uses to locate the endpoint that handles requests.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.AutomaticSessionShutdown%2A&gt; property automatically closes the session when the channel is closed and the service has finished processing any remaining messages.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.ConcurrencyMode%2A&gt; property controls the internal threading model, enabling support for reentrant or multithreaded services.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.ConfigurationName%2A&gt; property is used to declare a name for use in the <code>name</code> attribute of the <code>&amp;lt;service&gt;</code> element in a configuration file.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A&gt; property enables the run time to ignore extra serialization information that is not required to process the message.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A&gt; property specifies whether unhandled exceptions in a service are returned as SOAP faults. This is for debugging purposes only.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.InstanceContextMode%2A&gt; property specifies whether and when services and their service objects are to be recycled during an exchange with a client.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A&gt; property to limit on the number of items in an object graph that are serialized.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.Name%2A&gt; and &lt;xref:CoreWCF.ServiceBehaviorAttribute.Namespace%2A&gt; properties control the name and namespace for the WSDL expression of the service element.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A&gt; property specifies whether the service object is recycled when a transaction completes.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose%2A&gt; property specifies whether outstanding transactions are completed when the session closes.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.TransactionIsolationLevel%2A&gt; property specifies the transaction isolation level that the contract supports.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.TransactionTimeout%2A&gt; property specifies the time period within which a transaction must complete or it aborts.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.UseSynchronizationContext%2A&gt; property indicates whether to synchronize inbound method calls with the user interface thread automatically.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.ValidateMustUnderstand%2A&gt; property informs the system whether it should confirm that SOAP headers marked as <code>MustUnderstand</code> have, in fact, been understood.</p>
+</li>
+</ul>
+<p>The &lt;xref:CoreWCF.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A&gt; property can also be set using an application configuration file. For details, see &lt;xref:CoreWCF.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A&gt;.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute__ctor_" data-uid="CoreWCF.ServiceBehaviorAttribute.#ctor*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute__ctor" data-uid="CoreWCF.ServiceBehaviorAttribute.#ctor">ServiceBehaviorAttribute()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceBehaviorAttribute()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_AddressFilterMode_" data-uid="CoreWCF.ServiceBehaviorAttribute.AddressFilterMode*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_AddressFilterMode" data-uid="CoreWCF.ServiceBehaviorAttribute.AddressFilterMode">AddressFilterMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AddressFilterMode AddressFilterMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.AddressFilterMode.html">AddressFilterMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_ConcurrencyMode_" data-uid="CoreWCF.ServiceBehaviorAttribute.ConcurrencyMode*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_ConcurrencyMode" data-uid="CoreWCF.ServiceBehaviorAttribute.ConcurrencyMode">ConcurrencyMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ConcurrencyMode ConcurrencyMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ConcurrencyMode.html">ConcurrencyMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_ConfigurationName_" data-uid="CoreWCF.ServiceBehaviorAttribute.ConfigurationName*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_ConfigurationName" data-uid="CoreWCF.ServiceBehaviorAttribute.ConfigurationName">ConfigurationName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigurationName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_IncludeExceptionDetailInFaults_" data-uid="CoreWCF.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_IncludeExceptionDetailInFaults" data-uid="CoreWCF.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults">IncludeExceptionDetailInFaults</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IncludeExceptionDetailInFaults { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_InstanceContextMode_" data-uid="CoreWCF.ServiceBehaviorAttribute.InstanceContextMode*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_InstanceContextMode" data-uid="CoreWCF.ServiceBehaviorAttribute.InstanceContextMode">InstanceContextMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InstanceContextMode InstanceContextMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.InstanceContextMode.html">InstanceContextMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_Name_" data-uid="CoreWCF.ServiceBehaviorAttribute.Name*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_Name" data-uid="CoreWCF.ServiceBehaviorAttribute.Name">Name</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_Namespace_" data-uid="CoreWCF.ServiceBehaviorAttribute.Namespace*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_Namespace" data-uid="CoreWCF.ServiceBehaviorAttribute.Namespace">Namespace</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Namespace { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_GetWellKnownSingleton_" data-uid="CoreWCF.ServiceBehaviorAttribute.GetWellKnownSingleton*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_GetWellKnownSingleton" data-uid="CoreWCF.ServiceBehaviorAttribute.GetWellKnownSingleton">GetWellKnownSingleton()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object GetWellKnownSingleton()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_CoreWCF_Description_IServiceBehavior_AddBindingParameters_" data-uid="CoreWCF.ServiceBehaviorAttribute.CoreWCF#Description#IServiceBehavior#AddBindingParameters*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_CoreWCF_Description_IServiceBehavior_AddBindingParameters_CoreWCF_Description_ServiceDescription_CoreWCF_ServiceHostBase_System_Collections_ObjectModel_Collection_CoreWCF_Description_ServiceEndpoint__CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.ServiceBehaviorAttribute.CoreWCF#Description#IServiceBehavior#AddBindingParameters(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase,System.Collections.ObjectModel.Collection{CoreWCF.Description.ServiceEndpoint},CoreWCF.Channels.BindingParameterCollection)">IServiceBehavior.AddBindingParameters(ServiceDescription, ServiceHostBase, Collection&lt;ServiceEndpoint&gt;, BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IServiceBehavior.AddBindingParameters(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase, Collection&lt;ServiceEndpoint&gt; endpoints, BindingParameterCollection bindingParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceDescription.html">ServiceDescription</a></td>
+        <td><span class="parametername">serviceDescription</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">serviceHostBase</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection</a>&lt;<a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a>&gt;</td>
+        <td><span class="parametername">endpoints</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">bindingParameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_CoreWCF_Description_IServiceBehavior_ApplyDispatchBehavior_" data-uid="CoreWCF.ServiceBehaviorAttribute.CoreWCF#Description#IServiceBehavior#ApplyDispatchBehavior*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_CoreWCF_Description_IServiceBehavior_ApplyDispatchBehavior_CoreWCF_Description_ServiceDescription_CoreWCF_ServiceHostBase_" data-uid="CoreWCF.ServiceBehaviorAttribute.CoreWCF#Description#IServiceBehavior#ApplyDispatchBehavior(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)">IServiceBehavior.ApplyDispatchBehavior(ServiceDescription, ServiceHostBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IServiceBehavior.ApplyDispatchBehavior(ServiceDescription description, ServiceHostBase serviceHostBase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceDescription.html">ServiceDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">serviceHostBase</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceBehaviorAttribute_CoreWCF_Description_IServiceBehavior_Validate_" data-uid="CoreWCF.ServiceBehaviorAttribute.CoreWCF#Description#IServiceBehavior#Validate*"></a>
+  <h4 id="CoreWCF_ServiceBehaviorAttribute_CoreWCF_Description_IServiceBehavior_Validate_CoreWCF_Description_ServiceDescription_CoreWCF_ServiceHostBase_" data-uid="CoreWCF.ServiceBehaviorAttribute.CoreWCF#Description#IServiceBehavior#Validate(CoreWCF.Description.ServiceDescription,CoreWCF.ServiceHostBase)">IServiceBehavior.Validate(ServiceDescription, ServiceHostBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IServiceBehavior.Validate(ServiceDescription description, ServiceHostBase serviceHostBase)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceDescription.html">ServiceDescription</a></td>
+        <td><span class="parametername">description</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td><span class="parametername">serviceHostBase</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IServiceBehavior.html">IServiceBehavior</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

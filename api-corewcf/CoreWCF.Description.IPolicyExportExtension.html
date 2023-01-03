@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IPolicyExportExtension
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IPolicyExportExtension
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.IPolicyExportExtension">
+  
+  
+  <h1 id="CoreWCF_Description_IPolicyExportExtension" data-uid="CoreWCF.Description.IPolicyExportExtension" class="text-break">Interface IPolicyExportExtension
+  </h1>
+  <div class="markdown level0 summary"><p>Implement  to insert custom binding policy assertions in the Web Services Description Language (WSDL) information.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_IPolicyExportExtension_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IPolicyExportExtension</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_IPolicyExportExtension_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Implement the &lt;xref:CoreWCF.Description.IPolicyExportExtension&gt; interface on a &lt;xref:CoreWCF.Channels.BindingElement?displayProperty=nameWithType&gt; object to write statements about endpoint capabilities or requirements into the WSDL information exposed by a particular endpoint. Typically the binding element is one that implements some feature, but this is not required. To load your policy exporter from a configuration file, implement a &lt;xref:CoreWCF.Configuration.BindingElementExtensionElement?displayProperty=nameWithType&gt; that returns the policy exporter &lt;xref:CoreWCF.Channels.BindingElement&gt; object.</p>
+<p>The policy exporter is used by Windows Communication Foundation (WCF) to use policy assertions to communicate to clients the existence of that custom binding requirement or endpoint capability.</p>
+<p>The &lt;xref:CoreWCF.Description.IPolicyExportExtension.ExportPolicy%2A&gt; method takes the &lt;xref:CoreWCF.Description.MetadataExporter&gt; and &lt;xref:CoreWCF.Description.PolicyConversionContext&gt; objects. Use the &lt;xref:CoreWCF.Description.PolicyConversionContext.GetBindingAssertions%2A&gt;, &lt;xref:CoreWCF.Description.PolicyConversionContext.GetMessageBindingAssertions%2A&gt;, and &lt;xref:CoreWCF.Description.PolicyConversionContext.GetOperationBindingAssertions%2A&gt; methods to obtain collections of policy assertions that have already been exported at various scopes. Then add your custom policy assertion object to the appropriate collection.</p>
+<p>The &lt;xref:CoreWCF.Description.PolicyConversionContext.Contract%2A&gt; property exposes the &lt;xref:CoreWCF.Description.ContractDescription&gt; for the endpoint that is being exported. This allows the &lt;xref:CoreWCF.Description.IPolicyExportExtension&gt; extension to correctly scope their exported policy assertions. For example, security attributes in code may add behaviors to the &lt;xref:CoreWCF.Description.ContractDescription&gt; that indicate where security policy assertions should be added.</p>
+<p>The &lt;xref:CoreWCF.Description.IPolicyExportExtension&gt; mechanism only supports exporting policy assertions in WSDL. To export custom WSDL elements you must use the &lt;xref:CoreWCF.Description.IWsdlExportExtension&gt; mechanism to modify the WSDL directly.</p>
+<p>Once custom policy assertions have been attached to the WSDL information, clients can detect and import the custom binding assertions by using an &lt;xref:CoreWCF.Description.IPolicyImportExtension&gt; object.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_IPolicyExportExtension_ExportPolicy_" data-uid="CoreWCF.Description.IPolicyExportExtension.ExportPolicy*"></a>
+  <h4 id="CoreWCF_Description_IPolicyExportExtension_ExportPolicy_CoreWCF_Description_MetadataExporter_CoreWCF_Description_PolicyConversionContext_" data-uid="CoreWCF.Description.IPolicyExportExtension.ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)">ExportPolicy(MetadataExporter, PolicyConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ExportPolicy(MetadataExporter exporter, PolicyConversionContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.MetadataExporter.html">MetadataExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.PolicyConversionContext.html">PolicyConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

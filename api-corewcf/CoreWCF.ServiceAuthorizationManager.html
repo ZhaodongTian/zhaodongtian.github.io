@@ -1,0 +1,469 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ServiceAuthorizationManager
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ServiceAuthorizationManager
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.ServiceAuthorizationManager">
+  
+  
+  <h1 id="CoreWCF_ServiceAuthorizationManager" data-uid="CoreWCF.ServiceAuthorizationManager" class="text-break">Class ServiceAuthorizationManager
+  </h1>
+  <div class="markdown level0 summary"><p>Provides authorization access checking for service operations.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ServiceAuthorizationManager</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_ServiceAuthorizationManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ServiceAuthorizationManager : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_ServiceAuthorizationManager_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class is responsible for evaluating all policies (rules that define what a user is allowed to do), comparing the policies to claims made by a client, setting the resulting &lt;xref:System.IdentityModel.Policy.AuthorizationContext&gt; to the &lt;xref:CoreWCF.ServiceSecurityContext&gt;, and providing the authorization decision whether to allow or deny access for a given service operation for a caller.</p>
+<p>The &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A&gt; method is called by the Windows Communication Foundation (WCF) infrastructure each time an attempt to access a resource is made. The method returns <code>true</code> or <code>false</code> to allow or deny access, respectively.</p>
+<p>The &lt;xref:CoreWCF.ServiceAuthorizationManager&gt; is part of the WCF<em>Identity Model</em> infrastructure. The Identity Model enables you to create custom authorization policies and custom authorization schemes. For more information about how the Identity Model works, see <a href="/dotnet/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model">Managing Claims and Authorization with the Identity Model</a>.</p>
+<h2 id="custom-authorization">Custom Authorization</h2>
+<p>This class does not perform any authorization and allows users to access all service operations. To provide more restrictive authorization, you must create a custom authorization manager that checks custom policies. To do this, inherit from this class and override the &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A&gt; method. Specify the instance of the derived class through the &lt;xref:CoreWCF.Dispatcher.DispatchRuntime.ServiceAuthorizationManager%2A&gt; property.</p>
+<p>In &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A&gt;, the application can use the &lt;xref:CoreWCF.OperationContext&gt; object to access the caller identity (&lt;xref:CoreWCF.OperationContext.ServiceSecurityContext%2A&gt;).</p>
+<p>By getting the &lt;xref:CoreWCF.OperationContext.IncomingMessageHeaders%2A&gt; property, which returns a &lt;xref:CoreWCF.Channels.MessageHeaders&gt; object, the application can access the service (&lt;xref:CoreWCF.Channels.MessageHeaders.To%2A&gt;), and the operation (&lt;xref:CoreWCF.Channels.MessageHeaders.Action%2A&gt;).</p>
+<p>By getting the &lt;xref:CoreWCF.OperationContext.RequestContext%2A&gt; property, which returns a &lt;xref:CoreWCF.Channels.RequestContext&gt; object, the application can access the entire request message (&lt;xref:CoreWCF.Channels.RequestContext.RequestMessage%2A&gt;) and perform the authorization decision accordingly.</p>
+<p>For an example, see <a href="/dotnet/framework/wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service">How to: Create a Custom Authorization Manager for a Service</a>.</p>
+<p>To create custom authorization policies, implement the &lt;xref:System.IdentityModel.Policy.IAuthorizationPolicy&gt; class.  For an example, see <a href="/dotnet/framework/wcf/extending/how-to-create-a-custom-authorization-policy">How to: Create a Custom Authorization Policy</a>.</p>
+<p>To create a custom claim, use the &lt;xref:System.IdentityModel.Claims.Claim&gt; class.  For an example, see <a href="/dotnet/framework/wcf/extending/how-to-create-a-custom-claim">How to: Create a Custom Claim</a>. To compare custom claims, you must compare claims, as shown in <a href="/dotnet/framework/wcf/extending/how-to-compare-claims">How to: Compare Claims</a>.</p>
+<p>For more information, see <a href="/dotnet/framework/wcf/extending/custom-authorization">Custom Authorization</a>.</p>
+<p>You can set the type of a custom authorization manager using the <a href="/dotnet/framework/configure-apps/file-schema/wcf/serviceauthorization-element">&amp;lt;serviceAuthorization&amp;gt;</a> in a client application configuration file.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager__ctor_" data-uid="CoreWCF.ServiceAuthorizationManager.#ctor*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager__ctor" data-uid="CoreWCF.ServiceAuthorizationManager.#ctor">ServiceAuthorizationManager()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceAuthorizationManager()</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_CheckAccess_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccess*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_CheckAccess_CoreWCF_OperationContext_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext)">CheckAccess(OperationContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CheckAccess(OperationContext operationContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_CheckAccess_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccess*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_CheckAccess_CoreWCF_OperationContext_CoreWCF_Channels_Message__" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccess(CoreWCF.OperationContext,CoreWCF.Channels.Message@)">CheckAccess(OperationContext, ref Message)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CheckAccess(OperationContext operationContext, ref Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_CheckAccessAsync_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessAsync*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_CheckAccessAsync_CoreWCF_OperationContext_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext)">CheckAccessAsync(OperationContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ValueTask&lt;bool&gt; CheckAccessAsync(OperationContext operationContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_CheckAccessAsync_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessAsync*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_CheckAccessAsync_CoreWCF_OperationContext_CoreWCF_Channels_Message_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessAsync(CoreWCF.OperationContext,CoreWCF.Channels.Message)">CheckAccessAsync(OperationContext, Message)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual ValueTask&lt;(bool, Message)&gt; CheckAccessAsync(OperationContext operationContext, Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-2">(, )</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>, <a class="xref" href="CoreWCF.Channels.Message.html">Message</a>&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_CheckAccessCore_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessCore*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_CheckAccessCore_CoreWCF_OperationContext_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessCore(CoreWCF.OperationContext)">CheckAccessCore(OperationContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool CheckAccessCore(OperationContext operationContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_CheckAccessCoreAsync_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_CheckAccessCoreAsync_CoreWCF_OperationContext_" data-uid="CoreWCF.ServiceAuthorizationManager.CheckAccessCoreAsync(CoreWCF.OperationContext)">CheckAccessCoreAsync(OperationContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual ValueTask&lt;bool&gt; CheckAccessCoreAsync(OperationContext operationContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceAuthorizationManager_GetAuthorizationPolicies_" data-uid="CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies*"></a>
+  <h4 id="CoreWCF_ServiceAuthorizationManager_GetAuthorizationPolicies_CoreWCF_OperationContext_" data-uid="CoreWCF.ServiceAuthorizationManager.GetAuthorizationPolicies(CoreWCF.OperationContext)">GetAuthorizationPolicies(OperationContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual ReadOnlyCollection&lt;IAuthorizationPolicy&gt; GetAuthorizationPolicies(OperationContext operationContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td><span class="parametername">operationContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection</a>&lt;<a class="xref" href="CoreWCF.IdentityModel.Policy.IAuthorizationPolicy.html">IAuthorizationPolicy</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

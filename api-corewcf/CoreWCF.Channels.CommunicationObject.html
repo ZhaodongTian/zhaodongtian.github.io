@@ -1,0 +1,921 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CommunicationObject
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CommunicationObject
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.CommunicationObject">
+  
+  
+  <h1 id="CoreWCF_Channels_CommunicationObject" data-uid="CoreWCF.Channels.CommunicationObject" class="text-break">Class CommunicationObject
+  </h1>
+  <div class="markdown level0 summary"><p>Provides a common base implementation for the basic state machine common to all communication-oriented objects in the system, including channels, listeners, and the channel and listener factories.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">CommunicationObject</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.ChannelManagerBase.html">ChannelManagerBase</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Channels.StreamUpgradeProvider.html">StreamUpgradeProvider</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Dispatcher.ChannelDispatcherBase.html">ChannelDispatcherBase</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.InstanceContext.html">InstanceContext</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.ICommunicationObject.html">ICommunicationObject</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_CommunicationObject_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CommunicationObject : Object, ICommunicationObject</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html">CommunicationObject</a> class implements the <a class="xref" href="CoreWCF.ICommunicationObject.html">ICommunicationObject</a> interface for all communication objects in Windows Communication Foundation (WCF). The method implementations handle parameter validation, raise events that notify the occurrence of state transitions, provide the means to associated additional processing with these state transitions, and ensure that such state changes are coordinated.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject__ctor_" data-uid="CoreWCF.Channels.CommunicationObject.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject__ctor" data-uid="CoreWCF.Channels.CommunicationObject.#ctor">CommunicationObject()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html">CommunicationObject</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CommunicationObject()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject__ctor_" data-uid="CoreWCF.Channels.CommunicationObject.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject__ctor_System_Object_" data-uid="CoreWCF.Channels.CommunicationObject.#ctor(System.Object)">CommunicationObject(Object)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html">CommunicationObject</a> class with the mutually exclusive lock to protect the state transitions specified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CommunicationObject(object mutex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">mutex</span></td>
+        <td><p>The mutually exclusive lock that protects the class instance during a state transition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_DefaultCloseTimeout_" data-uid="CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_DefaultCloseTimeout" data-uid="CoreWCF.Channels.CommunicationObject.DefaultCloseTimeout">DefaultCloseTimeout</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the default interval of time provided for a close operation to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TimeSpan DefaultCloseTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The default <a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8">TimeSpan</a> that specifies how long the close operation has to complete before timing out.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_DefaultOpenTimeout_" data-uid="CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_DefaultOpenTimeout" data-uid="CoreWCF.Channels.CommunicationObject.DefaultOpenTimeout">DefaultOpenTimeout</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the default interval of time provided for an open operation to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TimeSpan DefaultOpenTimeout { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></td>
+        <td><p>The default <a href="https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8">TimeSpan</a> that specifies how long the open operation has to complete before timing out.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_IsDisposed_" data-uid="CoreWCF.Channels.CommunicationObject.IsDisposed*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_IsDisposed" data-uid="CoreWCF.Channels.CommunicationObject.IsDisposed">IsDisposed</h4>
+  <div class="markdown level1 summary"><p>Gets a value that indicates whether the communication object has been disposed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool IsDisposed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the communication object is in a closed state; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_CommunicationObject_IsDisposed_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>An object is considered disposed when the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Closed">Closed</a> event occurs.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_State_" data-uid="CoreWCF.Channels.CommunicationObject.State*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_State" data-uid="CoreWCF.Channels.CommunicationObject.State">State</h4>
+  <div class="markdown level1 summary"><p>Gets a value that indicates the current state of the communication object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommunicationState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.CommunicationState.html">CommunicationState</a></td>
+        <td><p>A value from the <a class="xref" href="CoreWCF.CommunicationState.html">CommunicationState</a> enumeration that indicates the current state of the object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_ThisLock_" data-uid="CoreWCF.Channels.CommunicationObject.ThisLock*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_ThisLock" data-uid="CoreWCF.Channels.CommunicationObject.ThisLock">ThisLock</h4>
+  <div class="markdown level1 summary"><p>Gets the mutually exclusive lock that protects the class instance during a state transition.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected object ThisLock { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The mutually exclusive lock that protects the class instance during a state transition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_Abort_" data-uid="CoreWCF.Channels.CommunicationObject.Abort*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_Abort" data-uid="CoreWCF.Channels.CommunicationObject.Abort">Abort()</h4>
+  <div class="markdown level1 summary"><p>Causes a communication object to transition immediately from its current state into the closing state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Abort()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Abort_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method indicates that any unfinished work should be ignored or ungracefully terminated before returning. The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Abort">Abort()</a> method can be used to cancel any outstanding operations, including outstanding calls to <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a>.<br><br>To gracefully transition a <a class="xref" href="CoreWCF.Channels.CommunicationObject.html">CommunicationObject</a> from any state other than <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Closed">Closed</a> into the <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Closed">Closed</a> state, call <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a> or one of its asynchronous versions, <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.beginclose?view=netframework-4.8">BeginClose</a>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_CloseAsync_" data-uid="CoreWCF.Channels.CommunicationObject.CloseAsync*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_CloseAsync" data-uid="CoreWCF.Channels.CommunicationObject.CloseAsync">CloseAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CloseAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_CloseAsync_" data-uid="CoreWCF.Channels.CommunicationObject.CloseAsync*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_CloseAsync_System_Threading_CancellationToken_" data-uid="CoreWCF.Channels.CommunicationObject.CloseAsync(System.Threading.CancellationToken)">CloseAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CloseAsync(CancellationToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_Fault_" data-uid="CoreWCF.Channels.CommunicationObject.Fault*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_Fault" data-uid="CoreWCF.Channels.CommunicationObject.Fault">Fault()</h4>
+  <div class="markdown level1 summary"><p>Causes a communication object to transition from its current state into the faulted state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Fault()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Fault_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Faulted">Faulted</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnFaulted">OnFaulted()</a> method which is called by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Fault">Fault()</a> method.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_Fault_" data-uid="CoreWCF.Channels.CommunicationObject.Fault*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_Fault_System_Exception_" data-uid="CoreWCF.Channels.CommunicationObject.Fault(System.Exception)">Fault(Exception)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Fault(Exception exception)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></td>
+        <td><span class="parametername">exception</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_GetCommunicationObjectType_" data-uid="CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_GetCommunicationObjectType" data-uid="CoreWCF.Channels.CommunicationObject.GetCommunicationObjectType">GetCommunicationObjectType()</h4>
+  <div class="markdown level1 summary"><p>Gets the type of communication object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Type GetCommunicationObjectType()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><p>The type of communication object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnAbort_" data-uid="CoreWCF.Channels.CommunicationObject.OnAbort*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnAbort" data-uid="CoreWCF.Channels.CommunicationObject.OnAbort">OnAbort()</h4>
+  <div class="markdown level1 summary"><p>Inserts processing on a communication object after it transitions to the closing state due to the invocation of a synchronous abort operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void OnAbort()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_OnAbort_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Abort">Abort()</a> method calls <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnAbort">OnAbort()</a> if the communication object is not already in a <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Closed">Closed</a> state.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnCloseAsync_" data-uid="CoreWCF.Channels.CommunicationObject.OnCloseAsync*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnCloseAsync_System_Threading_CancellationToken_" data-uid="CoreWCF.Channels.CommunicationObject.OnCloseAsync(System.Threading.CancellationToken)">OnCloseAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract Task OnCloseAsync(CancellationToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnClosed_" data-uid="CoreWCF.Channels.CommunicationObject.OnClosed*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnClosed" data-uid="CoreWCF.Channels.CommunicationObject.OnClosed">OnClosed()</h4>
+  <div class="markdown level1 summary"><p>Invoked during the transition of a communication object into the closing state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnClosed()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_OnClosed_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a> method calls <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosed">OnClosed()</a> if the communication object is initially in the <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Opened">Opened</a> state.<br><br>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endclose?view=netframework-4.8">EndClose</a> method calls <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosed">OnClosed()</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.onendclose?view=netframework-4.8#system-servicemodel-channels-communicationobject-onendclose(system-iasyncresult)">OnEndClose(IAsyncResult)</a> if the communication object is not already in a <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Closed">Closed</a> state.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnClosing_" data-uid="CoreWCF.Channels.CommunicationObject.OnClosing*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnClosing" data-uid="CoreWCF.Channels.CommunicationObject.OnClosing">OnClosing()</h4>
+  <div class="markdown level1 summary"><p>Invoked during the transition of a communication object into the closing state</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnClosing()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_OnClosing_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a> method calls <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosing">OnClosing()</a> if the communication object is initially in the <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Opened">Opened</a> state.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnFaulted_" data-uid="CoreWCF.Channels.CommunicationObject.OnFaulted*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnFaulted" data-uid="CoreWCF.Channels.CommunicationObject.OnFaulted">OnFaulted()</h4>
+  <div class="markdown level1 summary"><p>Inserts processing on a communication object after it transitions to the faulted state due to the invocation of a synchronous fault operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnFaulted()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_OnFaulted_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Faulted">Faulted</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnFaulted">OnFaulted()</a> method which is called by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Fault">Fault()</a> method.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnOpenAsync_" data-uid="CoreWCF.Channels.CommunicationObject.OnOpenAsync*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnOpenAsync_System_Threading_CancellationToken_" data-uid="CoreWCF.Channels.CommunicationObject.OnOpenAsync(System.Threading.CancellationToken)">OnOpenAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract Task OnOpenAsync(CancellationToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnOpened_" data-uid="CoreWCF.Channels.CommunicationObject.OnOpened*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnOpened" data-uid="CoreWCF.Channels.CommunicationObject.OnOpened">OnOpened()</h4>
+  <div class="markdown level1 summary"><p>Invoked during the transition of a communication object into the opened state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOpened()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_OnOpened_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This provides a way to add processing when it is called by the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8">Open</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endopen?view=netframework-4.8">EndOpen</a> methods.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OnOpening_" data-uid="CoreWCF.Channels.CommunicationObject.OnOpening*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OnOpening" data-uid="CoreWCF.Channels.CommunicationObject.OnOpening">OnOpening()</h4>
+  <div class="markdown level1 summary"><p>Invoked during the transition of a communication object into the opening state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnOpening()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_OnOpening_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This provides a way to add processing when it is called by the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8">Open</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.beginopen?view=netframework-4.8">BeginOpen</a> methods.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OpenAsync_" data-uid="CoreWCF.Channels.CommunicationObject.OpenAsync*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OpenAsync" data-uid="CoreWCF.Channels.CommunicationObject.OpenAsync">OpenAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task OpenAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_OpenAsync_" data-uid="CoreWCF.Channels.CommunicationObject.OpenAsync*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_OpenAsync_System_Threading_CancellationToken_" data-uid="CoreWCF.Channels.CommunicationObject.OpenAsync(System.Threading.CancellationToken)">OpenAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task OpenAsync(CancellationToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposed_" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfDisposed*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposed" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfDisposed">ThrowIfDisposed()</h4>
+  <div class="markdown level1 summary"><p>Throws an exception if the communication object is disposed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ThrowIfDisposed()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposed_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>No exception is thrown if the communication object is in a <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Created">Created</a>, <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Opening">Opening</a> or <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Opened">Opened</a> state. A communication object is disposed once <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a> is called on it.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrImmutable_" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrImmutable" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrImmutable">ThrowIfDisposedOrImmutable()</h4>
+  <div class="markdown level1 summary"><p>Throws an exception if the communication object the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_State">State</a> property is not set to the <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Created">Created</a> state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ThrowIfDisposedOrImmutable()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrImmutable_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Since an object is immutable after <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8">Open</a> is called on it, the only state that is both mutable and not disposed is the <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Created">Created</a> state.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrNotOpen_" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_ThrowIfDisposedOrNotOpen" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfDisposedOrNotOpen">ThrowIfDisposedOrNotOpen()</h4>
+  <div class="markdown level1 summary"><p>Throws an exception if the communication object is not in the <a class="xref" href="CoreWCF.CommunicationState.html#CoreWCF_CommunicationState_Opened">Opened</a> state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ThrowIfDisposedOrNotOpen()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_ThrowIfNotOpened_" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_ThrowIfNotOpened" data-uid="CoreWCF.Channels.CommunicationObject.ThrowIfNotOpened">ThrowIfNotOpened()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ThrowIfNotOpened()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_CommunicationObject_ThrowPending_" data-uid="CoreWCF.Channels.CommunicationObject.ThrowPending*"></a>
+  <h4 id="CoreWCF_Channels_CommunicationObject_ThrowPending" data-uid="CoreWCF.Channels.CommunicationObject.ThrowPending">ThrowPending()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ThrowPending()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="CoreWCF_Channels_CommunicationObject_Closed" data-uid="CoreWCF.Channels.CommunicationObject.Closed">Closed</h4>
+  <div class="markdown level1 summary"><p>Occurs when a communication object transitions into the closed state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler Closed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Closed_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Closed">Closed</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosing">OnClosing()</a> method which is called by the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endclose?view=netframework-4.8">EndClose</a> methods.</p>
+</div>
+  
+  
+  <h4 id="CoreWCF_Channels_CommunicationObject_Closing" data-uid="CoreWCF.Channels.CommunicationObject.Closing">Closing</h4>
+  <div class="markdown level1 summary"><p>Occurs when a communication object transitions into the closing state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler Closing</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Closing_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Closing">Closing</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnClosing">OnClosing()</a> method which is called by the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.close?view=netframework-4.8">Close</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.beginclose?view=netframework-4.8">BeginClose</a> methods.</p>
+</div>
+  
+  
+  <h4 id="CoreWCF_Channels_CommunicationObject_Faulted" data-uid="CoreWCF.Channels.CommunicationObject.Faulted">Faulted</h4>
+  <div class="markdown level1 summary"><p>Occurs when a communication object transitions into the faulted state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler Faulted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Faulted_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Faulted">Faulted</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnFaulted">OnFaulted()</a> method which is called by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Fault">Fault()</a> method.</p>
+</div>
+  
+  
+  <h4 id="CoreWCF_Channels_CommunicationObject_Opened" data-uid="CoreWCF.Channels.CommunicationObject.Opened">Opened</h4>
+  <div class="markdown level1 summary"><p>Occurs when a communication object transitions into the opened state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler Opened</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Opened_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Opened">Opened</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnOpening">OnOpening()</a> method which is called by the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8">Open</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.endopen?view=netframework-4.8">EndOpen</a> methods.</p>
+</div>
+  
+  
+  <h4 id="CoreWCF_Channels_CommunicationObject_Opening" data-uid="CoreWCF.Channels.CommunicationObject.Opening">Opening</h4>
+  <div class="markdown level1 summary"><p>Occurs when a communication object transitions into the opening state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler Opening</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_CommunicationObject_Opening_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_Opening">Opening</a> event is raised by the <a class="xref" href="CoreWCF.Channels.CommunicationObject.html#CoreWCF_Channels_CommunicationObject_OnOpening">OnOpening()</a> method which is called by the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.open?view=netframework-4.8">Open</a> and <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channels.communicationobject.onbeginopen?view=netframework-4.8#system-servicemodel-channels-communicationobject-onbeginopen(system-timespan-system-asynccallback-system-object)">OnBeginOpen(TimeSpan, AsyncCallback, Object)</a> methods.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.ICommunicationObject.html">ICommunicationObject</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

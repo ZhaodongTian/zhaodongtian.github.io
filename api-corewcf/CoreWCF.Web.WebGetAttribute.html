@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class WebGetAttribute
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class WebGetAttribute
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Web.WebGetAttribute">
+  
+  
+  <h1 id="CoreWCF_Web_WebGetAttribute" data-uid="CoreWCF.Web.WebGetAttribute" class="text-break">Class WebGetAttribute
+  </h1>
+  <div class="markdown level0 summary"><p>Represents an attribute indicating that a service operation is logically a retrieval operation and that it can be called by the WCF REST programming model.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">WebGetAttribute</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.IOperationContractAttributeProvider.html">IOperationContractAttributeProvider</a></div>
+    <div><a class="xref" href="CoreWCF.Description.IOperationBehavior.html">IOperationBehavior</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Web.html">CoreWCF.Web</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.WebHttp.dll</h6>
+  <h5 id="CoreWCF_Web_WebGetAttribute_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class WebGetAttribute : Attribute, IOperationContractAttributeProvider, IOperationBehavior</code></pre>
+  </div>
+  <h5 id="CoreWCF_Web_WebGetAttribute_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute is applied to a service operation in addition to the <a class="xref" href="CoreWCF.OperationContractAttribute.html">OperationContractAttribute</a> and associates the operation with a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uritemplate">UriTemplate</a> as well as the HTTP protocol Get verb. The association with HTTP Get verb means that the operation is used to retrieve information from the service. The <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute is a <em>passive</em> operation behavior (the <a class="xref" href="CoreWCF.Description.IOperationBehavior.html">IOperationBehavior</a> methods do nothing) that adds metadata to the operation description. Applying the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute to a service operation has no effect unless a behavior that is looking for this metadata in the operation description (such as <a class="xref" href="CoreWCF.Description.WebHttpBehavior.html">WebHttpBehavior</a>) is added to the service's behavior collection.</p>
+<p>Service operations with the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute applied should be logical retrieval operations. The HTTP GET method is associated with all operations marked with the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute__ctor_" data-uid="CoreWCF.Web.WebGetAttribute.#ctor*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute__ctor" data-uid="CoreWCF.Web.WebGetAttribute.#ctor">WebGetAttribute()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WebGetAttribute()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_BodyStyle_" data-uid="CoreWCF.Web.WebGetAttribute.BodyStyle*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_BodyStyle" data-uid="CoreWCF.Web.WebGetAttribute.BodyStyle">BodyStyle</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the body style of the messages that are sent to and from the service operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WebMessageBodyStyle BodyStyle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Web.WebMessageBodyStyle.html">WebMessageBodyStyle</a></td>
+        <td><p>One of the <a class="xref" href="CoreWCF.Web.WebMessageBodyStyle.html">WebMessageBodyStyle</a> enumeration values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_BodyStyle_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>When set to <a class="xref" href="CoreWCF.Web.WebMessageBodyStyle.html">Bare</a>, the result of the service operation is written directly to the body of the response message</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_IsBodyStyleSetExplicitly_" data-uid="CoreWCF.Web.WebGetAttribute.IsBodyStyleSetExplicitly*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_IsBodyStyleSetExplicitly" data-uid="CoreWCF.Web.WebGetAttribute.IsBodyStyleSetExplicitly">IsBodyStyleSetExplicitly</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_IsBodyStyleSetExplicitly_">IsBodyStyleSetExplicitly</a> property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBodyStyleSetExplicitly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>A value that specifies whether the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_BodyStyle_">BodyStyle</a> property is set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_IsBodyStyleSetExplicitly_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is designed to be used by the WCF infrastructure and should never be set from user code</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_IsRequestFormatSetExplicitly_" data-uid="CoreWCF.Web.WebGetAttribute.IsRequestFormatSetExplicitly*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_IsRequestFormatSetExplicitly" data-uid="CoreWCF.Web.WebGetAttribute.IsRequestFormatSetExplicitly">IsRequestFormatSetExplicitly</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_IsRequestFormatSetExplicitly_">IsRequestFormatSetExplicitly</a> property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRequestFormatSetExplicitly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>A value that specifies whether the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_RequestFormat_">RequestFormat</a> property was set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_IsResponseFormatSetExplicitly_" data-uid="CoreWCF.Web.WebGetAttribute.IsResponseFormatSetExplicitly*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_IsResponseFormatSetExplicitly" data-uid="CoreWCF.Web.WebGetAttribute.IsResponseFormatSetExplicitly">IsResponseFormatSetExplicitly</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_IsResponseFormatSetExplicitly_">IsResponseFormatSetExplicitly</a> property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsResponseFormatSetExplicitly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>A value that specifies whether the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_ResponseFormat_">ResponseFormat</a> property was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_IsResponseFormatSetExplicitly_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is designed to be used by the WCF infrastructure and should never be set from user code</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_RequestFormat_" data-uid="CoreWCF.Web.WebGetAttribute.RequestFormat*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_RequestFormat" data-uid="CoreWCF.Web.WebGetAttribute.RequestFormat">RequestFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_RequestFormat_">RequestFormat</a> property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WebMessageFormat RequestFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Web.WebMessageFormat.html">WebMessageFormat</a></td>
+        <td><p>One of the <a class="xref" href="CoreWCF.Web.WebMessageFormat.html">WebMessageFormat</a> enumeration values</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_RequestFormat_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property determines the format of requests made to a service operation. The two possible values are Xml and Json</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_ResponseFormat_" data-uid="CoreWCF.Web.WebGetAttribute.ResponseFormat*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_ResponseFormat" data-uid="CoreWCF.Web.WebGetAttribute.ResponseFormat">ResponseFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_ResponseFormat_">ResponseFormat</a> property</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WebMessageFormat ResponseFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Web.WebMessageFormat.html">WebMessageFormat</a></td>
+        <td><p>One of the <a class="xref" href="CoreWCF.Web.WebMessageFormat.html">WebMessageFormat</a> enumeration values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_UriTemplate_" data-uid="CoreWCF.Web.WebGetAttribute.UriTemplate*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_UriTemplate" data-uid="CoreWCF.Web.WebGetAttribute.UriTemplate">UriTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the Uniform Resource Identifier (URI) template for the service operation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string UriTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The URI template for the service operation</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_UriTemplate_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>URI templates are used to determine which requests get dispatched to which service operations. URI templates allow you to map a URI or a set of URIs to a service operation. For more information about URI templates, see <a class="xref" href="CoreWCF.Web.WebGetAttribute.html#CoreWCF_Web_WebGetAttribute_UriTemplate_">UriTemplate and UriTemplateTable</a>.</p>
+</div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_AddBindingParameters_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_AddBindingParameters_CoreWCF_Description_OperationDescription_CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#AddBindingParameters(CoreWCF.Description.OperationDescription,CoreWCF.Channels.BindingParameterCollection)">IOperationBehavior.AddBindingParameters(OperationDescription, BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"><p>Implements the <a class="xref" href="CoreWCF.Description.IOperationBehavior.html#CoreWCF_Description_IOperationBehavior_AddBindingParameters_CoreWCF_Description_OperationDescription_CoreWCF_Channels_BindingParameterCollection_">AddBindingParameters(OperationDescription, BindingParameterCollection)</a> method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.AddBindingParameters(OperationDescription operationDescription, BindingParameterCollection bindingParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operationDescription</span></td>
+        <td><p>The operation description.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">bindingParameters</span></td>
+        <td><p>A collection of binding parameters.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_AddBindingParameters_CoreWCF_Description_OperationDescription_CoreWCF_Channels_BindingParameterCollection__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does nothing because the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute is a passive operation behavior</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_ApplyClientBehavior_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_ApplyClientBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_ClientOperation_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.ClientOperation)">IOperationBehavior.ApplyClientBehavior(OperationDescription, ClientOperation)</h4>
+  <div class="markdown level1 summary"><p>Implements the &lt;xref:CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#ApplyClientBehavior*&gt; method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.ApplyClientBehavior(OperationDescription operationDescription, ClientOperation clientOperation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operationDescription</span></td>
+        <td><p>The operation description</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.ClientOperation.html">ClientOperation</a></td>
+        <td><span class="parametername">clientOperation</span></td>
+        <td><p>The client operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_ApplyClientBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_ClientOperation__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does nothing because the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute is a passive operation behavior.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_ApplyDispatchBehavior_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_ApplyDispatchBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_DispatchOperation_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#ApplyDispatchBehavior(CoreWCF.Description.OperationDescription,CoreWCF.Dispatcher.DispatchOperation)">IOperationBehavior.ApplyDispatchBehavior(OperationDescription, DispatchOperation)</h4>
+  <div class="markdown level1 summary"><p>Implements the <a class="xref" href="CoreWCF.Description.IOperationBehavior.html#CoreWCF_Description_IOperationBehavior_ApplyDispatchBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_DispatchOperation_">ApplyDispatchBehavior(OperationDescription, DispatchOperation)</a> method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.ApplyDispatchBehavior(OperationDescription operationDescription, DispatchOperation dispatchOperation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operationDescription</span></td>
+        <td><p>The operation description.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchOperation.html">DispatchOperation</a></td>
+        <td><span class="parametername">dispatchOperation</span></td>
+        <td><p>The operation to dispatch to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_ApplyDispatchBehavior_CoreWCF_Description_OperationDescription_CoreWCF_Dispatcher_DispatchOperation__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does nothing because the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute is a passive operation behavior</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_Validate_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#Validate*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_Validate_CoreWCF_Description_OperationDescription_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#Validate(CoreWCF.Description.OperationDescription)">IOperationBehavior.Validate(OperationDescription)</h4>
+  <div class="markdown level1 summary"><p>Implements the &lt;xref:CoreWCF.Web.WebGetAttribute.CoreWCF#Description#IOperationBehavior#Validate*&gt; method</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IOperationBehavior.Validate(OperationDescription operationDescription)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a></td>
+        <td><span class="parametername">operationDescription</span></td>
+        <td><p>The operation description</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Web_WebGetAttribute_CoreWCF_Description_IOperationBehavior_Validate_CoreWCF_Description_OperationDescription__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does nothing because the <a class="xref" href="CoreWCF.Web.WebGetAttribute.html">WebGetAttribute</a> attribute is a passive operation behavior.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Web_WebGetAttribute_CoreWCF_IOperationContractAttributeProvider_GetOperationContractAttribute_" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute*"></a>
+  <h4 id="CoreWCF_Web_WebGetAttribute_CoreWCF_IOperationContractAttributeProvider_GetOperationContractAttribute" data-uid="CoreWCF.Web.WebGetAttribute.CoreWCF#IOperationContractAttributeProvider#GetOperationContractAttribute">IOperationContractAttributeProvider.GetOperationContractAttribute()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">OperationContractAttribute IOperationContractAttributeProvider.GetOperationContractAttribute()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContractAttribute.html">OperationContractAttribute</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.IOperationContractAttributeProvider.html">IOperationContractAttributeProvider</a>
+  </div>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IOperationBehavior.html">IOperationBehavior</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

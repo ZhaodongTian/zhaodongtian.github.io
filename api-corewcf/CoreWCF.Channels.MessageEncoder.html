@@ -1,0 +1,890 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageEncoder
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageEncoder
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.MessageEncoder">
+  
+  
+  <h1 id="CoreWCF_Channels_MessageEncoder" data-uid="CoreWCF.Channels.MessageEncoder" class="text-break">Class MessageEncoder
+  </h1>
+  <div class="markdown level0 summary"><p>The encoder is the component that is used to write messages to a stream and to read messages from a stream.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">MessageEncoder</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_MessageEncoder_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MessageEncoder : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageEncoder_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p><a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> is a base class that provides implementations that support a Multipurpose Internet Mail Extensions (MIME) content type and message version, and defines the interface for the serialization and deserialization of messages according to that content type. Use it as a base class for writing your own custom encoder.</p>
+<p>Use this class if you want to implement a custom message encoder. To implement your own custom message encoder, you must provide custom implementations of the following abstract base classes:</p>
+<ul>
+<li><p><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html">MessageEncodingBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a></p>
+</li>
+</ul>
+<p>Override the <a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html#CoreWCF_Channels_MessageEncoderFactory_Encoder">Encoder</a> to return an instance of your custom <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a>. Then wire up your custom <a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a> to the binding element stack used to configure the service or client by overriding the <a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_CreateMessageEncoderFactory">CreateMessageEncoderFactory()</a> method to return an instance of this factory.</p>
+<p>The task of converting between the in-memory representation of a message and an XML Information Set (Infoset) representation that can be written to a stream is encapsulated within the <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> class, which most commonly serves as a factory for XML readers and XML writers that support specific types of XML encodings.</p>
+<p>The key methods on <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> are <a class="xref" href="CoreWCF.Channels.MessageEncoder.html#CoreWCF_Channels_MessageEncoder_WriteMessage_CoreWCF_Channels_Message_System_Int32_CoreWCF_Channels_BufferManager_">WriteMessage</a> and <a class="xref" href="CoreWCF.Channels.MessageEncoder.html#CoreWCF_Channels_MessageEncoder_ReadMessage_System_ArraySegment_System_Byte__CoreWCF_Channels_BufferManager_">ReadMessage</a>. <a class="xref" href="CoreWCF.Channels.MessageEncoder.html#CoreWCF_Channels_MessageEncoder_WriteMessage_CoreWCF_Channels_Message_System_Int32_CoreWCF_Channels_BufferManager_">WriteMessage</a> takes a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> object and writes it into a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> object. <a class="xref" href="CoreWCF.Channels.MessageEncoder.html#CoreWCF_Channels_MessageEncoder_ReadMessage_System_ArraySegment_System_Byte__CoreWCF_Channels_BufferManager_">ReadMessage</a> takes a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> object and a maximum header size and returns a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> object.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder__ctor_" data-uid="CoreWCF.Channels.MessageEncoder.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder__ctor" data-uid="CoreWCF.Channels.MessageEncoder.#ctor">MessageEncoder()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MessageEncoder()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ContentType_" data-uid="CoreWCF.Channels.MessageEncoder.ContentType*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ContentType" data-uid="CoreWCF.Channels.MessageEncoder.ContentType">ContentType</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the MIME content type used by the encoder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string ContentType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The content type that is supported by the message encoder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoder_ContentType_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The content type is a Multipurpose Internet Mail Exchange (MIME) header that appears at the beginning of a MIME message as well as within the separate body parts. Content-type headers are used to specify the media type and subtype of data in the body of a message and to fully specify the media type and subtype of data in the body of a message and to specify the character encoding (optional) of the data. An example of a MIME content type that can be supported: &quot;application/soap+xml; charset='utf8' &quot;.<br><br> A grammar that details the syntax of the content-type header is described in <a href="https://www.ietf.org/rfc/rfc2045.txt?number=2045">RFC 2045</a>, Section 5.1. <a href="https://www.ietf.org/rfc/rfc2046.txt?number=2046">RFC 2046</a> provides detailed information on MIME media types and their parameters.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_MediaType_" data-uid="CoreWCF.Channels.MessageEncoder.MediaType*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_MediaType" data-uid="CoreWCF.Channels.MessageEncoder.MediaType">MediaType</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the media type value that is used by the encoder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string MediaType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The media type that is supported by the message encoder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoder_MediaType_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The media type is part of the content-type header.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_MessageVersion_" data-uid="CoreWCF.Channels.MessageEncoder.MessageVersion*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_MessageVersion" data-uid="CoreWCF.Channels.MessageEncoder.MessageVersion">MessageVersion</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, gets the message version value that is used by the encoder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract MessageVersion MessageVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a> that is used by the encoder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoder_MessageVersion_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specifies the versions of SOAP and WS-Addressing associated with a message and its exchange. If SOAP versions are not to be used, this property should be overridden to return <a class="xref" href="CoreWCF.Channels.MessageVersion.html#CoreWCF_Channels_MessageVersion_None">None</a>.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_GetProperty_" data-uid="CoreWCF.Channels.MessageEncoder.GetProperty*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_GetProperty__1" data-uid="CoreWCF.Channels.MessageEncoder.GetProperty``1">GetProperty&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Returns a typed object requested, if present, from the appropriate layer in the channel stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual T GetProperty&lt;T&gt;()
+    where T : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The typed object T requested if it is present or null if it is not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The typed object for which the method is querying.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoder_GetProperty__1_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Use this to request a typed object such as an interface for setting properties or getting status from the appropriate layer in the channel stack. If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no channel layer supported the requested object, then the method returns null.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_IsCharSetSupported_" data-uid="CoreWCF.Channels.MessageEncoder.IsCharSetSupported*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_IsCharSetSupported_System_String_" data-uid="CoreWCF.Channels.MessageEncoder.IsCharSetSupported(System.String)">IsCharSetSupported(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool IsCharSetSupported(string charset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">charset</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_IsContentTypeSupported_" data-uid="CoreWCF.Channels.MessageEncoder.IsContentTypeSupported*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_IsContentTypeSupported_System_String_" data-uid="CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String)">IsContentTypeSupported(String)</h4>
+  <div class="markdown level1 summary"><p>Returns a value that indicates whether a specified message-level content-type value is supported by the message encoder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsContentTypeSupported(string contentType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contentType</span></td>
+        <td><p>The message-level content-type being tested.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the message-level content-type specified is supported; otherwise false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoder_IsContentTypeSupported_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is used to determine whether the message encoder can be used to read a particular style of message, based on its content-type. The information in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.mime.contenttype">ContentType</a> class is used to describe the data that is contained in a message and is used to determine if there is a content-type match.<br><br> A grammar that details the syntax of the content-type header is described in <a href="https://www.ietf.org/rfc/rfc2045.txt?number=2045">RFC 2045</a> Section 5.1. <a href="https://www.ietf.org/rfc/rfc2046.txt?number=2046">RFC 2046</a> provides detailed information on Multipurpose Internet Mail Extensions (MIME) media types and their parameters.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_IsContentTypeSupported_" data-uid="CoreWCF.Channels.MessageEncoder.IsContentTypeSupported*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_IsContentTypeSupported_System_String_System_String_System_String_" data-uid="CoreWCF.Channels.MessageEncoder.IsContentTypeSupported(System.String,System.String,System.String)">IsContentTypeSupported(String, String, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool IsContentTypeSupported(string contentType, string supportedContentType, string supportedMediaType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contentType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">supportedContentType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">supportedMediaType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ReadMessage_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessage*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ReadMessage_System_ArraySegment_System_Byte__CoreWCF_Channels_BufferManager_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager)">ReadMessage(ArraySegment&lt;Byte&gt;, BufferManager)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, reads a message from a specified buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Message ReadMessage(ArraySegment&lt;byte&gt; buffer, BufferManager bufferManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1">ArraySegment<t></t></a> of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a> that provides the buffer from which the message is deserialized.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a></td>
+        <td><span class="parametername">bufferManager</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a> that manages the buffer from which the message is deserialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> that is read from the buffer specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ReadMessage_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessage*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ReadMessage_System_ArraySegment_System_Byte__CoreWCF_Channels_BufferManager_System_String_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessage(System.ArraySegment{System.Byte},CoreWCF.Channels.BufferManager,System.String)">ReadMessage(ArraySegment&lt;Byte&gt;, BufferManager, String)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, reads a message from a specified stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Message ReadMessage(ArraySegment&lt;byte&gt; buffer, BufferManager bufferManager, string contentType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1">ArraySegment<t></t></a> of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a> that provides the buffer from which the message is deserialized.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a></td>
+        <td><span class="parametername">bufferManager</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a> that manages the buffer from which the message is deserialized.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contentType</span></td>
+        <td><p>The Multipurpose Internet Mail Extensions (MIME) message-level content-type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> that is read from the stream specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ReadMessageAsync_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessageAsync*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ReadMessageAsync_System_IO_Stream_System_Int32_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32)">ReadMessageAsync(Stream, Int32)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, reads a message from a specified stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Message&gt; ReadMessageAsync(Stream stream, int maxSizeOfHeaders)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> object from which the message is read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxSizeOfHeaders</span></td>
+        <td><p>The maximum size of the headers that can be read from the message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="CoreWCF.Channels.Message.html">Message</a>&gt;</td>
+        <td><p>The <a href="xref:System.Threading.Tasks.Task%7BCoreWCF.Channels.Message%7D">Message</a> that is read from the stream specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ReadMessageAsync_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessageAsync*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ReadMessageAsync_System_IO_Stream_System_Int32_System_String_" data-uid="CoreWCF.Channels.MessageEncoder.ReadMessageAsync(System.IO.Stream,System.Int32,System.String)">ReadMessageAsync(Stream, Int32, String)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, reads a message from a specified stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task&lt;Message&gt; ReadMessageAsync(Stream stream, int maxSizeOfHeaders, string contentType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> object from which the message is read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxSizeOfHeaders</span></td>
+        <td><p>The maximum size of the headers that can be read from the message.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">contentType</span></td>
+        <td><p>The Multipurpose Internet Mail Extensions (MIME) message-level content-type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="CoreWCF.Channels.Message.html">Message</a>&gt;</td>
+        <td><p>The <a href="xref:System.Threading.Tasks.Task%7BCoreWCF.Channels.Message%7D">Message</a> that is read from the stream specified.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ThrowIfMismatchedMessageVersion_" data-uid="CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ThrowIfMismatchedMessageVersion_CoreWCF_Channels_Message_" data-uid="CoreWCF.Channels.MessageEncoder.ThrowIfMismatchedMessageVersion(CoreWCF.Channels.Message)">ThrowIfMismatchedMessageVersion(Message)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void ThrowIfMismatchedMessageVersion(Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_ToString_" data-uid="CoreWCF.Channels.MessageEncoder.ToString*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_ToString" data-uid="CoreWCF.Channels.MessageEncoder.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns the content type that is used by the message encoder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The content type that is used by the message encoder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_WriteMessage_" data-uid="CoreWCF.Channels.MessageEncoder.WriteMessage*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_WriteMessage_CoreWCF_Channels_Message_System_Int32_CoreWCF_Channels_BufferManager_" data-uid="CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager)">WriteMessage(Message, Int32, BufferManager)</h4>
+  <div class="markdown level1 summary"><p>Writes a message less than a specified size to a byte array buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ArraySegment&lt;byte&gt; WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The Message to write to the message buffer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxMessageSize</span></td>
+        <td><p>The maximum message size that can be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a></td>
+        <td><span class="parametername">bufferManager</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a> that manages the buffer to which the message is written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><p>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1">ArraySegment<t></t></a> of type byte that provides the buffer to which the message is serialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_WriteMessage_" data-uid="CoreWCF.Channels.MessageEncoder.WriteMessage*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_WriteMessage_CoreWCF_Channels_Message_System_Int32_CoreWCF_Channels_BufferManager_System_Int32_" data-uid="CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)">WriteMessage(Message, Int32, BufferManager, Int32)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, writes a message of less than a specified size to a byte array buffer at the specified offset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract ArraySegment&lt;byte&gt; WriteMessage(Message message, int maxMessageSize, BufferManager bufferManager, int messageOffset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> to write to the message buffer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">maxMessageSize</span></td>
+        <td><p>The maximum message size that can be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a></td>
+        <td><span class="parametername">bufferManager</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BufferManager.html">BufferManager</a> that manages the buffer to which the message is written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><span class="parametername">messageOffset</span></td>
+        <td><p>The offset of the segment that begins from the start of the byte array that provides the buffer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.arraysegment-1">ArraySegment</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>&gt;</td>
+        <td><p>A <a href="https://learn.microsoft.com/en-us/dotnet/api/system.arraysegment-1?view=netframework-4.8.1">ArraySegment<t></t></a> of type byte that provides the buffer to which the message is serialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageEncoder_WriteMessage_CoreWCF_Channels_Message_System_Int32_CoreWCF_Channels_BufferManager_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is called by <a href="xerf:CoreWCF.Channels.MessageEncoder.WriteMessage(CoreWCF.Channels.Message,System.Int32,CoreWCF.Channels.BufferManager,System.Int32)">WriteMessage(Message, Int32, BufferManager, Int32)</a>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageEncoder_WriteMessageAsync_" data-uid="CoreWCF.Channels.MessageEncoder.WriteMessageAsync*"></a>
+  <h4 id="CoreWCF_Channels_MessageEncoder_WriteMessageAsync_CoreWCF_Channels_Message_System_IO_Stream_" data-uid="CoreWCF.Channels.MessageEncoder.WriteMessageAsync(CoreWCF.Channels.Message,System.IO.Stream)">WriteMessageAsync(Message, Stream)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, writes a message to a specified stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Task WriteMessageAsync(Message message, Stream stream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> to write to the stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> object to which the message is written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

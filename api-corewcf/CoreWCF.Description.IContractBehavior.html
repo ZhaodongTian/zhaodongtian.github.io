@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IContractBehavior
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IContractBehavior
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.IContractBehavior">
+  
+  
+  <h1 id="CoreWCF_Description_IContractBehavior" data-uid="CoreWCF.Description.IContractBehavior" class="text-break">Interface IContractBehavior
+  </h1>
+  <div class="markdown level0 summary"><p>Implements methods that can be used to extend run-time behavior for a contract in either a service or client application.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_IContractBehavior_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IContractBehavior</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_IContractBehavior_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Implement the &lt;xref:CoreWCF.Description.IContractBehavior&gt; interface to modify, examine, or extend some aspect of contract-wide execution at the application level. Unlike &lt;xref:CoreWCF.Description.IServiceBehavior&gt; and &lt;xref:CoreWCF.Description.IEndpointBehavior&gt; objects, &lt;xref:CoreWCF.Description.IContractBehavior&gt; objects cannot be added to the runtime using an application configuration file; they can only be added programmatically or using an attribute.</p>
+<p>For more information about choosing between service, endpoint, and contract behaviors, see <a href="/dotnet/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors">Configuring and Extending the Runtime with Behaviors</a>.</p>
+<ul>
+<li><p>Use the &lt;xref:CoreWCF.Description.IContractBehavior.AddBindingParameters%2A&gt; method to provide binding elements with custom data to support the behavior.</p>
+</li>
+<li><p>Use the &lt;xref:CoreWCF.Description.IContractBehavior.ApplyClientBehavior%2A&gt; method to modify, examine, or insert extensions to a contract in a client application.</p>
+</li>
+<li><p>Use the &lt;xref:CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior%2A&gt; method to modify, examine, or insert extensions to a contract in a service application.</p>
+</li>
+<li><p>Use the &lt;xref:CoreWCF.Description.IContractBehavior.Validate%2A&gt; method to ensure that a contract can support a particular feature.</p>
+</li>
+</ul>
+<p>&lt;xref:CoreWCF.Description.IContractBehavior&gt; objects can make use of any of these methods, but often only one is important; in such cases, the unused methods can return without any value.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>All of the &lt;xref:CoreWCF.Description.IContractBehavior&gt; methods pass &lt;xref:CoreWCF.Description.ContractDescription?displayProperty=nameWithType&gt; and &lt;xref:CoreWCF.Description.ServiceEndpoint?displayProperty=nameWithType&gt; as parameters. These parameters are for examination; if you modify the objects the execution behavior is undefined.</p>
+</div>
+<p>&lt;xref:CoreWCF.Description.IContractBehavior&gt; types can be used on either the service or the client, or both. To perform a customization task on the service, the &lt;xref:CoreWCF.Description.IContractBehavior&gt; object must be added to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A&gt; property prior to the construction of the service runtime, which occurs when the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType&gt; method is called on the &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType&gt; object. There are two ways to do this.</p>
+<p>The first method is to programmatically add the custom contract behavior to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A&gt; property prior to the point when the &lt;xref:CoreWCF.ICommunicationObject.Open%2A?displayProperty=nameWithType&gt; method is called on the &lt;xref:CoreWCF.ServiceHost?displayProperty=nameWithType&gt; object. When applied this way, the behavior is applied for all messages flowing through that contract on any endpoint.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The behavior is applied to all contracts of the same type. For example, if you programmatically add the same contract type to more than one endpoint, the behavior modifies all endpoints that refer to the same contract object.</p>
+</div>
+<p>The second method is to create a custom attribute that implements &lt;xref:CoreWCF.Description.IContractBehavior&gt; and apply that to:</p>
+<ul>
+<li><p>A contract interface. In this case, the behavior is applied to all contracts of that type in any endpoint.</p>
+</li>
+<li><p>A service class.  In this case, the behavior is applied to all endpoints regardless of contract.</p>
+</li>
+<li><p>A callback class.  In this case, the behavior is applied to the duplex client's endpoint.</p>
+</li>
+</ul>
+<p>The behavior of the second approach varies slightly if the custom attribute also implements &lt;xref:CoreWCF.Description.IContractBehaviorAttribute?displayProperty=nameWithType&gt;. In this case, the behavior is as follows:</p>
+<ul>
+<li><p>A contract interface. In this case, the behavior is applied to all contracts of that type in any endpoint and Windows Communication Foundation (WCF) ignores the value of the &lt;xref:CoreWCF.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType&gt; property.</p>
+</li>
+<li><p>A service class.  In this case, the behavior is applied only to endpoints the contract of which is the value of the &lt;xref:CoreWCF.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType&gt; property.</p>
+</li>
+<li><p>A callback class.  In this case, the behavior is applied to the duplex client's endpoint and WCF ignores the value of the &lt;xref:CoreWCF.Description.IContractBehaviorAttribute.TargetContract%2A?displayProperty=nameWithType&gt; property.</p>
+</li>
+</ul>
+<p>To perform the customization task on the client for which it is intended, the &lt;xref:CoreWCF.Description.IContractBehavior&gt; object must be added to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A&gt; property prior to the construction of the client runtime, which occurs when &lt;xref:CoreWCF.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType&gt; is called. There are two ways to do this:</p>
+<ul>
+<li><p>Programmatically add the custom contract behavior to the &lt;xref:CoreWCF.Description.ContractDescription.Behaviors%2A&gt; property prior to the point when the &lt;xref:CoreWCF.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType&gt; is called.</p>
+</li>
+<li><p>Create a custom attribute that also implements &lt;xref:CoreWCF.Description.IContractBehavior&gt;.</p>
+</li>
+</ul>
+<p>For more information on programmatically adding &lt;xref:CoreWCF.Description.IContractBehavior&gt; types to either the client or service application, see <a href="/dotnet/framework/wcf/extending/configuring-and-extending-the-runtime-with-behaviors">Configuring and Extending the Runtime with Behaviors</a>.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_IContractBehavior_AddBindingParameters_" data-uid="CoreWCF.Description.IContractBehavior.AddBindingParameters*"></a>
+  <h4 id="CoreWCF_Description_IContractBehavior_AddBindingParameters_CoreWCF_Description_ContractDescription_CoreWCF_Description_ServiceEndpoint_CoreWCF_Channels_BindingParameterCollection_" data-uid="CoreWCF.Description.IContractBehavior.AddBindingParameters(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Channels.BindingParameterCollection)">AddBindingParameters(ContractDescription, ServiceEndpoint, BindingParameterCollection)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void AddBindingParameters(ContractDescription contractDescription, ServiceEndpoint endpoint, BindingParameterCollection bindingParameters)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td><span class="parametername">contractDescription</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingParameterCollection.html">BindingParameterCollection</a></td>
+        <td><span class="parametername">bindingParameters</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_IContractBehavior_ApplyClientBehavior_" data-uid="CoreWCF.Description.IContractBehavior.ApplyClientBehavior*"></a>
+  <h4 id="CoreWCF_Description_IContractBehavior_ApplyClientBehavior_CoreWCF_Description_ContractDescription_CoreWCF_Description_ServiceEndpoint_CoreWCF_Dispatcher_ClientRuntime_" data-uid="CoreWCF.Description.IContractBehavior.ApplyClientBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.ClientRuntime)">ApplyClientBehavior(ContractDescription, ServiceEndpoint, ClientRuntime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ApplyClientBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, ClientRuntime clientRuntime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td><span class="parametername">contractDescription</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.ClientRuntime.html">ClientRuntime</a></td>
+        <td><span class="parametername">clientRuntime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_IContractBehavior_ApplyDispatchBehavior_" data-uid="CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior*"></a>
+  <h4 id="CoreWCF_Description_IContractBehavior_ApplyDispatchBehavior_CoreWCF_Description_ContractDescription_CoreWCF_Description_ServiceEndpoint_CoreWCF_Dispatcher_DispatchRuntime_" data-uid="CoreWCF.Description.IContractBehavior.ApplyDispatchBehavior(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint,CoreWCF.Dispatcher.DispatchRuntime)">ApplyDispatchBehavior(ContractDescription, ServiceEndpoint, DispatchRuntime)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ApplyDispatchBehavior(ContractDescription contractDescription, ServiceEndpoint endpoint, DispatchRuntime dispatchRuntime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td><span class="parametername">contractDescription</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchRuntime.html">DispatchRuntime</a></td>
+        <td><span class="parametername">dispatchRuntime</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_IContractBehavior_Validate_" data-uid="CoreWCF.Description.IContractBehavior.Validate*"></a>
+  <h4 id="CoreWCF_Description_IContractBehavior_Validate_CoreWCF_Description_ContractDescription_CoreWCF_Description_ServiceEndpoint_" data-uid="CoreWCF.Description.IContractBehavior.Validate(CoreWCF.Description.ContractDescription,CoreWCF.Description.ServiceEndpoint)">Validate(ContractDescription, ServiceEndpoint)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Validate(ContractDescription contractDescription, ServiceEndpoint endpoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td><span class="parametername">contractDescription</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ServiceEndpoint.html">ServiceEndpoint</a></td>
+        <td><span class="parametername">endpoint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,883 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class X509SecurityTokenHandler
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class X509SecurityTokenHandler
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler">
+  
+  
+  <h1 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler" class="text-break">Class X509SecurityTokenHandler
+  </h1>
+  <div class="markdown level0 summary"><p>SecurityTokenHandler for X509SecurityToken. By default, the
+handler will do chain-trust validation of the Certificate.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html">SecurityTokenHandler</a></div>
+    <div class="level2"><span class="xref">X509SecurityTokenHandler</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CanReadToken_System_String_">SecurityTokenHandler.CanReadToken(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_ReadToken_System_Xml_XmlReader_CoreWCF_IdentityModel_Selectors_SecurityTokenResolver_">SecurityTokenHandler.ReadToken(XmlReader, SecurityTokenResolver)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_ReadToken_System_String_">SecurityTokenHandler.ReadToken(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_WriteToken_CoreWCF_IdentityModel_Tokens_SecurityToken_">SecurityTokenHandler.WriteToken(SecurityToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CreateToken_CoreWCF_IdentityModel_Tokens_SecurityTokenDescriptor_">SecurityTokenHandler.CreateToken(SecurityTokenDescriptor)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CreateSecurityTokenReference_CoreWCF_IdentityModel_Tokens_SecurityToken_System_Boolean_">SecurityTokenHandler.CreateSecurityTokenReference(SecurityToken, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_DetectReplayedToken_CoreWCF_IdentityModel_Tokens_SecurityToken_">SecurityTokenHandler.DetectReplayedToken(SecurityToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_Configuration">SecurityTokenHandler.Configuration</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_ContainingCollection">SecurityTokenHandler.ContainingCollection</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.IdentityModel.Tokens.html">CoreWCF.IdentityModel.Tokens</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class X509SecurityTokenHandler : SecurityTokenHandler</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor">X509SecurityTokenHandler()</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.html">X509SecurityTokenHandler</a>. MapToWindows is defaulted to false.
+Uses <a class="xref" href="CoreWCF.IdentityModel.Selectors.X509CertificateValidator.html#CoreWCF_IdentityModel_Selectors_X509CertificateValidator_PeerOrChainTrust">PeerOrChainTrust</a> as the default certificate validator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public X509SecurityTokenHandler()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_CoreWCF_IdentityModel_Selectors_X509CertificateValidator_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor(CoreWCF.IdentityModel.Selectors.X509CertificateValidator)">X509SecurityTokenHandler(X509CertificateValidator)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.html">X509SecurityTokenHandler</a> with an X509 certificate validator.
+MapToWindows is to false by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public X509SecurityTokenHandler(X509CertificateValidator certificateValidator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Selectors.X509CertificateValidator.html">X509CertificateValidator</a></td>
+        <td><span class="parametername">certificateValidator</span></td>
+        <td><p>The certificate validator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_System_Boolean_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor(System.Boolean)">X509SecurityTokenHandler(Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.html">X509SecurityTokenHandler</a>. Uses <a class="xref" href="CoreWCF.IdentityModel.Selectors.X509CertificateValidator.html#CoreWCF_IdentityModel_Selectors_X509CertificateValidator_PeerOrChainTrust">PeerOrChainTrust</a>
+as the default certificate validator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public X509SecurityTokenHandler(bool mapToWindows)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mapToWindows</span></td>
+        <td><p>Boolean to indicate if the certificate should be mapped to a
+windows account. Default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler__ctor_System_Boolean_CoreWCF_IdentityModel_Selectors_X509CertificateValidator_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.#ctor(System.Boolean,CoreWCF.IdentityModel.Selectors.X509CertificateValidator)">X509SecurityTokenHandler(Boolean, X509CertificateValidator)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.html">X509SecurityTokenHandler</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public X509SecurityTokenHandler(bool mapToWindows, X509CertificateValidator certificateValidator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mapToWindows</span></td>
+        <td><p>Boolean to indicate if the certificate should be mapped to a windows account.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Selectors.X509CertificateValidator.html">X509CertificateValidator</a></td>
+        <td><span class="parametername">certificateValidator</span></td>
+        <td><p>The certificate validator.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanValidateToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanValidateToken*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanValidateToken" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanValidateToken">CanValidateToken</h4>
+  <div class="markdown level1 summary"><p>Gets a boolean indicating if the handler can validate tokens.
+Returns true by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanValidateToken { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CanValidateToken">SecurityTokenHandler.CanValidateToken</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanWriteToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanWriteToken*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanWriteToken" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanWriteToken">CanWriteToken</h4>
+  <div class="markdown level1 summary"><p>Gets a boolean indicating if the handler can write tokens.
+Returns true by default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanWriteToken { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CanWriteToken">SecurityTokenHandler.CanWriteToken</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CertificateValidator_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CertificateValidator*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CertificateValidator" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CertificateValidator">CertificateValidator</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the X509CeritificateValidator that is used by the current instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public X509CertificateValidator CertificateValidator { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Selectors.X509CertificateValidator.html">X509CertificateValidator</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_MapToWindows_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.MapToWindows*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_MapToWindows" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.MapToWindows">MapToWindows</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether if the validating token should be mapped to a
+Windows account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MapToWindows { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_TokenType_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.TokenType*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_TokenType" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.TokenType">TokenType</h4>
+  <div class="markdown level1 summary"><p>Gets X509SecurityToken type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Type TokenType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_TokenType">SecurityTokenHandler.TokenType</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_WriteXmlDSigDefinedClauseTypes_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.WriteXmlDSigDefinedClauseTypes*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_WriteXmlDSigDefinedClauseTypes" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.WriteXmlDSigDefinedClauseTypes">WriteXmlDSigDefinedClauseTypes</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether XmlDsig defined clause types are
+preferred. Supported XmlDSig defined SecurityKeyIdentifierClause types
+are,</p>
+<ol>
+<li>X509IssuerSerial</li>
+<li>X509SKI</li>
+<li>X509Certificate</li>
+</ol>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool WriteXmlDSigDefinedClauseTypes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanReadKeyIdentifierClause_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanReadKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanReadKeyIdentifierClause_System_Xml_XmlReader_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanReadKeyIdentifierClause(System.Xml.XmlReader)">CanReadKeyIdentifierClause(XmlReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanReadKeyIdentifierClause(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlreader">XmlReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CanReadKeyIdentifierClause_System_Xml_XmlReader_">SecurityTokenHandler.CanReadKeyIdentifierClause(XmlReader)</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanReadToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanReadToken*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanReadToken_System_Xml_XmlReader_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanReadToken(System.Xml.XmlReader)">CanReadToken(XmlReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanReadToken(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlreader">XmlReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CanReadToken_System_Xml_XmlReader_">SecurityTokenHandler.CanReadToken(XmlReader)</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanWriteKeyIdentifierClause_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanWriteKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_CanWriteKeyIdentifierClause_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.CanWriteKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)">CanWriteKeyIdentifierClause(SecurityKeyIdentifierClause)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanWriteKeyIdentifierClause(SecurityKeyIdentifierClause securityKeyIdentifierClause)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.SecurityKeyIdentifierClause.html">SecurityKeyIdentifierClause</a></td>
+        <td><span class="parametername">securityKeyIdentifierClause</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_CanWriteKeyIdentifierClause_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_">SecurityTokenHandler.CanWriteKeyIdentifierClause(SecurityKeyIdentifierClause)</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_GetTokenTypeIdentifiers_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.GetTokenTypeIdentifiers*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_GetTokenTypeIdentifiers" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.GetTokenTypeIdentifiers">GetTokenTypeIdentifiers()</h4>
+  <div class="markdown level1 summary"><p>Gets the X.509 Security Token Type defined in WS-Security X.509 Token profile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string[] GetTokenTypeIdentifiers()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><p>The token type identifier.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_GetTokenTypeIdentifiers">SecurityTokenHandler.GetTokenTypeIdentifiers()</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_ReadKeyIdentifierClause_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.ReadKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_ReadKeyIdentifierClause_System_Xml_XmlReader_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.ReadKeyIdentifierClause(System.Xml.XmlReader)">ReadKeyIdentifierClause(XmlReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override SecurityKeyIdentifierClause ReadKeyIdentifierClause(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlreader">XmlReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.SecurityKeyIdentifierClause.html">SecurityKeyIdentifierClause</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_ReadKeyIdentifierClause_System_Xml_XmlReader_">SecurityTokenHandler.ReadKeyIdentifierClause(XmlReader)</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_ReadToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.ReadToken*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_ReadToken_System_Xml_XmlReader_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.ReadToken(System.Xml.XmlReader)">ReadToken(XmlReader)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override SecurityToken ReadToken(XmlReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlreader">XmlReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_ReadToken_System_Xml_XmlReader_">SecurityTokenHandler.ReadToken(XmlReader)</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_ValidateToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.ValidateToken*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_ValidateToken_CoreWCF_IdentityModel_Tokens_SecurityToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.ValidateToken(CoreWCF.IdentityModel.Tokens.SecurityToken)">ValidateToken(SecurityToken)</h4>
+  <div class="markdown level1 summary"><p>Validates an <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityToken.html">X509SecurityToken</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ReadOnlyCollection&lt;ClaimsIdentity&gt; ValidateToken(SecurityToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityToken.html">X509SecurityToken</a> to validate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsidentity">ClaimsIdentity</a>&gt;</td>
+        <td><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection&lt;T&gt;</a> of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsidentity">ClaimsIdentity</a> representing the identities contained in the token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_ValidateToken_CoreWCF_IdentityModel_Tokens_SecurityToken_">SecurityTokenHandler.ValidateToken(SecurityToken)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>The parameter 'token' is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The token is not assignable from <a class="xref" href="CoreWCF.IdentityModel.Tokens.X509SecurityToken.html">X509SecurityToken</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Configuration <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.html">SecurityTokenHandlerConfiguration</a>is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenValidationException.html">SecurityTokenValidationException</a></td>
+        <td><p>The current <a class="xref" href="CoreWCF.IdentityModel.Selectors.X509CertificateValidator.html">X509CertificateValidator</a> was unable to validate the certificate in the Token.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></td>
+        <td><p>Configuration.IssuerNameRegistry is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenException.html">SecurityTokenException</a></td>
+        <td><p>Configuration.IssuerNameRegistry return null when resolving the issuer of the certificate in the Token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_WriteKeyIdentifierClause_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.WriteKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_WriteKeyIdentifierClause_System_Xml_XmlWriter_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.WriteKeyIdentifierClause(System.Xml.XmlWriter,CoreWCF.IdentityModel.SecurityKeyIdentifierClause)">WriteKeyIdentifierClause(XmlWriter, SecurityKeyIdentifierClause)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteKeyIdentifierClause(XmlWriter writer, SecurityKeyIdentifierClause securityKeyIdentifierClause)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.SecurityKeyIdentifierClause.html">SecurityKeyIdentifierClause</a></td>
+        <td><span class="parametername">securityKeyIdentifierClause</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_WriteKeyIdentifierClause_System_Xml_XmlWriter_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_">SecurityTokenHandler.WriteKeyIdentifierClause(XmlWriter, SecurityKeyIdentifierClause)</a></div>
+  
+  
+  <a id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_WriteToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.WriteToken*"></a>
+  <h4 id="CoreWCF_IdentityModel_Tokens_X509SecurityTokenHandler_WriteToken_System_Xml_XmlWriter_CoreWCF_IdentityModel_Tokens_SecurityToken_" data-uid="CoreWCF.IdentityModel.Tokens.X509SecurityTokenHandler.WriteToken(System.Xml.XmlWriter,CoreWCF.IdentityModel.Tokens.SecurityToken)">WriteToken(XmlWriter, SecurityToken)</h4>
+  <div class="markdown level1 summary"><p>Writes the X509SecurityToken to the given XmlWriter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteToken(XmlWriter writer, SecurityToken token)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>XmlWriter to write the token into.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td><p>The SecurityToken of type X509SecurityToken to be written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityTokenHandler.html#CoreWCF_IdentityModel_Tokens_SecurityTokenHandler_WriteToken_System_Xml_XmlWriter_CoreWCF_IdentityModel_Tokens_SecurityToken_">SecurityTokenHandler.WriteToken(XmlWriter, SecurityToken)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>The parameter 'writer' or 'token' is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>The token is not of type X509SecurityToken.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

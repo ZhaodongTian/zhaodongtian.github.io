@@ -1,0 +1,760 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BinaryMessageEncodingBindingElement
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BinaryMessageEncodingBindingElement
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement">
+  
+  
+  <h1 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement" class="text-break">Class BinaryMessageEncodingBindingElement
+  </h1>
+  <div class="markdown level0 summary"><p>The binding element that specifies the .NET Binary Format for XML used to encode messages.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></div>
+    <div class="level2"><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html">MessageEncodingBindingElement</a></div>
+    <div class="level3"><span class="xref">BinaryMessageEncodingBindingElement</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.Description.IWsdlExportExtension.html">IWsdlExportExtension</a></div>
+    <div><a class="xref" href="CoreWCF.Description.IPolicyExportExtension.html">IPolicyExportExtension</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_CheckEncodingVersion_CoreWCF_EnvelopeVersion_">MessageEncodingBindingElement.CheckEncodingVersion(EnvelopeVersion)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_CanBuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_">BindingElement.CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BinaryMessageEncodingBindingElement : MessageEncodingBindingElement, IWsdlExportExtension, IPolicyExportExtension</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Encoding is the process of transforming a message into a sequence of bytes. Decoding is the reverse process. Windows Communication Foundation (WCF) includes three types of encoding for SOAP messages: Text, Binary and Message Transmission Optimization Mechanism (MTOM).<br><br> <a class="xref" href="CoreWCF.Channels.BinaryMessageEncodingBindingElement.html">BinaryMessageEncodingBindingElement</a> is the binding element that specifies that the .NET Binary Format for XML should be used for encoding messages. It has options to specify the character encoding and the SOAP and WS-Addressing version to be used. Binary encoding is the most efficient but least interoperable of the encoding options.<br><br> For more information about the binding element that specifies messages are encoded using a textual representation of XML, see <a class="xref" href="CoreWCF.Channels.TextMessageEncodingBindingElement.html">TextMessageEncodingBindingElement</a>.<br><br> For more information about the binding element that specifies messages are encoded using the MTOM message encoding, see <a class="xref" href="CoreWCF.Channels.MtomMessageEncodingBindingElement.html">MtomMessageEncodingBindingElement</a>.<br><br>To implement a custom message encoder, use the <a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html">MessageEncodingBindingElement</a> class.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement__ctor_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement__ctor" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.#ctor">BinaryMessageEncodingBindingElement()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.BinaryMessageEncodingBindingElement.html">BinaryMessageEncodingBindingElement</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BinaryMessageEncodingBindingElement()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CompressionFormat_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CompressionFormat" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CompressionFormat">CompressionFormat</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the compression format for the binding element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressionFormat CompressionFormat { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.CompressionFormat.html">CompressionFormat</a></td>
+        <td><p>The compression format for the binding element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxReadPoolSize_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxReadPoolSize" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxReadPoolSize">MaxReadPoolSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum number of XML readers that are allocated to a pool and are ready for use to process incoming messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxReadPoolSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The maximum number of readers to be kept in the pool. The default value is 64 readers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxReadPoolSize_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of incoming messages because it is able to use readers from the pool are already created instead of having to create new ones.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxSessionSize_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxSessionSize" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize">MaxSessionSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum amount of memory available within a session for optimizing transmission procedures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxSessionSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The maximum size, in bytes, of a session. The default value is 2048 bytes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxSessionSize_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The .NET Binary Format for XML can optimize the transmission of strings when they are used in multiple messages within a session. Once a string is sent in a message, additional messages that contain that string can refer to it using only the string's ID. This requires that the strings and their IDs be stored in memory. This allows the ID to be retransmitted in subsequent messages instead of the entire string. This lookup increases the efficiency of message transmission when using the binary format. The <a class="xref" href="CoreWCF.Channels.BinaryMessageEncodingBindingElement.html#CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxSessionSize">MaxSessionSize</a> gets and sets the maximum amount of memory that is allocated to store these strings.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxWritePoolSize_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxWritePoolSize" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MaxWritePoolSize">MaxWritePoolSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum number of XML writers that are allocated to a pool and are ready for use to process outgoing messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxWritePoolSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The maximum number of writers to be kept in the pool. The default value is 16 writers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MaxWritePoolSize_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Increasing this number increases memory consumption, but prepares the encoder to deal with sudden bursts of outgoing messages because it is able to use writers from the pool that are already created instead of having to create new ones.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MessageVersion_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MessageVersion" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.MessageVersion">MessageVersion</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the SOAP message and WS-Addressing versions that are used or expected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MessageVersion MessageVersion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a> that is used or expected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_MessageVersion">MessageEncodingBindingElement.MessageVersion</a></div>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_MessageVersion_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Specifies the versions of SOAP and WS-Addressing associated with a message and its exchange.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ReaderQuotas_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ReaderQuotas" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.ReaderQuotas">ReaderQuotas</h4>
+  <div class="markdown level1 summary"><p>Gets or sets constraints on the complexity of XML messages that can be processed by endpoints configured with this binding element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public XmlDictionaryReaderQuotas ReaderQuotas { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionaryreaderquotas">XmlDictionaryReaderQuotas</a></td>
+        <td><p>The <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlDictionaryReaderQuotas</a> that specifies the complexity constraints on SOAP messages exchanged. The default values for these constraints are provided in the following remarks section.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ReaderQuotas_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The complexity constraints protect against a class of denial of service (DOS) attacks that attempt to use message complexity to tie up endpoint processing resources. The properties that express these constraints and their default values are as follows:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxdepth?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">MaxDepth</a> = 32
+<br><br></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxstringcontentlength?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">MaxStringContentLength</a> = 8192
+<br><br></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxarraylength?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">MaxArrayLength</a> = 16384
+<br><br></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxbytesperread?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">MaxBytesPerRead</a> = 4096
+<br><br></li>
+<li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionaryreaderquotas.maxnametablecharcount?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">MaxNameTableCharCount</a> = 16384</li>
+</ul>
+<p>This property has a public setter since .NET Framework 4.0.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_BuildServiceDispatcher_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_BuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.BuildServiceDispatcher``1(CoreWCF.Channels.BindingContext,CoreWCF.Configuration.IServiceDispatcher)">BuildServiceDispatcher&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IServiceDispatcher BuildServiceDispatcher&lt;TChannel&gt;(BindingContext context, IServiceDispatcher innerDispatcher)
+
+    where TChannel : class, IChannel</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td><span class="parametername">innerDispatcher</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Configuration.IServiceDispatcher.html">IServiceDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TChannel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_BuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_">BindingElement.BuildServiceDispatcher&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</a></div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_Clone_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_Clone" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="CoreWCF.Channels.BinaryMessageEncodingBindingElement.html">BinaryMessageEncodingBindingElement</a> object initialized from the current one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override BindingElement Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.BinaryMessageEncodingBindingElement.html">BinaryMessageEncodingBindingElement</a> object with property values equal to those of the current element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_Clone">BindingElement.Clone()</a></div>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_Clone_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This creates a complete copy of the current binding element object tree, also called a deep clone. A deep clone of an object creates a copy of the object and a copy of everything directly or indirectly referenced by that object. (This can also be described as copying the entire object graph.) Returning a deep clone enables the runtime to support the case in which multiple custom bindings share a custom binding element. If a deep clone is not returned, the runtime behavior is undefined.<br><br> A shallow clone of an object, by contrast, is a copy of the object only. If the object contains references to other objects, the shallow copy does not create copies of the referred objects; instead, it copies only the references to the original objects.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CreateMessageEncoderFactory_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CreateMessageEncoderFactory" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CreateMessageEncoderFactory">CreateMessageEncoderFactory()</h4>
+  <div class="markdown level1 summary"><p>Creates a factory for binary message encoders that employ the SOAP and WS-Addressing versions and the character encoding specified by the current encoding binding element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override MessageEncoderFactory CreateMessageEncoderFactory()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.MessageEncoderFactory.html">MessageEncoderFactory</a> that this binding element creates.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_CreateMessageEncoderFactory">MessageEncodingBindingElement.CreateMessageEncoderFactory()</a></div>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CreateMessageEncoderFactory_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> objects that the factory produces can read and write messages using the binary message encoding.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_GetProperty_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)">GetProperty&lt;T&gt;(BindingContext)</h4>
+  <div class="markdown level1 summary"><p>Returns a typed object requested, if present, from the appropriate layer in the binding element stack.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override T GetProperty&lt;T&gt;(BindingContext context)
+
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a> for the binding element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The typed object T requested if it is present or null if it is not.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The typed object for which the method is querying.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_">MessageEncodingBindingElement.GetProperty&lt;T&gt;(BindingContext)</a></div>
+  <h5 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Use this to request a typed object for setting properties or getting status from the appropriate layer in the binding element stack. If a layer supports returning the requested object, it returns it. If not, it delegates the call down to the next layer in the stack. If it gets to the bottom of the stack and no binding element layer supported the requested object, then the method returns null.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_IsMatch_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_IsMatch_CoreWCF_Channels_BindingElement_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.IsMatch(CoreWCF.Channels.BindingElement)">IsMatch(BindingElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsMatch(BindingElement b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></td>
+        <td><span class="parametername">b</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageEncodingBindingElement.html#CoreWCF_Channels_MessageEncodingBindingElement_IsMatch_CoreWCF_Channels_BindingElement_">MessageEncodingBindingElement.IsMatch(BindingElement)</a></div>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ShouldSerializeMessageVersion_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ShouldSerializeMessageVersion" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeMessageVersion">ShouldSerializeMessageVersion()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializeMessageVersion()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ShouldSerializeReaderQuotas_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_ShouldSerializeReaderQuotas" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.ShouldSerializeReaderQuotas">ShouldSerializeReaderQuotas()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ShouldSerializeReaderQuotas()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CoreWCF_Description_IPolicyExportExtension_ExportPolicy_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CoreWCF_Description_IPolicyExportExtension_ExportPolicy_CoreWCF_Description_MetadataExporter_CoreWCF_Description_PolicyConversionContext_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IPolicyExportExtension#ExportPolicy(CoreWCF.Description.MetadataExporter,CoreWCF.Description.PolicyConversionContext)">IPolicyExportExtension.ExportPolicy(MetadataExporter, PolicyConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IPolicyExportExtension.ExportPolicy(MetadataExporter exporter, PolicyConversionContext policyContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.MetadataExporter.html">MetadataExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.PolicyConversionContext.html">PolicyConversionContext</a></td>
+        <td><span class="parametername">policyContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CoreWCF_Description_IWsdlExportExtension_ExportContract_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CoreWCF_Description_IWsdlExportExtension_ExportContract_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlContractConversionContext_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportContract(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlContractConversionContext)">IWsdlExportExtension.ExportContract(WsdlExporter, WsdlContractConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IWsdlExportExtension.ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlContractConversionContext.html">WsdlContractConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CoreWCF_Description_IWsdlExportExtension_ExportEndpoint_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint*"></a>
+  <h4 id="CoreWCF_Channels_BinaryMessageEncodingBindingElement_CoreWCF_Description_IWsdlExportExtension_ExportEndpoint_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlEndpointConversionContext_" data-uid="CoreWCF.Channels.BinaryMessageEncodingBindingElement.CoreWCF#Description#IWsdlExportExtension#ExportEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext)">IWsdlExportExtension.ExportEndpoint(WsdlExporter, WsdlEndpointConversionContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IWsdlExportExtension.ExportEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext context)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlEndpointConversionContext.html">WsdlEndpointConversionContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IWsdlExportExtension.html">IWsdlExportExtension</a>
+  </div>
+  <div>
+      <a class="xref" href="CoreWCF.Description.IPolicyExportExtension.html">IPolicyExportExtension</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1208 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageHeader
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageHeader
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.MessageHeader">
+  
+  
+  <h1 id="CoreWCF_Channels_MessageHeader" data-uid="CoreWCF.Channels.MessageHeader" class="text-break">Class MessageHeader
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the content of a SOAP header.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html">MessageHeaderInfo</a></div>
+    <div class="level2"><span class="xref">MessageHeader</span></div>
+      <div class="level3"><a class="xref" href="CoreWCF.Channels.DictionaryHeader.html">DictionaryHeader</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html#CoreWCF_Channels_MessageHeaderInfo_Name">MessageHeaderInfo.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html#CoreWCF_Channels_MessageHeaderInfo_Namespace">MessageHeaderInfo.Namespace</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_MessageHeader_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MessageHeader : MessageHeaderInfo</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageHeader_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A message header contains optional metadata that describe a message encapsulated by the <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> class.</p>
+<p>A <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> can have zero or more headers that are used as an extension mechanism to pass information in messages that are application-specific. You can use <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_Headers_">Headers</a> to add message headers to a message by calling the <a class="xref" href="CoreWCF.Channels.MessageHeaders.html#CoreWCF_Channels_MessageHeaders_Add_">Add</a> method.</p>
+<p>Windows Communication Foundation (WCF) provides a number of predefined message headers, as shown in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Header Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>To</td>
+<td>Contains the role that the message is targeting.</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>Provides a description of how the message should be processed.</td>
+</tr>
+<tr>
+<td>FaultTo</td>
+<td>Contains the address of the node to which faults should be sent.</td>
+</tr>
+<tr>
+<td>From</td>
+<td>Contains the address of the node that sent the message.</td>
+</tr>
+<tr>
+<td>Request</td>
+<td>Indicates whether the message is a request.</td>
+</tr>
+<tr>
+<td>MessageID</td>
+<td>Contains the unique ID of the message.</td>
+</tr>
+<tr>
+<td>RelatesTo</td>
+<td>Contains the IDs of messages that are related to this message.</td>
+</tr>
+<tr>
+<td>ReplyTo</td>
+<td>Contains the address of the node to which a reply should be sent for a request.</td>
+</tr>
+</tbody>
+</table>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader__ctor_" data-uid="CoreWCF.Channels.MessageHeader.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader__ctor" data-uid="CoreWCF.Channels.MessageHeader.#ctor">MessageHeader()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MessageHeader()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_Actor_" data-uid="CoreWCF.Channels.MessageHeader.Actor*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_Actor" data-uid="CoreWCF.Channels.MessageHeader.Actor">Actor</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the targeted recipient of the message header.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Actor { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The targeted recipient of the message header. The default is an empty string (&quot;&quot;).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html#CoreWCF_Channels_MessageHeaderInfo_Actor">MessageHeaderInfo.Actor</a></div>
+  <h5 id="CoreWCF_Channels_MessageHeader_Actor_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If this property is empty, the header is interpreted as targeted for the ultimate recipient of the message.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_IsReferenceParameter_" data-uid="CoreWCF.Channels.MessageHeader.IsReferenceParameter*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_IsReferenceParameter" data-uid="CoreWCF.Channels.MessageHeader.IsReferenceParameter">IsReferenceParameter</h4>
+  <div class="markdown level1 summary"><p>Gets a value that specifies whether this message header contains reference parameters of an endpoint reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsReferenceParameter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if this message header contains reference parameters of an endpoint reference; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html#CoreWCF_Channels_MessageHeaderInfo_IsReferenceParameter">MessageHeaderInfo.IsReferenceParameter</a></div>
+  <h5 id="CoreWCF_Channels_MessageHeader_IsReferenceParameter_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>A reference parameter corresponds to the <referenceparameters> element described in the <a href="https://www.w3.org/Submission/ws-addressing/">WS-Addressing specification</a>.<p>
+</referenceparameters></div>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_MustUnderstand_" data-uid="CoreWCF.Channels.MessageHeader.MustUnderstand*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_MustUnderstand" data-uid="CoreWCF.Channels.MessageHeader.MustUnderstand">MustUnderstand</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that indicates whether the header must be understood, according to SOAP 1.1/1.2 specification.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool MustUnderstand { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the header must be understood; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html#CoreWCF_Channels_MessageHeaderInfo_MustUnderstand">MessageHeaderInfo.MustUnderstand</a></div>
+  <h5 id="CoreWCF_Channels_MessageHeader_MustUnderstand_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If this property is true and the message receiver cannot interpret the message header, the message is not processed and an exception is thrown. If this property is false, the receiver can ignore the message header and continue processing.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_Relay_" data-uid="CoreWCF.Channels.MessageHeader.Relay*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_Relay" data-uid="CoreWCF.Channels.MessageHeader.Relay">Relay</h4>
+  <div class="markdown level1 summary"><p>Gets a value that indicates whether the header should be relayed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Relay { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the header should be relayed; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.MessageHeaderInfo.html#CoreWCF_Channels_MessageHeaderInfo_Relay">MessageHeaderInfo.Relay</a></div>
+  <h5 id="CoreWCF_Channels_MessageHeader_Relay_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>According to SOAP 1.1 spec, this value is always false.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object)">CreateHeader(String, String, Object)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Boolean_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean)">CreateHeader(String, String, Object, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mustUnderstand</span></td>
+        <td><p>A value that indicates whether the header must be understood.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Boolean_System_String_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String)">CreateHeader(String, String, Object, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand, string actor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mustUnderstand</span></td>
+        <td><p>A value that indicates whether the header must be understood.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">actor</span></td>
+        <td><p>The targeted recipient of the message header.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Boolean_System_String_System_Boolean_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Boolean,System.String,System.Boolean)">CreateHeader(String, String, Object, Boolean, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, bool mustUnderstand, string actor, bool relay)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mustUnderstand</span></td>
+        <td><p>A value that indicates whether the header must be understood.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">actor</span></td>
+        <td><p>The targeted recipient of the message header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">relay</span></td>
+        <td><p>A value that indicates whether the header should be relayed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Runtime_Serialization_XmlObjectSerializer_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer)">CreateHeader(String, String, Object, XmlObjectSerializer)</h4>
+  <div class="markdown level1 summary"><p>Creates a header from an object to be serialized using the XmlFormatter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlObjectSerializer</a> that is used to serialize the header.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Runtime_Serialization_XmlObjectSerializer_System_Boolean_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean)">CreateHeader(String, String, Object, XmlObjectSerializer, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer, bool mustUnderstand)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlObjectSerializer</a> that is used to serialize the header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mustUnderstand</span></td>
+        <td><p>A value that indicates whether the header must be understood.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Runtime_Serialization_XmlObjectSerializer_System_Boolean_System_String_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String)">CreateHeader(String, String, Object, XmlObjectSerializer, Boolean, String)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer, bool mustUnderstand, string actor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlObjectSerializer</a> that is used to serialize the header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mustUnderstand</span></td>
+        <td><p>A value that indicates whether the header must be understood.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">actor</span></td>
+        <td><p>The targeted recipient of the message header.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_CreateHeader_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_CreateHeader_System_String_System_String_System_Object_System_Runtime_Serialization_XmlObjectSerializer_System_Boolean_System_String_System_Boolean_" data-uid="CoreWCF.Channels.MessageHeader.CreateHeader(System.String,System.String,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.Boolean,System.String,System.Boolean)">CreateHeader(String, String, Object, XmlObjectSerializer, Boolean, String, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Creates a new message header with the specified data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static MessageHeader CreateHeader(string name, string ns, object value, XmlObjectSerializer serializer, bool mustUnderstand, string actor, bool relay)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The local name of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace URI of the header XML element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The content of the header to be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.xmlobjectserializer">XmlObjectSerializer</a></td>
+        <td><span class="parametername">serializer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.runtime.serialization.xmlobjectserializer?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlObjectSerializer</a> that is used to serialize the header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">mustUnderstand</span></td>
+        <td><p>A value that indicates whether the header must be understood.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">actor</span></td>
+        <td><p>The targeted recipient of the message header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><span class="parametername">relay</span></td>
+        <td><p>A value that indicates whether the header should be relayed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a></td>
+        <td><p>A new <a class="xref" href="CoreWCF.Channels.MessageHeader.html">MessageHeader</a> object with the specified data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_IsMessageVersionSupported_" data-uid="CoreWCF.Channels.MessageHeader.IsMessageVersionSupported*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_IsMessageVersionSupported_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.IsMessageVersionSupported(CoreWCF.Channels.MessageVersion)">IsMessageVersionSupported(MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Verifies whether the specified message version is supported.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsMessageVersionSupported(MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the specified message version is supported; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_OnWriteHeaderContents_" data-uid="CoreWCF.Channels.MessageHeader.OnWriteHeaderContents*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_OnWriteHeaderContents_System_Xml_XmlDictionaryWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.OnWriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)">OnWriteHeaderContents(XmlDictionaryWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Called when the header content is serialized using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void OnWriteHeaderContents(XmlDictionaryWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlDictionaryWriter</a> that is used to serialize the header contents.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_OnWriteStartHeader_" data-uid="CoreWCF.Channels.MessageHeader.OnWriteStartHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_OnWriteStartHeader_System_Xml_XmlDictionaryWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.OnWriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)">OnWriteStartHeader(XmlDictionaryWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Called when the start header is serialized using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnWriteStartHeader(XmlDictionaryWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlDictionaryWriter</a> that is used to serialize the start header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_ToString_" data-uid="CoreWCF.Channels.MessageHeader.ToString*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_ToString" data-uid="CoreWCF.Channels.MessageHeader.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p>Returns the string representation of this message header.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The string representation of this message header.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_WriteHeader_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_WriteHeader_System_Xml_XmlDictionaryWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)">WriteHeader(XmlDictionaryWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Serializes the header using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteHeader(XmlDictionaryWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlDictionaryWriter</a> that is used to serialize the header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_WriteHeader_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_WriteHeader_System_Xml_XmlWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeader(System.Xml.XmlWriter,CoreWCF.Channels.MessageVersion)">WriteHeader(XmlWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Serializes the header using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteHeader(XmlWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmlwriter">XmlWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlWriter</a> that is used to serialize the header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_WriteHeaderAttributes_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeaderAttributes*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_WriteHeaderAttributes_System_Xml_XmlDictionaryWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeaderAttributes(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)">WriteHeaderAttributes(XmlDictionaryWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Serializes the header attributes using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void WriteHeaderAttributes(XmlDictionaryWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlDictionaryWriter</a> that is used to serialize the header attributes.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_WriteHeaderContents_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeaderContents*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_WriteHeaderContents_System_Xml_XmlDictionaryWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.WriteHeaderContents(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)">WriteHeaderContents(XmlDictionaryWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Serializes the header contents using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteHeaderContents(XmlDictionaryWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmlwriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlWriter</a> that is used to serialize the header contents.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>The object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageHeader_WriteStartHeader_" data-uid="CoreWCF.Channels.MessageHeader.WriteStartHeader*"></a>
+  <h4 id="CoreWCF_Channels_MessageHeader_WriteStartHeader_System_Xml_XmlDictionaryWriter_CoreWCF_Channels_MessageVersion_" data-uid="CoreWCF.Channels.MessageHeader.WriteStartHeader(System.Xml.XmlDictionaryWriter,CoreWCF.Channels.MessageVersion)">WriteStartHeader(XmlDictionaryWriter, MessageVersion)</h4>
+  <div class="markdown level1 summary"><p>Serializes the start header using the specified XML writer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void WriteStartHeader(XmlDictionaryWriter writer, MessageVersion messageVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.xml.xmldictionarywriter">XmlDictionaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.xml.xmldictionarywriter?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">XmlDictionaryWriter</a> that is used to serialize the start header.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td><span class="parametername">messageVersion</span></td>
+        <td><p>That object that contains information related to the version of SOAP associated with a message and its exchange.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

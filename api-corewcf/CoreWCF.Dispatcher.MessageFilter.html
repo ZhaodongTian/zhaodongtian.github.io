@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageFilter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageFilter
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.MessageFilter">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_MessageFilter" data-uid="CoreWCF.Dispatcher.MessageFilter" class="text-break">Class MessageFilter
+  </h1>
+  <div class="markdown level0 summary"><p>base class for different classes of filters used to query messages.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">MessageFilter</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Dispatcher.MatchAllMessageFilter.html">MatchAllMessageFilter</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Dispatcher.PrefixEndpointAddressMessageFilter.html">PrefixEndpointAddressMessageFilter</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_MessageFilter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MessageFilter : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Dispatcher_MessageFilter_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>&lt;xref:CoreWCF.Dispatcher.MessageFilter&gt; is an <code>abstract</code> class that developers implement in order to specify the criteria to use for inspecting messages. Typically, filters are used by an endpoint application to determine what to do with a message based on an examination of some part of the message. A queuing process, for example, can use an XPath 1.0 query to check the priority element of a known header to determine whether to move a message to the front of the queue.</p>
+<p>Filters are stored in a filter table that implements &lt;xref:CoreWCF.Dispatcher.IMessageFilterTable%601&gt;. Each filter in the table is associated with specified filter data that can be used to indicate what actions to take if a message matches the filter. The &lt;xref:CoreWCF.Dispatcher.MessageFilter.Match%2A&gt; methods are used to determine if a message satisfies a filter.</p>
+<p>The criteria used by a filter cannot be changed once the filter is constructed because the filter tables have no way to detect a change. The only way to modify the criteria of a filter is to construct a new one and delete the existing filter.</p>
+<p>The following classes implement the <code>abstract</code> &lt;xref:CoreWCF.Dispatcher.MessageFilter&gt; class:</p>
+<ul>
+<li><p>&lt;xref:CoreWCF.Dispatcher.XPathMessageFilter&gt; uses an XPath 1.0 expression to specify the criteria for a match.</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.MatchAllMessageFilter&gt; matches all messages.</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.MatchNoneMessageFilter&gt; matches none of the messages.</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.ActionMessageFilter&gt; tests whether the action of a message is one of a specified set of actions.</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.EndpointAddressMessageFilter&gt; tests whether a message satisfies a specified endpoint address.</p>
+</li>
+</ul>
+<p>&lt;xref:CoreWCF.Channels.ChannelListenerBase%601&gt; is an <code>abstract</code> base class that you can use for writing non-queuing listeners.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_MessageFilter__ctor_" data-uid="CoreWCF.Dispatcher.MessageFilter.#ctor*"></a>
+  <h4 id="CoreWCF_Dispatcher_MessageFilter__ctor" data-uid="CoreWCF.Dispatcher.MessageFilter.#ctor">MessageFilter()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MessageFilter()</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_MessageFilter_CreateFilterTable_" data-uid="CoreWCF.Dispatcher.MessageFilter.CreateFilterTable*"></a>
+  <h4 id="CoreWCF_Dispatcher_MessageFilter_CreateFilterTable__1" data-uid="CoreWCF.Dispatcher.MessageFilter.CreateFilterTable``1">CreateFilterTable&lt;FilterData&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IMessageFilterTable&lt;FilterData&gt; CreateFilterTable&lt;FilterData&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.IMessageFilterTable-1.html">IMessageFilterTable</a>&lt;FilterData&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">FilterData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_MessageFilter_Match_" data-uid="CoreWCF.Dispatcher.MessageFilter.Match*"></a>
+  <h4 id="CoreWCF_Dispatcher_MessageFilter_Match_CoreWCF_Channels_Message_" data-uid="CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.Message)">Match(Message)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the filter matches the given message without examining its body.
+Note: since this method never probes the message body, it should NOT close the message
+If the filter probes the message body, then the filter must THROW an Exception. The filter should not return false
+This is deliberate - we don't want to produce false positives.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool Match(Message message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_MessageFilter_Match_" data-uid="CoreWCF.Dispatcher.MessageFilter.Match*"></a>
+  <h4 id="CoreWCF_Dispatcher_MessageFilter_Match_CoreWCF_Channels_MessageBuffer_" data-uid="CoreWCF.Dispatcher.MessageFilter.Match(CoreWCF.Channels.MessageBuffer)">Match(MessageBuffer)</h4>
+  <div class="markdown level1 summary"><p>Tests whether the filter matches the given message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool Match(MessageBuffer buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a></td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

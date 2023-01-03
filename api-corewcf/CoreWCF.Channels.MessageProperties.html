@@ -1,0 +1,800 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageProperties
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageProperties
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.MessageProperties">
+  
+  
+  <h1 id="CoreWCF_Channels_MessageProperties" data-uid="CoreWCF.Channels.MessageProperties" class="text-break">Class MessageProperties
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a set of properties for a message. This class cannot be inherited.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">MessageProperties</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a>&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.keyvaluepair-2">KeyValuePair</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a>&gt;&gt;</div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_MessageProperties_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class MessageProperties : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageProperties_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>As a message passes through the channel infrastructure, it passes through a number of logically separate processing entities. For instance, a message that is part of a reliable messaging stream can potentially pass through a <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a>, a transport-level channel provider, the reliable-messaging channel provider, the streaming channel provider or any channel extensions. Sometimes these intermediaries annotate the message with the results of that processing by using the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> class. A <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> instance is an annotation on a message and is stored as a set of name-to-object mappings in the <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_Properties_">Properties</a> property of a<a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The message properties should be cleared out when the user gets the following error:</p>
+<p><strong>The server committed a protocol violation. Section=ResponseBody Detail=Response chunk format is invalid</strong></p>
+</div>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties__ctor_" data-uid="CoreWCF.Channels.MessageProperties.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties__ctor" data-uid="CoreWCF.Channels.MessageProperties.#ctor">MessageProperties()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageProperties()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties__ctor_" data-uid="CoreWCF.Channels.MessageProperties.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties__ctor_CoreWCF_Channels_MessageProperties_" data-uid="CoreWCF.Channels.MessageProperties.#ctor(CoreWCF.Channels.MessageProperties)">MessageProperties(MessageProperties)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> class with preset properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageProperties(MessageProperties properties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a></td>
+        <td><span class="parametername">properties</span></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_AllowOutputBatching_" data-uid="CoreWCF.Channels.MessageProperties.AllowOutputBatching*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_AllowOutputBatching" data-uid="CoreWCF.Channels.MessageProperties.AllowOutputBatching">AllowOutputBatching</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that specifies whether to store this message before giving it to the transport.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AllowOutputBatching { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the batching of outgoing messages is allowed; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Count_" data-uid="CoreWCF.Channels.MessageProperties.Count*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Count" data-uid="CoreWCF.Channels.MessageProperties.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the total number of properties in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The total number of properties in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Encoder_" data-uid="CoreWCF.Channels.MessageProperties.Encoder*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Encoder" data-uid="CoreWCF.Channels.MessageProperties.Encoder">Encoder</h4>
+  <div class="markdown level1 summary"><p>Gets the encoder that is used to write messages to a stream and to read messages from a stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageEncoder Encoder { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.MessageEncoder.html">MessageEncoder</a> that is used to write messages to a stream and to read messages from a stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageProperties_Encoder_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property specifies a message encoder that can be used to serialize or deserialize the message instance this <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> instance is attached to.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_IsFixedSize_" data-uid="CoreWCF.Channels.MessageProperties.IsFixedSize*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_IsFixedSize" data-uid="CoreWCF.Channels.MessageProperties.IsFixedSize">IsFixedSize</h4>
+  <div class="markdown level1 summary"><p>Gets a value that indicates whether the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> has a fixed size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFixedSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> has a fixed size; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_IsReadOnly_" data-uid="CoreWCF.Channels.MessageProperties.IsReadOnly*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_IsReadOnly" data-uid="CoreWCF.Channels.MessageProperties.IsReadOnly">IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Item_" data-uid="CoreWCF.Channels.MessageProperties.Item*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Item_System_String_" data-uid="CoreWCF.Channels.MessageProperties.Item(System.String)">Item[String]</h4>
+  <div class="markdown level1 summary"><p>Retrieves a property with the specified name, identifier, or key value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object this[string name] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the property to get from the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><p>The property with the specified name, or null if the property does not exist.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Keys_" data-uid="CoreWCF.Channels.MessageProperties.Keys*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Keys" data-uid="CoreWCF.Channels.MessageProperties.Keys">Keys</h4>
+  <div class="markdown level1 summary"><p>Gets an <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">ICollection</a> that contains the keys in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;string&gt; Keys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">ICollection</a> that contains the keys in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Security_" data-uid="CoreWCF.Channels.MessageProperties.Security*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Security" data-uid="CoreWCF.Channels.MessageProperties.Security">Security</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityMessageProperty Security { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.SecurityMessageProperty.html">SecurityMessageProperty</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Values_" data-uid="CoreWCF.Channels.MessageProperties.Values*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Values" data-uid="CoreWCF.Channels.MessageProperties.Values">Values</h4>
+  <div class="markdown level1 summary"><p>Gets an <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">ICollection</a> that contains the values in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;object&gt; Values { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a>&gt;</td>
+        <td><p>An <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.icollection?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">ICollection</a> that contains the values in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Via_" data-uid="CoreWCF.Channels.MessageProperties.Via*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Via" data-uid="CoreWCF.Channels.MessageProperties.Via">Via</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the transport address that is used to send messages.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri Via { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td><p>A URI that contains the transport address that is used to send messages.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageProperties_Via_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The transport channel owns the <a class="xref" href="CoreWCF.Channels.MessageProperties.html#CoreWCF_Channels_MessageProperties_Via">Via</a> property and it overwrites whatever value you set for the message headers. You do have one opportunity to set the channel's Via, which is during the creation of the channel from the channel factory, for example, with <a href="https://learn.microsoft.com/en-us/dotnet/api/system.servicemodel.channelfactory-1.createchannel?view=dotnet-plat-ext-7.0#system-servicemodel-channelfactory-1-createchannel(system-servicemodel-endpointaddress-system-uri)">CreateChannel(EndpointAddress, Uri)</a>.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Add_" data-uid="CoreWCF.Channels.MessageProperties.Add*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Add_System_String_System_Object_" data-uid="CoreWCF.Channels.MessageProperties.Add(System.String,System.Object)">Add(String, Object)</h4>
+  <div class="markdown level1 summary"><p>Adds an element with the specified name and property into the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string name, object property)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the element to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">property</span></td>
+        <td><p>The value of the element to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Clear_" data-uid="CoreWCF.Channels.MessageProperties.Clear*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Clear" data-uid="CoreWCF.Channels.MessageProperties.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Removes all elements from the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_ContainsKey_" data-uid="CoreWCF.Channels.MessageProperties.ContainsKey*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_ContainsKey_System_String_" data-uid="CoreWCF.Channels.MessageProperties.ContainsKey(System.String)">ContainsKey(String)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> contains a specific name, key, or identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name, key, or identifier to locate in the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> contains an element with the specified name; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_CopyProperties_" data-uid="CoreWCF.Channels.MessageProperties.CopyProperties*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_CopyProperties_CoreWCF_Channels_MessageProperties_" data-uid="CoreWCF.Channels.MessageProperties.CopyProperties(CoreWCF.Channels.MessageProperties)">CopyProperties(MessageProperties)</h4>
+  <div class="markdown level1 summary"><p>Copies the content of the specified <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> to this instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyProperties(MessageProperties properties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a></td>
+        <td><span class="parametername">properties</span></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> object in which to copy from.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Dispose_" data-uid="CoreWCF.Channels.MessageProperties.Dispose*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Dispose" data-uid="CoreWCF.Channels.MessageProperties.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Releases all resources used by the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageProperties_Dispose_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Call <a class="xref" href="CoreWCF.Channels.MessageProperties.html#CoreWCF_Channels_MessageProperties_Dispose">Dispose()</a> when you are finished using the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>. The <a class="xref" href="CoreWCF.Channels.MessageProperties.html#CoreWCF_Channels_MessageProperties_Dispose">Dispose()</a> method leaves the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> in an unusable state. After calling <a class="xref" href="CoreWCF.Channels.MessageProperties.html#CoreWCF_Channels_MessageProperties_Dispose">Dispose()</a>, you must release all references to the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> so the garbage collector can reclaim the memory that the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> occupied.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Always call <a class="xref" href="CoreWCF.Channels.MessageProperties.html#CoreWCF_Channels_MessageProperties_Dispose">Dispose()</a> before you release your last reference to the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>. Otherwise, the resources it is using are not freed until the garbage collector calls the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> object's Finalize method.</p>
+</div>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_Remove_" data-uid="CoreWCF.Channels.MessageProperties.Remove*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_Remove_System_String_" data-uid="CoreWCF.Channels.MessageProperties.Remove(System.String)">Remove(String)</h4>
+  <div class="markdown level1 summary"><p>Removes the element with the specified name from the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the element to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> contains an element with the specified name and can be removed; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_TryGetValue_" data-uid="CoreWCF.Channels.MessageProperties.TryGetValue*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_TryGetValue_System_String_System_Object__" data-uid="CoreWCF.Channels.MessageProperties.TryGetValue(System.String,System.Object@)">TryGetValue(String, out Object)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> contains a specific name, and retrieves its value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(string name, out object value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the element to locate.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the found element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the <a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a> contains an element with the specified name; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_MessageProperties_TryGetValue_" data-uid="CoreWCF.Channels.MessageProperties.TryGetValue*"></a>
+  <h4 id="CoreWCF_Channels_MessageProperties_TryGetValue__1_System_String___0__" data-uid="CoreWCF.Channels.MessageProperties.TryGetValue``1(System.String,``0@)">TryGetValue&lt;TProperty&gt;(String, out TProperty)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue&lt;TProperty&gt;(string name, out TProperty property)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TProperty</span></td>
+        <td><span class="parametername">property</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">System.Collections.Generic.IDictionary&lt;TKey,TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">System.Collections.Generic.ICollection&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">System.Collections.Generic.IEnumerable&lt;T&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">System.Collections.IEnumerable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

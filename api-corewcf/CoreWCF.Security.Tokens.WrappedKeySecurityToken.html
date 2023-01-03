@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class WrappedKeySecurityToken
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class WrappedKeySecurityToken
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken">
+  
+  
+  <h1 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken" class="text-break">Class WrappedKeySecurityToken
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a security token whose key is wrapped inside another token.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></div>
+    <div class="level2"><span class="xref">WrappedKeySecurityToken</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_ResolveKeyIdentifierClause_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_">SecurityToken.ResolveKeyIdentifierClause(SecurityKeyIdentifierClause)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Security.Tokens.html">CoreWCF.Security.Tokens</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class WrappedKeySecurityToken : SecurityToken</code></pre>
+  </div>
+  <h5 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class represents an encrypted key that comes over the wire. The encrypted key is a symmetric key that is encrypted for the receiving party using the receiving party's public key. When such a key is received, the receiver's security token is resolved, the symmetric key is decrypted, and an instance of this class is created that contains these two pieces of information.</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_Id_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_Id" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.Id">Id</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string Id { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_Id">SecurityToken.Id</a></div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_SecurityKeys_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_SecurityKeys" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.SecurityKeys">SecurityKeys</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override ReadOnlyCollection&lt;SecurityKey&gt; SecurityKeys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection</a>&lt;<a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityKey.html">SecurityKey</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_SecurityKeys">SecurityToken.SecurityKeys</a></div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_ValidFrom_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_ValidFrom" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidFrom">ValidFrom</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime ValidFrom { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_ValidFrom">SecurityToken.ValidFrom</a></div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_ValidTo_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_ValidTo" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.ValidTo">ValidTo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override DateTime ValidTo { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_ValidTo">SecurityToken.ValidTo</a></div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_WrappingAlgorithm_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_WrappingAlgorithm" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingAlgorithm">WrappingAlgorithm</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string WrappingAlgorithm { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_WrappingToken_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_WrappingToken" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingToken">WrappingToken</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityToken WrappingToken { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_WrappingTokenReference_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_WrappingTokenReference" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.WrappingTokenReference">WrappingTokenReference</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityKeyIdentifier WrappingTokenReference { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityKeyIdentifier.html">SecurityKeyIdentifier</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_CanCreateKeyIdentifierClause_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_CanCreateKeyIdentifierClause__1" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.CanCreateKeyIdentifierClause``1">CanCreateKeyIdentifierClause&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanCreateKeyIdentifierClause&lt;T&gt;()
+    where T : SecurityKeyIdentifierClause</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_CanCreateKeyIdentifierClause__1">SecurityToken.CanCreateKeyIdentifierClause&lt;T&gt;()</a></div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_CreateKeyIdentifierClause_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_CreateKeyIdentifierClause__1" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.CreateKeyIdentifierClause``1">CreateKeyIdentifierClause&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override T CreateKeyIdentifierClause&lt;T&gt;()
+    where T : SecurityKeyIdentifierClause</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_CreateKeyIdentifierClause__1">SecurityToken.CreateKeyIdentifierClause&lt;T&gt;()</a></div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_GetWrappedKey_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_GetWrappedKey" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.GetWrappedKey">GetWrappedKey()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] GetWrappedKey()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">Byte</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_MatchesKeyIdentifierClause_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_Security_Tokens_WrappedKeySecurityToken_MatchesKeyIdentifierClause_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_" data-uid="CoreWCF.Security.Tokens.WrappedKeySecurityToken.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.SecurityKeyIdentifierClause)">MatchesKeyIdentifierClause(SecurityKeyIdentifierClause)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool MatchesKeyIdentifierClause(SecurityKeyIdentifierClause keyIdentifierClause)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.SecurityKeyIdentifierClause.html">SecurityKeyIdentifierClause</a></td>
+        <td><span class="parametername">keyIdentifierClause</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html#CoreWCF_IdentityModel_Tokens_SecurityToken_MatchesKeyIdentifierClause_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_">SecurityToken.MatchesKeyIdentifierClause(SecurityKeyIdentifierClause)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MessageBuffer
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MessageBuffer
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.MessageBuffer">
+  
+  
+  <h1 id="CoreWCF_Channels_MessageBuffer" data-uid="CoreWCF.Channels.MessageBuffer" class="text-break">Class MessageBuffer
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a memory buffer that stores an entire message for future consumption.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">MessageBuffer</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_MessageBuffer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MessageBuffer : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageBuffer_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The body of a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance can only be consumed or written once. If you wish to consume a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance more than once, you should use the <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> class to completely store an entire <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance into memory.</p>
+<p>A <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> instance is constructed by calling <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_CreateBufferedCopy_System_Int32_">CreateBufferedCopy</a> of a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance. A new <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> is then created and returned, which assumes ownership of the <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> and reads the entire content into memory.</p>
+<p>In order to retrieve a copy of a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> from the <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a>, you must call the <a class="xref" href="CoreWCF.Channels.MessageBuffer.html#CoreWCF_Channels_MessageBuffer_CreateMessage">CreateMessage</a> method of the <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a>. This returns an identical copy of the original <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance you provided.</p>
+<p>You can control the maximum size of the buffer by setting <a class="xref" href="CoreWCF.Channels.MessageBuffer.html#CoreWCF_Channels_MessageBuffer_BufferSize">BufferSize</a> to the maximum number of bytes desired. This number does not necessarily cover any transient allocations related to building the buffer, or properties attached to the message.</p>
+<p>You should always close a <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> instance by calling <a class="xref" href="CoreWCF.Channels.MessageBuffer.html#CoreWCF_Channels_MessageBuffer_Close">Close()</a> when finished working with it. This allows system resources to potentially be freed sooner.</p>
+<p>Special note for Managed C++ users deriving from this class:</p>
+<ul>
+<li><p>Put your cleanup code in (On)(Begin)Close (and/or OnAbort), not in a destructor.</p>
+</li>
+<li><p>Avoid destructors: they cause the compiler to auto-generate <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></p>
+</li>
+<li><p>Avoid non-reference members: they can cause the compiler to auto-generate <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></p>
+</li>
+<li><p>Avoid finalizers; but if you include one, you should suppress the build warning and call <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.gc.suppressfinalize#system-gc-suppressfinalize(system-object)">SuppressFinalize(Object)</a> and the finalizer itself from (On)(Begin)Close (and/or OnAbort) in order to emulate what would have been the auto-generated <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a> behavior.</p>
+</li>
+</ul>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageBuffer__ctor_" data-uid="CoreWCF.Channels.MessageBuffer.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_MessageBuffer__ctor" data-uid="CoreWCF.Channels.MessageBuffer.#ctor">MessageBuffer()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected MessageBuffer()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageBuffer_BufferSize_" data-uid="CoreWCF.Channels.MessageBuffer.BufferSize*"></a>
+  <h4 id="CoreWCF_Channels_MessageBuffer_BufferSize" data-uid="CoreWCF.Channels.MessageBuffer.BufferSize">BufferSize</h4>
+  <div class="markdown level1 summary"><p>Gets the approximate number of bytes consumed by this <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int BufferSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td><p>The approximate number of bytes consumed by this <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageBuffer_BufferSize_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>You can control the maximum size of the buffer by setting <a class="xref" href="CoreWCF.Channels.MessageBuffer.html#CoreWCF_Channels_MessageBuffer_BufferSize">BufferSize</a> to the maximum number of bytes desired. This number does not necessarily cover any transient allocations related to building the buffer, or properties attached to the message. It is not related to the actual size of the message when serialized.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageBuffer_MessageContentType_" data-uid="CoreWCF.Channels.MessageBuffer.MessageContentType*"></a>
+  <h4 id="CoreWCF_Channels_MessageBuffer_MessageContentType" data-uid="CoreWCF.Channels.MessageBuffer.MessageContentType">MessageContentType</h4>
+  <div class="markdown level1 summary"><p>Gets the type of message content stored in this buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string MessageContentType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The type of message content stored in this buffer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_MessageBuffer_Close_" data-uid="CoreWCF.Channels.MessageBuffer.Close*"></a>
+  <h4 id="CoreWCF_Channels_MessageBuffer_Close" data-uid="CoreWCF.Channels.MessageBuffer.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Finishes working with the buffer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void Close()</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_MessageBuffer_Close_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>You should always close a <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> instance by calling <a class="xref" href="CoreWCF.Channels.MessageBuffer.html#CoreWCF_Channels_MessageBuffer_Close">Close</a> when finished working with it. This allows system resources to potentially be freed sooner.<br><br> If you have called <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_CreateBufferedCopy_System_Int32_">CreateBufferedCopy</a> to create a message buffer of a message, and inspected the message using <a class="xref" href="CoreWCF.Channels.MessageBuffer.html#CoreWCF_Channels_MessageBuffer_CreateMessage">CreateMessage</a>, you will get a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a> when you attempt to close the buffer using this method. To avoid this problem, you need to recreate the message from the buffer before closing. See the code sample in the Example section for a demonstration of the previous scenario and a way to resolve this problem.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageBuffer_CreateMessage_" data-uid="CoreWCF.Channels.MessageBuffer.CreateMessage*"></a>
+  <h4 id="CoreWCF_Channels_MessageBuffer_CreateMessage" data-uid="CoreWCF.Channels.MessageBuffer.CreateMessage">CreateMessage()</h4>
+  <div class="markdown level1 summary"><p>Returns a copy of the original message.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Message CreateMessage()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.Message.html">Message</a></td>
+        <td><p>An identical copy of the original <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance you previously provided to the <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_CreateBufferedCopy_System_Int32_">CreateBufferedCopy(Int32)</a> method of a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageBuffer_CreateMessage_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Calling this method creates an identical copy of the original <a class="xref" href="CoreWCF.Channels.Message.html">Message</a> instance you previously provided to the <a class="xref" href="CoreWCF.Channels.Message.html#CoreWCF_Channels_Message_CreateBufferedCopy_System_Int32_">CreateBufferedCopy</a> method of a Message instance. You can then save the <a class="xref" href="CoreWCF.Channels.Message.html">message</a> to a durable storage.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_MessageBuffer_WriteMessage_" data-uid="CoreWCF.Channels.MessageBuffer.WriteMessage*"></a>
+  <h4 id="CoreWCF_Channels_MessageBuffer_WriteMessage_System_IO_Stream_" data-uid="CoreWCF.Channels.MessageBuffer.WriteMessage(System.IO.Stream)">WriteMessage(Stream)</h4>
+  <div class="markdown level1 summary"><p>Writes the entire content of this buffer to the specified IO stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void WriteMessage(Stream stream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>An IO stream that the entire content of this buffer is written to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_MessageBuffer_WriteMessage_System_IO_Stream__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This function uses a binary encoder instead of a UTF-8 encoder. Therefore, you cannot directly convert from a <a class="xref" href="CoreWCF.Channels.MessageBuffer.html">MessageBuffer</a> to a <a class="xref" href="CoreWCF.Channels.Message.html">Message</a>. The code in the example section shows how to work around this problem.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

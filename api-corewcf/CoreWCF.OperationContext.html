@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class OperationContext
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class OperationContext
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.OperationContext">
+  
+  
+  <h1 id="CoreWCF_OperationContext" data-uid="CoreWCF.OperationContext" class="text-break">Class OperationContext
+  </h1>
+  <div class="markdown level0 summary"><p>Provides access to the execution context of a service method.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">OperationContext</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.IExtensibleObject-1.html">IExtensibleObject</a>&lt;<a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a>&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_OperationContext_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class OperationContext : Object, IExtensibleObject&lt;OperationContext&gt;</code></pre>
+  </div>
+  <h5 id="CoreWCF_OperationContext_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Use the &lt;xref:CoreWCF.OperationContext&gt; from within a service operation to access the current operation execution environment. In particular, the operation context is used to access callback channels in duplex services, to store extra state data across portions of the operations, and to access incoming message headers and properties as well as add outgoing message headers and properties.</p>
+<p>For more information about using extensions to store state data, see <a href="/dotnet/framework/wcf/extending/extensible-objects">Extensible Objects</a>.</p>
+<p>The &lt;xref:CoreWCF.OperationContext&gt; has the following properties and methods.</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.OperationContext.Current%2A&gt; property returns the &lt;xref:CoreWCF.OperationContext&gt; object representing the current execution context.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.ServiceSecurityContext%2A&gt; property returns the security environment under which the method executes.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.EndpointDispatcher%2A&gt; property gets the operation's &lt;xref:CoreWCF.Dispatcher.EndpointDispatcher?displayProperty=nameWithType&gt;.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.Extensions%2A&gt; property returns an extension collection for the current &lt;xref:CoreWCF.OperationContext&gt;.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.Host%2A&gt; property returns the &lt;xref:CoreWCF.ServiceHostBase&gt; object that manages the service.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.HasSupportingTokens%2A&gt; property returns a value that indicates whether the method has supporting tokens, if so, the &lt;xref:CoreWCF.OperationContext.SupportingTokens%2A&gt; property gets them.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.IncomingMessageHeaders%2A&gt;, &lt;xref:CoreWCF.OperationContext.IncomingMessageProperties%2A&gt;, and &lt;xref:CoreWCF.OperationContext.IncomingMessageVersion%2A&gt; properties get these items from the incoming message.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.OperationCompleted&gt; event is fired when the operation has completed.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.OutgoingMessageHeaders%2A&gt; and &lt;xref:CoreWCF.OperationContext.OutgoingMessageProperties%2A&gt; properties get these items for the outbound message.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.RequestContext%2A&gt; property returns the &lt;xref:CoreWCF.Channels.RequestContext&gt; implementation for the method.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.InstanceContext%2A&gt; property returns the &lt;xref:CoreWCF.InstanceContext&gt; associated with the operation.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.SessionId%2A&gt; property returns the session identifier for the current channel and object.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.GetCallbackChannel%2A&gt; method returns a callback channel to the caller in the case of duplex communication.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.OperationContext.SetTransactionComplete%2A&gt; method commits the current transaction.</p>
+</li>
+</ul>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_OperationContext__ctor_" data-uid="CoreWCF.OperationContext.#ctor*"></a>
+  <h4 id="CoreWCF_OperationContext__ctor_CoreWCF_IContextChannel_" data-uid="CoreWCF.OperationContext.#ctor(CoreWCF.IContextChannel)">OperationContext(IContextChannel)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OperationContext(IContextChannel channel)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IContextChannel.html">IContextChannel</a></td>
+        <td><span class="parametername">channel</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_OperationContext_ClaimsPrincipal_" data-uid="CoreWCF.OperationContext.ClaimsPrincipal*"></a>
+  <h4 id="CoreWCF_OperationContext_ClaimsPrincipal" data-uid="CoreWCF.OperationContext.ClaimsPrincipal">ClaimsPrincipal</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClaimsPrincipal ClaimsPrincipal { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_Current_" data-uid="CoreWCF.OperationContext.Current*"></a>
+  <h4 id="CoreWCF_OperationContext_Current" data-uid="CoreWCF.OperationContext.Current">Current</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static OperationContext Current { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_EndpointDispatcher_" data-uid="CoreWCF.OperationContext.EndpointDispatcher*"></a>
+  <h4 id="CoreWCF_OperationContext_EndpointDispatcher" data-uid="CoreWCF.OperationContext.EndpointDispatcher">EndpointDispatcher</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EndpointDispatcher EndpointDispatcher { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.EndpointDispatcher.html">EndpointDispatcher</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_Extensions_" data-uid="CoreWCF.OperationContext.Extensions*"></a>
+  <h4 id="CoreWCF_OperationContext_Extensions" data-uid="CoreWCF.OperationContext.Extensions">Extensions</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IExtensionCollection&lt;OperationContext&gt; Extensions { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IExtensionCollection-1.html">IExtensionCollection</a>&lt;<a class="xref" href="CoreWCF.OperationContext.html">OperationContext</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_Host_" data-uid="CoreWCF.OperationContext.Host*"></a>
+  <h4 id="CoreWCF_OperationContext_Host" data-uid="CoreWCF.OperationContext.Host">Host</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceHostBase Host { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceHostBase.html">ServiceHostBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_IncomingMessageHeaders_" data-uid="CoreWCF.OperationContext.IncomingMessageHeaders*"></a>
+  <h4 id="CoreWCF_OperationContext_IncomingMessageHeaders" data-uid="CoreWCF.OperationContext.IncomingMessageHeaders">IncomingMessageHeaders</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageHeaders IncomingMessageHeaders { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeaders.html">MessageHeaders</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_IncomingMessageProperties_" data-uid="CoreWCF.OperationContext.IncomingMessageProperties*"></a>
+  <h4 id="CoreWCF_OperationContext_IncomingMessageProperties" data-uid="CoreWCF.OperationContext.IncomingMessageProperties">IncomingMessageProperties</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageProperties IncomingMessageProperties { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_IncomingMessageVersion_" data-uid="CoreWCF.OperationContext.IncomingMessageVersion*"></a>
+  <h4 id="CoreWCF_OperationContext_IncomingMessageVersion" data-uid="CoreWCF.OperationContext.IncomingMessageVersion">IncomingMessageVersion</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageVersion IncomingMessageVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_InstanceContext_" data-uid="CoreWCF.OperationContext.InstanceContext*"></a>
+  <h4 id="CoreWCF_OperationContext_InstanceContext" data-uid="CoreWCF.OperationContext.InstanceContext">InstanceContext</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InstanceContext InstanceContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.InstanceContext.html">InstanceContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_IsUserContext_" data-uid="CoreWCF.OperationContext.IsUserContext*"></a>
+  <h4 id="CoreWCF_OperationContext_IsUserContext" data-uid="CoreWCF.OperationContext.IsUserContext">IsUserContext</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUserContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_OutgoingMessageHeaders_" data-uid="CoreWCF.OperationContext.OutgoingMessageHeaders*"></a>
+  <h4 id="CoreWCF_OperationContext_OutgoingMessageHeaders" data-uid="CoreWCF.OperationContext.OutgoingMessageHeaders">OutgoingMessageHeaders</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageHeaders OutgoingMessageHeaders { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageHeaders.html">MessageHeaders</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_OutgoingMessageProperties_" data-uid="CoreWCF.OperationContext.OutgoingMessageProperties*"></a>
+  <h4 id="CoreWCF_OperationContext_OutgoingMessageProperties" data-uid="CoreWCF.OperationContext.OutgoingMessageProperties">OutgoingMessageProperties</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageProperties OutgoingMessageProperties { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.MessageProperties.html">MessageProperties</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_RequestContext_" data-uid="CoreWCF.OperationContext.RequestContext*"></a>
+  <h4 id="CoreWCF_OperationContext_RequestContext" data-uid="CoreWCF.OperationContext.RequestContext">RequestContext</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RequestContext RequestContext { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.RequestContext.html">RequestContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_ServiceSecurityContext_" data-uid="CoreWCF.OperationContext.ServiceSecurityContext*"></a>
+  <h4 id="CoreWCF_OperationContext_ServiceSecurityContext" data-uid="CoreWCF.OperationContext.ServiceSecurityContext">ServiceSecurityContext</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceSecurityContext ServiceSecurityContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceSecurityContext.html">ServiceSecurityContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_OperationContext_SessionId_" data-uid="CoreWCF.OperationContext.SessionId*"></a>
+  <h4 id="CoreWCF_OperationContext_SessionId" data-uid="CoreWCF.OperationContext.SessionId">SessionId</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SessionId { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_OperationContext_GetCallbackChannel_" data-uid="CoreWCF.OperationContext.GetCallbackChannel*"></a>
+  <h4 id="CoreWCF_OperationContext_GetCallbackChannel__1" data-uid="CoreWCF.OperationContext.GetCallbackChannel``1">GetCallbackChannel&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetCallbackChannel&lt;T&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  
+  
+  <h4 id="CoreWCF_OperationContext_OperationCompleted" data-uid="CoreWCF.OperationContext.OperationCompleted">OperationCompleted</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler OperationCompleted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.eventhandler">EventHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.IExtensibleObject-1.html">IExtensibleObject&lt;T&gt;</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class TransportBindingElement
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class TransportBindingElement
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.TransportBindingElement">
+  
+  
+  <h1 id="CoreWCF_Channels_TransportBindingElement" data-uid="CoreWCF.Channels.TransportBindingElement" class="text-break">Class TransportBindingElement
+  </h1>
+  <div class="markdown level0 summary"><p>An <code>abstract</code>  base class that represents a transport binding element.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></div>
+    <div class="level2"><span class="xref">TransportBindingElement</span></div>
+      <div class="level3"><a class="xref" href="CoreWCF.Channels.ConnectionOrientedTransportBindingElement.html">ConnectionOrientedTransportBindingElement</a></div>
+      <div class="level3"><a class="xref" href="CoreWCF.Channels.HttpTransportBindingElement.html">HttpTransportBindingElement</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_Clone">BindingElement.Clone()</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_BuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_CoreWCF_Configuration_IServiceDispatcher_">BindingElement.BuildServiceDispatcher&lt;TChannel&gt;(BindingContext, IServiceDispatcher)</a>
+    </div>
+    <div>
+      <a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_CanBuildServiceDispatcher__1_CoreWCF_Channels_BindingContext_">BindingElement.CanBuildServiceDispatcher&lt;TChannel&gt;(BindingContext)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class TransportBindingElement : BindingElement</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class factors out properties that are common to all of the transport binding elements provided by the Windows Communication Foundation (WCF). It handles the translation of the base transport settings into run-time manifestations. It delegates the translation of transport-specific settings (for example, HttpProxySettings for HTTP) logic in its concrete derived class transport bindings, which include the following classes:</p>
+<ul>
+<li><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.servicemodel.channels.peertransportbindingelement">PeerTransportBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.HttpTransportBindingElement.html">HttpTransportBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.HttpsTransportBindingElement.html">HttpsTransportBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.TcpTransportBindingElement.html">TcpTransportBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.servicemodel.channels.namedpipetransportbindingelement">NamedPipeTransportBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.servicemodel.channels.msmqtransportbindingelement">MsmqTransportBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.servicemodel.msmqintegration.msmqintegrationbindingelement">MsmqIntegrationBindingElement</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.ConnectionOrientedTransportBindingElement.html">ConnectionOrientedTransportBindingElement</a></p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Custom transport binding element developers must inherit from this class, which derives from the <a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a> class.</p>
+</div>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement__ctor_" data-uid="CoreWCF.Channels.TransportBindingElement.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement__ctor" data-uid="CoreWCF.Channels.TransportBindingElement.#ctor">TransportBindingElement()</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TransportBindingElement()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement__ctor_" data-uid="CoreWCF.Channels.TransportBindingElement.#ctor*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement__ctor_CoreWCF_Channels_TransportBindingElement_" data-uid="CoreWCF.Channels.TransportBindingElement.#ctor(CoreWCF.Channels.TransportBindingElement)">TransportBindingElement(TransportBindingElement)</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of this class from an existing instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TransportBindingElement(TransportBindingElement elementToBeCloned)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.TransportBindingElement.html">TransportBindingElement</a></td>
+        <td><span class="parametername">elementToBeCloned</span></td>
+        <td><p>The <a class="xref" href="CoreWCF.Channels.TransportBindingElement.html">TransportBindingElement</a> to be cloned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_ManualAddressing_" data-uid="CoreWCF.Channels.TransportBindingElement.ManualAddressing*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_ManualAddressing" data-uid="CoreWCF.Channels.TransportBindingElement.ManualAddressing">ManualAddressing</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that indicates whether manual addressing of the message is required.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ManualAddressing { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p><code>true</code> if manual addressing of the message is required; otherwise <code>false</code>. The default is <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_ManualAddressing_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is usually used in router scenarios, where the application determines which one of several destinations to send a message to.<br><br> If this property is set to <code>true</code>, the channel assumes the message has already been addressed and does not add any additional information.<br><br> If <code>false</code>, the sending channel applies the <a class="xref" href="CoreWCF.EndpointAddress.html">EndpointAddress</a> configured as the <code>To</code> addressee on the channel to outgoing messages.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_MaxBufferPoolSize_" data-uid="CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_MaxBufferPoolSize" data-uid="CoreWCF.Channels.TransportBindingElement.MaxBufferPoolSize">MaxBufferPoolSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum size, in bytes, of any buffer pools used by the transport.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long MaxBufferPoolSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><p>The maximum size of the buffer pool. The default is 524,288 bytes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_MaxBufferPoolSize_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Many parts of WCF use buffers. Creating and destroying buffers each time they are used is expensive, and garbage collection for buffers is also expensive.<br><br> With buffer pools, you can take a buffer from the pool, use it, and return it to the pool once you are done. Thus the overhead in creating and destroying buffers is avoided. The downside is that there is an increase in memory usage because your buffers are not getting garbage collected. If the <a class="xref" href="CoreWCF.Channels.TransportBindingElement.html#CoreWCF_Channels_TransportBindingElement_MaxBufferPoolSize">MaxBufferPoolSize</a> is set to 0, no buffers are returned to the pool, and instead garbage collection begins.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_MaxReceivedMessageSize_" data-uid="CoreWCF.Channels.TransportBindingElement.MaxReceivedMessageSize*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_MaxReceivedMessageSize" data-uid="CoreWCF.Channels.TransportBindingElement.MaxReceivedMessageSize">MaxReceivedMessageSize</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the maximum allowable message size, in bytes, that can be received.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual long MaxReceivedMessageSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a></td>
+        <td><p>The maximum allowable message size that can be received. The default is 65,536 bytes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_MaxReceivedMessageSize_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property can counter a hacker scenario where a message is sent with a very large or infinite specified length, or where data is sent continuously to a connected Named Pipe.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_Scheme_" data-uid="CoreWCF.Channels.TransportBindingElement.Scheme*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_Scheme" data-uid="CoreWCF.Channels.TransportBindingElement.Scheme">Scheme</h4>
+  <div class="markdown level1 summary"><p>Gets the URI scheme for the transport.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract string Scheme { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>Returns the URI scheme for the transport, which varies depending on what derived class implements this method.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_Scheme_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This is overridden by each concrete transport implementation and is provided to validate bindings against base addresses.</p>
+</div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_ExportWsdlEndpoint_" data-uid="CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_ExportWsdlEndpoint_CoreWCF_Description_WsdlExporter_CoreWCF_Description_WsdlEndpointConversionContext_System_String_CoreWCF_EndpointAddress_CoreWCF_Channels_AddressingVersion_" data-uid="CoreWCF.Channels.TransportBindingElement.ExportWsdlEndpoint(CoreWCF.Description.WsdlExporter,CoreWCF.Description.WsdlEndpointConversionContext,System.String,CoreWCF.EndpointAddress,CoreWCF.Channels.AddressingVersion)">ExportWsdlEndpoint(WsdlExporter, WsdlEndpointConversionContext, String, EndpointAddress, AddressingVersion)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ExportWsdlEndpoint(WsdlExporter exporter, WsdlEndpointConversionContext endpointContext, string wsdlTransportUri, EndpointAddress address, AddressingVersion addressingVersion)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlExporter.html">WsdlExporter</a></td>
+        <td><span class="parametername">exporter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.WsdlEndpointConversionContext.html">WsdlEndpointConversionContext</a></td>
+        <td><span class="parametername">endpointContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">wsdlTransportUri</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.EndpointAddress.html">EndpointAddress</a></td>
+        <td><span class="parametername">address</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.AddressingVersion.html">AddressingVersion</a></td>
+        <td><span class="parametername">addressingVersion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_GetProperty_" data-uid="CoreWCF.Channels.TransportBindingElement.GetProperty*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_" data-uid="CoreWCF.Channels.TransportBindingElement.GetProperty``1(CoreWCF.Channels.BindingContext)">GetProperty&lt;T&gt;(BindingContext)</h4>
+  <div class="markdown level1 summary"><p>Gets a property from the specified <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override T GetProperty&lt;T&gt;(BindingContext context)
+    where T : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>The property from the specified <a class="xref" href="CoreWCF.Channels.BindingContext.html">BindingContext</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The property to get.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_GetProperty__1_CoreWCF_Channels_BindingContext_">BindingElement.GetProperty&lt;T&gt;(BindingContext)</a></div>
+  <h5 id="CoreWCF_Channels_TransportBindingElement_GetProperty__1_CoreWCF_Channels_BindingContext__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method receives a binding context as an input parameter, which represents the stack of binding elements. This method gets the specified object directly, delegates the inquiry to the next lower binding element in the stack, or a combination of the two. It can modify the context if it delegates the inquiry. Each binding element in the stack can repeat this process, if it has been delegated to, until the bottom of the stack is reached. The object returned is usually a collection of properties.<br><br> If the type of <code>T</code> is <a class="xref" href="CoreWCF.Security.ChannelProtectionRequirements.html">ChannelProtectionRequirements</a>, <a class="xref" href="CoreWCF.Configuration.XmlDictionaryReaderQuotasElement.html">XmlDictionaryReaderQuotas</a>, or <a class="xref" href="CoreWCF.Channels.MessageVersion.html">MessageVersion</a> then an instance of this class is returned. If the type of T matches the type of an instance in <a class="xref" href="CoreWCF.Channels.BindingContext.html#CoreWCF_Channels_BindingContext_BindingParameters">BindingParameters</a>, that instance is returned.<br><br> This method is implemented by binding elements as well as by the run-time objects such as <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.servicemodel.channels.ichannelfactory">IChannelFactory</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.servicemodel.channels.ichannellistener">IChannelListener</a>, and <a class="xref" href="CoreWCF.Channels.IChannel.html">IChannel</a>.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_TransportBindingElement_IsMatch_" data-uid="CoreWCF.Channels.TransportBindingElement.IsMatch*"></a>
+  <h4 id="CoreWCF_Channels_TransportBindingElement_IsMatch_CoreWCF_Channels_BindingElement_" data-uid="CoreWCF.Channels.TransportBindingElement.IsMatch(CoreWCF.Channels.BindingElement)">IsMatch(BindingElement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override bool IsMatch(BindingElement b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.BindingElement.html">BindingElement</a></td>
+        <td><span class="parametername">b</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="CoreWCF.Channels.BindingElement.html#CoreWCF_Channels_BindingElement_IsMatch_CoreWCF_Channels_BindingElement_">BindingElement.IsMatch(BindingElement)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

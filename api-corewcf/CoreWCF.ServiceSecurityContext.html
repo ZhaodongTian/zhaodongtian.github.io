@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ServiceSecurityContext
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ServiceSecurityContext
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.ServiceSecurityContext">
+  
+  
+  <h1 id="CoreWCF_ServiceSecurityContext" data-uid="CoreWCF.ServiceSecurityContext" class="text-break">Class ServiceSecurityContext
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the security context of a remote party. On the client, represents the service identity and, on the service, represents the client identity.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ServiceSecurityContext</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.html">CoreWCF</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_ServiceSecurityContext_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ServiceSecurityContext : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_ServiceSecurityContext_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The data is part of the &lt;xref:CoreWCF.Security.SecurityMessageProperty&gt; for a message.</p>
+<p>Use this class to obtain information about a remote <em>security context</em> at runtime. A security context is created when a client is successfully authenticated and authorized to access a method. When a message is successfully authenticated and authorized, the security information from the client and for the current service instance can be obtained from an instance of this class.</p>
+<p>You can retrieve an instance of the &lt;xref:CoreWCF.ServiceSecurityContext&gt; from the &lt;xref:CoreWCF.OperationContext.Current%2A&gt; property of the &lt;xref:CoreWCF.OperationContext&gt; class, or use it from within a service operation method, as shown in the following example.</p>
+<h2 id="parsing-a-claimset">Parsing a ClaimSet</h2>
+<p>A common use of the class is to retrieve the current set of claims for the purpose of identifying or authorizing a client when accessing a method. The &lt;xref:System.IdentityModel.Claims.ClaimSet&gt; class contains a collection of &lt;xref:System.IdentityModel.Claims.Claim&gt; objects, and each can be parsed to determine whether a specific claim is present. If the specified claim is provided, authorization can be granted. This functionality is provided by overriding the &lt;xref:CoreWCF.ServiceAuthorizationManager.CheckAccessCore%2A&gt; method of the &lt;xref:CoreWCF.ServiceAuthorizationManager&gt; class.  For a complete example, see the <a href="/dotnet/framework/wcf/samples/authorization-policy">Authorization Policy</a>.</p>
+<h2 id="cookie-mode-and-isauthenticated">Cookie Mode and IsAuthenticated</h2>
+<p>Note that under some circumstances, the &lt;xref:System.Security.Principal.IIdentity.IsAuthenticated%2A&gt; property of the &lt;xref:System.Security.Principal.IIdentity&gt; interface returns <code>true</code> even if the remote client is authenticated as an anonymous user. (The &lt;xref:CoreWCF.ServiceSecurityContext.PrimaryIdentity%2A&gt; property returns an implementation of the &lt;xref:System.Security.Principal.IIdentity&gt; interface.) The following circumstances must be true for this to occur:</p>
+<ul>
+<li><p>The service uses Windows authentication.</p>
+</li>
+<li><p>The service allows anonymous logons.</p>
+</li>
+<li><p>The binding is a <a href="/dotnet/framework/configure-apps/file-schema/wcf/custombinding">&amp;lt;customBinding&amp;gt;</a>.</p>
+</li>
+<li><p>The custom binding includes a <code>&amp;lt;security&gt;</code> element.</p>
+</li>
+<li><p>The <code>&amp;lt;security&gt;</code> element includes a <a href="/dotnet/framework/configure-apps/file-schema/wcf/secureconversationbootstrap">&amp;lt;secureConversationBootstrap&amp;gt;</a> with the <code>requireSecurityContextCancellation</code> attribute set to <code>false</code>.</p>
+</li>
+</ul>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext__ctor_" data-uid="CoreWCF.ServiceSecurityContext.#ctor*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext__ctor_CoreWCF_IdentityModel_Policy_AuthorizationContext_" data-uid="CoreWCF.ServiceSecurityContext.#ctor(CoreWCF.IdentityModel.Policy.AuthorizationContext)">ServiceSecurityContext(AuthorizationContext)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceSecurityContext(AuthorizationContext authorizationContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Policy.AuthorizationContext.html">AuthorizationContext</a></td>
+        <td><span class="parametername">authorizationContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext__ctor_" data-uid="CoreWCF.ServiceSecurityContext.#ctor*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext__ctor_CoreWCF_IdentityModel_Policy_AuthorizationContext_System_Collections_ObjectModel_ReadOnlyCollection_CoreWCF_IdentityModel_Policy_IAuthorizationPolicy__" data-uid="CoreWCF.ServiceSecurityContext.#ctor(CoreWCF.IdentityModel.Policy.AuthorizationContext,System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy})">ServiceSecurityContext(AuthorizationContext, ReadOnlyCollection&lt;IAuthorizationPolicy&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceSecurityContext(AuthorizationContext authorizationContext, ReadOnlyCollection&lt;IAuthorizationPolicy&gt; authorizationPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Policy.AuthorizationContext.html">AuthorizationContext</a></td>
+        <td><span class="parametername">authorizationContext</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection</a>&lt;<a class="xref" href="CoreWCF.IdentityModel.Policy.IAuthorizationPolicy.html">IAuthorizationPolicy</a>&gt;</td>
+        <td><span class="parametername">authorizationPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext__ctor_" data-uid="CoreWCF.ServiceSecurityContext.#ctor*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext__ctor_System_Collections_ObjectModel_ReadOnlyCollection_CoreWCF_IdentityModel_Policy_IAuthorizationPolicy__" data-uid="CoreWCF.ServiceSecurityContext.#ctor(System.Collections.ObjectModel.ReadOnlyCollection{CoreWCF.IdentityModel.Policy.IAuthorizationPolicy})">ServiceSecurityContext(ReadOnlyCollection&lt;IAuthorizationPolicy&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServiceSecurityContext(ReadOnlyCollection&lt;IAuthorizationPolicy&gt; authorizationPolicies)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.readonlycollection-1">ReadOnlyCollection</a>&lt;<a class="xref" href="CoreWCF.IdentityModel.Policy.IAuthorizationPolicy.html">IAuthorizationPolicy</a>&gt;</td>
+        <td><span class="parametername">authorizationPolicies</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_Anonymous_" data-uid="CoreWCF.ServiceSecurityContext.Anonymous*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_Anonymous" data-uid="CoreWCF.ServiceSecurityContext.Anonymous">Anonymous</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ServiceSecurityContext Anonymous { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceSecurityContext.html">ServiceSecurityContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_AuthorizationContext_" data-uid="CoreWCF.ServiceSecurityContext.AuthorizationContext*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_AuthorizationContext" data-uid="CoreWCF.ServiceSecurityContext.AuthorizationContext">AuthorizationContext</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AuthorizationContext AuthorizationContext { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Policy.AuthorizationContext.html">AuthorizationContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_Current_" data-uid="CoreWCF.ServiceSecurityContext.Current*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_Current" data-uid="CoreWCF.ServiceSecurityContext.Current">Current</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ServiceSecurityContext Current { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.ServiceSecurityContext.html">ServiceSecurityContext</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_IdentityClaim_" data-uid="CoreWCF.ServiceSecurityContext.IdentityClaim*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_IdentityClaim" data-uid="CoreWCF.ServiceSecurityContext.IdentityClaim">IdentityClaim</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Claim IdentityClaim { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Claims.Claim.html">Claim</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_IsAnonymous_" data-uid="CoreWCF.ServiceSecurityContext.IsAnonymous*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_IsAnonymous" data-uid="CoreWCF.ServiceSecurityContext.IsAnonymous">IsAnonymous</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnonymous { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_PrimaryIdentity_" data-uid="CoreWCF.ServiceSecurityContext.PrimaryIdentity*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_PrimaryIdentity" data-uid="CoreWCF.ServiceSecurityContext.PrimaryIdentity">PrimaryIdentity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IIdentity PrimaryIdentity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.principal.iidentity">IIdentity</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_WindowsIdentity_" data-uid="CoreWCF.ServiceSecurityContext.WindowsIdentity*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_WindowsIdentity" data-uid="CoreWCF.ServiceSecurityContext.WindowsIdentity">WindowsIdentity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WindowsIdentity WindowsIdentity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.principal.windowsidentity">WindowsIdentity</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_ServiceSecurityContext_GetIdentities_" data-uid="CoreWCF.ServiceSecurityContext.GetIdentities*"></a>
+  <h4 id="CoreWCF_ServiceSecurityContext_GetIdentities" data-uid="CoreWCF.ServiceSecurityContext.GetIdentities">GetIdentities()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IList&lt;IIdentity&gt; GetIdentities()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.principal.iidentity">IIdentity</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

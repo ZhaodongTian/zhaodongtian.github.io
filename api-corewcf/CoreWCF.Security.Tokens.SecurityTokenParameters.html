@@ -1,0 +1,565 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SecurityTokenParameters
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SecurityTokenParameters
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters">
+  
+  
+  <h1 id="CoreWCF_Security_Tokens_SecurityTokenParameters" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters" class="text-break">Class SecurityTokenParameters
+  </h1>
+  <div class="markdown level0 summary"><p>Specifies an  class that when implemented represents security token parameters.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">SecurityTokenParameters</span></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Security.Tokens.IssuedSecurityTokenParameters.html">IssuedSecurityTokenParameters</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Security.Tokens.SecureConversationSecurityTokenParameters.html">SecureConversationSecurityTokenParameters</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Security.Tokens.SslSecurityTokenParameters.html">SslSecurityTokenParameters</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Security.Tokens.SspiSecurityTokenParameters.html">SspiSecurityTokenParameters</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Security.Tokens.UserNameSecurityTokenParameters.html">UserNameSecurityTokenParameters</a></div>
+      <div class="level2"><a class="xref" href="CoreWCF.Security.Tokens.X509SecurityTokenParameters.html">X509SecurityTokenParameters</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Security.Tokens.html">CoreWCF.Security.Tokens</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Security_Tokens_SecurityTokenParameters_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SecurityTokenParameters : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Security_Tokens_SecurityTokenParameters_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Security token parameters provide information about the tokens (for example, token type, issuer, and so on) required by the security binding element.</p>
+<p>The security token parameter classes derived from this one are a collection of token properties and methods, and are used in creating different kinds of security binding elements and tokens. Not all of the properties are relevant to all derived classes. For example, the &lt;xref:CoreWCF.Security.Tokens.SecurityTokenParameters.ReferenceStyle%2A&gt; has no relevance in an issued token (SAML token) case.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters__ctor_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.#ctor*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters__ctor" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.#ctor">SecurityTokenParameters()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SecurityTokenParameters()</code></pre>
+  </div>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters__ctor_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.#ctor*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters__ctor_CoreWCF_Security_Tokens_SecurityTokenParameters_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.#ctor(CoreWCF.Security.Tokens.SecurityTokenParameters)">SecurityTokenParameters(SecurityTokenParameters)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected SecurityTokenParameters(SecurityTokenParameters other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenParameters.html">SecurityTokenParameters</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_HasAsymmetricKey_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.HasAsymmetricKey*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_HasAsymmetricKey" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.HasAsymmetricKey">HasAsymmetricKey</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool HasAsymmetricKey { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_InclusionMode_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.InclusionMode*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_InclusionMode" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.InclusionMode">InclusionMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityTokenInclusionMode InclusionMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenInclusionMode.html">SecurityTokenInclusionMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_ReferenceStyle_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.ReferenceStyle*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_ReferenceStyle" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.ReferenceStyle">ReferenceStyle</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityTokenReferenceStyle ReferenceStyle { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenReferenceStyle.html">SecurityTokenReferenceStyle</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_RequireDerivedKeys_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.RequireDerivedKeys*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_RequireDerivedKeys" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.RequireDerivedKeys">RequireDerivedKeys</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RequireDerivedKeys { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_SupportsClientAuthentication_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.SupportsClientAuthentication*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_SupportsClientAuthentication" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.SupportsClientAuthentication">SupportsClientAuthentication</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool SupportsClientAuthentication { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_SupportsClientWindowsIdentity_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.SupportsClientWindowsIdentity*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_SupportsClientWindowsIdentity" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.SupportsClientWindowsIdentity">SupportsClientWindowsIdentity</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool SupportsClientWindowsIdentity { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_SupportsServerAuthentication_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.SupportsServerAuthentication*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_SupportsServerAuthentication" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.SupportsServerAuthentication">SupportsServerAuthentication</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract bool SupportsServerAuthentication { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_Clone_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.Clone*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_Clone" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.Clone">Clone()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SecurityTokenParameters Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenParameters.html">SecurityTokenParameters</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_CloneCore_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.CloneCore*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_CloneCore" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.CloneCore">CloneCore()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract SecurityTokenParameters CloneCore()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenParameters.html">SecurityTokenParameters</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_CreateKeyIdentifierClause_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_CreateKeyIdentifierClause_CoreWCF_IdentityModel_Tokens_SecurityToken_CoreWCF_Security_Tokens_SecurityTokenReferenceStyle_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.CreateKeyIdentifierClause(CoreWCF.IdentityModel.Tokens.SecurityToken,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)">CreateKeyIdentifierClause(SecurityToken, SecurityTokenReferenceStyle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract SecurityKeyIdentifierClause CreateKeyIdentifierClause(SecurityToken token, SecurityTokenReferenceStyle referenceStyle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenReferenceStyle.html">SecurityTokenReferenceStyle</a></td>
+        <td><span class="parametername">referenceStyle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.SecurityKeyIdentifierClause.html">SecurityKeyIdentifierClause</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_InitializeSecurityTokenRequirement_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_InitializeSecurityTokenRequirement_CoreWCF_IdentityModel_Selectors_SecurityTokenRequirement_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.InitializeSecurityTokenRequirement(CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement)">InitializeSecurityTokenRequirement(SecurityTokenRequirement)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void InitializeSecurityTokenRequirement(SecurityTokenRequirement requirement)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Selectors.SecurityTokenRequirement.html">SecurityTokenRequirement</a></td>
+        <td><span class="parametername">requirement</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_MatchesKeyIdentifierClause_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.MatchesKeyIdentifierClause*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_MatchesKeyIdentifierClause_CoreWCF_IdentityModel_Tokens_SecurityToken_CoreWCF_IdentityModel_SecurityKeyIdentifierClause_CoreWCF_Security_Tokens_SecurityTokenReferenceStyle_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.MatchesKeyIdentifierClause(CoreWCF.IdentityModel.Tokens.SecurityToken,CoreWCF.IdentityModel.SecurityKeyIdentifierClause,CoreWCF.Security.Tokens.SecurityTokenReferenceStyle)">MatchesKeyIdentifierClause(SecurityToken, SecurityKeyIdentifierClause, SecurityTokenReferenceStyle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool MatchesKeyIdentifierClause(SecurityToken token, SecurityKeyIdentifierClause keyIdentifierClause, SecurityTokenReferenceStyle referenceStyle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.Tokens.SecurityToken.html">SecurityToken</a></td>
+        <td><span class="parametername">token</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.IdentityModel.SecurityKeyIdentifierClause.html">SecurityKeyIdentifierClause</a></td>
+        <td><span class="parametername">keyIdentifierClause</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Security.Tokens.SecurityTokenReferenceStyle.html">SecurityTokenReferenceStyle</a></td>
+        <td><span class="parametername">referenceStyle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Security_Tokens_SecurityTokenParameters_ToString_" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.ToString*"></a>
+  <h4 id="CoreWCF_Security_Tokens_SecurityTokenParameters_ToString" data-uid="CoreWCF.Security.Tokens.SecurityTokenParameters.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

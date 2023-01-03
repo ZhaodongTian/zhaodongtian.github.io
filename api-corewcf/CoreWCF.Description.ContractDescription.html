@@ -1,0 +1,622 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ContractDescription
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ContractDescription
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Description.ContractDescription">
+  
+  
+  <h1 id="CoreWCF_Description_ContractDescription" data-uid="CoreWCF.Description.ContractDescription" class="text-break">Class ContractDescription
+  </h1>
+  <div class="markdown level0 summary"><p>Describes a Windows Communication Foundation (WCF) contract that specifies what an endpoint communicates to the outside world.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ContractDescription</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Description.html">CoreWCF.Description</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Description_ContractDescription_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ContractDescription : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Description_ContractDescription_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>A WCF contract is a collection of operations that specifies what the endpoint communicates to the outside world. Each operation is a message exchange. For example, a request message and an associated reply message form a request/reply message exchange.<br>
+A <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a> object is used to describe WCF contracts and their operations. Within a <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a>, each contract operation has a corresponding <a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a> that describes aspects of the each operation that is part of the contract, such as whether the operation is one-way or request/reply. Each <a class="xref" href="CoreWCF.Description.OperationDescription.html">OperationDescription</a> also describes the messages that make up the operation using a <a class="xref" href="CoreWCF.Description.MessageDescriptionCollection.html">MessageDescriptionCollection</a>. <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a> contains a reference to an interface that defines the contract using the programming model. This interface is marked with <a class="xref" href="CoreWCF.ServiceContractAttribute.html">ServiceContractAttribute</a> and its methods that correspond to endpoint operations are marked with the <a class="xref" href="CoreWCF.OperationContractAttribute.html">OperationContractAttribute</a>.</p>
+<p>A <em>duplex</em> contract defines the following logical sets of operations:</p>
+<ul>
+<li><p>A set that the service exposes for the client to call.</p>
+</li>
+<li><p>A set that the client exposes for the service to call.</p>
+</li>
+</ul>
+<p>The programming model for defining a duplex contract is to split each set in a separate interface and apply attributes to each interface. In this case, <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a> contains a reference to each of the interfaces that groups them into one duplex contract.</p>
+<p>Similar to bindings, each contract has a <a class="xref" href="CoreWCF.Description.ContractDescription.html#CoreWCF_Description_ContractDescription_Name">Name</a> and <a class="xref" href="CoreWCF.Description.ContractDescription.html#CoreWCF_Description_ContractDescription_Namespace">Namespace</a> that uniquely identify it in the metadata of the service.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription__ctor_" data-uid="CoreWCF.Description.ContractDescription.#ctor*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription__ctor_System_String_" data-uid="CoreWCF.Description.ContractDescription.#ctor(System.String)">ContractDescription(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a> class with a specified name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContractDescription(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the contract</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription__ctor_" data-uid="CoreWCF.Description.ContractDescription.#ctor*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription__ctor_System_String_System_String_" data-uid="CoreWCF.Description.ContractDescription.#ctor(System.String,System.String)">ContractDescription(String, String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a> class with a namespace-qualified name specified</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ContractDescription(string name, string ns)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the contract</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">ns</span></td>
+        <td><p>The namespace that contains the name of the contract</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Description_ContractDescription__ctor_System_String_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The namespace can be an empty string (&quot;&quot;)</p>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_CallbackContractType_" data-uid="CoreWCF.Description.ContractDescription.CallbackContractType*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_CallbackContractType" data-uid="CoreWCF.Description.ContractDescription.CallbackContractType">CallbackContractType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the type of callback contract that the contract description specifies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type CallbackContractType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a> of callback contract that the contract description specifies</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Description_ContractDescription_CallbackContractType_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Description.ContractDescription.html#CoreWCF_Description_ContractDescription_CallbackContractType_">CallbackContractType</a> property is not serializable, so it is only available when the description is bound to runtime. It cannot be imported or exported as part of the metadata.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_ConfigurationName_" data-uid="CoreWCF.Description.ContractDescription.ConfigurationName*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_ConfigurationName" data-uid="CoreWCF.Description.ContractDescription.ConfigurationName">ConfigurationName</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the configuration name for the contract description</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ConfigurationName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The configuration name for the contract.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_ContractBehaviors_" data-uid="CoreWCF.Description.ContractDescription.ContractBehaviors*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_ContractBehaviors" data-uid="CoreWCF.Description.ContractDescription.ContractBehaviors">ContractBehaviors</h4>
+  <div class="markdown level1 summary"><p>Gets the collection of behavior for the contract.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyedCollection&lt;Type, IContractBehavior&gt; ContractBehaviors { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.keyedcollection-2">KeyedCollection</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="CoreWCF.Description.IContractBehavior.html">IContractBehavior</a>&gt;</td>
+        <td><p>The collection of behavior for the contract</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_ContractType_" data-uid="CoreWCF.Description.ContractDescription.ContractType*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_ContractType" data-uid="CoreWCF.Description.ContractDescription.ContractType">ContractType</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the contract type that the contract description specifies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ContractType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a> of contract that the contract description specifies.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Description_ContractDescription_ContractType_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="CoreWCF.Description.ContractDescription.html#CoreWCF_Description_ContractDescription_ContractType_">ContractType</a> property is not serializable, so it is only available when the description is bound to runtime. It cannot be imported or exported as part of the metadata.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_Name_" data-uid="CoreWCF.Description.ContractDescription.Name*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_Name" data-uid="CoreWCF.Description.ContractDescription.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the name of the contract</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The name of the contract description</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_Namespace_" data-uid="CoreWCF.Description.ContractDescription.Namespace*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_Namespace" data-uid="CoreWCF.Description.ContractDescription.Namespace">Namespace</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the namespace for the contract</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Namespace { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The namespace of the contract</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Description_ContractDescription_Namespace_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The namespace can be an empty string (&quot;&quot;).</p>
+</div>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_Operations_" data-uid="CoreWCF.Description.ContractDescription.Operations*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_Operations" data-uid="CoreWCF.Description.ContractDescription.Operations">Operations</h4>
+  <div class="markdown level1 summary"><p>Gets the collection of operation descriptions associated with the contract</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OperationDescriptionCollection Operations { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.OperationDescriptionCollection.html">OperationDescriptionCollection</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Description.OperationDescriptionCollection.html">OperationDescriptionCollection</a> that contains the operation descriptions associated with the contract description.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_SessionMode_" data-uid="CoreWCF.Description.ContractDescription.SessionMode*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_SessionMode" data-uid="CoreWCF.Description.ContractDescription.SessionMode">SessionMode</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionMode SessionMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.SessionMode.html">SessionMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_GetContract_" data-uid="CoreWCF.Description.ContractDescription.GetContract*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_GetContract__1_System_Type_" data-uid="CoreWCF.Description.ContractDescription.GetContract``1(System.Type)">GetContract&lt;TService&gt;(Type)</h4>
+  <div class="markdown level1 summary"><p>Returns the contract description for a specified type of contract.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ContractDescription GetContract&lt;TService&gt;(Type contractType)
+    where TService : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">contractType</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a> of contract.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td><p>The <a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a> for the specified type of contract</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TService</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Description_ContractDescription_GetContract__1_System_Type__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The difference between the <a class="xref" href="CoreWCF.Description.ContractDescription.html">GetContract</a> overloads is that the ones with two arguments allow you to find attributes from the service (for example, <a class="xref" href="CoreWCF.Description.ContractDescription.html">OperationBehaviorAttribute</a>).</p>
+</div>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_GetContract_" data-uid="CoreWCF.Description.ContractDescription.GetContract*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_GetContract__1_System_Type_System_Object_" data-uid="CoreWCF.Description.ContractDescription.GetContract``1(System.Type,System.Object)">GetContract&lt;TService&gt;(Type, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ContractDescription GetContract&lt;TService&gt;(Type contractType, object serviceImplementation)
+    where TService : class</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">contractType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></td>
+        <td><span class="parametername">serviceImplementation</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TService</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_GetInheritedContracts_" data-uid="CoreWCF.Description.ContractDescription.GetInheritedContracts*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_GetInheritedContracts" data-uid="CoreWCF.Description.ContractDescription.GetInheritedContracts">GetInheritedContracts()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Collection&lt;ContractDescription&gt; GetInheritedContracts()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.objectmodel.collection-1">Collection</a>&lt;<a class="xref" href="CoreWCF.Description.ContractDescription.html">ContractDescription</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Description_ContractDescription_IsDuplex_" data-uid="CoreWCF.Description.ContractDescription.IsDuplex*"></a>
+  <h4 id="CoreWCF_Description_ContractDescription_IsDuplex" data-uid="CoreWCF.Description.ContractDescription.IsDuplex">IsDuplex()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDuplex()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

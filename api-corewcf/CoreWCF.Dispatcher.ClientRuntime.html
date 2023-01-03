@@ -1,0 +1,532 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ClientRuntime
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ClientRuntime
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Dispatcher.ClientRuntime">
+  
+  
+  <h1 id="CoreWCF_Dispatcher_ClientRuntime" data-uid="CoreWCF.Dispatcher.ClientRuntime" class="text-break">Class ClientRuntime
+  </h1>
+  <div class="markdown level0 summary"><p>Represents the insertion point for classes that extend the functionality of Windows Communication Foundation (WCF) client objects for all messages handled by a client application.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">ClientRuntime</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Dispatcher.html">CoreWCF.Dispatcher</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Dispatcher_ClientRuntime_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class ClientRuntime : Object</code></pre>
+  </div>
+  <h5 id="CoreWCF_Dispatcher_ClientRuntime_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>WCF client objects, whether an extension of &lt;xref:CoreWCF.ClientBase%601&gt; or of &lt;xref:CoreWCF.IClientChannel&gt;, are used by Windows Communication Foundation (WCF) client applications to convert method calls into outbound messages and convert incoming messages to objects and pass them to the results of client methods.</p>
+<p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime&gt; class is an extensibility point to which you can add extension objects that intercept messages and extend client behavior across all operations. Interception objects can process all messages in a particular contract, process only messages for particular operations, perform custom channel initialization, and implement other custom client application behavior. For an overview of client architecture, see <a href="/dotnet/framework/wcf/feature-details/client-architecture">WCF Client Architecture</a>. For more information about client programming, see <a href="/dotnet/framework/wcf/feature-details/accessing-services-using-a-client">Accessing Services Using a WCF Client</a>. For details about customizations and how to perform them, see <a href="/dotnet/framework/wcf/extending/extending-clients">Extending Clients</a>.</p>
+<ul>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A&gt; property returns the dispatch run-time object for service-initiated callback operations.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.OperationSelector%2A&gt; property accepts a custom operation selector object to control the routing of client messages.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers%2A&gt; property enables the addition of a channel initializer that can inspect or modify the client channel.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.InteractiveChannelInitializers%2A&gt; property can be used to display a visual prompt to enable a user to select credentials prior to opening the channel.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.Operations%2A&gt; property gets a collection of &lt;xref:CoreWCF.Dispatcher.ClientOperation&gt; objects to which you can add custom message interceptors that provide functionality specific to the messages of that operation.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ManualAddressing%2A&gt; property enables an application to turn off some automatic addressing headers to directly control addressing.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize%2A&gt; property enables the client to limit the size of fault messages that the client accepts.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.MessageInspectors%2A&gt; property gets a collection of &lt;xref:CoreWCF.Dispatcher.IClientMessageInspector&gt; objects to which you can add custom message interceptors for all messages traveling through a client.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation%2A&gt; property returns the operation to which unexpected messages are passed.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand%2A&gt; property informs the system whether it should confirm that SOAP headers marked as <code>MustUnderstand</code> have, in fact, been understood.</p>
+</li>
+<li><p>The &lt;xref:CoreWCF.Dispatcher.ClientRuntime.Via%2A&gt; property sets the value of the destination of the message at the transport level to support intermediaries and other scenarios.</p>
+</li>
+</ul>
+<p>In addition, there are a number of other properties that retrieve the client contract information:</p>
+<ul>
+<li><p>&lt;xref:CoreWCF.Dispatcher.ClientRuntime.ContractName%2A&gt;</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.ClientRuntime.ContractNamespace%2A&gt;</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.ClientRuntime.ContractClientType%2A&gt;</p>
+</li>
+</ul>
+<p>If the client is a duplex client, the following properties also retrieve the client callback type and runtime:</p>
+<ul>
+<li><p>&lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackClientType%2A&gt;</p>
+</li>
+<li><p>&lt;xref:CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A&gt;</p>
+</li>
+</ul>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_CallbackClientType_" data-uid="CoreWCF.Dispatcher.ClientRuntime.CallbackClientType*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_CallbackClientType" data-uid="CoreWCF.Dispatcher.ClientRuntime.CallbackClientType">CallbackClientType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type CallbackClientType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_CallbackDispatchRuntime_" data-uid="CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_CallbackDispatchRuntime" data-uid="CoreWCF.Dispatcher.ClientRuntime.CallbackDispatchRuntime">CallbackDispatchRuntime</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DispatchRuntime CallbackDispatchRuntime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.DispatchRuntime.html">DispatchRuntime</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ChannelInitializers_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ChannelInitializers" data-uid="CoreWCF.Dispatcher.ClientRuntime.ChannelInitializers">ChannelInitializers</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SynchronizedCollection&lt;IChannelInitializer&gt; ChannelInitializers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Collections.Generic.SynchronizedCollection-1.html">SynchronizedCollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.IChannelInitializer.html">IChannelInitializer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ClientMessageInspectors_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ClientMessageInspectors" data-uid="CoreWCF.Dispatcher.ClientRuntime.ClientMessageInspectors">ClientMessageInspectors</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;IClientMessageInspector&gt; ClientMessageInspectors { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.IClientMessageInspector.html">IClientMessageInspector</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ClientOperations_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ClientOperations*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ClientOperations" data-uid="CoreWCF.Dispatcher.ClientRuntime.ClientOperations">ClientOperations</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ICollection&lt;ClientOperation&gt; ClientOperations { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="CoreWCF.Dispatcher.ClientOperation.html">ClientOperation</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ContractClientType_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ContractClientType*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ContractClientType" data-uid="CoreWCF.Dispatcher.ClientRuntime.ContractClientType">ContractClientType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Type ContractClientType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ContractName_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ContractName*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ContractName" data-uid="CoreWCF.Dispatcher.ClientRuntime.ContractName">ContractName</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContractName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ContractNamespace_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ContractNamespace*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ContractNamespace" data-uid="CoreWCF.Dispatcher.ClientRuntime.ContractNamespace">ContractNamespace</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ContractNamespace { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ManualAddressing_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ManualAddressing*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ManualAddressing" data-uid="CoreWCF.Dispatcher.ClientRuntime.ManualAddressing">ManualAddressing</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ManualAddressing { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_MaxFaultSize_" data-uid="CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_MaxFaultSize" data-uid="CoreWCF.Dispatcher.ClientRuntime.MaxFaultSize">MaxFaultSize</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxFaultSize { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_MessageVersionNoneFaultsEnabled_" data-uid="CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_MessageVersionNoneFaultsEnabled" data-uid="CoreWCF.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled">MessageVersionNoneFaultsEnabled</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool MessageVersionNoneFaultsEnabled { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_UnhandledClientOperation_" data-uid="CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_UnhandledClientOperation" data-uid="CoreWCF.Dispatcher.ClientRuntime.UnhandledClientOperation">UnhandledClientOperation</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClientOperation UnhandledClientOperation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Dispatcher.ClientOperation.html">ClientOperation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_ValidateMustUnderstand_" data-uid="CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_ValidateMustUnderstand" data-uid="CoreWCF.Dispatcher.ClientRuntime.ValidateMustUnderstand">ValidateMustUnderstand</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ValidateMustUnderstand { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Dispatcher_ClientRuntime_Via_" data-uid="CoreWCF.Dispatcher.ClientRuntime.Via*"></a>
+  <h4 id="CoreWCF_Dispatcher_ClientRuntime_Via" data-uid="CoreWCF.Dispatcher.ClientRuntime.Via">Via</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Uri Via { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uri">Uri</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

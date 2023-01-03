@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class HttpRequestMessageProperty
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class HttpRequestMessageProperty
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.HttpRequestMessageProperty">
+  
+  
+  <h1 id="CoreWCF_Channels_HttpRequestMessageProperty" data-uid="CoreWCF.Channels.HttpRequestMessageProperty" class="text-break">Class HttpRequestMessageProperty
+  </h1>
+  <div class="markdown level0 summary"><p>Provides access to the HTTP request to access and respond to the additional information made available for requests over the HTTP protocol.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance inline-inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object</a></div>
+    <div class="level1"><span class="xref">HttpRequestMessageProperty</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="CoreWCF.Channels.IMessageProperty.html">IMessageProperty</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Http.dll</h6>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class HttpRequestMessageProperty : Object, IMessageProperty</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This is a general-purpose class that gives the developer direct access to the HTTP request information, which can be used for encapsulating HTTP-specific information. One example of the use of this class is to support services implemented in accordance with the Representational State Transfer (REST) architecture.</p>
+<p>This class enables support for the following scenarios:</p>
+<ul>
+<li><p>Varies the HTTP verb used for each request.</p>
+</li>
+<li><p>Allows HTTP header (key, value) pairs to be set and queried by request.</p>
+</li>
+<li><p>Allows the query string to be specified for an HTTP request.</p>
+</li>
+</ul>
+<p>This class can be used by <a class="xref" href="CoreWCF.Channels.HttpTransportBindingElement.html">HttpTransportBindingElement</a> and related classes.</p>
+<p>For incoming messages, this property is added to messages.</p>
+<p>For outgoing messages, this property causes the following to happen:</p>
+<ul>
+<li><p><a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.method?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">Method</a> is set to <a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html#CoreWCF_Channels_HttpRequestMessageProperty_Method">Method</a>.</p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html#CoreWCF_Channels_HttpRequestMessageProperty_QueryString">QueryString</a> is appended to the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.requesturi?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">RequestUri</a>.</p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html#CoreWCF_Channels_HttpRequestMessageProperty_Headers">Headers</a> is added to the HTTP headers set to be transmitted.</p>
+</li>
+</ul>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_HttpRequestMessageProperty_Headers_" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.Headers*"></a>
+  <h4 id="CoreWCF_Channels_HttpRequestMessageProperty_Headers" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.Headers">Headers</h4>
+  <div class="markdown level1 summary"><p>Gets the headers from the underlying HTTP Request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public WebHeaderCollection Headers { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.webheadercollection">WebHeaderCollection</a></td>
+        <td><p>Returns a <a href="https://learn.microsoft.com/en-us/dotnet/api/system.net.webheadercollection?view=net-7.0&amp;viewFallbackFrom=dotnet-plat-ext-7.0">WebHeaderCollection</a> that contains the HTTP headers in the HTTP request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_Headers_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>There are situations in which this property is not available and attempts to access it may cause an exception. This can happen when WCF is hosted in IIS, after the HTTP request is complete, especially in one-way scenarios where the reply is sent back before the message has become available.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_HttpRequestMessageProperty_Method_" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.Method*"></a>
+  <h4 id="CoreWCF_Channels_HttpRequestMessageProperty_Method" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.Method">Method</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the HTTP verb for the HTTP request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Method { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The HTTP verb for the HTTP request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_Method_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>By default, WCF uses the POST verb for HTTP messages. The GET verb is used by WCF to display help information when accessing a ServiceHost's base address. This is useful for checking whether a WCF service is active when using a Web browser. Other methods defined by the <a href="https://www.w3.org/Protocols/rfc2616/rfc2616.html">HTTP RFC</a> are PUT, DELETE, HEAD, OPTIONS, TRACE, and CONNECT. These methods have special behaviors when interoperating with other services.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_HttpRequestMessageProperty_Name_" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.Name*"></a>
+  <h4 id="CoreWCF_Channels_HttpRequestMessageProperty_Name" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Gets the name of the message property associated with the <a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html">HttpRequestMessageProperty</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The value &quot;httpRequest&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="CoreWCF_Channels_HttpRequestMessageProperty_QueryString_" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.QueryString*"></a>
+  <h4 id="CoreWCF_Channels_HttpRequestMessageProperty_QueryString" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.QueryString">QueryString</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the query string for the HTTP request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string QueryString { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The query string from the HTTP request.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_QueryString_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>There are many well-known security attacks based on an HTTP request's query string (for example, the SQL injection attack). Always rigorously validate the parameters contained in the query string. If you use the values without validation, a well-known security hole is open.</p>
+</div>
+  
+  
+  <a id="CoreWCF_Channels_HttpRequestMessageProperty_SuppressEntityBody_" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody*"></a>
+  <h4 id="CoreWCF_Channels_HttpRequestMessageProperty_SuppressEntityBody" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.SuppressEntityBody">SuppressEntityBody</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that indicates whether the body of the message is ignored and only the headers are sent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SuppressEntityBody { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td><p>true if the message body is suppressed; otherwise, false. The default is false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_SuppressEntityBody_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property is used for empty message requests: for example, a service that accepts a GET request without a message body. In this case, when building the <a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html">HttpRequestMessageProperty</a> object for the response message, set the <a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html#CoreWCF_Channels_HttpRequestMessageProperty_SuppressEntityBody">SuppressEntityBody</a> property to true.<br><br>When interoperating with non-WCF services, it is important to note that certain verbs are expected to contain a message body according to the HTTP standard; these include PUT and POST. Other verbs are expected to suppress the message body; these include GET and HEAD.</p>
+</div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_HttpRequestMessageProperty_CoreWCF_Channels_IMessageProperty_CreateCopy_" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy*"></a>
+  <h4 id="CoreWCF_Channels_HttpRequestMessageProperty_CoreWCF_Channels_IMessageProperty_CreateCopy" data-uid="CoreWCF.Channels.HttpRequestMessageProperty.CoreWCF#Channels#IMessageProperty#CreateCopy">IMessageProperty.CreateCopy()</h4>
+  <div class="markdown level1 summary"><p>Creates and returns a copy of the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMessageProperty IMessageProperty.CreateCopy()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="CoreWCF.Channels.IMessageProperty.html">IMessageProperty</a></td>
+        <td><p>A <a class="xref" href="CoreWCF.Channels.IMessageProperty.html">IMessageProperty</a> object that represents a copy of the current object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_HttpRequestMessageProperty_CoreWCF_Channels_IMessageProperty_CreateCopy_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This member is an explicit interface member implementation. It can be used only when the <a class="xref" href="CoreWCF.Channels.HttpRequestMessageProperty.html">HttpRequestMessageProperty</a> instance is cast to an <a class="xref" href="CoreWCF.Channels.IMessageProperty.html">IMessageProperty</a> interface.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="CoreWCF.Channels.IMessageProperty.html">IMessageProperty</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface ISession
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface ISession
+   ">
+    <meta name="generator" content="docfx 2.56.7.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120" class="width-auto">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search padding-left-0">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="CoreWCF.Channels.ISession">
+  
+  
+  <h1 id="CoreWCF_Channels_ISession" data-uid="CoreWCF.Channels.ISession" class="text-break">Interface ISession
+  </h1>
+  <div class="markdown level0 summary"><p>Defines the interface to establish a shared context among parties that exchange messages by providing an ID for the communication session.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="CoreWCF.Channels.html">CoreWCF.Channels</a></h6>
+  <h6><strong>Assembly</strong>: CoreWCF.Primitives.dll</h6>
+  <h5 id="CoreWCF_Channels_ISession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISession</code></pre>
+  </div>
+  <h5 id="CoreWCF_Channels_ISession_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="CoreWCF.Channels.ISession.html">ISession</a> interface is the base interface for all sessions. It contains a <a class="xref" href="CoreWCF.Channels.ISession.html#CoreWCF_Channels_ISession_Id_">Id</a> property for identifying the session.</p>
+<p>A session is a shared context among all participants in a communication exchange. This shared context is characterized by the following three properties:</p>
+<ul>
+<li><p>Session establishment - a process for establishing shared context among all participants.</p>
+</li>
+<li><p>Message correlation - a method for correlating a group of messages to an instance of shared context.</p>
+</li>
+<li><p>The <a class="xref" href="CoreWCF.Channels.ISession.html">ISession</a> interface is not informed as to the number of participants in a session or the lifetime of a session.</p>
+</li>
+</ul>
+<p>These session properties are provided by associating an ID with a session.</p>
+<p><a class="xref" href="CoreWCF.Channels.ISession.html">ISession</a> is inherited by:</p>
+<ul>
+<li><p><a class="xref" href="CoreWCF.Channels.IInputSession.html">IInputSession</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.IOutputSession.html">IOutputSession</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.IDuplexSession.html">IDuplexSession</a></p>
+</li>
+<li><p><a class="xref" href="CoreWCF.Channels.ISessionChannel-1.html">ISessionChannel&lt;TSession&gt;</a> of type <a class="xref" href="CoreWCF.Channels.ISession.html">ISession</a></p>
+</li>
+</ul>
+</div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="CoreWCF_Channels_ISession_Id_" data-uid="CoreWCF.Channels.ISession.Id*"></a>
+  <h4 id="CoreWCF_Channels_ISession_Id" data-uid="CoreWCF.Channels.ISession.Id">Id</h4>
+  <div class="markdown level1 summary"><p>Gets the ID that uniquely identifies the session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Id { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>The ID that uniquely identifies the session</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="CoreWCF_Channels_ISession_Id_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the session is interrupted, it can be retrieved using the <a class="xref" href="CoreWCF.Channels.ISession.html#CoreWCF_Channels_ISession_Id">Id</a>.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
